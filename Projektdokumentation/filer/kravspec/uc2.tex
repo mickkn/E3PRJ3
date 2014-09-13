@@ -1,28 +1,30 @@
 \begin{center} \centering
 	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC1: USECASENAVN}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC1: USECASENAVN}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Skriv her			\\\hline
-		\textbf{Initialisering}					&Skriv her			\\\hline
-		\textbf{Aktører og Stakeholders}			&Skriv her			\\\hline
-		\textbf{Referencer}						&Skriv her			\\\hline
-		\textbf{Antal af samtidige hændelser}	&Skriv her			\\\hline
-		\textbf{Forudsætning}					&Skriv her			\\\hline
-		\textbf{Efterfølgende tilstand}			&Skriv her			\\\hline
+		\textbf{Mål}								&At bruger kan aktivere og/eller deaktivere enheder			\\\hline
+		\textbf{Initialisering}					&Bruger			\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(primær), PsoC(sekundær), devkit8000(sekundær)			\\\hline
+		\textbf{Referencer}						&Ingen			\\\hline
+		\textbf{Antal af samtidige hændelser}	&1			\\\hline
+		\textbf{Forudsætning}					&devkit8000 er opsat og systemet er idel. Seriel bus er intakt.			\\\hline
+		\textbf{Efterfølgende tilstand}			&Ingen			\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item %%Punkt 1
+				\item Bruger logger ind på devkit8000
 				
-				\item %%Punkt 2
+				\item Bruger vælger aktiver/deaktiver i hovedmenuen
 				
-				\item %%Etc.
+				\item Bruger vælger aktiver eller deaktiver efter ønske
+				
+				\item Bruger indtaste adresse på valgte enhed for at aktivere eller deaktivere denne
 	
 			\end{enumerate}\\\hline
 	\end{longtable}
