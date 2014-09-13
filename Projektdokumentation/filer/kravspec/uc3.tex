@@ -1,29 +1,55 @@
 \begin{center} \centering
 	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC1: USECASENAVN}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC3: Planlagt vanding}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC1: USECASENAVN}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC3: Planlagt vanding}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Skriv her			\\\hline
-		\textbf{Initialisering}					&Skriv her			\\\hline
-		\textbf{Aktører og Stakeholders}			&Skriv her			\\\hline
-		\textbf{Referencer}						&Skriv her			\\\hline
-		\textbf{Antal af samtidige hændelser}	&Skriv her			\\\hline
-		\textbf{Forudsætning}					&Skriv her			\\\hline
-		\textbf{Efterfølgende tilstand}			&Skriv her			\\\hline
+		\textbf{Mål}								&Udføre planlagt vanding			\\\hline
+		\textbf{Initialisering}					& Bruger vælger "Planlagt vanding"			\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(primær)			\\\hline
+		\textbf{Referencer}						&Ingen			\\\hline
+		\textbf{Antal af samtidige hændelser}	&1 			\\\hline
+		\textbf{Forudsætning}					&At valgte enhed er aktiv			\\\hline
+		\textbf{Efterfølgende tilstand}			&Autonom tilstand			\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item %%Punkt 1
+				\item Bruger vælger planlagt vanding i UI    %%Punkt 1
 				
-				\item %%Punkt 2
+				\item Bruger vælger "Opret ny" [Undtagelse 1.a][Undtagelse 1.b]
 				
-				\item %%Etc.
+				\item Bruger indstiller ønsket dato
+				
+				\item Bruger indstiller ønsket ON tidsrum
+				
+				\item Bruger indstiller ønsket OFF tidsrum
+				
+				\item Bruger indstiller ønsket vandingsmængde i ON tidsrummet %%Punkt 2
+				
+				\item Bruger gemmer planlagt vanding%%Etc.
+				
+				\item Bruger vender tilbage til hovedmenu
 	
+			\end{enumerate}\\\hline
+		\textbf{Undtagelser}					
+			&\begin{enumerate}
+				\item Undtagelse 1.a : Bruger vælger "Vis planlagte vandinger"
+					\begin{enumerate}
+						\item Brugeren vises planlagte vandinger 
+						\item Bruger trykker tilbage
+						\item Bruger vender tilbage til hovedmenu	
+					\end{enumerate}	
+				\item [Undtagelse 1.b] : Brugeren vælger "Fjern planlagt vanding"
+					\begin{enumerate}
+						\item Brugeren vises en liste af planlagte vandinger.
+						\item Brugeren indstaster det vandings ID som ønskes slettet
+						\item Den planlagte vanding slettes	
+						\item Bruger vender tilbage til hovedmenu
+					\end{enumerate}	
 			\end{enumerate}\\\hline
 	\end{longtable}
 	\label{UC3} 
