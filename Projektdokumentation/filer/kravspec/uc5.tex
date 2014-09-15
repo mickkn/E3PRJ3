@@ -10,15 +10,17 @@
 		
 		\textbf{Mål}				&Send log fra vanding til master enhed			\\\hline
 		\textbf{Initialisering}					&Enheden har vandet færdig			\\\hline
-		\textbf{Aktører og Stakeholders}			&devkit8000, PSoC			\\\hline
+		\textbf{Aktører og Stakeholders}			&Enhed(primær) Masterenhed(sekundær)			\\\hline
 		\textbf{Referencer}						&UC8		\\\hline
 		\textbf{Antal af samtidige hændelser}	&1			\\\hline
-		\textbf{Forudsætning}					&Devkit8000 er opsat og systemet er idel. Seriel bus er intakt.		\\\hline
+		\textbf{Forudsætning}					&Systemet kører.		\\\hline
 		\textbf{Efterfølgende tilstand}			&Standby			\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
 				\item Enhed sender information om vandingen til masteren
+				
+				\item Masterenheden modtager information fra Enhed
 	
 			\end{enumerate}\\\hline
 	\end{longtable}
