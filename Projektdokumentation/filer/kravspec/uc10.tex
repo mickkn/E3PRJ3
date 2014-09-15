@@ -5,24 +5,23 @@
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC1: USECASENAVN}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC10: Enhedsdrift}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Skriv her			\\\hline
-		\textbf{Initialisering}					&Skriv her			\\\hline
-		\textbf{Aktører og Stakeholders}			&Skriv her			\\\hline
-		\textbf{Referencer}						&Skriv her			\\\hline
-		\textbf{Antal af samtidige hændelser}	&Skriv her			\\\hline
-		\textbf{Forudsætning}					&Skriv her			\\\hline
-		\textbf{Efterfølgende tilstand}			&Skriv her			\\\hline
+		\textbf{Mål}								&At bearbejde indsamlet data fra UC1 og arger ud fra forud indstillet parameter 			\\\hline
+		\textbf{Initialisering}					&Autonom			\\\hline
+		\textbf{Aktører og Stakeholders}			&dev-kit8000(primær), PsoC(sekundær)			\\\hline
+		\textbf{Referencer}						&UC1: Indsamle date, UC2: Aktivere/deaktivere			\\\hline
+		\textbf{Antal af samtidige hændelser}	&1		\\\hline
+		\textbf{Forudsætning}					&Systemet er sat til aktivt			\\\hline
+		\textbf{Efterfølgende tilstand}			&Autonom drift		\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item %%Punkt 1
+				\item Enheden bliver sat aktiv fra dev-kit8000(UC2).
 				
-				\item %%Punkt 2
+				\item Løbende indsamlet data fra UC1 blever bearbejdet og ud fra forud indstillet parameter styres vanding.
 				
-				\item %%Etc.
 	
 			\end{enumerate}\\\hline
 	\end{longtable}
