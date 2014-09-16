@@ -1,34 +1,36 @@
-\begin{center} \centering
-	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
+\begin{center} \centering \label{UC2} 
+	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&At bruger kan aktivere og/eller deaktivere enheder			\\\hline
-		\textbf{Initialisering}					&Bruger			\\\hline
-		\textbf{Aktører og Stakeholders}			&Bruger(primær), PsoC(sekundær), devkit8000(sekundær)			\\\hline
-		\textbf{Referencer}						&Ingen			\\\hline
-		\textbf{Antal af samtidige hændelser}	&1			\\\hline
-		\textbf{Forudsætning}					&devkit8000 er opsat og systemet er idel. Seriel bus er intakt.			\\\hline
-		\textbf{Efterfølgende tilstand}			&Ingen			\\\hline
+		\textbf{Mål}								&At Bruger kan aktivere og deaktivere Enheder	\\\hline
+		\textbf{Initialisering}					&Bruger				\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(primær)		\newline 
+												 Enhed(sekundær)		\newline 
+												 Master(sekundær)	\\\hline
+		\textbf{Referencer}						&Ingen				\\\hline
+		\textbf{AASH}							&1					\\\hline
+		\textbf{Forudsætning}					&Master er opsat og systemet kører \newline
+												 Forbindelsen er intakt	\\\hline
+		\textbf{Efterfølgende tilstand}			&Enhedstilstand ændres iflg. valg\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Bruger logger ind på devkit8000
+				\item Bruger logger ind på Master
 				
 				\item Bruger vælger aktiver/deaktiver i hovedmenuen
 				
 				\item Bruger vælger aktiver eller deaktiver efter ønske
 				
-				\item Bruger indtaste adresse på valgte enhed for at aktivere eller deaktivere denne
+				\item Bruger indtaster adresse på valgte enhed for at aktivere eller deaktivere denne	
 	
 			\end{enumerate}\\\hline
 	\end{longtable}
-	\label{UC2} 
 \end{center}
 
 %% TIPS:

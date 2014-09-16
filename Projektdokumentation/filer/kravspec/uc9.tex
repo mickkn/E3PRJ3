@@ -1,24 +1,24 @@
-\begin{center} \centering
+\begin{center} \centering \label{UC9}
 	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC9: Tilfj fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC9: Tilføj\slash fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC9: Tilfj/fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC9: Tilføj\slash fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
 		\textbf{Mål}								&Bruger kan tilføje eller fjerne enheder fra systemet			\\\hline
-		\textbf{Initialisering}					&Bruger: Primær												\\\hline
-		\textbf{Aktører og Stakeholders}			&N/A															\\\hline
-		\textbf{Referencer}						&Skriv her													\\\hline
-		\textbf{Antal af samtidige hændelser}	&1															\\\hline
-		\textbf{Forudsætning}					&Funktionelt opsat system?									\\\hline
-		\textbf{Efterfølgende tilstand}			&Ønskede enhed er tilføjet eller fjernet fra systemet.		\\\hline
+		\textbf{Initialisering}					&Bruger														\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(Primær)												\\\hline
+		\textbf{Referencer}						&Ingen														\\\hline
+		\textbf{AASH}							&1															\\\hline
+		\textbf{Forudsætning}					&Systemet er aktivt											\\\hline
+		\textbf{Efterfølgende tilstand}			&Ønskede Enhed er tilføjet eller fjernet fra systemet.		\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Bruger vælger ''Tilføj/fjern enhed'' mulighed
+				\item Bruger vælger ''Tilføj/fjern enhed'' i UI
 				
 				\item En liste af opsatte enheder præsenteres på skærmen
 				
@@ -27,18 +27,21 @@
 				\item Bruger vælger ''Tilføj enhed''
 				
 				\begin{enumerate}
-					\item \label{uc9indtast} Masterenhed beder bruger om at indtaste informationer
+					\item \label{uc9indtast} Master beder bruger om at indtaste informationer
 					
-					\item \label{uc9indtast_fejl} Bruger indtaster navn og adresse på enhed\newline
+					\item \label{uc9indtast_fejl} Bruger indtaster navn og adresse på enhed
 					
-						\textbf{[Undtagelse \ref{uc9indtast}.a]} Indtastede værdier er ikke gyldige
+						\textbf{[Undtagelse \ref{uc9indtast}.a]} \newline
+						Indtastede værdier er ikke gyldige
 					
 					\item Masterenhed tilføjer enhed til systemet
 					
 					\item Enhed forbindes til kommunikationsnetværket
 					
-					\item \label{uc9verif} Masterenhed verificerer forbindelsen til enheden\newline
-						\textbf{[Undtagelse \ref{uc9verif}.a]} Enheden kan ikke verificeres
+					\item \label{uc9verif} Master verificerer forbindelsen til enheden
+						
+					\textbf{[Undtagelse \ref{uc9verif}.a]} \newline
+					Enheden kan ikke verificeres
 				\end{enumerate}
 
 				\item Bruger vælger ''Fjern enhed''
@@ -47,9 +50,9 @@
 					
 					\item Bruger indtaster adresse på enhed
 					
-					\item Masterenhed terminerer evt. aktiviteter på enhed
+					\item Master terminerer evt. aktiviteter på enhed
 					
-					\item Masterenhed sletter enhed fra systemet
+					\item Master sletter enhed fra systemet
 				
 				\end{enumerate}
 				
@@ -72,8 +75,7 @@
 				\item Bruger kan forsøge igen (Gå til UC9.\ref{uc9verif} eller afbryde
 
 			\end{enumerate}														\\\hline
-	\end{longtable}
-	\label{UC9} 
+	\end{longtable} 
 \end{center}
 
 %% TIPS:

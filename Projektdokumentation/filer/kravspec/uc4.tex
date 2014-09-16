@@ -1,5 +1,5 @@
-\begin{center} \centering
-	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
+\begin{center} \centering \label{UC4}
+	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
 		\multicolumn{2}{|l|}{\textbf{UC4: Config}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
@@ -8,29 +8,28 @@
 		\multicolumn{2}{|l|}{\textbf{UC4: Config}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								& Configure indstillinger på en enhed			\\\hline
-		\textbf{Initialisering}					& Brugeren åbner Config-menuen i brugerinterfacet			\\\hline
-		\textbf{Aktører og Stakeholders}			& Brugeren			\\\hline
-		\textbf{Referencer}						& ???			\\\hline
-		\textbf{Antal af samtidige hændelser}	& 1			\\\hline
-		\textbf{Forudsætning}					& Aktivt system			\\\hline
-		\textbf{Efterfølgende tilstand}			& Ingen			\\\hline
+		\textbf{Mål}								&Konfigurer indstillinger på en enhed			\\\hline
+		\textbf{Initialisering}					&Bruger åbner Config i UI		\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(Primær)					\\\hline
+		\textbf{Referencer}						&Ingen							\\\hline
+		\textbf{AASH}							&1								\\\hline
+		\textbf{Forudsætning}					&Aktivt system					\\\hline
+		\textbf{Efterfølgende tilstand}			&Ingen							\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Brugeren vælger Config-menuen på brugerinterfacet.
+				\item Bruger vælger Config i UI
 				
-				\item Brugeren vælger den enhed brugeren ønsker at configure.
+				\item Bruger vælger den enhed brugeren ønsker at konfigurere.
 				
-				\item Brugeren opsætter de ønskede indstillinger på den valgte enhed.
+				\item Bruger opsætter de ønskede indstillinger på den valgte enhed.
 				
-				\item Brugeren færdiggør indstillingen og vælger "Gem"
+				\item Bruger færdiggøre indstillingen og vælger "Gem"
 				
-				\item Mastersystemet uploader/programmere de nye indstillinger til den valgte enhed. 
+				\item Master uploader/programmere de nye indstillinger til den valgte enhed. 
 	
 			\end{enumerate}\\\hline
 	\end{longtable}
-	\label{UC4} 
 \end{center}
 
 %% TIPS:

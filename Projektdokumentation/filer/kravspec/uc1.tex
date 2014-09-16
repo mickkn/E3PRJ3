@@ -1,33 +1,32 @@
-\begin{center} \centering
-	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
+\begin{center} \centering \label{UC1}
+	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC1: Indsamle data}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC1: Indsamle data}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC1: Indsamle data}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC1: Indsamle data}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								& Indsamle data fra jorden omkring temperatur, fugt og evt. bevægelse			\\\hline
-		\textbf{Initialisering}					& PsoC timer			\\\hline
-		\textbf{Aktører og Stakeholders}			& ???			\\\hline
-		\textbf{Referencer}						& Vanding			\\\hline
-		\textbf{Antal af samtidige hændelser}	& 1			\\\hline
-		\textbf{Forudsætning}					& Aktivt PsoC		\\\hline
-		\textbf{Efterfølgende tilstand}			& Ingen			\\\hline
+		\textbf{Mål}								&Indsamle data fra omkringliggende jord. Temperatur, fugt og bevægelse			\\\hline
+		\textbf{Initialisering}					&Enhedstimer udløb	\\\hline
+		\textbf{Aktører og Stakeholders}			&Enhed(Primær) 		\newline 
+												 Master(Sekundær)	\\\hline
+		\textbf{Referencer}						&UC8: Vanding		\\\hline
+		\textbf{AASH}							&1					\\\hline
+		\textbf{Forudsætning}					&Aktiv enhed		\\\hline
+		\textbf{Efterfølgende tilstand}			&Data logget i Master \\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
 				\item Sensorer måler konstant temperatur, fugt og bevægelse på banen
 				
-				\item Ved timer time out henter PsoC data fra sensor 
+				\item Enhed henter data ved hver udløb af Enhedstimer  
 				
-				\item Data bliver gemt og overført til log via bus
+				\item Data bliver gemt og overført til log
 				
-	
 			\end{enumerate}\\\hline
 	\end{longtable}
-	\label{UC1} 
 \end{center}
 
 %% TIPS:

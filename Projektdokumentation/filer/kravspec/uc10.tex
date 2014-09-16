@@ -1,31 +1,30 @@
-\begin{center} \centering
-	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
+\begin{center} \centering \label{UC10} 
+	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC1: USECASENAVN}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC10: Enhedsdrift}} \\\hline
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC10: Enhedsdrift}} \\\hline %% HUSK UCECASE NUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC10: Enhedsdrift}} \\\hline 
 		\endhead	
 		
-		\textbf{Mål}								&At bearbejde indsamlet data fra UC1 og arger ud fra forud indstillet parameter 			\\\hline
-		\textbf{Initialisering}					&Autonom			\\\hline
-		\textbf{Aktører og Stakeholders}			&dev-kit8000(primær), PsoC(sekundær)			\\\hline
-		\textbf{Referencer}						&UC1: Indsamle date, UC2: Aktivere/deaktivere			\\\hline
-		\textbf{Antal af samtidige hændelser}	&1		\\\hline
-		\textbf{Forudsætning}					&Systemet er sat til aktivt			\\\hline
-		\textbf{Efterfølgende tilstand}			&Autonom drift		\\\hline
+		\textbf{Mål}								&At bearbejde indsamlet data fra UC1 og agere ud fra forud indstillede parametre 			\\\hline
+		\textbf{Initialisering}					&Autonom								\\\hline
+		\textbf{Aktører og Stakeholders}			&Ingen								\\\hline
+		\textbf{Referencer}						&UC1: Indsamle date 					\newline
+												 UC2: Aktivere/deaktivere			\\\hline
+		\textbf{ASSH}							&1									\\\hline
+		\textbf{Forudsætning}					&Systemet er aktivt					\\\hline
+		\textbf{Efterfølgende tilstand}			&Autonom drift						\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Enheden bliver sat aktiv fra dev-kit8000(UC2).
+				\item Enheden bliver sat aktiv fra Master UC2
 				
-				\item Løbende indsamlet data fra UC1 blever bearbejdet og ud fra forud indstillet parameter styres vanding.
-				
-	
+				\item Indsamlet data fra UC1 bliver løbende bearbejdet og ud fra forud indstillede parametre styres vanding.
+			
 			\end{enumerate}\\\hline
 	\end{longtable}
-	\label{UC10} 
 \end{center}
 
 %% TIPS:
