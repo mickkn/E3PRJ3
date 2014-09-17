@@ -1,5 +1,5 @@
-\begin{center} \centering
-	\begin{longtable}{|p{6cm}|p{8cm}|}  %% Longtable = forsætter på næste side
+\begin{center} \centering \label{UC8} 
+	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
 		\multicolumn{2}{|l|}{\textbf{UC8: Vanding}} 		\\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
@@ -10,44 +10,29 @@
 		
 		\textbf{Mål}								&At vande trængende områder	\\\hline
 		\textbf{Initialisering}					&Bruger						\\\hline
-		\textbf{Aktører og Stakeholders}			&Omgivelser(Primær)			\newline
-												 Bruger(Sekundær)			\\\hline
-		\textbf{Referencer}						&UC2: Aktivere/deaktivere 	\newline 
-												 UC3: Planlagt vanding		\\\hline
-		\textbf{Antal af samtidige hændelser}	&2							\\\hline
-		\textbf{Forudsætning}					&Systemet kører				\\\hline
-		\textbf{Efterfølgende tilstand}			&Trængende områder vandet	\\\hline
+		\textbf{Aktører og Stakeholders}			&Omgivelser(Primær)			\\\hline
+		\textbf{Referencer}						&UC2: Aktivere/deaktivere 	\\\hline
+		\textbf{AASH}							&1							\\\hline
+		\textbf{Forudsætning}					&Aktiv Enhed					\\\hline
+		\textbf{Efterfølgende tilstand}			&Autonom drift				\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
-	
-				\item Bruger aktivere (\ref{UC2}) automatisk vanding igennem Master
 				
 				\item Enhed læser fugt- og temperaturværdier
 				
-				\item \label{uc8sprinkler} Sprinkling startes på områder med for lave værdier
+				\item \label{uc8sprinkler} Vanding startes på områder med for lave værdier
 				
 					\textbf{[Undtagelse \ref{uc8sprinkler}a]} Bevægelse registreret
-				
-				\item Master giver besked om planlagt vanding (\ref{UC3})
-				
-				\begin{enumerate}
-					
-					\item Alle sensorer ignoreres
-					
-					\item Alle områder vandes					
-					
-				\end{enumerate}
 	
 			\end{enumerate}\\\hline
 
 		\textbf{Undtagelser}
 			&\begin{enumerate}[label=\ref{uc8sprinkler}a.]
 			
-				\item Sprinkler deaktiveres i 5 minutter		
+				\item Sprinkler deaktiveres i 5 minutter	og herefter gentages hovedforløb	
 			
 			\end{enumerate}\\\hline
 	\end{longtable}
-	\label{UC8} 
 \end{center}
 
 %% TIPS:

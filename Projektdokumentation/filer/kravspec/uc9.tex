@@ -13,46 +13,48 @@
 		\textbf{Aktører og Stakeholders}			&Bruger(Primær)												\\\hline
 		\textbf{Referencer}						&Ingen														\\\hline
 		\textbf{AASH}							&1															\\\hline
-		\textbf{Forudsætning}					&Systemet er aktivt											\\\hline
-		\textbf{Efterfølgende tilstand}			&Ønskede Enhed er tilføjet eller fjernet fra systemet.		\\\hline
+		\textbf{Forudsætning}					&Aktiv Master											\\\hline
+		\textbf{Efterfølgende tilstand}			&Ønsket Enhed er tilføjet eller fjernet fra systemet.		\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Bruger vælger ''Tilføj/fjern enhed'' i UI
+				\item Bruger vælger ''Tilføj/fjern enhed'' i hovedmenu
 				
-				\item En liste af opsatte enheder præsenteres på skærmen
-				
-				\item \label{uc9valg} Bruger kan vælge at tilføje eller fjerne enhed
+				\item \label{uc9valg} Bruger kan vælge ''Tilføj enhed'' eller ''Fjern enhed''
 				
 				\item Bruger vælger ''Tilføj enhed''
+				
+				\item En liste af opsatte enheder præsenteres på skærmen				
 				
 				\begin{enumerate}
 					\item \label{uc9indtast} Master beder bruger om at indtaste informationer
 					
-					\item \label{uc9indtast_fejl} Bruger indtaster navn og adresse på enhed
+					\item \label{uc9indtast_fejl} Bruger indtaster navn og adresse på Enhed
 					
 						\textbf{[Undtagelse \ref{uc9indtast}.a]} \newline
 						Indtastede værdier er ikke gyldige
 					
-					\item Masterenhed tilføjer enhed til systemet
+					\item Masterenhed tilføjer Enhed til systemet
 					
 					\item Enhed forbindes til kommunikationsnetværket
 					
-					\item \label{uc9verif} Master verificerer forbindelsen til enheden
+					\item \label{uc9verif} Master verificerer forbindelsen til Enhed
 						
 					\textbf{[Undtagelse \ref{uc9verif}.a]} \newline
 					Enheden kan ikke verificeres
 				\end{enumerate}
 
 				\item Bruger vælger ''Fjern enhed''
-				
+
+				\item En liste af opsatte enheder præsenteres på skærmen
+
 				\begin{enumerate}
 					
-					\item Bruger indtaster adresse på enhed
+					\item Bruger indtaster adresse på Enhed
 					
-					\item Master terminerer evt. aktiviteter på enhed
+					\item Master deaktivere Enhed
 					
-					\item Master sletter enhed fra systemet
+					\item Master sletter Enhed fra systemet
 				
 				\end{enumerate}
 				

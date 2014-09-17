@@ -8,19 +8,24 @@
 		\multicolumn{2}{|l|}{\textbf{UC5: Send log}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Send log fra vanding til master enhed	\\\hline
-		\textbf{Initialisering}					&Enhed har vandet færdig		\\\hline
-		\textbf{Aktører og Stakeholders}			&Enhed(primær) 				\newline
-												 Masterenhed(sekundær)		\\\hline
-		\textbf{Referencer}						&UC8	: Vanding				\\\hline
+		\textbf{Mål}								&Master modtager data til log	\\\hline
+		\textbf{Initialisering}					&Enhedstimer					\\\hline
+		\textbf{Aktører og Stakeholders}			&Ingen						\\\hline
+		\textbf{Referencer}						&UC1: Indsamle data			\\\hline
 		\textbf{AASH}							&1							\\\hline
-		\textbf{Forudsætning}					&Systemet kører.				\\\hline
-		\textbf{Efterfølgende tilstand}			&Standby						\\\hline
+		\textbf{Forudsætning}					&Aktiv Master				\\\hline
+		\textbf{Efterfølgende tilstand}			&Ingen						\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Enhed sender information om vanding til Master
-				\item Master modtager information fra Enhed
+				\item Master henter information fra Enhed
+				
+				\begin{enumerate}
+					\item Vandingsstatus
+					\item Temperatur
+					\item Fugtighed
+					\item Bevægelse
+				\end{enumerate}
 	
 			\end{enumerate}\\\hline
 	\end{longtable} 

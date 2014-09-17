@@ -9,21 +9,20 @@
 		\endhead	
 		
 		\textbf{Mål}								&Indsamle data fra omkringliggende jord. Temperatur, fugt og bevægelse			\\\hline
-		\textbf{Initialisering}					&Enhedstimer udløb	\\\hline
-		\textbf{Aktører og Stakeholders}			&Enhed(Primær) 		\newline 
-												 Master(Sekundær)	\\\hline
+		\textbf{Initialisering}					&Enhedstimer			\\\hline
+		\textbf{Aktører og Stakeholders}			&Ingen				\\\hline
 		\textbf{Referencer}						&UC8: Vanding		\\\hline
-		\textbf{AASH}							&1					\\\hline
-		\textbf{Forudsætning}					&Aktiv enhed		\\\hline
+		\textbf{AASH}							&1 per Enhed			\\\hline
+		\textbf{Forudsætning}					&Aktiv Enhed		\\\hline
 		\textbf{Efterfølgende tilstand}			&Data logget i Master \\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Sensorer måler konstant temperatur, fugt og bevægelse på banen
+				\item Sensorer måler kontinuert temperatur og fugt i banen og bevægelse på banen
 				
-				\item Enhed henter data ved hver udløb af Enhedstimer  
+				\item Enhed henter temperatur- og fugtdata samt vandingsstatus ved hver udløb af Enhedstimer
 				
-				\item Data bliver gemt og overført til log
+				\item Enhed modtager data ved bevægelse  
 				
 			\end{enumerate}\\\hline
 	\end{longtable}
