@@ -1,0 +1,41 @@
+\begin{center} \centering \label{UC5} 
+	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
+	\hline
+		\multicolumn{2}{|l|}{\textbf{UC5: Vanding}} 		\\\hline %% HUSK UCECASE NUMMER + NAVN
+		\endfirsthead
+		
+		\multicolumn{2}{l}{...fortsat fra forrige side} 	\\ \hline %% Til LONGTABLE
+		\multicolumn{2}{|l|}{\textbf{UC5: Vanding}} 		\\\hline %% HUSK UCECASE NUMMER + NAVN
+		\endhead	
+		
+		\textbf{Mål}								&At vande trængende områder	\\\hline
+		\textbf{Initialisering}					&Ingen						\\\hline
+		\textbf{Aktører og Stakeholders}			&Omgivelser(Primær)			\\\hline
+		\textbf{Referencer}						&UC3: Aktivere/deaktivere	\newline
+												 UC4: Indsamle data 			\\\hline
+		\textbf{AASH}							&1							\\\hline
+		\textbf{Forudsætning}					&Aktiv Enhed					\\\hline
+		\textbf{Efterfølgende tilstand}			&Aktiv						\\\hline
+		\textbf{Hovedforløb}					
+			&\begin{enumerate}
+				
+				\item Enhed læser fugt- og temperaturværdier
+				
+				\item \label{uc5sprinkler} Vanding startes på områder med for lave værdier
+				
+					\textbf{[Undtagelse \ref{uc5sprinkler}a]} Bevægelse registreret
+	
+			\end{enumerate}\\\hline
+
+		\textbf{Undtagelser}
+			&\begin{enumerate}[label=\ref{uc5sprinkler}a.]
+			
+				\item Sprinkler deaktiveres i 30 minutter og herefter gentages hovedforløb	
+			
+			\end{enumerate}\\\hline
+	\end{longtable}
+\end{center}
+
+%% TIPS:
+%% LABEL TIL PUNKT: \label{labelnavn}
+%% REFERENCE: \ref{labelnavn}
