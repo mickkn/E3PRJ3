@@ -1,29 +1,32 @@
-\begin{center} \centering \label{UC2} 
+\begin{center} \centering \label{UC2}
 	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK USECASENUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC2: Config}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC2: Aktiver/deaktiver}} \\\hline %% HUSK USECASENUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC2: Config}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&At Bruger kan aktivere og deaktivere Enheder	\\\hline
-		\textbf{Initialisering}					&Bruger				\\\hline
-		\textbf{Aktører og Stakeholders}			&Bruger(primær)		\\\hline
-		\textbf{Referencer}						&UC10: Enhedsdrift	\\\hline
-		\textbf{AASH}							&1					\\\hline
-		\textbf{Forudsætning}					&Master er opsat og systemet kører \newline
-												 Forbindelsen er intakt	\\\hline
-		\textbf{Efterfølgende tilstand}			&Enhedstilstand ændres aktiv/deaktiv\\\hline
+		\textbf{Mål}								&Konfigurer indstillinger på en Enhed			\\\hline
+		\textbf{Initialisering}					&Bruger							\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(Primær)					\\\hline
+		\textbf{Referencer}						&Ingen							\\\hline
+		\textbf{AASH}							&1								\\\hline
+		\textbf{Forudsætning}					&Aktiv Master					\\\hline
+		\textbf{Efterfølgende tilstand}			&Ingen							\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Bruger vælger ''aktiver/deaktiver'' i hovedmenuen
+				\item Bruger vælger Config i hovedmenu
 				
-				\item Bruger vælger ''aktiver-enhed'' eller ''deaktiver-enhed''
+				\item Bruger vælger den Enhed brugeren ønsker at konfigurere.
 				
-				\item Bruger indtaster adresse på valgte enhed for at aktivere eller deaktivere denne	
+				\item Bruger indstiller de ønskede indstillinger på den valgte Enhed.
+				
+				\item Bruger vælger ''Gem''
+				
+				\item Master programmere de nye indstillinger til den valgte Enhed. 
 	
 			\end{enumerate}\\\hline
 	\end{longtable}

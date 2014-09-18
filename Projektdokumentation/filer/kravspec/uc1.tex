@@ -1,31 +1,83 @@
 \begin{center} \centering \label{UC1}
 	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC1: Indsamle data}} \\\hline %% HUSK USECASENUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC1: Tilføj\slash fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC1: Indsamle data}} \\\hline %% HUSK USECASENUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC1: Tilføj\slash fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Indsamle data fra omkringliggende jord. Temperatur, fugt og bevægelse			\\\hline
-		\textbf{Initialisering}					&Enhedstimer			\\\hline
-		\textbf{Aktører og Stakeholders}			&Ingen				\\\hline
-		\textbf{Referencer}						&UC8: Vanding		\\\hline
-		\textbf{AASH}							&1 per Enhed			\\\hline
-		\textbf{Forudsætning}					&Aktiv Enhed		\\\hline
-		\textbf{Efterfølgende tilstand}			&Data logget i Master \\\hline
+		\textbf{Mål}								&Bruger kan tilføje eller fjerne enheder fra systemet			\\\hline
+		\textbf{Initialisering}					&Bruger														\\\hline
+		\textbf{Aktører og Stakeholders}			&Bruger(Primær)												\\\hline
+		\textbf{Referencer}						&Ingen														\\\hline
+		\textbf{AASH}							&1															\\\hline
+		\textbf{Forudsætning}					&Aktiv Master											\\\hline
+		\textbf{Efterfølgende tilstand}			&Ønsket Enhed er tilføjet eller fjernet fra systemet.		\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Sensorer måler kontinuert temperatur og fugt i banen og bevægelse på banen
+				\item Bruger vælger ''Tilføj/fjern enhed'' i hovedmenu
 				
-				\item Enhed henter temperatur- og fugtdata samt vandingsstatus ved hver udløb af Enhedstimer
+				\item \label{uc1valg} Bruger kan vælge ''Tilføj enhed'' eller ''Fjern enhed''
 				
-				\item Enhed modtager data ved bevægelse  
+				\item Bruger vælger ''Tilføj enhed''
 				
+				\item En liste af opsatte enheder præsenteres på skærmen				
+				
+				\begin{enumerate}
+					\item \label{uc1indtast} Master beder bruger om at indtaste informationer
+					
+					\item \label{uc1indtast_fejl} Bruger indtaster navn og adresse på Enhed
+					
+						\textbf{[Undtagelse \ref{uc1indtast}.a]} \newline
+						Indtastede værdier er ikke gyldige
+					
+					\item Masterenhed tilføjer Enhed til systemet
+					
+					\item Enhed forbindes til kommunikationsnetværket
+					
+					\item \label{uc1verif} Master verificerer forbindelsen til Enhed
+						
+					\textbf{[Undtagelse \ref{uc1verif}.a]} \newline
+					Enheden kan ikke verificeres
+				\end{enumerate}
+
+				\item Bruger vælger ''Fjern enhed''
+
+				\item En liste af opsatte enheder præsenteres på skærmen
+
+				\begin{enumerate}
+					
+					\item Bruger indtaster adresse på Enhed
+					
+					\item Master deaktivere Enhed
+					
+					\item Master sletter Enhed fra systemet
+				
+				\end{enumerate}
+				
+				\item Masterenhed opdatere liste med opsatte enheder
+				
+				\item Bruger kan returnere til hovedmenu eller opsætte ny enhed (Gå til UC1.\ref{uc1valg})
 			\end{enumerate}\\\hline
-	\end{longtable}
+		\textbf{Undtagelser}
+			&\begin{enumerate}[label=\ref{uc1indtast}.a]
+				
+				\item Masterenhed viser fejlbesked omkring ugyldige værdier
+				
+					\subitem Gå til UC1.\ref{uc1indtast}
+			\end{enumerate}
+			
+			\begin{enumerate}[label=\ref{uc1verif}.a]
+				
+				\item Masterenhed viser fejlbesked angående verificering af enheden
+				
+				\item Bruger kan forsøge igen (Gå til UC1.\ref{uc1verif} eller afbryde
+
+			\end{enumerate}														\\\hline
+	\end{longtable} 
 \end{center}
 
 %% TIPS:
