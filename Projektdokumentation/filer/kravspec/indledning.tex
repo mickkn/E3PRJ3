@@ -1,19 +1,26 @@
-
-
 Gruppen vil udvikle et system til vanding af golfbaner. I forbindelse med stigende temperature bliver det mere kritisk at vandingen af golfbaner sker på de rigtige tidspunkter for at holde banen spilbar. For at spare på resourcerne er det også kritisk ikke at spilde store mængder vand på vanding af områder som ikke trænger til det.
 
-Med et system af intelligente enheder som kan arbejde autonomt, men som modtager indstillinger for vandingen fra en masterenhed kan man spare arbejdstid for greenkeeperen og vandingen sker kun når det er nødvendigt.
+Med et system af intelligente enheder som kan arbejde autonomt, men som modtager indstillinger for vandingen fra en masterenhed, her efter Master, kan man spare arbejdstid for greenkeeperen og vandingen sker kun når det er nødvendigt.
 
-Normalt vil man placerer en af disse enheder på hvert hul på golfbanen og lave et netværk af sensorer lokalt til denne enhed. Den kan dermed overvåge området og vande om nødvendigt. Alle enhederne forbindes til et netværk som er koblet sammen med masterenheden. Grænseværdierne, for f.eks. jordfugtigheden, for hvornår enheden skal påbegynde vanding kommer fra masterenheden og styres i gennem denne af greenkeeperen.
+Normalt vil man placerer en af disse enheder på hvert hul på golfbanen og lave et netværk af sensorer lokalt til denne enhed. Den kan dermed overvåge området og vande om nødvendigt. Alle enhederne forbindes til et netværk som er koblet sammen med Master. Grænseværdierne, for f.eks. jordfugtigheden, for hvornår enheden skal påbegynde vanding kommer fra Master og styres igennem denne af greenkeeperen. 
 
-Det skal være muligt for greenkeeperen at overskrive det autonome system ved at specificerer planlagte vandingsperioder. Dette gøres på masterenheden og informationerne sendes ud til enhederne som så vil aggere her efter. Dette vil f.eks. være nødvendigt op til en turnering.
+\begin{figure}[ht] \centering
+\fbox{\includegraphics[height=4.1cm]{filer/indledning/billeder/hul_med_sprinkler}}
+\caption{Systemoverblik}
+\label{fig:systemoverblik}
+\end{figure}
 
-Oversigt over systemet kan ses i figuren her under.
+Oversigt over blokkene i systemet kan ses i figur \ref{fig:bloksystemoverblik}.
+Bemærk at der er muligt at forbinde flere af hver type sensor til én enhed. Hvis altså et hul på en golfbane kræver tre temperatursensorer, kobles disse blot på den samme enhed.
 
-{\includegraphics[height=10cm]{filer/indledning/billeder/vandingssystem}} 
+\begin{figure}[ht] \centering
+\fbox{\includegraphics[height=10cm]{filer/indledning/billeder/vandingssystem}}
+\caption{Blokoverblik af system}
+\label{fig:bloksystemoverblik}
+\end{figure}
 
 Systemet laves med en PSoC som Enhed, altså den del der håndterer data fra sensorene mv.
-Devkit8000 fungerer som Masterenhed og er brugerinterface.
+Devkit8000 fungerer som Master og er brugerinterface.
 
 En Enhed består altså af:
 \begin{enumerate}
@@ -22,15 +29,7 @@ En Enhed består altså af:
 \item Bevægelsessensor (evt. flere)
 \item Sprinkler (evt. flere)
 \item PSoC controller board
-
 \end{enumerate}
 
-Bemærk at der er muligt at forbinde flere af hver type sensore til én enhed. Hvis altså et hul på en golfbane kræver 3 temperatursensorer, kobles disse blot på den samme enhed.
-
-Fugt- og temperatursensorerne registrere banens behov for vanding. Bevægelsessensoren registrere om der er spillerere i umiddelbar nærhed af enheden. Sprinkleren sørger for vandingen. Denne udarbejdes som en motoriseret sprinkler, hvorfra det er muligt at styre i hvilken retning den vander.
-PSoC controller boardet bliver hjernen i Enheden. Denne styrer kommunikationen til Masterenheden og holder styr på de generelle funktioner for Enheden så som udlæsning af data, aktivering af sprinkler mv.
-
-
-{\includegraphics[height=4.2cm]{filer/indledning/billeder/hul_uden_sprinkler}}
-
-{\includegraphics[height=4.1cm]{filer/indledning/billeder/hul_med_sprinkler}}
+Fugt- og temperatursensorerne registrere banens behov for vanding. Bevægelsessensoren registrerer om der er spillere på det pågældende hul. Sprinkleren sørger for vandingen. Denne skjules nede i græsset og kommer op når vandingen skal være aktiv.
+PSoC controller-boardet bliver hjernen i Enheden. Denne styrer kommunikationen til Master og holder styr på de generelle funktioner for Enheden så som udlæsning af data, aktivering af sprinkler mv.
