@@ -1,48 +1,120 @@
 % Ikke-funktionelle krav
-
-\begin{longtable}{|p{5mm}|p{40mm}|p{40mm}|p{20mm}|p{25mm}|}
-\hline 
-\multicolumn{5}{|l|}{\textbf{Ikke-funktionelle krav}} \\ 
-\hline 
-& \textbf{Test} & \textbf{Forventede resultat} & \textbf{Resultat} & \textbf{Godkendt / kommentar} \\ 
-\hline 
-\textbf{1}&Systemet skal opsættes af autoriseret personale & Ikke testbar & N/A & N/A \\ 
-\hline 
-\textbf{2}&Udenforstående bruger gennemlæser manual & Bruger har nu information nok til at kunne betjene systemet & N/A & N/A \\ 
-\hline 
-\textbf{3}& 2 år uden hardware nedbrud & Ikke testbar & N/A & N/A \\ 
-\hline 
-\textbf{4}& Software oppe tid > 1 måned, uden nødvendigt restart & Ikke testbar & N/A & N/A \\ 
-\hline 
-\textbf{5}& Der oprettes 18 enheder i Master med unikke adresser & Master kan håndtere alle 18 enheder & N/A & N/A \\ 
-\hline 
-\textbf{6}& Sprinkler sættes til at rotere 360 grader & Sprinkler roterer 360 grader & N/A & N/A \\ 
-\hline 
-\textbf{7}& Der tilsluttes en yderligere enhed efter opsætning af systemet & Systemet acceptere ny enhed og denne fungerer korrekt efter opsætning af denne & N/A & N/A \\ 
-\hline 
-\textbf{8}& Sprinkler udskiftes uden det er nødvendig at tilgå anden hardware & Sprinkler udskiftes og andet hardware forbliver uberørt & N/A & N/A \\ 
-\hline 
-\textbf{9}& Personale skal nemt kunne tilgå sprinklere & Sprinklere er monteret således at disse let kan tilgås af personale & N/A & N/A \\ 
-\hline 
-\textbf{10}& Systemet interagerer vi seriel bus & Ikke testbar & N/A & N/A \\ 
-\hline 
-\textbf{11}& Spildevand anvendes til vanding & Vandreservoir forsynes med spildevand, såfremt det er godkendt til formålet & N/A & N/A \\ 
-\hline 
-\textbf{12}& Enhed opsættes og forbindelse til Master afbrydes & Enheden måler fortsat data & N/A & N/A \\ 
-\hline 
-\textbf{13}& Måling for temperatur og fugtighed udføres og loggen sendes til Master & Korrekt data for måling sendes og gemmes i loggen & N/A & N/A \\ 
-\hline 
-\textbf{14}& Vanding udføres og loggen sendes til Master & korrekt data for vanding sendes og gemmes i loggen & N/A & N/A \\ 
-\hline 
-\textbf{15}& Der etableres direkte forbindelse mellem sprinkler og vandreservoir & En vandforsyning forbinder sprinkler og reservoir & N/A & N/A \\ 
-\hline 
-\textbf{16}& Vandstanden i reservoiret kommer under 10\% & Sensor registrer dette og signal sendes til Master & N/A & N/A \\ 
-\hline 
-\textbf{17}& Skaleret udgave udarbejdes & Ikke testbar & N/A & N/A \\ 
-\hline 
-\textbf{18}& Der udvikles en prototype grundet tids- og ressourcebegrænsninger & Ikke testbar & N/A & N/A \\ 
+\begin{center}
+\begin{longtable}{|p{0,5cm}|p{3,8cm}|p{3,8cm}|p{2,2cm}|p{2,2cm}|} % l for left, c for center, r for right 
 \hline
-\textbf{19}& Èn funktionel Master og enhed udarbejdes som minimum & Ikke testbar & N/A & N/A \\ 
-\hline 
+\multicolumn{5}{|l|}{\textbf{Ikke-funktionelle krav}} \\ \hline
+\multicolumn{1}{|c|}{} &
+\textbf{Test} &
+\textbf{Forventet \newline Resultat} &
+\textbf{Resultat} &
+\textbf{Godkendt/ \newline Kommentar} \\ \hline 
+\endfirsthead
+
+\multicolumn{5}{l}{...fortsat fra forrige side} \\ \hline 
+\multicolumn{1}{|c|}{} &
+\textbf{Test} &
+\textbf{Forventet \newline Resultat} &
+\textbf{Resultat} &
+\textbf{Godkendt/ \newline Kommentar} \\ \hline 
+\endhead
+
+\textbf{1}	&Systemet skal opsættes af autoriseret personale
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{2}	&Udenforstående bruger gennemlæser manual
+			&Bruger har nu information nok til at kunne betjene systemet
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{3}	&2 år uden hardware nedbrud
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{4}	&Software oppe tid > 1 måned, uden nødvendigt restart
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{5}	&Der oprettes 18 enheder i Master med unikke adresser
+			&Master kan håndtere alle 18 enheder
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{6}	&Sprinkler sættes til at rotere 360 grader
+			&Sprinkler roterer 360 grader
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{7}	&Der tilsluttes en yderligere enhed efter opsætning af systemet
+			&Systemet acceptere ny enhed og denne fungerer korrekt efter opsætning af denne
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{8}	&Sprinkler udskiftes uden det er nødvendig at tilgå anden hardware
+			&Sprinkler udskiftes og andet hardware forbliver uberørt
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{9}	&Personale skal nemt kunne tilgå sprinklere
+			&Sprinklere er monteret således at disse let kan tilgås af personale
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{10}	&Systemet interagerer vi seriel bus
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{11}	&Spildevand anvendes til vanding
+			&Vandreservoir forsynes med spildevand, såfremt det er godkendt til formålet
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{12}	&Enhed opsættes og forbindelse til Master afbrydes
+			& Enheden måler fortsat data
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{13}	&Måling for temperatur og fugtighed udføres og loggen sendes til Master
+			&Korrekt data for måling sendes og gemmes i loggen
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{14}	&Vanding udføres og loggen sendes til Master
+			&Korrekt data for vanding sendes og gemmes i loggen
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{15}	&Der etableres direkte forbindelse mellem sprinkler og vandreservoir
+			&En vandforsyning forbinder sprinkler og reservoir
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{16}	&Vandstanden i reservoiret kommer under 10\%
+			&Sensor registrer dette og signal sendes til Master
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{17}	&Skaleret udgave udarbejdes
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{18}	&Der udvikles en prototype grundet tids- og ressourcebegrænsninger
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{19}	&Èn funktionel Master og enhed udarbejdes som minimum
+			&Ikke testbar
+			&N/A
+			&N/A \\ \hline 
+			
 \end{longtable}
+	\label{ATIFKrav} 
+\end{center}
+
 

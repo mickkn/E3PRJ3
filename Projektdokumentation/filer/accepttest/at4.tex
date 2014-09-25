@@ -1,17 +1,44 @@
 % AT 4
 
-\begin{longtable}{|p{5mm}|p{40mm}|p{40mm}|p{20mm}|p{25mm}|}
-\hline 
-\multicolumn{5}{|l|}{\textbf{UC4: Indsamle data}} \\ 
-\hline 
-& \textbf{Test} & \textbf{Forventede resultat} & \textbf{Resultat} & \textbf{Godkendt / kommentar} \\ 
-\hline 
-\textbf{1}& Sensorer måler kontinuert temperatur og fugt i banen og bevægelse på banen & En testopstilling med psoc viser i en terminal at sensorene opfanger ændringer i realtime & • & • \\ 
-\hline 
-\textbf{2}& Enhed henter temeratur- og fugtdata samt vandingsstatus ved hver udløb af Enhedstimer & i en testopstilling, ved ud løb af Enhedstimer henter Enheden temperatur-, fugtdata og vandingsstatus som vises i en terminal  & • & • \\ 
-\hline 
-\textbf{3}& Enhed gemmer data & Dataen bliver gemt & • & • \\ 
-\hline 
-\textbf{4}& Enhed modtager data ved bevægelse & I en testopstilling viser terminalen når det bliver lavet bevægelser foran bevægelsessencoren & • & • \\ 
-\hline 
-\end{longtable} 
+\begin{center}
+\begin{longtable}{|p{0,5cm}|p{3,8cm}|p{3,8cm}|p{2,2cm}|p{2,2cm}|} % l for left, c for center, r for right 
+\hline
+\multicolumn{5}{|l|}{\textbf{UC4: Indsamle data}} \\ \hline
+\multicolumn{1}{|c|}{} &
+\textbf{Test} &
+\textbf{Forventet \newline Resultat} &
+\textbf{Resultat} &
+\textbf{Godkendt/ \newline Kommentar} \\ \hline 
+\endfirsthead
+
+\multicolumn{5}{l}{...fortsat fra forrige side} \\ \hline 
+\multicolumn{1}{|c|}{} &
+\textbf{Test} &
+\textbf{Forventet \newline Resultat} &
+\textbf{Resultat} &
+\textbf{Godkendt/ \newline Kommentar} \\ \hline 
+\endhead
+
+\textbf{1}	&Sensorer måler kontinuert temperatur og fugt i banen og bevægelse på banen
+			&En testopstilling med psoc viser i en terminal at sensorene opfanger ændringer i realtime
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{2}	&Enhed henter temperatur- og fugtdata samt vandingsstatus ved hver udløb af Enhedstimer
+			&I en testopstilling, ved udløb af Enhedstimer henter Enheden temperatur-, fugtdata og vandingsstatus som vises i en terminal
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{3}	&Enhed gemmer data
+			&Dataen bliver gemt
+			&N/A
+			&N/A \\ \hline 
+			
+\textbf{4}	&Enhed modtager data ved bevægelse
+			&I en testopstilling viser terminalen når det bliver lavet bevægelser foran bevægelsessencoren
+			&N/A
+			&N/A \\ \hline 
+			
+\end{longtable}
+	\label{ATUC4} 
+\end{center}
