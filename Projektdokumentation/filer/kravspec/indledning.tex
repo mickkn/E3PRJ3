@@ -1,14 +1,16 @@
 Gruppen vil udvikle et system til vanding af golfbaner. I forbindelse med stigende temperature bliver det mere kritisk at vandingen af golfbaner sker på de rigtige tidspunkter for at holde banen spilbar. For at spare på resourcerne er det også kritisk ikke at spilde store mængder vand på vanding af områder som ikke trænger til det.
 
-Med et system af intelligente enheder som kan arbejde autonomt, men som modtager indstillinger for vandingen fra en masterenhed, her efter Master, kan man spare arbejdstid for greenkeeperen og vandingen sker kun når det er nødvendigt.
+Med et system af intelligente enheder der kan arbejde autonomt, men som modtager indstillinger for vandingen fra en masterenhed, herved kan man spare arbejdstid for greenkeeperen og vandingen sker kun når det er nødvendigt.
 
-Normalt vil man placerer en af disse enheder på hvert hul på golfbanen og lave et netværk af sensorer lokalt til denne enhed. Den kan dermed overvåge området og vande om nødvendigt. Alle enhederne forbindes til et netværk som er koblet sammen med Master. Grænseværdierne, for f.eks. jordfugtigheden, for hvornår enheden skal påbegynde vanding kommer fra Master og styres igennem denne af greenkeeperen. 
+Normalt vil man placere en af disse enheder ved hvert hul på golfbanen og lave et netværk af sensorer lokalt til denne enhed. Den kan dermed overvåge området og vande om nødvendigt. Alle enhederne forbindes til et netværk som er koblet sammen med Master. Grænseværdierne, for f.eks. jordfugtigheden, der afgør hvornår enheden skal påbegynde vanding kommer fra Master og styres igennem denne af greenkeeperen. 
 
 \begin{figure}[ht] \centering
 \fbox{\includegraphics[height=4.1cm]{filer/indledning/billeder/hul_med_sprinkler}}
 \caption{Systemoverblik}
 \label{fig:systemoverblik}
 \end{figure}
+
+FIGURBESKRIVELSE MANGLER!!!
 
 Oversigt over blokkene i systemet kan ses i figur \ref{fig:bloksystemoverblik}.
 Bemærk at der er muligt at forbinde flere af hver type sensor til én enhed. Hvis altså et hul på en golfbane kræver tre temperatursensorer, kobles disse blot på den samme enhed.
@@ -18,6 +20,8 @@ Bemærk at der er muligt at forbinde flere af hver type sensor til én enhed. Hv
 \caption{Blokoverblik af system}
 \label{fig:bloksystemoverblik}
 \end{figure}
+
+FIGUREN HEROVER SKAL DISKUTERES PÅ MØDE!
 
 Systemet laves med en PSoC som Enhed, altså den del der håndterer data fra sensorene mv.
 Devkit8000 fungerer som Master og er brugerinterface.
@@ -31,5 +35,5 @@ En Enhed består altså af:
 \item PSoC controller board
 \end{enumerate}
 
-Fugt- og temperatursensorerne registrere banens behov for vanding. Bevægelsessensoren registrerer om der er spillere på det pågældende hul. Sprinkleren sørger for vandingen. Denne skjules nede i græsset og kommer op når vandingen skal være aktiv.
+Fugt- og temperatursensorerne registrerer banens behov for vanding. Bevægelsessensoren registrerer om der er spillere på det pågældende hul. Sprinkleren sørger for vandingen når der skal vandes. Denne skjules nede i græsset og kommer op når vandingen skal være aktiv.
 PSoC controller-boardet bliver hjernen i Enheden. Denne styrer kommunikationen til Master og holder styr på de generelle funktioner for Enheden så som udlæsning af data, aktivering af sprinkler mv.
