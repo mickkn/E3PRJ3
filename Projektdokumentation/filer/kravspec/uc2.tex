@@ -8,27 +8,46 @@
 		\multicolumn{2}{|l|}{\textbf{UC2: Konfig}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Konfigurer indstillinger på en Enhed			\\\hline
+		\textbf{Mål}								&Ændre default parametre på en Enhed			\\\hline
 		\textbf{Initialisering}					&Bruger							\\\hline
 		\textbf{Aktører og Stakeholders}			&Bruger(Primær)					\\\hline
-		\textbf{Referencer}						&Ingen							\\\hline
+		\textbf{Referencer}						&UC1: Tilføj/fjern Enhed			\\\hline
 		\textbf{AASH}							&1								\\\hline
-		\textbf{Forudsætning}					&Aktiv Master					\\\hline
+		\textbf{Forudsætning}					&Aktiv Master, samt at den pågældende Enhed er tilføjet systemet					\\\hline
 		\textbf{Efterfølgende tilstand}			&Ingen							\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
 				\item Bruger vælger Konfig i hovedmenu
 				
-				\item Bruger vælger den Enhed brugeren ønsker at konfigurere.
+				\item \label{uc2afbryd}Bruger vælger den Enhed, der ønskes omkonfigureret.
+				\textbf{[Undtagelse \ref{uc2afbryd}.a]} \newline
+					Bruger vælger afbryd
 				
-				\item Bruger indstiller de ønskede indstillinger på den valgte Enhed.
+				\item Bruger ændre default parametre på den valgte Enhed.
 				
-				\item Bruger vælger ''Gem''
+				\item \label{uc2afbryd2} Bruger vælger ''Gem''
+				\textbf{[Undtagelse \ref{uc2afbryd2}.a]} \newline
+					Bruger vælger afbryd
 				
-				\item Master programmere de nye indstillinger til den valgte Enhed. 
+				\item Master programmerer de nye indstillinger til den valgte Enhed. 
 	
 			\end{enumerate}\\\hline
+		\textbf{Undtagelser}
+			&\begin{enumerate}[label=\ref{uc2afbryd}.a]
+				
+				\item Bruger vælger ''afbryd''
+				
+					\subitem Skærmen viser hovedmenu
+			\end{enumerate}
+			
+			\begin{enumerate}[label=\ref{uc2afbryd2}.a]
+				
+				\item Bruger vælger ''afbryd''
+				
+				\subitem Skærmen viser Konfig menu på ny
+
+			\end{enumerate}														\\\hline
 	\end{longtable}
 \end{center}
 

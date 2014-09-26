@@ -19,18 +19,51 @@
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Bruger vælger ''aktiver/deaktiver'' i hovedmenuen
-				
-				\item Bruger vælger ''aktiver-enhed'' eller ''deaktiver-enhed''
-				
-				\item Bruger vælger adresse, ud fra liste, på valgte enhed for at aktivere eller deaktivere denne
-				
-				\item Master udskriver på dennes skærm, at ønsket Enhed er enten aktiveret eller deaktiveret	
-				\item Bruger vælger ''afslut''
-				
-				\item Master viser hovedmenu
 	
+				\item Bruger vælger ''aktiver/deaktiver'' i hovedmenu
+				
+				\item \label{uc3aktiver} Bruger vælger ''Aktiver enhed''
+				
+				\textbf{[Undtagelse \ref{uc3aktiver}.a]} \newline
+					Bruger vælger ''Afbryd''
+				
+			\begin{enumerate}				
+				\item Bruger vælger adresse, ud fra liste, på valgte enhed for at aktivere denne
+				
+				\item Master udskriver på dennes skærm, at ønsket Enhed er aktiveret		
+			\end{enumerate}
+				\item \label{uc3deaktiver} Bruger vælger ''Deaktiver enhed''
+				\textbf{[Undtagelse \ref{uc3deaktiver}.a]} \newline
+					Bruger vælger ''Afbryd''
+			\begin{enumerate}		
+				\item Bruger vælger adresse, ud fra liste, på valgte enhed for at deaktivere denne
+				
+				\item Master udskriver på dennes skærm, at ønsket Enhed er deaktiveret
+				
+			\end{enumerate}				
+				\item Bruger vælger ''Afslut''
+				
+				\item Master viser hovedmenu	
+	
+		
 			\end{enumerate}\\\hline
+			
+		\textbf{Undtagelser}
+			&\begin{enumerate}[label=\ref{uc3aktiver}.a]
+				
+				\item Bruger vælger ''Afbryd''
+				
+					\subitem Skærmen viser hovedmenu
+			\end{enumerate}
+			
+			\begin{enumerate}[label=\ref{uc3deaktiver}.a]
+				
+				\item Bruger vælger ''Afbryd''
+				
+				\subitem Skærmen viser hovedmenu
+
+			\end{enumerate}														\\\hline			
+			
 	\end{longtable}
 \end{center}
 

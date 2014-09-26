@@ -8,7 +8,7 @@
 		\multicolumn{2}{|l|}{\textbf{UC7: Tjek status}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&At kontrollere status på systemet			\\\hline
+		\textbf{Mål}								&At se status på systemet			\\\hline
 		\textbf{Initialisering}					&Bruger							\\\hline
 		\textbf{Aktører og Stakeholders}			&Bruger(Primær)					\\\hline
 		\textbf{Referencer}						&UC6: Send log					\\\hline
@@ -20,7 +20,14 @@
 	
 				\item Bruger vælger ''Tjek status''
 				
-				\item Status vises på Master
+				\item Aktuel status vises på Master ud fra sidste log føring fra UC6: Send log
+				
+				\begin{enumerate}
+					\item Vandingsstatus
+					\item Temperatur
+					\item Fugtighed
+					\item Bevægelse
+				\end{enumerate}
 				
 				\item Bruger vælger ''Tilbage''
 	
