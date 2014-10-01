@@ -1,9 +1,8 @@
-% AT 6
-
+% AT 7
 \begin{center}
 \begin{longtable}{|p{0,5cm}|p{3,8cm}|p{3,8cm}|p{2,2cm}|p{2,2cm}|} % l for left, c for center, r for right 
 \hline
-\multicolumn{5}{|l|}{\textbf{UC6: Send log}} \\ \hline
+\multicolumn{5}{|l|}{\textbf{UC7: Tjek status}} \\ \hline
 \multicolumn{1}{|c|}{} &
 \textbf{Test} &
 \textbf{Forventet \newline Resultat} &
@@ -19,36 +18,21 @@
 \textbf{Godkendt/ \newline Kommentar} \\ \hline 
 \endhead
 
-\textbf{1}	&Ved enhedstimer udløb henter master information fra enhed
-			&informationen bliver sendt fra enhed til master over serielbus
+\textbf{1}	&Bruger vælger ''Tjek status'' på Master
+			&Menuen for ''Tjek status'' fremkommer på masters skærm
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{1.a}	&Vandingsstatus sendes
-			&Information for seneste vandinger sendes til master fra enhed
+\textbf{2}	&Aktuel status vises på masters skærm
+			&Master henter seneste status fra log register og udskriver dette på skærm for bruger at kunne læse
 			&N/A
 			&N/A \\ \hline 
-			
-\textbf{1.b}	&Temperatur for valgte enhed
-			&Seneste målte temperatur senes til master fra enhed
-			&N/A
-			&N/A \\ \hline 
-			
-\textbf{1.c}	&Fugtighed for valgte enhed
-			&Seneste målte jordfugtighed sendes til master fra enhed
-			&N/A
-			&N/A \\ \hline 
-			
-\textbf{1.d}	&Bevægelse
-			&Information omkring registreret bevægelse siden sidste enhedstimer udløb sendes til master fra enhed
-			&N/A
-			&N/A \\ \hline 
-			
-\textbf{2}	&Data gemmes i Masters hukommelse
-			&Data gemmes og kan efterfølgende tilgås manuelt
+
+\textbf{3}	&Bruger vælger muligheden ''Tilbage''
+			&Master vender tilbage til hovedmenuen
 			&N/A
 			&N/A \\ \hline 
 			
 \end{longtable}
-	\label{ATUC6} 
+	\label{ATUC7} 
 \end{center}

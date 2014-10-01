@@ -13,8 +13,8 @@
 		\textbf{Aktører og Stakeholders}			&Omgivelser				\\\hline
 		\textbf{Referencer}						&UC8: Vanding		\\\hline
 		\textbf{AASH}							&1 per Enhed			\\\hline
-		\textbf{Forudsætning}					&Aktiv Enhed			\\\hline
-		\textbf{Efterfølgende tilstand}			&Data gemt i Enhed 	\\\hline
+		\textbf{Forudsætning}					&Aktiv Enhed og Aktiv Master			\\\hline
+		\textbf{Efterfølgende tilstand}			&Data gemt i Enhed og logget i Master 	\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
@@ -25,6 +25,17 @@
 				\item Enhed gemmer data				
 				
 				\item Enhed modtager data ved bevægelse  
+				
+				\item Master henter information fra Enhed ved Enhedstimers udløb
+				
+				\begin{enumerate}
+					\item Vandingsstatus
+					\item Temperatur
+					\item Fugtighed
+					\item Bevægelse
+				\end{enumerate}
+				
+				\item Master gemmer data i log
 				
 			\end{enumerate}\\\hline
 	\end{longtable}
