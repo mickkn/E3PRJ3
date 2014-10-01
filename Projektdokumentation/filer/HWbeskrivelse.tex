@@ -5,7 +5,14 @@
 \label{lab:bdd}
 \raggedright
 \end{figure}
-BDD diagrammet giver et overblik over hvad det samlede system består af. Man ser en portbeskrivelse som viser hvilke signaler hver blok består af.
+BDD diagrammet giver et overblik over hvad det samlede system består af. \newline \newline
+\textbf{Master(Devkit8000)}: Devkit8000 er master der styrer hele systemet, den modtager inputs fra en touchskærm.  \newline \newline
+\textbf{Enhed(PSoC)}: PSoC'en er grænsefladen til den fysiske verden, den indsamler data fra sensorer. Den modtager ordre fra devkit8000 der styrer hvad der skal ske. 		\newline \newline
+\textbf{Temperatursensor}: Har til opgave at indsamle temperaturmålinger. \newline \newline
+\textbf{Fugtsensor}: Har til opgave at indsamle fugtighedsmålinger. \newline \newline
+\textbf{PIR-sensor}: Har til opgave at detektere om der er bevægelse på banen. \newline \newline
+\textbf{Sprinkler}: Har til opgave at sprede vand ud på banen. \newline \newline
+\textbf{Vandpumpe}: Har til opgave at forsyne sprinkleren med vand. \newline \newline
 
 \begin{figure}[H] \centering
 \subsection{BDD Master (MK)}
