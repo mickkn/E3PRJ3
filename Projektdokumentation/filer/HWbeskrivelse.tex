@@ -43,3 +43,23 @@ IBD diagrammet giver et internt overblik over hvordan hele vores system er forbu
 \textbf{Spændingsforsyning}: Spændingsforsyningens forbindelser er ikke påtegnet da dette ville give et uoverskueligt diagram, de er i stedet beskrevet med standardflowports.  \newline \newline
 \textbf{Integreret fugt- og temperatursensor}: Blokken beskriver at fugt- og temperatursensor er integreret i en chip. \newline \newline
 
+\begin{table}[H]
+\subsection{Signal beskrivelse (HW)}
+For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel som kan ses herunder. Hvert signal er beskrevet og tilknyttet en kort kommentar. Området et signal er defineret under, er også beskrevet. Blok og terminal indgår også. 
+\caption{Tabel over signaler med terminaler}
+\begin{small}
+\begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2,2cm}|}
+\hline
+
+\textbf{Signal-navn}	&\textbf{Funktion} 		&\textbf{Område} &\textbf{Port 1} 	&\textbf{Port 2} 			&\textbf{Kommentar} \\ \hline
+
+SPI 					&Seriel kommunikation 	& 				&Master (DK\_02)		&Enhed (P\_DK)				&					\\\cline{4-5}
+					&						&				&Enhed (P\_FT)		&Fugt-/tempsensor (FT\_01)	&					\\ \hline
+
+TTL 					&TTL 					&0\slash3,3V 	&PIR-sensor (PIR\_01) &Enhed (P\_PIR)			&					\\\cline{4-5}
+					&						&				&Enhed (P\_VP)		&Vandpumpe (VP\_01)			&					\\ \hline
+
+\end{tabular}
+\end{small}
+\label{table:Signaltabel}
+\end{table}
