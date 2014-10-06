@@ -1,2 +1,15 @@
 %% SW arkitektur: Fejlhåndtering
 
+EasyWater8000 kan håndtere fejl og disse vil blive gemt i en fejllog som bliver gemt på masteren. 
+
+Fejlhåndteringen bliver klaret af en klasse på devkittet som håndtere at skrive det rigtige fejl ud i en txt fil. Klassen vil blive kaldt med en fejlkode hver gang fejl opstår. Klassen forstår så at skrive den rigtige fejl ind i txt filen ud fra den pågældende fejlkode den har modtaget som attribut. 
+
+Alle funktioner vil returnere en negativ integer som repræsentere en fejlkoden som ErrorHandling klassen kan tolke på.
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=0.7]{filer/pics/Errortxt}}
+\caption{udsnit af Error log}
+\label{fig:ErrorLog}
+\end{figure}
+
+Billedet ovenfor viser hvordan 2 fejl i error loggen evt. kunne se ud.
