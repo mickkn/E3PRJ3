@@ -12,22 +12,10 @@ I forbindelse med EasyWater8000s log skal der gemmes data på en nem og håndter
 
 Ydermere skal disse informationer gemmes for hver enhed. Så hvis der er 18 huller med i alt 18 enheder, skal ovenstående gemmes for alle 18 enheder.
 
-Når informationen skal præsenteres for brugeren skal det ske i en tabel som vist på figur \ref{fig:log-alle-enheder}, data for en enkelt enhed som på figur \ref{fig:log-enhed} eller på en graf så man kan se ændringer over tid som vist på figur \ref{fig:log-graf}.
+Når informationen skal præsenteres for brugeren skal det ske i en tabel som vist på figur \ref{fig:GUI-log-alle} i afsnit \ref{subsec:GUI}, data for en enkelt enhed som på figur \ref{fig:GUI-log-enhed} i afsnit \ref{subsec:GUI} eller på en graf så man kan se ændringer over tid som vist på figur \ref{fig:log-graf}.
 
 \url{http://www.advsofteng.com/doc/cdcpp.htm#linecharts.htm} \newline
 \url{http://doc.qt.digia.com/QtCharts/qdatetimeaxis.html}
-
-\begin{figure}[htbp] \centering
-{\includegraphics[scale=0.7]{filer/pics/SW-Log-alle}}
-\caption{Log for alle enheder}
-\label{fig:log-alle-enheder}
-\end{figure}
-
-\begin{figure}[htbp] \centering
-{\includegraphics[scale=0.8]{filer/pics/SW-Log-enhed}}
-\caption{Log for én enhed}
-\label{fig:log-enhed}
-\end{figure}
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=0.5]{filer/pics/SW-Log-graf}}
@@ -37,17 +25,17 @@ Når informationen skal præsenteres for brugeren skal det ske i en tabel som vi
 
 Tabellen skal have en fane for hver opkoblet enhed. Her kan man se informationer fra hver enkelt enhed. Det bør også være muligt at se alle enheders informationer samtidigt.
 
-Dataen struktureres i semikolon-separerede filer ( \verb+.csv+) på Master. Hver enhed har en fil hvor alle data er samlet med udgangspunkt i strukturen vist i liste \ref{list:log-csv-struktur}.
+Dataen struktureres i semikolon-separerede filer (\verb+.csv+) på Master. Hver enhed har en fil hvor alle data er samlet med udgangspunkt i strukturen vist i liste \ref{list:log-csv-struktur}.
 
 \begin{lstlisting}[caption=Semikolon-separeret datafil til log af enheder, label={list:log-csv-struktur}]
 <enheds-nr>;
-<dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
-<dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
+<KP-nr>; <dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
+<KP-nr>; <dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
 ...
-<dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
+<KP-nr>; <dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
 \end{lstlisting}
 
-Dette resulterer i en filstruktur som vist på liste \ref{list:log-fil-struktur} vis der er koblet 18 enheder op på Master.
+Dette resulterer i en filstruktur som vist på liste \ref{list:log-fil-struktur} hvis der er koblet 18 enheder op på Master.
 
 \begin{lstlisting}[caption=Filstruktur for logfiler på Master, label={list:log-fil-struktur}]
 <log>/
