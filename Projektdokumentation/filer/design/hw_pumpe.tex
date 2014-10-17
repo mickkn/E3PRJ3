@@ -1,1 +1,47 @@
-Pumpe relæ
+Sprinkler-pumpe systemet består af en Hunter PS Pop-up sprinkler og en Alpha 2 pumpe fra Grundfoss, disse forbindes med passende slanger og fittings. For at styre sprinkleren, skal Alpha 2 pumpen kunne tændes og afbrydes. Dette gøres via et 230V/5V relæ. Dette relæ styres via Enheden, via nogle specifikke pinde på PSoC 4 boardet. I henhold til begrænsningerne (SKRIV I BEGRÆNSNINGER), er det besluttet at kunne tænde/slukke 4 udgange.
+
+
+
+
+
+\subsection{230V/5V relæ}
+
+For at 230V/5V relæet kan blive en realitet, er det pålagt, at dette bygges i en lukket kasse og godkendes af en elektronikværksteds-ansvarlig. Kassen som bygges har et 230Vac apparatstik ind og et 230Vac stikkontakt ud. For at skabe forbindelse/afbrydelse af denne 230Vac strøm benyttes et relæ, dette relæ styrers af 5V. Når 5V  tilføjes relæets spole, klikker relæet og der skabes gennemgang fra apparatstik til stikkontakt. Dette lukkede kredsløb bygges som sagt ind i en lukke kasse med gennemsigtigt låg. Der realiseret kun én af disse kasser.
+
+\begin{figure}[H] \centering
+{\includegraphics[width=\textwidth]{filer/design/Billeder/230VAC_KREDS}}
+\caption{230V/5V relæ}
+\label{lab:RELAY}
+\raggedright
+\end{figure}
+
+\subsection{Alpha 2 pumpen}
+
+Alpha 2 pumpen skal blot tilsluttes 230Vac. Der medfølger et special stik til selve pumpen, dette forbindes til en 230V stikprop, med ledning. Stikproppen kan nu sættes i 230V/5V relæets 230V stikkontakt.
+
+\subsection{Relæ styring}
+For at styre hvilken sprinkler der tændes/slukkes benyttes 4 udgange på Enheden. Disse 4 udgange kan styre 4 relæer, herved begrænses systemet til at kunne styre 4 sprinklere (SE BEGRÆNSNINGER)
+
+PSoC'ens udgange giver ikke spænding nok til at trække relæet. PSoC'en afgiver 3,3V og relæet kræver 5V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 5V og 100mA, Derfor skal transistoren opfylde dette krav. Det gør BC547 
+
+\begin{figure}[H] \centering
+{\includegraphics[width=0.3\textwidth]{filer/design/Billeder/BC547}}
+\caption{BC547 opsætning}
+\label{lab:BC547}
+\raggedright
+\end{figure} 
+
+Når PSoC'ens pin til BC547 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emittier på transistoren, herved er der 5V over relæets spole og relæets kontaktsæt klikker. 
+
+
+\begin{figure}[H] \centering
+{\includegraphics[width=\textwidth]{filer/design/Billeder/RELAY_CONTROL}}
+\caption{Relæ styring med BC547}
+\label{lab:RELAY_CONTROL}
+\raggedright
+\end{figure} 
+
+
+
+
+ 
