@@ -1,6 +1,18 @@
 Sprinkler-pumpe systemet består af en Hunter PS Pop-up sprinkler og en Alpha 2 pumpe fra Grundfoss, disse forbindes med passende slanger og fittings. For at styre sprinkleren, skal Alpha 2 pumpen kunne tændes og afbrydes. Dette gøres via et 230V/5V relæ. Dette relæ styres via Enheden, via nogle specifikke pinde på PSoC 4 boardet. I henhold til begrænsningerne (SKRIV I BEGRÆNSNINGER), er det besluttet at kunne tænde/slukke 4 udgange.
 
+\subsection{Driver}
 
+Driveren der skal håndtere Sprinkler-pumpe systemet, skal kunne aktivere/deaktivere en af de 4 forudbestemte tilgængelige sprinklerrelæer. Metoden modtager en adresse parameter samt en on/off parameter. Herefter sætter metoden en af de 4 pinde på Enheden høj/lav (3.3V/0V). Herefter søger relæstyringen og 230V/5V relæet for hhv. tænde/slukke for sprinkleren. 
+
+
+\subsubsection*{Pseudokode}
+
+\begin{lstlisting}[language=C]
+void controlSprinkler(int address, bool on_off){
+Manage Sprinkler address
+Activate/deactivate corresponding Sprinkler
+}
+\end{lstlisting}
 
 
 
