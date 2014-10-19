@@ -9,35 +9,42 @@
 		\endhead	
 		
 		\textbf{Mål}								&Indsamle data fra omkringliggende jord. Temperatur, fugt og bevægelse			\\\hline
-		\textbf{Initialisering}					&Enhedstimer			\\\hline
-		\textbf{Aktører og Stakeholders}			&Golfbane			\\\hline
-		\textbf{Referencer}						&UC8: Vanding		\\\hline
+		\textbf{Initialisering}					&System				\\\hline
+		\textbf{Aktører og Stakeholders}			&Golfbane(Primær)	\\\hline
+		\textbf{Referencer}						&Ingen				\\\hline
 		\textbf{AASH}							&1 per Enhed			\\\hline
 		\textbf{Forudsætning}					&Aktiv Enhed og Aktiv Master			\\\hline
 		\textbf{Efterfølgende tilstand}			&Data gemt i Enhed og logget i Master 	\\\hline
 		\textbf{Hovedforløb}					
-			&\begin{enumerate}
-	
-				\item Sensorer måler kontinuert temperatur og fugt i banen og bevægelse ved teested
+			&I et fast interval udføres nedenstående forløb på Enhed for hver tilkoblede KP:
+			\begin{enumerate}
+			
+				\item Sensorernes data for temperatur og fugtighed udlæses fra banen
 				
-				\item Enhed henter temperatur- og fugtdata samt vandingsstatus ved hver udløb af Enhedstimer
-				
-				\item Enhed gemmer data				
-				
-				\item Enhed modtager data ved bevægelse  
-				
-				\item Master henter information fra Enhed ved Enhedstimers udløb
-				
-				\begin{enumerate}
-					\item Vandingsstatus
-					\item Temperatur
-					\item Fugtighed
-					\item Bevægelse
-				\end{enumerate}
+				\item Enhed gemmer data i en buffer til senere udlæsning fra Master				
+			
+			\end{enumerate}
+			
+			
+			I et andet fast interval udføres nedenstående forløb på Master for hver opsatte Enhed:
+			\begin{enumerate}
+			
+				\item Master henter information fra bufferen i Enheden
 				
 				\item Master gemmer data i log
+			\end{enumerate}
+			
+			
+			 Bevægelsessensoren aktiverer følgende forløb:
+			\begin{enumerate}
+			
+				\item Enhed modtager besked ved bevægelse 
 				
-			\end{enumerate}\\\hline
+				\item Enhed gemmer hændelse i en buffer til senere udlæsning fra Master 
+				
+			\end{enumerate}
+
+				\\\hline
 	\end{longtable}
 \end{center}
 
