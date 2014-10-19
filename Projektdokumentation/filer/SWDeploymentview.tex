@@ -17,7 +17,7 @@ Deployment view skal illustrere hvor hvilke lag af software ligger på vores pla
 
 \clearpage
 
-\textit{Hardware API}
+\textit{Hardware API} laget består af almindelige klasser som gør brug af file systemets kommandoer som f.eks open og close.
 
 \textit{File System}
 
@@ -29,6 +29,6 @@ Deployment view skal illustrere hvor hvilke lag af software ligger på vores pla
 
 \textit{Applications} laget håndtere den indsamlede data som den får fra sensorene igennem API'en. Denne data sammensættes ifølge protokollen og sendes til API'en som får det sendt til devkittet. Laget skal også håndtere data fra devkittet til at konfigurere de parametre der styre automatiseringen af vandingen som applications laget også håndtere.
 
-\textit{API}
+\textit{API} laget består af den software som håndtere hardwaren. dvs den tager imod input og får formateret det til noget læseligt til applications laget. Derudover står den for at få sendt de informationer applicationslaget ber om på en effektiv og sikker måde.
 
 \textit{HW connection (grønne bokse)} laget viser hvilke hardware in/out der er til PSoC'en
