@@ -6,13 +6,6 @@
 \raggedright
 \end{figure}
 BDD diagrammet giver et overblik over hvad det samlede system består af. \newline \newline
-\textbf{Master(Devkit8000)}: Devkit8000 er Master der styrer hele systemet, den modtager inputs fra en touchskærm.  \newline \newline
-\textbf{Enhed(PSoC)}: PSoC'en er grænsefladen til den fysiske verden, den indsamler data fra sensorer. Den modtager ordre fra Devkit8000 der styrer hvad der skal ske. 		\newline \newline
-\textbf{Temperatursensor}: Har til opgave at indsamle temperaturmålinger. \newline \newline
-\textbf{Fugtsensor}: Har til opgave at indsamle fugtighedsmålinger. \newline \newline
-\textbf{PIR-sensor}: Har til opgave at detektere om der er bevægelse på banen. \newline \newline
-\textbf{Sprinkler}: Har til opgave at sprede vand ud på banen. \newline \newline
-\textbf{Vandpumpe}: Har til opgave at forsyne sprinkleren med vand. \newline \newline
 
 \begin{figure}[H] \centering
 \subsection{BDD Master (MK)}
@@ -39,9 +32,45 @@ BDD diagrammet for Enhed, viser at én Enhed består af én PSoC som kan kobles 
 \label{lab:ibd}
 \raggedright
 \end{figure}
-IBD diagrammet giver et internt overblik over hvordan hele vores system er forbundet. Vi ser hvilke type signaler der bliver sendt imellem de forskellige blokke. \newline \newline
+IBD diagrammet giver et internt overblik over hvordan hele systemet er forbundet. Vi ser hvilke type signaler der bliver sendt imellem de forskellige blokke. \newline \newline
 \textbf{Spændingsforsyning}: Spændingsforsyningens forbindelser er ikke påtegnet da dette ville give et uoverskueligt diagram, de er i stedet beskrevet med standardflowports.  \newline \newline
 \textbf{Integreret fugt- og temperatursensor}: Blokken beskriver at fugt- og temperatursensor er integreret i en chip. \newline \newline
+
+\begin{table}[H] %% Blok og Signal Tabel
+\subsection{Grænseflade (HW)}
+For at opnå forståelse for signalerne mellem blokkene laves en grænseflade der beskriver de enkelte blokkes porte og hvilke signaler der løber imellem disse.
+
+\subsubsection{Blok beskrivelse (HW)}
+Til at beskrive blokkene nærmere er anvendt tabeller som ses herunder. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
+
+\caption{Tabel med beskrivelse af respektive blokke}
+\begin{small}
+\begin{tabular}{|p{3,3cm}|p{3,3cm}|p{3,3cm}|p{3,3cm}|}
+\hline
+\textbf{Bloknavn} & \textbf{Funktion} & \textbf{Signaler} & \textbf{Kommentar} \\ \hline
+
+Master(Devkit8000) & Styreenhed der modtager input fra touchskærm og kommunikere serielt med Enhed(er) & Touch & Touch \\ \cline{3-4}	
+& 				   & SPI & Seriel data kommunikation \\ \hline
+
+Enhed(PSoC) & Enhed er grænsefladen til den fysiske verden igennem sensorer & SPI & Seriel data kommunikation \\ \cline{3-4}
+& & TTL 		& Signal fra PIR-sensor	\\ \cline{3-4}
+& & TTL 		& Signal til vandpumpe 	\\ \cline{3-4}
+& & Analog 	& Signal fra TF-sensor 	\\ \hline
+
+FT-sensor & Måler temperatur og fugt & Analog & Analog signal til Enhed \\ \hline
+
+PIR-sensor & Detektere bevægelse & TTL & Signal til Enhed \\ \hline
+
+Vandpumpe & Forsyner sprinkler med vand & Vand & Vand til Sprinkler \\ \hline
+ 
+Sprinkler & Fordeler vand på golfbane & Vand & Vand til Golfbane \\ \hline
+
+Spændingsforsyning & Forsyner EasyWater8000 & 3,3VDC & Forsyning til FT-sensor \\ \cline{3-4}
+& & 5VDC 		& Forsyning til PIR-sensor, Enhed og Master 	\\ \hline
+\end{tabular}
+\end{small}
+\label{table:Bloktabel}
+\end{table}
 
 \begin{table}[H]
 \subsection{Signal beskrivelse (HW)}
@@ -53,11 +82,12 @@ For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel som ka
 
 \textbf{Signal-navn}	&\textbf{Funktion} 		&\textbf{Område} &\textbf{Port 1} 	&\textbf{Port 2} 			&\textbf{Kommentar} \\ \hline
 
-SPI 					&Seriel kommunikation 	& 				&Master (DK\_02)		&Enhed (P\_DK)				&					\\\cline{4-5}
-					&						&				&Enhed (P\_FT)		&Fugt-/tempsensor (FT\_01)	&					\\ \hline
+SPI 					&Seriel kommunikation 	& 				&Master (DK\_02)		&Enhed (P\_DK)				&					 \\\hline
 
 TTL 					&TTL 					&0\slash3,3V 	&PIR-sensor (PIR\_01) &Enhed (P\_PIR)			&					\\\cline{4-5}
-					&						&				&Enhed (P\_VP)		&Vandpumpe (VP\_01)			&					\\ \hline
+					&						&				&Enhed (P\_VP)		&Vandpumpe (VP\_01)			&					\\\hline
+					
+Analog				&Analog 					&0-3,3V 			&FT-sensor (FT\_01) &Enhed (P\_FT)			&	    				\\\hline
 
 \end{tabular}
 \end{small}
