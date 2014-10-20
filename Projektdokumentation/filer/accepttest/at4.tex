@@ -3,7 +3,7 @@
 \begin{center}
 \begin{longtable}{|p{0,5cm}|p{3,8cm}|p{3,8cm}|p{2,2cm}|p{2,2cm}|} % l for left, c for center, r for right 
 \hline
-\multicolumn{5}{|l|}{\textbf{UC4: Indsamle data}} \\ \hline
+\multicolumn{5}{|l|}{\textbf{UC4: Databehandling}} \\ \hline
 \multicolumn{1}{|c|}{} &
 \textbf{Test} &
 \textbf{Forventet \newline Resultat} &
@@ -19,48 +19,48 @@
 \textbf{Godkendt/ \newline Kommentar} \\ \hline 
 \endhead
 
-\textbf{1}	&Sensorer måler kontinuert temperatur og fugt i banen og bevægelse på banen
-			&En testopstilling med PSoC viser i en terminal at sensorerne opfanger ændringer i realtime
+\textbf{1}	&Der laves en testopstilling hvori det er muligt at manipulere omgivelserne til sensoren således at den udlæste data ændres
+			&En testopstilling med PSoC viser i en terminal at sensorerne opfanger ændringer fra omgivelserne i realtime
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{2}	&Enhed henter temperatur- og fugtdata samt vandingsstatus ved hver udløb af Enhedstimer
-			&I en testopstilling, ved udløb af enhedstimer henter enheden temperatur-, fugtdata og vandingsstatus som vises i en terminal
+\textbf{2}	&Der manipuleres med omgivelserne således at grænseværdier for enheden overskrides
+			&Det måles at enhed sender signal til sprinkler om at vanding er nødvendigt
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{3}	&Enhed gemmer data
-			&Data bliver gemt
+\textbf{2.a}	&PIR-sensoren påvirkes
+			&Vandingen bliver afbrudt på baggrund af registreret bevægelse 
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{4}	&Enhed modtager data ved bevægelse
-			&I en testopstilling viser terminalen når PIR-sensoren opfanger bevægelse
+\textbf{3}	&Der testes visuelt at enhed har gemt behandlingerne af data i buffer
+			&Data er gemt og kan tilgås via Master
 			&N/A
 			&N/A \\ \hline 
 
-\textbf{5}	&Ved enhedstimer udløb henter master information fra enhed
-			&informationen bliver sendt fra enhed til master over serielbus
+\textbf{4}	&Bruger tilgår de gemte data via Master
+			&Informationen præsenteres for bruger på Masters skærm
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{5.a}	&Vandingsstatus sendes
-			&Information for seneste vandinger sendes til master fra enhed
+\textbf{5}	&Bruger tilgår log i Master 
+			&Informationen ligger tilgængelig i loggen
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{5.b}	&Temperatur for valgte enhed
-			&Seneste målte temperatur senes til master fra enhed
+\textbf{6}	&Ved test måles det at der sendes et signal til enhed ved registreret bevægelse
+			&Enhed registrer signalet fra PIR-sensor 
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{5.c}	&Fugtighed for valgte enhed
-			&Seneste målte jordfugtighed sendes til master fra enhed
+\textbf{7}	&Ved test ændres værdier for enhed således at denne ville starte en vanding
+			&Vandingen er ikke mulig i 30 min.
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{5.d}	&Bevægelse
-			&Information omkring registreret bevægelse siden sidste enhedstimer udløb sendes til master fra enhed
+\textbf{8}	&Der testes visuelt at enhed har gemt behandlingerne af data i buffer
+			&Data er gemt og tilgås via Master
 			&N/A
 			&N/A \\ \hline 
 			

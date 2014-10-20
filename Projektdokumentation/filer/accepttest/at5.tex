@@ -1,8 +1,8 @@
-% AT 5
+% AT 7
 \begin{center}
 \begin{longtable}{|p{0,5cm}|p{3,8cm}|p{3,8cm}|p{2,2cm}|p{2,2cm}|} % l for left, c for center, r for right 
 \hline
-\multicolumn{5}{|l|}{\textbf{UC5: Vanding}} \\ \hline
+\multicolumn{5}{|l|}{\textbf{UC5: Tjek status}} \\ \hline
 \multicolumn{1}{|c|}{} &
 \textbf{Test} &
 \textbf{Forventet \newline Resultat} &
@@ -18,21 +18,21 @@
 \textbf{Godkendt/ \newline Kommentar} \\ \hline 
 \endhead
 
-\textbf{1}	&Enhed læser fugt- og temperaturværdier
-			&I en testopstilling vises at enhed læser fugt- og temperaturværdier i en terminal
+\textbf{1}	&Bruger vælger ''Tjek status'' på Master
+			&Menuen for ''Tjek status'' fremkommer på masters skærm
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{2}	&Vanding startes i område hvor én eller flere sensorer måler værdier uden for grænseområdet
-			&I en testopstilling påvirkes sensorerne med for lave værdier og vanding ses påbegyndt
+\textbf{2}	&Der testes visuelt at Master giver information omkring status 
+			&Master henter seneste status fra log register og udskriver dette på skærm for bruger at kunne læse
 			&N/A
 			&N/A \\ \hline 
-			
-\textbf{2.a}	&PIR-sensor registrer bevægelse
-			&I en testopstilling, påvirkes PIR-sensoren hvor efter al vandingsaktivitet på det respektive hul indstilles i 30 min
+
+\textbf{3}	&Bruger vælger muligheden ''Tilbage''
+			&Master vender tilbage til hovedmenuen
 			&N/A
 			&N/A \\ \hline 
 			
 \end{longtable}
-	\label{ATUC5} 
+	\label{ATUC7} 
 \end{center}
