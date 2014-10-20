@@ -1,33 +1,36 @@
 \begin{center} \centering \label{UC4}
 	\begin{longtable}{|p{5cm}|p{9cm}|}  %% Longtable = forsætter på næste side
 	\hline
-		\multicolumn{2}{|l|}{\textbf{UC4: Indsamle data}} \\\hline %% HUSK USECASENUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC4: Databehandling}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endfirsthead
 		
 		\multicolumn{2}{l}{...fortsat fra forrige side} \\ \hline %% Til LONGTABLE
-		\multicolumn{2}{|l|}{\textbf{UC4: Indsamle data}} \\\hline %% HUSK USECASENUMMER + NAVN
+		\multicolumn{2}{|l|}{\textbf{UC4: Databehandling}} \\\hline %% HUSK USECASENUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Indsamle data fra omkringliggende jord. Temperatur, fugt og bevægelse			\\\hline
+		\textbf{Mål}								&Indsamle data fra Golfbane og vande		\\\hline
 		\textbf{Initialisering}					&System				\\\hline
 		\textbf{Aktører og Stakeholders}			&Golfbane(Primær)	\\\hline
 		\textbf{Referencer}						&Ingen				\\\hline
 		\textbf{AASH}							&1 per Enhed			\\\hline
-		\textbf{Forudsætning}					&Aktiv Enhed og Aktiv Master			\\\hline
-		\textbf{Efterfølgende tilstand}			&Data gemt i Enhed og logget i Master 	\\\hline
-		\textbf{Hovedforløb}					
-			&I et fast interval udføres nedenstående forløb på Enhed for hver tilkoblede KP:
+		\textbf{Efterfølgende tilstand}			&Data gemt i Enhed og logget i Master + evt. vanding 	\\\hline
+		\textbf{Hovedforløb}						
+		
+		&I et fast interval udføres nedenstående forløb på Enhed for hver tilkoblede Komponentpakke:
 			\begin{enumerate}
 			
 				\item Sensorernes data for temperatur og fugtighed udlæses fra banen
+				
+				\item \label{uc4vandstart} Vanding startes på områder med for lave værdier
+				
+					\textbf{[Undtagelse \ref{uc4vandstart}.a]} Bevægelse registreret 				
 				
 				\item Enhed gemmer data i en buffer til senere udlæsning fra Master				
 			
 			\end{enumerate}
 			
-			
 			I et andet fast interval udføres nedenstående forløb på Master for hver opsatte Enhed:
-			\begin{enumerate}
+			\begin{enumerate}[resume]
 			
 				\item Master henter information fra bufferen i Enheden
 				
@@ -36,15 +39,23 @@
 			
 			
 			 Bevægelsessensoren aktiverer følgende forløb:
-			\begin{enumerate}
+			\begin{enumerate}[resume]
 			
-				\item Enhed modtager besked ved bevægelse 
+				\item \label{uc4motion} Enhed modtager besked ved bevægelse 
+				
+				\item \label{uc4deactivate} Vanding deaktiveres 30 min	
 				
 				\item Enhed gemmer hændelse i en buffer til senere udlæsning fra Master 
 				
-			\end{enumerate}
+			\end{enumerate}\\\hline
 
-				\\\hline
+		\textbf{Undtagelser}
+			&\begin{enumerate}[label=\ref{uc4vandstart}.a.]
+			
+				\item Se punkt \ref{uc4motion} og punkt \ref{uc4deactivate} i hovedforløbet	
+			
+			\end{enumerate}\\\hline
+			
 	\end{longtable}
 \end{center}
 
