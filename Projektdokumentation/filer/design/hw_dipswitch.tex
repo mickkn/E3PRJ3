@@ -1,0 +1,22 @@
+SPI er valgt til kommunikationen imellem Master og Enhed, det betyder også at adresseringen af enheder er HW krævende. Dette problem er løst ved at konstruerer en dipswitch på fire bit, der simulerer en adressering af enheden. Dipswitchen er forsynet med 5 V VCC, der er forbundet til enhedens pins som vist på billedet \ref{lab:Dipswitch}. En afbrudt kontakt vil give 0V(lav) mens en sluttet kontakt vil give 5V(høj).  
+
+\begin{figure}[H] \centering
+{\includegraphics[width=\textwidth]{filer/design/billeder/dipswitch}}
+\caption{Dipswitch}
+\label{lab:Dipswitch}
+\raggedright
+\end{figure} 
+
+\subsection{Driver}
+
+Driveren skal håndtere adresseringen. Metoden læser en bit værdi på de fire pins, herefter returnerer metoden den aflæste værdi.  
+
+
+\subsubsection*{Pseudokode}
+
+\begin{lstlisting}[language=C]
+void getUnitAddress(){
+Read Bit value on four pins 
+Return value
+}
+\end{lstlisting}
