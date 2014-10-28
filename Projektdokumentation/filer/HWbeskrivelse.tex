@@ -85,14 +85,13 @@ For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel som ka
 
 \textbf{Signal-navn}	&\textbf{Funktion} 		&\textbf{Område} &\textbf{Port 1} 	&\textbf{Port 2} 			&\textbf{Kommentar} \\ \hline
 
-SPI:SPI seriel 					&Seriel kommunikation 	& 				&Master (DK\_02)		&Enhed (P\_DK)			&					 \\\hline
+SPI:SPI seriel 			&Seriel kommunikation 	& 				&Master (DK\_02)		&Enhed (P\_DK)			&					 \\\hline
 
 PIR-TTL 					&TTL 					&0\slash3,3V 	&PIR-sensor (PIR\_01) &Enhed (P\_PIR)			&					\\\hline
-VP-TTL 					&TTL 					&0\slash3,3V 	&Enhed (P\_VP)  &Vandpumpe (VP\_01)		&					\\\hline
-		
+VP-TTL 					&TTL 					&0\slash3,3V 	&Enhed (P\_VP)  &Vandpumpe (VP\_01)				&					\\\hline
 					
-FT-TTL				&TTL					&0\slash3,3V 			&Enhed (P\_FT2) &FT-sensor (FT\_02)				&	    				\\\hline
-FT-Analog				&Analog 					&0-3,3V 			&FT-sensor (FT\_01) &Enhed (P\_FT1)				&	    				\\\hline
+FT-TTL					&TTL						&0\slash3,3V 	&Enhed (P\_FT2) &FT-sensor (FT\_02)				&	    				\\\hline
+FT-Analog				&Analog 					&0-3,3V 	\newline +/-10\%	&FT-sensor (FT\_01) &Enhed (P\_FT1)				&	    				\\\hline
 
 \end{tabular}
 \end{small}
@@ -125,7 +124,7 @@ Vandpumpe (VP\_01)	&4 						&SPRINKLER\_1		&P2[0]		&					\\\cline{3-4}
 					&						&SPRINKLER\_4		&P0[3]		&					\\\hline
 		
 FT-sensor (P\_FT)	&5						&SELECT				&P0[0]		&Fugt/Temp.			\\\cline{3-5}
-					&						&PWM\_data			&P2[5]		&					\\\cline{3-5}
+					&						&ANALOG				&P2[5]		&Analog niveau		\\\cline{3-5}
 					&						&BIT0(LSB)			&P2[2]		&Adressering			\\\cline{3-5}
 					&						&BIT1				&P2[3]		&Adressering			\\\cline{3-5}
 					&						&BIT2(MSB)			&P2[4]		&Adressering			\\\hline			
