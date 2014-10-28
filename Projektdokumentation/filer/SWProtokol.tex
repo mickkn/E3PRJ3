@@ -1,0 +1,142 @@
+%% SW arkitektur: Kommunikationsprotokol
+
+En del data skal flyttes mellem Master og de tilkoblede Enheder. Her følger beskrivelsen af hvordan data pakkes mellem de to dele. Den elektriske protokol som anvendes er SPI.
+
+Opsætningen er som følger:
+\textit{Hastighed
+SPI mode
+Antal bits}
+
+Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sendes data mellem Master og Enhed.
+
+\begin{enumerate}
+	\item Master kontrollerer om Enhed er koblet til systemet (UC1)
+	\item Master sender parametre til Enhed (UC2)
+	\item Enhed aktiveres eller deaktiveres af Master (UC3)
+	\item Master beder om data fra Enhed (UC4)
+	\item Enhed sender data til Master (UC4)
+\end{enumerate}
+
+Fælles for alle kommandoer er start- og stopkarakteren. Her vælges karakterene vist i tabel \ref{table:SWProtokol-char}.
+
+\begin{table}[h]
+	\caption{Start- og stopbytes for SPI-kommunikationen}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		& \textbf{ASCII} & \textbf{Hex} \\ 
+		\hline 
+		\textbf{STX} & 'S' / 's' & 0x53 / 0x73 \\ 
+		\hline 
+		\textbf{ETX} & '\textbackslash r' & 0x0D \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-char}
+\end{table}
+
+Dataen til og fra enhederne pakkes i nogle frames som beskrevet i tabel \ref{table:SWProtokol-frames}. Først sendes STX, der efter kommer længden af det efterfølgende data. Her efter kommer kommandoen og evt. data i tilfælde af UC2 og UC4, og der afsluttes med ETX.
+
+\begin{table}[h]
+	\caption{Data formatering for SPI-kommunikation}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|}
+		\hline 
+		\textbf{Byte} & 0 & 1 & 2 & 3..X & X + 1 \\ 
+		\hline 
+		\textbf{Indhold} & STX & <Længde> & <Kommando> & <Data> & ETX \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-frames}
+\end{table}
+
+\subsubsection*{Blokken <Længde>}
+Længde-byten bestemmer hvor meget data der sendes med den pågældende kommando.
+Hvis der ikke sendes andet end selve kommandoen er den 0. Bemærk at dette skal fortolkes som et heltal og ikke en karakter! Der skal sendes \textit{4} ikke '\textit{4}'.
+
+\subsubsection*{Blokken <Kommando>}
+Alle kommandoer er én byte lang og kommandoerne i tabel \ref{tabel:SWProtokol-kommandoer} er de tilgængelige kommandoer. Hvis ikke kommandoen genkendes er der intet svar.
+
+\begin{table}[h]
+\caption{Kommandoer for SPI-kommunikation}
+\centering
+\begin{tabular}{|c|c|l|c|}
+\hline 
+\textbf{ASCII} & \textbf{HEX} & \textbf{Funktion} & \textbf{Afsender}\\ 
+\hline 
+'A' / 'a' & 0x41 / 0x61 & Aktiver Enhed\\ 
+\hline 
+'D' / 'd' & 0x44 / 0x64 & Deaktiver Enhed\\ 
+\hline 
+'V' / 'v' & 0x56 / 0x76 & Verificer Enhed i systemet\\ 
+\hline 
+'P' / 'p' & 0x50 / 0x70 & Parametre sendes til Enhed\\ 
+\hline
+'L' / 'l' & 0x4c / 0x6c & Forespørg logdata fra Enhed\\ 
+\hline
+'M' / 'm' & 0x4d / 0x6d & Returner antal af bytes i buffer\\ 
+\hline
+\end{tabular}
+\label{tabel:SWProtokol-kommandoer}
+\end{table} 
+
+\subsubsection*{Blokken <Data>}
+Data-blokken bruges til at sende data mellem enhederne. Her følger beskrivelsen for hvordan denne formateres. Bemærk den kun bruges til kommandoen \textit{'P'} (UC2) og \textit{'L'} (UC4).
+
+\textbf{Send parametre}
+
+Her skal sendes følgende parametre til Enheden.
+
+\begin{enumerate}
+	\item Nedre fugtighedsgrænse
+	\item Øvre temperaturgrænse
+\end{enumerate}
+
+Disse består af tocifrede tal i hhv. procent og grader Celsius. 
+Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}.
+
+\begin{table}[h]
+	\caption{Data-formatering for parameter-kommando}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|c|}
+		\hline 
+		\textbf{Byte} & 0 & 1 & 2 & 3..4 & 5..6 & 7 \\ 
+		\hline 
+		\textbf{Indhold} & STX & 4 & P & <Fugt> & <Temp> & ETX \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-para}
+\end{table}
+
+\textbf{Send log}
+
+Når masteren skal udhente afventende data i Enheden ved denne ikke på forhånd hvor meget data der skal modtages. Da Masteren kun kan starte kommunikation i SPI startes med at sende en 'L' kommando og efterfølgende læses én byte som returneres af Enheden. Her i står antallet af bytes som skal læses fra Enheden. Masteren påbegynder der efter en række læsninger svarende til antallet af bytes.
+
+Et forløb kunne være som følgende.
+Master sender strengen ''\textit{S0L\textbackslash r}'' og læser her efter bytes indtil ETX modtages.
+Svaret fra Enheden kan være på to former. Den ene er retursvar for logning af KP-data. Denne er vist i tabel \ref{table:SWProtokol-log-kp}. Det kan også være en bevægelse der er registreret. Denne formateres som vist i tabel  \ref{table:SWProtokol-log-bev}.
+
+\begin{table}[h]
+	\caption{Data-formatering for KP-returværdi på Hent log kommando}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|}
+		\hline 
+		\textbf{Byte} & 0 & 1 & 2..3 & 4..5 & 6 \\ 
+		\hline 
+		\textbf{Indhold} & <KP-nr> & <Tid> & <Fugt> & <Temp> & <Sprinkler> \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-log-kp}
+\end{table}
+
+\begin{table}[h]
+	\caption{Data-formatering for Bevægelses-returværdi på Hent log kommando}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline 
+		\textbf{Byte} & 0 & 1\\ 
+		\hline 
+		\textbf{Indhold} & <Bevægelse> & <Tid> \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-log-bev}
+\end{table}
