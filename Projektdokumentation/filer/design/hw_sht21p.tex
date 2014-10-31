@@ -16,10 +16,46 @@ Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret
 \label{lab:sht_filter}
 \end{figure}
 
-Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under de 120 Hz, vil der opnås en stor dæmpning på amplituden således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 VDC. Den nedre og ovre grænse for PWM er henholdsvis 10 \% og 90 \%, hvilket svarer til DC-værdierne 358 mV og 2790 mV.
+Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under de 120 Hz, vil der opnås en stor dæmpning på amplituden således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 VDC. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ved et plot af temp. og fugt som funktion af PWM kan det ses at de to er linære. Funktionerne herfor er opgivet i databladet for SHT21P. 
+
+% PLOT FRA MAPLE HER!
+\begin{figure}[htb]
+\centering
+{\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht_plot_maple.png}}
+\caption{Plot af fugt(rød kurve) og temperatur(blå kurve) som funktion af pwm}
+\label{lab:sht_filter}
+\end{figure}
+
+%Beskriv step i mV pr. grader celsius her. Magter det ikke nu /Jakob
+En måledifferens for 10 \% - 90 \% dutycycle ender ud i 2400 mV og en temperaturdifferens på 155 grader Celsius. Hvilket vil give et step på 15 mV pr. grader Celsius. 
+
+\begin{equation}
+step = \frac{2400}{155} = 15,48 = 15 \frac{mV}{C^o}
+\end{equation}
+
+\begin{figure}[htb]
+\begin{minipage}{0.4\textwidth} 
+\includegraphics[height=150pt]{filer/design/Billeder/sht_dutycycle10.png}
+\caption{\textnormal{10 \% dutycycle}}
+\label{lab:sht_dc10}
+\end{minipage}
+\hspace{0.10\textwidth}
+\begin{minipage}{0.4\textwidth}
+\includegraphics[height=150pt]{filer/design/Billeder/sht_dutycycle90.png}
+\caption{\textnormal{90 \% dutycycle}}
+\label{lab:sht_dc90}
+\end{minipage}
+\hfill
+\end{figure}
+
 \begin{equation}
 f_c = \frac{1}{2 \pi * R1 * C1} = \frac{1}{2 \pi * 6,1*10^3  * 2,2*10^{-6}} = 11,86 Hz
 \end{equation}
-$f_c$ ligger således en dekade under de 120 Hz og da filteret er designet som et 2. ordens filter, vil det dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet ca. 6.7 gange og tilbage er den tilnærmet DC værdi. 
+$f_c$ ligger således en dekade under de 120 Hz og da filteret er designet som et 2. ordens filter, vil det dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet 100 gange og tilbage er den tilnærmet DC værdi.
 
-Grundet at værdien kun er tilnærmet skyldes at der stadig vil være en lille smule oscillation fra PWMen og støj.
+\begin{equation}
+Gain = 20 * \log_{10}(x) <=> 40 dB = 20 * \log_ {10}(x) <=> x = 100
+\end{equation} 
+Da det er en dæmpning der er tale om, vil gain være lig med -40 dB hvilket vil give en x-værdi på 0,01 som er det samme som 100 gange dæmpning.
+
+Grundet at værdien kun er tilnærmet skyldes at der stadig vil være en lille smule oscillation fra PWMen svarende til 33 mV peak-peak. 
