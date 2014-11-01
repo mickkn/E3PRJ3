@@ -13,7 +13,7 @@ Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret
 \centering
 {\includegraphics{filer/design/Billeder/sht21p_filter_pic.png}}
 \caption{Multisim tegninger af 2. ordens filter}
-\label{lab:sht_filter}
+\label{lab:sht_filter_pic}
 \end{figure}
 
 Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under de 120 Hz, vil der opnås en stor dæmpning på amplituden således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 VDC. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ved et plot af temp. og fugt som funktion af PWM kan det ses at de to er linære. Funktionerne herfor er opgivet i databladet for SHT21P. 
@@ -23,7 +23,7 @@ Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. 
 \centering
 {\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht_plot_maple.png}}
 \caption{Plot af fugt(rød kurve) og temperatur(blå kurve) som funktion af pwm}
-\label{lab:sht_filter}
+\label{lab:sht_plot_mable}
 \end{figure}
 
 %Beskriv step i mV pr. grader celsius her. Magter det ikke nu /Jakob
