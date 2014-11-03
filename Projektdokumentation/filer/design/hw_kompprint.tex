@@ -1,14 +1,14 @@
 \subsection{Strømforsyning}
 
-For at frigøre sig fra laboratoriets strømforsyningerne udarbejdes egen strømforsyning. Vha en 230Vac/12Vdc transformerer og egnede spændingens,-regulatorer og delere designes en strømforsyning til netop dette projekt. Masteren (DevKit8000) har sin egen strømforsyning og denne ændres ikke. Enheden (PSoC4) skal forsynes med 5V dc via USB. Relæstyringen skal forsynes med 5V dc. PIR sensoren skal forsynes med 5-20 V dc. Temperatur/fugt sensoren skal forsynes med 3,3V dc. 
+For at frigøre sig fra laboratoriets strømforsyningerne udarbejdes egen strømforsyning. Vha. en 230Vac/12Vdc transformerer og egnede spændingens-regulatorer designes en strømforsyning til netop dette projekt. Masteren (DevKit8000) har sin egen strømforsyning og denne ændres ikke. Enheden (PSoC4) skal forsynes med 5V dc via USB. Relæstyringen skal forsynes med 5V dc. PIR sensoren skal forsynes med 5-20 V dc. Temperatur/fugt sensoren skal forsynes med 3,3V dc. 
 
 230Vac/12Vdc transformeren er fra en gammel computer. Denne kan give 2 amperre og er forsynet med et DC stik (12V) og en stikprop (230Vac). Denne transformer bruges som den er. 
 
-For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra databladet (Side 2/19 LM7805.pdf) Ses forbindelsen af LM7805'ern.
+For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra databladet \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan givet et output på max 1A ved korrekt køling. 
 
 \begin{figure}[H] \centering
 {\includegraphics[width=\textwidth]{filer/design/Billeder/LM7805_DATASHEET}}
-\caption{Forbindelse af LM7805 - Side 2/19 LM7805.pdf}
+\caption{Forbindelse af LM7805 - Side 18/24 LM7805.pdf}
 \label{lab:LM7805}
 \raggedright
 \end{figure}
@@ -22,23 +22,45 @@ Spændingsregulatoren LM7805 er opbygget i mutilsim, sammen med 12V dc forsyning
 \raggedright
 \end{figure}
 
-------
-En løsning 1k ohm?  - en spændingsregulator er nok at foretrække?
-Skal byttes ud med LM317
-------
 
-For at opnå de 3,3V opbygges en spændings deler. 3,3 V er netop 2/3 af 5 V. Herved sættes 3 ens modstande i serie. Herved vil spændingen være ens over alle modstande. 5 V i den ene ende af serien og 0 V ground i den anden, vil der opnås 2 punkter, et med 3,3 V og et med 1,65 V. Spændingsdeleren er opbygget i multisim og simuleringen viser de ønskede 3.3 V
+For at opnå 3,3V benyttes en justerbar spændingsregulator LM317. Denne regulator kan levere 1,2V-33V 3A. Det er fugt,-temperatursensoren der skal forsynes med 3,3V/180uA, det er LM317'erns opgave. 
 
+LM317 er slået op iPad appen "Electronic Toolbox", vha. denne gives hvordan opsætningen af denne skal være for at opnå 3,3V 
  
 \begin{figure}[H] \centering
-{\includegraphics[width=\textwidth]{filer/design/Billeder/33V_SIMULATION}}
-\caption{Simulering af 3.3 V vha. spændingsdeler}
-\label{lab:3.3V_SIMULERING}
+{\includegraphics[width=\textwidth]{filer/design/Billeder/LM317}}
+\caption{Kredsløb for LM137}
+\label{lab:LM317}
 \raggedright
 \end{figure}
 
-Næste step er at føre hhv. 5 V og 3.3 V til de rigtige steder. Dette gøres vha. et tilslutnignsprint
+Figur \ref{lab:LM317_calc} viser hvorledes appen beregner en værdi for modstanden R2, når Vout er sat til 3,3V og modstanden R1 anbefales til 240 ohm. I følge appens beregning skal R2 være 393,6 ohm.
+
+\begin{figure}[H] \centering
+{\includegraphics[width=\textwidth]{filer/design/Billeder/LM317_calc}}
+\caption{Kredsløb for LM137}
+\label{lab:LM317_calc}
+\raggedright
+\end{figure}
+
+Figur \ref{lab:LM317_SIMULERING} viser simuleringen af LM317 spændingsregulatoren. Outputtet er 3,3V som forventet. Der simuleres med en modstand R2 på 390 ohm og ikke 393,6 ohm.
+
+\begin{figure}[H] \centering
+{\includegraphics[width=\textwidth]{filer/design/Billeder/LM317_SIMULATION}}
+\caption{Simulering i Multisim ud fra Electronic Toolbox appens værdier}
+\label{lab:LM317_SIMULERING}
+\raggedright
+\end{figure}
+
 
 \subsection{Tilslutningsprint}
 
-Tilslutningsprintet sørger for at sammenkoble Enheden med de ønskede sensorer, samt at forsyne Enhed og sensorer med ønsket forsyning.
+Tilslutningsprintet, se figur \ref{lab:PSU_connections}, sørger for at sammenkoble Enheden med de ønskede sensorer, samt at forsyne Enhed og sensorer med ønsket forsyning.
+
+\begin{figure}[H] \centering
+{\includegraphics[width=\textwidth]{filer/design/Billeder/tilslutningsprint}}
+\caption{Kredsløb over samlet spændingsforsyning (3,3V og 5V) og tilslutninger til PSoC4}
+\label{lab:PSU_connections}
+\raggedright
+\end{figure}
+
