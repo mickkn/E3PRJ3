@@ -18,10 +18,10 @@ Fælles for de to er at tidsstemplet altid sendes med.
 Fra standardbiblioteket for \verb'C++' vælges datatypen \verb+vector+ som container. Dette er en dynamisk array-struktur som automatisk udvides og mindskes efter behov.
 Ved at anvende \verb+vector+en med \verb+string+ som undertype er det nemt at identificerer indholdene og formaterer dem som nødvendigt.
 
-Som nævnt er der to muligheder for ''datapakker''. I tabel \ref{table:SWDataprotokol-sensor} og \ref{table:SWDataprotokol-bevaegelse} er deres opbygning vist.
+Som nævnt er der flere muligheder for ''datapakker''. I tabellerne \ref{table:SWDataprotokol-sensor}, \ref{table:SWDataprotokol-bevaegelse} og \ref{table:SWDataprotokol-error} er deres opbygninger vist.
 
 Første streng der læses afgør hvor mange af de efterfølgende strenge som høre her til. Hvis det første der modtages er ''\verb+D+'', betyder det at der kommer information fra sensorene og der skal læses fire efterfølgende strenge.
-Hvis der modtages et ''\verb+B+'' betyder det at der er registreret bevægelse, og der skal kun læses en dato efterfølgende.
+Hvis der modtages et ''\verb+B+'' betyder det at der er registreret bevægelse, og der skal kun læses en dato efterfølgende. Hvis der modtages et ''\verb+E+'' er der en fejl, og fejlkoden fra Enheden sendes.
 
 \begin{table}[h]
 	\caption{Dataformatering ifm. sensordata}
@@ -49,16 +49,29 @@ Hvis der modtages et ''\verb+B+'' betyder det at der er registreret bevægelse, 
 	\label{table:SWDataprotokol-bevaegelse}
 \end{table}
 
-Et eksempel på strukturen af en datahentning er vist i tabel \ref{table:SWDataprotokol-eksempel}. Her er to stykker data. Det første er en registrering af bevægelse klokken 12.11 og den anden er en almindelig datalogning klokken 12.30.
+\begin{table}[h]
+	\caption{Dataformatering ifm. fejl}
+	\centering
+	\begin{tabular}{|c|c|c|}
+		\hline 
+		\textbf{Type} & \textbf{Dato} & \textbf{Fejlkode} \\ 
+		\hline 
+		''E'' & ''HH.mm DD.MM.YY'' & ''XXXX'' \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWDataprotokol-error}
+\end{table}
+
+Et eksempel på strukturen af en datahentning er vist i tabel \ref{table:SWDataprotokol-eksempel}. Her er to stykker data. Det første er en registrering af bevægelse klokken 12.11 og den anden er en almindelig datalogning klokken 12.30. Der er også sket en fejl klokken 12.44.
 
 \begin{sidewaystable}[h]
 	\caption{Dataformatering ifm. log-information}
 	\centering
-	\begin{tabular}{|c|c|c|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
 		\hline
-		\verb+vector<string>[0]+ & \verb+[1]+ & \verb+[2]+ & \verb+[3]+ & \verb+[4]+ & \verb+[5]+ & \verb+[6]+ \\
+		\verb+vector<string>[0]+ & \verb+[1]+ & \verb+[2]+ & \verb+[3]+ & \verb+[4]+ & \verb+[5]+ & \verb+[6]+ & \verb+[7]+ & \verb+[8]+ & \verb+[9]+ \\
 		\hline 
-		''\verb+B+'' & ''\verb+12.11 03.11.14+'' & ''\verb+D+'' & ''\verb+12.30 03.11.14+'' & ''\verb+014.5+'' & ''\verb+020+'' & ''\verb+Slukket+'' \\ 
+		''\verb+B+'' & ''\verb+12.11 03.11.14+'' & ''\verb+D+'' & ''\verb+12.30 03.11.14+'' & ''\verb+014.5+'' & ''\verb+020+'' & ''\verb+Slukket+'' & ''\verb+E+'' & ''\verb+12.44 03.11.14+'' & ''\verb+013+'' \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWDataprotokol-eksempel}
