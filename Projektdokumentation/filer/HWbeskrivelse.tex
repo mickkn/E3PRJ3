@@ -5,7 +5,7 @@
 \label{lab:bdd}
 \raggedright
 \end{figure}
-BDD diagrammet giver et overblik over hvad det samlede system består af. \newline \newline
+BDD diagrammet giver et overblik over hvad det samlede EasyWater8000 system består af, samt indbyrdes multiplicitet. FT sensoren er en kombineret fugt- og temperatursensor.  \newline \newline
 
 \begin{figure}[H] \centering
 \subsection{BDD Master (MK)}
@@ -14,7 +14,7 @@ BDD diagrammet giver et overblik over hvad det samlede system består af. \newli
 \label{lab:bddmaster}
 \raggedright
 \end{figure}
-BDD diagrammet for Master, viser at Master består af et Devkit8000, som kobles op med op til 18 Enheder.
+BDD diagrammet for Master, viser at Master består af ét Devkit8000, som kobles op med en til 18 Enheder.
 
 \begin{figure}[H] \centering
 \subsection{BDD Enhed (MK)}
@@ -33,16 +33,16 @@ BDD diagrammet for Enhed, viser at én Enhed består af én PSoC som kan kobles 
 \raggedright
 \end{figure}
 IBD diagrammet giver et internt overblik over hvordan hele systemet er forbundet. Der ses hvilke typer signaler der bliver sendt imellem de forskellige blokke. \newline \newline
-\textbf{Spændingsforsyning}: Spændingsforsyningens forbindelser er ikke påtegnet da dette ville give et uoverskueligt diagram, de er i stedet beskrevet med standardflowports. Den forsyner PSoC, FT sensor og PIR-sensor, master(devkit8000) har sin egen spændingsforsyning.  \newline \newline
+\textbf{Spændingsforsyning}: Spændingsforsyningens forbindelser er ikke påtegnet da dette ville give et uoverskueligt diagram, de er i stedet beskrevet med standardflowports. Spændingsforsyningen forsyner enhed (PSoC), FT sensor, PIR-sensor samt relæet i vandpumpen. Master(devkit8000) har sin egen spændingsforsyning.  \newline \newline
 \textbf{FT sensor}: Blokken beskriver at fugt- og temperatursensor er integreret i en chip. \newline \newline
-\textbf{Relæ styring}: Blokken beskriver at vandpumpen består af et relæ der står for at tænde/slukke for den. \newline \newline
+\textbf{Relæ styring}: Blokken beskriver at vandpumpen består af et relæ, der står for at tænde/slukke for den. \newline \newline
 
 \begin{table}[H] %% Blok og Signal Tabel
 \subsection{Grænseflade (HW)}
-For at opnå forståelse for signalerne mellem blokkene laves en grænseflade beskrivelse der beskriver de enkelte blokkes porte og hvilke signaler der løber imellem disse.
+For at opnå forståelse for signalerne mellem blokkene laves en grænseflade beskrivelse, der beskriver de enkelte blokkes porte og hvilke signaler der løber imellem disse.
 
 \subsubsection{Blok beskrivelse (HW)}
-Til at beskrive blokkene nærmere er anvendt tabeller som ses herunder. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
+Til at beskrive blokkene nærmere anvendes tabeller som ses herunder. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
 
 \caption{Tabel med beskrivelse af respektive blokke}
 \begin{small}
