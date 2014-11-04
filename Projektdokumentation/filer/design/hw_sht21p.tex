@@ -9,6 +9,7 @@
 
 Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret temperatur og fugtsensor SHT21P. Denne er valgt ud fra at der således ikke behøves en sensor for hver af de to målinger, samt at denne giver et analog signal med i designet. SHT21P sender en PWM ud som midles til en DC-spænding med et 2. ordens lavpasfilter. Denne spændingen sendes ind i en A/D-convertor i PSoCen hvor denne behandles i en funktion, for så at returnere en temperatur eller fugt. Et select ben på SHT21P bestemmer hvorvidt denne måler temp. eller fugt. SCL HIGH(1) giver fugt output, SCL LOW(0) giver temperatur output.
 
+\subsection{Foranliggende filter}
 \begin{figure}[htb]
 \centering
 {\includegraphics{filer/design/Billeder/sht21p_filter_pic.png}}
@@ -16,7 +17,8 @@ Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret
 \label{lab:sht_filter_pic}
 \end{figure}
 
-Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under de 120 Hz, vil der opnås en stor dæmpning på amplituden således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 VDC. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ved et plot af temp. og fugt som funktion af PWM kan det ses at de to er linære. Funktionerne herfor er opgivet i databladet for SHT21P. 
+Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under de 120 Hz, vil der opnås en stor dæmpning på amplituden således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 VDC. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ved et plot af temperatur og fugt som funktion af PWM kan det ses at de to er lineære. Funktionerne herfor er opgivet i databladet for SHT21P. 
+
 
 % PLOT FRA MAPLE HER!
 \begin{figure}[htb]
@@ -26,23 +28,24 @@ Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. 
 \label{lab:sht_plot_mable}
 \end{figure}
 
+\subsection{Præcisions- og støjhåndtering}
 %Beskriv step i mV pr. grader celsius her. Magter det ikke nu /Jakob
-En måledifferens for 10 \% - 90 \% dutycycle ender ud i 2400 mV og en temperaturdifferens på 155 grader Celsius. Hvilket vil give et step på 15 mV pr. grader Celsius. 
+En måledifferens for 10 \% - 90 \% duty cycle ender ud i 2400 mV og en temperaturdifferens på 155 ${\circ}$C og da de er lineære kan et step på 15 mV pr. $^{\circ}$C beregnes:
 
 \begin{equation}
-step = \frac{2400}{155} = 15,48 = 15 \frac{mV}{C^o}
+step = \frac{2400}{155} = 15,48 = 15 \frac{mV}{^{\circ}C}
 \end{equation}
 
 \begin{figure}[htb]
 \begin{minipage}{0.4\textwidth} 
 \includegraphics[height=150pt]{filer/design/Billeder/sht_dutycycle10.png}
-\caption{\textnormal{10 \% dutycycle}}
+\caption{\textnormal{10 \% duty cycle}}
 \label{lab:sht_dc10}
 \end{minipage}
 \hspace{0.10\textwidth}
 \begin{minipage}{0.4\textwidth}
 \includegraphics[height=150pt]{filer/design/Billeder/sht_dutycycle90.png}
-\caption{\textnormal{90 \% dutycycle}}
+\caption{\textnormal{90 \% duty cycle}}
 \label{lab:sht_dc90}
 \end{minipage}
 \hfill
@@ -58,4 +61,11 @@ Gain = 20 * \log_{10}(x) <=> 40 dB = 20 * \log_ {10}(x) <=> x = 100
 \end{equation} 
 Da det er en dæmpning der er tale om, vil gain være lig med -40 dB hvilket vil give en x-værdi på 0,01 som er det samme som 100 gange dæmpning.
 
-Grundet at værdien kun er tilnærmet skyldes at der stadig vil være en lille smule oscillation fra PWMen svarende til 33 mV peak-peak. 
+Grundet at værdien kun er tilnærmet skyldes at der stadig vil være en lille smule oscillation fra PWMen svarende til 33 mV peak-peak. Der vil altså være en usikkerhed i DC-værdien svarende til 2 $^{\circ}$C alene fra filteret.
+
+Dette kan løses i softwaren ved evt. at tage et antal samples og så midle de værdier der er målt med simple gennemsnitsberegning. 
+
+\begin{equation}
+V_{inADC_{avg}} = \frac{V_{in1} + V_{in2} + .. V_{inN}}{N}
+\end{equation} 
+\textit{hvor N = antal samples}
