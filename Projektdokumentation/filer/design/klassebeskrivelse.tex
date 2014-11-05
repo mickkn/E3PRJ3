@@ -1,0 +1,41 @@
+%% SW design: klassebeskrivelse
+
+Her følger klassebeskrivelser for alle klasser til PC. \\
+
+{\centering
+\textbf{SPI_API klasse}\par
+}
+\textbf{Ansvar:} At være det lag imellem applications laget og device driver laget. Skal håndtere snakken med device driveren til SPI\_ \\
+
+int activate( int unit ) const \\
+\textbf{Parametre:}  \\
+\textbf{Returværdi:} returnere en integer som er 0 hvis operationen gik godt. Ved fejl returneres en negativ integer i overenstemmelse med fejl-listen \\
+\textbf{Beskrivelse:} \\
+
+int deactivate( int unit ) const \\
+\textbf{Parametre:}  \\
+\textbf{Returværdi}: returnere en integer som er 0 hvis operationen gik godt. Ved fejl returneres en negativ integer i overenstemmelse med fejl-listen  \\
+\textbf{Beskrivelse:} \\
+
+int verify( int unit ) const \\
+\textbf{Parametre:}  \\
+\textbf{Returværdi:} returnere en integer som er 0 hvis operationen gik godt. Ved fejl returneres en negativ integer i overenstemmelse med fejl-listen  \\
+\textbf{Beskrivelse:} \\
+
+int config( int unit, vector<string> ) const \\
+\textbf{Parametre:}  \\
+\textbf{Returværdi:} returnere en integer som er 0 hvis operationen gik godt. Ved fejl returneres en negativ integer i overenstemmelse med fejl-listen  \\
+\textbf{Beskrivelse:} \\
+
+int getLog( & vector<string>  ) \\
+\textbf{Parametre:}  \\
+\textbf{Returværdi:} returnere en integer som er 0 hvis operationen gik godt. Ved fejl returneres en negativ integer i overenstemmelse med fejl-listen  \\
+\textbf{Beskrivelse:} \\
+
+
+
+
+
+
+
+
