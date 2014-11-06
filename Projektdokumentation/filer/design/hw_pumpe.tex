@@ -1,18 +1,6 @@
 Sprinkler-pumpe systemet består af en Hunter PS Pop-up sprinkler og en Alpha 2 pumpe fra Grundfoss, disse forbindes med passende slanger og fittings. For at styre sprinkleren, skal Alpha 2 pumpen kunne tændes og afbrydes. Dette gøres via et 230V/5V relæ. Dette relæ styres via én pin Enheden. 
 
-\subsection{Driver}
 
-Driveren der skal håndtere Sprinkler-pumpe systemet, skal kunne aktivere/deaktivere det forudbestemte sprinklerrelæ. Metoden modtager en adresse parameter samt en on/off parameter. Herefter sætter metoden en af den forudbestemte pin på Enheden høj/lav (3.3V/0V). Herefter søger relæstyringen og 230V/5V relæet for hhv. tænde/slukke for sprinkleren. 
-
-
-\subsubsection*{Pseudokode}
-
-\begin{lstlisting}[language=C]
-void controlSprinkler(int address, bool on_off){
-Manage Sprinkler address
-Activate/deactivate corresponding Sprinkler
-}
-\end{lstlisting}
 
 
 
@@ -49,16 +37,36 @@ I følge databladet for Finder 40.52s (figur \ref{lab:finder4052s}), kræver rel
 \raggedright
 \end{figure} 
 
-PSoC'ens udgang giver hverken størm eller spænding nok til at trække relæet. PSoC'en afgiver 3,3V og relæet kræver 5V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 5V og 100mA, Derfor skal transistoren opfylde dette krav. Det gør BC547 
+PSoC'ens udgang giver hverken strøm eller spænding nok til at trække relæet. PSoC'en afgiver 3,3V og relæet kræver 5V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 5V og 100mA, derfor skal transistoren opfylde dette krav, det gør BC517 den kan leverer 500 mA. \newline
+
+R1(Ibase) modstanden er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Modstanden er beregnet udfra ohmslov og der er valgt en modstand på 100 ohm, der begrænser strømmen til 33 mA. Dioden er indsat for at beskytte transistoren.
+
+\begin{equation}
+Ibase = \frac{3,3V}{100\Omega} = 0,033A = 33mA
+\end{equation}
 
 \begin{figure}[H] \centering
-{\includegraphics[width=0.3\textwidth]{filer/design/Billeder/BC547}}
-\caption{BC547 opsætning}
-\label{lab:BC547}
+{\includegraphics[width=0.3\textwidth]{filer/design/Billeder/BC517}}
+\caption{BC517 opsætning}
+\label{lab:BC517}
 \raggedright
 \end{figure} 
 
-Når PSoC'ens pin til BC547 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emittier på transistoren, herved er der 5V over relæets spole og relæets kontaktsæt klikker herved. 
+Når PSoC'ens pin til BC517 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emittier på transistoren, herved er der 5V over relæets spole og relæets kontaktsæt klikker herved. 
+
+\subsection{Driver}
+
+Driveren der skal håndtere Sprinkler-pumpe systemet, skal kunne aktivere/deaktivere det forudbestemte sprinklerrelæ. Metoden modtager en adresse parameter samt en on/off parameter. Herefter sætter metoden en af den forudbestemte pin på Enheden høj/lav (3.3V/0V). Herefter søger relæstyringen og 230V/5V relæet for hhv. tænde/slukke for sprinkleren. 
+
+
+\subsubsection*{Pseudokode}
+
+\begin{lstlisting}[language=C]
+void controlSprinkler(int address, bool on_off){
+Manage Sprinkler address
+Activate/deactivate corresponding Sprinkler
+}
+\end{lstlisting}
 
 
 
