@@ -26,12 +26,12 @@
 				\begin{enumerate}
 					\item \label{uc1indtast} Master beder bruger om at indtaste informationer
 					
-					\item \label{uc1indtast_fejl} Bruger indtaster navn og adresse på Enhed
+					\item \label{uc1indtast_fejl} Bruger indtaster \textcolor{red}{navn og adresse} på Enhed
 					
-						\textbf{[Undtagelse \ref{uc1indtast}.a]} \newline
+						\textbf{[Undtagelse \ref{uc1indtast_fejl}.a]} \newline
 						Indtastede værdier er ikke gyldige
 					
-					\item Masterenhed tilføjer Enhed til systemet med default parametre
+					\item Master tilføjer Enhed til systemet med default parametre
 					
 					\item Enhed forbindes til kommunikationsnetværket
 					
@@ -51,27 +51,27 @@
 					
 					\item Bruger indtaster adresse på Enhed
 					
-					\item Master deaktiverer Enhed
+					\item Master deaktivere Enhed
 					
 					\item Master sletter Enhed fra systemet
 				
 				\end{enumerate}
 				
-				\item Masterenhed opdaterer liste med opsatte enheder
+				\item Master opdaterer liste med opsatte enheder
 				
 				\item Bruger kan returnere til hovedmenu eller opsætte ny enhed (Gå til UC1.\ref{uc1valg})
 			\end{enumerate}\\\hline
 		\textbf{Undtagelser}
 			&\begin{enumerate}[label=\ref{uc1indtast}.a]
 				
-				\item Masterenhed viser fejlbesked omkring ugyldige værdier
+				\item Master viser fejlbesked omkring ugyldige værdier
 				
 					\subitem Gå til UC1.\ref{uc1indtast}
 			\end{enumerate}
 			
 			\begin{enumerate}[label=\ref{uc1verif}.a]
 				
-				\item Masterenhed viser fejlbesked angående verificering af enheden
+				\item Master viser fejlbesked angående verificering af enheden
 				
 				\item Bruger kan forsøge igen (Gå til UC1.\ref{uc1verif} eller afbryde)
 

@@ -17,19 +17,22 @@
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
-				\item Bruger vælger Konfig i hovedmenu
+				\item Bruger vælger ''Konfig'' i hovedmenu
 				
 				\item \label{uc2afbryd}Bruger vælger den Enhed, der ønskes omkonfigureret.\newline
 				\textbf{[Undtagelse \ref{uc2afbryd}.a]} \newline
 					Bruger vælger afbryd
 				
-				\item Bruger ændrer parametre på den valgte Enhed som f.eks. fugtighedsgrænsen.
-				
-				\item \label{uc2afbryd2} Bruger vælger ''Gem''\newline
+				\item \label{uc2afbryd2}Bruger ændrer parametre på den valgte Enhed.
 				\textbf{[Undtagelse \ref{uc2afbryd2}.a]} \newline
+					Der indtastes ugyldige værdier	
+									
+				\item \label{uc2afbryd3} Bruger vælger ''Gem''\newline
+				\textbf{[Undtagelse \ref{uc2afbryd3}.a]} \newline
 					Bruger vælger afbryd
 				
 				\item Master sender de nye indstillinger til den valgte Enhed. 
+			
 	
 			\end{enumerate}\\\hline
 		\textbf{Undtagelser}
@@ -42,9 +45,17 @@
 			
 			\begin{enumerate}[label=\ref{uc2afbryd2}.a]
 				
+				\item Der indtastes ugyldige værdier	
+				
+					\subitem Skærmen viser fejlbesked
+			\end{enumerate}			
+			
+			\begin{enumerate}[label=\ref{uc2afbryd3}.a]
+				
 				\item Bruger vælger ''afbryd''
 				
 				\subitem Skærmen viser Konfig-menu
+				
 
 			\end{enumerate}														\\\hline
 	\end{longtable}

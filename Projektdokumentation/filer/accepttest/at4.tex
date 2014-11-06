@@ -19,57 +19,50 @@
 \textbf{Godkendt/ \newline Kommentar} \\ \hline 
 \endhead
 
-\textbf{1}	&Der laves en testopstilling hvori det er muligt at manipulere omgivelserne til sensoren således at den udlæste data ændres
-			&En testopstilling med PSoC viser i en terminal at sensorerne opfanger ændringer fra omgivelserne i realtime
+\textbf{1}	&Der laves en testopstilling hvori det er muligt at ændre omgivelserne til sensoren således at den udlæste data ændres
+			&Visuel: Udlæst data svarer overens med fysiske ændringer
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{2}	&Der manipuleres med omgivelserne således at grænseværdier for enheden overskrides
-			&Det måles at enhed sender signal til sprinkler om at vanding er nødvendigt
+\textbf{2}	&Der ændres på omgivelserne således at grænseværdier for Enheden overskrides
+			&Pumpe starter og begynder at vande
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{2.a}	&PIR-sensoren påvirkes
-			&Vandingen bliver afbrudt på baggrund af registreret bevægelse 
+\textbf{2.a}	&PIR-sensoren påvirkes med bevægelse
+			&Vandingen bliver afbrudt på baggrund af registreret bevægelse.
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{3}	&Der testes visuelt at enhed har gemt behandlingerne af data i buffer
-			&Data er gemt og kan tilgås via Master
+\textbf{3}	&Der testes visuelt at Enhed har gemt behandlingerne af data i buffer
+			&Data er gemt og kan tilgås via Masterens log
 			&N/A
 			&N/A \\ \hline 
 
-\textbf{4}	&Bruger tilgår de gemte data via Master
-			&Informationen præsenteres for bruger på Masters skærm
+\textbf{4}	&Master henter information fra bufferen i Enhed
+			&Testes i 5
 			&N/A
 			&N/A \\ \hline 
 			
 \textbf{5}	&Bruger tilgår log i Master 
-			&Informationen ligger tilgængelig i loggen
+			&Visuel: Informationen ligger tilgængelig i loggen
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{6}	&Ved test måles det at der sendes et signal til enhed ved registreret bevægelse
+\textbf{6}	&Ved test måles det at der sendes et signal til Enhed ved registreret bevægelse
 			&Enhed registrer signalet fra PIR-sensor 
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{7}	&Ved test ændres værdier for enhed således at denne ville starte en vanding
+\textbf{7}	&Ved test ændres værdier for Enhed således at denne ville starte en vanding
 			&Vandingen er ikke mulig i 30 min.
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{8}	&Der testes visuelt at enhed har gemt behandlingerne af data i buffer
-			&Data er gemt og tilgås via Master
+\textbf{8}	&Der testes visuelt at Enhed har gemt behandlingerne af data i buffer
+			&Testes i 5
 			&N/A
-			&N/A \\ \hline 
-			
-\textbf{6}	&Data gemmes i Masters hukommelse
-			&Data gemmes og kan efterfølgende tilgås manuelt
-			&N/A
-			&N/A \\ \hline 		
-			
-			
+			&N/A \\ \hline 					
 			
 \end{longtable}
 	\label{ATUC4} 
