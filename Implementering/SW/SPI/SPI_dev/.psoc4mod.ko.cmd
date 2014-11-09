@@ -1,0 +1,5 @@
+d 2137 verbiste_0.1.41-1.dsc
+ 39d6199bdf962c714de47b531177cb27d53e4a35 751059 verbiste_0.1.41.orig.tar.gz
+ 8906f73dab564c512f64e09aec1a62230fce7e04 8768 verbiste_0.1.41-1.debian.tar.xz
+Checksums-Sha256:
+ e4cfca291235a75c7b31086f3c19257c88c36fc57432ea3e43c6e67d402691d6 2
