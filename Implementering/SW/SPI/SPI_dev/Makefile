@@ -29,7 +29,7 @@ clean:
 else
     # called from kernel build system: just declare what our modules are
     obj-m += SPI_devmod.o hotplug_SPI_dev.o
-    psoc4mod-objs := SPI_dev.o
+    SPI_devmod-objs := SPI_dev.o
 
 endif
 

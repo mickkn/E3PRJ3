@@ -1,0 +1,1 @@
+cmd_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_devmod.o := arm-angstrom-linux-gnueabi-ld -EL    -r -o /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_devmod.o /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o 
