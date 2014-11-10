@@ -446,6 +446,7 @@ deps_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := \
   /home/stud/sources/linux-3.2.6/arch/arm/include/asm/module.h \
     $(wildcard include/config/arm/unwind.h) \
   include/trace/events/module.h \
+  /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.h \
 
 /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o: $(deps_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o)
 

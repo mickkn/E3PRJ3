@@ -5,24 +5,24 @@
 	<section name="org.eclipse.debug.ui.sourcelookup.SourceLookupDialog">
 		<item value="525" key="DIALOG_WIDTH"/>
 		<item value="113" key="DIALOG_Y_ORIGIN"/>
-		<item value="249" key="DIALOG_X_ORIGIN"/>
 		<item value="406" key="DIALOG_HEIGHT"/>
+		<item value="249" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.debug.ui.STRING_VARIABLE_SELECTION_DIALOG_SECTION">
 		<item value="386" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="203" key="DIALOG_X_ORIGIN"/>
 		<item value="585" key="DIALOG_HEIGHT"/>
+		<item value="203" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="org.eclipse.debug.ui.LAUNCH_CONFIGURATIONS_DIALOG_SECTION">
-		<item value="750" key="DIALOG_WIDTH"/>
+		<item value="752" key="DIALOG_WIDTH"/>
 		<item value="org.eclipse.cdt.launch.applicationLaunchType, org.eclipse.cdt.launch.remoteApplicationLaunchType, " key="org.eclipse.debug.ui.EXPANDED_NODES"/>
-		<item value="765" key="DIALOG_HEIGHT"/>
+		<item value="640" key="DIALOG_HEIGHT"/>
 		<item value="237" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_1"/>
-		<item value="762" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_2"/>
 		<item value="1|Lucida Grande|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="762" key="org.eclipse.debug.ui.DIALOG_SASH_WEIGHTS_2"/>
 	</section>
 	<section name="ExportLaunchConfigurations">
 		<item value="false" key="overwrite"/>

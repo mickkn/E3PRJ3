@@ -29,7 +29,6 @@ __attribute__((section("__versions"))) = {
 	{ 0xa173d1ae, "spi_setup" },
 	{ 0xfa2a45e, "__memzero" },
 	{ 0x27e1a049, "printk" },
-	{ 0x42224298, "sscanf" },
 	{ 0xfe617db, "driver_unregister" },
 	{ 0x827fc0db, "spi_bus_type" },
 	{ 0xf327507b, "spi_sync" },
@@ -46,4 +45,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "A2360E3C880A93AABE2B658");
+MODULE_INFO(srcversion, "473FBE19BBBFA16BA9D689C");

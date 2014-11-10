@@ -5,6 +5,7 @@
 #include <linux/spi/spi.h>
 #include <linux/module.h>
 #include <linux/wait.h>
+#include "SPI_dev.h"
 
 #define PSOC4_CAPSENSE		0x01
 #define PSOC4_DIETEMP		0x02
@@ -22,7 +23,7 @@
 
 MODULE_AUTHOR("MIPO - Mick & Poul");
 MODULE_LICENSE("Dual BSD/GPL");
-MODULE_DESCRIPTION("EXERCISE7 - LDD with SPI");
+MODULE_DESCRIPTION("SPI Project 3 - EasyWater8000");
 
 /* Char Driver Globals */
 static struct cdev psoc4Dev;
@@ -109,7 +110,31 @@ static struct spi_driver psoc4_spi_driver = {
  * PSoC4 SPI Init
  * Registers the spi driver with the SPI host
  */
-int psoc4_cdrv_init(void)
+int psoc4_spi_init(void)
+{  
+  int err;
+
+  err = spi_register_driver(&psoc4_spi_driver);
+  
+  if(err<0)
+    printk (KERN_ALERT "Error %d registering the PSoC4 SPI driver\n", err);
+  
+  return err;
+}
+
+/*
+ * SPI Exit
+ */
+void psoc4_spi_exit(void)
+{
+      spi_unregister_driver(&psoc4_spi_driver);
+}
+
+/*
+ * PSoC4 CDRV Init
+ * Registers the spi driver with the SPI host
+ */
+static int __init psoc4_cdrv_init(void)
 { 
       int err;
       
@@ -117,7 +142,7 @@ int psoc4_cdrv_init(void)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_cdrv_init\n");       
       
       /* Registers the spi driver with the SPI host*/
-      err = spi_register_driver(&psoc4_spi_driver);
+      err = psoc4_spi_init();
       if(err){
 	printk (KERN_ALERT "Error %d registering the psoc4 SPI driver\n", err);
 	ERRGOTO(error, "Failed SPI Initialization\n");
@@ -145,14 +170,14 @@ int psoc4_cdrv_init(void)
   unregister_chrdev_region(devno, NBR_PSOC4_CH);
 
   err_spi_init:
-  spi_unregister_driver(&psoc4_spi_driver);
+  psoc4_spi_exit();
   
   error:
   return err;
 }
 
 /*
- * PSoC4 SPI Exit
+ * PSoC4 CDRV Exit
  * Exit routine called from character driver.
  * Unregisters the driver from the SPI host
  */
@@ -195,6 +220,8 @@ int psoc4_cdrv_open(struct inode *inode, struct file *filep)
       return 0;
 }
 
+
+
 /*
  * PSoC4 CDRV RELEASE
  * 
@@ -221,11 +248,10 @@ int psoc4_cdrv_release(struct inode *inode, struct file *filep)
  * Writes 8-bit content to register at 
  * the provided PSOC4 function address
  */
-int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, u8 data)
+int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, char data)
 {
-      struct spi_transfer t[2];	// Number of packages
+      struct spi_transfer t[1];	// Number of packages
       struct spi_message m;
-      u8 cmd;			// Local var for WRITE bit and ADDRESS
 
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_spi_write_reg8\n");
@@ -233,14 +259,6 @@ int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, u8 data)
       /* Check for valid spi device */
 	if(!spi)
 	return -ENODEV;
-
-      /* Create start WR CMD byte:
-      *
-      * | 0 | 1 |     ADDR       |
-      *   7   6  5  4  3  2  1  0
-      */ 
-      
-      cmd =  (0<<7) | (1<<6) | (addr & 0x1F);
       
       /* Init Message */
       memset(&t, 0, sizeof(t)); 
@@ -251,15 +269,10 @@ int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, u8 data)
 	printk(KERN_DEBUG "PSOC4: Write Reg8 Addr 0x%x Data 0x%02x\n", addr, data);
       
       /* Configure tx/rx buffers */
-      t[0].tx_buf = &cmd;
+      t[0].tx_buf = &data;
       t[0].rx_buf = NULL;
       t[0].len = 1;
       spi_message_add_tail(&t[0], &m);
-      
-      t[1].tx_buf = &data;
-      t[1].rx_buf = NULL;
-      t[1].len = 1;
-      spi_message_add_tail(&t[1], &m);
       
       /* Transmit SPI Data (blocking) */
       spi_sync(m.spi, &m);
@@ -273,44 +286,46 @@ int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, u8 data)
 ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf, 
 		       size_t count, loff_t *f_pos)
 {
-      int psoc4_function = PSOC4_RGBLED;	// PSoC4 function to Write too
+      int cmd = PSOC4_RGBLED;	// PSoC4 function to Write too
       
-      int err, myVar, minor, len;
+      int minor, len;
       char myArray[MAXLEN];
-
+      
       minor = MINOR(filep->f_dentry->d_inode->i_rdev);
       
-      printk(KERN_ALERT "Writing to PSoC4 [Minor] %i \n", minor);
+      if(MODULE_DEBUG)
+	printk(KERN_ALERT "Writing to PSoC4 [Minor] %i \n", minor);
     
       /* Limit copy length to MAXLEN allocated and Copy from user */
       len = count < MAXLEN ? count : MAXLEN;
       if(copy_from_user(myArray, ubuf, len))
-	return -EFAULT;
+	printk(KERN_ALERT "ERROR in copy_from_user");
 	    
       /* Pad null termination to string */
-      myArray[len] = '\0';  
+      //myArray[len] = '\0';  
       
       // http://www.gnugeneration.com/mirrors/kernel-api/r4343.html
-      err = copy_from_user(myArray, ubuf, sizeof(ubuf));
+      /*err = copy_from_user(myArray, ubuf, sizeof(ubuf));
 
       if(err != 0)
       {
 	printk(KERN_ALERT "ERROR in copy_from_user, ERRORCODE: %d\n" , err);
-      }
+      }*/
 
-      sscanf(myArray, "%i", &myVar);
+      //sscanf(myArray, "%d", &myVar);
+      
       
       /*
       * Do something
       */
       if(MODULE_DEBUG)
-	printk(KERN_ALERT "Writing %i to address: %d\n", myVar, psoc4_function);
+	printk(KERN_ALERT "Writing %d to address: %d\n", myArray[0], (u8)cmd);
 
       /*
        * Call SPI WRITE
        */
       
-      psoc4_spi_write_reg8(psoc4_spi_device, psoc4_function, (u8)myVar);
+      psoc4_spi_write_reg8(psoc4_spi_device, cmd, myArray[0]);
       
       
       /* Legacy file ptr f_pos. Used to support 
@@ -330,7 +345,7 @@ ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf,
  */
 int psoc4_spi_read_reg16(struct spi_device *spi, u8 addr, u16* value)
 {
-      struct spi_transfer t[4];
+      struct spi_transfer t[2];
       struct spi_message m;
       u8 cmd[2];
       u8 data[2];
@@ -357,26 +372,16 @@ int psoc4_spi_read_reg16(struct spi_device *spi, u8 addr, u16* value)
       m.spi = spi;
 
       /* Configure tx/rx buffers */
-      t[0].tx_buf = &cmd[1];
+      t[0].tx_buf = &cmd;
       t[0].rx_buf = NULL;
       t[0].len = 1;
       spi_message_add_tail(&t[0], &m);
       
-      t[1].tx_buf = &cmd[0];
+      t[1].tx_buf = &cmd;
       t[1].rx_buf = NULL;
       t[1].len = 1;
       t[1].delay_usecs = 50;
       spi_message_add_tail(&t[1], &m);
-
-      t[2].tx_buf = NULL;
-      t[2].rx_buf = &data[1];
-      t[2].len = 1;
-      spi_message_add_tail(&t[2], &m);
-      
-      t[3].tx_buf = NULL;
-      t[3].rx_buf = &data[0];
-      t[3].len = 1;
-      spi_message_add_tail(&t[3], &m);
       
       /* Transmit SPI Data (blocking) */
       spi_sync(m.spi, &m);

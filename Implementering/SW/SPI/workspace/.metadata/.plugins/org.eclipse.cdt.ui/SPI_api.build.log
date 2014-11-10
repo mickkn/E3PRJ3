@@ -1,19 +1,7 @@
-23:00:34 **** Incremental Build of configuration Debug for project SPI_api ****
-make all 
-make: Warning: File `src/subdir.mk' has modification time 0.52 s in the future
-Building file: ../src/SPI_api.cpp
-Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SPI_api.d" -MT"src/SPI_api.d" -o "src/SPI_api.o" "../src/SPI_api.cpp"
-../src/SPI_api.cpp:6:24: error: non-member function ‘int activate(int)’ cannot have cv-qualifier
- int activate(int unit) const
-                        ^
-../src/SPI_api.cpp:11:26: error: non-member function ‘int deactivate(int)’ cannot have cv-qualifier
- int deactivate(int unit) const
-                          ^
-../src/SPI_api.cpp:16:22: error: non-member function ‘int verify(int)’ cannot have cv-qualifier
- int verify(int unit) const
-                      ^
-make: *** [src/SPI_api.o] Error 1
+13:56:21 **** Clean-only build of configuration devkit8000 for project SPI_api ****
+make clean 
+rm -rf  ./src/SPI_api.o ./src/test.o  ./src/SPI_api.d ./src/test.d  SPI_api
+ 
 
-23:00:35 Build Finished (took 624ms)
+13:56:21 Build Finished (took 64ms)
 

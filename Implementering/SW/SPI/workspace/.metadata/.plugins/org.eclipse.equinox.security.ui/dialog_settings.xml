@@ -3,15 +3,15 @@
 	<section name="StorageLoginDialogNew">
 		<item value="537" key="DIALOG_WIDTH"/>
 		<item value="197" key="DIALOG_Y_ORIGIN"/>
-		<item value="244" key="DIALOG_X_ORIGIN"/>
 		<item value="281" key="DIALOG_HEIGHT"/>
+		<item value="244" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="StorageLoginDialogOld">
-		<item value="525" key="DIALOG_WIDTH"/>
+		<item value="613" key="DIALOG_WIDTH"/>
 		<item value="196" key="DIALOG_Y_ORIGIN"/>
-		<item value="281" key="DIALOG_HEIGHT"/>
 		<item value="249" key="DIALOG_X_ORIGIN"/>
-		<item value="1|Ubuntu|9.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		<item value="263" key="DIALOG_HEIGHT"/>
+		<item value="1|Lucida Grande|10.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

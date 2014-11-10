@@ -1,7 +1,7 @@
-15:43:50 **** Clean-only build of configuration devkit8000 for project HelloCpp ****
+13:56:21 **** Clean-only build of configuration devkit8000 for project HelloCpp ****
 make clean 
 rm -rf  ./src/HelloCpp.o  ./src/HelloCpp.d  HelloCpp
  
 
-15:43:50 Build Finished (took 83ms)
+13:56:21 Build Finished (took 81ms)
 

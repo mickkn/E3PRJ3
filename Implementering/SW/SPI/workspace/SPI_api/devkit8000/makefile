@@ -38,19 +38,19 @@ endif
 # Add inputs and outputs from these tool invocations to the build variables 
 
 # All Target
-all: HelloCpp
+all: SPI_api
 
 # Tool invocations
-HelloCpp: $(OBJS) $(USER_OBJS)
+SPI_api: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	arm-angstrom-linux-gnueabi-g++  -o "HelloCpp" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-angstrom-linux-gnueabi-g++  -o "SPI_api" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) HelloCpp
+	-$(RM) $(OBJS)$(C++_DEPS)$(C_DEPS)$(CC_DEPS)$(CPP_DEPS)$(EXECUTABLES)$(CXX_DEPS)$(C_UPPER_DEPS) SPI_api
 	-@echo ' '
 
 .PHONY: all clean dependents
