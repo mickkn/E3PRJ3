@@ -8,31 +8,25 @@ Her beskrives hvor mange og hvilke pins der skal benyttes på PSoC4 til de forsk
 
 \textbf{Forbindelse}	&\textbf{Antal pins} 	&\textbf{Signalnavne} &\textbf{Pinnavne} &\textbf{Kommentar}  \\ \hline
 
-SPI 	(P\_DK)			&4 						&MOSI				&P3[0]		&					\\\cline{3-4}
+SPI 	(P\_DK)		&5 						&MOSI				&P3[0]		&					\\\cline{3-4}
 					&						&MISO				&P3[1]		&					\\\cline{3-4}
 					&						&SCK					&P0[6]		&					\\\cline{3-4}
 					&						&SS0					&P0[7]		&					\\\cline{3-4}
 					&						&GND					&J3(GND) 	&					\\\hline
 	
-PIR-TTL	(P\_PIR)		&1 						&P\_PIR				&P1[1] 		&					\\\hline
+PIR-TTL	(P\_PIR)	&1 						&P\_PIR				&P1[1] 		&					\\\hline
 
-Vandpumpe (VP\_01)	&4 						&SPRINKLER\_1		&P2[0]		&					\\\cline{3-4}
-					&						&SPRINKLER\_2		&P2[1]		&					\\\cline{3-4}
-					&						&SPRINKLER\_3		&P0[2]		&					\\\cline{3-4}
-					&						&SPRINKLER\_4		&P0[3]		&					\\\hline
+Vandpumpe (VP\_01)	&1 						&SPRINKLER\_1		&P2[0]		&					\\\hline
+
+																								
 		
-FT-sensor (P\_FT)	&5						&SELECT				&P0[0]		&Fugt/Temp.			\\\cline{3-5}
-					&						&ANALOG				&P2[5]		&Analog niveau		\\\cline{3-5}
-					&						&BIT0(LSB)			&P2[2]		&Adressering			\\\cline{3-5}
-					&						&BIT1				&P2[3]		&Adressering			\\\cline{3-5}
-					&						&BIT2(MSB)			&P2[4]		&Adressering			\\\hline			
+FT-sensor (P\_FT)	&2						&SELECT				&P0[0]		&Fugt/Temp.			\\\cline{3-5}
+					&						&ANALOG				&P2[5]		&Analog niveau		\\\hline
+																											
 					
 Fælles GND			&1 						&GND(Forb. print)	&J2(GND) 	&Forb. print			\\\hline					
 					
-Enhedsadr. 			&4 						&BIT0(LSB)			&P1[2]		&					\\\cline{3-4}
-					&						&BIT1				&P1[3]		&					\\\cline{3-4}
-					&						&BIT2				&P1[4]		&					\\\cline{3-4}
-					&						&BIT3(MSB)			&P1[5]		&					\\\hline
+
 
 \end{tabular}
 \end{small}
