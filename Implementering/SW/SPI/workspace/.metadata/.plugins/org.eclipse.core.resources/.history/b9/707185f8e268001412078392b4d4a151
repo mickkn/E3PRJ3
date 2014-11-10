@@ -1,0 +1,33 @@
+#include "SPI_api.h"
+#include <fcntl.h>
+#include <iostream>
+#include <stdio>
+
+int main(void)
+{
+	int fp, err;
+	int datalen = 1;	// Number of characters to write
+	char data[] = "A"; 	// Data string "A" for Activate
+
+	/* Open file */
+	fp = open("/dev/spi_dev", O_RDWR);
+
+	/* Write datalen times */
+	for(int i = 0 ; i < datalen ; i++){
+
+		err = write(fp, &data[i], datalen);
+		if(err < 0){
+			printf("Error Writing to file\n");
+			goto write_error;
+		}
+	}
+
+	/*Close file*/
+	close(fp);
+
+	return 0;
+
+	write_error:
+		close(fp);
+		return -1;
+}

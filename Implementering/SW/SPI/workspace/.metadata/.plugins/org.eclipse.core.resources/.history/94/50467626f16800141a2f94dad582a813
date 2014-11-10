@@ -1,0 +1,8 @@
+#include "SPI_api.h"
+#include <fcntl.h>
+#include <stdio.h>
+
+int main(void)
+{
+	SPI_api test();
+}

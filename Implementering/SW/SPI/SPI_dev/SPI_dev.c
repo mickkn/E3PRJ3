@@ -7,11 +7,6 @@
 #include <linux/wait.h>
 #include "SPI_dev.h"
 
-#define PSOC4_CAPSENSE		0x01
-#define PSOC4_DIETEMP		0x02
-#define PSOC4_DUMMY		0x03
-#define PSOC4_RGBLED		0x04
-
 #define MODULE_DEBUG 		0
 
 #define NBR_PSOC4_CH		1
@@ -197,14 +192,15 @@ void psoc4_cdrv_exit(void)
  */
 int psoc4_cdrv_open(struct inode *inode, struct file *filep)
 { 
-  /*
+  
       int major = imajor(inode);
       int minor = iminor(inode);
 
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_cdrv_open\n"); 
       
-      printk("Opening PSOC4 Device [major], [minor]: %i, %i\n", major, minor);
+      if(MODULE_DEBUG)
+	printk("Opening PSOC4 Device [major], [minor]: %i, %i\n", major, minor);
 
       // Check if minor number is within range
       if (minor > NBR_PSOC4_CH-1)
@@ -216,7 +212,7 @@ int psoc4_cdrv_open(struct inode *inode, struct file *filep)
       // Check if a psoc4 device is registered
       if(!(psoc4_spi_device=psoc4_get_device()))
 	return -ENODEV;
-      */
+      
       return 0;
 }
 
@@ -228,18 +224,19 @@ int psoc4_cdrv_open(struct inode *inode, struct file *filep)
  */
 int psoc4_cdrv_release(struct inode *inode, struct file *filep)
 {  
-  /*
+  
       int major = imajor(inode);
       int minor = iminor(inode);
 
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_cdrv_release\n"); 
       
-      printk("Closing PSOC4 Device [major], [minor]: %i, %i\n", major, minor);
+      if(MODULE_DEBUG)
+	printk("Closing PSOC4 Device [major], [minor]: %i, %i\n", major, minor);
 
       if ((minor > NBR_PSOC4_CH-1) || !(psoc4_spi_device=psoc4_get_device()))
 	return -ENODEV;
-      */
+      
       return 0;
 }
 
@@ -248,7 +245,7 @@ int psoc4_cdrv_release(struct inode *inode, struct file *filep)
  * Writes 8-bit content to register at 
  * the provided PSOC4 function address
  */
-int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, char data)
+int psoc4_spi_write_reg8(struct spi_device *spi, u8 cmd, char data)
 {
       struct spi_transfer t[1];	// Number of packages
       struct spi_message m;
@@ -266,7 +263,7 @@ int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, char data)
       m.spi = spi;
 
       if(MODULE_DEBUG)
-	printk(KERN_DEBUG "PSOC4: Write Reg8 Addr 0x%x Data 0x%02x\n", addr, data);
+	printk(KERN_DEBUG "PSOC4: Write Reg8 Addr 0x%x Data 0x%02x\n", cmd, data);
       
       /* Configure tx/rx buffers */
       t[0].tx_buf = &data;
@@ -286,7 +283,7 @@ int psoc4_spi_write_reg8(struct spi_device *spi, u8 addr, char data)
 ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf, 
 		       size_t count, loff_t *f_pos)
 {
-      int cmd = PSOC4_RGBLED;	// PSoC4 function to Write too
+      int cmd = 1;	// Made to write a initializer with SPI, maybe not needed
       
       int minor, len;
       char myArray[MAXLEN];
@@ -300,20 +297,6 @@ ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf,
       len = count < MAXLEN ? count : MAXLEN;
       if(copy_from_user(myArray, ubuf, len))
 	printk(KERN_ALERT "ERROR in copy_from_user");
-	    
-      /* Pad null termination to string */
-      //myArray[len] = '\0';  
-      
-      // http://www.gnugeneration.com/mirrors/kernel-api/r4343.html
-      /*err = copy_from_user(myArray, ubuf, sizeof(ubuf));
-
-      if(err != 0)
-      {
-	printk(KERN_ALERT "ERROR in copy_from_user, ERRORCODE: %d\n" , err);
-      }*/
-
-      //sscanf(myArray, "%d", &myVar);
-      
       
       /*
       * Do something
@@ -343,13 +326,12 @@ ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf,
  * Reads 16-bit content of register at 
  * the provided PSoC4 address
  */
-int psoc4_spi_read_reg16(struct spi_device *spi, u8 addr, u16* value)
+int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
 {
-      struct spi_transfer t[2];
+      struct spi_transfer t[1];
       struct spi_message m;
-      u8 cmd[2];
-      u8 data[2];
-      u16 dataw;
+      char data = 45;	// Test value
+      char test = 'T';
       
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_spi_read_reg16\n");
@@ -357,14 +339,6 @@ int psoc4_spi_read_reg16(struct spi_device *spi, u8 addr, u16* value)
       /* Check for valid spi device */
       if(!spi)
 	return -ENODEV;
-
-      /* Create Cmd byte:
-      * 
-      * | 0 |  0 |       ADDR       |
-      *   7    6   5  4  3  2  1  0
-      */	 
-      cmd[1] = (0<<7) | (0<<6) | (addr & 0x1f);
-      cmd[0] = 0;
       
       /* Init Message */
       memset(t, 0, sizeof(t));
@@ -372,26 +346,19 @@ int psoc4_spi_read_reg16(struct spi_device *spi, u8 addr, u16* value)
       m.spi = spi;
 
       /* Configure tx/rx buffers */
-      t[0].tx_buf = &cmd;
-      t[0].rx_buf = NULL;
+      t[0].delay_usecs = 50;	// Delay for PSoC4
+      t[0].tx_buf = &test;
+      t[0].rx_buf = &data;
       t[0].len = 1;
       spi_message_add_tail(&t[0], &m);
-      
-      t[1].tx_buf = &cmd;
-      t[1].rx_buf = NULL;
-      t[1].len = 1;
-      t[1].delay_usecs = 50;
-      spi_message_add_tail(&t[1], &m);
       
       /* Transmit SPI Data (blocking) */
       spi_sync(m.spi, &m);
 
-      dataw = data[1] << 8 | data[0];
-
       if(MODULE_DEBUG)
-	printk(KERN_DEBUG "PSOC4: Read Reg16 Addr: 0x0%d Data: %d\n", addr, dataw);
+	printk(KERN_DEBUG "PSOC4: Read Reg16 Cmd: 0x0%d Data: %d\n", cmd, data);
 
-      *value = dataw;
+      *value = data;
 	  return 0;
 }
 
@@ -403,7 +370,7 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
 {       
       int minor, len;
       char resultBuf[MAXLEN];
-      s16 result;
+      char result;
       u8 addr;
 
       if(MODULE_DEBUG)
@@ -416,9 +383,9 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       
       /* Perform SPI read */
       
-      addr = PSOC4_DUMMY;
+      addr = 1; //Dummy
       
-      psoc4_spi_read_reg16(psoc4_spi_device, addr , &result);
+      psoc4_spi_read_reg8(psoc4_spi_device, addr , &result);
       
       len = snprintf(resultBuf, count , "%d\n", result);
       len++;

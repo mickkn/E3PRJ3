@@ -1,8 +1,8 @@
-cmd_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := arm-angstrom-linux-gnueabi-gcc -Wp,-MD,/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/.SPI_dev.o.d  -nostdinc -isystem /home/stud/setup-scripts/build/tmp-angstrom_2010_x-eglibc/sysroots/i686-linux/usr/lib/armv7a-angstrom-linux-gnueabi/gcc/arm-angstrom-linux-gnueabi/4.5.4/include -I/home/stud/sources/linux-3.2.6/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include /home/stud/sources/linux-3.2.6/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-omap2/include -Iarch/arm/plat-omap/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(SPI_dev)"  -D"KBUILD_MODNAME=KBUILD_STR(SPI_devmod)" -c -o /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/.tmp_SPI_dev.o /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.c
+cmd_/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := arm-angstrom-linux-gnueabi-gcc -Wp,-MD,/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/.SPI_dev.o.d  -nostdinc -isystem /home/stud/setup-scripts/build/tmp-angstrom_2010_x-eglibc/sysroots/i686-linux/usr/lib/armv7a-angstrom-linux-gnueabi/gcc/arm-angstrom-linux-gnueabi/4.5.4/include -I/home/stud/sources/linux-3.2.6/arch/arm/include -Iarch/arm/include/generated -Iinclude  -include /home/stud/sources/linux-3.2.6/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Iarch/arm/mach-omap2/include -Iarch/arm/plat-omap/include -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -marm -fno-dwarf2-cfi-asm -fno-omit-frame-pointer -mapcs -mno-sched-prolog -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -fno-omit-frame-pointer -fno-optimize-sibling-calls -g -pg -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO  -DMODULE  -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(SPI_dev)"  -D"KBUILD_MODNAME=KBUILD_STR(SPI_devmod)" -c -o /media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/.tmp_SPI_dev.o /media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.c
 
-source_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.c
+source_/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := /media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.c
 
-deps_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := \
+deps_/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := \
   include/linux/cdev.h \
   include/linux/kobject.h \
     $(wildcard include/config/hotplug.h) \
@@ -446,8 +446,8 @@ deps_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o := \
   /home/stud/sources/linux-3.2.6/arch/arm/include/asm/module.h \
     $(wildcard include/config/arm/unwind.h) \
   include/trace/events/module.h \
-  /media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.h \
+  /media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.h \
 
-/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o: $(deps_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o)
+/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o: $(deps_/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o)
 
-$(deps_/media/psf/Home/Desktop/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o):
+$(deps_/media/psf/E3PRJ3/Implementering/SW/SPI/SPI_dev/SPI_dev.o):
