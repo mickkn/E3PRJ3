@@ -15,7 +15,7 @@
 int menuAddRemove( ) const \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} metoden skal styre forløbet i UC1: tilføj fjern.\\
+\textbf{Beskrivelse:} Modtager information fra brugeren omkring enhed, verificere enheden over SPI netværket og gemme information i databasen..\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_config}}
@@ -31,7 +31,7 @@ int menuAddRemove( ) const \\
 int menuConfig( ) const \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} metoden skal styre forløbet i UC1: tilføj fjern.\\
+\textbf{Beskrivelse:} Modtager information fra brugeren omkring enhed og parametre. Parametrene skrives til den pågældende enhed på SPI netværket.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_onOff}}
@@ -44,12 +44,12 @@ int menuConfig( ) const \\
 {\centering
 \textbf{onOff}\par
 }
-\textbf{Ansvar:} at styre forløbet i UC3: Aktiver / deajtuver. \
+\textbf{Ansvar:} at styre forløbet i UC3: Aktiver / deaktiver. \
 
 int menuOnOff( ) const \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} metoden skal styre forløbet i UC1: tilføj fjern.\\
+\textbf{Beskrivelse:} Modtager information fra brugeren omkring hvilken enhed som ønskes aktiveret eller deaktiveret. Enheden modtager informationen over SPI netværket.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_loadData}}
@@ -65,7 +65,7 @@ int menuOnOff( ) const \\
 int menuloadData( ) \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} metoden skal styre forløbet i UC1: tilføj fjern.\\
+\textbf{Beskrivelse:} Sættes igang med et interrupt styret af en timer. Henter log over SPI netværket og gemmer den.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_status}}
@@ -83,7 +83,7 @@ int menuloadData( ) \\
 int menuStatus( ) const \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} metoden skal styre forløbet i UC1: tilføj fjern.\\
+\textbf{Beskrivelse:} Henter den seneste log i hukommelsen og viser brugeren den, for den ønskede enhed.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_logView}}
@@ -99,5 +99,5 @@ int menuStatus( ) const \\
 int menuLog( ) const \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} metoden skal styre forløbet i UC1: tilføj fjern.\\
+\textbf{Beskrivelse:} Henter hele loggen i hukommelsen og viser brugeren den, for den ønskede enhed.\\
 
