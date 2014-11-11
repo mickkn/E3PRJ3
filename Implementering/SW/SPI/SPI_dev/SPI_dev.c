@@ -7,7 +7,7 @@
 #include <linux/wait.h>
 #include "SPI_dev.h"
 
-#define MODULE_DEBUG 		0
+#define MODULE_DEBUG 		1
 
 #define NBR_PSOC4_CH		1
 
@@ -263,7 +263,7 @@ int psoc4_spi_write_reg8(struct spi_device *spi, u8 cmd, char data)
       m.spi = spi;
 
       if(MODULE_DEBUG)
-	printk(KERN_DEBUG "PSOC4: Write Reg8 Addr 0x%x Data 0x%02x\n", cmd, data);
+	printk(KERN_DEBUG "PSOC4: Write Reg8 Addr 0x%x Data '%c'\n", cmd, data);
       
       /* Configure tx/rx buffers */
       t[0].tx_buf = &data;
@@ -302,7 +302,7 @@ ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf,
       * Do something
       */
       if(MODULE_DEBUG)
-	printk(KERN_ALERT "Writing %d to address: %d\n", myArray[0], (u8)cmd);
+	printk(KERN_ALERT "Writing '%c' to address: %d\n", myArray[0], (u8)cmd);
 
       /*
        * Call SPI WRITE
@@ -330,8 +330,7 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
 {
       struct spi_transfer t[1];
       struct spi_message m;
-      char data = 45;	// Test value
-      char test = 'T';
+      char data = 'T';	// Test value
       
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_spi_read_reg16\n");
@@ -344,10 +343,13 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
       memset(t, 0, sizeof(t));
       spi_message_init(&m);
       m.spi = spi;
-
+      
+      if(MODULE_DEBUG)
+	printk(KERN_DEBUG "PSOC4: Read Reg8 Cmd: 0x%d Data: '%c'\n", cmd, data);
+      
       /* Configure tx/rx buffers */
-      t[0].delay_usecs = 50;	// Delay for PSoC4
-      t[0].tx_buf = &test;
+      //t[0].delay_usecs = 50;	// Delay for PSoC4
+      t[0].tx_buf = NULL;
       t[0].rx_buf = &data;
       t[0].len = 1;
       spi_message_add_tail(&t[0], &m);
@@ -356,7 +358,7 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
       spi_sync(m.spi, &m);
 
       if(MODULE_DEBUG)
-	printk(KERN_DEBUG "PSOC4: Read Reg16 Cmd: 0x0%d Data: %d\n", cmd, data);
+	printk(KERN_DEBUG "PSOC4: Read Reg8 Cmd: 0x%d Data: 0x%x\n", cmd, data);
 
       *value = data;
 	  return 0;
@@ -368,7 +370,8 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
 ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf, 
                           size_t count, loff_t *f_pos)
 {       
-      int minor, len;
+      int minor;
+      int len = 1;
       char resultBuf[MAXLEN];
       char result;
       u8 addr;
@@ -387,13 +390,17 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       
       psoc4_spi_read_reg8(psoc4_spi_device, addr , &result);
       
-      len = snprintf(resultBuf, count , "%d\n", result);
-      len++;
-
+      //len = snprintf(resultBuf, count , "%d\n", result);
+      //len++;
+      
+      printk(KERN_ALERT "RESULT: %x\n", result);
+      
       /* Copy data to user space */
-      if(copy_to_user(ubuf, resultBuf, len))
+      if(copy_to_user(ubuf, resultBuf, result))
 	return -EFAULT;
-
+      
+      printk(KERN_ALERT "RESULT: %x\n UBUF: %c\n RBUF: %c\n", result, ubuf, resultBuf);
+      
       /* Move fileptr */
       *f_pos += len;
 

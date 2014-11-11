@@ -1,0 +1,14 @@
+# SPI_slave
+# 2014-11-11 20:34:42Z
+
+# IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 2
+# IO_3@[IOP=(3)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 3 3
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_location "\SPIS_1:SCB\" m0s8scbcell -1 -1 1
+set_io "\SPIS_1:miso_s(0)\" iocell 3 1
+set_io "\SPIS_1:mosi_s(0)\" iocell 3 0
+set_io "\SPIS_1:sclk_s(0)\" iocell 0 6
+set_io "\SPIS_1:ss_s(0)\" iocell 0 7

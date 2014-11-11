@@ -34,7 +34,6 @@ __attribute__((section("__versions"))) = {
 	{ 0xf327507b, "spi_sync" },
 	{ 0x20495cbb, "cdev_add" },
 	{ 0x37a0cba, "kfree" },
-	{ 0xb81960ca, "snprintf" },
 	{ 0x1df9e73f, "spi_register_driver" },
 	{ 0xc00f6a9a, "dev_get_drvdata" },
 };
@@ -45,4 +44,4 @@ __attribute__((section(".modinfo"))) =
 "depends=";
 
 
-MODULE_INFO(srcversion, "C8C14F61FCDF91452DA1178");
+MODULE_INFO(srcversion, "19DC72617139403379AB940");

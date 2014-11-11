@@ -18,7 +18,7 @@ int SPI_api::activate(int unit) const
 
 		err = write(fp, &data[i], datalen);
 		if(err < 0){
-			printf("WRITE ERROR - Remember to insert and mknod /dev/spi_dev\n");
+			printf("WRITE ERROR: %d\n", err);
 			goto write_error;
 		}
 	}
@@ -30,14 +30,14 @@ int SPI_api::activate(int unit) const
 
 	write_error:
 		close(fp);
-		return -1;
+		return err;
 }
 
 int SPI_api::deactivate(int unit) const
 {
 	int fp, err;
 	int datalen = 1;	// String length
-	char data[] = "D";	// 'A' for Activate
+	char data[] = "D";	// 'D' for Deactivate
 
 	/* Open file */
 	fp = open("/dev/spi_dev", O_RDWR);
@@ -47,7 +47,7 @@ int SPI_api::deactivate(int unit) const
 
 		err = write(fp, &data[i], datalen);
 		if(err < 0){
-			printf("WRITE ERROR - Remember to insert and mknod /dev/spi_dev\n");
+			printf("WRITE ERROR: %d\n", err);
 			goto write_error;
 		}
 	}
@@ -59,7 +59,7 @@ int SPI_api::deactivate(int unit) const
 
 	write_error:
 		close(fp);
-		return -1;
+		return err;
 }
 
 int SPI_api::verify(int unit) const
@@ -72,21 +72,21 @@ int SPI_api::verify(int unit) const
 	/* Open file */
 	fp = open("/dev/spi_dev", O_RDWR);
 
-	/* Write cmd to Target*/
+	/* Write CMD to Target*/
 	err = write(fp, &cmd[0], datalen);
 	if(err < 0){
-		printf("WRITE ERROR - Remember to insert and mknod /dev/spi_dev\n");
+		printf("WRITE ERROR: %d\n", err);
 		goto write_error;
 	}
 
-	/* Read datalen times */
-	err = read(fp, &result, datalen);
+	/* Read 1 time */
+	/*err = read(fp, &result, datalen);
 	if(err < 0){
-		printf("READ ERROR\n");
+		printf("READ ERROR: %d \n", err);
 		goto read_error;
 	}
-
-	printf("Result: %d\n", result);
+*/
+	printf("Result printf: %c\n", result); // Test purpose
 
 	/* Close file */
 	close(fp);
@@ -96,7 +96,7 @@ int SPI_api::verify(int unit) const
 	write_error:
 	read_error:
 		close(fp);
-		return -1;
+		return err;
 }
 
 int SPI_api::config(int unit, vector<string>)
@@ -104,7 +104,7 @@ int SPI_api::config(int unit, vector<string>)
 	return 0;
 }
 
-int SPI_api::getLog(vector<string>, int * units, int size)
+int SPI_api::getLog(vector<string> &data, int * units, int size)
 {
 	return 0;
 }
