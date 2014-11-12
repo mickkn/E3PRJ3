@@ -96,14 +96,14 @@ int SPI_api::verify(int unit) const
 			printf("WRITE ERROR: %d\n", err);
 			goto write_error;
 		}
-
-	/* Read 1 time */
+/*
+	/* Read 1 times
 	err = read(fp, &result, datalen);
 		if(err < 0){
 			printf("READ ERROR: %d \n", err);
 			goto read_error;
 		}
-
+*/
 	/* Clear buffer */
 	err = write(fp, &CL_BUF, 1);
 		if(err < 0){

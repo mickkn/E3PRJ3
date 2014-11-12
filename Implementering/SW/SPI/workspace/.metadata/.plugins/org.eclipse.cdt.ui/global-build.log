@@ -1,0 +1,90 @@
+20:46:45 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+Building file: ../src/SPI_api.cpp
+Invoking: GCC C++ Compiler
+arm-angstrom-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SPI_api.d" -MT"src/SPI_api.d" -o "src/SPI_api.o" "../src/SPI_api.cpp"
+Finished building: ../src/SPI_api.cpp
+ 
+Building target: SPI_api
+Invoking: GCC C++ Linker
+arm-angstrom-linux-gnueabi-g++  -o "SPI_api"  ./src/SPI_api.o ./src/test.o   -lpthread
+Finished building target: SPI_api
+ 
+20:47:22 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Nothing to be done for `all'.
+20:47:32 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Warning: File `src/subdir.mk' has modification time 0.1 s in the future
+make: Nothing to be done for `all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:47:43 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Nothing to be done for `all'.
+20:52:57 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Warning: File `src/subdir.mk' has modification time 0.65 s in the future
+make: Nothing to be done for `all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+20:56:32 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Warning: File `src/subdir.mk' has modification time 1 s in the future
+make: warning:  Clock skew detected.  Your build may be incomplete.
+make: Nothing to be done for `all'.
+21:00:06 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Warning: File `src/subdir.mk' has modification time 0.14 s in the future
+make: Nothing to be done for `all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:02:45 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Nothing to be done for `all'.
+22:02:54 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Nothing to be done for `all'.
+22:04:43 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Warning: File `src/subdir.mk' has modification time 0.47 s in the future
+Building file: ../src/test.cpp
+Invoking: GCC C++ Compiler
+arm-angstrom-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test.d" -MT"src/test.d" -o "src/test.o" "../src/test.cpp"
+Finished building: ../src/test.cpp
+ 
+Building target: SPI_api
+Invoking: GCC C++ Linker
+arm-angstrom-linux-gnueabi-g++  -o "SPI_api"  ./src/SPI_api.o ./src/test.o   -lpthread
+Finished building target: SPI_api
+ 
+make: warning:  Clock skew detected.  Your build may be incomplete.
+22:05:01 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Nothing to be done for `all'.
+22:05:18 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Nothing to be done for `all'.
+22:06:40 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+Building file: ../src/SPI_api.cpp
+Invoking: GCC C++ Compiler
+arm-angstrom-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/SPI_api.d" -MT"src/SPI_api.d" -o "src/SPI_api.o" "../src/SPI_api.cpp"
+../src/SPI_api.cpp:100:2: warning: "/*" within comment
+../src/SPI_api.cpp: In member function 'int SPI_api::verify(int) const':
+../src/SPI_api.cpp:88:7: warning: unused variable 'result'
+../src/SPI_api.cpp:121:2: warning: label 'read_error' defined but not used
+Finished building: ../src/SPI_api.cpp
+ 
+Building file: ../src/test.cpp
+Invoking: GCC C++ Compiler
+arm-angstrom-linux-gnueabi-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/test.d" -MT"src/test.d" -o "src/test.o" "../src/test.cpp"
+Finished building: ../src/test.cpp
+ 
+Building target: SPI_api
+Invoking: GCC C++ Linker
+arm-angstrom-linux-gnueabi-g++  -o "SPI_api"  ./src/SPI_api.o ./src/test.o   -lpthread
+Finished building target: SPI_api
+ 
+22:06:52 **** Incremental Build of configuration devkit8000 for project SPI_api ****
+make all 
+make: Warning: File `src/subdir.mk' has modification time 0.65 s in the future
+make: Nothing to be done for `all'.
+make: warning:  Clock skew detected.  Your build may be incomplete.

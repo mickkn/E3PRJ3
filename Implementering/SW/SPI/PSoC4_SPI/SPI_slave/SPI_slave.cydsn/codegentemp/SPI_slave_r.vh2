@@ -1,5 +1,5 @@
 -- Project:   SPI_slave
--- Generated: 11/12/2014 15:14:10
+-- Generated: 11/12/2014 21:13:37
 -- 
 
 ENTITY SPI_slave IS

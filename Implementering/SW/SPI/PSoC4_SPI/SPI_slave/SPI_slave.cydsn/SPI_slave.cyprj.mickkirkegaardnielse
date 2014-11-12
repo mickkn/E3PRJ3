@@ -333,6 +333,10 @@
 <dep name=".\Generated_Source\PSoC4\cyutils.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\cyutils.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o">
+<dep name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+</file>
+<file name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 <file name=".\Generated_Source\PSoC4\Clock_1.h" />
 <file name=".\Generated_Source\PSoC4\LED_CONTROL.h" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\Clock_1.o">
@@ -360,10 +364,6 @@
 <dep name=".\Generated_Source\PSoC4\LED_CONTROL_PM.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\LED_CONTROL_PM.c" />
-<file name=".\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o">
-<dep name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
-</file>
-<file name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 <file name=".\Generated_Source\PSoC4\SPI_1.h" />
 <file name=".\Generated_Source\PSoC4\SPI_1_PINS.h" />
 <file name=".\Generated_Source\PSoC4\SPI_1_PVT.h" />
@@ -642,7 +642,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130602760353926467" />
+<deps_time v="130602968274442521" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="925cc1e1-309e-4e08-b0a1-09a83c35b157">
@@ -1164,7 +1164,7 @@
 <v>C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v</v>
 <v>C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="130602752533495823" />
+<deps_time v="130602968211784725" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>

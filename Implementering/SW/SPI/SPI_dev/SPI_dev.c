@@ -326,12 +326,12 @@ ssize_t psoc4_cdrv_write(struct file *filep, const char __user *ubuf,
  * Reads 16-bit content of register at 
  * the provided PSoC4 address
  */
-int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
+int psoc4_spi_read_reg8(struct spi_device *spi, u8 addr, char* value)
 {
       struct spi_transfer t[1];
       struct spi_message m;
-      char data = 'T';	// Test value
-      char kmd = 'R';	// Test purpose
+      char data;
+      char cmd = 'R';	// Read command
       
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_spi_read_reg16\n");
@@ -350,16 +350,18 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
       
       /* Configure tx/rx buffers */
       //t[0].delay_usecs = 50;	// Delay for PSoC4
-      t[0].tx_buf = &kmd;
+      t[0].tx_buf = &cmd;
       t[0].rx_buf = &data;
       t[0].len = 1;
       spi_message_add_tail(&t[0], &m);
       
       /* Transmit SPI Data (blocking) */
       spi_sync(m.spi, &m);
-
+      
+      printk("Data: '%c'\n", data);
+      
       if(MODULE_DEBUG)
-	printk(KERN_DEBUG "PSOC4: Read Reg8 Cmd: 0x%d Data: 0x%x\n", cmd, data);
+	printk(KERN_DEBUG "PSOC4: Read Reg8 Cmd: '%c' Data: '%c'\n", cmd, data);
 
       *value = data;
 	  return 0;
@@ -375,7 +377,7 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       int len = 1;
       char resultBuf[MAXLEN];
       char result;
-      u8 addr;
+      u8 addr = 0;	// Dummy not used in prototype project
 
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_cdrv_read\n"); 
@@ -387,14 +389,7 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       
       /* Perform SPI read */
       
-      addr = 1; //Dummy
-      
       psoc4_spi_read_reg8(psoc4_spi_device, addr , &result);
-      
-      //len = snprintf(resultBuf, count , "%d\n", result);
-      //len++;
-      
-      printk(KERN_ALERT "RESULT: '%c'\n", result);
       
       /* Copy data to user space */
       if(copy_to_user(ubuf, resultBuf, result))
