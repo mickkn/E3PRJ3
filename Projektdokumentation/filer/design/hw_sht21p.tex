@@ -12,7 +12,7 @@ Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret
 \subsection{Foranliggende filter}
 \begin{figure}[htb]
 \centering
-{\includegraphics{filer/design/Billeder/sht21p_filter_pic.png}}
+{\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht21p_filter_pic.png}}
 \caption{Multisim tegninger af 2. ordens filter}
 \label{lab:sht_filter_pic}
 \end{figure}
@@ -69,3 +69,12 @@ Dette kan løses i softwaren ved evt. at tage et antal samples og så midle de v
 V_{inADC_{avg}} = \frac{V_{in1} + V_{in2} + .. V_{inN}}{N}
 \end{equation} 
 \textit{hvor N = antal samples}
+
+En anden støjfaktor der er værd at tage hensyn til er filterets belastning af udgangen på sensoren. Denne kan have indflydelse på området hvori PWM'en går højt og lavt. Det kan altså ikke med sikkerhed siges at signalet vil gå fra 0 VDC til 3,3 VDC, men kan have et offset og en evt. dæmpning. Denne problematik kan løses ved indsættelse af en OpAmp, med kendt spændingsforsyning i det ønsket område, lige før filteret. Denne vil sørge for, at signalet kommer til at ligge i det valgte område. OpAmp'en forbindes som en buffer uden forstærkning. 
+
+\begin{figure}[htb]
+\centering
+{\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht_opamp.png}}
+\caption{OpAmp til udbedring af evt. støj forårsaget af lavpasfilter}
+\label{lab:sht_opamp}
+\end{figure}
