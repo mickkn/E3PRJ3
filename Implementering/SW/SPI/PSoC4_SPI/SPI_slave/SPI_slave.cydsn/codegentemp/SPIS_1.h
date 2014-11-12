@@ -64,7 +64,7 @@
 #endif /* ((!SPIS_1_CY_SCBIP_V1_I2C_ONLY) */
 
 /* Interrupts remove options */
-#define SPIS_1_REMOVE_SCB_IRQ             (1u)
+#define SPIS_1_REMOVE_SCB_IRQ             (0u)
 #define SPIS_1_SCB_IRQ_INTERNAL           (0u == SPIS_1_REMOVE_SCB_IRQ)
 
 #define SPIS_1_REMOVE_UART_RX_WAKEUP_IRQ  (1u)

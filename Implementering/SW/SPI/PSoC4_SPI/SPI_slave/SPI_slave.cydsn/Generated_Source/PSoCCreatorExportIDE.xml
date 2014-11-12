@@ -18,22 +18,22 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="SPI_slave" Path="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" Version="4.10" Type="Normal">
+  <Project Name="SPI_slave" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" Version="4.10" Type="Normal">
     <CMSIS_SVD_File>SPI_slave.svd</CMSIS_SVD_File>
-    <Datasheet />
+    <Datasheet>SPI_slave_datasheet.pdf</Datasheet>
     <LinkerFiles>
       <LinkerFile Toolchain="ARM GCC">.\Generated_Source\PSoC4\cm0gcc.ld</LinkerFile>
       <LinkerFile Toolchain="ARM Keil MDK">.\Generated_Source\PSoC4\Cm0RealView.scat</LinkerFile>
       <LinkerFile Toolchain="IAR EWARM">.\Generated_Source\PSoC4\Cm0Iar.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="BUILD" Path="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
+      <Folder BuildType="BUILD" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
+      <Folder BuildType="STRICT" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4">
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cyfitter_cfg.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\cymetadata.c</File>
@@ -75,6 +75,7 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_PINS.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_SPI_UART_PVT.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_SPI_UART_INT.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_ss_s.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_ss_s.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_ss_s_aliases.h</File>
@@ -87,47 +88,53 @@
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_mosi_s.c</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_mosi_s.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\SPIS_1_mosi_s_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\RED_LED.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\RED_LED.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\RED_LED_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\GREEN_LED.c</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\GREEN_LED.h</File>
+          <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\GREEN_LED_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\prebuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\postbuild.bat</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\CyElfTool.exe</File>
           <File BuildType="BUILD" Toolchain="">.\Generated_Source\PSoC4\libelf.dll</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4\ARM_GCC">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
+      <Folder BuildType="STRICT" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4\ARM_GCC">
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC">.\Generated_Source\PSoC4\ARM_GCC\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4\ARM_Keil_MDK">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
+      <Folder BuildType="STRICT" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4\ARM_Keil_MDK">
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
           <File BuildType="BUILD" Toolchain="ARM Keil MDK">.\Generated_Source\PSoC4\ARM_Keil_MDK\CyComponentLibrary.a</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4\IAR">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
+      <Folder BuildType="STRICT" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4\IAR">
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
           <File BuildType="BUILD" Toolchain="IAR">.\Generated_Source\PSoC4\IAR\CyComponentLibrary.a</File>
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_951">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="\\psf\Home\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
+        <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" />
       </Folder>
     </Folders>
   </Project>

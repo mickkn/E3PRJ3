@@ -4,6 +4,8 @@
 #include <fcntl.h>
 #include <stdio.h>
 
+static char CL_BUF = 'C';
+
 int SPI_api::activate(int unit) const
 {
 	int fp, err;
@@ -17,17 +19,25 @@ int SPI_api::activate(int unit) const
 	for(int i = 0 ; i < datalen ; i++){
 
 		err = write(fp, &data[i], datalen);
-		if(err < 0){
-			printf("WRITE ERROR: %d\n", err);
-			goto write_error;
-		}
+			if(err < 0){
+				printf("WRITE ERROR: %d\n", err);
+				goto write_error;
+			}
 	}
+
+	/* Clear buffer */
+	err = write(fp, &CL_BUF, 1);
+		if(err < 0){
+			printf("CLEAR ERROR: %d\n", err);
+			goto clear_error;
+		}
 
 	/* Close file */
 	close(fp);
 
 	return 0;
 
+	clear_error:
 	write_error:
 		close(fp);
 		return err;
@@ -46,17 +56,25 @@ int SPI_api::deactivate(int unit) const
 	for(int i = 0 ; i < datalen ; i++){
 
 		err = write(fp, &data[i], datalen);
-		if(err < 0){
-			printf("WRITE ERROR: %d\n", err);
-			goto write_error;
-		}
+			if(err < 0){
+				printf("WRITE ERROR: %d\n", err);
+				goto write_error;
+			}
 	}
+
+	/* Clear buffer */
+	err = write(fp, &CL_BUF, 1);
+		if(err < 0){
+			printf("CLEAR ERROR: %d\n", err);
+			goto clear_error;
+		}
 
 	/* Close file */
 	close(fp);
 
 	return 0;
 
+	clear_error:
 	write_error:
 		close(fp);
 		return err;
@@ -74,25 +92,31 @@ int SPI_api::verify(int unit) const
 
 	/* Write CMD to Target*/
 	err = write(fp, &cmd[0], datalen);
-	if(err < 0){
-		printf("WRITE ERROR: %d\n", err);
-		goto write_error;
-	}
+		if(err < 0){
+			printf("WRITE ERROR: %d\n", err);
+			goto write_error;
+		}
 
 	/* Read 1 time */
-	/*err = read(fp, &result, datalen);
-	if(err < 0){
-		printf("READ ERROR: %d \n", err);
-		goto read_error;
-	}
-*/
-	printf("Result printf: %c\n", result); // Test purpose
+	err = read(fp, &result, datalen);
+		if(err < 0){
+			printf("READ ERROR: %d \n", err);
+			goto read_error;
+		}
+
+	/* Clear buffer */
+	err = write(fp, &CL_BUF, 1);
+		if(err < 0){
+			printf("CLEAR ERROR: %d\n", err);
+			goto clear_error;
+		}
 
 	/* Close file */
 	close(fp);
 
 	return 0;
 
+	clear_error:
 	write_error:
 	read_error:
 		close(fp);

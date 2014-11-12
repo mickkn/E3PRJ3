@@ -1,7 +1,0 @@
-21:36:25 **** Clean-only build of configuration devkit8000 for project SPI_api ****
-make clean 
-rm -rf  ./src/SPI_api.o ./src/test.o  ./src/SPI_api.d ./src/test.d  SPI_api
- 
-
-21:36:25 Build Finished (took 63ms)
-

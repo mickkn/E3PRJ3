@@ -23,6 +23,10 @@
 #include <SPIS_1_PINS.h>
 #include <SPIS_1_SPI_UART_PVT.h>
 #include <SPIS_1_PVT.h>
+#include <RED_LED.h>
+#include <RED_LED_aliases.h>
+#include <GREEN_LED.h>
+#include <GREEN_LED_aliases.h>
 #include <SPIS_1_ss_s.h>
 #include <SPIS_1_ss_s_aliases.h>
 #include <SPIS_1_miso_s.h>

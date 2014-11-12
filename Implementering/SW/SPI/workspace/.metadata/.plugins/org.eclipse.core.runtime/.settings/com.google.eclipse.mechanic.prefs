@@ -1,3 +1,0 @@
-blockedTaskIds=["com.google.eclipse.mechanic.internal.PreferenceFileTaskScanner$ReconcilingEpfTask@/home/stud/.eclipse/mechanic/editor_config.epf"]
-eclipse.preferences.version=1
-mechanicSourceDirectories=["/home/stud/.eclipse/mechanic","/usr/lib/eclipse/configuration/com.google.eclipse.mechanic/mechanic"]

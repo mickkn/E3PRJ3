@@ -7,7 +7,7 @@
 #include <linux/wait.h>
 #include "SPI_dev.h"
 
-#define MODULE_DEBUG 		1
+#define MODULE_DEBUG 		0
 
 #define NBR_PSOC4_CH		1
 
@@ -331,6 +331,7 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
       struct spi_transfer t[1];
       struct spi_message m;
       char data = 'T';	// Test value
+      char kmd = 'R';	// Test purpose
       
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "TEST: psoc4.c psoc4_spi_read_reg16\n");
@@ -349,7 +350,7 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 cmd, char* value)
       
       /* Configure tx/rx buffers */
       //t[0].delay_usecs = 50;	// Delay for PSoC4
-      t[0].tx_buf = NULL;
+      t[0].tx_buf = &kmd;
       t[0].rx_buf = &data;
       t[0].len = 1;
       spi_message_add_tail(&t[0], &m);
@@ -393,13 +394,11 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       //len = snprintf(resultBuf, count , "%d\n", result);
       //len++;
       
-      printk(KERN_ALERT "RESULT: %x\n", result);
+      printk(KERN_ALERT "RESULT: '%c'\n", result);
       
       /* Copy data to user space */
       if(copy_to_user(ubuf, resultBuf, result))
 	return -EFAULT;
-      
-      printk(KERN_ALERT "RESULT: %x\n UBUF: %c\n RBUF: %c\n", result, ubuf, resultBuf);
       
       /* Move fileptr */
       *f_pos += len;

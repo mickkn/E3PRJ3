@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
   30:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** ********************************************************************************
   31:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** *
   32:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** * Summary:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 2
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 2
 
 
   33:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** *  Assign a new value to the digital port's data output register.  
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
   66 0036 0F32     		add	r2, r2, #15
   67 0038 1278     		ldrb	r2, [r2]
   68 003a 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 3
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 3
 
 
   47:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
   95              		.cfi_offset 14, -4
   96 0002 82B0     		sub	sp, sp, #8
   97              	.LCFI4:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 4
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 4
 
 
   98              		.cfi_def_cfa_offset 16
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
   90:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** * Return: 
   91:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** *  Returns the current value of the Digital Port as a right justified number
   92:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** *  
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 5
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 5
 
 
   93:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** * Note:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  110:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** * Parameters:  
  111:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** *  None 
  112:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** *
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 6
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 6
 
 
  113:.\Generated_Source\PSoC4/SPIS_1_ss_s.c **** * Return: 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  130:.\Generated_Source\PSoC4/SPIS_1_ss_s.c ****     * Summary:
  131:.\Generated_Source\PSoC4/SPIS_1_ss_s.c ****     *  Clears any active interrupts attached to port and returns the value of the 
  132:.\Generated_Source\PSoC4/SPIS_1_ss_s.c ****     *  interrupt status register.
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 7
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 7
 
 
  133:.\Generated_Source\PSoC4/SPIS_1_ss_s.c ****     *
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  251 002c 10000440 		.word	1074003984
  252              		.cfi_endproc
  253              	.LFE4:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 8
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 8
 
 
  254              		.size	SPIS_1_ss_s_ClearInterrupt, .-SPIS_1_ss_s_ClearInterrupt
@@ -432,9 +432,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  262 0006 00000000 		.4byte	.Ldebug_abbrev0
  263 000a 04       		.byte	0x4
  264 000b 01       		.uleb128 0x1
- 265 000c 64010000 		.4byte	.LASF24
+ 265 000c 5C010000 		.4byte	.LASF24
  266 0010 01       		.byte	0x1
- 267 0011 B6010000 		.4byte	.LASF25
+ 267 0011 AE010000 		.4byte	.LASF25
  268 0015 FA000000 		.4byte	.LASF26
  269 0019 00000000 		.4byte	.Ldebug_ranges0+0
  270 001d 00000000 		.4byte	0
@@ -443,7 +443,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  273 0029 02       		.uleb128 0x2
  274 002a 01       		.byte	0x1
  275 002b 06       		.byte	0x6
- 276 002c DD010000 		.4byte	.LASF0
+ 276 002c D5010000 		.4byte	.LASF0
  277 0030 02       		.uleb128 0x2
  278 0031 01       		.byte	0x1
  279 0032 08       		.byte	0x8
@@ -451,7 +451,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  281 0037 02       		.uleb128 0x2
  282 0038 02       		.byte	0x2
  283 0039 05       		.byte	0x5
- 284 003a 54010000 		.4byte	.LASF2
+ 284 003a 4C010000 		.4byte	.LASF2
  285 003e 02       		.uleb128 0x2
  286 003f 02       		.byte	0x2
  287 0040 07       		.byte	0x7
@@ -459,7 +459,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  289 0045 02       		.uleb128 0x2
  290 0046 04       		.byte	0x4
  291 0047 05       		.byte	0x5
- 292 0048 AD010000 		.4byte	.LASF4
+ 292 0048 A5010000 		.4byte	.LASF4
  293 004c 02       		.uleb128 0x2
  294 004d 04       		.byte	0x4
  295 004e 07       		.byte	0x7
@@ -478,13 +478,13 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  308 0064 696E7400 		.ascii	"int\000"
  309 0068 02       		.uleb128 0x2
  310 0069 04       		.byte	0x4
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 9
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 9
 
 
  311 006a 07       		.byte	0x7
  312 006b 98000000 		.4byte	.LASF8
  313 006f 04       		.uleb128 0x4
- 314 0070 5E010000 		.4byte	.LASF9
+ 314 0070 56010000 		.4byte	.LASF9
  315 0074 02       		.byte	0x2
  316 0075 5B       		.byte	0x5b
  317 0076 30000000 		.4byte	0x30
@@ -524,7 +524,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  351 00bf 01       		.byte	0x1
  352 00c0 E1000000 		.4byte	0xe1
  353 00c4 07       		.uleb128 0x7
- 354 00c5 4E010000 		.4byte	.LASF17
+ 354 00c5 46010000 		.4byte	.LASF17
  355 00c9 01       		.byte	0x1
  356 00ca 2A       		.byte	0x2a
  357 00cb 6F000000 		.4byte	0x6f
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  365 00d9 6F000000 		.4byte	0x6f
  366 00dd 02       		.byte	0x2
  367 00de 91       		.byte	0x91
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 10
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 10
 
 
  368 00df 77       		.sleb128 -9
@@ -565,7 +565,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  389 0109 00       		.byte	0
  390 010a 09       		.uleb128 0x9
  391 010b 01       		.byte	0x1
- 392 010c E9010000 		.4byte	.LASF19
+ 392 010c E1010000 		.4byte	.LASF19
  393 0110 01       		.byte	0x1
  394 0111 61       		.byte	0x61
  395 0112 01       		.byte	0x1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  422 0157 01       		.byte	0x1
  423 0158 08       		.uleb128 0x8
  424 0159 E8000000 		.4byte	.LASF23
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 11
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 11
 
 
  425 015d 01       		.byte	0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  479 002c 16       		.uleb128 0x16
  480 002d 00       		.byte	0
  481 002e 03       		.uleb128 0x3
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 12
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 12
 
 
  482 002f 0E       		.uleb128 0xe
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  536 0066 00       		.byte	0
  537 0067 00       		.byte	0
  538 0068 08       		.uleb128 0x8
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 13
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 13
 
 
  539 0069 34       		.uleb128 0x34
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  593 00a0 11       		.uleb128 0x11
  594 00a1 01       		.uleb128 0x1
  595 00a2 12       		.uleb128 0x12
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 14
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 14
 
 
  596 00a3 01       		.uleb128 0x1
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  650 0068 00000000 		.4byte	0
  651 006c 00000000 		.4byte	0
  652              	.LLST2:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 15
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 15
 
 
  653 0070 00000000 		.4byte	.LFB2
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  707 00f6 77       		.byte	0x77
  708 00f7 10       		.sleb128 16
  709 00f8 00000000 		.4byte	0
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 16
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 16
 
 
  710 00fc 00000000 		.4byte	0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  753      735F735F 
  753      436C6561 
  753      72496E74 
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 17
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 17
 
 
  754              	.LASF11:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  777      00
  778              	.LASF6:
  779 00da 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 18
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 18
 
 
  779      206C6F6E 
@@ -1033,56 +1033,56 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 1
  783 00f5 63686172 		.ascii	"char\000"
  783      00
  784              	.LASF26:
- 785 00fa 5C5C7073 		.ascii	"\\\\psf\\Home\\Desktop\\E3PRJ3\\Implementering\\SW\\"
- 785      665C486F 
- 785      6D655C44 
+ 785 00fa 5A3A5C44 		.ascii	"Z:\\Desktop\\E3PRJ3\\Implementering\\SW\\SPI\\PSoC4"
  785      65736B74 
  785      6F705C45 
- 786 0126 5350495C 		.ascii	"SPI\\PSoC4_SPI\\SPI_slave\\SPI_slave.cydsn\000"
- 786      50536F43 
- 786      345F5350 
- 786      495C5350 
- 786      495F736C 
+ 785      3350524A 
+ 785      335C496D 
+ 786 0127 5F535049 		.ascii	"_SPI\\SPI_slave\\SPI_slave.cydsn\000"
+ 786      5C535049 
+ 786      5F736C61 
+ 786      76655C53 
+ 786      50495F73 
  787              	.LASF17:
- 788 014e 76616C75 		.ascii	"value\000"
+ 788 0146 76616C75 		.ascii	"value\000"
  788      6500
  789              	.LASF2:
- 790 0154 73686F72 		.ascii	"short int\000"
+ 790 014c 73686F72 		.ascii	"short int\000"
  790      7420696E 
  790      7400
  791              	.LASF9:
- 792 015e 75696E74 		.ascii	"uint8\000"
+ 792 0156 75696E74 		.ascii	"uint8\000"
  792      3800
  793              	.LASF24:
- 794 0164 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 794 015c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
  794      4320342E 
  794      372E3320 
  794      32303133 
  794      30333132 
- 795 0197 616E6368 		.ascii	"anch revision 196615]\000"
+ 795 018f 616E6368 		.ascii	"anch revision 196615]\000"
  795      20726576 
  795      6973696F 
  795      6E203139 
  795      36363135 
  796              	.LASF4:
- 797 01ad 6C6F6E67 		.ascii	"long int\000"
+ 797 01a5 6C6F6E67 		.ascii	"long int\000"
  797      20696E74 
  797      00
  798              	.LASF25:
- 799 01b6 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SPIS_1_ss_s.c\000"
+ 799 01ae 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\SPIS_1_ss_s.c\000"
  799      6E657261 
  799      7465645F 
  799      536F7572 
  799      63655C50 
  800              	.LASF0:
- 801 01dd 7369676E 		.ascii	"signed char\000"
+ 801 01d5 7369676E 		.ascii	"signed char\000"
  801      65642063 
  801      68617200 
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccIqkKof.s 			page 19
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccpRPTS8.s 			page 19
 
 
  802              	.LASF19:
- 803 01e9 53504953 		.ascii	"SPIS_1_ss_s_Read\000"
+ 803 01e1 53504953 		.ascii	"SPIS_1_ss_s_Read\000"
  803      5F315F73 
  803      735F735F 
  803      52656164 
