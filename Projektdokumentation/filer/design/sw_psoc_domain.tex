@@ -1,0 +1,69 @@
+%% SW design: PSoC Domain
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_parameters}}
+\caption{Klasse parameters}
+\label{fig:sw_psoc_class_parameters}
+\end{figure} 
+
+{\centering
+\textbf{parameters}\par
+}
+\textbf{Ansvar:} Gemme information omkring det autonome vandingssystem. \
+
+\verb+int setTemp( float temp const ) +\\
+\textbf{Parametre:} temperatur. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Gemmer modtagne temperatur i medlemsdata \verb+temperature_+. \\
+
+\verb+int getTemp( float & temp ) const+ \\
+\textbf{Parametre:} Reference til at gemme temperatur i. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+temperature_+ i reference. \\
+
+\verb+int setHumi( float humi const )+ \\
+\textbf{Parametre:} humidity. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Gemmer modtagne humidity i medlemsdata \verb+humidity_+. \\
+
+\verb+int getHumi( float & humi ) const+ \\
+\textbf{Parametre:} Reference til at gemme humidity i. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+humidity_+ i reference. \\
+
+\verb+int setActive( bool const )+ \\
+\textbf{Parametre:} True = aktiv, False = inaktiv. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Gemmer modtagne bool i medlemsdata \verb+active_+. \\
+
+\verb+int getActive( bool & ) const+ \\
+\textbf{Parametre:} Reference til at gemme bool i. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+active_+ i reference. \\
+
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_buffer}}
+\caption{Klasse buffer}
+\label{fig:sw_psoc_class_buffer}
+\end{figure} 
+
+{\centering
+\textbf{buffer}\par
+}
+\textbf{Ansvar:} Holde data fra sensorerne ind til de udlæses af Master \
+
+\verb+buffer( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} Ingen. \\
+\textbf{Beskrivelse:} Skal initialisere medlem \verb+buffer_+\\
+
+\verb+int saveData( vector<string> & )+ \\
+\textbf{Parametre:} Reference til vector med data. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal gemme modtaget data i \verb+buffer_+-medlemmet.\\
+
+\verb+int getData( vector<string> & )+ \\
+\textbf{Parametre:} Reference til vector til data. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal returnerer data fra \verb+buffer_+ i reference og nulstille bufferen.\\

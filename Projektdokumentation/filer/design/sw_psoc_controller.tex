@@ -1,0 +1,70 @@
+%% SW design: PSoC Controllers
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_addRemove}}
+\caption{Klasse addRemove}
+\label{fig:sw_psoc_class_addremove}
+\end{figure} 
+
+{\centering
+\textbf{addRemove}\par
+}
+\textbf{Ansvar:} Kontrollerer hændelsesforløbet ifm. usecase 1. \
+
+\verb+int verify( ) const +\\
+\textbf{Parametre:} Ingen \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Returnerer kun 0. Bruges til at verificerer kommunikation mellem Master og Enhed.\\
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_config}}
+\caption{Klasse config}
+\label{fig:sw_psoc_class_config}
+\end{figure} 
+
+{\centering
+\textbf{config}\par
+}
+\textbf{Ansvar:} Kontrollerer hændelsesforløbet ifm. usecase 2. \
+
+\verb+int config( float & temp const, float & humidity const )+ \\
+\textbf{Parametre:} To referencer til hhv. temperatur og fugtighedsgrænser \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal gemme parametre i et objekt af typen parameters.\\
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_onOff}}
+\caption{Klasse onOff}
+\label{fig:sw_psoc_class_onOff}
+\end{figure} 
+
+{\centering
+\textbf{onOff}\par
+}
+\textbf{Ansvar:} Kontrollerer hændelsesforløbet ifm. usecase 3. \
+
+\verb+int turnOnOff( bool onOff const )+ \\
+\textbf{Parametre:} En \verb+bool+ som angiver on = true, off = false \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal sætte flaget \verb+active_+ i \verb+parameters+-objektet ud fra den modtagende parameter.\\
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_loadData}}
+\caption{Klasse loadData}
+\label{fig:sw_psoc_class_loadData}
+\end{figure} 
+
+{\centering
+\textbf{loadData}\par
+}
+\textbf{Ansvar:} Kontrollerer hændelsesforløbet ifm. usecase 4. \
+
+\verb+int getBuffer( vector<string> & buf )+ \\
+\textbf{Parametre:} En reference til en skrivbar buffer \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal hente data fra \verb+buffer+-objektet og gemme det i parametren buf.\\
+
+\verb+int movementDetekt( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal deaktiverer vanding ved at sætte \verb+active_+-flaget i \verb+parameters+-objektet til 0. Skal også starte en timer som ved udløbet skal aktiverer vandingen igen efter 30 minutter.\\

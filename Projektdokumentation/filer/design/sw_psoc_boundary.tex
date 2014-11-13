@@ -1,0 +1,103 @@
+%% SW design: PSoC Boundary
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_sensorPackage}}
+\caption{Klasse sensorPackage}
+\label{fig:sw_psoc_class_sensorPackage}
+\end{figure} 
+
+{\centering
+\textbf{sensorPackage}\par
+}
+\textbf{Ansvar:} Holder styr på tilkoblede sensorer. \
+
+\verb+sensorPackage( ) +\\
+\textbf{Parametre:} Ingen \\
+\textbf{Returværdi:} Ingen \\
+\textbf{Beskrivelse:} Skal oprette sensor- og sprinklerobjekter og udføre den nødvendige opsætning af disse. \\
+
+\verb+int getData( float & temp, float & humi )+ \\
+\textbf{Parametre:} Reference til at gemme aflæste temperatur og fugtighed i. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Aflæse data fra temperatur- og fugtighedssensor og returner disse i de modtagende referencer. \\
+
+\verb+int water( bool const )+ \\
+\textbf{Parametre:} True = tænd sprinkler, False = sluk sprinkler \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Tænd eller sluk tilkoblede sprinkler ud fra modtagende parameter. \\
+
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_tempSensor}}
+\caption{Klasse tempSensor}
+\label{fig:sw_psoc_class_tempSensor}
+\end{figure} 
+
+{\centering
+\textbf{tempSensor}\par
+}
+\textbf{Ansvar:} Håndterer kommunikation med temperatursensor. \
+
+\verb+tempSensor( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} Ingen. \\
+\textbf{Beskrivelse:} Initialisere nødvendige indstillinger for at kunne kommunikerer med sensoren. \\
+
+\verb+int getValue( float & ) const+ \\
+\textbf{Parametre:} Reference til at gemme temperatur i. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Returnerer aflæst temperatur i reference. \\
+
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_humiSensor}}
+\caption{Klasse humiSensor}
+\label{fig:sw_psoc_class_humiSensor}
+\end{figure} 
+
+{\centering
+\textbf{humiSensor}\par
+}
+\textbf{Ansvar:} Håndterer kommunikation med fugtighedssensor. \
+
+\verb+humiSensor( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} Ingen. \\
+\textbf{Beskrivelse:} Initialisere nødvendige indstillinger for at kunne kommunikerer med sensoren. \\
+
+\verb+int getValue( float & ) const+ \\
+\textbf{Parametre:} Reference til at gemme fugtighed i. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Returnerer aflæst fugtighed i reference. \\
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_sprinkler}}
+\caption{Klasse sprinkler}
+\label{fig:sw_psoc_class_sprinkler}
+\end{figure} 
+
+{\centering
+\textbf{sprinkler}\par
+}
+\textbf{Ansvar:} At aktiverer og deaktiverer tilkoblede sprinkler \
+
+\verb+sprinkler( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} Ingen. \\
+\textbf{Beskrivelse:} Skal initialisere nødvendige dele for at kunne bruge GPIO.\\
+
+\verb+int setValue( bool const )+ \\
+\textbf{Parametre:} True = tænd sprinkler, False = sluk sprinkler. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal aktiverer eller deaktiverer sprinkler ved hjælp af GPIO.\\
+
+\begin{figure}[htbp] \centering
+{\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_SPIhandler}}
+\caption{Klasse SPIHandler}
+\label{fig:sw_psoc_class_SPIhandler}
+\end{figure} 
+
+{\centering
+\textbf{SPIHandler}\par
+}
+\textbf{Ansvar:} Afkode modtagne SPI beskeder og kalde nødvendige controllerer. \
