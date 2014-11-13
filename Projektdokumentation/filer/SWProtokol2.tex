@@ -3,9 +3,12 @@
 En del data skal flyttes mellem Master og de tilkoblede Enheder. Her følger beskrivelsen af hvordan data pakkes mellem de to dele. Den elektriske protokol som anvendes er SPI.
 
 Opsætningen er som følger:
-\textit{Hastighed
-SPI mode
-Antal bits}
+
+\begin{itemize}
+  \item Hastighed: 1 MHz
+  \item SPI mode: 0 (CPOL 0 - CPHA 0)
+  \item Antal bits: 1 char pr. transmission \ldots
+\end{itemize}
 
 Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sendes data mellem Master og Enhed.
 
@@ -17,85 +20,53 @@ Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sende
 	\item Enhed sender data til Master (UC4)
 \end{enumerate}
 
+SPI-kommunikationen skal bestå af 2 metoder. En write funktion som står for at skrive til Enheden. Og en read funktion som står for at udlæse data fra Enheden.
 
-SPI kommunikationen skal bestå af 2 metoder. En write funktion som står for at skrive til Enheden. Og en read funktion som står for at udlæse data fra Enheden.
-
-\begin{table}[h]
-	\caption{De to metoder for SPI-kommunikationen}
-	\centering
-	\begin{tabular}{|c|c|c|}
-		\hline 
-		& \textbf{ASCII} & \textbf{Hex} \\ 
-		\hline 
-		\textbf{WRITE} & 'W' / 'w' & 0x57 / 0x77 \\ 
-		\hline 
-		\textbf{READ} & 'R' / 'r' & 0x52 / 0x72 \\ 
-		\hline 
-	\end{tabular} 
-	\label{table:SWProtokol-write-read}
-\end{table}
-
-
-Dataen til og fra enhederne pakkes i nogle frames som beskrevet i tabel \ref{table:SWProtokol-frames}. Først sendes write/read metoden. Herefter kommer kommandoen. Og data i det tilfælde at parametrene på Enheden skal ændres
+Dataen til og fra enhederne pakkes i nogle frames som beskrevet i tabel \ref{table:SWProtokol-frames}. Først sendes kommandoen. Herefter data i det tilfælde at parametrene på Enheden skal ændres
 
 \begin{table}[h]
 	\caption{Data formatering for SPI-kommunikation}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|}
 		\hline 
-		\textbf{Byte} & 0 & 1 & 2 & 3  \\ 
+		\textbf{Byte} & 0 & 1 & 2..<data-længde>  \\ 
 		\hline 
-		\textbf{Indhold} & W/R & <Kommando> & <Data> & <Data>  \\ 
+		\textbf{Indhold} & <Kommando> & <Længde> & <Data>  \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-frames}
 \end{table}
 
-\begin{table}[h]
-	\caption{Retur data for SPI-kommunikation}
-	\centering
-	\begin{tabular}{|l|c|c|c|c|}
-		\hline 
-		\textbf{Byte} & 0 & 1 & 2 & 3  \\ 
-		\hline 
-		\textbf{Indhold} & <Data> & <Data> & <Data> & <Data>  \\ 
-		\hline 
-	\end{tabular} 
-	\label{table:SWProtokol-retur}
-\end{table}
-
-
 \subsubsection*{Blokken <Kommando>}
-Alle kommandoer er én byte lang og kommandoerne i tabel \ref{tabel:SWProtokol-kommandoer} er de tilgængelige kommandoer. Hvis ikke kommandoen genkendes er der intet svar.
+Alle kommandoer er én byte lang og kommandoerne i tabel \ref{tabel:SWProtokol-kommandoer} er de tilgængelige kommandoer. Alle kommandoer håndteres af SPI\_api klassen og kan ikke tilgås udefra.
 
 \begin{table}[H]
 \caption{Kommandoer for SPI-kommunikation}
 \centering
 \begin{tabular}{|c|c|l|c|}
 \hline 
-\textbf{ASCII} & \textbf{HEX} & \textbf{Funktion} & \textbf{Metode}  \\ 
+\textbf{ASCII} & \textbf{HEX} & \textbf{Funktion} \\ 
 \hline 
-'A' / 'a' & 0x41 / 0x61 & Aktiver Enhed & Write\\ 
+'A' & 0x41 & Aktiver Enhed \\ 
 \hline 
-'D' / 'd' & 0x44 / 0x64 & Deaktiver Enhed & Write\\ 
+'D' & 0x44 & Deaktiver Enhed \\ 
 \hline 
-'P' / 'p' & 0x50 / 0x70 & Parametre sendes til Enhed & Write\\
+'P' & 0x50 & Parametre sendes til Enhed \\
 \hline 
-'V' / 'v' & 0x56 / 0x76 & Verificer Enhed i systemet & Read\\ 
+'V' & 0x56 & Verificer Enhed i systemet \\ 
 \hline
-'L' / 'l' & 0x4c / 0x6c & Forespørg logdata fra Enhed & Read\\ 
+'L' & 0x4c & Forespørg logdata fra Enhed \\ 
 \hline
 \end{tabular}
 \label{tabel:SWProtokol-kommandoer}
 \end{table} 
 
 \subsubsection*{Blokken <Data>}
-Data-blokken bruges til at sende data mellem enhederne. Her følger beskrivelsen for hvordan denne formateres.
-Ved Aktiver og Deaktiver sendes ingen <data>. 
+Data-blokken bruges til at sende data mellem enhederne. Her følger beskrivelsen for hvordan denne formateres. 
 
 \textbf{Send parametre}
 
-Når parametrene på Enheden skal ændres sendes <data>. 
+Når parametrene på Enheden skal ændres, sendes <data>. 
 
 Her skal sendes følgende parametre til Enheden.
 
@@ -104,16 +75,16 @@ Her skal sendes følgende parametre til Enheden.
 	\item Øvre temperaturgrænse
 \end{enumerate}
 
-Figur \ref{table:SWProtokol-para} viser formateringen for write metoden, når parametrene skal ændres på Enheden. Den nedre fugtighedsgrænse skal består af en to cifret procent sats. Den øvre temperaturgrænse består af en to cifret temperatur i °C.
+Figur \ref{table:SWProtokol-para} viser formateringen for konfig-metoden, når parametrene skal ændres på Enheden. Den nedre fugtighedsgrænse skal består af en to-cifret procent sats. Den øvre temperaturgrænse består af en to-cifret temperatur i °C.
 
 \begin{table}[H]
 	\caption{Data-formatering for parameter-kommando}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|c|c|}
 		\hline 
-		\textbf{Byte} & 0 & 1 & 2 & 3 \\ 
+		\textbf{Byte} & 0 & 1-2 & 3-4 \\ 
 		\hline 
-		\textbf{Indhold} & W & P & <Fugt> & <Temp> \\ 
+		\textbf{Indhold} & P & <Fugt> & <Temp> \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-para}
@@ -122,31 +93,31 @@ Figur \ref{table:SWProtokol-para} viser formateringen for write metoden, når pa
 
 \textbf{Send log}
 
-Masteren beder Enheden om at sende log data. Dette gøres ved at benytte read metoden. Tabel \ref{table:SWProtokol-log} viser indholdet af metodekaldet. 
+Masteren beder Enheden om at sende log data. Dette gøres ved at benytte send log metoden. Tabel \ref{table:SWProtokol-log} viser indholdet af metodekaldet. 
 
 \begin{table}[H]
-	\caption{Metode kald for send log-kommando}
+	\caption{Metode kald for send log-metode}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|c|c|}
 		\hline 
-		\textbf{Byte} & 0 & 1 & 2 & 3 \\ 
+		\textbf{Byte} & 0 \\ 
 		\hline 
-		\textbf{Indhold} & R & L & NULL & <KP-nummer> \\ 
+		\textbf{Indhold} & L \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-log}
 \end{table}
 
-Når ovenstående modtages af Enheden, retuneres log data fra Enheden iht. tabel \ref{table:SWProtokol-log-kp}. 
+Når ovenstående modtages af Enheden, returneres log data fra Enheden iht. tabel \ref{table:SWProtokol-log-kp}. 
 
 \begin{table}[H]
 	\caption{Data-formatering for KP-returværdi på Send log kommando}
 	\centering
-	\begin{tabular}{|l|c|c|c|c|}
+	\begin{tabular}{|l|c|c|c|c|c|}
 		\hline 
-		\textbf{Byte} & 0 & 1 & 2 & 3 \\ 
+		\textbf{Byte} & 0-1 & 2-3 & 4-5 & 6-7 & 8-9\\ 
 		\hline 
-		\textbf{Indhold} & <KP-nummer> & <Fugt> & <Temp> & <Sprinkler><Bevægelse> \\ 
+		\textbf{Indhold} & <KP-nummer> & <Længde> & <Fugt> & <Temp> & <Sprinkler><Bevægelse> \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-log-retur}
