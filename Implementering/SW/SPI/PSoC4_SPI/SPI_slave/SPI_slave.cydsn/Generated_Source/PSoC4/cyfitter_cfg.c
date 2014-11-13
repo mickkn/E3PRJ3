@@ -300,7 +300,7 @@ void cyfitter_cfg(void)
 		CY_SET_XTND_REG32((void CYFAR *)(CYREG_HSIOM_PORT_SEL3), 0x0000EEFFu);
 
 		/* IOPINS0_0 Starting address: CYDEV_PRT0_DR */
-		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT0_PC), 0x00240180u);
+		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT0_PC), 0x00240D80u);
 
 		/* IOPINS0_1 Starting address: CYDEV_PRT1_DR */
 		CY_SET_XTND_REG32((void CYFAR *)(CYREG_PRT1_PC), 0x00180000u);

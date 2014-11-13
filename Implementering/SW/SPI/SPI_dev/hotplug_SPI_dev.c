@@ -27,7 +27,7 @@ static struct spi_board_info slave_spi_board_info = {
   .chip_select		= 0,		// Chip Select No.
   .max_speed_hz		= 1000000,	// Max Clock Speed PSoC Datasheet p. 24
   .controller_data	= &mcspi_config,// ??
-  .mode			= SPI_MODE_3,	// Clock polarity
+  .mode			= SPI_MODE_0,	// Clock polarity
 };
 
 static int hotplug_spi_init(void)

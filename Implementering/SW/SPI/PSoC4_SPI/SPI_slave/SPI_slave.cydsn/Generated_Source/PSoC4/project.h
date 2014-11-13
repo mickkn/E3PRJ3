@@ -27,6 +27,8 @@
 #include <RED_LED_aliases.h>
 #include <GREEN_LED.h>
 #include <GREEN_LED_aliases.h>
+#include <BLUE_LED.h>
+#include <BLUE_LED_aliases.h>
 #include <SPIS_1_ss_s.h>
 #include <SPIS_1_ss_s_aliases.h>
 #include <SPIS_1_miso_s.h>

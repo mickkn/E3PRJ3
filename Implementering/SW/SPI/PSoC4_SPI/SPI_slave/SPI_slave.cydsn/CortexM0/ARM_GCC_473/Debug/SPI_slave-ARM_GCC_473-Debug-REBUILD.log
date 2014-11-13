@@ -1,4 +1,4 @@
---------------- Rebuild Started: 11/12/2014 21:13:22 Project: SPI_slave, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 11/13/2014 22:14:09 Project: SPI_slave, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\cymetadata.o"
@@ -21,6 +21,7 @@ Deleting file ".\CortexM0\ARM_GCC_473\Debug\SPIS_1_sclk_s.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\SPIS_1_mosi_s.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\RED_LED.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\GREEN_LED.o"
+Deleting file ".\CortexM0\ARM_GCC_473\Debug\BLUE_LED.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\SPI_slave.hex"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\SPI_slave.elf"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\SPI_slave.map"
@@ -70,11 +71,12 @@ arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SPIS_1_mosi_s.lst -ffunction-sections -c .\Generated_Source\PSoC4\SPIS_1_mosi_s.c -o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_mosi_s.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\RED_LED.lst -ffunction-sections -c .\Generated_Source\PSoC4\RED_LED.c -o .\CortexM0\ARM_GCC_473\Debug\RED_LED.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\GREEN_LED.lst -ffunction-sections -c .\Generated_Source\PSoC4\GREEN_LED.c -o .\CortexM0\ARM_GCC_473\Debug\GREEN_LED.o
-arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\SPI_slave.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI_UART.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_PM.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_BOOT.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI_BOOT.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI_UART_INT.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_ss_s.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_miso_s.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_sclk_s.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_mosi_s.o .\CortexM0\ARM_GCC_473\Debug\RED_LED.o .\CortexM0\ARM_GCC_473\Debug\GREEN_LED.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\BLUE_LED.lst -ffunction-sections -c .\Generated_Source\PSoC4\BLUE_LED.c -o .\CortexM0\ARM_GCC_473\Debug\BLUE_LED.o
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\SPI_slave.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI_UART.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_PM.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_BOOT.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI_BOOT.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_SPI_UART_INT.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_ss_s.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_miso_s.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_sclk_s.o .\CortexM0\ARM_GCC_473\Debug\SPIS_1_mosi_s.o .\CortexM0\ARM_GCC_473\Debug\RED_LED.o .\CortexM0\ARM_GCC_473\Debug\GREEN_LED.o .\CortexM0\ARM_GCC_473\Debug\BLUE_LED.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\SPI_slave.a
 arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\SPI_slave.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\SPI_slave.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\SPI_slave.a "C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
 cyelftool.exe -C Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\CortexM0\ARM_GCC_473\Debug\SPI_slave.elf --flash_size 32768 --flash_row_size 128
 cyelftool.exe -S Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\CortexM0\ARM_GCC_473\Debug\SPI_slave.elf
-Flash used: 2470 of 32768 bytes (7,5 %).
+Flash used: 2606 of 32768 bytes (8,0 %).
 SRAM used: 1540 of 4096 bytes (37,6 %).
---------------- Rebuild Succeeded: 11/12/2014 21:13:48 ---------------
+--------------- Rebuild Succeeded: 11/13/2014 22:14:33 ---------------

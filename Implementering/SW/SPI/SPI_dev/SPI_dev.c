@@ -375,7 +375,7 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
 {       
       int minor;
       int len = 1;
-      char resultBuf[MAXLEN];
+      //char resultBuf[MAXLEN];
       char result;
       u8 addr = 0;	// Dummy not used in prototype project
 
@@ -392,8 +392,10 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       psoc4_spi_read_reg8(psoc4_spi_device, addr , &result);
       
       /* Copy data to user space */
-      if(copy_to_user(ubuf, resultBuf, result))
+      if(copy_to_user(ubuf, &result, len))
 	return -EFAULT;
+      
+      printk(KERN_ALERT "Result: '%c'\n", result);
       
       /* Move fileptr */
       *f_pos += len;

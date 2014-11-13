@@ -22,9 +22,11 @@
 <v>SPI_slave\SPI_slave\Header Files</v>
 <v>SPI_slave\SPI_slave\Source Files</v>
 <v>SPI_slave\SPI_slave\Source Files\main.c</v>
-<v>SPI_slave\SPI_slave\Generated_Source</v>
 <v>SPI_slave\SPI_slave\Generated_Source\PSoC4</v>
-<v>SPI_slave\SPI_slave\Generated_Source\PSoC4\cy_boot</v>
+<v>SPI_slave\SPI_slave\Generated_Source\PSoC4\BLUE_LED</v>
+<v>SPI_slave\SPI_slave\Generated_Source\PSoC4\BLUE_LED\BLUE_LED.c</v>
+<v>SPI_slave\SPI_slave\Generated_Source\PSoC4\BLUE_LED\BLUE_LED.h</v>
+<v>SPI_slave\SPI_slave\Generated_Source\PSoC4\BLUE_LED\BLUE_LED_aliases.h</v>
 <v>SPI_slave\SPI_slave\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
 <v>SPI_slave\SPI_slave\Generated_Source\PSoC4\cy_boot\Cm0Iar.icf</v>
 <v>SPI_slave\SPI_slave\Generated_Source\PSoC4\cy_boot\Cm0RealView.scat</v>
@@ -115,6 +117,7 @@
 <v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473</v>
 <v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug</v>
 <v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\BLUE_LED.lst</v>
 <v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
 <v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
 <v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
@@ -171,6 +174,7 @@
 <Unloaded />
 <OpenDocs>
 <name v=".\SPI_slave.cydsn\main.c" />
+<name v=".\SPI_slave.cydsn\TopDesign\TopDesign.cysch" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

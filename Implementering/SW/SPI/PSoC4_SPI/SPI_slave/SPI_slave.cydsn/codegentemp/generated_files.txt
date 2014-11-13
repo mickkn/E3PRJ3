@@ -32,6 +32,9 @@
   <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\GREEN_LED.c" value="ARM_C_FILE;GREEN_LED" />
   <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\GREEN_LED.h" value="NONE;GREEN_LED" />
   <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\GREEN_LED_aliases.h" value="NONE;GREEN_LED" />
+  <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\BLUE_LED.c" value="ARM_C_FILE;BLUE_LED" />
+  <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\BLUE_LED.h" value="NONE;BLUE_LED" />
+  <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\BLUE_LED_aliases.h" value="NONE;BLUE_LED" />
   <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\SPIS_1_ss_s.c" value="ARM_C_FILE;SPIS_1_ss_s" />
   <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\SPIS_1_ss_s.h" value="NONE;SPIS_1_ss_s" />
   <file name="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\codegentemp\SPIS_1_ss_s_aliases.h" value="NONE;SPIS_1_ss_s" />

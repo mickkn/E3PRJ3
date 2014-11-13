@@ -28,6 +28,7 @@ int main()
     
     RED_LED_Write(1);
     GREEN_LED_Write(1);
+    BLUE_LED_Write(1);
     
     for(;;)
     {
@@ -63,10 +64,12 @@ CY_ISR(isr_spi_rx) {
         case 'A':
                 RED_LED_Write(1);
                 GREEN_LED_Write(0);
+                BLUE_LED_Write(1);
             break;
         case 'D':
                 GREEN_LED_Write(1);
                 RED_LED_Write(0);
+                BLUE_LED_Write(1);
             break;
         case 'P':
             break;
