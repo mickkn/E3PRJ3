@@ -87,11 +87,11 @@ For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel som ka
 
 SPI:SPI seriel 			&Seriel kommunikation 	& 				&Master (DK\_02)		&Enhed (P\_DK)			&					 \\\hline
 
-PIR-TTL 					&TTL 					&0\slash3,3V 	&PIR-sensor (PIR\_01) &Enhed (P\_PIR)			&					\\\hline
-VP-TTL 					&TTL 					&0\slash3,3V 	&Enhed (P\_VP)  &Vandpumpe (VP\_01)				&					\\\hline
+PIR-TTL 					&TTL 					&0(lav)\slash3,3V(høj) 	&PIR-sensor (PIR\_01) &Enhed (P\_PIR)			&Interrupt reagerer på høj flanke 					\\\hline
+VP-TTL 					&TTL 					&0(lav)\slash3,3V(høj) 	&Enhed (P\_VP)  &Vandpumpe (VP\_01)				&					\\\hline
 					
-FT-TTL					&TTL						&0\slash3,3V 	&Enhed (P\_FT2) &FT-sensor (FT\_02)				&	    				\\\hline
-FT-Analog				&Analog 					&0-3,3V 	\newline +/-10\%	&FT-sensor (FT\_01) &Enhed (P\_FT1)				&	    				\\\hline
+FT-TTL					&TTL						&0(lav)\slash3,3V(høj) 	&Enhed (P\_FT2) &FT-sensor (FT\_02)				&	    				\\\hline
+FT-Analog				&Analog 					&0-3,3V 	\newline +/-10\%	&FT-sensor (FT\_01) &Enhed (P\_FT1)				& PWM signal	    				\\\hline
 
 \end{tabular}
 \end{small}
