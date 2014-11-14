@@ -12,7 +12,7 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
-<file name=".\CortexM0\ARM_GCC_473\Debug\main.o">
+<file name=".\CortexM0\ARM_GCC_473\Debug\SPI_handler.o">
 <dep name=".\Generated_Source\PSoC4\BLUE_LED.h" />
 <dep name=".\Generated_Source\PSoC4\BLUE_LED_aliases.h" />
 <dep name=".\Generated_Source\PSoC4\CyFlash.h" />
@@ -46,7 +46,8 @@
 <dep name=".\Generated_Source\PSoC4\cypins.h" />
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 <dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name=".\main.c" />
+<dep name=".\SPI_handler.c" />
+<dep name=".\SPI_handler.h" />
 </file>
 <file name=".\Generated_Source\PSoC4\BLUE_LED.h" />
 <file name=".\Generated_Source\PSoC4\BLUE_LED_aliases.h" />
@@ -81,6 +82,45 @@
 <file name=".\Generated_Source\PSoC4\cypins.h" />
 <file name=".\Generated_Source\PSoC4\cytypes.h" />
 <file name=".\Generated_Source\PSoC4\project.h" />
+<file name=".\SPI_handler.c" />
+<file name=".\SPI_handler.h" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\main.o">
+<dep name=".\Generated_Source\PSoC4\BLUE_LED.h" />
+<dep name=".\Generated_Source\PSoC4\BLUE_LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\GREEN_LED.h" />
+<dep name=".\Generated_Source\PSoC4\GREEN_LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\RED_LED.h" />
+<dep name=".\Generated_Source\PSoC4\RED_LED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_PINS.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_SPI_UART.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_SPI_UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_miso_s.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_miso_s_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_mosi_s.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_mosi_s_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_sclk_s.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_sclk_s_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_ss_s.h" />
+<dep name=".\Generated_Source\PSoC4\SPIS_1_ss_s_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\SPI_handler.h" />
+<dep name=".\main.c" />
+</file>
 <file name=".\main.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\BLUE_LED.o">
 <dep name=".\Generated_Source\PSoC4\BLUE_LED.h" />
@@ -350,6 +390,7 @@
 <dep name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
 </file>
 <file name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+<file name=".\main.cpp" />
 <file name=".\Generated_Source\PSoC4\Clock_1.h" />
 <file name=".\Generated_Source\PSoC4\LED_CONTROL.h" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\Clock_1.o">
@@ -558,6 +599,7 @@
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
 <file name=".\CortexM0\ARM_GCC_473\Debug\SPI_slave.hex">
 <dep name=".\CortexM0\ARM_GCC_473\Debug\main.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\SPI_handler.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\cymetadata.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\Cm0Start.o" />
@@ -635,6 +677,8 @@
 <name_val_pair name=".\Generated_Source\PSoC4\RED_LED.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\GREEN_LED.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\BLUE_LED.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\main.cpp" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;&quot;-x &quot;&quot;c++ &quot;" />
+<name_val_pair name=".\SPI_handler.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\mickkirkegaardnielse\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\SPI_slave.cyprj&quot; &quot;-d&quot; &quot;CY8C4245AXI-483&quot; &quot;-s&quot; &quot;Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=LE&quot; " />
@@ -643,9 +687,9 @@
 <dataGuid v="597c5b74-0c46-4204-8b7f-96f3570671dc">
 <CyGuid_597c5b74-0c46-4204-8b7f-96f3570671dc type_name="CyDesigner.Common.ProjMgmt.DeviceSelector.CyDeviceSelectorState" version="1">
 <name_val_pair name="Dialog Bounds" v="0, 0, 0, 0" />
-<name_val_pair name="Column Order" v="PartNumber;DesignFits;Architecture;SPEED_MHZ;FLASH_BYTES;SRAM_BYTES;PACKAGE;UDB_COUNT;PVT_COMPLEX_ADC;DAC8_COUNT;OPAMP_COUNT;COMP_COUNT;DFB_COUNT;ANALOGBLOCKS_COUNT;TIMERCOUNTERPWM_COUNT;USB_TYPE;CAN20B_COUNT;CAPSENSE;DIRDRIVELCD;DMACHANNELS_COUNT;GPIO_COUNT;SIO_COUNT;USBIO_COUNT;EEPROM_BYTES;TRACEBUFF_BYTES;PLL_COUNT;BOOSTCONVERTER_VOLTS;VDDMIN_VOLTS;VDDMAX_VOLTS;TEMPMIN_CELSIUS;TEMPMAX_CELSIUS;AUTOMOTIVE_QUALIFIED;SILICONID;LPCOMP_COUNT;SCB_COUNT;SENSE_IO_COUNT;PVT_DIGITAL_IN_VOLT_RANGE;PVT_ANALOG_IN_VOLT_RANGE;ETM;" />
-<name_val_pair name="Filter Options" v="Architecture:PSoC 4;" />
-<name_val_pair name="Visible Columns" v="PartNumber;DesignFits;Architecture;SPEED_MHZ;FLASH_BYTES;SRAM_BYTES;PACKAGE;UDB_COUNT;PVT_COMPLEX_ADC;DAC8_COUNT;OPAMP_COUNT;COMP_COUNT;DFB_COUNT;ANALOGBLOCKS_COUNT;TIMERCOUNTERPWM_COUNT;USB_TYPE;" />
+<name_val_pair name="Column Order" v="PartNumber;DesignFits;Architecture;SPEED_MHZ;FLASH_BYTES;SRAM_BYTES;PACKAGE;UDB_COUNT;PVT_COMPLEX_ADC;DAC8_COUNT;OPAMP_COUNT;COMP_COUNT;DFB_COUNT;ANALOGBLOCKS_COUNT;TIMERCOUNTERPWM_COUNT;USB_TYPE;CAN20B_COUNT;CAPSENSE;DIRDRIVELCD;DMACHANNELS_COUNT;GPIO_COUNT;SIO_COUNT;USBIO_COUNT;EEPROM_BYTES;TRACEBUFF_BYTES;PLL_COUNT;BOOSTCONVERTER_VOLTS;VDDMIN_VOLTS;VDDMAX_VOLTS;TEMPMIN_CELSIUS;TEMPMAX_CELSIUS;AUTOMOTIVE_QUALIFIED;SILICONID;LPCOMP_COUNT;SCB_COUNT;SENSE_IO_COUNT;PVT_DIGITAL_IN_VOLT_RANGE;PVT_ANALOG_IN_VOLT_RANGE;ETM;;" />
+<name_val_pair name="Filter Options" v="Architecture:PSoC 4;;" />
+<name_val_pair name="Visible Columns" v="PartNumber;DesignFits;Architecture;SPEED_MHZ;FLASH_BYTES;SRAM_BYTES;PACKAGE;UDB_COUNT;PVT_COMPLEX_ADC;DAC8_COUNT;OPAMP_COUNT;COMP_COUNT;DFB_COUNT;ANALOGBLOCKS_COUNT;TIMERCOUNTERPWM_COUNT;USB_TYPE;;" />
 <name_val_pair name="Sort" v="PartNumber;Ascending" />
 </CyGuid_597c5b74-0c46-4204-8b7f-96f3570671dc>
 </dataGuid>
@@ -657,7 +701,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130603869545525444" />
+<deps_time v="130604462231832559" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="925cc1e1-309e-4e08-b0a1-09a83c35b157">
@@ -1223,15 +1267,30 @@
 <v>C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v</v>
 <v>C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="130603868667725655" />
+<deps_time v="130604321082225420" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="bf610382-39c6-441f-80b8-b04622ea7845">
 <CyGuid_bf610382-39c6-441f-80b8-b04622ea7845 type_name="CyDesigner.Common.Debugger.CyWatchedVariableList" version="1">
-<debugger_watch_list />
+<debugger_watch_list>
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="spiCounter" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="tempBuffer" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="humiBuffer" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="cmd" radix="hex" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="spiBuffer" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="tempValue" radix="Default" />
+<CyGuid_ccf7a56e-c00d-460c-82dd-56c8f54feb7f type_name="CyDesigner.Common.Debugger.CyWatchedVariableList+CyWatchedItem" version="1" window="0" name="humiValue" radix="Default" />
+</debugger_watch_list>
 </CyGuid_bf610382-39c6-441f-80b8-b04622ea7845>
+</dataGuid>
+<dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
+<CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
+<debugger_breakpoint_list>
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\SPI_handler.c" linenumber="66" />
+</debugger_breakpoint_list>
+</CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
 </dataGuid>
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>

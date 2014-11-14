@@ -1,6 +1,6 @@
 // ======================================================================
 // SPI_slave.v generated from TopDesign.cysch
-// 11/13/2014 at 22:14
+// 11/14/2014 at 10:48
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 

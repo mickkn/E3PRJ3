@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;HelloCpp/src/HelloCpp.cpp&apos; to &apos;main.cpp&apos;" description="Rename resource &apos;HelloCpp.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/HelloCpp.cpp" name="main.cpp" stamp="1389284107111" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;HelloCpp/src/main.cpp&apos; to &apos;HelloCpp.cpp&apos;" description="Rename resource &apos;main.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main.cpp" name="HelloCpp.cpp" stamp="1389284174279" updateReferences="true"/>
-</session>

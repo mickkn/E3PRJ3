@@ -30,6 +30,8 @@
       <Folder BuildType="BUILD" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
         <Files Root="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn">
           <File BuildType="BUILD" Toolchain="">.\main.c</File>
+          <File BuildType="BUILD" Toolchain="">.\SPI_handler.c</File>
+          <File BuildType="BUILD" Toolchain="">.\SPI_handler.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\Generated_Source\PSoC4">

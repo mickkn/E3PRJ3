@@ -2,7 +2,7 @@
 --	Conversion of SPI_slave.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Nov 13 22:14:22 2014
+--	Fri Nov 14 10:48:23 2014
 --
 
 USE cypress.cypress.all;
