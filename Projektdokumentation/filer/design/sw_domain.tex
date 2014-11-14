@@ -12,12 +12,12 @@
 }
 \textbf{Ansvar:} at holde styr på hvor mange enheder der er og deres adresser. \
 
-int getUnits( \& int array, \& int size ) \\
+\verb+int getUnits( & int array, & int size ) +\\
 \textbf{Parametre:}  Modtager en adresse på et array af ints og en tilhørende referance til at skrive size i.\\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Metoden skriver sit adresse array over i det array som modtages. Derudover skriver den størrelsen på arrayet over i size så modtageren ved hvor stort arrayet er. (hvor mange golfhuller der er)\\
 
-int saveUnit( int adresse, int nr = size\_ ) \\
+\verb+int saveUnit( int adresse, int nr = size_ ) +\\
 \textbf{Parametre:} Modtager en adresse af typen int og et index nr af typen int. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:}  Metoden gemmer adressen som modtages på plads nr. Hvis der ikke modtages et index nr, så lægges adressen i array[size] og lægger 1 til size\_. \\
@@ -35,17 +35,17 @@ int saveUnit( int adresse, int nr = size\_ ) \\
 }
 \textbf{Ansvar:} Gemme information loggen til senere brug. \
 
-int saveLog( vector<string> ) \\
+\verb+int saveLog( vector<string> ) +\\
 \textbf{Parametre:} Modtager en vector af typen string. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Modtager log fra enhed og skriver den over i den samlede log og gemmer den i latest. Loggen skal gemmes i en txt fil som der læses fra under startup. \\
 
-int getLog( \& vector<string> )  \\
+\verb+int getLog( & vector<string> ) + \\
 \textbf{Parametre:} Modtager en adresse til en vector af typen string. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Metoden skriver klassens medlems data log over i den adresse som den har modtaget som parameter.\\
 
-int getLatest( \& vector<string> ) \\
+\verb+int getLatest( & vector<string> ) +\\
 \textbf{Parametre:} Modtager en adresse til en vector af typen string.  \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Metoden skriver klassens medlems data latest over i den adresse som den har modtaget som parameter.\\

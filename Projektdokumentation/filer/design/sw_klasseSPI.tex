@@ -11,27 +11,27 @@
 }
 \textbf{Ansvar:} At være et lag imellem \textit{applications}-laget og \textit{device driver}-laget ifm. SPI kommunikation. \
 
-int activate( int unit ) const \\
+\verb+int activate( int unit ) const +\\
 \textbf{Parametre:} modtager en integer på enhed som skal aktiveres \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} metoden skal aktivere enheden \verb+unit+ over SPI netværket.\\
 
-int deactivate( int unit ) const \\
+\verb+int deactivate( int unit ) const+ \\
 \textbf{Parametre:}  modtager en integer på følgende enhed som skal deaktiveres\\
 \textbf{Returværdi}: 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} metoden skal deaktivere enheden \verb+unit+ over SPI netværket.\\
 
-int verify( int unit ) const \\
+\verb+int verify( int unit ) const+ \\
 \textbf{Parametre:}  modtager en integer på følgende enhed som skal verificerese\\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen   \\
 \textbf{Beskrivelse:} metoden skal verificere om enheden \verb+unit+ er tilkoblet SPI netværket.\\
 
-int config( int unit, vector<string> ) const \\
-\textbf{Parametre:} modtager en integer på følgende enhed som skal konfigureres. Derudover modtager den en vector af typen string som indeholder parametrene enheden skal konfigureres med \\
+\verb+int config( int unit, float temp, float humi ) const +\\
+\textbf{Parametre:} modtager en integer på følgende enhed som skal konfigureres. Derudover modtager den to floats med parametrene som skal skrives til Enhed. \\
 \textbf{Returværdi:}  0 ved succes ellers negativ i overenstemmelse med fejl-listen   \\
 \textbf{Beskrivelse:} metoden skal sende konfigurations-parametrene i \verb+vector+ til enheden \verb+unit+ over SPI netværket.\\
 
-int getLog( \& vector<string> , int * units, int size ) \\
+\verb+int getLog( & vector<string> , int * units, int size )+ \\
 \textbf{Parametre:}  modtager en referance til en vector af typen string som loggen skal gemmes i. Pointer til array af enheder som skal logges samt int med antallet af enheder i arrayet. \\
 \textbf{Returværdi:}  0 ved succes ellers negativ i overenstemmelse med fejl-listen   \\
 \textbf{Beskrivelse:} metoden skal hente log fra enheder i arrayet \verb+units+ på SPI netværket og gemme dem i \verb+vector+ i henhold til dataprotokollen. \\

@@ -12,7 +12,7 @@
 }
 \textbf{Ansvar:} at styre forløbet i UC1: Tilføj / fjern enhed. \
 
-int menuAddRemove( ) const \\
+\verb+int menuAddRemove( ) const+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Modtager information fra brugeren omkring enhed, verificere enheden over SPI netværket og gemme information i databasen..\\
@@ -28,7 +28,7 @@ int menuAddRemove( ) const \\
 }
 \textbf{Ansvar:} at styre forløbet i UC2: Konfig. \
 
-int menuConfig( ) const \\
+\verb+int menuConfig( ) const+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Modtager information fra brugeren omkring enhed og parametre. Parametrene skrives til den pågældende enhed på SPI netværket.\\
@@ -46,7 +46,7 @@ int menuConfig( ) const \\
 }
 \textbf{Ansvar:} at styre forløbet i UC3: Aktiver / deaktiver. \
 
-int menuOnOff( ) const \\
+\verb+int menuOnOff( ) const+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Modtager information fra brugeren omkring hvilken enhed som ønskes aktiveret eller deaktiveret. Enheden modtager informationen over SPI netværket.\\
@@ -62,7 +62,7 @@ int menuOnOff( ) const \\
 }
 \textbf{Ansvar:} at styre forløbet i UC4: Databehandling . \
 
-int menuloadData( ) \\
+\verb+int menuloadData( )+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Sættes igang med et interrupt styret af en timer. Henter log over SPI netværket og gemmer den.\\
@@ -80,7 +80,7 @@ int menuloadData( ) \\
 }
 \textbf{Ansvar:} at styre forløbet i UC5: Tjek status. \
 
-int menuStatus( ) const \\
+\verb+int menuStatus( ) const+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Henter den seneste log i hukommelsen og viser brugeren den, for den ønskede enhed.\\
@@ -96,7 +96,7 @@ int menuStatus( ) const \\
 }
 \textbf{Ansvar:} at styre forløbet i UC6: Udskriv log. \
 
-int menuLog( ) const \\
+\verb+int menuLog( ) const+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
 \textbf{Beskrivelse:} Henter hele loggen i hukommelsen og viser brugeren den, for den ønskede enhed.\\
