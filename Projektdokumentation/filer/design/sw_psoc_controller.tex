@@ -59,12 +59,22 @@
 }
 \textbf{Ansvar:} Kontrollerer hændelsesforløbet ifm. usecase 4. \
 
-\verb+int getBuffer( vector<string> & buf )+ \\
-\textbf{Parametre:} En reference til en skrivbar buffer \\
+\verb+int getBuffer( char * buf, unsigned int len )+ \\
+\textbf{Parametre:} Pointer til at skrive adressen til bufferen i og en længde. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal hente data fra \verb+buffer+-objektet og gemme det i parametren buf.\\
+\textbf{Beskrivelse:} Skal hente data fra \verb+buffer+-objektet og gemme det i parametren \verb+buf+ og \verb+len+. \\
 
 \verb+int movementDetekt( )+ \\
 \textbf{Parametre:} Ingen. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal deaktiverer vanding ved at sætte \verb+active_+-flaget i \verb+parameters+-objektet til 0. Skal også starte en timer som ved udløbet skal aktiverer vandingen igen efter 30 minutter.\\
+\textbf{Beskrivelse:} Skal deaktiverer vanding ved at sætte \verb+active_+-flaget i \verb+parameters+-objektet til 0. Skal også starte en timer som ved udløbet skal aktiverer vandingen igen efter 30 minutter. Skal sætte flaget \verb+movement_+ til 1, så der næste gang der gemmes data registreres bevægelse. \\
+
+\verb+int getLogTimeout( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal aflæses data fra \verb+sensorPackage+ og gemme disse i \verb+buffer+-objektet. Afhængig af \verb+movement_+-flaget, tilføjes passende char efter målt data, og flaget sættes til 0. \\
+
+\verb+int waterTimeout( )+ \\
+\textbf{Parametre:} Ingen. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Skal aktivere vanding ved at sætte \verb+active_+-flaget i \verb+parameters+-objektet til 1. \\

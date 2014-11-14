@@ -16,13 +16,13 @@
 \textbf{Returværdi:} Ingen \\
 \textbf{Beskrivelse:} Skal oprette sensor- og sprinklerobjekter og udføre den nødvendige opsætning af disse. \\
 
-\verb+int getData( float & temp, float & humi )+ \\
-\textbf{Parametre:} Reference til at gemme aflæste temperatur og fugtighed i. \\
+\verb+int getData( float * temp, float * humi )+ \\
+\textbf{Parametre:} Pointers til at gemme aflæste temperatur og fugtighed i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Aflæse data fra temperatur- og fugtighedssensor og returner disse i de modtagende referencer. \\
 
-\verb+int water( bool const )+ \\
-\textbf{Parametre:} True = tænd sprinkler, False = sluk sprinkler \\
+\verb+int water( unsigned char const )+ \\
+\textbf{Parametre:} 1 = tænd sprinkler, 0 = sluk sprinkler \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Tænd eller sluk tilkoblede sprinkler ud fra modtagende parameter. \\
 
@@ -43,8 +43,8 @@
 \textbf{Returværdi:} Ingen. \\
 \textbf{Beskrivelse:} Initialisere nødvendige indstillinger for at kunne kommunikerer med sensoren. \\
 
-\verb+int getValue( float & ) const+ \\
-\textbf{Parametre:} Reference til at gemme temperatur i. \\
+\verb+int getValue( float * ) const+ \\
+\textbf{Parametre:} Pointer til at gemme temperatur i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer aflæst temperatur i reference. \\
 
@@ -65,8 +65,8 @@
 \textbf{Returværdi:} Ingen. \\
 \textbf{Beskrivelse:} Initialisere nødvendige indstillinger for at kunne kommunikerer med sensoren. \\
 
-\verb+int getValue( float & ) const+ \\
-\textbf{Parametre:} Reference til at gemme fugtighed i. \\
+\verb+int getValue( float * ) const+ \\
+\textbf{Parametre:} Pointer til at gemme fugtighed i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer aflæst fugtighed i reference. \\
 
@@ -86,8 +86,8 @@
 \textbf{Returværdi:} Ingen. \\
 \textbf{Beskrivelse:} Skal initialisere nødvendige dele for at kunne bruge GPIO.\\
 
-\verb+int setValue( bool const )+ \\
-\textbf{Parametre:} True = tænd sprinkler, False = sluk sprinkler. \\
+\verb+int setValue( unsigned char const )+ \\
+\textbf{Parametre:} 1 = tænd sprinkler, 0 = sluk sprinkler. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Skal aktiverer eller deaktiverer sprinkler ved hjælp af GPIO.\\
 

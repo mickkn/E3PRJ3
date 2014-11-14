@@ -16,8 +16,8 @@
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne temperatur i medlemsdata \verb+temperature_+. \\
 
-\verb+int getTemp( float & temp ) const+ \\
-\textbf{Parametre:} Reference til at gemme temperatur i. \\
+\verb+int getTemp( float * temp ) const+ \\
+\textbf{Parametre:} Pointer til at gemme temperatur i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer medlem \verb+temperature_+ i reference. \\
 
@@ -26,20 +26,20 @@
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne humidity i medlemsdata \verb+humidity_+. \\
 
-\verb+int getHumi( float & humi ) const+ \\
-\textbf{Parametre:} Reference til at gemme humidity i. \\
+\verb+int getHumi( float * humi ) const+ \\
+\textbf{Parametre:} Pointer til at gemme humidity i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer medlem \verb+humidity_+ i reference. \\
 
-\verb+int setActive( bool const )+ \\
-\textbf{Parametre:} True = aktiv, False = inaktiv. \\
+\verb+int setActive( unsigned char const )+ \\
+\textbf{Parametre:} 1 = aktiv, 0 = inaktiv. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Gemmer modtagne bool i medlemsdata \verb+active_+. \\
+\textbf{Beskrivelse:} Gemmer modtagne char i medlemsdata \verb+active_+. \\
 
-\verb+int getActive( bool & ) const+ \\
-\textbf{Parametre:} Reference til at gemme bool i. \\
+\verb+int getActive( unsigned char * ) const+ \\
+\textbf{Parametre:} Pointer til at gemme unsigned char i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Returnerer medlem \verb+active_+ i reference. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+active_+ i pointer. \\
 
 
 \begin{figure}[htbp] \centering
@@ -56,14 +56,14 @@
 \verb+buffer( )+ \\
 \textbf{Parametre:} Ingen. \\
 \textbf{Returværdi:} Ingen. \\
-\textbf{Beskrivelse:} Skal initialisere medlem \verb+buffer_+\\
+\textbf{Beskrivelse:} Skal initialisere char array \verb+buffer_+ med plads til én datamåling, én bevægelsesregistereing og tre fejl iht. dataprotokol. \\
 
-\verb+int saveData( vector<string> & )+ \\
-\textbf{Parametre:} Reference til vector med data. \\
+\verb+int saveData( char * buf const, unsigned int len const )+ \\
+\textbf{Parametre:} Pointer til buffer med len data. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal gemme modtaget data i \verb+buffer_+-medlemmet.\\
+\textbf{Beskrivelse:} Skal gemme modtaget data i \verb+buffer_+-medlemmet og flytte \verb+cursor_+ antallet af karakterer frem.\\
 
-\verb+int getData( vector<string> & )+ \\
-\textbf{Parametre:} Reference til vector til data. \\
+\verb+int getData( char * buf, unsigned int len )+ \\
+\textbf{Parametre:} Pointer til char array til data. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal returnerer data fra \verb+buffer_+ i reference og nulstille bufferen.\\
+\textbf{Beskrivelse:} Skal returnerer data fra \verb+buffer_+ i pointer og nulstille \verb+cursor_+-medlemmet.\\
