@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2014-11-14T09:48:26Z")
+ (DATE "2014-11-16T11:19:55Z")
  (DESIGN "SPI_slave")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "cydsfit")
