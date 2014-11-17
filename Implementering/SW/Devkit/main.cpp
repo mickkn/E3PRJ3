@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "winMain.h"    // UI controller
+#include "UI.h"    // UI controller
 
 // Controllers
 #include "caddremove.h"
@@ -16,9 +16,9 @@ int main(int argc, char *argv[])
     cConfig cConfigObj;
 
     // Create UI
-    winMain w;
-    w.setCAddRemove(&cAddRemoveObj);
-    w.setCConfig(&cConfigObj);
-    w.show();
+    UI UIObj;
+    UIObj.setCAddRemove(&cAddRemoveObj);
+    UIObj.setCConfig(&cConfigObj);
+    UIObj.getCurrent()->show();
     return a.exec();
 }

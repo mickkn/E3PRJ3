@@ -13,19 +13,6 @@ winMain::~winMain()
     delete ui_;
 }
 
-// Set controllers
-int winMain::setCAddRemove(cAddRemove *ptr)
-{
-    cAddRemovePtr_ = ptr;
-    return 0;
-}
-
-int winMain::setCConfig(cConfig *ptr)
-{
-    cConfigPtr_ = ptr;
-    return 0;
-}
-
 
 // Getters, not used yet!
 Ui::winMain * winMain::getUi() const
@@ -36,10 +23,10 @@ Ui::winMain * winMain::getUi() const
 // Slots
 void winMain::on_bAddRemove_clicked()
 {
-    cAddRemovePtr_->menuAddRemove();
+
 }
 
 void winMain::on_bConfig_clicked()
 {
-    cConfigPtr_->menuConfig();
+   // cConfigPtr_->menuConfig();
 }

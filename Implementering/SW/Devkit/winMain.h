@@ -19,9 +19,6 @@ public:
 
     Ui::winMain * getUi() const;
 
-    int setCAddRemove(cAddRemove *);
-    int setCConfig(cConfig *);
-
 public slots:
     void on_bAddRemove_clicked();
     void on_bConfig_clicked();
@@ -29,8 +26,6 @@ public slots:
 
 private:
     Ui::winMain *ui_;
-    cAddRemove * cAddRemovePtr_;
-    cConfig * cConfigPtr_;
 };
 
 #endif // WINMAIN_H

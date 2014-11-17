@@ -15,12 +15,17 @@ TEMPLATE = app
 SOURCES += main.cpp \
     winMain.cpp \
     caddremove.cpp \
-    cconfig.cpp
+    cconfig.cpp \
+    winConfig.cpp \
+    UI.cpp
 
 HEADERS  += \
     winMain.h \
     caddremove.h \
-    cconfig.h
+    cconfig.h \
+    winConfig.h \
+    UI.h
 
 FORMS    += \
-    winMain.ui
+    winMain.ui \
+    winConfig.ui
