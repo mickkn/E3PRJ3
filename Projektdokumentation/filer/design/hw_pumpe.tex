@@ -28,21 +28,24 @@ Alpha 2 pumpen skal blot tilsluttes 230Vac + jord. Der medfølger et special sti
 
 \subsection{Relæ styring}
 
-I følge databladet for Finder 40.52s (figur \ref{lab:finder4052s}), kræver relæet 100mA ved 5V forsyning, som databladet
+I følge databladet for Finder 40.52s (figur \ref{lab:finder4052s}), kræver relæet 100mA ved 5V forsyning, som databladet viser.
 
 \begin{figure}[H] \centering
 {\includegraphics[width=0.7\textwidth]{filer/design/Billeder/finder4052s}}
-\caption{Datablad for Finder 40.52s - 100mA}
+\caption{Datablad for Finder 40.52s - 100mA, side 7}
 \label{lab:finder4052s}
 \raggedright
 \end{figure} 
 
-PSoC'ens udgang giver hverken strøm eller spænding nok til at trække relæet. PSoC'en afgiver 3,3V og relæet kræver 5V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 5V og 100mA, derfor skal transistoren opfylde dette krav, det gør BC517 den kan leverer 500 mA. \newline
+PSoC'ens udgang giver hverken strøm eller spænding nok til at trække relæet. PSoC'en afgiver 3,3V og relæet kræver 3,7V-8,8V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 100mA, derfor skal transistoren opfylde dette krav, det gør BC517 den kan leverer 500 mA. \newline
 
-R1(Ibase) modstanden er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Spændingen ved PSoC'en er 3,3V og spændingen ved transistoren base ben er 1,4V, det giver en spænding på 1,8V over modstanden. Modstanden er beregnet udfra ohmslov og der er valgt en modstand på 18 kohm, der begrænser strømmen til 0,1 mA. Strømforstærkningen er faktisk 30000 gange i transistoren, så en strøm på 3 uA burde være nok, men der er taget et valg om at strømmen skal være 0,1 mA. Hvis modstanden blev alt for stor ville relæet tage længere tid om at trække. Databladet for BC517 har oplyst et spændingsfald på 1V i mættet tilstand det vil efterlade 4 V til relæet hvilket er nok. Dioden er indsat for at beskytte transistoren.
+R1(Ibase) modstanden er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Spændingen ved PSoC'en er 3,3V og spændingen ved transistoren base ben er 1,4V, det giver en spænding på 1,8V over modstanden. Ibase strømmen er beregnet udfra ohmslov og der er valgt en modstand på 18 kohm, der begrænser strømmen til 0,1 mA, se formel \ref{eq:Ibase}.
+\newline
+Strømforstærkningen er faktisk 30000 gange i transistoren, så en strøm på 3 uA burde være nok, men der er taget et valg om at strømmen skal være 0,1 mA. BC517 er oplyst til at have et spændingsfald på 1V i mættet tilstand, det efterlader 4 V til relæet, hvilket også er nok da relæet virker indenfor 3,7V - 8,8V, se figur \ref{lab:finder4052s}. Hvis modstanden blev alt for stor ville relæet tage længere tid om at trække. Dioden er indsat for at beskytte transistoren.
 
-\begin{equation}
-Ibase = \frac{1,8V}{18k\Omega} = 0,1mA
+\begin{equation} 
+Ibase = \frac{3,3V - 1,4V}{18k\Omega} = 0,1mA
+\label{eq:Ibase}
 \end{equation}
 
 \begin{figure}[H] \centering
@@ -52,7 +55,7 @@ Ibase = \frac{1,8V}{18k\Omega} = 0,1mA
 \raggedright
 \end{figure} 
 
-Når PSoC'ens pin til BC517 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emittier på transistoren, herved er der 5V over relæets spole og relæets kontaktsæt klikker herved. 
+Når PSoC'ens pin til BC517 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emittier på transistoren, herved er der 4V over relæets spole og relæets kontaktsæt klikker herved. 
 
 \subsection{Driver}
 

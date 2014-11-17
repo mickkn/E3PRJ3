@@ -4,7 +4,18 @@ For at frigøre sig fra laboratoriets strømforsyningerne udarbejdes egen strøm
 
 230Vac/12Vdc transformeren er fra en gammel computer. Denne kan give 2 amperre og er forsynet med et DC stik (12V) og en stikprop (230Vac). Denne transformer bruges som den er. 
 
-For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra databladet \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan give et output på max 1A ved korrekt køling. Kølingen bliver fortaget med køleplader på begge regulatorer, for at sikre at den ikke bliver for varm. 
+For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra databladet \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan give et output på max 1A ved korrekt køling.  
+\newline
+Uden køling må der max afsættes 1 W i serieregulatoren, da dens arbejdstemperatur ved 1 W ligger på 100$^{\circ}$C.  I formel \ref{eq:effekt_1} er der fortaget en effektberegning på LM7805. Spændingsforskellen imellem $V_{DC}$ og $V_{OUT}$ ganges på det samlede strømforbrug. Strømforbruget er fundet i samtlige datablade for hver komponent plus $I_X$ som er strømmen der løber ned i kondensatoren. Effektudregningen i \ref{eq:effekt_2} viser at ved fuld belastning er det nødvendigt at køle, det er der gjort med køleplader. 
+
+\begin{equation} 
+P = (V_{DC}-V_{out})*(I_{samlet}+I_X) 
+\label{eq:effekt_1}
+\end{equation}
+\begin{equation} 
+P = (12V - 5V)*(0,6 A +10 mA)= 4,27 W 
+\label{eq:effekt_2}
+\end{equation}
 
 \begin{figure}[H] \centering
 {\includegraphics[width=\textwidth]{filer/design/Billeder/LM7805_DATASHEET}}
@@ -42,6 +53,30 @@ Figur \ref{lab:LM317_calc} viser hvorledes appen beregner en værdi for modstand
 \label{lab:LM317_calc}
 \raggedright
 \end{figure}
+
+Det er muligt at beregne udgangsspændingen ud fra følgende formel \ref{eq:LM314_1} som er oplyst i databladet for LM317. Strømmen $I_Q$ er strømmen der løber fra ben 1, den er mindre end 100 uA og typisk på 50 uA, de 1,25 V er spændingen imellem udgangen og referencen. Det giver følgende resultat i formlen \ref{eq:LM314_2}. 
+
+\begin{equation} 
+V_{out} = 1,25 V*(1+\frac{R2}{R1})+I_Q*R2
+\label{eq:LM314_1}
+\end{equation}
+\begin{equation} 
+V_{out} = 1,25 V*(1+\frac{390\Omega}{240\Omega})+50uA*390\Omega = 3,3 V
+\label{eq:LM314_2}
+\end{equation}
+
+
+I formel \ref{eq:effekt_4} er der fortaget en effektberegning på LM317. Den bliver belastet med FT-sensoren, som har et strømforbrug på 180 uA plus $I_X$ som er strømmen der løber ned i kondensatoren og modstanden. Effektudregningen viser at det ikke er nødvendigt med køling, men der er dog  fortaget køling med køleplader alligevel. Det skyldes at det er altid en god ide at køle på et komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed. 
+ 
+\begin{equation} 
+P = (V_{DC}-V_{out})*(I_{FT-sensor}+I_X) 
+\label{eq:effekt_3}
+\end{equation}
+\begin{equation} 
+P = (12V - 3,3V)*(180 uA +10 mA)= 0,09 W 
+\label{eq:effekt_4}
+\end{equation}
+
 
 Figur \ref{lab:LM317_SIMULERING} viser simuleringen af LM317 spændingsregulatoren. Outputtet er 3,3V som forventet. Der simuleres med en modstand R2 på 390 ohm og ikke 393,6 ohm.
 
