@@ -17,14 +17,16 @@ SOURCES += main.cpp \
     caddremove.cpp \
     cconfig.cpp \
     winConfig.cpp \
-    UI.cpp
+    UI.cpp \
+    conoff.cpp
 
 HEADERS  += \
     winMain.h \
     caddremove.h \
     cconfig.h \
     winConfig.h \
-    UI.h
+    UI.h \
+    conoff.h
 
 FORMS    += \
     winMain.ui \
