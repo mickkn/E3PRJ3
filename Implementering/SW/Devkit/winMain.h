@@ -2,8 +2,6 @@
 #define WINMAIN_H
 
 #include <QWidget>
-#include "caddremove.h"
-#include "cconfig.h"
 
 namespace Ui {
 class winMain;
@@ -26,6 +24,7 @@ public slots:
 
 private:
     Ui::winMain *ui_;
+
 };
 
 #endif // WINMAIN_H

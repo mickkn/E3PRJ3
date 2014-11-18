@@ -14,19 +14,19 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     winMain.cpp \
-    caddremove.cpp \
-    cconfig.cpp \
     winConfig.cpp \
     UI.cpp \
-    conoff.cpp
+    cConfig.cpp \
+    cOnOff.cpp \
+    cAddRemove.cpp
 
 HEADERS  += \
     winMain.h \
-    caddremove.h \
-    cconfig.h \
     winConfig.h \
     UI.h \
-    conoff.h
+    cOnOff.h \
+    cConfig.h \
+    cAddRemove.h
 
 FORMS    += \
     winMain.ui \

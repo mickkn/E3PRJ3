@@ -1,4 +1,4 @@
-#include "caddremove.h"
+#include "cAddRemove.h"
 #include <iostream>
 
 cAddRemove::cAddRemove()

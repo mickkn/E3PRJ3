@@ -1,5 +1,8 @@
 #include "winMain.h"
 #include "ui_winMain.h"
+#include "UI.h"
+#include "cAddRemove.h"
+#include "cConfig.h"
 #include <iostream>
 
 winMain::winMain(QWidget *parent) :
@@ -23,10 +26,10 @@ Ui::winMain * winMain::getUi() const
 // Slots
 void winMain::on_bAddRemove_clicked()
 {
-
+    ((UI*)parentWidget())->getCAddRemove()->menuAddRemove();
 }
 
 void winMain::on_bConfig_clicked()
 {
-   // cConfigPtr_->menuConfig();
+   ((UI*)parentWidget())->getCConfig()->menuConfig();
 }

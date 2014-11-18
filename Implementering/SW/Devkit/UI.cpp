@@ -10,12 +10,6 @@ UI::~UI()
 
 }
 
-// Getters
-QWidget * UI::getCurrent()
-{
-    return current_;
-}
-
 // Setters and getters
 int UI::setCAddRemove(cAddRemove *ptr)
 {
@@ -35,4 +29,14 @@ int UI::setCConfig(cConfig *ptr)
 cConfig * UI::getCConfig()
 {
     return cConfigPtr_;
+}
+
+int UI::setCurrent(QWidget *ptr)
+{
+    current_ = ptr;
+    return 0;
+}
+QWidget * UI::getCurrent()
+{
+    return current_;
 }

@@ -1,4 +1,4 @@
-#include "cconfig.h"
+#include "cConfig.h"
 #include <iostream>
 cConfig::cConfig()
 {

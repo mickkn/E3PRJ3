@@ -2,8 +2,8 @@
 #include "UI.h"    // UI controller
 
 // Controllers
-#include "caddremove.h"
-#include "cconfig.h"
+#include "cAddRemove.h"
+#include "cConfig.h"
 
 
 

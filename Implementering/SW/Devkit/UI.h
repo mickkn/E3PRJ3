@@ -4,6 +4,8 @@
 #include <QWidget>
 #include "winMain.h"
 #include "winConfig.h"
+#include "cAddRemove.h"
+#include "cConfig.h"
 
 class UI
 {
@@ -17,11 +19,12 @@ public:
     cConfig * getCConfig();
 
     QWidget * getCurrent();
+    int setCurrent(QWidget *);
 
 private:
     // Window QWidgets
-    winMain winMainObj_;
     winConfig winConfigObj_;
+    winMain winMainObj_;
 
     QWidget * current_;
 
