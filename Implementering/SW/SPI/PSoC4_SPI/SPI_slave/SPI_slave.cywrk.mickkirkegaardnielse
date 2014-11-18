@@ -160,6 +160,36 @@
 <VisibleNodeIds>
 <v>SPI_slave</v>
 <v>SPI_slave\SPI_slave</v>
+<v>SPI_slave\SPI_slave\CortexM0</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\BLUE_LED.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\GREEN_LED.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\main.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\RED_LED.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPI_handler.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_BOOT.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_miso_s.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_mosi_s.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_PM.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_sclk_s.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_SPI.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_SPI_BOOT.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_SPI_UART.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_SPI_UART_INT.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\Listing Files\SPIS_1_ss_s.lst</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\SPI_slave.elf</v>
+<v>SPI_slave\SPI_slave\CortexM0\ARM_GCC_473\Debug\SPI_slave.hex</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -173,9 +203,9 @@
 <v>SPI_slave\SPI_slave</v>
 <v>SPI_slave\SPI_slave\PSoC 4 Architecture TRM</v>
 <v>SPI_slave\SPI_slave\PSoC 4200 Family Datasheet</v>
-<v>SPI_slave\SPI_slave\System Reference Guide v4_10</v>
+<v>SPI_slave\SPI_slave\System Reference Guide v4_11</v>
 <v>SPI_slave\SPI_slave\Project Datasheet</v>
-<v>SPI_slave\SPI_slave\cy_pins_v2_0</v>
+<v>SPI_slave\SPI_slave\cy_pins_v2_5</v>
 <v>SPI_slave\SPI_slave\SCB_P4_v1_20</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
@@ -183,9 +213,9 @@
 <v>SPI_slave\SPI_slave</v>
 <v>SPI_slave\SPI_slave\PSoC 4 Architecture TRM</v>
 <v>SPI_slave\SPI_slave\PSoC 4200 Family Datasheet</v>
-<v>SPI_slave\SPI_slave\System Reference Guide v4_10</v>
+<v>SPI_slave\SPI_slave\System Reference Guide v4_11</v>
 <v>SPI_slave\SPI_slave\Project Datasheet</v>
-<v>SPI_slave\SPI_slave\cy_pins_v2_0</v>
+<v>SPI_slave\SPI_slave\cy_pins_v2_5</v>
 <v>SPI_slave\SPI_slave\SCB_P4_v1_20</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>

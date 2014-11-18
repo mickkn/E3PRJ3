@@ -349,7 +349,7 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 addr, char* value)
 	printk(KERN_DEBUG "PSOC4: Read Reg8 Cmd: 0x%d Data: '%c'\n", cmd, data);
       
       /* Configure tx/rx buffers */
-      //t[0].delay_usecs = 50;	// Delay for PSoC4
+      t[0].delay_usecs = 100;	// Delay for PSoC4
       t[0].tx_buf = &cmd;
       t[0].rx_buf = &data;
       t[0].len = 1;
@@ -358,7 +358,7 @@ int psoc4_spi_read_reg8(struct spi_device *spi, u8 addr, char* value)
       /* Transmit SPI Data (blocking) */
       spi_sync(m.spi, &m);
       
-      printk("Data: '%c'\n", data);
+      //printk("Data: '%c'\n", data);
       
       if(MODULE_DEBUG)
 	printk(KERN_DEBUG "PSOC4: Read Reg8 Cmd: '%c' Data: '%c'\n", cmd, data);
@@ -395,7 +395,7 @@ ssize_t psoc4_cdrv_read(struct file *filep, char __user *ubuf,
       if(copy_to_user(ubuf, &result, len))
 	return -EFAULT;
       
-      printk(KERN_ALERT "Result: '%c'\n", result);
+      //printk(KERN_ALERT "Result: '%c'\n", result);
       
       /* Move fileptr */
       *f_pos += len;

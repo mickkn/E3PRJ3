@@ -1,22 +1,23 @@
 #include "SPI_handler.h"
 
 char spiBuffer[64];
-char spiTxBuffer[64];
-char testCharArray[] = "DerTestesLog";
-char unitNo[] = "1";
+char spiTxBuffer[64]; 
+char testGetLog[] = "DTTT.TFFFBEEEE"; // (D)ata+(E)rror: TTT.T FFF B EXXX
+char unitNo = '1';
 int spiCounter = 0;
+int spiReadCounter = 0;
 char tempBuffer[6]; // T T T . T \0
 char humiBuffer[4]; // F F F \0
 
 /*
  * SPI RX ISR
- * Dekoder SPI RX data og udfører kommando iht.
+ * Dekoder SPI RX data og udfører kommando iht. protokol
  */
 CY_ISR(isr_spi_rx) {
 
-	char cmd;
+	char cmd = '0';
     int i;
-    int arrayLen = sizeof(testCharArray);
+    unsigned int c;
     
 	//TP_1_Write(1); // Til måling af ISR gennemløbstid
  
@@ -24,6 +25,7 @@ CY_ISR(isr_spi_rx) {
     
     spiBuffer[spiCounter] = cmd;
     spiCounter++;
+    spiReadCounter++;
     
     /*
 	 * Her switches på cmd iht. dataprotokollen
@@ -38,7 +40,7 @@ CY_ISR(isr_spi_rx) {
      *  'R'   0x52     Read function char
 	 */
     
-    if (cmd == 'C' || cmd == 'R'){
+    if ((cmd == 'R') || (cmd == 'C') || (cmd == 'L')){
     	switch (spiBuffer[0]) {
             case 'A':
                     RED_LED_Write(1);
@@ -92,36 +94,30 @@ CY_ISR(isr_spi_rx) {
                     GREEN_LED_Write(1);
                     RED_LED_Write(1);
                     BLUE_LED_Write(0);
-    				SPIS_1_SpiUartClearTxBuffer();
-    				SPIS_1_SpiUartWriteTxData('V');
-
-                    spiTxBuffer[0] = unitNo[0];
 
                     SPIS_1_SpiUartClearTxBuffer();
+                    SPIS_1_SpiUartWriteTxData(unitNo);
                     spiCounter = 0;
-                    SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiCounter]);
-                  
     			break;
             case 'L':
-                    /* Disable interrupt */
-                    CyGlobalIntDisable;
+                    spiReadCounter = 0;
                     
-                    for(i = 0 ; i < arrayLen ; i++){
-                        spiTxBuffer[i] = testCharArray[i];
+                    for(c = 0 ; c < 15 ; c++){
+                        spiTxBuffer[c] = testGetLog[c];
                     }
                     
                     SPIS_1_SpiUartClearTxBuffer();
+                    SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
                     spiCounter = 0;
-                    SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiCounter]);
-                    
-                    /* Re-enable interrupt */
-                    CyGlobalIntEnable;
                 break;
             case 'R':
                     SPIS_1_SpiUartClearTxBuffer();
-                    SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiCounter]);
-                    spiCounter++;
+                    SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
+                    spiCounter = 0;
                 break;
+            case 'C':
+                    SPIS_1_SpiUartClearRxBuffer();
+                    spiCounter = 0;
     		default:
     			break;
     	}

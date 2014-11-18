@@ -18,7 +18,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="SPI_slave" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" Version="4.10" Type="Normal">
+  <Project Name="SPI_slave" Path="Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn" Version="4.11" Type="Normal">
     <CMSIS_SVD_File>SPI_slave.svd</CMSIS_SVD_File>
     <Datasheet>SPI_slave_datasheet.pdf</Datasheet>
     <LinkerFiles>
