@@ -15,37 +15,24 @@ Systemet ved ikke på forhånd hvor meget data der skal flyttes. Derfor deles de
 Fælles for de tre er at tidsstemplet altid sendes med.
 
 Fra standardbiblioteket for \verb'C++' vælges datatypen \verb+vector+ som container. Dette er en dynamisk array-struktur som automatisk udvides og mindskes efter behov.
-Ved at anvende \verb+vector+en med \verb+string+ som undertype er det nemt at identificerer indholdene og formaterer dem som nødvendigt.
+Ved at anvende \verb+vector+en med \verb+string+ som undertype er det nemt at identificerer indholdene og formaterer dem som nødvendigt. På Enheden som implementeres på en PSoC er standardbiblioteket til \verb-C++- ikke tilrådighed. Derfor implementeres bufferen på denne som et almindeligt statisk allokeret char-array. Formateringen vist her under gælder for begge platforme.
 
 Som nævnt er der flere muligheder for ''datapakker''. I tabellerne \ref{table:SWDataprotokol-sensor}, \ref{table:SWDataprotokol-bevaegelse} og \ref{table:SWDataprotokol-error} er deres opbygninger vist.
 
 Første streng der læses afgør hvor mange af de efterfølgende strenge som høre her til. Hvis det første der modtages er ''\verb+D+'', betyder det at der kommer information fra sensorene og der skal læses fire efterfølgende strenge.
-Hvis der modtages et ''\verb+B+'' betyder det at der er registreret bevægelse, og der skal kun læses en dato efterfølgende. Hvis der modtages et ''\verb+E+'' er der en fejl, og fejlkoden fra Enheden sendes.
+Hvis der modtages et ''\verb+E+'' er der en fejl og én streng med fejlkoden fra enheden læses.
 
 \begin{table}[h]
 	\caption{Dataformatering ifm. sensordata}
 	\centering
-	\begin{tabular}{|c|c|c|c|}
+	\begin{tabular}{|c|c|c|c|c|}
 		\hline 
-		\textbf{Type} & \textbf{Temperatur} & \textbf{Fugtighed} & \textbf{Vanding} \\ 
+		\textbf{Type} & \textbf{Temperatur} & \textbf{Fugtighed} & \textbf{Vanding} & \textbf{Bevægelse}\\ 
 		\hline 
-		''\verb+D+'' & ''\verb+TTT.T+'' & ''\verb+FFF+'' & ''Tilstand'' \\ 
+		''\verb+D+'' & ''\verb+TTT.T+'' & ''\verb+FFF+'' & ''\verb+0+'' / ''\verb+1+'' & ''\verb+0+'' / ''\verb+1+'' \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWDataprotokol-sensor}
-\end{table}
-
-\begin{table}[h]
-	\caption{Dataformatering ifm. bevægelse}
-	\centering
-	\begin{tabular}{|c|c|}
-		\hline 
-		\textbf{Type} \\ 
-		\hline 
-		''\verb+B+'' \\ 
-		\hline 
-	\end{tabular} 
-	\label{table:SWDataprotokol-bevaegelse}
 \end{table}
 
 \begin{table}[h]
@@ -55,13 +42,13 @@ Hvis der modtages et ''\verb+B+'' betyder det at der er registreret bevægelse, 
 		\hline 
 		\textbf{Type} & \textbf{Fejlkode} \\ 
 		\hline 
-		''\verb+E+'' & ''\verb+XXXX+'' \\ 
+		''\verb+E+'' & ''\verb+XXX+'' \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWDataprotokol-error}
 \end{table}
 
-Et eksempel på strukturen af en datahentning er vist i tabel \ref{table:SWDataprotokol-eksempel}. Her kan man se at der siden sidste hentning har været bevægelse på hullet, \verb+B+. Der er hentet sensordata med værdierne 14.5 grader og 20\% fugtighed, \verb+D014.5020S+ og der har også været en fejl 13, \verb+E013+.
+Et eksempel på strukturen af en datahentning er vist i tabel \ref{table:SWDataprotokol-eksempel}. Her kan man se, at der siden sidste udlæsning har været hentet sensordata med værdierne 14.5 grader og 20\% fugtighed, der har ikke været tændt for sprinkleren men der har været bevægelse på hullet, \verb+D014.502001+ og der har også været en fejl 13, \verb+E013+.
 
 \begin{table}[h]
 	\caption{Dataformatering ifm. log-information}
@@ -70,7 +57,7 @@ Et eksempel på strukturen af en datahentning er vist i tabel \ref{table:SWDatap
 		\hline
 		\verb+vector<string>[0]+ & \verb+[1]+ & \verb+[2]+ \\
 		\hline 
-		''\verb+B+'' & ''\verb+D014.5020S+'' & ''\verb+E013+'' \\ 
+		''\verb+B+'' & ''\verb+D014.502001+'' & ''\verb+E013+'' \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWDataprotokol-eksempel}
