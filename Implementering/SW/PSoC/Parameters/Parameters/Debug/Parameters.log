@@ -1,0 +1,16 @@
+﻿Build started 18-11-2014 20:54:12.
+     1>Project "C:\Users\jesper\Documents\GitHub\Parameters\Parameters\Parameters.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         G:\Programmer\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt parameters.c
+         parameters.c
+     1>c:\users\jesper\documents\github\parameters\parameters\parameters.c(7): error C2373: 'setTemp' : redefinition; different type modifiers
+                 c:\users\jesper\documents\github\parameters\parameters\parameters.h(9) : see declaration of 'setTemp'
+     1>c:\users\jesper\documents\github\parameters\parameters\parameters.c(21): error C2373: 'setHumi' : redefinition; different type modifiers
+                 c:\users\jesper\documents\github\parameters\parameters\parameters.h(11) : see declaration of 'setHumi'
+     1>c:\users\jesper\documents\github\parameters\parameters\parameters.c(36): error C2373: 'setActive' : redefinition; different type modifiers
+                 c:\users\jesper\documents\github\parameters\parameters\parameters.h(13) : see declaration of 'setActive'
+     1>Done Building Project "C:\Users\jesper\Documents\GitHub\Parameters\Parameters\Parameters.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.06
