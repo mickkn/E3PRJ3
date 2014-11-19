@@ -20,14 +20,6 @@ Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Gene
 
 Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
 
-Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/CortexM0/ARM_GCC_473/Debug/CyFlash.o : Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyFlash.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyFlash.c 
-
-Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyFlash.h : 
-
-Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyPm.h : 
-
-Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyFlash.c : 
-
 Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/CortexM0/ARM_GCC_473/Debug/CyLib.o : Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyLib.c 
 
 Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyLib.c : 
@@ -119,6 +111,8 @@ Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Cort
 Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.c : 
 
 Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/CortexM0/ARM_GCC_473/Debug/cyPm.o : Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyPm.c 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyPm.h : 
 
 Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_slave.cydsn/Generated_Source/PSoC4/cyPm.c : 
 

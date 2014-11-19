@@ -1,5 +1,5 @@
 -- Project:   Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_slave.cydsn\SPI_slave.cyprj
--- Generated: 11/17/2014 14:45:37
+-- Generated: 11/18/2014 15:24:44
 -- 
 
 ENTITY SPI_slave IS

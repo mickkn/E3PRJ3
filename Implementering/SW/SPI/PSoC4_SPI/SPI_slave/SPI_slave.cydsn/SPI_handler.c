@@ -2,10 +2,11 @@
 
 char spiBuffer[64];
 char spiTxBuffer[64]; 
-char testGetLog[] = "DTTT.TFFFBEEEE"; // (D)ata+(E)rror: TTT.T FFF B EXXX
+char testGetLog[] = "E999E666EPOOEMKKE013"; // (D)ata+(E)rror: TTT.T FFF B EXXX
 char unitNo = '1';
 int spiCounter = 0;
 int spiReadCounter = 0;
+unsigned int len = sizeof(testGetLog);
 char tempBuffer[6]; // T T T . T \0
 char humiBuffer[4]; // F F F \0
 
@@ -25,7 +26,6 @@ CY_ISR(isr_spi_rx) {
     
     spiBuffer[spiCounter] = cmd;
     spiCounter++;
-    spiReadCounter++;
     
     /*
 	 * Her switches på cmd iht. dataprotokollen
@@ -66,6 +66,10 @@ CY_ISR(isr_spi_rx) {
                     /* Disable interrupt */
                     CyGlobalIntDisable;
                     
+                    GREEN_LED_Write(0);
+                    RED_LED_Write(0);
+                    BLUE_LED_Write(0);
+                    
                     /* Read temp */
                     for(i = 0 ; i < 5 ; i++){
                         tempBuffer[i] = spiBuffer[i+1];
@@ -100,20 +104,20 @@ CY_ISR(isr_spi_rx) {
                     spiCounter = 0;
     			break;
             case 'L':
-                    spiReadCounter = 0;
-                    
-                    for(c = 0 ; c < 15 ; c++){
+                    for(c = 0 ; c < len ; c++){
                         spiTxBuffer[c] = testGetLog[c];
                     }
                     
                     SPIS_1_SpiUartClearTxBuffer();
-                    SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
+                    SPIS_1_SpiUartWriteTxData(len);
                     spiCounter = 0;
+                    spiReadCounter = 0;
                 break;
             case 'R':
                     SPIS_1_SpiUartClearTxBuffer();
                     SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
                     spiCounter = 0;
+                    spiReadCounter++;
                 break;
             case 'C':
                     SPIS_1_SpiUartClearRxBuffer();
