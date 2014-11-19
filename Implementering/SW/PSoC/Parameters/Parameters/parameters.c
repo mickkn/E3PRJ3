@@ -3,28 +3,40 @@
 
 #include "parameters.h"
 
-int setTemp(parameters * const this, const float temp)
+extern void parameters_init(parameters * const this)
+{
+	this->active_ = 0;
+	this->humidity_ = 10;
+	this->temperature_ = 30;
+}
+
+extern void parameters_exit(parameters * const this)
+{
+
+}
+
+int parameters_setTemp(parameters * const this, const float temp)
 {
 	this->temperature_ = temp;
 
 	return 0;
 }
 
-int getTemp(parameters * const this, float * temp) //const
+int parameters_getTemp(parameters * const this, float * temp)
 {
 	temp = &this->temperature_;
 
 	return 0;
 }
 
-int setHumi(parameters * const this, const float humi)
+int parameters_setHumi(parameters * const this, const float humi)
 {
 	this->humidity_ = humi;
 
 	return 0;
 }
 
-int getHumi(parameters * const this, float * humi)  //const
+int parameters_getHumi(parameters * const this, float * humi)
 {
 	 humi = &this->humidity_;
 
@@ -32,14 +44,14 @@ int getHumi(parameters * const this, float * humi)  //const
 
 }
 
-int setActive(parameters * const this, const unsigned char a)
+int parameters_setActive(parameters * const this, const unsigned char a)
 {
 	this->active_ = a;
 
 	return 0;
 }
 
-int getActive(parameters * const this, unsigned char * a) //const
+int parameters_getActive(parameters * const this, unsigned char * a)
 {
 	a = &this->active_;
 

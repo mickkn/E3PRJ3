@@ -1,16 +1,17 @@
-﻿Build started 18-11-2014 20:54:12.
-     1>Project "C:\Users\jesper\Documents\GitHub\Parameters\Parameters\Parameters.vcxproj" on node 2 (Build target(s)).
+﻿Build started 19-11-2014 08:14:02.
+     1>Project "C:\Users\Jesper\Documents\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters\Parameters\Parameters.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         G:\Programmer\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt parameters.c
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt parameter_test.c parameters.c
          parameters.c
-     1>c:\users\jesper\documents\github\parameters\parameters\parameters.c(7): error C2373: 'setTemp' : redefinition; different type modifiers
-                 c:\users\jesper\documents\github\parameters\parameters\parameters.h(9) : see declaration of 'setTemp'
-     1>c:\users\jesper\documents\github\parameters\parameters\parameters.c(21): error C2373: 'setHumi' : redefinition; different type modifiers
-                 c:\users\jesper\documents\github\parameters\parameters\parameters.h(11) : see declaration of 'setHumi'
-     1>c:\users\jesper\documents\github\parameters\parameters\parameters.c(36): error C2373: 'setActive' : redefinition; different type modifiers
-                 c:\users\jesper\documents\github\parameters\parameters\parameters.h(13) : see declaration of 'setActive'
-     1>Done Building Project "C:\Users\jesper\Documents\GitHub\Parameters\Parameters\Parameters.vcxproj" (Build target(s)) -- FAILED.
+         parameter_test.c
+     1>c:\users\jesper\documents\github\e3prj3\implementering\sw\psoc\parameters\parameters\parameter_test.c(5): warning C4101: 'myStruct' : unreferenced local variable
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Jesper\Documents\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters\Debug\Parameters.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Jesper\Documents\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters\Debug\Parameters.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Jesper\Documents\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters\Debug\Parameters.lib" /MACHINE:X86 Debug\parameters.obj
+         Debug\parameter_test.obj
+         Parameters.vcxproj -> C:\Users\Jesper\Documents\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters\Debug\Parameters.exe
+     1>Done Building Project "C:\Users\Jesper\Documents\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters\Parameters\Parameters.vcxproj" (Build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:00.61

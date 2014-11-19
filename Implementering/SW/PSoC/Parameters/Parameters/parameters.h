@@ -6,9 +6,11 @@ typedef struct parameters_type
 	unsigned char active_;
 } parameters;
 
-extern int setTemp( parameters * const this, const float );
-extern int getTemp( parameters * const this, float * temp); const
-extern int setHumi( parameters * const this, const float humi);
-extern int getHumi( parameters * const this, float * humia); const
-extern int setActive( parameters * const this, const unsigned char);
-extern int getActive( parameters * const this, unsigned char *); const
+extern void parameters_init( parameters * const this );
+extern void parameters_exit( parameters * const this );
+extern int parameters_setTemp( parameters * const this, const float );
+extern int parameters_getTemp( parameters * const this, float * temp);
+extern int parameters_setHumi( parameters * const this, const float humi);
+extern int parameters_getHumi( parameters * const this, float * humia); 
+extern int parameters_setActive( parameters * const this, const unsigned char);
+extern int parameters_getActive( parameters * const this, unsigned char *); 
