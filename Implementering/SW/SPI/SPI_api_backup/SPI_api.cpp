@@ -1,6 +1,4 @@
 #include "SPI_api.h"
-#include <iostream>
-#include <vector>
 #include <fcntl.h>
 #include <stdio.h>
 
@@ -17,17 +15,16 @@ int SPI_api::activate(int unit) const
 	if(fp < 0){
 		printf("OPEN ERROR: %d\n", fp);
 		close(fp);
-		return -OERR;
+		return -ACT_ERR;
 	}
 
 	/* Write datalen times */
 	for(int i = 0 ; i < dataLen ; i++){
-
 		err = write(fp, &data[i], dataLen);
 		if(err < 0){
 			printf("WRITE ERROR: %d\n", err);
 			close(fp);
-			return -WERR;
+			return -ACT_ERR;
 		}
 	}
 
@@ -36,7 +33,7 @@ int SPI_api::activate(int unit) const
 	if(err < 0){
 		printf("CLEAR ERROR: %d\n", err);
 		close(fp);
-		return -WERR;
+		return -ACT_ERR;
 	}
 
 	/* Close file */
@@ -56,17 +53,16 @@ int SPI_api::deactivate(int unit) const
 	if(fp < 0){
 		printf("OPEN ERROR: %d\n", fp);
 		close(fp);
-		return -OERR;
+		return -DEACT_ERR;
 	}
 
 	/* Write datalen times */
 	for(int i = 0 ; i < dataLen ; i++){
-
 		err = write(fp, &data[i], dataLen);
 		if(err < 0){
 			printf("WRITE ERROR: %d\n", err);
 			close(fp);
-			return -WERR;
+			return -DEACT_ERR;
 		}
 	}
 
@@ -75,7 +71,7 @@ int SPI_api::deactivate(int unit) const
 	if(err < 0){
 		printf("CLEAR ERROR: %d\n", err);
 		close(fp);
-		return -WERR;
+		return -DEACT_ERR;
 	}
 
 	/* Close file */
@@ -97,7 +93,7 @@ int SPI_api::verify(int unit) const
 	if(fp < 0){
 		printf("OPEN ERROR: %d\n", fp);
 		close(fp);
-		return -OERR;
+		return -VER_ERR;
 	}
 
 	/* Write CMD to Target*/
@@ -105,7 +101,7 @@ int SPI_api::verify(int unit) const
 	if(err < 0){
 		printf("WRITE ERROR: %d\n", err);
 		close(fp);
-		return -WERR;
+		return -VER_ERR;
 	}
 
 	/* Read 2 times */
@@ -114,35 +110,30 @@ int SPI_api::verify(int unit) const
 		if(err < 0){
 			printf("READ ERROR: %d \n", err);
 			close(fp);
-			return -RERR;
+			return -VER_ERR;
 		}
 	}
 
-	//std::cout << "Verifytest: " << result << endl;
-
 	/* Parse char result to int */
-	verifyResult = result - '0';
-
-	//std::cout << "VerifyResulttest: " << result << endl;
+	verifyResult = (result - '0');
 
 	/* Clear buffer */
 	err = write(fp, &CL_BUF, 1);
 	if(err < 0){
 		printf("CLEAR ERROR: %d\n", err);
 		close(fp);
-		return -WERR;
+		return -VER_ERR;
 	}
 
 	/* Close file */
 	close(fp);
 
 	if(verifyResult == unit){
-		//printf("Verified\n");
 		return 0;
 	}
 	else{
-		//printf("Not Verified\n");
-		return -VERERR;
+		printf("Not Verified: %d\n", -VER_ERR);
+		return -VER_ERR;
 	}
 }
 
@@ -158,17 +149,12 @@ int SPI_api::config(int unit, float temp, float humi)
 	snprintf(tempArray, sizeof(tempArray), "%05.1f", temp);
 	snprintf(humiArray, sizeof(humiArray), "%03.0f", humi);
 
-	/* TEST
-	printf("Temp char: %s\n", tempArray);
-	printf("Humi char: %s\n", humiArray);
-	*/
-
 	/* Open file */
 	fp = open("/dev/spi_dev", O_RDWR);
 	if(fp < 0){
 		printf("OPEN ERROR: %d\n", fp);
 		close(fp);
-		return -OERR;
+		return -CONF_ERR;
 	}
 
 	/* Write CMD to Target*/
@@ -176,38 +162,36 @@ int SPI_api::config(int unit, float temp, float humi)
 	if(err < 0){
 		printf("WRITE ERROR: %d\n", err);
 		close(fp);
-		return -WERR;
+		return -CONF_ERR;
 	}
 
 	/* Write temp to target without 0-termination */
 	for(int i = 0 ; i < 5 ; i++){
-
 		err = write(fp, &tempArray[i], dataLen);
 		if(err < 0){
 			printf("WRITE ERROR: %d\n", err);
 			close(fp);
-			return -WERR;
+			return -CONF_ERR;
 		}
 	}
 
 	/* Write humidity to target without 0-termination */
 	for(int i = 0 ; i < 3 ; i++){
-
 		err = write(fp, &humiArray[i], dataLen);
 		if(err < 0){
 			printf("WRITE ERROR: %d\n", err);
 			close(fp);
-			return -WERR;
+			return -CONF_ERR;
 		}
 	}
 
 	/* Clear buffer */
 	err = write(fp, &CL_BUF, 1);
-		if(err < 0){
-			printf("CLEAR ERROR: %d\n", err);
-			close(fp);
-			return -WERR;
-		}
+	if(err < 0){
+		printf("CLEAR ERROR: %d\n", err);
+		close(fp);
+		return -CONF_ERR;
+	}
 
 	return 0;
 }
@@ -217,11 +201,9 @@ int SPI_api::getLog(vector<string> &data, int * units, int size)
 
 	int fp, err, i;
 	int dataLen = 1;		// String length for Driver
-	char charArrayLen;		// char array length from target
 	char cmd[] = "L";		// 'L' for Log
+	char charArrayLen;		// Variable for charArray size from target
 	char charResult;		// Used for buffering read chars
-	int errNo;
-	int errCounter = 0;
 	string stringResult;
 		stringResult.clear();
 	string stringDataResult;
@@ -236,89 +218,73 @@ int SPI_api::getLog(vector<string> &data, int * units, int size)
 	if(fp < 0){
 		printf("OPEN ERROR: %d\n", fp);
 		close(fp);
-		return -OERR;
+		return -LOG_ERR;
 	}
 
-	/* Write CMD to Target*/
+	/* Write CMD to Target */
 	err = write(fp, &cmd[0], dataLen);
 	if(err < 0){
 		printf("WRITE ERROR: %d\n", err);
 		close(fp);
-		return -WERR;
+		return -LOG_ERR;
 	}
 
-	/* Read charArry length from target*/
-		err = read(fp, &charArrayLen, dataLen);
-		if(err < 0){
-			printf("READ ERROR: %d\n", err);
-			close(fp);
-			return -RERR;
-		}
+	/* Read charArray length from target */
+	err = read(fp, &charArrayLen, dataLen);
+	if(err < 0){
+		printf("READ ERROR: %d\n", err);
+		close(fp);
+		return -LOG_ERR;
+	}
 
-	printf("charArrayLen: char = %c and int = %d \n", charArrayLen, charArrayLen);
+	//printf("charArrayLen: char = %c and int = %d \n", charArrayLen, charArrayLen);
 
-	/* Build string from buffer from target */
-	for(i = 0 ; i < (charArrayLen-1) ; i++){
+	/* Vector Builder looking for D's or E's */
+	for(i = 0 ; i < charArrayLen ; i++){
 		err = read(fp, &charResult, dataLen);
 		if(err < 0){
 			printf("READ ERROR: %d\n", err);
 			close(fp);
-			return -RERR;
+			return -LOG_ERR;
 		}
-		stringResult.push_back(charResult);
-	}
 
-	std::cout << "stringResult: " <<  stringResult << endl;
-
-	switch(stringResult[0]){
-		case 'D':
-			printf("Case D\n");
-			/* BUILD DATASTRING DTTT.TFFFB */
-			for(i = 0 ; i < 10 ; i++){
-				stringDataResult.push_back(stringResult[i]);
+		if(charResult == 'D'){
+			stringDataResult.push_back(charResult); // Push 'D' to stringDataResult
+			 // Build rest of stringDataResult
+			for(int c = 0 ; c < 9 ; c++){
+				err = read(fp, &charResult, dataLen);
+				if(err < 0){
+					printf("READ ERROR: %d\n", err);
+					close(fp);
+					return -LOG_ERR;
+				}
+				stringDataResult.push_back(charResult);
+				i++;	// Increment 1st for-loop counter
 			}
+			//std::cout << "stringDataResult: " << stringDataResult << endl;
+			// Push string to vectorResult
 			vectorResult.push_back(stringDataResult);
+			stringDataResult.clear();
+		}
 
-			std::cout << "stringDataResult: " << stringDataResult << endl;
-
-			/* BUILD ERROR STRING(S) IF PRESENT*/
-			if(stringResult[10] == 'E'){
-
-				errNo = (charArrayLen-11)/4;
-				errCounter = 10;
-
-				std::cout << "Number of Errors: " << errNo << endl;
-
-				for(i = 0 ; i < errNo ; i++){
-					for(int c = 0 ; c < 4 ; c++){
-						stringErrorResult.push_back(stringResult[errCounter]);
-						errCounter++;
-					}
-					std::cout << "stringErrorResult: " << stringErrorResult << endl;
-					vectorResult.push_back(stringErrorResult);
-					stringErrorResult.clear();
+		if(charResult == 'E'){
+			stringErrorResult.push_back(charResult); // Push 'E' to stringErrorResult
+			// Build rest of stringErrorResult
+			for(int c = 0 ; c < 3 ; c++){
+				err = read(fp, &charResult, dataLen);
+				if(err < 0){
+					printf("READ ERROR: %d\n", err);
+					close(fp);
+					return -LOG_ERR;
 				}
+				stringErrorResult.push_back(charResult);
+				i++;	// Increment 1st for-loop counter
 			}
-
-			break;
-		case 'E':
-			printf("Case E\n");
-			errNo = (charArrayLen-1)/4;
-
-			std::cout << "Number of Errors: " << errNo << endl;
-
-			for(i = 0 ; i < errNo ; i++){
-				for(int c = 0 ; c < 4 ; c++){
-					stringErrorResult.push_back(stringResult[errCounter]);
-					errCounter++;
-				}
-				std::cout << "stringErrorResult: " << stringErrorResult << endl;
-				vectorResult.push_back(stringErrorResult);
-				stringErrorResult.clear();
-			}
-
-
-			break;
+			//std::cout << "stringErrorResult: " << stringErrorResult << endl;
+			// Push string to vectorResult and clear string
+			vectorResult.push_back(stringErrorResult);
+			stringErrorResult.clear();
+		}
 	}
 
 	data = vectorResult;
