@@ -2,7 +2,7 @@
 
 char spiBuffer[64];
 char spiTxBuffer[256]; 
-char testGetLog[] = "D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D888888888E999E666EPOOEMKKE013"; // (D)ata+(E)rror: TTT.T FFF B EXXX
+char testGetLog[] = "DTTT.TFFFVBDTTT.TFFFVBEXXXDTTT.TFFFVBDTTT.TFFFVBEXXX"; // (D)ata+(E)rror: TTT.TFFFVB+EXXX
 char unitNo = '1';
 int spiCounter = 0;
 int spiReadCounter = 0;
@@ -104,6 +104,10 @@ CY_ISR(isr_spi_rx) {
                     spiCounter = 0;
     			break;
             case 'L':
+                    GREEN_LED_Write(1);
+                    RED_LED_Write(0);
+                    BLUE_LED_Write(0);
+                    
                     for(c = 0 ; c < len ; c++){
                         spiTxBuffer[c] = testGetLog[c];
                     }
