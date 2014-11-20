@@ -29,7 +29,7 @@
 \verb+int config( int unit, float temp, float humi ) const +\\
 \textbf{Parametre:} modtager en integer på følgende enhed som skal konfigureres. Derudover modtager den to floats med parametrene som skal skrives til Enhed. \\
 \textbf{Returværdi:}  0 ved succes ellers negativ i overenstemmelse med fejl-listen   \\
-\textbf{Beskrivelse:} metoden skal sende konfigurations-parametrene i \verb+vector+ til enheden \verb+unit+ over SPI netværket.\\
+\textbf{Beskrivelse:} metoden skal sende konfigurations-parametrene i \verb+float+ til enheden \verb+unit+ over SPI netværket.\\
 
 \verb+int getLog( & vector<string> , int * units, int size )+ \\
 \textbf{Parametre:}  modtager en referance til en vector af typen string som loggen skal gemmes i. Pointer til array af enheder som skal logges samt int med antallet af enheder i arrayet. \\

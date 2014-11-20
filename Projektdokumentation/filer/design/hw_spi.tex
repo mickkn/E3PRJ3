@@ -36,11 +36,18 @@ enheder bliver frigivet.
 
 \subsection{Driver}
 
+I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7 \footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}, der er dog lavet kraftigt om i kernemodul og driver. Så de tilpasses EasyWater8000s behov.
 
+Driveren opbygges med en Skrive og en Læse metode, der begge kan læse eller skrive én 8 bits karakter(char).
 
 \subsubsection*{Pseudokode}
 
 \begin{lstlisting}[language=C]
-
+int write(data){
+Send data parameter ud paa SPI netvaerket
+}
+int read(*datapointer){
+Modtag data
+Flyt data til datapointer parameter
 }
 \end{lstlisting}
