@@ -1,5 +1,51 @@
 %% SW design: Dataprotokol
 
+\subsubsection{Aktiver, Deaktiver og Verificer}
+
+Aktiver og Deaktiver handler ikke på enhedsnummeret.
+
+Ved verificering af en Enhed sendes et enhedsnummer til Enheden, som der verificeres på i forhold til Enhedens enhedsnummer.
+
+\begin{table}[h]
+	\caption{Data-formatering for verificering}
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline 
+		\textbf{Byte} & \textbf{Enhedsnummer} \\ 
+		\hline 
+		\textbf{Indhold} & ''\verb+NN+''\\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-verificer}
+\end{table}
+
+\subsubsection{Send parametre}
+
+Ved parameter indstilling skal der sendes følgende parametre til Enheden.
+
+\begin{enumerate}
+	\item Enhedsnummer (1-18)
+	\item Øvre temperaturgrænse
+	\item Nedre fugtighedsgrænse
+\end{enumerate}
+
+Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
+
+\begin{table}[h]
+	\caption{Data-formatering for parametre}
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline 
+		\textbf{Byte} & \textbf{Enhedsnummer} & \textbf{Temperatur} & \textbf{Fugtighed} \\ 
+		\hline 
+		\textbf{Indhold} & ''\verb+NN+'' & ''\verb+TTT.T+'' & ''\verb+FFF+''  \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-para}
+\end{table}
+
+\subsubsection{Log}
+
 Når data flyttes mellem Master og Enhed, ifm. logning, anvendes følgende dataprotokol i mellem \textit{Application}-lagene.
 
 Den data som skal flyttes er følgende:
