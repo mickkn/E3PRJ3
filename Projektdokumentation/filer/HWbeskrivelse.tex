@@ -50,7 +50,7 @@ Til at beskrive blokkene nærmere anvendes tabeller som ses herunder. Her er hve
 \hline
 \textbf{Bloknavn} & \textbf{Funktion} & \textbf{Signaler} & \textbf{Kommentar} \\ \hline
 
-Master(Devkit8000) & Styreenhed der modtager input fra touchskærm og kommunikere serielt med Enhed(er) & Input:Touch & Touch \\ \cline{3-4}	
+Master(Devkit8000) & Styreenhed der modtager input fra touchskærm og kommunikere serielt med Enhed(er) & Input:Touch & Masteren modtager inputs fra brugeren via touch \\ \cline{3-4}	
 & 				   & SPI:SPI seriel & Seriel data kommunikation \\ \hline
 
 Enhed(PSoC) & Enhed er grænsefladen til den fysiske verden igennem sensorer & SPI:SPI seriel & Seriel data kommunikation \\ \cline{3-4}
@@ -68,8 +68,8 @@ Vandpumpe & Forsyner sprinkler med vand & Vand:Vand & Vand til Sprinkler \\ \hli
  
 Sprinkler & Fordeler vand på golfbane & Vand:Vand & Vand til Golfbane \\ \hline
 
-Spændingsforsyning & Forsyner EasyWater8000, Master har sin egen spændingsforsyning & Power:3,3VDC & Forsyning til FT-sensor \\ \cline{3-4}
-& & Power:5VDC 		& Forsyning til PIR-sensor, Enhed 	\\ \hline
+Spændingsforsyning & Forsyner EasyWater8000, Master har sin egen spændingsforsyning & Power:3,3VDC \newline Max strømbelastning: 3,4A & Forsyning til FT-sensor \\ \cline{3-4}
+& & Power:5VDC \newline Max strømbelastning:2,2A		& Forsyning til PIR-sensor, Enhed 	\\ \hline
 \end{tabular}
 \end{small}
 \label{table:Bloktabel}
