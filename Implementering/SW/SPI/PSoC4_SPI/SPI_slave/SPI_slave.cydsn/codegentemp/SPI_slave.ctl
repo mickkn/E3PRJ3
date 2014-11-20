@@ -1,6 +1,6 @@
 -- ======================================================================
 -- SPI_slave.ctl generated from SPI_slave
--- 11/18/2014 at 15:24
+-- 11/20/2014 at 11:05
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

@@ -1,8 +1,8 @@
 #include "SPI_handler.h"
 
 char spiBuffer[64];
-char spiTxBuffer[64]; 
-char testGetLog[] = "E999E666EPOOEMKKE013"; // (D)ata+(E)rror: TTT.T FFF B EXXX
+char spiTxBuffer[256]; 
+char testGetLog[] = "D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D111111111E999E666EPOOEMKKE013D888888888E999E666EPOOEMKKE013"; // (D)ata+(E)rror: TTT.T FFF B EXXX
 char unitNo = '1';
 int spiCounter = 0;
 int spiReadCounter = 0;
@@ -109,7 +109,7 @@ CY_ISR(isr_spi_rx) {
                     }
                     
                     SPIS_1_SpiUartClearTxBuffer();
-                    SPIS_1_SpiUartWriteTxData(len);
+                    SPIS_1_SpiUartWriteTxData((char)len);
                     spiCounter = 0;
                     spiReadCounter = 0;
                 break;
