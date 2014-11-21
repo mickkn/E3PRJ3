@@ -19,7 +19,7 @@
 \verb+int getData( float * temp, float * humi )+ \\
 \textbf{Parametre:} Pointers til at gemme aflæste temperatur og fugtighed i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Aflæse data fra temperatur- og fugtighedssensor og returner disse i de modtagende referencer. \\
+\textbf{Beskrivelse:} Aflæs data fra temperatur- og fugtighedssensor og returner disse i de modtagende referencer. \\
 
 \verb+int water( unsigned char const )+ \\
 \textbf{Parametre:} 1 = tænd sprinkler, 0 = sluk sprinkler \\
@@ -43,10 +43,10 @@
 \textbf{Returværdi:} Ingen. \\
 \textbf{Beskrivelse:} Initialisere nødvendige indstillinger for at kunne kommunikerer med sensoren. \\
 
-\verb+int getValue( float * ) const+ \\
+\verb+int getValue( float * )+ \\
 \textbf{Parametre:} Pointer til at gemme temperatur i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Returnerer aflæst temperatur i reference. \\
+\textbf{Beskrivelse:} Returnerer aflæst temperatur i pointerparameteren. \\
 
 
 \begin{figure}[htbp] \centering
@@ -65,10 +65,10 @@
 \textbf{Returværdi:} Ingen. \\
 \textbf{Beskrivelse:} Initialisere nødvendige indstillinger for at kunne kommunikerer med sensoren. \\
 
-\verb+int getValue( float * ) const+ \\
+\verb+int getValue( float * )+ \\
 \textbf{Parametre:} Pointer til at gemme fugtighed i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Returnerer aflæst fugtighed i reference. \\
+\textbf{Beskrivelse:} Returnerer aflæst fugtighed i pointerparameteren. \\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.3]{filer/design/Klassediagrammer/sw_psoc_sprinkler}}

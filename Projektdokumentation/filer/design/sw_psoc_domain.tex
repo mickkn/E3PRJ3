@@ -9,14 +9,14 @@
 {\centering
 \textbf{parameters}\par
 }
-\textbf{Ansvar:} Gemme information omkring det autonome vandingssystem. \
+\textbf{Ansvar:} Gemme information om grænseværdier mv. til det autonome vandingssystem. \
 
 \verb+int setTemp( float temp const ) +\\
 \textbf{Parametre:} temperatur. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne temperatur i medlemsdata \verb+temperature_+. \\
 
-\verb+int getTemp( float * temp ) const+ \\
+\verb+int getTemp( float * temp )+ \\
 \textbf{Parametre:} Pointer til at gemme temperatur i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer medlem \verb+temperature_+ i reference. \\
@@ -26,7 +26,7 @@
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne humidity i medlemsdata \verb+humidity_+. \\
 
-\verb+int getHumi( float * humi ) const+ \\
+\verb+int getHumi( float * humi )+ \\
 \textbf{Parametre:} Pointer til at gemme humidity i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer medlem \verb+humidity_+ i reference. \\
@@ -36,7 +36,7 @@
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne char i medlemsdata \verb+active_+. \\
 
-\verb+int getActive( unsigned char * ) const+ \\
+\verb+int getActive( unsigned char * )+ \\
 \textbf{Parametre:} Pointer til at gemme unsigned char i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Returnerer medlem \verb+active_+ i pointer. \\
@@ -51,12 +51,12 @@
 {\centering
 \textbf{buffer}\par
 }
-\textbf{Ansvar:} Holde data fra sensorerne ind til de udlæses af Master \
+\textbf{Ansvar:} Holde data fra sensorerne indtil de udlæses af Master \
 
 \verb+buffer( )+ \\
 \textbf{Parametre:} Ingen. \\
 \textbf{Returværdi:} Ingen. \\
-\textbf{Beskrivelse:} Skal initialisere char array \verb+buffer_+ med plads til én datamåling, én bevægelsesregistereing og tre fejl iht. dataprotokol. \\
+\textbf{Beskrivelse:} Skal initialisere \verb+char+ array \verb+buffer_+ med plads til én datamåling og 10 fejl iht. dataprotokol. \\
 
 \verb+int saveData( char * buf const, unsigned int len const )+ \\
 \textbf{Parametre:} Pointer til buffer med len data. \\
