@@ -1,0 +1,92 @@
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_INT.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_INT.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_INT.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_IRQ.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_PM.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_PM.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_PM.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_intClock.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_in.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in_aliases.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in_aliases.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/Cm0Start.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/Cm0Start.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/CyFlash.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyFlash.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyFlash.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/CyLib.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/SLC.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC_aliases.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC_aliases.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/cyPm.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/cyfitter_cfg.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/cymetadata.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cymetadata.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/cyutils.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyutils.c : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/water_pin.o : //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin_aliases.h //psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.c 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin_aliases.h : 
+
+//psf/Dropbox/3.Semester/PRJ3/psoc_api_2/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.c : 
+
