@@ -1,1 +1,73 @@
 % Tilslutningsprint
+Der er lavet modultest på tilslutningsprintet ud fra denne tabel \ref{modultest_tilslutningsprint}.
+
+\begin{center}
+\begin{longtable}{|p{0,5cm}|p{3,8cm}|p{3,8cm}|p{2,2cm}|p{2,2cm}|} % l for left, c for center, r for right 
+\hline
+\multicolumn{5}{|l|}{\textbf{Tilslutningsprint}} \\ \hline
+\multicolumn{1}{|c|}{} &
+\textbf{Test} &
+\textbf{Forventet \newline Resultat} &
+\textbf{Resultat} &
+\textbf{Kommentar} \\ \hline 
+\endfirsthead
+
+\multicolumn{5}{l}{...fortsat fra forrige side} \\ \hline 
+\multicolumn{1}{|c|}{} &
+\textbf{Test} &
+\textbf{Forventet \newline Resultat} &
+\textbf{Resultat} &
+\textbf{Kommentar} \\ \hline 
+\endhead
+
+\textbf{1}	&Forsyningen til tilslutningsprintet fra PSU'en.
+			&Der måles en værdi på 12 VDC, imellem + og - ved komponenten.
+			& 12,02 VDC målt
+			& \\ \hline 
+			
+\textbf{2}	&USB forsyningen fra tilslutningsprintet.
+			&Der måles en værdi på 5 VDC,  imellem + og - ved komponenten.
+			& 5,02 VDC målt
+			& \\ \hline 
+			
+\textbf{3}	&Relætilslutningen fra tilslutningsprintet.
+			&Der måles en værdi der ligger indenfor 3,7-8,8 VDC når sprinkler pin på PSoC tilslutningen bliver tilsluttet 3,3 VDC. 
+			&4,48 VDC målt
+			& \\ \hline 
+			
+\textbf{4}	&Pir forsyningen fra tilslutningsprintet
+			&Der måles en værdi på 5 VDC, imellem + og - ved tilslutningen.
+			&5,02 VDC målt
+			& \\ \hline 
+			
+\textbf{5}	&FT-sensor forsyningen fra tilslutningsprintet
+			&Der måles en værdi på 3,3 VDC, imellem + og - ved tilslutningen.
+			& 3,36 VDC målt
+			& \\ \hline 						
+			
+\textbf{6}	&Der testet om der er gennemgang fra select pin på PSoC tilslutningen til FT-sensor tilslutningen
+			&Der måles gennemgang.
+			& Gennemgang er målt
+			& \\ \hline 
+			
+\textbf{7}	&Der testet om der er gennemgang fra analog pin på PSoC tilslutningen til FT-sensor tilslutningen
+			&Der måles gennemgang.
+			& Gennemgang er målt
+			& \\ \hline 
+			
+\textbf{8}	&Der testet om der er gennemgang fra pir pin på PSoC tilslutningen til pir-sensor tilslutningen
+			&Der måles gennemgang.
+			& Gennemgang er målt
+			& \\ \hline 
+			
+\textbf{9}	&Der testet om der er gennemgang fra pir pin på PSoC tilslutningen til pir-sensor tilslutningen
+			&Der måles gennemgang.
+			& Gennemgang er målt
+			& \\ \hline 
+			
+		
+			
+			
+\end{longtable}
+	\label{modultest_tilslutningsprint} 
+\end{center}
