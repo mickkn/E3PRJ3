@@ -50,7 +50,141 @@ Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sende
 'C' & 0x4c & Write buffer og clearing af tx-buffer  \\
 \hline
 'R' & 0x4c & Læsning af data fra Enhed \\
+\hline
 \end{tabular}
 \label{tabel:SWProtokol-kommandoer}
 \end{table} 
+
+
+\subsubsection{Aktiver}
+
+Aktiver handler ikke på enhedsnummeret og derfor 
+
+\begin{table}[h]
+	\caption{Data-formatering for aktiver}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} \\ 
+		\hline 
+		\textbf{Indhold} & '\verb+A+' & '\verb+C+'\\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-aktiver}
+\end{table}
+
+\subsubsection{Deaktiver}
+
+Deaktiver handler ikke på enhedsnummeret.
+
+\begin{table}[h]
+	\caption{Data-formatering for deaktiver}
+	\centering
+	\begin{tabular}{|l|c|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} \\ 
+		\hline 
+		\textbf{Indhold} & '\verb+D+' & '\verb+C+'\\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-deaktiver}
+\end{table}
+
+\subsubsection{Verificer}
+
+Ved verificering af en Enhed sendes et enhedsnummer til Enheden, som der verificeres på i forhold til Enhedens enhedsnummer.
+
+\begin{table}[h]
+	\caption{Data-formatering for verificer}
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} & \textbf{<3>}   \\ 
+		\hline 
+		\textbf{Indhold} & '\verb+V+' & '\verb+R+' ' & '\verb+C+'\\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-verificer}
+\end{table}
+
+\subsubsection{Send parametre}
+
+Ved parameter indstilling skal der sendes følgende parametre til Enheden.
+
+\begin{enumerate}
+	\item Enhedsnummer (1-18)
+	\item Øvre temperaturgrænse
+	\item Nedre fugtighedsgrænse
+\end{enumerate}
+
+Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
+
+\begin{table}[h]
+	\caption{Data-formatering for parametre}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1>} & \textbf{<2-6>} & \textbf{<7-9>} & \textbf{<10>} \\ 
+		\hline 
+		\textbf{Indhold} & '\verb+P+' & '\verb+T' 'T' 'T' '.' 'T+' & '\verb+F' 'F' 'F+' & '\verb+C+' \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-para}
+\end{table}
+
+
+\subsubsection{Log}
+
+\begin{table}[h]
+	\caption{Data-formatering for log}
+	\centering
+	\begin{tabular}{|l|c|c|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} & \textbf{<2>}  \\ 
+		\hline 
+		\textbf{Indhold} & '\verb+L+' & '\verb+R'+' & '\verb+R'+' \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-para}
+\end{table}
+
+
+\begin{table}[h]
+	\caption{Data-formatering for log (data)}
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1-10>}  \\ 
+		\hline 
+		\textbf{Indhold}  & '\verb+R' 'R' 'R' 'R' 'R' 'R' 'R' 'R' 'R' 'R+'  \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-para}
+\end{table}
+
+
+
+\begin{table}[h]
+	\caption{Data-formatering for log (error)}
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline 
+		\textbf{Byte} & \textbf{<1-4>}  \\ 
+		\hline 
+		\textbf{Indhold}  & '\verb+R' 'R' 'R' 'R+'  \\ 
+		\hline 
+	\end{tabular} 
+	\label{table:SWProtokol-para}
+\end{table}
+
+
+
+
+
+
+
+
+
+
+
 
