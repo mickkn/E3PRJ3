@@ -66,7 +66,7 @@ Figur \ref{table:scop_deactivate} viser dataoverførelsen. Som det ses har kun M
 \end{table}
 
 
-% Deaktiver
+% Config
 \textbf{Config}
 Config kommandoen testes vha. testprogrammet ved kommandoen: 
 
@@ -129,4 +129,57 @@ Figur \ref{table:scop_verify} viser dataoverførelsen. Som det ses overføres de
 	\label{table:scop_verifify}
 \end{table}
 
+
+% Deaktiver
+\textbf{Log}
+Getlog kommandoen testes vha. testprogrammet ved kommandoen: 
+
+
+\begin{figure}[h]
+\centering
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/getlog_and_error}}
+\caption{Oscilloskop billede for kommandoen getLog}
+\label{lab:scop_getlog}
+\end{figure}
+
+Figur \ref{table:scop_getlog1} og \ref{table:scop_getlog2} viser dataoverførelsen. 
+
+\begin{table}[h]
+	\caption{Oscilloskop data eksporteret til tabel del 1}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
+		\hline 
+		\textbf{Char nr} & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} & \textbf{5} 
+						 & \textbf{6} & \textbf{7} & \textbf{8} & \textbf{9}\\ 		
+		\hline 
+		\textbf{MOSI} & '\verb+L+' & '\verb+R+' & '\verb+R+' & '\verb+R+' & '\verb+R+' & '\verb+R+' 
+						& '\verb+R+' & '\verb+R+' & '\verb+R+' & '\verb+R+'\\ 
+		\hline 
+		\textbf{MISO} & '\verb+255+' & '\verb+16+' & '\verb+D+' & '\verb+T+' & '\verb+T+' & '\verb+T+' 
+						& '\verb+.+' & '\verb+T+' & '\verb+F+' & '\verb+F+'\\
+						 
+		\hline 
+	\end{tabular} 
+	\label{table:scop_getlog1}
+\end{table}
+
+
+\begin{table}[h]
+	\caption{Oscilloskop data eksporteret til tabel del 2}
+	\centering
+	\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
+		\hline 
+		\textbf{Char nr} & \textbf{10} & \textbf{11} & \textbf{12} & \textbf{13}
+						& \textbf{14} & \textbf{15} & \textbf{16} & \textbf{17}\\ 		
+		\hline 
+		\textbf{MOSI} 	& '\verb+R+' & '\verb+R+' & '\verb+R+' & '\verb+R+'
+						& '\verb+R+' & '\verb+R+' & '\verb+R+' & '\verb+R+' \\ 
+		\hline 
+		\textbf{MISO}	& '\verb+F+' & '\verb+V+' & '\verb+B+' & '\verb+E+'
+						& '\verb+X+' & '\verb+X+' & '\verb+X+' & '\verb+0+'\\
+						 
+		\hline 
+	\end{tabular} 
+	\label{table:scop_getlog2}
+\end{table}
 
