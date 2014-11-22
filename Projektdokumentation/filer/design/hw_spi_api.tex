@@ -1,0 +1,55 @@
+% SPI API
+
+SPI\_api er en klasse til at styre SPI kommunikationen. Den består af en række metoder beskrevet i \ref{fig:SPI API klassediagram}. I de følgende sektioner beskrives i pseudo-kode hvordan metoderne skal implementeres.
+
+\subsubsection*{int activate(int unit) const}
+\begin{lstlisting}[language=C]
+Open file
+Write 'A' to file
+Write 'C' to file
+Close file
+Return 0
+\end{lstlisting} 
+\subsubsection*{int deactivate(int unit) const}
+\begin{lstlisting}[language=C]
+Open file
+Write 'D' to file
+Write 'C' to file
+Close file
+Return 0
+\end{lstlisting} 
+\subsubsection*{int verify(int unit) const} 
+\begin{lstlisting}[language=C]
+Open file
+Write 'V' to file
+Read unitNo from file
+Parse unitNo to int
+Write 'C' to file
+Close file
+Compare unitNo with unit
+Return 0 if match
+Return error if mismatch
+\end{lstlisting} 
+\subsubsection*{int config(int unit, float temp, float humi)} 
+\begin{lstlisting}[language=C]
+Open file
+Write 'P' to file
+Write temp to file
+Write humi to file
+Write 'C' to file
+Close file
+Return 0
+\end{lstlisting} 
+\subsubsection*{int getLog(vector<string> \&data, int * units, int size)}
+\begin{lstlisting}[language=C]
+Open file
+Write 'L' to file
+Read buffersize from file
+Read buffer buffersize times
+Build datastring if 'D' are present
+Build errorstring(s) if 'E' are present
+Build vector from data and errorstrings
+Move vector to data
+Close file
+Return 0
+\end{lstlisting} 

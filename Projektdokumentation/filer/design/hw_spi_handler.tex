@@ -1,0 +1,35 @@
+% SPI Handler
+
+SPI handleren skal være en interrupt rutine, der startes når der kommunikeres over SPI. Den skal håndtere alle metoderne fra SPI\_api. Og kalde metoder på Enhed.
+
+\textbf{ISR}
+
+\begin{lstlisting}[language=C]
+
+CY_ISR()
+{
+switch {
+    	case 'A':
+		Turn on Green LED
+		Call activate method:                
+	case 'D':
+		Turn on Red LED
+		Call deactivate method:  
+	case 'P':
+		Turn on White LED			
+		Save data for humidity and temperature             
+		Call config method
+	case 'V':
+		Turn on Purple LED  
+		Write UnitNo to tx buffer  
+	case 'L':
+		Turn on Blue LED
+		Get log data buffer
+		Write data buffer to tx buffer
+	case 'R':
+		Write tx buffer to Master
+	case 'C':
+		Clear tx-buffer
+		Reset spiCounter 
+}
+\end{lstlisting}

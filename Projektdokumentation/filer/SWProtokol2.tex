@@ -60,14 +60,16 @@ Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sende
 
 Aktiver handler ikke på enhedsnummeret og derfor 
 
-\begin{table}[h]
+\begin{table}[H]
 	\caption{Data-formatering for aktiver}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline 
-		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} \\ 
+		\textbf{Byte} & \textbf{<0>} & \textbf{<1>} \\ 
 		\hline 
-		\textbf{Indhold} & '\verb+A+' & '\verb+C+'\\ 
+		\textbf{MOSI} & '\verb+A+' & '\verb+C+'	\\ 
+		\hline 
+		\textbf{MISO} & \verb+NULL+ & \verb+NULL+ \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-aktiver}
@@ -77,14 +79,16 @@ Aktiver handler ikke på enhedsnummeret og derfor
 
 Deaktiver handler ikke på enhedsnummeret.
 
-\begin{table}[h]
+\begin{table}[H]
 	\caption{Data-formatering for deaktiver}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline 
-		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} \\ 
+		\textbf{Byte} & \textbf{<0>} & \textbf{<1>} \\ 
 		\hline 
-		\textbf{Indhold} & '\verb+D+' & '\verb+C+'\\ 
+		\textbf{MOSI} & '\verb+D+' & '\verb+C+'\\ 
+		\hline 
+		\textbf{MISO} & \verb+NULL+ & \verb+NULL+ \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-deaktiver}
@@ -92,16 +96,18 @@ Deaktiver handler ikke på enhedsnummeret.
 
 \subsubsection{Verificer}
 
-Ved verificering af en Enhed sendes et enhedsnummer til Enheden, som der verificeres på i forhold til Enhedens enhedsnummer.
+Ved verificering af en Enhed sendes et enhedsnummer til Enheden, som der verificeres på i forhold til Enhedens enhedsnummer. I tabel \ref{table:SWProtokol-verificer} vises et eksempel hvor der verificeres på Enhed nr. 1.
 
-\begin{table}[h]
+\begin{table}[H]
 	\caption{Data-formatering for verificer}
 	\centering
 	\begin{tabular}{|l|c|c|c|}
 		\hline 
-		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} & \textbf{<3>}   \\ 
+		\textbf{Byte} & \textbf{<0>} & \textbf{<1>} & \textbf{<2>}   \\ 
 		\hline 
-		\textbf{Indhold} & '\verb+V+' & '\verb+R+' ' & '\verb+C+'\\ 
+		\textbf{MOSI} & '\verb+V+' & '\verb+R+' & '\verb+C+' \\ 
+		\hline 
+		\textbf{MISO} & \verb+NULL+ & '\verb+1+' & \verb+NULL+ \\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-verificer}
@@ -117,74 +123,78 @@ Ved parameter indstilling skal der sendes følgende parametre til Enheden.
 	\item Nedre fugtighedsgrænse
 \end{enumerate}
 
-Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
+Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}, hvor der ønskes en øvre temperaturgrænse på $24,0\,^{\circ}\mathrm{C}$ og en nedre fugtighedsgrænse på 30. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
 
-\begin{table}[h]
-	\caption{Data-formatering for parametre}
+\begin{table}[H]
+	\caption{Eksempel på data-formatering for parametre}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|}
 		\hline 
-		\textbf{Byte} & \textbf{<1>} & \textbf{<2-6>} & \textbf{<7-9>} & \textbf{<10>} \\ 
+		\textbf{Byte} & \textbf{<0>} & \textbf{<1-5>} & \textbf{<6-8>} & \textbf{<9>} \\ 
 		\hline 
-		\textbf{Indhold} & '\verb+P+' & '\verb+T' 'T' 'T' '.' 'T+' & '\verb+F' 'F' 'F+' & '\verb+C+' \\ 
+		\textbf{MOSI} & '\verb+P+' & '\verb+0' '2' '4' '.' '0+' & '\verb+0' '3' '0+' & '\verb+C+' \\ 
+		\hline 
+		\textbf{MISO} & \verb+NULL+ & \verb+NULL NULL NULL NULL NULL+ & \verb+NULL NULL NULL+ & \verb+NULL+\\ 
 		\hline 
 	\end{tabular} 
 	\label{table:SWProtokol-para}
 \end{table}
 
-
 \subsubsection{Log}
 
-\begin{table}[h]
+Når Master skal hente log fra Enhed, sendes der et 'L' for at starte modtagelsen af loggen. Herefter laves 1 læsning for at udlæse data bufferens størrelse. Og herefter laves der én læsning ad gangen indtil der kommer enten et 'D' for Data eller et 'E' for Fejl. Ses i tabel \ref{table:SWProtokol-log} som et X antal gange.
+
+\begin{table}[H]
 	\caption{Data-formatering for log}
 	\centering
 	\begin{tabular}{|l|c|c|c|}
 		\hline 
-		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} & \textbf{<2>}  \\ 
+		\textbf{Byte} & \textbf{<0>} & \textbf{<1>} & \textbf{<X>}  \\ 
 		\hline 
-		\textbf{Indhold} & '\verb+L+' & '\verb+R'+' & '\verb+R'+' \\ 
+		\textbf{MOSI} & '\verb+L+' & '\verb+R+' & '\verb+R+' \\ 
+		\hline 
+		\textbf{MISO} & \verb+NULL+ & '\verb+SIZE+' & '\verb+D+'/'\verb+E+' \\ 
 		\hline 
 	\end{tabular} 
-	\label{table:SWProtokol-para}
+	\label{table:SWProtokol-log}
 \end{table}
 
+\subsubsection*{Log-data}
 
-\begin{table}[h]
+Når der kommer et 'D' læses der iht. dataprotokollen 10 gange. I tabel \ref{table:SWProtokol-logdata} vises et eksempel på en udlæsning af temperaturen $28,5\,^{\circ}\mathrm{C}$, en fugtighed på 39, ingen vanding og ingen bevægelse.
+
+\begin{table}[H]
 	\caption{Data-formatering for log (data)}
 	\centering
 	\begin{tabular}{|l|c|}
 		\hline 
 		\textbf{Byte} & \textbf{<1-10>}  \\ 
 		\hline 
-		\textbf{Indhold}  & '\verb+R' 'R' 'R' 'R' 'R' 'R' 'R' 'R' 'R' 'R+'  \\ 
+		\textbf{MOSI}  & '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+' '\verb+R+'  \\ 
+		\hline 
+		\textbf{MISO} & '\verb+0+' '\verb+2+' '\verb+8+' '\verb+.+' '\verb+5+' '\verb+0+' '\verb+3+' '\verb+9+' '\verb+0+' '\verb+0+'  \\ 
+		\hline 
+		\textbf{Indhold} & '\verb+T+' '\verb+T+' '\verb+T+' '\verb+.+' '\verb+T+' '\verb+F+' '\verb+F+' '\verb+F+' '\verb+V+' '\verb+B+'  \\ 
 		\hline 
 	\end{tabular} 
-	\label{table:SWProtokol-para}
+	\label{table:SWProtokol-logdata}
 \end{table}
 
+\subsubsection*{Log-error}
 
+Når der kommer et 'E' læses der iht. dataprotokollen 3 gange. I tabel \ref{table:SWProtokol-logerror} vises et eksempel på en udlæsning af fejl 13.
 
-\begin{table}[h]
+\begin{table}[H]
 	\caption{Data-formatering for log (error)}
 	\centering
-	\begin{tabular}{|l|c|}
+	\begin{tabular}{|l|c|c|c|}
 		\hline 
-		\textbf{Byte} & \textbf{<1-4>}  \\ 
+		\textbf{Byte} & \textbf{<1>} & \textbf{<2>} & \textbf{<3>}  \\ 
 		\hline 
-		\textbf{Indhold}  & '\verb+R' 'R' 'R' 'R+'  \\ 
+		\textbf{MOSI}  & '\verb+R+' & '\verb+R+' & '\verb+R+'  \\ 
+		\hline 
+		\textbf{MISO}  & '\verb+0+' & '\verb+1+' & '\verb+3+'  \\ 
 		\hline 
 	\end{tabular} 
-	\label{table:SWProtokol-para}
+	\label{table:SWProtokol-logerror}
 \end{table}
-
-
-
-
-
-
-
-
-
-
-
-

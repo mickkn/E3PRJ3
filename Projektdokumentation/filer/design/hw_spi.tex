@@ -34,9 +34,9 @@ dataoverførelse. Nu sender masteren en bit over til slaven og påbegynder en fu
 til masteren. Denne process fortsætter indtil masteren har sendt alle sine bits, derefter stopper masteren med at toggle på clocken og slave 
 enheder bliver frigivet.
 
-\subsection{Driver}
+\subsection{Kernemodul og Driver}
 
-I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7 \footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}, der er dog lavet kraftigt om i kernemodul og driver. Så de tilpasses EasyWater8000s behov.
+I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7 \footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}, der er dog lavet kraftigt om i driveren, så det tilpasses EasyWater8000s behov. Kernemodulet er der ikke lavet de store ændringer i så disse beskrives ikke i projektet.
 
 Driveren opbygges med en Skrive og en Læse metode, der begge kan læse eller skrive én 8 bits karakter(char).
 
@@ -51,3 +51,14 @@ Modtag data
 Flyt data til datapointer parameter
 }
 \end{lstlisting}
+
+% SPI API
+
+\subsection{SPI API}
+\input{filer/design/hw_spi_api}
+
+
+% SPI HANDLER
+
+\subsection{SPI Handler}
+\input{filer/design/hw_spi_handler}
