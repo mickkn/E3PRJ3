@@ -1,8 +1,11 @@
 % SPI API
 
-SPI\_api er en klasse til at styre SPI kommunikationen. Den består af en række metoder beskrevet i \ref{fig:SPI API klassediagram}. I de følgende sektioner beskrives i pseudo-kode hvordan metoderne skal implementeres.
+SPI\_api er en klasse til at styre SPI kommunikationen. Den består af en række metoder beskrevet i \ref{fig:SPI API klassediagram}. I de følgende sektioner beskrives i pseudo-kode hvordan metoderne skal implementeres. Alle metoderne afsluttes med at sende et 'C' til Enheden. Det sørger for at TxBufferen til SPI nulstilles, så den er klar til næste opgave.
 
 \subsubsection*{int activate(int unit) const}
+
+Metoden skal sørge for at åbne kernefilen, skrive til den og lukke den igen.
+
 \begin{lstlisting}[language=C]
 Open file
 Write 'A' to file
@@ -11,6 +14,9 @@ Close file
 Return 0
 \end{lstlisting} 
 \subsubsection*{int deactivate(int unit) const}
+
+Metoden skal sørge for at åbne kernefilen, skrive til den og lukke den igen.
+
 \begin{lstlisting}[language=C]
 Open file
 Write 'D' to file
@@ -19,6 +25,10 @@ Close file
 Return 0
 \end{lstlisting} 
 \subsubsection*{int verify(int unit) const} 
+
+Metoden skal sørge for at åbne kernefilen, skrive til den, læse fra den og lukke den igen.
+Den skal også sammenligne parameternummeret og det udlæste enhedsnummer fra Enheden og returnere 0 hvis der er et match og en fejlkode ved mismatch.
+
 \begin{lstlisting}[language=C]
 Open file
 Write 'V' to file
@@ -31,6 +41,10 @@ Return 0 if match
 Return error if mismatch
 \end{lstlisting} 
 \subsubsection*{int config(int unit, float temp, float humi)} 
+
+Metoden skal sørge for at åbne kernefilen, skrive til den og lukke den igen.
+Den håndtere 2 floats, som skal konverteres til chars for at kunne sendes via SPI.
+
 \begin{lstlisting}[language=C]
 Open file
 Write 'P' to file
@@ -41,6 +55,10 @@ Close file
 Return 0
 \end{lstlisting} 
 \subsubsection*{int getLog(vector<string> \&data, int * units, int size)}
+
+Metoden sørger for at åbne kernefilen, skrive til den, læse fra den og lukke den igen.
+Den udlæser et buffer array fra Enheden som pakkes ned i en vector til data parameteret.
+
 \begin{lstlisting}[language=C]
 Open file
 Write 'L' to file
