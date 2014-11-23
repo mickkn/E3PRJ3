@@ -1,4 +1,4 @@
---------------- Clean Started: 11/22/2014 10:39:34 Project: SPI_handler, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Clean Started: 11/23/2014 15:59:02 Project: SPI_handler, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\SPI_handler.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o"
@@ -33,4 +33,4 @@ Deleting file ".\SPI_handler_timing.html"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\ARM_C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\GNU_ARM_ASM_FILE.P"
---------------- Clean Succeeded: 11/22/2014 10:39:34 ---------------
+--------------- Clean Succeeded: 11/23/2014 15:59:03 ---------------

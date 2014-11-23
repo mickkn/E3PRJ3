@@ -1,4 +1,4 @@
---------------- Rebuild Started: 11/22/2014 10:39:02 Project: SPI_handler, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 11/23/2014 15:58:29 Project: SPI_handler, Configuration: ARM GCC 4.7.3 Debug ---------------
 cydsfit.exe "-.appdatapath" "C:\Users\mickkirkegaardnielse\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\SPI_handler.cyprj" "-d" "CY8C4245AXI-483" "-s" "Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\Generated_Source\PSoC4" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
 Elaborating Design...
 HDL Generation ...
@@ -48,6 +48,6 @@ arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\SPI_handler.a
 arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\SPI_handler.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\SPI_handler.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\SPI_handler.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\SPI_handler.a "C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
 cyelftool.exe -C Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\CortexM0\ARM_GCC_473\Debug\SPI_handler.elf --flash_size 32768 --flash_row_size 128
 cyelftool.exe -S Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\CortexM0\ARM_GCC_473\Debug\SPI_handler.elf
-Flash used: 19132 of 32768 bytes (58,4 %).
+Flash used: 19140 of 32768 bytes (58,4 %).
 SRAM used: 2372 of 4096 bytes (57,9 %).
---------------- Rebuild Succeeded: 11/22/2014 10:39:30 ---------------
+--------------- Rebuild Succeeded: 11/23/2014 15:58:57 ---------------

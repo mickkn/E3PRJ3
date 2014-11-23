@@ -2,7 +2,7 @@
 
 char spiBuffer[64];
 char spiTxBuffer[256]; 
-char testGetLog[] = "DTTT.TFFFVBE222"; // (D)ata+(E)rror: TTT.TFFFVB+EXXX
+char testGetLog[] = "DTTT.TFFFVBEXXX"; // (D)ata+(E)rror: TTT.TFFFVB+EXXX
 char unitNo = '1';
 int spiCounter = 0;
 int spiReadCounter = 0;
@@ -40,7 +40,7 @@ CY_ISR(isr_spi_rx) {
      *  'R'   0x52     Read function char
 	 */
     
-    if ((cmd == 'R') || (cmd == 'C') || (cmd == 'L')){
+    if ((cmd == 'R') || (cmd == 'C') || (cmd == 'L') || (cmd == 'V')){
     	switch (spiBuffer[0]) {
             case 'A':
                     RED_LED_Write(1);
