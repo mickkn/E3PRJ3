@@ -3,11 +3,22 @@
 
 % Indledning 
 
+SPI kommunikationen har en API klasse på Master skrevet i C++ og en handler på Enhed skrevet i C.
+
+For at add-on printet på Devkit8000 kan bruge GPIO benene til SPI kommunikationen er det nødvendigt at rute dem korrekt, dette gøre ved at bruge følgende 2 kommandoer.
+
+\begin{itemize}
+\item \verb+echo 0x3 > /sys/class/cplddrv/cpld/spi_route_reg+
+\item \verb+echo 0x1 > /sys/class/cplddrv/cpld/ext_serial_if_route_reg+
+\end{itemize}
+
+Kernemodulet skal også indsættes og oprette en system node, i APIen bruges \verb+/dev/spi_dev+ så denne er fast.
+Alt dette er skrevet i et shell script der håndtere alt indsætning og oprettelse af kernefilen, se bilag \verb+insert_SPI_dev.sh+
 
 % SPI API
 
 \subsection{SPI API}
-\input{filer/implementering/spi_api}
+%\input{filer/implementering/spi_api}
 
 
 
@@ -15,6 +26,6 @@
 % SPI HANDLER
 
 \subsection{SPI Handler}
-\input{filer/implementering/spi_handler}
+%\input{filer/implementering/spi_handler}
 
 
