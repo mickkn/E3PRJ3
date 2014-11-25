@@ -16,8 +16,13 @@ Driveren der skal drive PIR sensoren på Enhed skal kunne registrere bevægelse 
 \subsubsection*{Pseudokode}
 
 \begin{lstlisting}[language=C]
-int get_pir_status(){
-Read TTL signal on P_PIR pin
-Return 1 on movement and 0 on no movement
+CY_ISR(PIR){
+    Call movement method here
+} 
+
+Init interrupt(PIR) on PIR-pin
+
+for(;;){
+Detect HIGH(1) on PIR-pin
 }
 \end{lstlisting}
