@@ -61,7 +61,7 @@ Gain = 20 * \log_{10}(x) <=> 40 dB = 20 * \log_ {10}(x) <=> x = 100
 \end{equation} 
 Da det er en dæmpning der er tale om, vil gain være lig med -40 dB hvilket vil give en x-værdi på 0,01 som er det samme som 100 gange dæmpning.
 
-Grundet at værdien kun er tilnærmet skyldes at der stadig vil være en lille smule rippel fra PWMen svarende til 33 mV peak-peak. Der vil altså være en usikkerhed i DC-værdien svarende til 2 $^{\circ}$C alene fra filteret.
+Grundet at værdien kun er tilnærmet skyldes at der stadig vil være oscillation tilbage fra PWMen svarende til 33 mV peak-peak. Der vil altså være en usikkerhed i DC-værdien svarende til 2 $^{\circ}$C alene fra filteret.
 
 Dette kan løses i softwaren ved evt. at tage et antal samples og så midle de værdier der er målt med simple gennemsnitsberegning. 
 
@@ -70,7 +70,7 @@ V_{inADC_{avg}} = \frac{V_{in1} + V_{in2} + .. V_{inN}}{N}
 \end{equation} 
 \textit{hvor N = antal samples}
 
-En anden støjfaktor der er værd at tage hensyn til er filterets belastning af udgangen på sensoren. Denne kan have indflydelse på området hvori PWM'en går højt og lavt. Det kan altså ikke med sikkerhed siges at signalet vil gå fra 0 V til 3,3 V, men kan have et offset og en evt. dæmpning. Denne problematik kan løses ved indsættelse af en OpAmp, med kendt spændingsforsyning i det ønsket område, lige før filteret. Denne vil sørge for, at signalet kommer til at ligge i det valgte område. OpAmp'en forbindes som en buffer uden forstærkning. 
+En anden støjfaktor der er værd at tage hensyn til er filterets belastning af udgangen på sensoren. Denne kan have indflydelse på området hvori PWM'en går højt og lavt. Det kan altså ikke med sikkerhed siges at signalet vil gå fra 0 V til 3,3 V, men kan have et offset og en evt. dæmpning. Denne problematik kan løses ved indsættelse af en OpAmp, forbundet som en komparator, med kendt spændingsforsyning i det ønsket område, lige før filteret. Denne vil sørge for, at signalet kommer til at ligge i det valgte område. En OpAmp fra HC14 familien ville kunne klare denne opgave. 
 
 \begin{figure}[htb]
 \centering
