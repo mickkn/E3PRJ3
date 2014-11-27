@@ -1,30 +1,31 @@
 %pir api
-Pir API'en er implementeret i PSoC creator. Top designet består af en input pin (P1[1]) der modtager et signal fra pir-sensoren når der er bevægelse, se billedet \ref{lab:pir_topdesing}. Denne pin går ind og aktiverer en ISR routine. I source filen ses det at constructoren starter ISR routinen og destructoren stopper den. Selve ISR funktionen går ind og kalder en metode fra controlleren, der deaktivere sprinkleren og starter en timer på 30 min før der igen kan vandes.   
+Pir API'en er implementeret i PSoC creator. Top designet består af en input pin (P1[1]) der modtager et signal fra pir-sensoren når der er bevægelse, se figur \ref{lab:pir_topdesign}. På figur \ref{lab:pir_topdesign_1} og \ref{lab:pir_topdesign_2} ses opsætningen af P-PIR, den har en HW connection til isr-pir og er indstillet til at have en pulldown modstand for at sikre at der står lav på pinen når der ikke er signal. Denne pin går ind og aktiverer en ISR routine. I source filen ses det at selve ISR funktionen går ind og kalder en metode fra controlleren, der deaktivere sprinkleren og starter en timer på 30 min før der igen kan vandes.   
 
 \begin{figure}[htb]
 \centering
 {\includegraphics[width=0.60\textwidth]{filer/pics/pir_api_topdesign}}
 \caption{Top Design for pir API}
-\label{lab:pir_topdesing}
+\label{lab:pir_topdesign}
 \end{figure}
 
+\begin{figure}[htb]
+\centering
+{\includegraphics[width=0.60\textwidth]{filer/pics/pir_api_topdesign_1}}
+\caption{Konfiguration af pir pin}
+\label{lab:pir_topdesign_1}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+{\includegraphics[width=0.60\textwidth]{filer/pics/pir_api_topdesign_2}}
+\caption{Konfiguration af pir pin}
+\label{lab:pir_topdesign_2}
+\end{figure}
+
+
 \subsubsection*{Source fil}
-
 \begin{lstlisting}[language=C]
-//Constructor implementation
-void pir_init()
-{
-    isr_pir_Start();
-}
-
-//Deconstructor implementaion
-void pir_exit()
-{
-    isr_pir_Stop();
-}
-
-//ISR
-extern void isr_pir_Interrupt()
+CY_ISR(P_PIR)
 {  
     loadData_movementDetekt();   
 }
