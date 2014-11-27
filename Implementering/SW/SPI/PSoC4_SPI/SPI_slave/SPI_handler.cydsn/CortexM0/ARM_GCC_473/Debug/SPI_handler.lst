@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
   52              		.comm	humiBuffer,4,4
   53              		.global	__aeabi_d2f
   54              		.section	.text.isr_spi_rx,"ax",%progbits
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 2
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 2
 
 
   55              		.align	2
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
   84 0012 021C     		mov	r2, r0
   85 0014 3B1C     		mov	r3, r7
   86 0016 0F33     		add	r3, r3, #15
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 3
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 3
 
 
   87 0018 1A70     		strb	r2, [r3]
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  123 0058 00D0     		beq	.LCB56
  124 005a CEE0     		b	.L3	@long jump
  125              	.LCB56:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 4
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 4
 
 
  126              	.L2:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  175 007e 0120     		mov	r0, #1
  176 0080 FFF7FEFF 		bl	BLUE_LED_Write
   49:.\SPI_handler.c ****                     
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 5
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 5
 
 
   50:.\SPI_handler.c ****                     /* Clear Buffer and Counter */
@@ -250,71 +250,81 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  180 0088 5F4B     		ldr	r3, .L20
  181 008a 0022     		mov	r2, #0
  182 008c 1A60     		str	r2, [r3]
-  53:.\SPI_handler.c ****                 break;
- 183              		.loc 1 53 0
+  53:.\SPI_handler.c ****                     
+  54:.\SPI_handler.c ****                     /*Call method*/
+  55:.\SPI_handler.c ****                     //turnOnOff(true)
+  56:.\SPI_handler.c ****                     
+  57:.\SPI_handler.c ****                 break;
+ 183              		.loc 1 57 0
  184 008e B4E0     		b	.L3
  185              	.L7:
-  54:.\SPI_handler.c ****             case 'D':
-  55:.\SPI_handler.c ****                     GREEN_LED_Write(1);
- 186              		.loc 1 55 0
+  58:.\SPI_handler.c ****             case 'D':
+  59:.\SPI_handler.c ****                     GREEN_LED_Write(1);
+ 186              		.loc 1 59 0
  187 0090 0120     		mov	r0, #1
  188 0092 FFF7FEFF 		bl	GREEN_LED_Write
-  56:.\SPI_handler.c ****                     RED_LED_Write(0);
- 189              		.loc 1 56 0
+  60:.\SPI_handler.c ****                     RED_LED_Write(0);
+ 189              		.loc 1 60 0
  190 0096 0020     		mov	r0, #0
  191 0098 FFF7FEFF 		bl	RED_LED_Write
-  57:.\SPI_handler.c ****                     BLUE_LED_Write(1);
- 192              		.loc 1 57 0
+  61:.\SPI_handler.c ****                     BLUE_LED_Write(1);
+ 192              		.loc 1 61 0
  193 009c 0120     		mov	r0, #1
  194 009e FFF7FEFF 		bl	BLUE_LED_Write
-  58:.\SPI_handler.c ****                     
-  59:.\SPI_handler.c ****                     /* Clear Buffer and Counter */
-  60:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 195              		.loc 1 60 0
+  62:.\SPI_handler.c ****                     
+  63:.\SPI_handler.c ****                     /* Clear Buffer and Counter */
+  64:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
+ 195              		.loc 1 64 0
  196 00a2 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
-  61:.\SPI_handler.c ****                     spiCounter = 0;
- 197              		.loc 1 61 0
+  65:.\SPI_handler.c ****                     spiCounter = 0;
+ 197              		.loc 1 65 0
  198 00a6 584B     		ldr	r3, .L20
  199 00a8 0022     		mov	r2, #0
  200 00aa 1A60     		str	r2, [r3]
-  62:.\SPI_handler.c ****                 break;
- 201              		.loc 1 62 0
+  66:.\SPI_handler.c ****                     
+  67:.\SPI_handler.c ****                     /*Call method*/
+  68:.\SPI_handler.c ****                     //turnOnOff(false)
+  69:.\SPI_handler.c ****                     
+  70:.\SPI_handler.c ****                 break;
+ 201              		.loc 1 70 0
  202 00ac A5E0     		b	.L3
  203              	.L9:
-  63:.\SPI_handler.c ****             case 'P':
-  64:.\SPI_handler.c ****                     /* Disable interrupt */
-  65:.\SPI_handler.c ****                     CyGlobalIntDisable;
- 204              		.loc 1 65 0
- 205              	@ 65 ".\SPI_handler.c" 1
+  71:.\SPI_handler.c ****             case 'P':
+  72:.\SPI_handler.c ****                     /* Disable interrupt */
+  73:.\SPI_handler.c ****                     CyGlobalIntDisable;
+ 204              		.loc 1 73 0
+ 205              	@ 73 ".\SPI_handler.c" 1
  206 00ae 72B6     		CPSID   i
  207              	@ 0 "" 2
-  66:.\SPI_handler.c ****                     
-  67:.\SPI_handler.c ****                     GREEN_LED_Write(0);
- 208              		.loc 1 67 0
+  74:.\SPI_handler.c ****                  
+  75:.\SPI_handler.c ****                     GREEN_LED_Write(0);
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 6
+
+
+ 208              		.loc 1 75 0
  209              		.code	16
  210 00b0 0020     		mov	r0, #0
  211 00b2 FFF7FEFF 		bl	GREEN_LED_Write
-  68:.\SPI_handler.c ****                     RED_LED_Write(0);
- 212              		.loc 1 68 0
+  76:.\SPI_handler.c ****                     RED_LED_Write(0);
+ 212              		.loc 1 76 0
  213 00b6 0020     		mov	r0, #0
  214 00b8 FFF7FEFF 		bl	RED_LED_Write
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 6
-
-
-  69:.\SPI_handler.c ****                     BLUE_LED_Write(0);
- 215              		.loc 1 69 0
+  77:.\SPI_handler.c ****                     BLUE_LED_Write(0);
+ 215              		.loc 1 77 0
  216 00bc 0020     		mov	r0, #0
  217 00be FFF7FEFF 		bl	BLUE_LED_Write
-  70:.\SPI_handler.c ****                     
-  71:.\SPI_handler.c ****                     /* Read temp */
-  72:.\SPI_handler.c ****                     for(i = 0 ; i < 5 ; i++){
- 218              		.loc 1 72 0
+  78:.\SPI_handler.c ****                     
+  79:.\SPI_handler.c ****                     
+  80:.\SPI_handler.c ****                     
+  81:.\SPI_handler.c ****                     /* Read temp */
+  82:.\SPI_handler.c ****                     for(i = 0 ; i < 5 ; i++){
+ 218              		.loc 1 82 0
  219 00c2 0023     		mov	r3, #0
  220 00c4 7B61     		str	r3, [r7, #20]
  221 00c6 0AE0     		b	.L13
  222              	.L14:
-  73:.\SPI_handler.c ****                         tempBuffer[i] = spiBuffer[i+1];
- 223              		.loc 1 73 0 discriminator 2
+  83:.\SPI_handler.c ****                         tempBuffer[i] = spiBuffer[i+1];
+ 223              		.loc 1 83 0 discriminator 2
  224 00c8 7B69     		ldr	r3, [r7, #20]
  225 00ca 0133     		add	r3, r3, #1
  226 00cc 4F4A     		ldr	r2, .L20+4
@@ -323,62 +333,63 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  229 00d2 7B69     		ldr	r3, [r7, #20]
  230 00d4 CB18     		add	r3, r1, r3
  231 00d6 1A70     		strb	r2, [r3]
-  72:.\SPI_handler.c ****                     for(i = 0 ; i < 5 ; i++){
- 232              		.loc 1 72 0 discriminator 2
+  82:.\SPI_handler.c ****                     for(i = 0 ; i < 5 ; i++){
+ 232              		.loc 1 82 0 discriminator 2
  233 00d8 7B69     		ldr	r3, [r7, #20]
  234 00da 0133     		add	r3, r3, #1
  235 00dc 7B61     		str	r3, [r7, #20]
  236              	.L13:
-  72:.\SPI_handler.c ****                     for(i = 0 ; i < 5 ; i++){
- 237              		.loc 1 72 0 is_stmt 0 discriminator 1
+  82:.\SPI_handler.c ****                     for(i = 0 ; i < 5 ; i++){
+ 237              		.loc 1 82 0 is_stmt 0 discriminator 1
  238 00de 7B69     		ldr	r3, [r7, #20]
  239 00e0 042B     		cmp	r3, #4
  240 00e2 F1DD     		ble	.L14
-  74:.\SPI_handler.c ****                     }
-  75:.\SPI_handler.c ****                     for(i = 0 ; i < 3 ; i++){
- 241              		.loc 1 75 0 is_stmt 1
+  84:.\SPI_handler.c ****                         //
+  85:.\SPI_handler.c ****                     }
+  86:.\SPI_handler.c ****                     for(i = 0 ; i < 3 ; i++){
+ 241              		.loc 1 86 0 is_stmt 1
  242 00e4 0023     		mov	r3, #0
  243 00e6 7B61     		str	r3, [r7, #20]
  244 00e8 0AE0     		b	.L15
  245              	.L16:
-  76:.\SPI_handler.c ****                         humiBuffer[i] = spiBuffer[i+6];
- 246              		.loc 1 76 0 discriminator 2
+  87:.\SPI_handler.c ****                         humiBuffer[i] = spiBuffer[i+6];
+ 246              		.loc 1 87 0 discriminator 2
  247 00ea 7B69     		ldr	r3, [r7, #20]
  248 00ec 0633     		add	r3, r3, #6
  249 00ee 474A     		ldr	r2, .L20+4
  250 00f0 D25C     		ldrb	r2, [r2, r3]
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 7
+
+
  251 00f2 4949     		ldr	r1, .L20+16
  252 00f4 7B69     		ldr	r3, [r7, #20]
  253 00f6 CB18     		add	r3, r1, r3
  254 00f8 1A70     		strb	r2, [r3]
-  75:.\SPI_handler.c ****                     for(i = 0 ; i < 3 ; i++){
- 255              		.loc 1 75 0 discriminator 2
+  86:.\SPI_handler.c ****                     for(i = 0 ; i < 3 ; i++){
+ 255              		.loc 1 86 0 discriminator 2
  256 00fa 7B69     		ldr	r3, [r7, #20]
  257 00fc 0133     		add	r3, r3, #1
  258 00fe 7B61     		str	r3, [r7, #20]
  259              	.L15:
-  75:.\SPI_handler.c ****                     for(i = 0 ; i < 3 ; i++){
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 7
-
-
- 260              		.loc 1 75 0 is_stmt 0 discriminator 1
+  86:.\SPI_handler.c ****                     for(i = 0 ; i < 3 ; i++){
+ 260              		.loc 1 86 0 is_stmt 0 discriminator 1
  261 0100 7B69     		ldr	r3, [r7, #20]
  262 0102 022B     		cmp	r3, #2
  263 0104 F1DD     		ble	.L16
-  77:.\SPI_handler.c ****                     }
-  78:.\SPI_handler.c ****                     
-  79:.\SPI_handler.c ****                     float tempValue = 0;
- 264              		.loc 1 79 0 is_stmt 1
+  88:.\SPI_handler.c ****                     }
+  89:.\SPI_handler.c ****                     
+  90:.\SPI_handler.c ****                     float tempValue = 0;
+ 264              		.loc 1 90 0 is_stmt 1
  265 0106 0023     		mov	r3, #0
  266 0108 BB60     		str	r3, [r7, #8]
-  80:.\SPI_handler.c ****                     float humiValue = 0;
- 267              		.loc 1 80 0
+  91:.\SPI_handler.c ****                     float humiValue = 0;
+ 267              		.loc 1 91 0
  268 010a 0023     		mov	r3, #0
  269 010c 7B60     		str	r3, [r7, #4]
-  81:.\SPI_handler.c ****                     
-  82:.\SPI_handler.c ****                     /* Parse charArray's to float's */
-  83:.\SPI_handler.c ****                     tempValue = (float)atof(tempBuffer);
- 270              		.loc 1 83 0
+  92:.\SPI_handler.c ****                     
+  93:.\SPI_handler.c ****                     /* Parse charArray's to float's */
+  94:.\SPI_handler.c ****                     tempValue = (float)atof(tempBuffer);
+ 270              		.loc 1 94 0
  271 010e 414B     		ldr	r3, .L20+12
  272 0110 181C     		mov	r0, r3
  273 0112 FFF7FEFF 		bl	atof
@@ -389,8 +400,8 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  278 011e FFF7FEFF 		bl	__aeabi_d2f
  279 0122 031C     		add	r3, r0, #0
  280 0124 BB60     		str	r3, [r7, #8]
-  84:.\SPI_handler.c ****                     humiValue = (float)atof(humiBuffer);
- 281              		.loc 1 84 0
+  95:.\SPI_handler.c ****                     humiValue = (float)atof(humiBuffer);
+ 281              		.loc 1 95 0
  282 0126 3C4B     		ldr	r3, .L20+16
  283 0128 181C     		mov	r0, r3
  284 012a FFF7FEFF 		bl	atof
@@ -401,90 +412,99 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  289 0136 FFF7FEFF 		bl	__aeabi_d2f
  290 013a 031C     		add	r3, r0, #0
  291 013c 7B60     		str	r3, [r7, #4]
-  85:.\SPI_handler.c ****                     
-  86:.\SPI_handler.c ****                     //config( humiValue , tempValue );
-  87:.\SPI_handler.c ****                     
-  88:.\SPI_handler.c ****                     /* Clear Buffer and Counter */
-  89:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 292              		.loc 1 89 0
+  96:.\SPI_handler.c ****                     
+  97:.\SPI_handler.c ****                     /* Call method */
+  98:.\SPI_handler.c ****                     //config( &tempValue, &humiValue);
+  99:.\SPI_handler.c ****                     
+ 100:.\SPI_handler.c ****                     /* Clear Buffer and Counter */
+ 101:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 8
+
+
+ 292              		.loc 1 101 0
  293 013e FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
-  90:.\SPI_handler.c ****                     spiCounter = 0;
- 294              		.loc 1 90 0
+ 102:.\SPI_handler.c ****                     spiCounter = 0;
+ 294              		.loc 1 102 0
  295 0142 314B     		ldr	r3, .L20
  296 0144 0022     		mov	r2, #0
  297 0146 1A60     		str	r2, [r3]
-  91:.\SPI_handler.c ****                     
-  92:.\SPI_handler.c ****                     /* Re-enable interrupt */
-  93:.\SPI_handler.c ****                     CyGlobalIntEnable;
- 298              		.loc 1 93 0
- 299              	@ 93 ".\SPI_handler.c" 1
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 8
-
-
+ 103:.\SPI_handler.c ****                     
+ 104:.\SPI_handler.c ****                     /* Re-enable interrupt */
+ 105:.\SPI_handler.c ****                     CyGlobalIntEnable;
+ 298              		.loc 1 105 0
+ 299              	@ 105 ".\SPI_handler.c" 1
  300 0148 62B6     		CPSIE   i
  301              	@ 0 "" 2
-  94:.\SPI_handler.c ****                 break;
- 302              		.loc 1 94 0
+ 106:.\SPI_handler.c ****                 break;
+ 302              		.loc 1 106 0
  303              		.code	16
  304 014a 56E0     		b	.L3
  305              	.L11:
-  95:.\SPI_handler.c ****     		case 'V':
-  96:.\SPI_handler.c ****                     GREEN_LED_Write(1);
- 306              		.loc 1 96 0
+ 107:.\SPI_handler.c ****     		case 'V':
+ 108:.\SPI_handler.c ****                     GREEN_LED_Write(1);
+ 306              		.loc 1 108 0
  307 014c 0120     		mov	r0, #1
  308 014e FFF7FEFF 		bl	GREEN_LED_Write
-  97:.\SPI_handler.c ****                     RED_LED_Write(1);
- 309              		.loc 1 97 0
+ 109:.\SPI_handler.c ****                     RED_LED_Write(1);
+ 309              		.loc 1 109 0
  310 0152 0120     		mov	r0, #1
  311 0154 FFF7FEFF 		bl	RED_LED_Write
-  98:.\SPI_handler.c ****                     BLUE_LED_Write(0);
- 312              		.loc 1 98 0
+ 110:.\SPI_handler.c ****                     BLUE_LED_Write(0);
+ 312              		.loc 1 110 0
  313 0158 0020     		mov	r0, #0
  314 015a FFF7FEFF 		bl	BLUE_LED_Write
-  99:.\SPI_handler.c **** 
- 100:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 315              		.loc 1 100 0
+ 111:.\SPI_handler.c **** 
+ 112:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
+ 315              		.loc 1 112 0
  316 015e FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
- 101:.\SPI_handler.c ****                     SPIS_1_SpiUartWriteTxData(unitNo);
- 317              		.loc 1 101 0
+ 113:.\SPI_handler.c ****                     SPIS_1_SpiUartWriteTxData(unitNo);
+ 317              		.loc 1 113 0
  318 0162 2E4B     		ldr	r3, .L20+20
  319 0164 1B78     		ldrb	r3, [r3]
  320 0166 181C     		mov	r0, r3
  321 0168 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
- 102:.\SPI_handler.c ****                     spiCounter = 0;
- 322              		.loc 1 102 0
+ 114:.\SPI_handler.c ****                     spiCounter = 0;
+ 322              		.loc 1 114 0
  323 016c 264B     		ldr	r3, .L20
  324 016e 0022     		mov	r2, #0
  325 0170 1A60     		str	r2, [r3]
- 103:.\SPI_handler.c ****     			break;
- 326              		.loc 1 103 0
+ 115:.\SPI_handler.c ****     			break;
+ 326              		.loc 1 115 0
  327 0172 42E0     		b	.L3
  328              	.L8:
- 104:.\SPI_handler.c ****             case 'L':
- 105:.\SPI_handler.c ****                     GREEN_LED_Write(1);
- 329              		.loc 1 105 0
+ 116:.\SPI_handler.c ****             case 'L':
+ 117:.\SPI_handler.c ****                     GREEN_LED_Write(1);
+ 329              		.loc 1 117 0
  330 0174 0120     		mov	r0, #1
  331 0176 FFF7FEFF 		bl	GREEN_LED_Write
- 106:.\SPI_handler.c ****                     RED_LED_Write(0);
- 332              		.loc 1 106 0
+ 118:.\SPI_handler.c ****                     RED_LED_Write(0);
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 9
+
+
+ 332              		.loc 1 118 0
  333 017a 0020     		mov	r0, #0
  334 017c FFF7FEFF 		bl	RED_LED_Write
- 107:.\SPI_handler.c ****                     BLUE_LED_Write(0);
- 335              		.loc 1 107 0
+ 119:.\SPI_handler.c ****                     BLUE_LED_Write(0);
+ 335              		.loc 1 119 0
  336 0180 0020     		mov	r0, #0
  337 0182 FFF7FEFF 		bl	BLUE_LED_Write
- 108:.\SPI_handler.c ****                     
- 109:.\SPI_handler.c ****                     for(c = 0 ; c < len ; c++){
- 338              		.loc 1 109 0
+ 120:.\SPI_handler.c ****                     
+ 121:.\SPI_handler.c ****                     /* Call method */
+ 122:.\SPI_handler.c ****                     //getBuffer(*buf, len);
+ 123:.\SPI_handler.c ****                     
+ 124:.\SPI_handler.c ****                     //for(c = 0 ; c < len ; c++){
+ 125:.\SPI_handler.c ****                     //spiTxBuffer[c] = buf[c];
+ 126:.\SPI_handler.c ****                     //}
+ 127:.\SPI_handler.c ****                     
+ 128:.\SPI_handler.c ****                     // Test metode
+ 129:.\SPI_handler.c ****                     for(c = 0 ; c < len ; c++){
+ 338              		.loc 1 129 0
  339 0186 0023     		mov	r3, #0
  340 0188 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 9
-
-
  341 018a 0AE0     		b	.L17
  342              	.L18:
- 110:.\SPI_handler.c ****                         spiTxBuffer[c] = testGetLog[c];
- 343              		.loc 1 110 0 discriminator 2
+ 130:.\SPI_handler.c ****                         spiTxBuffer[c] = testGetLog[c];
+ 343              		.loc 1 130 0 discriminator 2
  344 018c 244A     		ldr	r2, .L20+24
  345 018e 3B69     		ldr	r3, [r7, #16]
  346 0190 D318     		add	r3, r2, r3
@@ -493,104 +513,107 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  349 0196 3B69     		ldr	r3, [r7, #16]
  350 0198 CB18     		add	r3, r1, r3
  351 019a 1A70     		strb	r2, [r3]
- 109:.\SPI_handler.c ****                     for(c = 0 ; c < len ; c++){
- 352              		.loc 1 109 0 discriminator 2
+ 129:.\SPI_handler.c ****                     for(c = 0 ; c < len ; c++){
+ 352              		.loc 1 129 0 discriminator 2
  353 019c 3B69     		ldr	r3, [r7, #16]
  354 019e 0133     		add	r3, r3, #1
  355 01a0 3B61     		str	r3, [r7, #16]
  356              	.L17:
- 109:.\SPI_handler.c ****                     for(c = 0 ; c < len ; c++){
- 357              		.loc 1 109 0 is_stmt 0 discriminator 1
+ 129:.\SPI_handler.c ****                     for(c = 0 ; c < len ; c++){
+ 357              		.loc 1 129 0 is_stmt 0 discriminator 1
  358 01a2 214B     		ldr	r3, .L20+32
  359 01a4 1B68     		ldr	r3, [r3]
  360 01a6 3A69     		ldr	r2, [r7, #16]
  361 01a8 9A42     		cmp	r2, r3
  362 01aa EFD3     		bcc	.L18
- 111:.\SPI_handler.c ****                     }
- 112:.\SPI_handler.c ****                     
- 113:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 363              		.loc 1 113 0 is_stmt 1
+ 131:.\SPI_handler.c ****                     }
+ 132:.\SPI_handler.c ****                     
+ 133:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
+ 363              		.loc 1 133 0 is_stmt 1
  364 01ac FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
- 114:.\SPI_handler.c ****                     SPIS_1_SpiUartWriteTxData((char)len);
- 365              		.loc 1 114 0
+ 134:.\SPI_handler.c ****                     SPIS_1_SpiUartWriteTxData((char)len);
+ 365              		.loc 1 134 0
  366 01b0 1D4B     		ldr	r3, .L20+32
  367 01b2 1B68     		ldr	r3, [r3]
  368 01b4 DBB2     		uxtb	r3, r3
  369 01b6 181C     		mov	r0, r3
  370 01b8 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
- 115:.\SPI_handler.c ****                     spiCounter = 0;
- 371              		.loc 1 115 0
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 10
+
+
+ 135:.\SPI_handler.c ****                     spiCounter = 0;
+ 371              		.loc 1 135 0
  372 01bc 124B     		ldr	r3, .L20
  373 01be 0022     		mov	r2, #0
  374 01c0 1A60     		str	r2, [r3]
- 116:.\SPI_handler.c ****                     spiReadCounter = 0;
- 375              		.loc 1 116 0
+ 136:.\SPI_handler.c ****                     spiReadCounter = 0;
+ 375              		.loc 1 136 0
  376 01c2 1A4B     		ldr	r3, .L20+36
  377 01c4 0022     		mov	r2, #0
  378 01c6 1A60     		str	r2, [r3]
- 117:.\SPI_handler.c ****                 break;
- 379              		.loc 1 117 0
+ 137:.\SPI_handler.c ****                 break;
+ 379              		.loc 1 137 0
  380 01c8 17E0     		b	.L3
  381              	.L10:
- 118:.\SPI_handler.c ****             case 'R':
- 119:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 382              		.loc 1 119 0
+ 138:.\SPI_handler.c ****             case 'R':
+ 139:.\SPI_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
+ 382              		.loc 1 139 0
  383 01ca FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
- 120:.\SPI_handler.c ****                     SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
- 384              		.loc 1 120 0
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 10
-
-
+ 140:.\SPI_handler.c ****                     SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
+ 384              		.loc 1 140 0
  385 01ce 174B     		ldr	r3, .L20+36
  386 01d0 1B68     		ldr	r3, [r3]
  387 01d2 144A     		ldr	r2, .L20+28
  388 01d4 D35C     		ldrb	r3, [r2, r3]
  389 01d6 181C     		mov	r0, r3
  390 01d8 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
- 121:.\SPI_handler.c ****                     spiCounter = 0;
- 391              		.loc 1 121 0
+ 141:.\SPI_handler.c ****                     spiCounter = 0;
+ 391              		.loc 1 141 0
  392 01dc 0A4B     		ldr	r3, .L20
  393 01de 0022     		mov	r2, #0
  394 01e0 1A60     		str	r2, [r3]
- 122:.\SPI_handler.c ****                     spiReadCounter++;
- 395              		.loc 1 122 0
+ 142:.\SPI_handler.c ****                     spiReadCounter++;
+ 395              		.loc 1 142 0
  396 01e2 124B     		ldr	r3, .L20+36
  397 01e4 1B68     		ldr	r3, [r3]
  398 01e6 5A1C     		add	r2, r3, #1
  399 01e8 104B     		ldr	r3, .L20+36
  400 01ea 1A60     		str	r2, [r3]
- 123:.\SPI_handler.c ****                 break;
- 401              		.loc 1 123 0
+ 143:.\SPI_handler.c ****                 break;
+ 401              		.loc 1 143 0
  402 01ec 05E0     		b	.L3
  403              	.L6:
- 124:.\SPI_handler.c ****             case 'C':
- 125:.\SPI_handler.c ****                     SPIS_1_SpiUartClearRxBuffer();
- 404              		.loc 1 125 0
+ 144:.\SPI_handler.c ****             case 'C':
+ 145:.\SPI_handler.c ****                     SPIS_1_SpiUartClearRxBuffer();
+ 404              		.loc 1 145 0
  405 01ee FFF7FEFF 		bl	SPIS_1_SpiUartClearRxBuffer
- 126:.\SPI_handler.c ****                     spiCounter = 0;
- 406              		.loc 1 126 0
+ 146:.\SPI_handler.c ****                     spiCounter = 0;
+ 406              		.loc 1 146 0
  407 01f2 054B     		ldr	r3, .L20
  408 01f4 0022     		mov	r2, #0
  409 01f6 1A60     		str	r2, [r3]
  410              	.L19:
- 127:.\SPI_handler.c ****     		default:
- 128:.\SPI_handler.c ****     			break;
- 411              		.loc 1 128 0
+ 147:.\SPI_handler.c ****     		default:
+ 148:.\SPI_handler.c ****     			break;
+ 411              		.loc 1 148 0
  412 01f8 C046     		mov	r8, r8
  413              	.L3:
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 11
+
+
  414              	.LBE2:
- 129:.\SPI_handler.c ****     	}
- 130:.\SPI_handler.c ****     }
- 131:.\SPI_handler.c **** 	
- 132:.\SPI_handler.c **** 	SPIS_1_ClearRxInterruptSource(SPIS_1_GetRxInterruptSource());
- 415              		.loc 1 132 0
+ 149:.\SPI_handler.c ****     	}
+ 150:.\SPI_handler.c ****     }
+ 151:.\SPI_handler.c **** 	
+ 152:.\SPI_handler.c **** 	SPIS_1_ClearRxInterruptSource(SPIS_1_GetRxInterruptSource());
+ 415              		.loc 1 152 0
  416 01fa 0D4B     		ldr	r3, .L20+40
  417 01fc 0C4A     		ldr	r2, .L20+40
  418 01fe 1268     		ldr	r2, [r2]
  419 0200 1A60     		str	r2, [r3]
- 133:.\SPI_handler.c **** 	//TP_1_Write(0); // Til måling af ISR gennemløbstid
- 134:.\SPI_handler.c **** }...
- 420              		.loc 1 134 0
+ 153:.\SPI_handler.c **** 	//TP_1_Write(0); // Til måling af ISR gennemløbstid
+ 154:.\SPI_handler.c **** }...
+ 420              		.loc 1 154 0
  421 0202 BD46     		mov	sp, r7
  422 0204 07B0     		add	sp, sp, #28
  423              		@ sp needed for prologue
@@ -598,9 +621,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  425              	.L21:
  426              		.align	2
  427              	.L20:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 11
-
-
  428 0208 00000000 		.word	spiCounter
  429 020c 00000000 		.word	spiBuffer
  430 0210 00000000 		.word	.L12
@@ -638,6 +658,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  462 002b 06       		.byte	0x6
  463 002c BE010000 		.4byte	.LASF0
  464 0030 02       		.uleb128 0x2
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 12
+
+
  465 0031 01       		.byte	0x1
  466 0032 08       		.byte	0x8
  467 0033 35000000 		.4byte	.LASF1
@@ -658,9 +681,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  482 004e 07       		.byte	0x7
  483 004f 4F000000 		.4byte	.LASF5
  484 0053 02       		.uleb128 0x2
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 12
-
-
  485 0054 08       		.byte	0x8
  486 0055 05       		.byte	0x5
  487 0056 F2000000 		.4byte	.LASF6
@@ -698,6 +718,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  519 0094 02       		.byte	0x2
  520 0095 F2       		.byte	0xf2
  521 0096 9A000000 		.4byte	0x9a
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 13
+
+
  522 009a 05       		.uleb128 0x5
  523 009b 6F000000 		.4byte	0x6f
  524 009f 02       		.uleb128 0x2
@@ -718,9 +741,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  539 00c0 07       		.uleb128 0x7
  540 00c1 636D6400 		.ascii	"cmd\000"
  541 00c5 01       		.byte	0x1
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 13
-
-
  542 00c6 13       		.byte	0x13
  543 00c7 88000000 		.4byte	0x88
  544 00cb 02       		.byte	0x2
@@ -748,7 +768,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  566 00ef 09       		.uleb128 0x9
  567 00f0 10000000 		.4byte	.LASF15
  568 00f4 01       		.byte	0x1
- 569 00f5 4F       		.byte	0x4f
+ 569 00f5 5A       		.byte	0x5a
  570 00f6 7A000000 		.4byte	0x7a
  571 00fa 02       		.byte	0x2
  572 00fb 91       		.byte	0x91
@@ -756,8 +776,11 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  574 00fd 09       		.uleb128 0x9
  575 00fe 2B000000 		.4byte	.LASF16
  576 0102 01       		.byte	0x1
- 577 0103 50       		.byte	0x50
+ 577 0103 5B       		.byte	0x5b
  578 0104 7A000000 		.4byte	0x7a
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 14
+
+
  579 0108 02       		.byte	0x2
  580 0109 91       		.byte	0x91
  581 010a 5C       		.sleb128 -36
@@ -778,9 +801,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  596 0128 01       		.byte	0x1
  597 0129 05       		.byte	0x5
  598 012a 03       		.byte	0x3
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 14
-
-
  599 012b 00000000 		.4byte	spiBuffer
  600 012f 0A       		.uleb128 0xa
  601 0130 88000000 		.4byte	0x88
@@ -818,6 +838,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  633 0174 7F000000 		.4byte	.LASF20
  634 0178 01       		.byte	0x1
  635 0179 06       		.byte	0x6
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 15
+
+
  636 017a 88000000 		.4byte	0x88
  637 017e 01       		.byte	0x1
  638 017f 05       		.byte	0x5
@@ -838,9 +861,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  653 019d 08       		.byte	0x8
  654 019e 61000000 		.4byte	0x61
  655 01a2 01       		.byte	0x1
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 15
-
-
  656 01a3 05       		.byte	0x5
  657 01a4 03       		.byte	0x3
  658 01a5 00000000 		.4byte	spiReadCounter
@@ -878,6 +898,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  690 01ec 00       		.byte	0
  691 01ed 0C       		.uleb128 0xc
  692 01ee AA000000 		.4byte	.LASF24
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 16
+
+
  693 01f2 01       		.byte	0x1
  694 01f3 0B       		.byte	0xb
  695 01f4 DD010000 		.4byte	0x1dd
@@ -898,9 +921,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  710 0007 03       		.uleb128 0x3
  711 0008 0E       		.uleb128 0xe
  712 0009 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 16
-
-
  713 000a 0E       		.uleb128 0xe
  714 000b 55       		.uleb128 0x55
  715 000c 06       		.uleb128 0x6
@@ -938,6 +958,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  747 002c 16       		.uleb128 0x16
  748 002d 00       		.byte	0
  749 002e 03       		.uleb128 0x3
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 17
+
+
  750 002f 0E       		.uleb128 0xe
  751 0030 3A       		.uleb128 0x3a
  752 0031 0B       		.uleb128 0xb
@@ -958,9 +981,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  767 0040 2E       		.uleb128 0x2e
  768 0041 01       		.byte	0x1
  769 0042 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 17
-
-
  770 0043 0C       		.uleb128 0xc
  771 0044 03       		.uleb128 0x3
  772 0045 0E       		.uleb128 0xe
@@ -998,6 +1018,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  804 0066 00       		.byte	0
  805 0067 00       		.byte	0
  806 0068 08       		.uleb128 0x8
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 18
+
+
  807 0069 0B       		.uleb128 0xb
  808 006a 01       		.byte	0x1
  809 006b 11       		.uleb128 0x11
@@ -1018,9 +1041,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  824 007a 49       		.uleb128 0x49
  825 007b 13       		.uleb128 0x13
  826 007c 02       		.uleb128 0x2
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 18
-
-
  827 007d 0A       		.uleb128 0xa
  828 007e 00       		.byte	0
  829 007f 00       		.byte	0
@@ -1058,6 +1078,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  861 009f 02       		.uleb128 0x2
  862 00a0 0A       		.uleb128 0xa
  863 00a1 00       		.byte	0
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 19
+
+
  864 00a2 00       		.byte	0
  865 00a3 0D       		.uleb128 0xd
  866 00a4 34       		.uleb128 0x34
@@ -1078,9 +1101,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  881 00b3 00       		.byte	0
  882 00b4 00       		.byte	0
  883              		.section	.debug_loc,"",%progbits
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 19
-
-
  884              	.Ldebug_loc0:
  885              	.LLST0:
  886 0000 00000000 		.4byte	.LFB33
@@ -1118,6 +1138,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  918 0018 00000000 		.4byte	0
  919 001c 00000000 		.4byte	0
  920              		.section	.debug_ranges,"",%progbits
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 20
+
+
  921              	.Ldebug_ranges0:
  922 0000 00000000 		.4byte	.LFB33
  923 0004 34020000 		.4byte	.LFE33
@@ -1125,7 +1148,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  925 000c 00000000 		.4byte	0
  926              		.section	.debug_line,"",%progbits
  927              	.Ldebug_line0:
- 928 0000 D7000000 		.section	.debug_str,"MS",%progbits,1
+ 928 0000 D9000000 		.section	.debug_str,"MS",%progbits,1
  928      02004C00 
  928      00000201 
  928      FB0E0D00 
@@ -1138,9 +1161,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  932      75666665 
  932      7200
  933              	.LASF15:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 20
-
-
  934 0010 74656D70 		.ascii	"tempValue\000"
  934      56616C75 
  934      6500
@@ -1178,6 +1198,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  948      6E7400
  949              	.LASF23:
  950 0074 74656D70 		.ascii	"tempBuffer\000"
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 21
+
+
  950      42756666 
  950      657200
  951              	.LASF20:
@@ -1198,9 +1221,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  960 00a3 75696E74 		.ascii	"uint32\000"
  960      333200
  961              	.LASF24:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 21
-
-
  962 00aa 68756D69 		.ascii	"humiBuffer\000"
  962      42756666 
  962      657200
@@ -1238,6 +1258,9 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  976      6F705C45 
  976      3350524A 
  976      335C496D 
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccJyat8z.s 			page 22
+
+
  977 0132 5F535049 		.ascii	"_SPI\\SPI_slave\\SPI_handler.cydsn\000"
  977      5C535049 
  977      5F736C61 
@@ -1258,9 +1281,6 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 1
  983      372E3320 
  983      32303133 
  983      30333132 
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\ccDKJmNL.s 			page 22
-
-
  984 019f 616E6368 		.ascii	"anch revision 196615]\000"
  984      20726576 
  984      6973696F 

@@ -50,6 +50,10 @@ CY_ISR(isr_spi_rx) {
                     /* Clear Buffer and Counter */
                     SPIS_1_SpiUartClearTxBuffer();
                     spiCounter = 0;
+                    
+                    /*Call method*/
+                    //turnOnOff(true)
+                    
                 break;
             case 'D':
                     GREEN_LED_Write(1);
@@ -59,18 +63,25 @@ CY_ISR(isr_spi_rx) {
                     /* Clear Buffer and Counter */
                     SPIS_1_SpiUartClearTxBuffer();
                     spiCounter = 0;
+                    
+                    /*Call method*/
+                    //turnOnOff(false)
+                    
                 break;
             case 'P':
                     /* Disable interrupt */
                     CyGlobalIntDisable;
-                    
+                 
                     GREEN_LED_Write(0);
                     RED_LED_Write(0);
                     BLUE_LED_Write(0);
                     
+                    
+                    
                     /* Read temp */
                     for(i = 0 ; i < 5 ; i++){
                         tempBuffer[i] = spiBuffer[i+1];
+                        //
                     }
                     for(i = 0 ; i < 3 ; i++){
                         humiBuffer[i] = spiBuffer[i+6];
@@ -83,7 +94,8 @@ CY_ISR(isr_spi_rx) {
                     tempValue = (float)atof(tempBuffer);
                     humiValue = (float)atof(humiBuffer);
                     
-                    //config( humiValue , tempValue );
+                    /* Call method */
+                    //config( &tempValue, &humiValue);
                     
                     /* Clear Buffer and Counter */
                     SPIS_1_SpiUartClearTxBuffer();
@@ -106,6 +118,14 @@ CY_ISR(isr_spi_rx) {
                     RED_LED_Write(0);
                     BLUE_LED_Write(0);
                     
+                    /* Call method */
+                    //getBuffer(*buf, len);
+                    
+                    //for(c = 0 ; c < len ; c++){
+                    //spiTxBuffer[c] = buf[c];
+                    //}
+                    
+                    // Test metode
                     for(c = 0 ; c < len ; c++){
                         spiTxBuffer[c] = testGetLog[c];
                     }

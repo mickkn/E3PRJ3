@@ -1,4 +1,4 @@
---------------- Rebuild Started: 11/23/2014 15:58:29 Project: SPI_handler, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 11/27/2014 15:07:25 Project: SPI_handler, Configuration: ARM GCC 4.7.3 Debug ---------------
 cydsfit.exe "-.appdatapath" "C:\Users\mickkirkegaardnielse\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\SPI_handler.cyprj" "-d" "CY8C4245AXI-483" "-s" "Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\Generated_Source\PSoC4" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
 Elaborating Design...
 HDL Generation ...
@@ -19,8 +19,8 @@ Clean Temporary Files ...
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_473\Debug\main.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\SPI_handler.lst -ffunction-sections -c .\SPI_handler.c -o .\CortexM0\ARM_GCC_473\Debug\SPI_handler.o
 .\SPI_handler.c: In function 'isr_spi_rx':
-.\SPI_handler.c:80:27: warning: variable 'humiValue' set but not used [-Wunused-but-set-variable]
-.\SPI_handler.c:79:27: warning: variable 'tempValue' set but not used [-Wunused-but-set-variable]
+.\SPI_handler.c:91:27: warning: variable 'humiValue' set but not used [-Wunused-but-set-variable]
+.\SPI_handler.c:90:27: warning: variable 'tempValue' set but not used [-Wunused-but-set-variable]
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\Cm0Start.lst -ffunction-sections -c .\Generated_Source\PSoC4\Cm0Start.c -o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
@@ -50,4 +50,4 @@ cyelftool.exe -C Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI
 cyelftool.exe -S Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\CortexM0\ARM_GCC_473\Debug\SPI_handler.elf
 Flash used: 19140 of 32768 bytes (58,4 %).
 SRAM used: 2372 of 4096 bytes (57,9 %).
---------------- Rebuild Succeeded: 11/23/2014 15:58:57 ---------------
+--------------- Rebuild Succeeded: 11/27/2014 15:07:55 ---------------

@@ -1,0 +1,76 @@
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/CortexM0/ARM_GCC_473/Debug/SPI_handler.o : Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/BLUE_LED.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/BLUE_LED_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/CyFlash.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/GREEN_LED.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/GREEN_LED_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/RED_LED.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/RED_LED_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cm0.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cmFunc.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cmInstr.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cydisabledsheets.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cypins.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/project.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/SPI_handler.c Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/SPI_handler.h 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/BLUE_LED.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/BLUE_LED_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/GREEN_LED.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/GREEN_LED_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/RED_LED.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/RED_LED_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cm0.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cmFunc.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cmInstr.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cydisabledsheets.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cypins.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/project.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/SPI_handler.c : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/SPI_handler.h : 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/CortexM0/ARM_GCC_473/Debug/main.o : Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/BLUE_LED.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/BLUE_LED_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/CyFlash.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/CyLib.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/GREEN_LED.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/GREEN_LED_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/RED_LED.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/RED_LED_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cm0.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cm0_psoc4.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cmFunc.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/core_cmInstr.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyPm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cydevice_trm.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cydisabledsheets.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyfitter.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cypins.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/cytypes.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/Generated_Source/PSoC4/project.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/SPI_handler.h Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/main.c 
+
+Z:/Desktop/E3PRJ3/Implementering/SW/SPI/PSoC4_SPI/SPI_slave/SPI_handler.cydsn/main.c : 
+

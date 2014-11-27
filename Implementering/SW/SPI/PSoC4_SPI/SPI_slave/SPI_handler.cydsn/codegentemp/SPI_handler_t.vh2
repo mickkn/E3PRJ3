@@ -1,5 +1,5 @@
 -- Project:   Z:\Desktop\E3PRJ3\Implementering\SW\SPI\PSoC4_SPI\SPI_slave\SPI_handler.cydsn\SPI_handler.cyprj
--- Generated: 11/23/2014 15:58:46
+-- Generated: 11/27/2014 15:07:44
 -- 
 
 ENTITY SPI_handler IS
