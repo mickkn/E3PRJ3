@@ -13,7 +13,7 @@ Den data som skal flyttes er følgende:
 	\item Påbegyndt vanding
 \end{enumerate}
 
-Systemet ved ikke på forhånd hvor meget data der skal flyttes. Derfor deles det op i to typer. Data fra sensorene samt besked om bevægelse og vanding, og fejlregistreringer.
+Systemet ved ikke på forhånd hvor meget data der skal flyttes. Derfor deles det op i to typer. Data fra sensorene samt besked om bevægelse og vanding, og fejlregistreringer. Fejlregistreringen anvendes kun i debug-øjemed.
 
 Fra standardbiblioteket for \verb'C++' vælges datatypen \verb+vector+ som container. Dette er en dynamisk array-struktur som automatisk udvides og mindskes efter behov.
 Ved at anvende \verb+vector+en med \verb+string+ som undertype er det nemt at identificerer indholdene og formaterer dem som nødvendigt. På Enheden som implementeres på en PSoC er standardbiblioteket til \verb-C++- ikke tilrådighed. Derfor implementeres bufferen på denne som et almindeligt statisk allokeret \verb+char+-array. Formateringen vist her under gælder for begge platforme.
