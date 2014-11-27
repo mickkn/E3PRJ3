@@ -1,4 +1,4 @@
---------------- Clean Started: 11/27/2014 17:35:25 Project: buffer, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Clean Started: 11/27/2014 19:59:31 Project: buffer, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\buffer.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o"
@@ -18,4 +18,4 @@ Deleting file ".\buffer_timing.html"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\ARM_C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\GNU_ARM_ASM_FILE.P"
---------------- Clean Succeeded: 11/27/2014 17:35:25 ---------------
+--------------- Clean Succeeded: 11/27/2014 19:59:31 ---------------

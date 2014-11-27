@@ -1,0 +1,627 @@
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"test_controllers.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.rodata
+  18              		.align	2
+  19              	.LC0:
+  20 0000 45303031 		.ascii	"E001\000"
+  20      00
+  21 0005 000000   		.section	.text.main,"ax",%progbits
+  22              		.align	2
+  23              		.global	main
+  24              		.code	16
+  25              		.thumb_func
+  26              		.type	main, %function
+  27              	main:
+  28              	.LFB33:
+  29              		.file 1 ".\\test_controllers.c"
+   1:.\test_controllers.c **** /*
+   2:.\test_controllers.c **** * File: test_controllers.c
+   3:.\test_controllers.c **** * Description: Test program for controller classes
+   4:.\test_controllers.c **** * Project: PRJ3
+   5:.\test_controllers.c **** * 
+   6:.\test_controllers.c **** * Author: Bjørn Sørensen
+   7:.\test_controllers.c **** */
+   8:.\test_controllers.c **** 
+   9:.\test_controllers.c **** 
+  10:.\test_controllers.c **** #include <project.h>
+  11:.\test_controllers.c **** #include "loadData.h"
+  12:.\test_controllers.c **** #include "buffer.h"
+  13:.\test_controllers.c **** 
+  14:.\test_controllers.c **** int main()
+  15:.\test_controllers.c **** {
+  30              		.loc 1 15 0
+  31              		.cfi_startproc
+  32 0000 80B5     		push	{r7, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 7, -8
+  36              		.cfi_offset 14, -4
+  37 0002 92B0     		sub	sp, sp, #72
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 80
+  40 0004 00AF     		add	r7, sp, #0
+  41              	.LCFI2:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 2
+
+
+  42              		.cfi_def_cfa_register 7
+  16:.\test_controllers.c ****     // Create objects
+  17:.\test_controllers.c ****     buffer bufferObj;
+  18:.\test_controllers.c ****     buffer_init(&bufferObj);
+  43              		.loc 1 18 0
+  44 0006 3B1C     		mov	r3, r7
+  45 0008 0C33     		add	r3, r3, #12
+  46 000a 181C     		mov	r0, r3
+  47 000c FFF7FEFF 		bl	buffer_init
+  19:.\test_controllers.c ****     
+  20:.\test_controllers.c ****     
+  21:.\test_controllers.c ****     // Init controller
+  22:.\test_controllers.c ****     loadData_init(&bufferObj);
+  48              		.loc 1 22 0
+  49 0010 3B1C     		mov	r3, r7
+  50 0012 0C33     		add	r3, r3, #12
+  51 0014 181C     		mov	r0, r3
+  52 0016 FFF7FEFF 		bl	loadData_init
+  23:.\test_controllers.c ****     
+  24:.\test_controllers.c ****     // Start timer
+  25:.\test_controllers.c ****     logDataTimer_Start();
+  53              		.loc 1 25 0
+  54 001a FFF7FEFF 		bl	logDataTimer_Start
+  26:.\test_controllers.c ****     
+  27:.\test_controllers.c ****     // Create some data in log
+  28:.\test_controllers.c ****     buffer_saveData(&bufferObj, "E001", 4);
+  55              		.loc 1 28 0
+  56 001e 3A1C     		mov	r2, r7
+  57 0020 0C32     		add	r2, r2, #12
+  58 0022 094B     		ldr	r3, .L3
+  59 0024 101C     		mov	r0, r2
+  60 0026 191C     		mov	r1, r3
+  61 0028 0422     		mov	r2, #4
+  62 002a FFF7FEFF 		bl	buffer_saveData
+  29:.\test_controllers.c ****     
+  30:.\test_controllers.c ****     
+  31:.\test_controllers.c ****     char * read;
+  32:.\test_controllers.c ****     unsigned int read_len;
+  33:.\test_controllers.c ****     loadData_getBuffer(&read, &read_len);
+  63              		.loc 1 33 0
+  64 002e 3A1C     		mov	r2, r7
+  65 0030 0832     		add	r2, r2, #8
+  66 0032 3B1D     		add	r3, r7, #4
+  67 0034 101C     		mov	r0, r2
+  68 0036 191C     		mov	r1, r3
+  69 0038 FFF7FEFF 		bl	loadData_getBuffer
+  34:.\test_controllers.c ****     
+  35:.\test_controllers.c ****     
+  36:.\test_controllers.c ****     return 0;
+  70              		.loc 1 36 0
+  71 003c 0023     		mov	r3, #0
+  37:.\test_controllers.c **** }...
+  72              		.loc 1 37 0
+  73 003e 181C     		mov	r0, r3
+  74 0040 BD46     		mov	sp, r7
+  75 0042 12B0     		add	sp, sp, #72
+  76              		@ sp needed for prologue
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 3
+
+
+  77 0044 80BD     		pop	{r7, pc}
+  78              	.L4:
+  79 0046 C046     		.align	2
+  80              	.L3:
+  81 0048 00000000 		.word	.LC0
+  82              		.cfi_endproc
+  83              	.LFE33:
+  84              		.size	main, .-main
+  85              		.text
+  86              	.Letext0:
+  87              		.file 2 ".\\buffer.h"
+  88              		.section	.debug_info,"",%progbits
+  89              	.Ldebug_info0:
+  90 0000 27010000 		.4byte	0x127
+  91 0004 0200     		.2byte	0x2
+  92 0006 00000000 		.4byte	.Ldebug_abbrev0
+  93 000a 04       		.byte	0x4
+  94 000b 01       		.uleb128 0x1
+  95 000c 2A000000 		.4byte	.LASF19
+  96 0010 01       		.byte	0x1
+  97 0011 9C000000 		.4byte	.LASF20
+  98 0015 DA000000 		.4byte	.LASF21
+  99 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 100 001d 00000000 		.4byte	0
+ 101 0021 00000000 		.4byte	0
+ 102 0025 00000000 		.4byte	.Ldebug_line0
+ 103 0029 02       		.uleb128 0x2
+ 104 002a 01       		.byte	0x1
+ 105 002b 06       		.byte	0x6
+ 106 002c 2E010000 		.4byte	.LASF0
+ 107 0030 02       		.uleb128 0x2
+ 108 0031 01       		.byte	0x1
+ 109 0032 08       		.byte	0x8
+ 110 0033 B1000000 		.4byte	.LASF1
+ 111 0037 02       		.uleb128 0x2
+ 112 0038 02       		.byte	0x2
+ 113 0039 05       		.byte	0x5
+ 114 003a 49010000 		.4byte	.LASF2
+ 115 003e 02       		.uleb128 0x2
+ 116 003f 02       		.byte	0x2
+ 117 0040 07       		.byte	0x7
+ 118 0041 1B010000 		.4byte	.LASF3
+ 119 0045 02       		.uleb128 0x2
+ 120 0046 04       		.byte	0x4
+ 121 0047 05       		.byte	0x5
+ 122 0048 CC000000 		.4byte	.LASF4
+ 123 004c 02       		.uleb128 0x2
+ 124 004d 04       		.byte	0x4
+ 125 004e 07       		.byte	0x7
+ 126 004f 73000000 		.4byte	.LASF5
+ 127 0053 02       		.uleb128 0x2
+ 128 0054 08       		.byte	0x8
+ 129 0055 05       		.byte	0x5
+ 130 0056 00000000 		.4byte	.LASF6
+ 131 005a 02       		.uleb128 0x2
+ 132 005b 08       		.byte	0x8
+ 133 005c 07       		.byte	0x7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 4
+
+
+ 134 005d 85000000 		.4byte	.LASF7
+ 135 0061 03       		.uleb128 0x3
+ 136 0062 04       		.byte	0x4
+ 137 0063 05       		.byte	0x5
+ 138 0064 696E7400 		.ascii	"int\000"
+ 139 0068 02       		.uleb128 0x2
+ 140 0069 04       		.byte	0x4
+ 141 006a 07       		.byte	0x7
+ 142 006b 0E000000 		.4byte	.LASF8
+ 143 006f 02       		.uleb128 0x2
+ 144 0070 04       		.byte	0x4
+ 145 0071 04       		.byte	0x4
+ 146 0072 43010000 		.4byte	.LASF9
+ 147 0076 02       		.uleb128 0x2
+ 148 0077 08       		.byte	0x8
+ 149 0078 04       		.byte	0x4
+ 150 0079 FB000000 		.4byte	.LASF10
+ 151 007d 02       		.uleb128 0x2
+ 152 007e 01       		.byte	0x1
+ 153 007f 08       		.byte	0x8
+ 154 0080 BF000000 		.4byte	.LASF11
+ 155 0084 02       		.uleb128 0x2
+ 156 0085 04       		.byte	0x4
+ 157 0086 07       		.byte	0x7
+ 158 0087 5A010000 		.4byte	.LASF12
+ 159 008b 04       		.uleb128 0x4
+ 160 008c 04       		.byte	0x4
+ 161 008d 7D000000 		.4byte	0x7d
+ 162 0091 05       		.uleb128 0x5
+ 163 0092 0F010000 		.4byte	.LASF22
+ 164 0096 3C       		.byte	0x3c
+ 165 0097 02       		.byte	0x2
+ 166 0098 0F       		.byte	0xf
+ 167 0099 C8000000 		.4byte	0xc8
+ 168 009d 06       		.uleb128 0x6
+ 169 009e C4000000 		.4byte	.LASF13
+ 170 00a2 02       		.byte	0x2
+ 171 00a3 11       		.byte	0x11
+ 172 00a4 C8000000 		.4byte	0xc8
+ 173 00a8 02       		.byte	0x2
+ 174 00a9 23       		.byte	0x23
+ 175 00aa 00       		.uleb128 0
+ 176 00ab 06       		.uleb128 0x6
+ 177 00ac D5000000 		.4byte	.LASF14
+ 178 00b0 02       		.byte	0x2
+ 179 00b1 12       		.byte	0x12
+ 180 00b2 68000000 		.4byte	0x68
+ 181 00b6 02       		.byte	0x2
+ 182 00b7 23       		.byte	0x23
+ 183 00b8 34       		.uleb128 0x34
+ 184 00b9 06       		.uleb128 0x6
+ 185 00ba 02010000 		.4byte	.LASF15
+ 186 00be 02       		.byte	0x2
+ 187 00bf 13       		.byte	0x13
+ 188 00c0 68000000 		.4byte	0x68
+ 189 00c4 02       		.byte	0x2
+ 190 00c5 23       		.byte	0x23
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 5
+
+
+ 191 00c6 38       		.uleb128 0x38
+ 192 00c7 00       		.byte	0
+ 193 00c8 07       		.uleb128 0x7
+ 194 00c9 7D000000 		.4byte	0x7d
+ 195 00cd D8000000 		.4byte	0xd8
+ 196 00d1 08       		.uleb128 0x8
+ 197 00d2 84000000 		.4byte	0x84
+ 198 00d6 32       		.byte	0x32
+ 199 00d7 00       		.byte	0
+ 200 00d8 09       		.uleb128 0x9
+ 201 00d9 53010000 		.4byte	.LASF23
+ 202 00dd 02       		.byte	0x2
+ 203 00de 14       		.byte	0x14
+ 204 00df 91000000 		.4byte	0x91
+ 205 00e3 0A       		.uleb128 0xa
+ 206 00e4 01       		.byte	0x1
+ 207 00e5 25000000 		.4byte	.LASF24
+ 208 00e9 01       		.byte	0x1
+ 209 00ea 0E       		.byte	0xe
+ 210 00eb 61000000 		.4byte	0x61
+ 211 00ef 00000000 		.4byte	.LFB33
+ 212 00f3 4C000000 		.4byte	.LFE33
+ 213 00f7 00000000 		.4byte	.LLST0
+ 214 00fb 01       		.byte	0x1
+ 215 00fc 0B       		.uleb128 0xb
+ 216 00fd 1B000000 		.4byte	.LASF16
+ 217 0101 01       		.byte	0x1
+ 218 0102 11       		.byte	0x11
+ 219 0103 D8000000 		.4byte	0xd8
+ 220 0107 03       		.byte	0x3
+ 221 0108 91       		.byte	0x91
+ 222 0109 BC7F     		.sleb128 -68
+ 223 010b 0B       		.uleb128 0xb
+ 224 010c 0A010000 		.4byte	.LASF17
+ 225 0110 01       		.byte	0x1
+ 226 0111 1F       		.byte	0x1f
+ 227 0112 8B000000 		.4byte	0x8b
+ 228 0116 03       		.byte	0x3
+ 229 0117 91       		.byte	0x91
+ 230 0118 B87F     		.sleb128 -72
+ 231 011a 0B       		.uleb128 0xb
+ 232 011b 3A010000 		.4byte	.LASF18
+ 233 011f 01       		.byte	0x1
+ 234 0120 20       		.byte	0x20
+ 235 0121 68000000 		.4byte	0x68
+ 236 0125 03       		.byte	0x3
+ 237 0126 91       		.byte	0x91
+ 238 0127 B47F     		.sleb128 -76
+ 239 0129 00       		.byte	0
+ 240 012a 00       		.byte	0
+ 241              		.section	.debug_abbrev,"",%progbits
+ 242              	.Ldebug_abbrev0:
+ 243 0000 01       		.uleb128 0x1
+ 244 0001 11       		.uleb128 0x11
+ 245 0002 01       		.byte	0x1
+ 246 0003 25       		.uleb128 0x25
+ 247 0004 0E       		.uleb128 0xe
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 6
+
+
+ 248 0005 13       		.uleb128 0x13
+ 249 0006 0B       		.uleb128 0xb
+ 250 0007 03       		.uleb128 0x3
+ 251 0008 0E       		.uleb128 0xe
+ 252 0009 1B       		.uleb128 0x1b
+ 253 000a 0E       		.uleb128 0xe
+ 254 000b 55       		.uleb128 0x55
+ 255 000c 06       		.uleb128 0x6
+ 256 000d 11       		.uleb128 0x11
+ 257 000e 01       		.uleb128 0x1
+ 258 000f 52       		.uleb128 0x52
+ 259 0010 01       		.uleb128 0x1
+ 260 0011 10       		.uleb128 0x10
+ 261 0012 06       		.uleb128 0x6
+ 262 0013 00       		.byte	0
+ 263 0014 00       		.byte	0
+ 264 0015 02       		.uleb128 0x2
+ 265 0016 24       		.uleb128 0x24
+ 266 0017 00       		.byte	0
+ 267 0018 0B       		.uleb128 0xb
+ 268 0019 0B       		.uleb128 0xb
+ 269 001a 3E       		.uleb128 0x3e
+ 270 001b 0B       		.uleb128 0xb
+ 271 001c 03       		.uleb128 0x3
+ 272 001d 0E       		.uleb128 0xe
+ 273 001e 00       		.byte	0
+ 274 001f 00       		.byte	0
+ 275 0020 03       		.uleb128 0x3
+ 276 0021 24       		.uleb128 0x24
+ 277 0022 00       		.byte	0
+ 278 0023 0B       		.uleb128 0xb
+ 279 0024 0B       		.uleb128 0xb
+ 280 0025 3E       		.uleb128 0x3e
+ 281 0026 0B       		.uleb128 0xb
+ 282 0027 03       		.uleb128 0x3
+ 283 0028 08       		.uleb128 0x8
+ 284 0029 00       		.byte	0
+ 285 002a 00       		.byte	0
+ 286 002b 04       		.uleb128 0x4
+ 287 002c 0F       		.uleb128 0xf
+ 288 002d 00       		.byte	0
+ 289 002e 0B       		.uleb128 0xb
+ 290 002f 0B       		.uleb128 0xb
+ 291 0030 49       		.uleb128 0x49
+ 292 0031 13       		.uleb128 0x13
+ 293 0032 00       		.byte	0
+ 294 0033 00       		.byte	0
+ 295 0034 05       		.uleb128 0x5
+ 296 0035 13       		.uleb128 0x13
+ 297 0036 01       		.byte	0x1
+ 298 0037 03       		.uleb128 0x3
+ 299 0038 0E       		.uleb128 0xe
+ 300 0039 0B       		.uleb128 0xb
+ 301 003a 0B       		.uleb128 0xb
+ 302 003b 3A       		.uleb128 0x3a
+ 303 003c 0B       		.uleb128 0xb
+ 304 003d 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 7
+
+
+ 305 003e 0B       		.uleb128 0xb
+ 306 003f 01       		.uleb128 0x1
+ 307 0040 13       		.uleb128 0x13
+ 308 0041 00       		.byte	0
+ 309 0042 00       		.byte	0
+ 310 0043 06       		.uleb128 0x6
+ 311 0044 0D       		.uleb128 0xd
+ 312 0045 00       		.byte	0
+ 313 0046 03       		.uleb128 0x3
+ 314 0047 0E       		.uleb128 0xe
+ 315 0048 3A       		.uleb128 0x3a
+ 316 0049 0B       		.uleb128 0xb
+ 317 004a 3B       		.uleb128 0x3b
+ 318 004b 0B       		.uleb128 0xb
+ 319 004c 49       		.uleb128 0x49
+ 320 004d 13       		.uleb128 0x13
+ 321 004e 38       		.uleb128 0x38
+ 322 004f 0A       		.uleb128 0xa
+ 323 0050 00       		.byte	0
+ 324 0051 00       		.byte	0
+ 325 0052 07       		.uleb128 0x7
+ 326 0053 01       		.uleb128 0x1
+ 327 0054 01       		.byte	0x1
+ 328 0055 49       		.uleb128 0x49
+ 329 0056 13       		.uleb128 0x13
+ 330 0057 01       		.uleb128 0x1
+ 331 0058 13       		.uleb128 0x13
+ 332 0059 00       		.byte	0
+ 333 005a 00       		.byte	0
+ 334 005b 08       		.uleb128 0x8
+ 335 005c 21       		.uleb128 0x21
+ 336 005d 00       		.byte	0
+ 337 005e 49       		.uleb128 0x49
+ 338 005f 13       		.uleb128 0x13
+ 339 0060 2F       		.uleb128 0x2f
+ 340 0061 0B       		.uleb128 0xb
+ 341 0062 00       		.byte	0
+ 342 0063 00       		.byte	0
+ 343 0064 09       		.uleb128 0x9
+ 344 0065 16       		.uleb128 0x16
+ 345 0066 00       		.byte	0
+ 346 0067 03       		.uleb128 0x3
+ 347 0068 0E       		.uleb128 0xe
+ 348 0069 3A       		.uleb128 0x3a
+ 349 006a 0B       		.uleb128 0xb
+ 350 006b 3B       		.uleb128 0x3b
+ 351 006c 0B       		.uleb128 0xb
+ 352 006d 49       		.uleb128 0x49
+ 353 006e 13       		.uleb128 0x13
+ 354 006f 00       		.byte	0
+ 355 0070 00       		.byte	0
+ 356 0071 0A       		.uleb128 0xa
+ 357 0072 2E       		.uleb128 0x2e
+ 358 0073 01       		.byte	0x1
+ 359 0074 3F       		.uleb128 0x3f
+ 360 0075 0C       		.uleb128 0xc
+ 361 0076 03       		.uleb128 0x3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 8
+
+
+ 362 0077 0E       		.uleb128 0xe
+ 363 0078 3A       		.uleb128 0x3a
+ 364 0079 0B       		.uleb128 0xb
+ 365 007a 3B       		.uleb128 0x3b
+ 366 007b 0B       		.uleb128 0xb
+ 367 007c 49       		.uleb128 0x49
+ 368 007d 13       		.uleb128 0x13
+ 369 007e 11       		.uleb128 0x11
+ 370 007f 01       		.uleb128 0x1
+ 371 0080 12       		.uleb128 0x12
+ 372 0081 01       		.uleb128 0x1
+ 373 0082 40       		.uleb128 0x40
+ 374 0083 06       		.uleb128 0x6
+ 375 0084 9642     		.uleb128 0x2116
+ 376 0086 0C       		.uleb128 0xc
+ 377 0087 00       		.byte	0
+ 378 0088 00       		.byte	0
+ 379 0089 0B       		.uleb128 0xb
+ 380 008a 34       		.uleb128 0x34
+ 381 008b 00       		.byte	0
+ 382 008c 03       		.uleb128 0x3
+ 383 008d 0E       		.uleb128 0xe
+ 384 008e 3A       		.uleb128 0x3a
+ 385 008f 0B       		.uleb128 0xb
+ 386 0090 3B       		.uleb128 0x3b
+ 387 0091 0B       		.uleb128 0xb
+ 388 0092 49       		.uleb128 0x49
+ 389 0093 13       		.uleb128 0x13
+ 390 0094 02       		.uleb128 0x2
+ 391 0095 0A       		.uleb128 0xa
+ 392 0096 00       		.byte	0
+ 393 0097 00       		.byte	0
+ 394 0098 00       		.byte	0
+ 395              		.section	.debug_loc,"",%progbits
+ 396              	.Ldebug_loc0:
+ 397              	.LLST0:
+ 398 0000 00000000 		.4byte	.LFB33
+ 399 0004 02000000 		.4byte	.LCFI0
+ 400 0008 0200     		.2byte	0x2
+ 401 000a 7D       		.byte	0x7d
+ 402 000b 00       		.sleb128 0
+ 403 000c 02000000 		.4byte	.LCFI0
+ 404 0010 04000000 		.4byte	.LCFI1
+ 405 0014 0200     		.2byte	0x2
+ 406 0016 7D       		.byte	0x7d
+ 407 0017 08       		.sleb128 8
+ 408 0018 04000000 		.4byte	.LCFI1
+ 409 001c 06000000 		.4byte	.LCFI2
+ 410 0020 0300     		.2byte	0x3
+ 411 0022 7D       		.byte	0x7d
+ 412 0023 D000     		.sleb128 80
+ 413 0025 06000000 		.4byte	.LCFI2
+ 414 0029 4C000000 		.4byte	.LFE33
+ 415 002d 0300     		.2byte	0x3
+ 416 002f 77       		.byte	0x77
+ 417 0030 D000     		.sleb128 80
+ 418 0032 00000000 		.4byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 9
+
+
+ 419 0036 00000000 		.4byte	0
+ 420              		.section	.debug_aranges,"",%progbits
+ 421 0000 1C000000 		.4byte	0x1c
+ 422 0004 0200     		.2byte	0x2
+ 423 0006 00000000 		.4byte	.Ldebug_info0
+ 424 000a 04       		.byte	0x4
+ 425 000b 00       		.byte	0
+ 426 000c 0000     		.2byte	0
+ 427 000e 0000     		.2byte	0
+ 428 0010 00000000 		.4byte	.LFB33
+ 429 0014 4C000000 		.4byte	.LFE33-.LFB33
+ 430 0018 00000000 		.4byte	0
+ 431 001c 00000000 		.4byte	0
+ 432              		.section	.debug_ranges,"",%progbits
+ 433              	.Ldebug_ranges0:
+ 434 0000 00000000 		.4byte	.LFB33
+ 435 0004 4C000000 		.4byte	.LFE33
+ 436 0008 00000000 		.4byte	0
+ 437 000c 00000000 		.4byte	0
+ 438              		.section	.debug_line,"",%progbits
+ 439              	.Ldebug_line0:
+ 440 0000 55000000 		.section	.debug_str,"MS",%progbits,1
+ 440      02003900 
+ 440      00000201 
+ 440      FB0E0D00 
+ 440      01010101 
+ 441              	.LASF6:
+ 442 0000 6C6F6E67 		.ascii	"long long int\000"
+ 442      206C6F6E 
+ 442      6720696E 
+ 442      7400
+ 443              	.LASF8:
+ 444 000e 756E7369 		.ascii	"unsigned int\000"
+ 444      676E6564 
+ 444      20696E74 
+ 444      00
+ 445              	.LASF16:
+ 446 001b 62756666 		.ascii	"bufferObj\000"
+ 446      65724F62 
+ 446      6A00
+ 447              	.LASF24:
+ 448 0025 6D61696E 		.ascii	"main\000"
+ 448      00
+ 449              	.LASF19:
+ 450 002a 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 450      4320342E 
+ 450      372E3320 
+ 450      32303133 
+ 450      30333132 
+ 451 005d 616E6368 		.ascii	"anch revision 196615]\000"
+ 451      20726576 
+ 451      6973696F 
+ 451      6E203139 
+ 451      36363135 
+ 452              	.LASF5:
+ 453 0073 6C6F6E67 		.ascii	"long unsigned int\000"
+ 453      20756E73 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 10
+
+
+ 453      69676E65 
+ 453      6420696E 
+ 453      7400
+ 454              	.LASF7:
+ 455 0085 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 455      206C6F6E 
+ 455      6720756E 
+ 455      7369676E 
+ 455      65642069 
+ 456              	.LASF20:
+ 457 009c 2E5C7465 		.ascii	".\\test_controllers.c\000"
+ 457      73745F63 
+ 457      6F6E7472 
+ 457      6F6C6C65 
+ 457      72732E63 
+ 458              	.LASF1:
+ 459 00b1 756E7369 		.ascii	"unsigned char\000"
+ 459      676E6564 
+ 459      20636861 
+ 459      7200
+ 460              	.LASF11:
+ 461 00bf 63686172 		.ascii	"char\000"
+ 461      00
+ 462              	.LASF13:
+ 463 00c4 62756666 		.ascii	"buffer_\000"
+ 463      65725F00 
+ 464              	.LASF4:
+ 465 00cc 6C6F6E67 		.ascii	"long int\000"
+ 465      20696E74 
+ 465      00
+ 466              	.LASF14:
+ 467 00d5 6C656E5F 		.ascii	"len_\000"
+ 467      00
+ 468              	.LASF21:
+ 469 00da 433A5C63 		.ascii	"C:\\controllers\\controllers.cydsn\000"
+ 469      6F6E7472 
+ 469      6F6C6C65 
+ 469      72735C63 
+ 469      6F6E7472 
+ 470              	.LASF10:
+ 471 00fb 646F7562 		.ascii	"double\000"
+ 471      6C6500
+ 472              	.LASF15:
+ 473 0102 63757273 		.ascii	"cursor_\000"
+ 473      6F725F00 
+ 474              	.LASF17:
+ 475 010a 72656164 		.ascii	"read\000"
+ 475      00
+ 476              	.LASF22:
+ 477 010f 62756666 		.ascii	"buffer_type\000"
+ 477      65725F74 
+ 477      79706500 
+ 478              	.LASF3:
+ 479 011b 73686F72 		.ascii	"short unsigned int\000"
+ 479      7420756E 
+ 479      7369676E 
+ 479      65642069 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgbCeXQ.s 			page 11
+
+
+ 479      6E7400
+ 480              	.LASF0:
+ 481 012e 7369676E 		.ascii	"signed char\000"
+ 481      65642063 
+ 481      68617200 
+ 482              	.LASF18:
+ 483 013a 72656164 		.ascii	"read_len\000"
+ 483      5F6C656E 
+ 483      00
+ 484              	.LASF9:
+ 485 0143 666C6F61 		.ascii	"float\000"
+ 485      7400
+ 486              	.LASF2:
+ 487 0149 73686F72 		.ascii	"short int\000"
+ 487      7420696E 
+ 487      7400
+ 488              	.LASF23:
+ 489 0153 62756666 		.ascii	"buffer\000"
+ 489      657200
+ 490              	.LASF12:
+ 491 015a 73697A65 		.ascii	"sizetype\000"
+ 491      74797065 
+ 491      00
+ 492              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

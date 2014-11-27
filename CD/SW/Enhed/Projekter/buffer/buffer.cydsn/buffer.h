@@ -11,9 +11,17 @@
 
 #define BUFFER_LENGTH 51
 
+// Private:
+typedef struct buffer_type
+{
+    char buffer_[BUFFER_LENGTH];    // Can hold 1 data reading and 10 errors
+    unsigned int len_;              // Length of buffer_[]
+    unsigned int cursor_;           // Points to next free index
+} buffer;
+
 // Public:
-extern void buffer_init( );  // Constructor
-extern int buffer_saveData( const char * buf, const unsigned int len );
-extern int buffer_getData( char ** buf, unsigned int * len );
+extern void buffer_init( buffer * const this );  // Constructor
+extern int buffer_saveData( buffer * const this, const char * buf, const unsigned int len );
+extern int buffer_getData( buffer * const this, char ** buf, unsigned int * len );
 
 #endif  // ifndef BUFFER_H

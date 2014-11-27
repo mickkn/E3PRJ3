@@ -1,0 +1,21 @@
+dont_use_io iocell 3 2
+dont_use_io iocell 3 3
+set_location "Net_148" macrocell 0 0 0 0
+set_location "\waterTimer:TimerUDB:run_mode\" macrocell 1 0 0 2
+set_location "\logDataTimer:TimerUDB:sT8:timerdp:u0\" datapathcell 0 0 2 
+set_location "\waterTimer:TimerUDB:status_tc\" macrocell 1 0 0 3
+set_location "\waterTimer:TimerUDB:timer_enable\" macrocell 1 0 0 0
+set_location "\waterTimer:TimerUDB:rstSts:stsreg\" statusicell 1 0 4 
+set_location "\logDataTimer:TimerUDB:rstSts:stsreg\" statusicell 0 0 4 
+set_location "\logDataTimer:TimerUDB:status_tc\" macrocell 0 0 0 1
+set_location "\waterTimer:TimerUDB:sT24:timerdp:u1\" datapathcell 1 1 2 
+set_location "\waterTimer:TimerUDB:trig_disable\" macrocell 1 0 0 1
+set_location "\waterTimer:TimerUDB:sT24:timerdp:u2\" datapathcell 1 0 2 
+set_location "\waterTimer:TimerUDB:sT24:timerdp:u0\" datapathcell 0 1 2 
+set_location "Net_42" macrocell 1 0 1 0
+set_location "ClockBlock" m0s8clockblockcell -1 -1 0
+set_location "\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" controlcell 0 0 6 
+set_location "ClockGenBlock" m0s8clockgenblockcell -1 -1 0
+set_location "waterInterrupt" interrupt -1 -1 2
+set_location "logDataInterrupt" interrupt -1 -1 0
+set_location "\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\" controlcell 1 0 6 

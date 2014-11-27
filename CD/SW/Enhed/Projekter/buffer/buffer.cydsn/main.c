@@ -13,7 +13,8 @@
 int main()
 {
     // Create buffer
-    buffer_init();
+    buffer myBuf;
+    buffer_init(&myBuf);
     
     int ret;
     
@@ -28,16 +29,16 @@ int main()
     unsigned int read_len;
     
     // Save error and get it
-    buffer_saveData(err, err_len);
-    buffer_getData(&read, &read_len);
+    buffer_saveData(&myBuf, err, err_len);
+    buffer_getData(&myBuf, &read, &read_len);
     
     // Save data and 11 errors and get data
     // ret will change value to -21 when trying to write the last errors
-    buffer_saveData(data, data_len);
+    buffer_saveData(&myBuf, data, data_len);
     unsigned char i;
     for(i = 0; i < 11; i++)
-        ret = buffer_saveData(err, err_len);
-    buffer_getData(&read, &read_len);
+        ret = buffer_saveData(&myBuf, err, err_len);
+    buffer_getData(&myBuf, &read, &read_len);
     
     return 0;
 }
