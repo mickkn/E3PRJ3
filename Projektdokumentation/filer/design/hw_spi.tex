@@ -40,15 +40,13 @@ I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7 \footnote{Hardw
 
 Driveren opbygges med en Skrive og en Læse metode, der begge kan læse eller skrive én 8 bits karakter(char).
 
-\subsubsection*{Pseudokode}
-
 \begin{lstlisting}[language=C]
 int write(data){
-Send data parameter ud paa SPI netvaerket
+Write 1 char to SPI network
 }
 int read(*datapointer){
-Modtag data
-Flyt data til datapointer parameter
+Read data
+Move data to datapointer
 }
 \end{lstlisting}
 

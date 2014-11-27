@@ -1,0 +1,74 @@
+% SPI Driver
+
+Driveren til SPI består af 2 hovedmetoder, der er en skrive-metoder og en læse-metode. Disse sender og læser karakterer(char's) én ad gangen. Der er taget udgangspunkt i HAL Exercise 7 \footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation} men netop læse og skrive metoderne er blevet ændret for at tilpasse EasyWater8000 behov for datatransmission.
+
+\subsubsection*{Write}
+
+Write metoden modtager en data char, som den ligger i tx-bufferen og skriver ud i spi\_sync. 
+U8 cmd håndteres ikke for EasyWater8000, men er bibeholdt så den evt. kan bruges til andre projekter.
+
+\begin{lstlisting}[language=C]
+int psoc4_spi_write_reg8(struct spi_device *spi, u8 cmd, char data)
+{
+	struct spi_transfer t[1];	// Number of packages
+	struct spi_message m;
+
+	/* Check for valid spi device */
+	if(!spi)
+		return -ENODEV;
+
+	/* Init Message */
+	memset(&t, 0, sizeof(t)); 
+	spi_message_init(&m);
+	m.spi = spi;
+
+	/* Configure tx/rx buffers */
+	t[0].tx_buf = &data;		// Write data to tx-buffer
+	t[0].rx_buf = NULL;		// Do nothing with rx-buffer
+	t[0].len = 1;			
+	spi_message_add_tail(&t[0], &m);
+
+	/* Transmit SPI Data (blocking) */
+	spi_sync(m.spi, &m);		// Transmit SPI data
+
+	return 0;
+}
+\end{lstlisting}
+
+\subsubsection*{Read}
+
+Read-metoden skriver altid et '\verb+R+' til target i form af en hardcoded char, derfor bruges \verb+u8 addr+ ikke i EasyWater8000 projektet. I samme transmission, læses der fra rx-bufferen på target. Det indsatte delay i transmissionen, er som sådan ikke nødvendig, da der kun læses én gang fra target og i mellem hver læsning er der minimum 300us. Men det er beholdt for en sikkerheds skyld, da det ikke er problematisk at en læsning tager 100us mere.
+
+Rx-bufferen skrives til data, som flyttes til value char-pointeren, til videre håndtering af Masteren.
+
+\begin{lstlisting}[language=C]
+int psoc4_spi_read_reg8(struct spi_device *spi, u8 addr, char* value)
+{
+	struct spi_transfer t[1];
+	struct spi_message m;
+	char data;		// Temp. var to hold readings
+	char cmd = 'R';		// Hardcoded 'R' char
+
+	/* Check for valid spi device */
+	if(!spi)
+		return -ENODEV;
+
+	/* Init Message */
+	memset(t, 0, sizeof(t));
+	spi_message_init(&m);
+	m.spi = spi;
+
+	/* Configure tx/rx buffers */
+	t[0].delay_usecs = 100;		// Delay for PSoC4 operation
+	t[0].tx_buf = &cmd;		// Write 'R' to tx-buffer
+	t[0].rx_buf = &data;		// Read data-char to data variable
+	t[0].len = 1;
+	spi_message_add_tail(&t[0], &m);
+
+	/* Transmit SPI Data (blocking) */
+	spi_sync(m.spi, &m);			// Transmit SPI data
+
+	*value = data;				// Move char to value
+	return 0;
+}
+\end{lstlisting}
