@@ -1,0 +1,367 @@
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"movement.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.P_PIR,"ax",%progbits
+  18              		.align	2
+  19              		.global	P_PIR
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	P_PIR, %function
+  23              	P_PIR:
+  24              	.LFB33:
+  25              		.file 1 ".\\movement.c"
+   1:.\movement.c  **** 
+   2:.\movement.c  **** #include "movement.h"
+   3:.\movement.c  **** 
+   4:.\movement.c  **** 
+   5:.\movement.c  **** CY_ISR(P_PIR)
+   6:.\movement.c  **** {
+  26              		.loc 1 6 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+   7:.\movement.c  ****     TEST_Write(1);
+  36              		.loc 1 7 0
+  37 0004 0120     		mov	r0, #1
+  38 0006 FFF7FEFF 		bl	TEST_Write
+   8:.\movement.c  ****     // loadData_movementDetekt(); 
+   9:.\movement.c  ****     TEST_Write(0);
+  39              		.loc 1 9 0
+  40 000a 0020     		mov	r0, #0
+  41 000c FFF7FEFF 		bl	TEST_Write
+  10:.\movement.c  ****    
+  11:.\movement.c  **** }...
+  42              		.loc 1 11 0
+  43 0010 BD46     		mov	sp, r7
+  44              		@ sp needed for prologue
+  45 0012 80BD     		pop	{r7, pc}
+  46              		.cfi_endproc
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 2
+
+
+  47              	.LFE33:
+  48              		.size	P_PIR, .-P_PIR
+  49              		.text
+  50              	.Letext0:
+  51              		.section	.debug_info,"",%progbits
+  52              	.Ldebug_info0:
+  53 0000 9E000000 		.4byte	0x9e
+  54 0004 0200     		.2byte	0x2
+  55 0006 00000000 		.4byte	.Ldebug_abbrev0
+  56 000a 04       		.byte	0x4
+  57 000b 01       		.uleb128 0x1
+  58 000c 2E000000 		.4byte	.LASF13
+  59 0010 01       		.byte	0x1
+  60 0011 0E000000 		.4byte	.LASF14
+  61 0015 E2000000 		.4byte	.LASF15
+  62 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  63 001d 00000000 		.4byte	0
+  64 0021 00000000 		.4byte	0
+  65 0025 00000000 		.4byte	.Ldebug_line0
+  66 0029 02       		.uleb128 0x2
+  67 002a 01       		.byte	0x1
+  68 002b 06       		.byte	0x6
+  69 002c D6000000 		.4byte	.LASF0
+  70 0030 02       		.uleb128 0x2
+  71 0031 01       		.byte	0x1
+  72 0032 08       		.byte	0x8
+  73 0033 A0000000 		.4byte	.LASF1
+  74 0037 02       		.uleb128 0x2
+  75 0038 02       		.byte	0x2
+  76 0039 05       		.byte	0x5
+  77 003a 42010000 		.4byte	.LASF2
+  78 003e 02       		.uleb128 0x2
+  79 003f 02       		.byte	0x2
+  80 0040 07       		.byte	0x7
+  81 0041 C3000000 		.4byte	.LASF3
+  82 0045 02       		.uleb128 0x2
+  83 0046 04       		.byte	0x4
+  84 0047 05       		.byte	0x5
+  85 0048 B3000000 		.4byte	.LASF4
+  86 004c 02       		.uleb128 0x2
+  87 004d 04       		.byte	0x4
+  88 004e 07       		.byte	0x7
+  89 004f 77000000 		.4byte	.LASF5
+  90 0053 02       		.uleb128 0x2
+  91 0054 08       		.byte	0x8
+  92 0055 05       		.byte	0x5
+  93 0056 00000000 		.4byte	.LASF6
+  94 005a 02       		.uleb128 0x2
+  95 005b 08       		.byte	0x8
+  96 005c 07       		.byte	0x7
+  97 005d 89000000 		.4byte	.LASF7
+  98 0061 03       		.uleb128 0x3
+  99 0062 04       		.byte	0x4
+ 100 0063 05       		.byte	0x5
+ 101 0064 696E7400 		.ascii	"int\000"
+ 102 0068 02       		.uleb128 0x2
+ 103 0069 04       		.byte	0x4
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 3
+
+
+ 104 006a 07       		.byte	0x7
+ 105 006b 1B000000 		.4byte	.LASF8
+ 106 006f 02       		.uleb128 0x2
+ 107 0070 04       		.byte	0x4
+ 108 0071 04       		.byte	0x4
+ 109 0072 3C010000 		.4byte	.LASF9
+ 110 0076 02       		.uleb128 0x2
+ 111 0077 08       		.byte	0x8
+ 112 0078 04       		.byte	0x4
+ 113 0079 BC000000 		.4byte	.LASF10
+ 114 007d 02       		.uleb128 0x2
+ 115 007e 01       		.byte	0x1
+ 116 007f 08       		.byte	0x8
+ 117 0080 AE000000 		.4byte	.LASF11
+ 118 0084 02       		.uleb128 0x2
+ 119 0085 04       		.byte	0x4
+ 120 0086 07       		.byte	0x7
+ 121 0087 4C010000 		.4byte	.LASF12
+ 122 008b 04       		.uleb128 0x4
+ 123 008c 01       		.byte	0x1
+ 124 008d 28000000 		.4byte	.LASF16
+ 125 0091 01       		.byte	0x1
+ 126 0092 05       		.byte	0x5
+ 127 0093 01       		.byte	0x1
+ 128 0094 00000000 		.4byte	.LFB33
+ 129 0098 14000000 		.4byte	.LFE33
+ 130 009c 00000000 		.4byte	.LLST0
+ 131 00a0 01       		.byte	0x1
+ 132 00a1 00       		.byte	0
+ 133              		.section	.debug_abbrev,"",%progbits
+ 134              	.Ldebug_abbrev0:
+ 135 0000 01       		.uleb128 0x1
+ 136 0001 11       		.uleb128 0x11
+ 137 0002 01       		.byte	0x1
+ 138 0003 25       		.uleb128 0x25
+ 139 0004 0E       		.uleb128 0xe
+ 140 0005 13       		.uleb128 0x13
+ 141 0006 0B       		.uleb128 0xb
+ 142 0007 03       		.uleb128 0x3
+ 143 0008 0E       		.uleb128 0xe
+ 144 0009 1B       		.uleb128 0x1b
+ 145 000a 0E       		.uleb128 0xe
+ 146 000b 55       		.uleb128 0x55
+ 147 000c 06       		.uleb128 0x6
+ 148 000d 11       		.uleb128 0x11
+ 149 000e 01       		.uleb128 0x1
+ 150 000f 52       		.uleb128 0x52
+ 151 0010 01       		.uleb128 0x1
+ 152 0011 10       		.uleb128 0x10
+ 153 0012 06       		.uleb128 0x6
+ 154 0013 00       		.byte	0
+ 155 0014 00       		.byte	0
+ 156 0015 02       		.uleb128 0x2
+ 157 0016 24       		.uleb128 0x24
+ 158 0017 00       		.byte	0
+ 159 0018 0B       		.uleb128 0xb
+ 160 0019 0B       		.uleb128 0xb
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 4
+
+
+ 161 001a 3E       		.uleb128 0x3e
+ 162 001b 0B       		.uleb128 0xb
+ 163 001c 03       		.uleb128 0x3
+ 164 001d 0E       		.uleb128 0xe
+ 165 001e 00       		.byte	0
+ 166 001f 00       		.byte	0
+ 167 0020 03       		.uleb128 0x3
+ 168 0021 24       		.uleb128 0x24
+ 169 0022 00       		.byte	0
+ 170 0023 0B       		.uleb128 0xb
+ 171 0024 0B       		.uleb128 0xb
+ 172 0025 3E       		.uleb128 0x3e
+ 173 0026 0B       		.uleb128 0xb
+ 174 0027 03       		.uleb128 0x3
+ 175 0028 08       		.uleb128 0x8
+ 176 0029 00       		.byte	0
+ 177 002a 00       		.byte	0
+ 178 002b 04       		.uleb128 0x4
+ 179 002c 2E       		.uleb128 0x2e
+ 180 002d 00       		.byte	0
+ 181 002e 3F       		.uleb128 0x3f
+ 182 002f 0C       		.uleb128 0xc
+ 183 0030 03       		.uleb128 0x3
+ 184 0031 0E       		.uleb128 0xe
+ 185 0032 3A       		.uleb128 0x3a
+ 186 0033 0B       		.uleb128 0xb
+ 187 0034 3B       		.uleb128 0x3b
+ 188 0035 0B       		.uleb128 0xb
+ 189 0036 27       		.uleb128 0x27
+ 190 0037 0C       		.uleb128 0xc
+ 191 0038 11       		.uleb128 0x11
+ 192 0039 01       		.uleb128 0x1
+ 193 003a 12       		.uleb128 0x12
+ 194 003b 01       		.uleb128 0x1
+ 195 003c 40       		.uleb128 0x40
+ 196 003d 06       		.uleb128 0x6
+ 197 003e 9642     		.uleb128 0x2116
+ 198 0040 0C       		.uleb128 0xc
+ 199 0041 00       		.byte	0
+ 200 0042 00       		.byte	0
+ 201 0043 00       		.byte	0
+ 202              		.section	.debug_loc,"",%progbits
+ 203              	.Ldebug_loc0:
+ 204              	.LLST0:
+ 205 0000 00000000 		.4byte	.LFB33
+ 206 0004 02000000 		.4byte	.LCFI0
+ 207 0008 0200     		.2byte	0x2
+ 208 000a 7D       		.byte	0x7d
+ 209 000b 00       		.sleb128 0
+ 210 000c 02000000 		.4byte	.LCFI0
+ 211 0010 04000000 		.4byte	.LCFI1
+ 212 0014 0200     		.2byte	0x2
+ 213 0016 7D       		.byte	0x7d
+ 214 0017 08       		.sleb128 8
+ 215 0018 04000000 		.4byte	.LCFI1
+ 216 001c 14000000 		.4byte	.LFE33
+ 217 0020 0200     		.2byte	0x2
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 5
+
+
+ 218 0022 77       		.byte	0x77
+ 219 0023 08       		.sleb128 8
+ 220 0024 00000000 		.4byte	0
+ 221 0028 00000000 		.4byte	0
+ 222              		.section	.debug_aranges,"",%progbits
+ 223 0000 1C000000 		.4byte	0x1c
+ 224 0004 0200     		.2byte	0x2
+ 225 0006 00000000 		.4byte	.Ldebug_info0
+ 226 000a 04       		.byte	0x4
+ 227 000b 00       		.byte	0
+ 228 000c 0000     		.2byte	0
+ 229 000e 0000     		.2byte	0
+ 230 0010 00000000 		.4byte	.LFB33
+ 231 0014 14000000 		.4byte	.LFE33-.LFB33
+ 232 0018 00000000 		.4byte	0
+ 233 001c 00000000 		.4byte	0
+ 234              		.section	.debug_ranges,"",%progbits
+ 235              	.Ldebug_ranges0:
+ 236 0000 00000000 		.4byte	.LFB33
+ 237 0004 14000000 		.4byte	.LFE33
+ 238 0008 00000000 		.4byte	0
+ 239 000c 00000000 		.4byte	0
+ 240              		.section	.debug_line,"",%progbits
+ 241              	.Ldebug_line0:
+ 242 0000 39000000 		.section	.debug_str,"MS",%progbits,1
+ 242      02002300 
+ 242      00000201 
+ 242      FB0E0D00 
+ 242      01010101 
+ 243              	.LASF6:
+ 244 0000 6C6F6E67 		.ascii	"long long int\000"
+ 244      206C6F6E 
+ 244      6720696E 
+ 244      7400
+ 245              	.LASF14:
+ 246 000e 2E5C6D6F 		.ascii	".\\movement.c\000"
+ 246      76656D65 
+ 246      6E742E63 
+ 246      00
+ 247              	.LASF8:
+ 248 001b 756E7369 		.ascii	"unsigned int\000"
+ 248      676E6564 
+ 248      20696E74 
+ 248      00
+ 249              	.LASF16:
+ 250 0028 505F5049 		.ascii	"P_PIR\000"
+ 250      5200
+ 251              	.LASF13:
+ 252 002e 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 252      4320342E 
+ 252      372E3320 
+ 252      32303133 
+ 252      30333132 
+ 253 0061 616E6368 		.ascii	"anch revision 196615]\000"
+ 253      20726576 
+ 253      6973696F 
+ 253      6E203139 
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 6
+
+
+ 253      36363135 
+ 254              	.LASF5:
+ 255 0077 6C6F6E67 		.ascii	"long unsigned int\000"
+ 255      20756E73 
+ 255      69676E65 
+ 255      6420696E 
+ 255      7400
+ 256              	.LASF7:
+ 257 0089 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 257      206C6F6E 
+ 257      6720756E 
+ 257      7369676E 
+ 257      65642069 
+ 258              	.LASF1:
+ 259 00a0 756E7369 		.ascii	"unsigned char\000"
+ 259      676E6564 
+ 259      20636861 
+ 259      7200
+ 260              	.LASF11:
+ 261 00ae 63686172 		.ascii	"char\000"
+ 261      00
+ 262              	.LASF4:
+ 263 00b3 6C6F6E67 		.ascii	"long int\000"
+ 263      20696E74 
+ 263      00
+ 264              	.LASF10:
+ 265 00bc 646F7562 		.ascii	"double\000"
+ 265      6C6500
+ 266              	.LASF3:
+ 267 00c3 73686F72 		.ascii	"short unsigned int\000"
+ 267      7420756E 
+ 267      7369676E 
+ 267      65642069 
+ 267      6E7400
+ 268              	.LASF0:
+ 269 00d6 7369676E 		.ascii	"signed char\000"
+ 269      65642063 
+ 269      68617200 
+ 270              	.LASF15:
+ 271 00e2 433A5C55 		.ascii	"C:\\Users\\Simon Kirchheiner\\Documents\\Skole\\Sta"
+ 271      73657273 
+ 271      5C53696D 
+ 271      6F6E204B 
+ 271      69726368 
+ 272 0110 65726B73 		.ascii	"erkstroem S3\\S3\\PIR\\Design01\\Design01.cydsn\000"
+ 272      74726F65 
+ 272      6D205333 
+ 272      5C53335C 
+ 272      5049525C 
+ 273              	.LASF9:
+ 274 013c 666C6F61 		.ascii	"float\000"
+ 274      7400
+ 275              	.LASF2:
+ 276 0142 73686F72 		.ascii	"short int\000"
+ 276      7420696E 
+ 276      7400
+ 277              	.LASF12:
+ARM GAS  C:\Users\SIMONK~1\AppData\Local\Temp\ccdHfsyN.s 			page 7
+
+
+ 278 014c 73697A65 		.ascii	"sizetype\000"
+ 278      74797065 
+ 278      00
+ 279              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

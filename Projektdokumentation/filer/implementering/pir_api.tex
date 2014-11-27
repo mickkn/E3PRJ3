@@ -1,5 +1,5 @@
 %pir api
-Pir API'en er implementeret i PSoC creator. Top designet består af en input pin (P1[1]) der modtager et signal fra pir-sensoren når der er bevægelse, se figur \ref{lab:pir_topdesign}. På figur \ref{lab:pir_topdesign_1} og \ref{lab:pir_topdesign_2} ses opsætningen af P-PIR, den har en HW connection til isr-pir og er indstillet til at have en pulldown modstand for at sikre at der står lav på pinen når der ikke er signal. Denne pin går ind og aktiverer en ISR routine. I source filen ses det at selve ISR funktionen går ind og kalder en metode fra controlleren, der deaktivere sprinkleren og starter en timer på 30 min før der igen kan vandes.   
+Pir API'en er implementeret i PSoC creator. Top designet består af en input pin (P1[1]) der modtager et signal fra pir-sensoren når der er bevægelse, se figur \ref{lab:pir_topdesign}. På figur \ref{lab:pir_topdesign_1} og \ref{lab:pir_topdesign_2} ses opsætningen af P-PIR, den har en HW connection til isr-pir og er indstillet til at have en pulldown modstand for at sikre at der står lav på pinen når der ikke er signal. Denne pin går ind og aktiverer en ISR routine. I main filen bliver global interrupt og pir interrupt aktiveret og i source filen ses det at selve ISR funktionen går ind og kalder metoden ''movementDetekt();'' fra controlleren, der deaktiverer sprinkleren og starter en timer på 30 min før der igen kan vandes.   
 
 \begin{figure}[htb]
 \centering
@@ -21,6 +21,22 @@ Pir API'en er implementeret i PSoC creator. Top designet består af en input pin
 \caption{Konfiguration af pir pin}
 \label{lab:pir_topdesign_2}
 \end{figure}
+
+\subsubsection*{Main fil}
+\begin{lstlisting}[language=C]
+int main()
+{
+
+    CyGlobalIntEnable; /* Her bliver global interrupts aktiveret. */
+    
+    isr_pir_StartEx(P_PIR); /*Her bliver pir interruptet startet*/
+    
+    for(;;)
+    {
+        /* Place your application code here. */
+    }
+}
+\end{lstlisting}
 
 
 \subsubsection*{Source fil}

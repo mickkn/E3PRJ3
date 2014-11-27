@@ -1,0 +1,23 @@
+(DELAYFILE
+ (SDFVERSION "IEEE 1497 4.0")
+ (DATE "2014-11-27T11:29:41Z")
+ (DESIGN "Design01")
+ (VENDOR "Cypress Semiconductor")
+ (PROGRAM "cydsfit")
+ (VERSION "No Version Information Found")
+ (DIVIDER .)
+ (TIMESCALE 1 ns)
+ (CELL
+  (CELLTYPE "Design01")
+  (INSTANCE *)
+  (DELAY
+   (ABSOLUTE
+    (INTERCONNECT ClockBlock.hfclk P_PIR\(0\).in_clock (0.000:0.000:0.000))
+    (INTERCONNECT ClockBlock.hfclk isr_pir.clock (0.000:0.000:0.000))
+    (INTERCONNECT P_PIR\(0\).fb isr_pir.interrupt (1.000:1.000:1.000))
+    (INTERCONNECT P_PIR\(0\)_PAD P_PIR\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT TEST\(0\)_PAD TEST\(0\).pad_in (0.000:0.000:0.000))
+   )
+  )
+ )
+)

@@ -1,0 +1,64 @@
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/Cm0Start.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/Cm0Start.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/CyFlash.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyFlash.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyFlash.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/CyLib.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/P_PIR.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/P_PIR.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/P_PIR_aliases.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/P_PIR.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/P_PIR.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/P_PIR_aliases.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/P_PIR.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/TEST.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/TEST.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/TEST_aliases.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/TEST.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/TEST.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/TEST_aliases.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/TEST.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/cyPm.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyPm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyPm.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/cyfitter_cfg.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/cymetadata.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cymetadata.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/cyutils.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyutils.c : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/CortexM0/ARM_GCC_473/Debug/isr_pir.o : C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/CyLib.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/cytypes.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/isr_pir.h C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/isr_pir.c 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/isr_pir.h : 
+
+C:/Users/Simon\ Kirchheiner/Documents/Skole/Staerkstroem\ S3/S3/PIR/Design01/Design01.cydsn/Generated_Source/PSoC4/isr_pir.c : 
+
