@@ -9,13 +9,16 @@ Første test laves ved stuetemperatur. Til test af SHT21P sensoren bruges et fæ
 \begin{figure}[h]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_stue}}
-\caption{Billede af test incl. oscilloskop billede}
+\caption{Billede af test incl. oscilloskop billede, øverste scopbillede er fugtighed og nederste er temperatur}
 \label{lab:test_stue}
 \end{figure}
 
 Som scop billedet viser måles både en DC og et PWM signal. DCen er signalet efter lavpasfilteret og PWMen er den rå data fra sensoren. 
 Sensorens SCL-ben er sat højt og sensoren måler derfor fugtighed. PWMen måles til at have en dutycycle på XX \% og spændingen efter filteret måles til XX V. Ud fra databladet kan dutycyclen omregnes til fugtighed med følgende formel:
 
+\begin{equation}
+-6+125*
+\end{equation}
 LIGNING FOR FUGTIGHED MED PWM
 
 Med følende formel regnes fugtigheden ud fra DC-værdien.
