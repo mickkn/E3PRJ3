@@ -9,22 +9,22 @@ Her beskrives hvor mange og hvilke pins der skal benyttes på PSoC4 til de forsk
 \textbf{Forbindelse}	&\textbf{Antal pins} 	&\textbf{Signalnavne} &\textbf{Pinnavne} &\textbf{Kommentar}  \\ \hline
 
 SPI 	(P\_DK)		&5 						&MOSI				&P3[0]		&					\\\cline{3-4}
-					&						&MISO				&P3[1]		&					\\\cline{3-4}
-					&						&SCK					&P0[6]		&					\\\cline{3-4}
-					&						&SS0					&P0[7]		&					\\\cline{3-4}
-					&						&GND					&J3(GND) 	&					\\\hline
+					&					&MISO				&P3[1]		&					\\\cline{3-4}
+					&					&SCK					&P0[6]		&					\\\cline{3-4}
+					&					&SS0					&P0[7]		&					\\\cline{3-4}
+					&					&GND					&J3(GND) 	&					\\\hline
 	
 PIR-TTL	(P\_PIR)	&1 						&P\_PIR				&P1[1] 		&					\\\hline
 
-Vandpumpe (VP\_01)	&1 						&SPRINKLER\_1		&P2[0]		&					\\\hline
+VP-TTL (P\_VP)	&1 						&SPRINKLER\_1		&P2[0]		&					\\\hline
 
 																								
 		
-FT-sensor (P\_FT)	&2						&SELECT				&P0[0]		&Fugt/Temp.			\\\cline{3-5}
-					&						&ANALOG				&P2[5]		&Analog niveau		\\\hline
+FT-analog (P\_FT1)	&1					&ANALOG				&P2[5]		&Analog niveau		\\\hline
+FT-TTL (P\_FT2)	&1						&SELECT				&P0[0]		&Fugt/Temp.			\\\hline
 																											
 					
-Fælles GND			&1 						&GND(Forb. print)	&J2(GND) 	&Forb. print			\\\hline					
+Fælles GND			&1 					&GND(Forb. print)	&J2(GND) 	&Forb. print			\\\hline					
 					
 
 
