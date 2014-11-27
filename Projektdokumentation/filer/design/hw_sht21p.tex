@@ -32,10 +32,11 @@ På figur \ref{lab:sht_plot_mable} kan det ses at kurven for fugtighed går fra 
 
 \subsection{Præcisions- og støjhåndtering}
 %Beskriv step i mV pr. grader celsius her. Magter det ikke nu /Jakob
-En måledifferens for 10 \% - 90 \% duty cycle ender ud i 2400 mV og en temperaturdifferens på 155 ${\circ}$C og da de er lineære kan et step på 15 mV pr. $^{\circ}$C beregnes:
+
+Ved 10\% duty cycle og 90\% duty cycle vil DC-spændingen give henholdsvis 33 mV og 2970 mV $<=> \Delta V = 2970$ og en temperatur differens gående fra -29 ... 111 ${^{\circ}}$C $<=> \Delta T = 140 {^{\circ}}$C. Da denne er en lineær funktion kan der beregnes et step:
 
 \begin{equation}
-step = \frac{2400}{155} = 15,48 = 15 \frac{mV}{^{\circ}C}
+step = \frac{2970}{140} = 21 \frac{mV}{^{\circ}C}
 \end{equation}
 
 \begin{figure}[htb]
@@ -54,16 +55,18 @@ step = \frac{2400}{155} = 15,48 = 15 \frac{mV}{^{\circ}C}
 \end{figure}
 
 \begin{equation}
-f_c = \frac{1}{2 \pi * R1 * C1} = \frac{1}{2 \pi * 6,1*10^3  * 2,2*10^{-6}} = 11,86 Hz
+f_c = \frac{1}{2 \pi * R1 * C1} = \frac{1}{2 \pi * 6,1*10^3  * 2,2*10^{-6}} = 12 Hz\pm5 \%
 \end{equation}
-$f_c$ ligger således en dekade under 120 Hz og da filteret er designet som et 2. ordens filter, vil det dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet 100 gange og tilbage er den tilnærmede DC-værdi.  
+
+Da komponenternes værdi har en afvigelse på $\pm$5 \%.
+$f_c$ ligger således en dekade under 120 Hz og da filteret er designet som et 2. ordens filter, vil det dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet 100 gange og tilbage er den tilnærmede DC-værdi. 
 
 \begin{equation}
 Gain = 20 * \log_{10}(x) <=> 40 dB = 20 * \log_ {10}(x) <=> x = 100
 \end{equation} 
 Da det er en dæmpning der er tale om, vil gain være lig med -40 dB hvilket vil give en x-værdi på 0,01 som er det samme som 100 gange dæmpning.
 
-Grundet at værdien kun er tilnærmet skyldes at der stadig vil være oscillation tilbage fra PWMen svarende til 33 mV peak-peak. Der vil altså være en usikkerhed i DC-værdien svarende til 2 $^{\circ}$C alene fra filteret.
+Grundet at værdien kun er tilnærmet skyldes at der stadig vil være oscillation tilbage fra PWMen og det antages at denne svarer til 33 mV. Der vil altså være en usikkerhed i DC-værdien svarende til 1,6 $^{\circ}$C alene fra filteret. De 33 mV er en ideel antagelse ud fra filteret, men nøjagtigheden herfor kan ikke garanteres og der laves derfor en antagelse.
 
 Dette kan løses i softwaren ved evt. at tage et antal samples og så midle de værdier der er målt med simple gennemsnitsberegning. 
 
