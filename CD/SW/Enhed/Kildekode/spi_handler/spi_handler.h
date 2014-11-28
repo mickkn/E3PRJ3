@@ -1,6 +1,6 @@
 /*
 * File: spi_handler.h
-* Description: Implementation for EasyWater8000 class buffer
+* Description: Implementation for EasyWater8000 spi handler
 * Project: PRJ3
 * 
 * Author: Mick Kirkegaard & Poul Overgaard
