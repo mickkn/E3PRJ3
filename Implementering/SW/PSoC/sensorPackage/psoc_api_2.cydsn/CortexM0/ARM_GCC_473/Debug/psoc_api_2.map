@@ -6,14 +6,14 @@ Archive member included because of file (symbol)
                               .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o (ADC_SAR_Seq_0_Start)
 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
                               .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o) (ADC_SAR_Seq_0_ISR)
-.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
-                              .\CortexM0\ARM_GCC_473\Debug\humiSensor.o (SLC_Write)
-.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
-                              .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o (water_pin_Write)
 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
                               .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o) (CyDelayCycles)
 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
                               .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o) (CyDelayUs)
+.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+                              .\CortexM0\ARM_GCC_473\Debug\humiSensor.o (P_FT2_Write)
+.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+                              .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o (P_VP_Write)
 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
                               .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o) (__aeabi_uidiv)
 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_divsi3.o)
@@ -151,30 +151,6 @@ Discarded input sections
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .text          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .data          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .text.SLC_SetDriveMode
-                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .text.SLC_Read
-                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .text.SLC_ReadDataReg
-                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .text.SLC_ClearInterrupt
-                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .text          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .data          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .text.water_pin_Write
-                0x00000000       0x48 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .text.water_pin_SetDriveMode
-                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .text.water_pin_Read
-                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .text.water_pin_ReadDataReg
-                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .text.water_pin_ClearInterrupt
-                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
  .data          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
  .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
  .text          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
@@ -269,6 +245,30 @@ Discarded input sections
  .text.CyDelayFreq
                 0x00000000       0x80 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
  .rodata        0x00000000       0x30 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .text.P_FT2_SetDriveMode
+                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .text.P_FT2_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .text.P_FT2_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .text.P_FT2_ClearInterrupt
+                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .text          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .data          0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .bss           0x00000000        0x0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .text.P_VP_Write
+                0x00000000       0x48 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .text.P_VP_SetDriveMode
+                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .text.P_VP_Read
+                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .text.P_VP_ReadDataReg
+                0x00000000       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+ .text.P_VP_ClearInterrupt
+                0x00000000       0x2c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
  .bss           0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
  .data          0x00000000        0x0 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_divsi3.o)
@@ -488,24 +488,24 @@ END GROUP
  .text.ADC_SAR_Seq_0_ISR
                 0x0000095c       0x1c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
                 0x0000095c                ADC_SAR_Seq_0_ISR
- .text.SLC_Write
-                0x00000978       0x48 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
-                0x00000978                SLC_Write
- .text          0x000009c0       0x20 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
-                0x000009c0                CyDelayCycles
-                0x000009d2                CyEnterCriticalSection
-                0x000009da                CyExitCriticalSection
+ .text          0x00000978       0x20 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
+                0x00000978                CyDelayCycles
+                0x0000098a                CyEnterCriticalSection
+                0x00000992                CyExitCriticalSection
  .text.CyIntSetVector
-                0x000009e0       0x4c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
-                0x000009e0                CyIntSetVector
+                0x00000998       0x4c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                0x00000998                CyIntSetVector
  .text.CyIntSetPriority
-                0x00000a2c       0xa8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
-                0x00000a2c                CyIntSetPriority
- .text.CyHalt   0x00000ad4       0x14 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
-                0x00000ad4                CyHalt
+                0x000009e4       0xa8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                0x000009e4                CyIntSetPriority
+ .text.CyHalt   0x00000a8c       0x14 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                0x00000a8c                CyHalt
  .text.CyDelayUs
-                0x00000ae8       0x28 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
-                0x00000ae8                CyDelayUs
+                0x00000aa0       0x28 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                0x00000aa0                CyDelayUs
+ .text.P_FT2_Write
+                0x00000ac8       0x48 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+                0x00000ac8                P_FT2_Write
  .text          0x00000b10       0x9c c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
                 0x00000b10                __aeabi_uidiv
                 0x00000b10                __udivsi3
@@ -763,18 +763,18 @@ END GROUP
  .debug_aranges
                 0x00000240       0x20 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
  .debug_aranges
-                0x00000260       0x40 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
+                0x00000260       0x20 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
  .debug_aranges
-                0x000002a0       0x40 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
+                0x00000280      0x1a0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
  .debug_aranges
-                0x000002e0       0x20 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
+                0x00000420       0x40 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
  .debug_aranges
-                0x00000300      0x1a0 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                0x00000460       0x40 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x206d
+.debug_info     0x00000000     0x2085
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xcc .\CortexM0\ARM_GCC_473\Debug\main.o
  .debug_info    0x000000cc      0x145 .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
@@ -786,10 +786,10 @@ END GROUP
  .debug_info    0x00000907      0x3a7 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .debug_info    0x00000cae      0x4d4 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .debug_info    0x00001182       0xcc .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .debug_info    0x0000124e      0x168 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .debug_info    0x000013b6      0x168 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .debug_info    0x0000151e       0x8a .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
- .debug_info    0x000015a8      0xac5 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_info    0x0000124e       0xa2 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
+ .debug_info    0x000012f0      0xac5 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_info    0x00001db5      0x168 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .debug_info    0x00001f1d      0x168 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
 .debug_abbrev   0x00000000      0xaa4
  *(.debug_abbrev)
@@ -803,12 +803,12 @@ END GROUP
  .debug_abbrev  0x0000043c      0x18e .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .debug_abbrev  0x000005ca      0x165 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .debug_abbrev  0x0000072f       0x67 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .debug_abbrev  0x00000796       0xac .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .debug_abbrev  0x00000842       0xac .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .debug_abbrev  0x000008ee       0x14 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
- .debug_abbrev  0x00000902      0x1a2 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_abbrev  0x00000796       0x14 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
+ .debug_abbrev  0x000007aa      0x1a2 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_abbrev  0x0000094c       0xac .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .debug_abbrev  0x000009f8       0xac .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
-.debug_line     0x00000000     0x1041
+.debug_line     0x00000000     0x103e
  *(.debug_line)
  .debug_line    0x00000000       0x4f .\CortexM0\ARM_GCC_473\Debug\main.o
  .debug_line    0x0000004f       0xbd .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
@@ -820,10 +820,10 @@ END GROUP
  .debug_line    0x000004fe      0x19d .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .debug_line    0x0000069b      0x237 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .debug_line    0x000008d2       0x6e .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .debug_line    0x00000940       0xa9 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .debug_line    0x000009e9       0xaf .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .debug_line    0x00000a98       0x68 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
- .debug_line    0x00000b00      0x541 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_line    0x00000940       0x68 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
+ .debug_line    0x000009a8      0x541 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_line    0x00000ee9       0xab .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .debug_line    0x00000f94       0xaa .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
 .debug_frame    0x00000000     0x11bc
  *(.debug_frame)
@@ -836,9 +836,9 @@ END GROUP
  .debug_frame   0x000002a0      0x108 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .debug_frame   0x000003a8      0x24c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .debug_frame   0x000005f4       0x30 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .debug_frame   0x00000624       0xa8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .debug_frame   0x000006cc       0xa8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .debug_frame   0x00000774      0x628 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_frame   0x00000624      0x628 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_frame   0x00000c4c       0xa8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .debug_frame   0x00000cf4       0xa8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
  .debug_frame   0x00000d9c       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
  .debug_frame   0x00000dbc       0x20 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_divsi3.o)
  .debug_frame   0x00000ddc       0x30 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_muldi3.o)
@@ -861,34 +861,34 @@ END GROUP
  .debug_frame   0x0000116c       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memcpy.o)
  .debug_frame   0x00001194       0x28 c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/../../../../arm-none-eabi/lib/armv6-m\libc_s.a(lib_a-memset.o)
 
-.debug_str      0x00000000      0xee4
+.debug_str      0x00000000      0xeea
  *(.debug_str)
- .debug_str     0x00000000      0x101 .\CortexM0\ARM_GCC_473\Debug\main.o
-                                0x13a (size before relaxing)
- .debug_str     0x00000101       0xa9 .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
-                                0x1d1 (size before relaxing)
- .debug_str     0x000001aa       0x9b .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o
-                                0x1c3 (size before relaxing)
- .debug_str     0x00000245       0x73 .\CortexM0\ARM_GCC_473\Debug\sprinkler.o
-                                0x195 (size before relaxing)
- .debug_str     0x000002b8       0x70 .\CortexM0\ARM_GCC_473\Debug\tempSensor.o
-                                0x1c5 (size before relaxing)
- .debug_str     0x00000328       0x5b .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
-                                0x183 (size before relaxing)
- .debug_str     0x00000383      0x105 .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
-                                0x24c (size before relaxing)
- .debug_str     0x00000488      0x168 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
-                                0x2b7 (size before relaxing)
- .debug_str     0x000005f0      0x2b7 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
-                                0x422 (size before relaxing)
- .debug_str     0x000008a7       0x4b .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
-                                0x17a (size before relaxing)
- .debug_str     0x000008f2       0x84 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
-                                0x1b0 (size before relaxing)
- .debug_str     0x00000976       0x8a .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
+ .debug_str     0x00000000      0x119 .\CortexM0\ARM_GCC_473\Debug\main.o
+                                0x152 (size before relaxing)
+ .debug_str     0x00000119       0xa9 .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
+                                0x1e9 (size before relaxing)
+ .debug_str     0x000001c2       0x9b .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o
+                                0x1db (size before relaxing)
+ .debug_str     0x0000025d       0x73 .\CortexM0\ARM_GCC_473\Debug\sprinkler.o
+                                0x1ad (size before relaxing)
+ .debug_str     0x000002d0       0x70 .\CortexM0\ARM_GCC_473\Debug\tempSensor.o
+                                0x1dd (size before relaxing)
+ .debug_str     0x00000340       0x5b .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
+                                0x19b (size before relaxing)
+ .debug_str     0x0000039b      0x105 .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o
+                                0x264 (size before relaxing)
+ .debug_str     0x000004a0      0x168 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
+                                0x2cf (size before relaxing)
+ .debug_str     0x00000608      0x2b7 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
+                                0x43a (size before relaxing)
+ .debug_str     0x000008bf       0x4b .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
+                                0x192 (size before relaxing)
+ .debug_str     0x0000090a      0x4ef .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                                0x677 (size before relaxing)
+ .debug_str     0x00000df9       0x85 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
                                 0x1d4 (size before relaxing)
- .debug_str     0x00000a00      0x4e4 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
-                                0x65f (size before relaxing)
+ .debug_str     0x00000e7e       0x6c .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
+                                0x1ce (size before relaxing)
 
 .debug_loc      0x00000000     0x1578
  *(.debug_loc)
@@ -901,9 +901,9 @@ END GROUP
  .debug_loc     0x000003b0      0x1a8 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .debug_loc     0x00000558      0x3b4 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .debug_loc     0x0000090c       0x38 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .debug_loc     0x00000944      0x100 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .debug_loc     0x00000a44      0x100 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .debug_loc     0x00000b44      0xa34 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_loc     0x00000944      0xa34 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_loc     0x00001378      0x100 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .debug_loc     0x00001478      0x100 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -919,9 +919,9 @@ END GROUP
  .debug_ranges  0x000000c8       0x48 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .debug_ranges  0x00000110       0x98 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .debug_ranges  0x000001a8       0x10 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .debug_ranges  0x000001b8       0x30 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .debug_ranges  0x000001e8       0x30 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
- .debug_ranges  0x00000218      0x190 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_ranges  0x000001b8      0x190 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .debug_ranges  0x00000348       0x30 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .debug_ranges  0x00000378       0x30 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
 .comment        0x00000000       0x70
  .comment       0x00000000       0x70 .\CortexM0\ARM_GCC_473\Debug\main.o
@@ -935,9 +935,9 @@ END GROUP
  .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(cyfitter_cfg.o)
  .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0.o)
  .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
- .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
- .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
  .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
+ .comment       0x00000000       0x71 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -984,13 +984,13 @@ END GROUP
  .ARM.attributes
                 0x0000021f       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(ADC_SAR_Seq_0_INT.o)
  .ARM.attributes
-                0x00000250       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(SLC.o)
+                0x00000250       0x21 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
  .ARM.attributes
-                0x00000281       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(water_pin.o)
+                0x00000271       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
  .ARM.attributes
-                0x000002b2       0x21 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyBootAsmGnu.o)
+                0x000002a2       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_FT2.o)
  .ARM.attributes
-                0x000002d3       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(CyLib.o)
+                0x000002d3       0x31 .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a(P_VP.o)
  .ARM.attributes
                 0x00000304       0x1e c:/program files (x86)/cypress/psoc creator/3.0/psoc creator/import/gnu_cs/arm/4.7.3/bin/../lib/gcc/arm-none-eabi/4.7.3/armv6-m\libgcc.a(_udivsi3.o)
  .ARM.attributes

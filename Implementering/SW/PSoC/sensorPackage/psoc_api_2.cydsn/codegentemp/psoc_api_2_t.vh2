@@ -1,17 +1,16 @@
--- Project:   \\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\psoc_api_2.cyprj
--- Generated: 11/21/2014 15:22:00
+-- Project:   \\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\psoc_api_2.cyprj
+-- Generated: 11/28/2014 11:06:43
 -- 
 
 ENTITY psoc_api_2 IS
     PORT(
-        SLC(0)_PAD : OUT std_ulogic;
-        water_pin(0)_PAD : OUT std_ulogic);
+        P_FT2(0)_PAD : OUT std_ulogic;
+        P_VP(0)_PAD : OUT std_ulogic);
     ATTRIBUTE voltage_VDDD OF __DEFAULT__ : ENTITY IS 3.3e0;
     ATTRIBUTE voltage_VDDA OF __DEFAULT__ : ENTITY IS 3.3e0;
 END psoc_api_2;
 
 ARCHITECTURE __DEFAULT__ OF psoc_api_2 IS
-    SIGNAL ADC_in(0)__PA : bit;
     SIGNAL ClockBlock_EXTCLK : bit;
     SIGNAL ClockBlock_HFCLK : bit;
     ATTRIBUTE global_signal OF ClockBlock_HFCLK : SIGNAL IS true;
@@ -21,7 +20,9 @@ ARCHITECTURE __DEFAULT__ OF psoc_api_2 IS
     SIGNAL ClockBlock_SYSCLK : bit;
     SIGNAL Net_50 : bit;
     SIGNAL Net_51 : bit;
-    SIGNAL SLC(0)__PA : bit;
+    SIGNAL P_FT1(0)__PA : bit;
+    SIGNAL P_FT2(0)__PA : bit;
+    SIGNAL P_VP(0)__PA : bit;
     SIGNAL \ADC_SAR_Seq_0:Net_17_ff7\ : bit;
     ATTRIBUTE global_signal OF \ADC_SAR_Seq_0:Net_17_ff7\ : SIGNAL IS true;
     SIGNAL \ADC_SAR_Seq_0:Net_2269\ : bit;
@@ -47,21 +48,20 @@ ARCHITECTURE __DEFAULT__ OF psoc_api_2 IS
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
     ATTRIBUTE GROUND OF __ZERO__ : SIGNAL IS true;
-    SIGNAL tmpOE__ADC_in_net_0 : bit;
-    ATTRIBUTE POWER OF tmpOE__ADC_in_net_0 : SIGNAL IS true;
-    SIGNAL water_pin(0)__PA : bit;
+    SIGNAL tmpOE__P_FT1_net_0 : bit;
+    ATTRIBUTE POWER OF tmpOE__P_FT1_net_0 : SIGNAL IS true;
     SIGNAL zero : bit;
     ATTRIBUTE GROUND OF zero : SIGNAL IS true;
-    ATTRIBUTE lib_model OF ADC_in(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF ADC_in(0) : LABEL IS "P2[5]";
     ATTRIBUTE Location OF ClockBlock : LABEL IS "F(Clock,0)";
     ATTRIBUTE Location OF ClockGenBlock : LABEL IS "F(CLK_GEN,0)";
-    ATTRIBUTE lib_model OF SLC(0) : LABEL IS "iocell2";
-    ATTRIBUTE Location OF SLC(0) : LABEL IS "P0[0]";
+    ATTRIBUTE lib_model OF P_FT1(0) : LABEL IS "iocell1";
+    ATTRIBUTE Location OF P_FT1(0) : LABEL IS "P2[5]";
+    ATTRIBUTE lib_model OF P_FT2(0) : LABEL IS "iocell2";
+    ATTRIBUTE Location OF P_FT2(0) : LABEL IS "P0[0]";
+    ATTRIBUTE lib_model OF P_VP(0) : LABEL IS "iocell3";
+    ATTRIBUTE Location OF P_VP(0) : LABEL IS "P2[0]";
     ATTRIBUTE Location OF \ADC_SAR_Seq_0:IRQ\ : LABEL IS "[IntrHod=(0)][IntrId=(14)]";
     ATTRIBUTE Location OF \ADC_SAR_Seq_0:cy_psoc4_sar\ : LABEL IS "F(SARADC,0)";
-    ATTRIBUTE lib_model OF water_pin(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF water_pin(0) : LABEL IS "P2[0]";
     COMPONENT abufcell
     END COMPONENT;
     COMPONENT boostcell
@@ -969,7 +969,19 @@ ARCHITECTURE __DEFAULT__ OF psoc_api_2 IS
     END COMPONENT;
 BEGIN
 
-    ADC_in:logicalport
+    ClockBlock:m0s8clockblockcell
+        PORT MAP(
+            lfclk => ClockBlock_LFCLK,
+            ilo => ClockBlock_ILO,
+            sysclk => ClockBlock_SYSCLK,
+            ext => ClockBlock_EXTCLK,
+            imo => ClockBlock_IMO,
+            hfclk => ClockBlock_HFCLK,
+            ff_div_7 => \ADC_SAR_Seq_0:Net_17_ff7\);
+
+    ClockGenBlock:m0s8clockgenblockcell;
+
+    P_FT1:logicalport
         GENERIC MAP(
             drive_mode => "000",
             ibuf_enabled => "0",
@@ -1035,16 +1047,16 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    ADC_in(0):iocell
+    P_FT1(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "ADC_in",
+            logicalport => "P_FT1",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
         PORT MAP(
-            pa_out => ADC_in(0)__PA,
+            pa_out => P_FT1(0)__PA,
             oe => open,
             in_clock => open,
             in_clock_en => '1',
@@ -1053,19 +1065,7 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    ClockBlock:m0s8clockblockcell
-        PORT MAP(
-            lfclk => ClockBlock_LFCLK,
-            ilo => ClockBlock_ILO,
-            sysclk => ClockBlock_SYSCLK,
-            ext => ClockBlock_EXTCLK,
-            imo => ClockBlock_IMO,
-            hfclk => ClockBlock_HFCLK,
-            ff_div_7 => \ADC_SAR_Seq_0:Net_17_ff7\);
-
-    ClockGenBlock:m0s8clockgenblockcell;
-
-    SLC:logicalport
+    P_FT2:logicalport
         GENERIC MAP(
             drive_mode => "110",
             ibuf_enabled => "1",
@@ -1131,18 +1131,18 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    SLC(0):iocell
+    P_FT2(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "SLC",
+            logicalport => "P_FT2",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
         PORT MAP(
-            pa_out => SLC(0)__PA,
+            pa_out => P_FT2(0)__PA,
             oe => open,
-            pad_in => SLC(0)_PAD,
+            pad_in => P_FT2(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
@@ -1150,49 +1150,7 @@ BEGIN
             out_clock_en => '1',
             out_reset => '0');
 
-    \ADC_SAR_Seq_0:IRQ\:interrupt
-        GENERIC MAP(
-            int_type => "10")
-        PORT MAP(
-            interrupt => \ADC_SAR_Seq_0:Net_2273\,
-            clock => ClockBlock_HFCLK);
-
-    \ADC_SAR_Seq_0:cy_psoc4_sar\:p4sarcell
-        GENERIC MAP(
-            cy_registers => "")
-        PORT MAP(
-            clock => \ADC_SAR_Seq_0:Net_17_ff7\,
-            sample_done => Net_50,
-            chan_id_valid => \ADC_SAR_Seq_0:Net_2269\,
-            chan_id_3 => \ADC_SAR_Seq_0:Net_2270_3\,
-            chan_id_2 => \ADC_SAR_Seq_0:Net_2270_2\,
-            chan_id_1 => \ADC_SAR_Seq_0:Net_2270_1\,
-            chan_id_0 => \ADC_SAR_Seq_0:Net_2270_0\,
-            data_valid => \ADC_SAR_Seq_0:Net_2271\,
-            data_11 => \ADC_SAR_Seq_0:Net_2272_11\,
-            data_10 => \ADC_SAR_Seq_0:Net_2272_10\,
-            data_9 => \ADC_SAR_Seq_0:Net_2272_9\,
-            data_8 => \ADC_SAR_Seq_0:Net_2272_8\,
-            data_7 => \ADC_SAR_Seq_0:Net_2272_7\,
-            data_6 => \ADC_SAR_Seq_0:Net_2272_6\,
-            data_5 => \ADC_SAR_Seq_0:Net_2272_5\,
-            data_4 => \ADC_SAR_Seq_0:Net_2272_4\,
-            data_3 => \ADC_SAR_Seq_0:Net_2272_3\,
-            data_2 => \ADC_SAR_Seq_0:Net_2272_2\,
-            data_1 => \ADC_SAR_Seq_0:Net_2272_1\,
-            data_0 => \ADC_SAR_Seq_0:Net_2272_0\,
-            eos_intr => Net_51,
-            irq => \ADC_SAR_Seq_0:Net_2273\,
-            sw_negvref => open,
-            cfg_st_sel_1 => open,
-            cfg_st_sel_0 => open,
-            cfg_average => open,
-            cfg_resolution => open,
-            cfg_differential => open,
-            trigger => open,
-            data_hilo_sel => open);
-
-    water_pin:logicalport
+    P_VP:logicalport
         GENERIC MAP(
             drive_mode => "110",
             ibuf_enabled => "1",
@@ -1258,23 +1216,65 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    water_pin(0):iocell
+    P_VP(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "water_pin",
+            logicalport => "P_VP",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000001")
         PORT MAP(
-            pa_out => water_pin(0)__PA,
+            pa_out => P_VP(0)__PA,
             oe => open,
-            pad_in => water_pin(0)_PAD,
+            pad_in => P_VP(0)_PAD,
             in_clock => open,
             in_clock_en => '1',
             in_reset => '0',
             out_clock => open,
             out_clock_en => '1',
             out_reset => '0');
+
+    \ADC_SAR_Seq_0:IRQ\:interrupt
+        GENERIC MAP(
+            int_type => "10")
+        PORT MAP(
+            interrupt => \ADC_SAR_Seq_0:Net_2273\,
+            clock => ClockBlock_HFCLK);
+
+    \ADC_SAR_Seq_0:cy_psoc4_sar\:p4sarcell
+        GENERIC MAP(
+            cy_registers => "")
+        PORT MAP(
+            clock => \ADC_SAR_Seq_0:Net_17_ff7\,
+            sample_done => Net_50,
+            chan_id_valid => \ADC_SAR_Seq_0:Net_2269\,
+            chan_id_3 => \ADC_SAR_Seq_0:Net_2270_3\,
+            chan_id_2 => \ADC_SAR_Seq_0:Net_2270_2\,
+            chan_id_1 => \ADC_SAR_Seq_0:Net_2270_1\,
+            chan_id_0 => \ADC_SAR_Seq_0:Net_2270_0\,
+            data_valid => \ADC_SAR_Seq_0:Net_2271\,
+            data_11 => \ADC_SAR_Seq_0:Net_2272_11\,
+            data_10 => \ADC_SAR_Seq_0:Net_2272_10\,
+            data_9 => \ADC_SAR_Seq_0:Net_2272_9\,
+            data_8 => \ADC_SAR_Seq_0:Net_2272_8\,
+            data_7 => \ADC_SAR_Seq_0:Net_2272_7\,
+            data_6 => \ADC_SAR_Seq_0:Net_2272_6\,
+            data_5 => \ADC_SAR_Seq_0:Net_2272_5\,
+            data_4 => \ADC_SAR_Seq_0:Net_2272_4\,
+            data_3 => \ADC_SAR_Seq_0:Net_2272_3\,
+            data_2 => \ADC_SAR_Seq_0:Net_2272_2\,
+            data_1 => \ADC_SAR_Seq_0:Net_2272_1\,
+            data_0 => \ADC_SAR_Seq_0:Net_2272_0\,
+            eos_intr => Net_51,
+            irq => \ADC_SAR_Seq_0:Net_2273\,
+            sw_negvref => open,
+            cfg_st_sel_1 => open,
+            cfg_st_sel_0 => open,
+            cfg_average => open,
+            cfg_resolution => open,
+            cfg_differential => open,
+            trigger => open,
+            data_hilo_sel => open);
 
 END __DEFAULT__;
