@@ -6,7 +6,7 @@ For at frigøre sig fra laboratoriets strømforsyningerne udarbejdes egen strøm
 
 For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra databladet \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan give et output på max 1A ved korrekt køling.  
 \newline
-Uden køling må der max afsættes 1 W i serieregulatoren, da dens arbejdstemperatur ved 1 W ligger på 100$^{\circ}$C.  I formel \ref{eq:effekt_1} er der fortaget en effektberegning på LM7805. Spændingsforskellen imellem $V_{DC}$ og $V_{OUT}$ ganges på det samlede strømforbrug. Strømforbruget er fundet i samtlige datablade for hver komponent plus $I_X$ som er strømmen der løber ned i kondensatoren, den er opgivet i databladet. Effektudregningen i \ref{eq:effekt_2} viser at ved fuld belastning er det nødvendigt at køle, det er der gjort med køleplader. 
+Uden køling må der max afsættes 1 W i serieregulatoren, da dens arbejdstemperatur ved 1 W ligger på 100$^{\circ}$C.  I formel \ref{eq:effekt_1} er der fortaget en effektberegning på LM7805. Spændingsforskellen imellem $V_{DC}$ og $V_{OUT}$ ganges på det samlede strømforbrug. Strømforbruget er fundet i samtlige datablade for hver komponent plus $I_X$ som er strømmen der løber ned i kondensatoren, den er opgivet i databladet til at være den minimums belastning kredsen skal have. Effektudregningen i \ref{eq:effekt_2} viser at ved fuld belastning er det nødvendigt at køle, det er der gjort med køleplader. 
 
 \begin{equation} 
 P = (V_{DC}-V_{out})*(I_{samlet}+I_X) 
@@ -66,7 +66,7 @@ V_{out} = 1,25 V*(1+\frac{390\Omega}{240\Omega})+50uA*390\Omega = 3,3 V
 \end{equation}
 
 
-I formel \ref{eq:effekt_4} er der fortaget en effektberegning på LM317. Den bliver belastet med FT-sensoren, som har et strømforbrug på 180 uA plus $I_X$ som er strømmen der løber ned i kondensatoren og modstanden, den er opgivet i databladet. Effektudregningen viser at det ikke er nødvendigt med køling, men der er dog  fortaget køling med køleplader alligevel. Det skyldes at det er altid en god ide at køle på et komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed. 
+I formel \ref{eq:effekt_4} er der fortaget en effektberegning på LM317. Den bliver belastet med FT-sensoren, som har et strømforbrug på 180 uA plus $I_X$ som er strømmen der løber ned i kondensatoren og modstanden, den er opgivet i databladet til at være den minimums belastning kredsen skal have. Effektudregningen viser at det ikke er nødvendigt med køling, men der er dog  fortaget køling med køleplader alligevel. Det skyldes at det er altid en god ide at køle på et komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed. 
  
 \begin{equation} 
 P = (V_{DC}-V_{out})*(I_{FT-sensor}+I_X) 
