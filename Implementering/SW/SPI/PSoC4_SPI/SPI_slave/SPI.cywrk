@@ -2,12 +2,12 @@
 <CyXmlSerializer>
 <!--This file is machine generated and read. It is not intended to be edited by hand.-->
 <!--Due to this, there is no schema for this file.-->
-<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspc" version="5" xml_contents_version="2" name="SPI_slave" persistent="" platform="NOT_USED">
-<current_project name=".\SPI_handler.cydsn\SPI_handler.cyprj" />
+<CyGuid_2867d519-54d2-4c01-9830-c51cb08bc3dd type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspc" version="5" xml_contents_version="2" name="SPI" persistent="" platform="NOT_USED">
+<current_project name=".\spi_handler_.cydsn\spi_handler_.cyprj" />
 <wrkspc_folders />
 <files />
 <projects>
-<name_val_pair name="SPI_handler" v=".\SPI_handler.cydsn\SPI_handler.cyprj" />
+<name_val_pair name="spi_handler_" v=".\spi_handler_.cydsn\spi_handler_.cyprj" />
 </projects>
 <workspace_id v="bca8eb74-7072-4e0f-ab58-b24563e02b13" />
 <WriteAppVersionLastSavedWith v="3.0.0.3140" />
