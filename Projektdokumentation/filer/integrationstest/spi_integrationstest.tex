@@ -1,15 +1,21 @@
 % SPI integrationstest
-
+\label{section:spi_integrationstest}
 %tekst
 
 I det følgende testes SPI kommunikationen. Alle kommandoer testes for sig og dokumenteres herunder ved logik analyse billeder samt tabeller der er udarbejdet af eksporterede .txt filer fra Salae Logic \footnote{Salae Logic er softwaren der benyttes til USB logic analyser. Det er herfra at analyse billeder samt data til tabellerne er fra}. 
 
 
 % Aktiver
-\textbf{Aktiver}
+\subsubsection*{Aktiver}
 
-Aktiver kommandoen testes vha. testprogrammet ved kommandoen: 
+Aktiver testes med et test objekt
 
+\begin{lstlisting}[language=C]
+int main(void){
+	SPI_api test;
+	test.activate(1); // 1 er et dummy enhedsnummer
+}
+\end{lstlisting}
 
 \begin{figure}[H]
 \centering
@@ -37,9 +43,15 @@ Tabel \ref{table:scop_activate} viser dataoverførelsen. Som det ses har kun MOS
 
 
 % Deaktiver
-\textbf{Deaktiver}
-Deaktiver kommandoen testes vha. testprogrammet ved kommandoen: 
+\subsubsection*{Deaktiver}
+Deaktiver testes med et test objekt
 
+\begin{lstlisting}[language=C]
+int main(void){
+	SPI_api test;
+	test.deactivate(1); // 1 er et dummy enhedsnummer
+}
+\end{lstlisting}
 
 \begin{figure}[H]
 \centering
@@ -67,8 +79,19 @@ Tabel \ref{table:scop_deactivate} viser dataoverførelsen. Som det ses har kun M
 
 
 % Config
-\textbf{Config}
-Config kommandoen testes vha. testprogrammet ved kommandoen: 
+\subsubsection*{Config}
+Config testes med 2 test-floats der sendes med config metoden.
+
+\begin{lstlisting}[language=C]
+int main(void){
+	float tempTest = 100.1;
+	float humiTest = 48;
+	SPI_api test;
+	
+	test.config(1, tempTest, humiTest); // 1 er et dummy enhedsnummer
+}
+\end{lstlisting}
+
 
 
 \begin{figure}[H]
@@ -100,9 +123,15 @@ Tabel \ref{table:scop_config} viser dataoverførelsen. Som det ses har kun MOSI 
 
 
 % Verificer
-\textbf{Verificer}
-Verificer kommandoen testes vha. testprogrammet ved kommandoen: 
+\subsubsection*{Verificer}
+Verify testes med et test objekt og der sendes et 1-tal af sted til sammenligning med Enhedens enhedsnummer.
 
+\begin{lstlisting}[language=C]
+int main(void){
+	SPI_api test;	
+	test.verify(1);
+}
+\end{lstlisting}
 
 \begin{figure}[H]
 \centering
@@ -132,8 +161,23 @@ Tabel \ref{table:scop_verify} viser dataoverførelsen. Som det ses overføres de
 
 % Log
 
-\textbf{Log}
-Getlog kommandoen testes vha. testprogrammet og med en test buffer i form af et char array "DTTT.TFFFVBEXXX" på Enheden: 
+\subsubsection*{Log}
+Getlog metoden testes vha. et test-objekt og med en test buffer i form af et char array på Enheden. Der er også sat en for-løkke ind til at udskrive strengene i vektoren.
+
+\begin{lstlisting}[language=C]
+char testGetLog[] = "DTTT.TFFFVBEXXX";
+\end{lstlisting}
+
+\begin{lstlisting}[language=C++]
+	int testUnits = 1;
+	vector<string> test_data;
+	SPI_api test;
+
+	test.getLog(test_data, &testUnits, 1);
+	
+	for(unsigned int i = 0 ; i < test_data.size() ; i++)
+		std::cout << "test_data[" << i << "]: " << test_data[i] << endl;
+\end{lstlisting}
 
 \begin{figure}[H]
 \centering
@@ -182,6 +226,13 @@ Tabel \ref{table:scop_getlog1} og \ref{table:scop_getlog2} viser dataoverførels
 	\end{tabular} 
 	\label{table:scop_getlog2}
 \end{table}
+
+Outputtet fra udskriften af \verb+test_data+ vektoren:
+
+\verb+test_data[0]: DTTT.TFFFVB+ \newline
+\verb+test_data[1]: EXXX+
+
+Helt som forventet.
 
 Der er ligeledes testet med et mere komplekst char array med flere data og error strenge. Disse læses også som de skal. 
 
