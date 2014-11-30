@@ -62,7 +62,7 @@
 \verb+int getBuffer( char * buf, unsigned int len )+ \\
 \textbf{Parametre:} Pointer til at skrive adressen til bufferen i og en længde. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal hente data fra \verb+buffer+-objektet og gemme det i parametrene \verb+buf+ og \verb+len+. \\
+\textbf{Beskrivelse:} Skal hente data fra \verb+buffer+-objektet og gemme det i parametrene \verb+buf+ og \verb+len+. Hvis \verb+active_+-flaget i \verb+parameters+ er sat, og målte værdier er uden for grænserne startes vanding ved at kalde \verb+water()+ i \verb+sensorPackage+-objektet. Her sættes også waterTimer i gang.\\
 
 \verb+int movementDetekt( )+ \\
 \textbf{Parametre:} Ingen. \\

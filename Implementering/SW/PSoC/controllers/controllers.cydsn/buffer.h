@@ -9,7 +9,7 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
-#define BUFFER_LENGTH 51
+#define BUFFER_LENGTH 11+10*4   // 1 data reading and 10 errors
 
 // Private:
 typedef struct buffer_type

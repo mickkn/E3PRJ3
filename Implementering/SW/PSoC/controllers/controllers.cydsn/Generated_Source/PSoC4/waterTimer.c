@@ -388,12 +388,12 @@ void waterTimer_WriteControlRegister(uint8 control)
 *  The present value of the counter.
 *
 *******************************************************************************/
-uint32 waterTimer_ReadPeriod(void) 
+uint16 waterTimer_ReadPeriod(void) 
 {
    #if(waterTimer_UsingFixedFunction)
-       return ((uint32)CY_GET_REG16(waterTimer_PERIOD_LSB_PTR));
+       return ((uint16)CY_GET_REG16(waterTimer_PERIOD_LSB_PTR));
    #else
-       return (CY_GET_REG24(waterTimer_PERIOD_LSB_PTR));
+       return (CY_GET_REG16(waterTimer_PERIOD_LSB_PTR));
    #endif /* (waterTimer_UsingFixedFunction) */
 }
 
@@ -414,13 +414,13 @@ uint32 waterTimer_ReadPeriod(void)
 *  void
 *
 *******************************************************************************/
-void waterTimer_WritePeriod(uint32 period) 
+void waterTimer_WritePeriod(uint16 period) 
 {
     #if(waterTimer_UsingFixedFunction)
         uint16 period_temp = (uint16)period;
         CY_SET_REG16(waterTimer_PERIOD_LSB_PTR, period_temp);
     #else
-        CY_SET_REG24(waterTimer_PERIOD_LSB_PTR, period);
+        CY_SET_REG16(waterTimer_PERIOD_LSB_PTR, period);
     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed function implementation */
 }
 
@@ -439,12 +439,12 @@ void waterTimer_WritePeriod(uint32 period)
 *  Present Capture value.
 *
 *******************************************************************************/
-uint32 waterTimer_ReadCapture(void) 
+uint16 waterTimer_ReadCapture(void) 
 {
    #if(waterTimer_UsingFixedFunction)
-       return ((uint32)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
+       return ((uint16)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
    #else
-       return (CY_GET_REG24(waterTimer_CAPTURE_LSB_PTR));
+       return (CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
    #endif /* (waterTimer_UsingFixedFunction) */
 }
 
@@ -463,7 +463,7 @@ uint32 waterTimer_ReadCapture(void)
 *  void
 *
 *******************************************************************************/
-void waterTimer_WriteCounter(uint32 counter) \
+void waterTimer_WriteCounter(uint16 counter) \
                                    
 {
    #if(waterTimer_UsingFixedFunction)
@@ -473,7 +473,7 @@ void waterTimer_WriteCounter(uint32 counter) \
         CY_SET_REG16(waterTimer_COUNTER_LSB_PTR, (uint16)counter);
         
     #else
-        CY_SET_REG24(waterTimer_COUNTER_LSB_PTR, counter);
+        CY_SET_REG16(waterTimer_COUNTER_LSB_PTR, counter);
     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fixed function Timer */
 }
 
@@ -492,7 +492,7 @@ void waterTimer_WriteCounter(uint32 counter) \
 *  Present compare value.
 *
 *******************************************************************************/
-uint32 waterTimer_ReadCounter(void) 
+uint16 waterTimer_ReadCounter(void) 
 {
 
     /* Force capture by reading Accumulator */
@@ -502,9 +502,9 @@ uint32 waterTimer_ReadCounter(void)
 
     /* Read the data from the FIFO (or capture register for Fixed Function)*/
     #if(waterTimer_UsingFixedFunction)
-        return ((uint32)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
+        return ((uint16)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
     #else
-        return (CY_GET_REG24(waterTimer_CAPTURE_LSB_PTR));
+        return (CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
     #endif /* (waterTimer_UsingFixedFunction) */
 }
 

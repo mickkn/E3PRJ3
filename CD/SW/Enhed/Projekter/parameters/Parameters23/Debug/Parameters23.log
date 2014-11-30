@@ -1,0 +1,15 @@
+﻿Build started 19-11-2014 18:45:55.
+     1>Project "G:\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters23\Parameters23\Parameters23.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         G:\Programmer\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt parameter_test.c
+         parameter_test.c
+     1>g:\github\e3prj3\implementering\sw\psoc\parameters23\parameters23\parameter_test.c(14): warning C4013: 'printf' undefined; assuming extern returning int
+       Link:
+         G:\Programmer\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"G:\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters23\Debug\Parameters23.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"G:\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters23\Debug\Parameters23.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"G:\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters23\Debug\Parameters23.lib" /MACHINE:X86 Debug\parameters.obj
+         Debug\parameter_test.obj
+         Parameters23.vcxproj -> G:\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters23\Debug\Parameters23.exe
+     1>Done Building Project "G:\GitHub\E3PRJ3\Implementering\SW\PSoC\Parameters23\Parameters23\Parameters23.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.18

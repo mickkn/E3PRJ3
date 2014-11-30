@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
   24:.\Generated_Source\PSoC4/waterTimer.c **** #include "waterTimer.h"
   25:.\Generated_Source\PSoC4/waterTimer.c **** 
   26:.\Generated_Source\PSoC4/waterTimer.c **** uint8 waterTimer_initVar = 0u;
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 2
 
 
   27:.\Generated_Source\PSoC4/waterTimer.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
   67:.\Generated_Source\PSoC4/waterTimer.c ****         #endif /* One Shot enabled only when RunModeUsed is not Continuous*/
   68:.\Generated_Source\PSoC4/waterTimer.c **** 
   69:.\Generated_Source\PSoC4/waterTimer.c ****         #if (waterTimer_RunModeUsed == 2)
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 3
 
 
   70:.\Generated_Source\PSoC4/waterTimer.c ****             #if (CY_PSOC5A)
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
   50              		.loc 1 119 0
   51 000e 0F4B     		ldr	r3, .L2
   52 0010 181C     		mov	r0, r3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 4
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 4
 
 
   53 0012 FFF7FEFF 		bl	waterTimer_WriteCounter
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  154:.\Generated_Source\PSoC4/waterTimer.c ****                 waterTimer_SetInterruptCount(waterTimer_INIT_INT_CAPTURE_COUNT);
  155:.\Generated_Source\PSoC4/waterTimer.c ****             #endif /* Set interrupt count in control register if control register is not removed */
  156:.\Generated_Source\PSoC4/waterTimer.c ****         #endif /*Set interrupt count in UDB implementation if interrupt count feature is checked.*/
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 5
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 5
 
 
  157:.\Generated_Source\PSoC4/waterTimer.c **** 
@@ -260,8 +260,8 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
   83              	.L3:
   84 004a C046     		.align	2
   85              	.L2:
-  86 004c FFFFFF00 		.word	16777215
-  87 0050 92000F40 		.word	1074725010
+  86 004c FFFF0000 		.word	65535
+  87 0050 93000F40 		.word	1074725011
   88              		.cfi_endproc
   89              	.LFE0:
   90              		.size	waterTimer_Init, .-waterTimer_Init
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  103              		.cfi_def_cfa_offset 8
  104              		.cfi_offset 7, -8
  105              		.cfi_offset 14, -4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 6
 
 
  106 0002 00AF     		add	r7, sp, #0
@@ -332,7 +332,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  123              	.L6:
  124 001a C046     		.align	2
  125              	.L5:
- 126 001c 72000F40 		.word	1074724978
+ 126 001c 73000F40 		.word	1074724979
  127              		.cfi_endproc
  128              	.LFE1:
  129              		.size	waterTimer_Enable, .-waterTimer_Enable
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  203:.\Generated_Source\PSoC4/waterTimer.c **** * Parameters:
  204:.\Generated_Source\PSoC4/waterTimer.c **** *  void
  205:.\Generated_Source\PSoC4/waterTimer.c **** *
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 7
 
 
  206:.\Generated_Source\PSoC4/waterTimer.c **** * Return:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  172              		.size	waterTimer_Start, .-waterTimer_Start
  173              		.section	.text.waterTimer_Stop,"ax",%progbits
  174              		.align	2
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 8
 
 
  175              		.global	waterTimer_Stop
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  255:.\Generated_Source\PSoC4/waterTimer.c ****         waterTimer_GLOBAL_ENABLE &= ((uint8)(~waterTimer_BLOCK_EN_MASK));
  256:.\Generated_Source\PSoC4/waterTimer.c ****         waterTimer_GLOBAL_STBY_ENABLE &= ((uint8)(~waterTimer_BLOCK_STBY_EN_MASK));
  257:.\Generated_Source\PSoC4/waterTimer.c ****     #endif /* Disable global enable for the Timer Fixed function block to stop the Timer*/
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 9
 
 
  258:.\Generated_Source\PSoC4/waterTimer.c **** }
@@ -489,7 +489,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  204              	.L13:
  205              		.align	2
  206              	.L12:
- 207 0018 72000F40 		.word	1074724978
+ 207 0018 73000F40 		.word	1074724979
  208              		.cfi_endproc
  209              	.LFE3:
  210              		.size	waterTimer_Stop, .-waterTimer_Stop
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  232 0006 021C     		mov	r2, r0
  233 0008 FB1D     		add	r3, r7, #7
  234 000a 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 10
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 10
 
 
  280:.\Generated_Source\PSoC4/waterTimer.c ****     waterTimer_STATUS_MASK = interruptMode;
@@ -556,7 +556,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  245              	.L16:
  246 001a C046     		.align	2
  247              	.L15:
- 248 001c 82000F40 		.word	1074724994
+ 248 001c 83000F40 		.word	1074724995
  249              		.cfi_endproc
  250              	.LFE4:
  251              		.size	waterTimer_SetInterruptMode, .-waterTimer_SetInterruptMode
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  266              		.cfi_offset 14, -4
  267 0002 00AF     		add	r7, sp, #0
  268              	.LCFI13:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 11
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 11
 
 
  269              		.cfi_def_cfa_register 7
@@ -606,7 +606,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  304:.\Generated_Source\PSoC4/waterTimer.c ****     (void)waterTimer_COUNTER_LSB;
  270              		.loc 1 304 0
  271 0004 014B     		ldr	r3, .L18
- 272 0006 1B68     		ldr	r3, [r3]
+ 272 0006 1B88     		ldrh	r3, [r3]
  305:.\Generated_Source\PSoC4/waterTimer.c ****     /* Capture Data is now in the FIFO */
  306:.\Generated_Source\PSoC4/waterTimer.c **** }
  273              		.loc 1 306 0
@@ -616,7 +616,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  277              	.L19:
  278              		.align	2
  279              	.L18:
- 280 000c 00000F40 		.word	1074724864
+ 280 000c 04100F40 		.word	1074728964
  281              		.cfi_endproc
  282              	.LFE5:
  283              		.size	waterTimer_SoftwareCapture, .-waterTimer_SoftwareCapture
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  296              		.cfi_def_cfa_offset 8
  297              		.cfi_offset 7, -8
  298              		.cfi_offset 14, -4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 12
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 12
 
 
  299 0002 00AF     		add	r7, sp, #0
@@ -678,7 +678,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  311              	.L23:
  312              		.align	2
  313              	.L22:
- 314 0010 62000F40 		.word	1074724962
+ 314 0010 63000F40 		.word	1074724963
  315              		.cfi_endproc
  316              	.LFE6:
  317              		.size	waterTimer_ReadStatusRegister, .-waterTimer_ReadStatusRegister
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  330              		.cfi_def_cfa_offset 8
  331              		.cfi_offset 7, -8
  332              		.cfi_offset 14, -4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 13
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 13
 
 
  333 0002 00AF     		add	r7, sp, #0
@@ -738,7 +738,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  345              	.L27:
  346              		.align	2
  347              	.L26:
- 348 0010 72000F40 		.word	1074724978
+ 348 0010 73000F40 		.word	1074724979
  349              		.cfi_endproc
  350              	.LFE7:
  351              		.size	waterTimer_ReadControlRegister, .-waterTimer_ReadControlRegister
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  368              	.LCFI19:
  369              		.cfi_def_cfa_offset 16
  370 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 14
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 14
 
 
  371              	.LCFI20:
@@ -801,7 +801,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  386              	.L30:
  387 001a C046     		.align	2
  388              	.L29:
- 389 001c 72000F40 		.word	1074724978
+ 389 001c 73000F40 		.word	1074724979
  390              		.cfi_endproc
  391              	.LFE8:
  392              		.size	waterTimer_WriteControlRegister, .-waterTimer_WriteControlRegister
@@ -830,7 +830,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  388:.\Generated_Source\PSoC4/waterTimer.c **** *  The present value of the counter.
  389:.\Generated_Source\PSoC4/waterTimer.c **** *
  390:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
- 391:.\Generated_Source\PSoC4/waterTimer.c **** uint32 waterTimer_ReadPeriod(void) 
+ 391:.\Generated_Source\PSoC4/waterTimer.c **** uint16 waterTimer_ReadPeriod(void) 
  392:.\Generated_Source\PSoC4/waterTimer.c **** {
  401              		.loc 1 392 0
  402              		.cfi_startproc
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  404              	.LCFI21:
  405              		.cfi_def_cfa_offset 8
  406              		.cfi_offset 7, -8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 15
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 15
 
 
  407              		.cfi_offset 14, -4
@@ -846,36 +846,35 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  409              	.LCFI22:
  410              		.cfi_def_cfa_register 7
  393:.\Generated_Source\PSoC4/waterTimer.c ****    #if(waterTimer_UsingFixedFunction)
- 394:.\Generated_Source\PSoC4/waterTimer.c ****        return ((uint32)CY_GET_REG16(waterTimer_PERIOD_LSB_PTR));
+ 394:.\Generated_Source\PSoC4/waterTimer.c ****        return ((uint16)CY_GET_REG16(waterTimer_PERIOD_LSB_PTR));
  395:.\Generated_Source\PSoC4/waterTimer.c ****    #else
- 396:.\Generated_Source\PSoC4/waterTimer.c ****        return (CY_GET_REG24(waterTimer_PERIOD_LSB_PTR));
+ 396:.\Generated_Source\PSoC4/waterTimer.c ****        return (CY_GET_REG16(waterTimer_PERIOD_LSB_PTR));
  411              		.loc 1 396 0
- 412 0004 034B     		ldr	r3, .L33
- 413 0006 181C     		mov	r0, r3
- 414 0008 FFF7FEFF 		bl	CyGetReg24
- 415 000c 031C     		mov	r3, r0
+ 412 0004 024B     		ldr	r3, .L33
+ 413 0006 1B88     		ldrh	r3, [r3]
+ 414 0008 9BB2     		uxth	r3, r3
  397:.\Generated_Source\PSoC4/waterTimer.c ****    #endif /* (waterTimer_UsingFixedFunction) */
  398:.\Generated_Source\PSoC4/waterTimer.c **** }
- 416              		.loc 1 398 0
- 417 000e 181C     		mov	r0, r3
- 418 0010 BD46     		mov	sp, r7
- 419              		@ sp needed for prologue
- 420 0012 80BD     		pop	{r7, pc}
- 421              	.L34:
- 422              		.align	2
- 423              	.L33:
- 424 0014 20000F40 		.word	1074724896
- 425              		.cfi_endproc
- 426              	.LFE9:
- 427              		.size	waterTimer_ReadPeriod, .-waterTimer_ReadPeriod
- 428              		.section	.text.waterTimer_WritePeriod,"ax",%progbits
- 429              		.align	2
- 430              		.global	waterTimer_WritePeriod
- 431              		.code	16
- 432              		.thumb_func
- 433              		.type	waterTimer_WritePeriod, %function
- 434              	waterTimer_WritePeriod:
- 435              	.LFB10:
+ 415              		.loc 1 398 0
+ 416 000a 181C     		mov	r0, r3
+ 417 000c BD46     		mov	sp, r7
+ 418              		@ sp needed for prologue
+ 419 000e 80BD     		pop	{r7, pc}
+ 420              	.L34:
+ 421              		.align	2
+ 422              	.L33:
+ 423 0010 44100F40 		.word	1074729028
+ 424              		.cfi_endproc
+ 425              	.LFE9:
+ 426              		.size	waterTimer_ReadPeriod, .-waterTimer_ReadPeriod
+ 427              		.section	.text.waterTimer_WritePeriod,"ax",%progbits
+ 428              		.align	2
+ 429              		.global	waterTimer_WritePeriod
+ 430              		.code	16
+ 431              		.thumb_func
+ 432              		.type	waterTimer_WritePeriod, %function
+ 433              	waterTimer_WritePeriod:
+ 434              	.LFB10:
  399:.\Generated_Source\PSoC4/waterTimer.c **** 
  400:.\Generated_Source\PSoC4/waterTimer.c **** 
  401:.\Generated_Source\PSoC4/waterTimer.c **** /*******************************************************************************
@@ -894,36 +893,37 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  414:.\Generated_Source\PSoC4/waterTimer.c **** *  void
  415:.\Generated_Source\PSoC4/waterTimer.c **** *
  416:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
- 417:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_WritePeriod(uint32 period) 
+ 417:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_WritePeriod(uint16 period) 
  418:.\Generated_Source\PSoC4/waterTimer.c **** {
- 436              		.loc 1 418 0
- 437              		.cfi_startproc
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 16
+ 435              		.loc 1 418 0
+ 436              		.cfi_startproc
+ 437 0000 80B5     		push	{r7, lr}
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 16
 
 
- 438 0000 80B5     		push	{r7, lr}
- 439              	.LCFI23:
- 440              		.cfi_def_cfa_offset 8
- 441              		.cfi_offset 7, -8
- 442              		.cfi_offset 14, -4
- 443 0002 82B0     		sub	sp, sp, #8
- 444              	.LCFI24:
- 445              		.cfi_def_cfa_offset 16
- 446 0004 00AF     		add	r7, sp, #0
- 447              	.LCFI25:
- 448              		.cfi_def_cfa_register 7
- 449 0006 7860     		str	r0, [r7, #4]
+ 438              	.LCFI23:
+ 439              		.cfi_def_cfa_offset 8
+ 440              		.cfi_offset 7, -8
+ 441              		.cfi_offset 14, -4
+ 442 0002 82B0     		sub	sp, sp, #8
+ 443              	.LCFI24:
+ 444              		.cfi_def_cfa_offset 16
+ 445 0004 00AF     		add	r7, sp, #0
+ 446              	.LCFI25:
+ 447              		.cfi_def_cfa_register 7
+ 448 0006 021C     		mov	r2, r0
+ 449 0008 BB1D     		add	r3, r7, #6
+ 450 000a 1A80     		strh	r2, [r3]
  419:.\Generated_Source\PSoC4/waterTimer.c ****     #if(waterTimer_UsingFixedFunction)
  420:.\Generated_Source\PSoC4/waterTimer.c ****         uint16 period_temp = (uint16)period;
  421:.\Generated_Source\PSoC4/waterTimer.c ****         CY_SET_REG16(waterTimer_PERIOD_LSB_PTR, period_temp);
  422:.\Generated_Source\PSoC4/waterTimer.c ****     #else
- 423:.\Generated_Source\PSoC4/waterTimer.c ****         CY_SET_REG24(waterTimer_PERIOD_LSB_PTR, period);
- 450              		.loc 1 423 0
- 451 0008 044A     		ldr	r2, .L36
- 452 000a 7B68     		ldr	r3, [r7, #4]
- 453 000c 101C     		mov	r0, r2
- 454 000e 191C     		mov	r1, r3
- 455 0010 FFF7FEFF 		bl	CySetReg24
+ 423:.\Generated_Source\PSoC4/waterTimer.c ****         CY_SET_REG16(waterTimer_PERIOD_LSB_PTR, period);
+ 451              		.loc 1 423 0
+ 452 000c 034B     		ldr	r3, .L36
+ 453 000e BA1D     		add	r2, r7, #6
+ 454 0010 1288     		ldrh	r2, [r2]
+ 455 0012 1A80     		strh	r2, [r3]
  424:.\Generated_Source\PSoC4/waterTimer.c ****     #endif /*Write Period value with appropriate resolution suffix depending on UDB or fixed functi
  425:.\Generated_Source\PSoC4/waterTimer.c **** }
  456              		.loc 1 425 0
@@ -934,7 +934,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  461              	.L37:
  462 001a C046     		.align	2
  463              	.L36:
- 464 001c 20000F40 		.word	1074724896
+ 464 001c 44100F40 		.word	1074729028
  465              		.cfi_endproc
  466              	.LFE10:
  467              		.size	waterTimer_WritePeriod, .-waterTimer_WritePeriod
@@ -958,14 +958,14 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  435:.\Generated_Source\PSoC4/waterTimer.c **** * Parameters:
  436:.\Generated_Source\PSoC4/waterTimer.c **** *  void
  437:.\Generated_Source\PSoC4/waterTimer.c **** *
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 17
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 17
 
 
  438:.\Generated_Source\PSoC4/waterTimer.c **** * Return:
  439:.\Generated_Source\PSoC4/waterTimer.c **** *  Present Capture value.
  440:.\Generated_Source\PSoC4/waterTimer.c **** *
  441:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
- 442:.\Generated_Source\PSoC4/waterTimer.c **** uint32 waterTimer_ReadCapture(void) 
+ 442:.\Generated_Source\PSoC4/waterTimer.c **** uint16 waterTimer_ReadCapture(void) 
  443:.\Generated_Source\PSoC4/waterTimer.c **** {
  476              		.loc 1 443 0
  477              		.cfi_startproc
@@ -978,36 +978,35 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  484              	.LCFI27:
  485              		.cfi_def_cfa_register 7
  444:.\Generated_Source\PSoC4/waterTimer.c ****    #if(waterTimer_UsingFixedFunction)
- 445:.\Generated_Source\PSoC4/waterTimer.c ****        return ((uint32)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
+ 445:.\Generated_Source\PSoC4/waterTimer.c ****        return ((uint16)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
  446:.\Generated_Source\PSoC4/waterTimer.c ****    #else
- 447:.\Generated_Source\PSoC4/waterTimer.c ****        return (CY_GET_REG24(waterTimer_CAPTURE_LSB_PTR));
+ 447:.\Generated_Source\PSoC4/waterTimer.c ****        return (CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
  486              		.loc 1 447 0
- 487 0004 034B     		ldr	r3, .L40
- 488 0006 181C     		mov	r0, r3
- 489 0008 FFF7FEFF 		bl	CyGetReg24
- 490 000c 031C     		mov	r3, r0
+ 487 0004 024B     		ldr	r3, .L40
+ 488 0006 1B88     		ldrh	r3, [r3]
+ 489 0008 9BB2     		uxth	r3, r3
  448:.\Generated_Source\PSoC4/waterTimer.c ****    #endif /* (waterTimer_UsingFixedFunction) */
  449:.\Generated_Source\PSoC4/waterTimer.c **** }
- 491              		.loc 1 449 0
- 492 000e 181C     		mov	r0, r3
- 493 0010 BD46     		mov	sp, r7
- 494              		@ sp needed for prologue
- 495 0012 80BD     		pop	{r7, pc}
- 496              	.L41:
- 497              		.align	2
- 498              	.L40:
- 499 0014 40000F40 		.word	1074724928
- 500              		.cfi_endproc
- 501              	.LFE11:
- 502              		.size	waterTimer_ReadCapture, .-waterTimer_ReadCapture
- 503              		.section	.text.waterTimer_WriteCounter,"ax",%progbits
- 504              		.align	2
- 505              		.global	waterTimer_WriteCounter
- 506              		.code	16
- 507              		.thumb_func
- 508              		.type	waterTimer_WriteCounter, %function
- 509              	waterTimer_WriteCounter:
- 510              	.LFB12:
+ 490              		.loc 1 449 0
+ 491 000a 181C     		mov	r0, r3
+ 492 000c BD46     		mov	sp, r7
+ 493              		@ sp needed for prologue
+ 494 000e 80BD     		pop	{r7, pc}
+ 495              	.L41:
+ 496              		.align	2
+ 497              	.L40:
+ 498 0010 84100F40 		.word	1074729092
+ 499              		.cfi_endproc
+ 500              	.LFE11:
+ 501              		.size	waterTimer_ReadCapture, .-waterTimer_ReadCapture
+ 502              		.section	.text.waterTimer_WriteCounter,"ax",%progbits
+ 503              		.align	2
+ 504              		.global	waterTimer_WriteCounter
+ 505              		.code	16
+ 506              		.thumb_func
+ 507              		.type	waterTimer_WriteCounter, %function
+ 508              	waterTimer_WriteCounter:
+ 509              	.LFB12:
  450:.\Generated_Source\PSoC4/waterTimer.c **** 
  451:.\Generated_Source\PSoC4/waterTimer.c **** 
  452:.\Generated_Source\PSoC4/waterTimer.c **** /*******************************************************************************
@@ -1018,32 +1017,34 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  457:.\Generated_Source\PSoC4/waterTimer.c **** *  This funtion is used to set the counter to a specific value
  458:.\Generated_Source\PSoC4/waterTimer.c **** *
  459:.\Generated_Source\PSoC4/waterTimer.c **** * Parameters:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 18
-
-
  460:.\Generated_Source\PSoC4/waterTimer.c **** *  counter:  New counter value.
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 18
+
+
  461:.\Generated_Source\PSoC4/waterTimer.c **** *
  462:.\Generated_Source\PSoC4/waterTimer.c **** * Return:
  463:.\Generated_Source\PSoC4/waterTimer.c **** *  void
  464:.\Generated_Source\PSoC4/waterTimer.c **** *
  465:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
- 466:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_WriteCounter(uint32 counter) \
+ 466:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_WriteCounter(uint16 counter) \
  467:.\Generated_Source\PSoC4/waterTimer.c ****                                    
  468:.\Generated_Source\PSoC4/waterTimer.c **** {
- 511              		.loc 1 468 0
- 512              		.cfi_startproc
- 513 0000 80B5     		push	{r7, lr}
- 514              	.LCFI28:
- 515              		.cfi_def_cfa_offset 8
- 516              		.cfi_offset 7, -8
- 517              		.cfi_offset 14, -4
- 518 0002 82B0     		sub	sp, sp, #8
- 519              	.LCFI29:
- 520              		.cfi_def_cfa_offset 16
- 521 0004 00AF     		add	r7, sp, #0
- 522              	.LCFI30:
- 523              		.cfi_def_cfa_register 7
- 524 0006 7860     		str	r0, [r7, #4]
+ 510              		.loc 1 468 0
+ 511              		.cfi_startproc
+ 512 0000 80B5     		push	{r7, lr}
+ 513              	.LCFI28:
+ 514              		.cfi_def_cfa_offset 8
+ 515              		.cfi_offset 7, -8
+ 516              		.cfi_offset 14, -4
+ 517 0002 82B0     		sub	sp, sp, #8
+ 518              	.LCFI29:
+ 519              		.cfi_def_cfa_offset 16
+ 520 0004 00AF     		add	r7, sp, #0
+ 521              	.LCFI30:
+ 522              		.cfi_def_cfa_register 7
+ 523 0006 021C     		mov	r2, r0
+ 524 0008 BB1D     		add	r3, r7, #6
+ 525 000a 1A80     		strh	r2, [r3]
  469:.\Generated_Source\PSoC4/waterTimer.c ****    #if(waterTimer_UsingFixedFunction)
  470:.\Generated_Source\PSoC4/waterTimer.c ****         /* This functionality is removed until a FixedFunction HW update to
  471:.\Generated_Source\PSoC4/waterTimer.c ****          * allow this register to be written
@@ -1051,13 +1052,12 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  473:.\Generated_Source\PSoC4/waterTimer.c ****         CY_SET_REG16(waterTimer_COUNTER_LSB_PTR, (uint16)counter);
  474:.\Generated_Source\PSoC4/waterTimer.c ****         
  475:.\Generated_Source\PSoC4/waterTimer.c ****     #else
- 476:.\Generated_Source\PSoC4/waterTimer.c ****         CY_SET_REG24(waterTimer_COUNTER_LSB_PTR, counter);
- 525              		.loc 1 476 0
- 526 0008 044A     		ldr	r2, .L43
- 527 000a 7B68     		ldr	r3, [r7, #4]
- 528 000c 101C     		mov	r0, r2
- 529 000e 191C     		mov	r1, r3
- 530 0010 FFF7FEFF 		bl	CySetReg24
+ 476:.\Generated_Source\PSoC4/waterTimer.c ****         CY_SET_REG16(waterTimer_COUNTER_LSB_PTR, counter);
+ 526              		.loc 1 476 0
+ 527 000c 034B     		ldr	r3, .L43
+ 528 000e BA1D     		add	r2, r7, #6
+ 529 0010 1288     		ldrh	r2, [r2]
+ 530 0012 1A80     		strh	r2, [r3]
  477:.\Generated_Source\PSoC4/waterTimer.c ****     #endif /* Set Write Counter only for the UDB implementation (Write Counter not available in fix
  478:.\Generated_Source\PSoC4/waterTimer.c **** }
  531              		.loc 1 478 0
@@ -1068,7 +1068,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  536              	.L44:
  537 001a C046     		.align	2
  538              	.L43:
- 539 001c 00000F40 		.word	1074724864
+ 539 001c 04100F40 		.word	1074728964
  540              		.cfi_endproc
  541              	.LFE12:
  542              		.size	waterTimer_WriteCounter, .-waterTimer_WriteCounter
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  546              		.code	16
  547              		.thumb_func
  548              		.type	waterTimer_ReadCounter, %function
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 19
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 19
 
 
  549              	waterTimer_ReadCounter:
@@ -1099,7 +1099,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  492:.\Generated_Source\PSoC4/waterTimer.c **** *  Present compare value.
  493:.\Generated_Source\PSoC4/waterTimer.c **** *
  494:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
- 495:.\Generated_Source\PSoC4/waterTimer.c **** uint32 waterTimer_ReadCounter(void) 
+ 495:.\Generated_Source\PSoC4/waterTimer.c **** uint16 waterTimer_ReadCounter(void) 
  496:.\Generated_Source\PSoC4/waterTimer.c **** {
  551              		.loc 1 496 0
  552              		.cfi_startproc
@@ -1117,45 +1117,44 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  500:.\Generated_Source\PSoC4/waterTimer.c ****     /* It is up to the user code to make sure there isn't already captured data in the FIFO */
  501:.\Generated_Source\PSoC4/waterTimer.c ****     (void)waterTimer_COUNTER_LSB;
  561              		.loc 1 501 0
- 562 0004 044B     		ldr	r3, .L47
- 563 0006 1B68     		ldr	r3, [r3]
+ 562 0004 034B     		ldr	r3, .L47
+ 563 0006 1B88     		ldrh	r3, [r3]
  502:.\Generated_Source\PSoC4/waterTimer.c **** 
  503:.\Generated_Source\PSoC4/waterTimer.c ****     /* Read the data from the FIFO (or capture register for Fixed Function)*/
  504:.\Generated_Source\PSoC4/waterTimer.c ****     #if(waterTimer_UsingFixedFunction)
- 505:.\Generated_Source\PSoC4/waterTimer.c ****         return ((uint32)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
+ 505:.\Generated_Source\PSoC4/waterTimer.c ****         return ((uint16)CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
  506:.\Generated_Source\PSoC4/waterTimer.c ****     #else
- 507:.\Generated_Source\PSoC4/waterTimer.c ****         return (CY_GET_REG24(waterTimer_CAPTURE_LSB_PTR));
+ 507:.\Generated_Source\PSoC4/waterTimer.c ****         return (CY_GET_REG16(waterTimer_CAPTURE_LSB_PTR));
  564              		.loc 1 507 0
- 565 0008 044B     		ldr	r3, .L47+4
- 566 000a 181C     		mov	r0, r3
- 567 000c FFF7FEFF 		bl	CyGetReg24
- 568 0010 031C     		mov	r3, r0
+ 565 0008 034B     		ldr	r3, .L47+4
+ 566 000a 1B88     		ldrh	r3, [r3]
+ 567 000c 9BB2     		uxth	r3, r3
  508:.\Generated_Source\PSoC4/waterTimer.c ****     #endif /* (waterTimer_UsingFixedFunction) */
  509:.\Generated_Source\PSoC4/waterTimer.c **** }
- 569              		.loc 1 509 0
- 570 0012 181C     		mov	r0, r3
- 571 0014 BD46     		mov	sp, r7
- 572              		@ sp needed for prologue
- 573 0016 80BD     		pop	{r7, pc}
- 574              	.L48:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 20
+ 568              		.loc 1 509 0
+ 569 000e 181C     		mov	r0, r3
+ 570 0010 BD46     		mov	sp, r7
+ 571              		@ sp needed for prologue
+ 572 0012 80BD     		pop	{r7, pc}
+ 573              	.L48:
+ 574              		.align	2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 20
 
 
- 575              		.align	2
- 576              	.L47:
- 577 0018 00000F40 		.word	1074724864
- 578 001c 40000F40 		.word	1074724928
- 579              		.cfi_endproc
- 580              	.LFE13:
- 581              		.size	waterTimer_ReadCounter, .-waterTimer_ReadCounter
- 582              		.section	.text.waterTimer_ClearFIFO,"ax",%progbits
- 583              		.align	2
- 584              		.global	waterTimer_ClearFIFO
- 585              		.code	16
- 586              		.thumb_func
- 587              		.type	waterTimer_ClearFIFO, %function
- 588              	waterTimer_ClearFIFO:
- 589              	.LFB14:
+ 575              	.L47:
+ 576 0014 04100F40 		.word	1074728964
+ 577 0018 84100F40 		.word	1074729092
+ 578              		.cfi_endproc
+ 579              	.LFE13:
+ 580              		.size	waterTimer_ReadCounter, .-waterTimer_ReadCounter
+ 581              		.section	.text.waterTimer_ClearFIFO,"ax",%progbits
+ 582              		.align	2
+ 583              		.global	waterTimer_ClearFIFO
+ 584              		.code	16
+ 585              		.thumb_func
+ 586              		.type	waterTimer_ClearFIFO, %function
+ 587              	waterTimer_ClearFIFO:
+ 588              	.LFB14:
  510:.\Generated_Source\PSoC4/waterTimer.c **** 
  511:.\Generated_Source\PSoC4/waterTimer.c **** 
  512:.\Generated_Source\PSoC4/waterTimer.c **** #if(!waterTimer_UsingFixedFunction) /* UDB Specific Functions */
@@ -1198,10 +1197,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  549:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_SetCaptureMode(uint8 captureMode) 
  550:.\Generated_Source\PSoC4/waterTimer.c **** {
  551:.\Generated_Source\PSoC4/waterTimer.c ****     /* This must only set to two bits of the control register associated */
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 21
-
-
  552:.\Generated_Source\PSoC4/waterTimer.c ****     captureMode = ((uint8)((uint8)captureMode << waterTimer_CTRL_CAP_MODE_SHIFT));
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 21
+
+
  553:.\Generated_Source\PSoC4/waterTimer.c ****     captureMode &= (waterTimer_CTRL_CAP_MODE_MASK);
  554:.\Generated_Source\PSoC4/waterTimer.c **** 
  555:.\Generated_Source\PSoC4/waterTimer.c ****     /* Clear the Current Setting */
@@ -1258,10 +1257,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  606:.\Generated_Source\PSoC4/waterTimer.c **** *
  607:.\Generated_Source\PSoC4/waterTimer.c **** * Summary:
  608:.\Generated_Source\PSoC4/waterTimer.c **** *  Sets the control bit enabling Hardware Trigger mode
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 22
-
-
  609:.\Generated_Source\PSoC4/waterTimer.c **** *
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 22
+
+
  610:.\Generated_Source\PSoC4/waterTimer.c **** * Parameters:
  611:.\Generated_Source\PSoC4/waterTimer.c **** *  void
  612:.\Generated_Source\PSoC4/waterTimer.c **** *
@@ -1318,10 +1317,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  663:.\Generated_Source\PSoC4/waterTimer.c **** *                   to delay by the same number of captures.
  664:.\Generated_Source\PSoC4/waterTimer.c **** *
  665:.\Generated_Source\PSoC4/waterTimer.c **** * Return:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 23
-
-
  666:.\Generated_Source\PSoC4/waterTimer.c **** *  void
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 23
+
+
  667:.\Generated_Source\PSoC4/waterTimer.c **** *
  668:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
  669:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_SetInterruptCount(uint8 interruptCount) 
@@ -1378,10 +1377,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  720:.\Generated_Source\PSoC4/waterTimer.c **** *
  721:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
  722:.\Generated_Source\PSoC4/waterTimer.c **** uint8 waterTimer_ReadCaptureCount(void) 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 24
-
-
  723:.\Generated_Source\PSoC4/waterTimer.c **** {
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 24
+
+
  724:.\Generated_Source\PSoC4/waterTimer.c ****     return ((uint8)waterTimer_CAP_COUNT);
  725:.\Generated_Source\PSoC4/waterTimer.c **** }
  726:.\Generated_Source\PSoC4/waterTimer.c **** #endif /* waterTimer_UsingHWCaptureCounter */
@@ -1403,1334 +1402,1281 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 1
  742:.\Generated_Source\PSoC4/waterTimer.c **** *******************************************************************************/
  743:.\Generated_Source\PSoC4/waterTimer.c **** void waterTimer_ClearFIFO(void) 
  744:.\Generated_Source\PSoC4/waterTimer.c **** {
- 590              		.loc 1 744 0
- 591              		.cfi_startproc
- 592 0000 80B5     		push	{r7, lr}
- 593              	.LCFI33:
- 594              		.cfi_def_cfa_offset 8
- 595              		.cfi_offset 7, -8
- 596              		.cfi_offset 14, -4
- 597 0002 00AF     		add	r7, sp, #0
- 598              	.LCFI34:
- 599              		.cfi_def_cfa_register 7
+ 589              		.loc 1 744 0
+ 590              		.cfi_startproc
+ 591 0000 80B5     		push	{r7, lr}
+ 592              	.LCFI33:
+ 593              		.cfi_def_cfa_offset 8
+ 594              		.cfi_offset 7, -8
+ 595              		.cfi_offset 14, -4
+ 596 0002 00AF     		add	r7, sp, #0
+ 597              	.LCFI34:
+ 598              		.cfi_def_cfa_register 7
  745:.\Generated_Source\PSoC4/waterTimer.c ****     while(0u != (waterTimer_ReadStatusRegister() & waterTimer_STATUS_FIFONEMP))
- 600              		.loc 1 745 0
- 601 0004 01E0     		b	.L50
- 602              	.L51:
+ 599              		.loc 1 745 0
+ 600 0004 01E0     		b	.L50
+ 601              	.L51:
  746:.\Generated_Source\PSoC4/waterTimer.c ****     {
  747:.\Generated_Source\PSoC4/waterTimer.c ****         (void)waterTimer_ReadCapture();
- 603              		.loc 1 747 0
- 604 0006 FFF7FEFF 		bl	waterTimer_ReadCapture
- 605              	.L50:
+ 602              		.loc 1 747 0
+ 603 0006 FFF7FEFF 		bl	waterTimer_ReadCapture
+ 604              	.L50:
  745:.\Generated_Source\PSoC4/waterTimer.c ****     while(0u != (waterTimer_ReadStatusRegister() & waterTimer_STATUS_FIFONEMP))
- 606              		.loc 1 745 0 discriminator 1
- 607 000a FFF7FEFF 		bl	waterTimer_ReadStatusRegister
- 608 000e 031C     		mov	r3, r0
- 609 0010 1A1C     		mov	r2, r3
- 610 0012 0823     		mov	r3, #8
- 611 0014 1340     		and	r3, r2
- 612 0016 F6D1     		bne	.L51
+ 605              		.loc 1 745 0 discriminator 1
+ 606 000a FFF7FEFF 		bl	waterTimer_ReadStatusRegister
+ 607 000e 031C     		mov	r3, r0
+ 608 0010 1A1C     		mov	r2, r3
+ 609 0012 0823     		mov	r3, #8
+ 610 0014 1340     		and	r3, r2
+ 611 0016 F6D1     		bne	.L51
  748:.\Generated_Source\PSoC4/waterTimer.c ****     }
  749:.\Generated_Source\PSoC4/waterTimer.c **** }
- 613              		.loc 1 749 0
- 614 0018 BD46     		mov	sp, r7
- 615              		@ sp needed for prologue
- 616 001a 80BD     		pop	{r7, pc}
- 617              		.cfi_endproc
- 618              	.LFE14:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 25
+ 612              		.loc 1 749 0
+ 613 0018 BD46     		mov	sp, r7
+ 614              		@ sp needed for prologue
+ 615 001a 80BD     		pop	{r7, pc}
+ 616              		.cfi_endproc
+ 617              	.LFE14:
+ 618              		.size	waterTimer_ClearFIFO, .-waterTimer_ClearFIFO
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 25
 
 
- 619              		.size	waterTimer_ClearFIFO, .-waterTimer_ClearFIFO
- 620              		.text
- 621              	.Letext0:
- 622              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
- 623              		.section	.debug_info,"",%progbits
- 624              	.Ldebug_info0:
- 625 0000 9C020000 		.4byte	0x29c
- 626 0004 0200     		.2byte	0x2
- 627 0006 00000000 		.4byte	.Ldebug_abbrev0
- 628 000a 04       		.byte	0x4
- 629 000b 01       		.uleb128 0x1
- 630 000c 46020000 		.4byte	.LASF36
- 631 0010 01       		.byte	0x1
- 632 0011 84000000 		.4byte	.LASF37
- 633 0015 FA010000 		.4byte	.LASF38
- 634 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 635 001d 00000000 		.4byte	0
- 636 0021 00000000 		.4byte	0
- 637 0025 00000000 		.4byte	.Ldebug_line0
- 638 0029 02       		.uleb128 0x2
- 639 002a 01       		.byte	0x1
- 640 002b 06       		.byte	0x6
- 641 002c D2020000 		.4byte	.LASF0
- 642 0030 02       		.uleb128 0x2
- 643 0031 01       		.byte	0x1
- 644 0032 08       		.byte	0x8
- 645 0033 AA000000 		.4byte	.LASF1
- 646 0037 02       		.uleb128 0x2
- 647 0038 02       		.byte	0x2
- 648 0039 05       		.byte	0x5
- 649 003a 2B020000 		.4byte	.LASF2
- 650 003e 02       		.uleb128 0x2
- 651 003f 02       		.byte	0x2
- 652 0040 07       		.byte	0x7
- 653 0041 2C000000 		.4byte	.LASF3
- 654 0045 02       		.uleb128 0x2
- 655 0046 04       		.byte	0x4
- 656 0047 05       		.byte	0x5
- 657 0048 AD020000 		.4byte	.LASF4
- 658 004c 02       		.uleb128 0x2
- 659 004d 04       		.byte	0x4
- 660 004e 07       		.byte	0x7
- 661 004f BD000000 		.4byte	.LASF5
- 662 0053 02       		.uleb128 0x2
- 663 0054 08       		.byte	0x8
- 664 0055 05       		.byte	0x5
- 665 0056 DE010000 		.4byte	.LASF6
- 666 005a 02       		.uleb128 0x2
- 667 005b 08       		.byte	0x8
- 668 005c 07       		.byte	0x7
- 669 005d AE010000 		.4byte	.LASF7
- 670 0061 03       		.uleb128 0x3
- 671 0062 04       		.byte	0x4
- 672 0063 05       		.byte	0x5
- 673 0064 696E7400 		.ascii	"int\000"
- 674 0068 02       		.uleb128 0x2
- 675 0069 04       		.byte	0x4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 26
+ 619              		.text
+ 620              	.Letext0:
+ 621              		.file 2 ".\\Generated_Source\\PSoC4\\cytypes.h"
+ 622              		.section	.debug_info,"",%progbits
+ 623              	.Ldebug_info0:
+ 624 0000 9C020000 		.4byte	0x29c
+ 625 0004 0200     		.2byte	0x2
+ 626 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 627 000a 04       		.byte	0x4
+ 628 000b 01       		.uleb128 0x1
+ 629 000c 46020000 		.4byte	.LASF36
+ 630 0010 01       		.byte	0x1
+ 631 0011 94000000 		.4byte	.LASF37
+ 632 0015 0A020000 		.4byte	.LASF38
+ 633 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 634 001d 00000000 		.4byte	0
+ 635 0021 00000000 		.4byte	0
+ 636 0025 00000000 		.4byte	.Ldebug_line0
+ 637 0029 02       		.uleb128 0x2
+ 638 002a 01       		.byte	0x1
+ 639 002b 06       		.byte	0x6
+ 640 002c D2020000 		.4byte	.LASF0
+ 641 0030 02       		.uleb128 0x2
+ 642 0031 01       		.byte	0x1
+ 643 0032 08       		.byte	0x8
+ 644 0033 BA000000 		.4byte	.LASF1
+ 645 0037 02       		.uleb128 0x2
+ 646 0038 02       		.byte	0x2
+ 647 0039 05       		.byte	0x5
+ 648 003a 2B020000 		.4byte	.LASF2
+ 649 003e 02       		.uleb128 0x2
+ 650 003f 02       		.byte	0x2
+ 651 0040 07       		.byte	0x7
+ 652 0041 3C000000 		.4byte	.LASF3
+ 653 0045 02       		.uleb128 0x2
+ 654 0046 04       		.byte	0x4
+ 655 0047 05       		.byte	0x5
+ 656 0048 AD020000 		.4byte	.LASF4
+ 657 004c 02       		.uleb128 0x2
+ 658 004d 04       		.byte	0x4
+ 659 004e 07       		.byte	0x7
+ 660 004f CD000000 		.4byte	.LASF5
+ 661 0053 02       		.uleb128 0x2
+ 662 0054 08       		.byte	0x8
+ 663 0055 05       		.byte	0x5
+ 664 0056 EE010000 		.4byte	.LASF6
+ 665 005a 02       		.uleb128 0x2
+ 666 005b 08       		.byte	0x8
+ 667 005c 07       		.byte	0x7
+ 668 005d BE010000 		.4byte	.LASF7
+ 669 0061 03       		.uleb128 0x3
+ 670 0062 04       		.byte	0x4
+ 671 0063 05       		.byte	0x5
+ 672 0064 696E7400 		.ascii	"int\000"
+ 673 0068 02       		.uleb128 0x2
+ 674 0069 04       		.byte	0x4
+ 675 006a 07       		.byte	0x7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 26
 
 
- 676 006a 07       		.byte	0x7
- 677 006b A1010000 		.4byte	.LASF8
- 678 006f 04       		.uleb128 0x4
- 679 0070 EF000000 		.4byte	.LASF9
- 680 0074 02       		.byte	0x2
- 681 0075 5B       		.byte	0x5b
- 682 0076 30000000 		.4byte	0x30
- 683 007a 04       		.uleb128 0x4
- 684 007b 85010000 		.4byte	.LASF10
- 685 007f 02       		.byte	0x2
- 686 0080 5D       		.byte	0x5d
- 687 0081 4C000000 		.4byte	0x4c
- 688 0085 02       		.uleb128 0x2
- 689 0086 04       		.byte	0x4
- 690 0087 04       		.byte	0x4
- 691 0088 76000000 		.4byte	.LASF11
- 692 008c 02       		.uleb128 0x2
- 693 008d 08       		.byte	0x8
- 694 008e 04       		.byte	0x4
- 695 008f 50010000 		.4byte	.LASF12
- 696 0093 02       		.uleb128 0x2
- 697 0094 01       		.byte	0x1
- 698 0095 08       		.byte	0x8
- 699 0096 3F000000 		.4byte	.LASF13
- 700 009a 04       		.uleb128 0x4
- 701 009b B8000000 		.4byte	.LASF14
- 702 009f 02       		.byte	0x2
- 703 00a0 F0       		.byte	0xf0
- 704 00a1 A5000000 		.4byte	0xa5
- 705 00a5 05       		.uleb128 0x5
- 706 00a6 6F000000 		.4byte	0x6f
- 707 00aa 04       		.uleb128 0x4
- 708 00ab 00000000 		.4byte	.LASF15
- 709 00af 02       		.byte	0x2
- 710 00b0 F2       		.byte	0xf2
- 711 00b1 B5000000 		.4byte	0xb5
- 712 00b5 05       		.uleb128 0x5
- 713 00b6 7A000000 		.4byte	0x7a
- 714 00ba 02       		.uleb128 0x2
- 715 00bb 04       		.byte	0x4
- 716 00bc 07       		.byte	0x7
- 717 00bd D5010000 		.4byte	.LASF16
- 718 00c1 06       		.uleb128 0x6
- 719 00c2 01       		.byte	0x1
- 720 00c3 C5010000 		.4byte	.LASF20
- 721 00c7 01       		.byte	0x1
- 722 00c8 2B       		.byte	0x2b
- 723 00c9 01       		.byte	0x1
- 724 00ca 00000000 		.4byte	.LFB0
- 725 00ce 54000000 		.4byte	.LFE0
- 726 00d2 00000000 		.4byte	.LLST0
- 727 00d6 01       		.byte	0x1
- 728 00d7 EA000000 		.4byte	0xea
- 729 00db 07       		.uleb128 0x7
- 730 00dc DE020000 		.4byte	.LASF39
- 731 00e0 01       		.byte	0x1
- 732 00e1 2F       		.byte	0x2f
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 27
+ 676 006b B1010000 		.4byte	.LASF8
+ 677 006f 04       		.uleb128 0x4
+ 678 0070 FF000000 		.4byte	.LASF9
+ 679 0074 02       		.byte	0x2
+ 680 0075 5B       		.byte	0x5b
+ 681 0076 30000000 		.4byte	0x30
+ 682 007a 04       		.uleb128 0x4
+ 683 007b 7D010000 		.4byte	.LASF10
+ 684 007f 02       		.byte	0x2
+ 685 0080 5C       		.byte	0x5c
+ 686 0081 3E000000 		.4byte	0x3e
+ 687 0085 02       		.uleb128 0x2
+ 688 0086 04       		.byte	0x4
+ 689 0087 04       		.byte	0x4
+ 690 0088 86000000 		.4byte	.LASF11
+ 691 008c 02       		.uleb128 0x2
+ 692 008d 08       		.byte	0x8
+ 693 008e 04       		.byte	0x4
+ 694 008f 60010000 		.4byte	.LASF12
+ 695 0093 02       		.uleb128 0x2
+ 696 0094 01       		.byte	0x1
+ 697 0095 08       		.byte	0x8
+ 698 0096 4F000000 		.4byte	.LASF13
+ 699 009a 04       		.uleb128 0x4
+ 700 009b C8000000 		.4byte	.LASF14
+ 701 009f 02       		.byte	0x2
+ 702 00a0 F0       		.byte	0xf0
+ 703 00a1 A5000000 		.4byte	0xa5
+ 704 00a5 05       		.uleb128 0x5
+ 705 00a6 6F000000 		.4byte	0x6f
+ 706 00aa 04       		.uleb128 0x4
+ 707 00ab 00000000 		.4byte	.LASF15
+ 708 00af 02       		.byte	0x2
+ 709 00b0 F1       		.byte	0xf1
+ 710 00b1 B5000000 		.4byte	0xb5
+ 711 00b5 05       		.uleb128 0x5
+ 712 00b6 7A000000 		.4byte	0x7a
+ 713 00ba 02       		.uleb128 0x2
+ 714 00bb 04       		.byte	0x4
+ 715 00bc 07       		.byte	0x7
+ 716 00bd E5010000 		.4byte	.LASF16
+ 717 00c1 06       		.uleb128 0x6
+ 718 00c2 01       		.byte	0x1
+ 719 00c3 D5010000 		.4byte	.LASF20
+ 720 00c7 01       		.byte	0x1
+ 721 00c8 2B       		.byte	0x2b
+ 722 00c9 01       		.byte	0x1
+ 723 00ca 00000000 		.4byte	.LFB0
+ 724 00ce 54000000 		.4byte	.LFE0
+ 725 00d2 00000000 		.4byte	.LLST0
+ 726 00d6 01       		.byte	0x1
+ 727 00d7 EA000000 		.4byte	0xea
+ 728 00db 07       		.uleb128 0x7
+ 729 00dc DE020000 		.4byte	.LASF39
+ 730 00e0 01       		.byte	0x1
+ 731 00e1 2F       		.byte	0x2f
+ 732 00e2 6F000000 		.4byte	0x6f
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 27
 
 
- 733 00e2 6F000000 		.4byte	0x6f
- 734 00e6 02       		.byte	0x2
- 735 00e7 91       		.byte	0x91
- 736 00e8 6F       		.sleb128 -17
- 737 00e9 00       		.byte	0
- 738 00ea 08       		.uleb128 0x8
- 739 00eb 01       		.byte	0x1
- 740 00ec FD000000 		.4byte	.LASF17
- 741 00f0 01       		.byte	0x1
- 742 00f1 B3       		.byte	0xb3
- 743 00f2 01       		.byte	0x1
- 744 00f3 00000000 		.4byte	.LFB1
- 745 00f7 20000000 		.4byte	.LFE1
- 746 00fb 38000000 		.4byte	.LLST1
- 747 00ff 01       		.byte	0x1
- 748 0100 09       		.uleb128 0x9
- 749 0101 01       		.byte	0x1
- 750 0102 35020000 		.4byte	.LASF18
- 751 0106 01       		.byte	0x1
- 752 0107 D6       		.byte	0xd6
- 753 0108 01       		.byte	0x1
- 754 0109 00000000 		.4byte	.LFB2
- 755 010d 24000000 		.4byte	.LFE2
- 756 0111 64000000 		.4byte	.LLST2
- 757 0115 01       		.byte	0x1
- 758 0116 08       		.uleb128 0x8
- 759 0117 01       		.byte	0x1
- 760 0118 1B020000 		.4byte	.LASF19
- 761 011c 01       		.byte	0x1
- 762 011d F6       		.byte	0xf6
- 763 011e 01       		.byte	0x1
- 764 011f 00000000 		.4byte	.LFB3
- 765 0123 1C000000 		.4byte	.LFE3
- 766 0127 90000000 		.4byte	.LLST3
- 767 012b 01       		.byte	0x1
- 768 012c 0A       		.uleb128 0xa
- 769 012d 01       		.byte	0x1
- 770 012e B6020000 		.4byte	.LASF21
- 771 0132 01       		.byte	0x1
- 772 0133 1601     		.2byte	0x116
- 773 0135 01       		.byte	0x1
- 774 0136 00000000 		.4byte	.LFB4
- 775 013a 20000000 		.4byte	.LFE4
- 776 013e BC000000 		.4byte	.LLST4
- 777 0142 01       		.byte	0x1
- 778 0143 57010000 		.4byte	0x157
- 779 0147 0B       		.uleb128 0xb
- 780 0148 EC010000 		.4byte	.LASF26
- 781 014c 01       		.byte	0x1
- 782 014d 1601     		.2byte	0x116
- 783 014f 6F000000 		.4byte	0x6f
- 784 0153 02       		.byte	0x2
- 785 0154 91       		.byte	0x91
- 786 0155 77       		.sleb128 -9
- 787 0156 00       		.byte	0
- 788 0157 0C       		.uleb128 0xc
- 789 0158 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 28
+ 733 00e6 02       		.byte	0x2
+ 734 00e7 91       		.byte	0x91
+ 735 00e8 6F       		.sleb128 -17
+ 736 00e9 00       		.byte	0
+ 737 00ea 08       		.uleb128 0x8
+ 738 00eb 01       		.byte	0x1
+ 739 00ec 0D010000 		.4byte	.LASF17
+ 740 00f0 01       		.byte	0x1
+ 741 00f1 B3       		.byte	0xb3
+ 742 00f2 01       		.byte	0x1
+ 743 00f3 00000000 		.4byte	.LFB1
+ 744 00f7 20000000 		.4byte	.LFE1
+ 745 00fb 38000000 		.4byte	.LLST1
+ 746 00ff 01       		.byte	0x1
+ 747 0100 09       		.uleb128 0x9
+ 748 0101 01       		.byte	0x1
+ 749 0102 35020000 		.4byte	.LASF18
+ 750 0106 01       		.byte	0x1
+ 751 0107 D6       		.byte	0xd6
+ 752 0108 01       		.byte	0x1
+ 753 0109 00000000 		.4byte	.LFB2
+ 754 010d 24000000 		.4byte	.LFE2
+ 755 0111 64000000 		.4byte	.LLST2
+ 756 0115 01       		.byte	0x1
+ 757 0116 08       		.uleb128 0x8
+ 758 0117 01       		.byte	0x1
+ 759 0118 06000000 		.4byte	.LASF19
+ 760 011c 01       		.byte	0x1
+ 761 011d F6       		.byte	0xf6
+ 762 011e 01       		.byte	0x1
+ 763 011f 00000000 		.4byte	.LFB3
+ 764 0123 1C000000 		.4byte	.LFE3
+ 765 0127 90000000 		.4byte	.LLST3
+ 766 012b 01       		.byte	0x1
+ 767 012c 0A       		.uleb128 0xa
+ 768 012d 01       		.byte	0x1
+ 769 012e B6020000 		.4byte	.LASF21
+ 770 0132 01       		.byte	0x1
+ 771 0133 1601     		.2byte	0x116
+ 772 0135 01       		.byte	0x1
+ 773 0136 00000000 		.4byte	.LFB4
+ 774 013a 20000000 		.4byte	.LFE4
+ 775 013e BC000000 		.4byte	.LLST4
+ 776 0142 01       		.byte	0x1
+ 777 0143 57010000 		.4byte	0x157
+ 778 0147 0B       		.uleb128 0xb
+ 779 0148 FC010000 		.4byte	.LASF26
+ 780 014c 01       		.byte	0x1
+ 781 014d 1601     		.2byte	0x116
+ 782 014f 6F000000 		.4byte	0x6f
+ 783 0153 02       		.byte	0x2
+ 784 0154 91       		.byte	0x91
+ 785 0155 77       		.sleb128 -9
+ 786 0156 00       		.byte	0
+ 787 0157 0C       		.uleb128 0xc
+ 788 0158 01       		.byte	0x1
+ 789 0159 54000000 		.4byte	.LASF22
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 28
 
 
- 790 0159 44000000 		.4byte	.LASF22
- 791 015d 01       		.byte	0x1
- 792 015e 2D01     		.2byte	0x12d
- 793 0160 01       		.byte	0x1
- 794 0161 00000000 		.4byte	.LFB5
- 795 0165 10000000 		.4byte	.LFE5
- 796 0169 F4000000 		.4byte	.LLST5
- 797 016d 01       		.byte	0x1
- 798 016e 0D       		.uleb128 0xd
- 799 016f 01       		.byte	0x1
- 800 0170 8F020000 		.4byte	.LASF23
- 801 0174 01       		.byte	0x1
- 802 0175 4801     		.2byte	0x148
- 803 0177 01       		.byte	0x1
- 804 0178 6F000000 		.4byte	0x6f
- 805 017c 00000000 		.4byte	.LFB6
- 806 0180 14000000 		.4byte	.LFE6
- 807 0184 20010000 		.4byte	.LLST6
- 808 0188 01       		.byte	0x1
- 809 0189 0D       		.uleb128 0xd
- 810 018a 01       		.byte	0x1
- 811 018b 06000000 		.4byte	.LASF24
- 812 018f 01       		.byte	0x1
- 813 0190 5F01     		.2byte	0x15f
- 814 0192 01       		.byte	0x1
- 815 0193 6F000000 		.4byte	0x6f
- 816 0197 00000000 		.4byte	.LFB7
- 817 019b 14000000 		.4byte	.LFE7
- 818 019f 4C010000 		.4byte	.LLST7
- 819 01a3 01       		.byte	0x1
- 820 01a4 0A       		.uleb128 0xa
- 821 01a5 01       		.byte	0x1
- 822 01a6 CF000000 		.4byte	.LASF25
- 823 01aa 01       		.byte	0x1
- 824 01ab 7201     		.2byte	0x172
- 825 01ad 01       		.byte	0x1
- 826 01ae 00000000 		.4byte	.LFB8
- 827 01b2 20000000 		.4byte	.LFE8
- 828 01b6 78010000 		.4byte	.LLST8
- 829 01ba 01       		.byte	0x1
- 830 01bb CF010000 		.4byte	0x1cf
- 831 01bf 0B       		.uleb128 0xb
- 832 01c0 F5000000 		.4byte	.LASF27
- 833 01c4 01       		.byte	0x1
- 834 01c5 7201     		.2byte	0x172
- 835 01c7 6F000000 		.4byte	0x6f
- 836 01cb 02       		.byte	0x2
- 837 01cc 91       		.byte	0x91
- 838 01cd 77       		.sleb128 -9
- 839 01ce 00       		.byte	0
- 840 01cf 0E       		.uleb128 0xe
- 841 01d0 01       		.byte	0x1
- 842 01d1 57010000 		.4byte	.LASF28
- 843 01d5 01       		.byte	0x1
- 844 01d6 8701     		.2byte	0x187
- 845 01d8 01       		.byte	0x1
- 846 01d9 7A000000 		.4byte	0x7a
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 29
+ 790 015d 01       		.byte	0x1
+ 791 015e 2D01     		.2byte	0x12d
+ 792 0160 01       		.byte	0x1
+ 793 0161 00000000 		.4byte	.LFB5
+ 794 0165 10000000 		.4byte	.LFE5
+ 795 0169 F4000000 		.4byte	.LLST5
+ 796 016d 01       		.byte	0x1
+ 797 016e 0D       		.uleb128 0xd
+ 798 016f 01       		.byte	0x1
+ 799 0170 8F020000 		.4byte	.LASF23
+ 800 0174 01       		.byte	0x1
+ 801 0175 4801     		.2byte	0x148
+ 802 0177 01       		.byte	0x1
+ 803 0178 6F000000 		.4byte	0x6f
+ 804 017c 00000000 		.4byte	.LFB6
+ 805 0180 14000000 		.4byte	.LFE6
+ 806 0184 20010000 		.4byte	.LLST6
+ 807 0188 01       		.byte	0x1
+ 808 0189 0D       		.uleb128 0xd
+ 809 018a 01       		.byte	0x1
+ 810 018b 16000000 		.4byte	.LASF24
+ 811 018f 01       		.byte	0x1
+ 812 0190 5F01     		.2byte	0x15f
+ 813 0192 01       		.byte	0x1
+ 814 0193 6F000000 		.4byte	0x6f
+ 815 0197 00000000 		.4byte	.LFB7
+ 816 019b 14000000 		.4byte	.LFE7
+ 817 019f 4C010000 		.4byte	.LLST7
+ 818 01a3 01       		.byte	0x1
+ 819 01a4 0A       		.uleb128 0xa
+ 820 01a5 01       		.byte	0x1
+ 821 01a6 DF000000 		.4byte	.LASF25
+ 822 01aa 01       		.byte	0x1
+ 823 01ab 7201     		.2byte	0x172
+ 824 01ad 01       		.byte	0x1
+ 825 01ae 00000000 		.4byte	.LFB8
+ 826 01b2 20000000 		.4byte	.LFE8
+ 827 01b6 78010000 		.4byte	.LLST8
+ 828 01ba 01       		.byte	0x1
+ 829 01bb CF010000 		.4byte	0x1cf
+ 830 01bf 0B       		.uleb128 0xb
+ 831 01c0 05010000 		.4byte	.LASF27
+ 832 01c4 01       		.byte	0x1
+ 833 01c5 7201     		.2byte	0x172
+ 834 01c7 6F000000 		.4byte	0x6f
+ 835 01cb 02       		.byte	0x2
+ 836 01cc 91       		.byte	0x91
+ 837 01cd 77       		.sleb128 -9
+ 838 01ce 00       		.byte	0
+ 839 01cf 0D       		.uleb128 0xd
+ 840 01d0 01       		.byte	0x1
+ 841 01d1 67010000 		.4byte	.LASF28
+ 842 01d5 01       		.byte	0x1
+ 843 01d6 8701     		.2byte	0x187
+ 844 01d8 01       		.byte	0x1
+ 845 01d9 7A000000 		.4byte	0x7a
+ 846 01dd 00000000 		.4byte	.LFB9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 29
 
 
- 847 01dd 00000000 		.4byte	.LFB9
- 848 01e1 18000000 		.4byte	.LFE9
- 849 01e5 B0010000 		.4byte	.LLST9
- 850 01e9 01       		.byte	0x1
- 851 01ea 0F       		.uleb128 0xf
- 852 01eb 01       		.byte	0x1
- 853 01ec 0F010000 		.4byte	.LASF29
- 854 01f0 01       		.byte	0x1
- 855 01f1 A101     		.2byte	0x1a1
- 856 01f3 01       		.byte	0x1
- 857 01f4 00000000 		.4byte	.LFB10
- 858 01f8 20000000 		.4byte	.LFE10
- 859 01fc DC010000 		.4byte	.LLST10
- 860 0200 01       		.byte	0x1
- 861 0201 15020000 		.4byte	0x215
- 862 0205 0B       		.uleb128 0xb
- 863 0206 25000000 		.4byte	.LASF30
- 864 020a 01       		.byte	0x1
- 865 020b A101     		.2byte	0x1a1
- 866 020d 7A000000 		.4byte	0x7a
- 867 0211 02       		.byte	0x2
- 868 0212 91       		.byte	0x91
- 869 0213 74       		.sleb128 -12
- 870 0214 00       		.byte	0
- 871 0215 0E       		.uleb128 0xe
- 872 0216 01       		.byte	0x1
- 873 0217 39010000 		.4byte	.LASF31
- 874 021b 01       		.byte	0x1
- 875 021c BA01     		.2byte	0x1ba
- 876 021e 01       		.byte	0x1
- 877 021f 7A000000 		.4byte	0x7a
- 878 0223 00000000 		.4byte	.LFB11
- 879 0227 18000000 		.4byte	.LFE11
- 880 022b 14020000 		.4byte	.LLST11
- 881 022f 01       		.byte	0x1
- 882 0230 0F       		.uleb128 0xf
- 883 0231 01       		.byte	0x1
- 884 0232 6D010000 		.4byte	.LASF32
- 885 0236 01       		.byte	0x1
- 886 0237 D201     		.2byte	0x1d2
- 887 0239 01       		.byte	0x1
- 888 023a 00000000 		.4byte	.LFB12
- 889 023e 20000000 		.4byte	.LFE12
- 890 0242 40020000 		.4byte	.LLST12
- 891 0246 01       		.byte	0x1
- 892 0247 5B020000 		.4byte	0x25b
- 893 024b 0B       		.uleb128 0xb
- 894 024c 7C000000 		.4byte	.LASF33
- 895 0250 01       		.byte	0x1
- 896 0251 D201     		.2byte	0x1d2
- 897 0253 7A000000 		.4byte	0x7a
- 898 0257 02       		.byte	0x2
- 899 0258 91       		.byte	0x91
- 900 0259 74       		.sleb128 -12
- 901 025a 00       		.byte	0
- 902 025b 0E       		.uleb128 0xe
- 903 025c 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 30
+ 847 01e1 14000000 		.4byte	.LFE9
+ 848 01e5 B0010000 		.4byte	.LLST9
+ 849 01e9 01       		.byte	0x1
+ 850 01ea 0A       		.uleb128 0xa
+ 851 01eb 01       		.byte	0x1
+ 852 01ec 1F010000 		.4byte	.LASF29
+ 853 01f0 01       		.byte	0x1
+ 854 01f1 A101     		.2byte	0x1a1
+ 855 01f3 01       		.byte	0x1
+ 856 01f4 00000000 		.4byte	.LFB10
+ 857 01f8 20000000 		.4byte	.LFE10
+ 858 01fc DC010000 		.4byte	.LLST10
+ 859 0200 01       		.byte	0x1
+ 860 0201 15020000 		.4byte	0x215
+ 861 0205 0B       		.uleb128 0xb
+ 862 0206 35000000 		.4byte	.LASF30
+ 863 020a 01       		.byte	0x1
+ 864 020b A101     		.2byte	0x1a1
+ 865 020d 7A000000 		.4byte	0x7a
+ 866 0211 02       		.byte	0x2
+ 867 0212 91       		.byte	0x91
+ 868 0213 76       		.sleb128 -10
+ 869 0214 00       		.byte	0
+ 870 0215 0D       		.uleb128 0xd
+ 871 0216 01       		.byte	0x1
+ 872 0217 49010000 		.4byte	.LASF31
+ 873 021b 01       		.byte	0x1
+ 874 021c BA01     		.2byte	0x1ba
+ 875 021e 01       		.byte	0x1
+ 876 021f 7A000000 		.4byte	0x7a
+ 877 0223 00000000 		.4byte	.LFB11
+ 878 0227 14000000 		.4byte	.LFE11
+ 879 022b 14020000 		.4byte	.LLST11
+ 880 022f 01       		.byte	0x1
+ 881 0230 0A       		.uleb128 0xa
+ 882 0231 01       		.byte	0x1
+ 883 0232 84010000 		.4byte	.LASF32
+ 884 0236 01       		.byte	0x1
+ 885 0237 D201     		.2byte	0x1d2
+ 886 0239 01       		.byte	0x1
+ 887 023a 00000000 		.4byte	.LFB12
+ 888 023e 20000000 		.4byte	.LFE12
+ 889 0242 40020000 		.4byte	.LLST12
+ 890 0246 01       		.byte	0x1
+ 891 0247 5B020000 		.4byte	0x25b
+ 892 024b 0B       		.uleb128 0xb
+ 893 024c 8C000000 		.4byte	.LASF33
+ 894 0250 01       		.byte	0x1
+ 895 0251 D201     		.2byte	0x1d2
+ 896 0253 7A000000 		.4byte	0x7a
+ 897 0257 02       		.byte	0x2
+ 898 0258 91       		.byte	0x91
+ 899 0259 76       		.sleb128 -10
+ 900 025a 00       		.byte	0
+ 901 025b 0D       		.uleb128 0xd
+ 902 025c 01       		.byte	0x1
+ 903 025d 6F000000 		.4byte	.LASF34
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 30
 
 
- 904 025d 5F000000 		.4byte	.LASF34
- 905 0261 01       		.byte	0x1
- 906 0262 EF01     		.2byte	0x1ef
- 907 0264 01       		.byte	0x1
- 908 0265 7A000000 		.4byte	0x7a
- 909 0269 00000000 		.4byte	.LFB13
- 910 026d 20000000 		.4byte	.LFE13
- 911 0271 78020000 		.4byte	.LLST13
- 912 0275 01       		.byte	0x1
- 913 0276 10       		.uleb128 0x10
- 914 0277 01       		.byte	0x1
- 915 0278 8C010000 		.4byte	.LASF35
- 916 027c 01       		.byte	0x1
- 917 027d E702     		.2byte	0x2e7
- 918 027f 01       		.byte	0x1
- 919 0280 00000000 		.4byte	.LFB14
- 920 0284 1C000000 		.4byte	.LFE14
- 921 0288 A4020000 		.4byte	.LLST14
- 922 028c 01       		.byte	0x1
- 923 028d 11       		.uleb128 0x11
- 924 028e 26010000 		.4byte	.LASF40
- 925 0292 01       		.byte	0x1
- 926 0293 1A       		.byte	0x1a
- 927 0294 6F000000 		.4byte	0x6f
- 928 0298 01       		.byte	0x1
- 929 0299 05       		.byte	0x5
- 930 029a 03       		.byte	0x3
- 931 029b 00000000 		.4byte	waterTimer_initVar
- 932 029f 00       		.byte	0
- 933              		.section	.debug_abbrev,"",%progbits
- 934              	.Ldebug_abbrev0:
- 935 0000 01       		.uleb128 0x1
- 936 0001 11       		.uleb128 0x11
- 937 0002 01       		.byte	0x1
- 938 0003 25       		.uleb128 0x25
- 939 0004 0E       		.uleb128 0xe
- 940 0005 13       		.uleb128 0x13
- 941 0006 0B       		.uleb128 0xb
- 942 0007 03       		.uleb128 0x3
- 943 0008 0E       		.uleb128 0xe
- 944 0009 1B       		.uleb128 0x1b
- 945 000a 0E       		.uleb128 0xe
- 946 000b 55       		.uleb128 0x55
- 947 000c 06       		.uleb128 0x6
- 948 000d 11       		.uleb128 0x11
- 949 000e 01       		.uleb128 0x1
- 950 000f 52       		.uleb128 0x52
- 951 0010 01       		.uleb128 0x1
- 952 0011 10       		.uleb128 0x10
- 953 0012 06       		.uleb128 0x6
- 954 0013 00       		.byte	0
- 955 0014 00       		.byte	0
- 956 0015 02       		.uleb128 0x2
- 957 0016 24       		.uleb128 0x24
- 958 0017 00       		.byte	0
- 959 0018 0B       		.uleb128 0xb
- 960 0019 0B       		.uleb128 0xb
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 31
+ 904 0261 01       		.byte	0x1
+ 905 0262 EF01     		.2byte	0x1ef
+ 906 0264 01       		.byte	0x1
+ 907 0265 7A000000 		.4byte	0x7a
+ 908 0269 00000000 		.4byte	.LFB13
+ 909 026d 1C000000 		.4byte	.LFE13
+ 910 0271 78020000 		.4byte	.LLST13
+ 911 0275 01       		.byte	0x1
+ 912 0276 0E       		.uleb128 0xe
+ 913 0277 01       		.byte	0x1
+ 914 0278 9C010000 		.4byte	.LASF35
+ 915 027c 01       		.byte	0x1
+ 916 027d E702     		.2byte	0x2e7
+ 917 027f 01       		.byte	0x1
+ 918 0280 00000000 		.4byte	.LFB14
+ 919 0284 1C000000 		.4byte	.LFE14
+ 920 0288 A4020000 		.4byte	.LLST14
+ 921 028c 01       		.byte	0x1
+ 922 028d 0F       		.uleb128 0xf
+ 923 028e 36010000 		.4byte	.LASF40
+ 924 0292 01       		.byte	0x1
+ 925 0293 1A       		.byte	0x1a
+ 926 0294 6F000000 		.4byte	0x6f
+ 927 0298 01       		.byte	0x1
+ 928 0299 05       		.byte	0x5
+ 929 029a 03       		.byte	0x3
+ 930 029b 00000000 		.4byte	waterTimer_initVar
+ 931 029f 00       		.byte	0
+ 932              		.section	.debug_abbrev,"",%progbits
+ 933              	.Ldebug_abbrev0:
+ 934 0000 01       		.uleb128 0x1
+ 935 0001 11       		.uleb128 0x11
+ 936 0002 01       		.byte	0x1
+ 937 0003 25       		.uleb128 0x25
+ 938 0004 0E       		.uleb128 0xe
+ 939 0005 13       		.uleb128 0x13
+ 940 0006 0B       		.uleb128 0xb
+ 941 0007 03       		.uleb128 0x3
+ 942 0008 0E       		.uleb128 0xe
+ 943 0009 1B       		.uleb128 0x1b
+ 944 000a 0E       		.uleb128 0xe
+ 945 000b 55       		.uleb128 0x55
+ 946 000c 06       		.uleb128 0x6
+ 947 000d 11       		.uleb128 0x11
+ 948 000e 01       		.uleb128 0x1
+ 949 000f 52       		.uleb128 0x52
+ 950 0010 01       		.uleb128 0x1
+ 951 0011 10       		.uleb128 0x10
+ 952 0012 06       		.uleb128 0x6
+ 953 0013 00       		.byte	0
+ 954 0014 00       		.byte	0
+ 955 0015 02       		.uleb128 0x2
+ 956 0016 24       		.uleb128 0x24
+ 957 0017 00       		.byte	0
+ 958 0018 0B       		.uleb128 0xb
+ 959 0019 0B       		.uleb128 0xb
+ 960 001a 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 31
 
 
- 961 001a 3E       		.uleb128 0x3e
- 962 001b 0B       		.uleb128 0xb
- 963 001c 03       		.uleb128 0x3
- 964 001d 0E       		.uleb128 0xe
- 965 001e 00       		.byte	0
- 966 001f 00       		.byte	0
- 967 0020 03       		.uleb128 0x3
- 968 0021 24       		.uleb128 0x24
- 969 0022 00       		.byte	0
- 970 0023 0B       		.uleb128 0xb
- 971 0024 0B       		.uleb128 0xb
- 972 0025 3E       		.uleb128 0x3e
- 973 0026 0B       		.uleb128 0xb
- 974 0027 03       		.uleb128 0x3
- 975 0028 08       		.uleb128 0x8
- 976 0029 00       		.byte	0
- 977 002a 00       		.byte	0
- 978 002b 04       		.uleb128 0x4
- 979 002c 16       		.uleb128 0x16
- 980 002d 00       		.byte	0
- 981 002e 03       		.uleb128 0x3
- 982 002f 0E       		.uleb128 0xe
- 983 0030 3A       		.uleb128 0x3a
- 984 0031 0B       		.uleb128 0xb
- 985 0032 3B       		.uleb128 0x3b
- 986 0033 0B       		.uleb128 0xb
- 987 0034 49       		.uleb128 0x49
- 988 0035 13       		.uleb128 0x13
- 989 0036 00       		.byte	0
- 990 0037 00       		.byte	0
- 991 0038 05       		.uleb128 0x5
- 992 0039 35       		.uleb128 0x35
- 993 003a 00       		.byte	0
- 994 003b 49       		.uleb128 0x49
- 995 003c 13       		.uleb128 0x13
- 996 003d 00       		.byte	0
- 997 003e 00       		.byte	0
- 998 003f 06       		.uleb128 0x6
- 999 0040 2E       		.uleb128 0x2e
- 1000 0041 01       		.byte	0x1
- 1001 0042 3F       		.uleb128 0x3f
- 1002 0043 0C       		.uleb128 0xc
- 1003 0044 03       		.uleb128 0x3
- 1004 0045 0E       		.uleb128 0xe
- 1005 0046 3A       		.uleb128 0x3a
- 1006 0047 0B       		.uleb128 0xb
- 1007 0048 3B       		.uleb128 0x3b
- 1008 0049 0B       		.uleb128 0xb
- 1009 004a 27       		.uleb128 0x27
- 1010 004b 0C       		.uleb128 0xc
- 1011 004c 11       		.uleb128 0x11
- 1012 004d 01       		.uleb128 0x1
- 1013 004e 12       		.uleb128 0x12
- 1014 004f 01       		.uleb128 0x1
- 1015 0050 40       		.uleb128 0x40
- 1016 0051 06       		.uleb128 0x6
- 1017 0052 9642     		.uleb128 0x2116
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 32
+ 961 001b 0B       		.uleb128 0xb
+ 962 001c 03       		.uleb128 0x3
+ 963 001d 0E       		.uleb128 0xe
+ 964 001e 00       		.byte	0
+ 965 001f 00       		.byte	0
+ 966 0020 03       		.uleb128 0x3
+ 967 0021 24       		.uleb128 0x24
+ 968 0022 00       		.byte	0
+ 969 0023 0B       		.uleb128 0xb
+ 970 0024 0B       		.uleb128 0xb
+ 971 0025 3E       		.uleb128 0x3e
+ 972 0026 0B       		.uleb128 0xb
+ 973 0027 03       		.uleb128 0x3
+ 974 0028 08       		.uleb128 0x8
+ 975 0029 00       		.byte	0
+ 976 002a 00       		.byte	0
+ 977 002b 04       		.uleb128 0x4
+ 978 002c 16       		.uleb128 0x16
+ 979 002d 00       		.byte	0
+ 980 002e 03       		.uleb128 0x3
+ 981 002f 0E       		.uleb128 0xe
+ 982 0030 3A       		.uleb128 0x3a
+ 983 0031 0B       		.uleb128 0xb
+ 984 0032 3B       		.uleb128 0x3b
+ 985 0033 0B       		.uleb128 0xb
+ 986 0034 49       		.uleb128 0x49
+ 987 0035 13       		.uleb128 0x13
+ 988 0036 00       		.byte	0
+ 989 0037 00       		.byte	0
+ 990 0038 05       		.uleb128 0x5
+ 991 0039 35       		.uleb128 0x35
+ 992 003a 00       		.byte	0
+ 993 003b 49       		.uleb128 0x49
+ 994 003c 13       		.uleb128 0x13
+ 995 003d 00       		.byte	0
+ 996 003e 00       		.byte	0
+ 997 003f 06       		.uleb128 0x6
+ 998 0040 2E       		.uleb128 0x2e
+ 999 0041 01       		.byte	0x1
+ 1000 0042 3F       		.uleb128 0x3f
+ 1001 0043 0C       		.uleb128 0xc
+ 1002 0044 03       		.uleb128 0x3
+ 1003 0045 0E       		.uleb128 0xe
+ 1004 0046 3A       		.uleb128 0x3a
+ 1005 0047 0B       		.uleb128 0xb
+ 1006 0048 3B       		.uleb128 0x3b
+ 1007 0049 0B       		.uleb128 0xb
+ 1008 004a 27       		.uleb128 0x27
+ 1009 004b 0C       		.uleb128 0xc
+ 1010 004c 11       		.uleb128 0x11
+ 1011 004d 01       		.uleb128 0x1
+ 1012 004e 12       		.uleb128 0x12
+ 1013 004f 01       		.uleb128 0x1
+ 1014 0050 40       		.uleb128 0x40
+ 1015 0051 06       		.uleb128 0x6
+ 1016 0052 9642     		.uleb128 0x2116
+ 1017 0054 0C       		.uleb128 0xc
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 32
 
 
- 1018 0054 0C       		.uleb128 0xc
- 1019 0055 01       		.uleb128 0x1
- 1020 0056 13       		.uleb128 0x13
- 1021 0057 00       		.byte	0
- 1022 0058 00       		.byte	0
- 1023 0059 07       		.uleb128 0x7
- 1024 005a 34       		.uleb128 0x34
- 1025 005b 00       		.byte	0
- 1026 005c 03       		.uleb128 0x3
- 1027 005d 0E       		.uleb128 0xe
- 1028 005e 3A       		.uleb128 0x3a
- 1029 005f 0B       		.uleb128 0xb
- 1030 0060 3B       		.uleb128 0x3b
- 1031 0061 0B       		.uleb128 0xb
- 1032 0062 49       		.uleb128 0x49
- 1033 0063 13       		.uleb128 0x13
- 1034 0064 02       		.uleb128 0x2
- 1035 0065 0A       		.uleb128 0xa
- 1036 0066 00       		.byte	0
- 1037 0067 00       		.byte	0
- 1038 0068 08       		.uleb128 0x8
- 1039 0069 2E       		.uleb128 0x2e
- 1040 006a 00       		.byte	0
- 1041 006b 3F       		.uleb128 0x3f
- 1042 006c 0C       		.uleb128 0xc
- 1043 006d 03       		.uleb128 0x3
- 1044 006e 0E       		.uleb128 0xe
- 1045 006f 3A       		.uleb128 0x3a
- 1046 0070 0B       		.uleb128 0xb
- 1047 0071 3B       		.uleb128 0x3b
- 1048 0072 0B       		.uleb128 0xb
- 1049 0073 27       		.uleb128 0x27
- 1050 0074 0C       		.uleb128 0xc
- 1051 0075 11       		.uleb128 0x11
- 1052 0076 01       		.uleb128 0x1
- 1053 0077 12       		.uleb128 0x12
- 1054 0078 01       		.uleb128 0x1
- 1055 0079 40       		.uleb128 0x40
- 1056 007a 06       		.uleb128 0x6
- 1057 007b 9742     		.uleb128 0x2117
- 1058 007d 0C       		.uleb128 0xc
- 1059 007e 00       		.byte	0
- 1060 007f 00       		.byte	0
- 1061 0080 09       		.uleb128 0x9
- 1062 0081 2E       		.uleb128 0x2e
- 1063 0082 00       		.byte	0
- 1064 0083 3F       		.uleb128 0x3f
- 1065 0084 0C       		.uleb128 0xc
- 1066 0085 03       		.uleb128 0x3
- 1067 0086 0E       		.uleb128 0xe
- 1068 0087 3A       		.uleb128 0x3a
- 1069 0088 0B       		.uleb128 0xb
- 1070 0089 3B       		.uleb128 0x3b
- 1071 008a 0B       		.uleb128 0xb
- 1072 008b 27       		.uleb128 0x27
- 1073 008c 0C       		.uleb128 0xc
- 1074 008d 11       		.uleb128 0x11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 33
+ 1018 0055 01       		.uleb128 0x1
+ 1019 0056 13       		.uleb128 0x13
+ 1020 0057 00       		.byte	0
+ 1021 0058 00       		.byte	0
+ 1022 0059 07       		.uleb128 0x7
+ 1023 005a 34       		.uleb128 0x34
+ 1024 005b 00       		.byte	0
+ 1025 005c 03       		.uleb128 0x3
+ 1026 005d 0E       		.uleb128 0xe
+ 1027 005e 3A       		.uleb128 0x3a
+ 1028 005f 0B       		.uleb128 0xb
+ 1029 0060 3B       		.uleb128 0x3b
+ 1030 0061 0B       		.uleb128 0xb
+ 1031 0062 49       		.uleb128 0x49
+ 1032 0063 13       		.uleb128 0x13
+ 1033 0064 02       		.uleb128 0x2
+ 1034 0065 0A       		.uleb128 0xa
+ 1035 0066 00       		.byte	0
+ 1036 0067 00       		.byte	0
+ 1037 0068 08       		.uleb128 0x8
+ 1038 0069 2E       		.uleb128 0x2e
+ 1039 006a 00       		.byte	0
+ 1040 006b 3F       		.uleb128 0x3f
+ 1041 006c 0C       		.uleb128 0xc
+ 1042 006d 03       		.uleb128 0x3
+ 1043 006e 0E       		.uleb128 0xe
+ 1044 006f 3A       		.uleb128 0x3a
+ 1045 0070 0B       		.uleb128 0xb
+ 1046 0071 3B       		.uleb128 0x3b
+ 1047 0072 0B       		.uleb128 0xb
+ 1048 0073 27       		.uleb128 0x27
+ 1049 0074 0C       		.uleb128 0xc
+ 1050 0075 11       		.uleb128 0x11
+ 1051 0076 01       		.uleb128 0x1
+ 1052 0077 12       		.uleb128 0x12
+ 1053 0078 01       		.uleb128 0x1
+ 1054 0079 40       		.uleb128 0x40
+ 1055 007a 06       		.uleb128 0x6
+ 1056 007b 9742     		.uleb128 0x2117
+ 1057 007d 0C       		.uleb128 0xc
+ 1058 007e 00       		.byte	0
+ 1059 007f 00       		.byte	0
+ 1060 0080 09       		.uleb128 0x9
+ 1061 0081 2E       		.uleb128 0x2e
+ 1062 0082 00       		.byte	0
+ 1063 0083 3F       		.uleb128 0x3f
+ 1064 0084 0C       		.uleb128 0xc
+ 1065 0085 03       		.uleb128 0x3
+ 1066 0086 0E       		.uleb128 0xe
+ 1067 0087 3A       		.uleb128 0x3a
+ 1068 0088 0B       		.uleb128 0xb
+ 1069 0089 3B       		.uleb128 0x3b
+ 1070 008a 0B       		.uleb128 0xb
+ 1071 008b 27       		.uleb128 0x27
+ 1072 008c 0C       		.uleb128 0xc
+ 1073 008d 11       		.uleb128 0x11
+ 1074 008e 01       		.uleb128 0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 33
 
 
- 1075 008e 01       		.uleb128 0x1
- 1076 008f 12       		.uleb128 0x12
- 1077 0090 01       		.uleb128 0x1
- 1078 0091 40       		.uleb128 0x40
- 1079 0092 06       		.uleb128 0x6
- 1080 0093 9642     		.uleb128 0x2116
- 1081 0095 0C       		.uleb128 0xc
- 1082 0096 00       		.byte	0
- 1083 0097 00       		.byte	0
- 1084 0098 0A       		.uleb128 0xa
- 1085 0099 2E       		.uleb128 0x2e
- 1086 009a 01       		.byte	0x1
- 1087 009b 3F       		.uleb128 0x3f
- 1088 009c 0C       		.uleb128 0xc
- 1089 009d 03       		.uleb128 0x3
- 1090 009e 0E       		.uleb128 0xe
- 1091 009f 3A       		.uleb128 0x3a
- 1092 00a0 0B       		.uleb128 0xb
- 1093 00a1 3B       		.uleb128 0x3b
- 1094 00a2 05       		.uleb128 0x5
- 1095 00a3 27       		.uleb128 0x27
- 1096 00a4 0C       		.uleb128 0xc
- 1097 00a5 11       		.uleb128 0x11
- 1098 00a6 01       		.uleb128 0x1
- 1099 00a7 12       		.uleb128 0x12
- 1100 00a8 01       		.uleb128 0x1
- 1101 00a9 40       		.uleb128 0x40
- 1102 00aa 06       		.uleb128 0x6
- 1103 00ab 9742     		.uleb128 0x2117
- 1104 00ad 0C       		.uleb128 0xc
- 1105 00ae 01       		.uleb128 0x1
- 1106 00af 13       		.uleb128 0x13
- 1107 00b0 00       		.byte	0
- 1108 00b1 00       		.byte	0
- 1109 00b2 0B       		.uleb128 0xb
- 1110 00b3 05       		.uleb128 0x5
- 1111 00b4 00       		.byte	0
- 1112 00b5 03       		.uleb128 0x3
- 1113 00b6 0E       		.uleb128 0xe
- 1114 00b7 3A       		.uleb128 0x3a
- 1115 00b8 0B       		.uleb128 0xb
- 1116 00b9 3B       		.uleb128 0x3b
- 1117 00ba 05       		.uleb128 0x5
- 1118 00bb 49       		.uleb128 0x49
- 1119 00bc 13       		.uleb128 0x13
- 1120 00bd 02       		.uleb128 0x2
- 1121 00be 0A       		.uleb128 0xa
- 1122 00bf 00       		.byte	0
- 1123 00c0 00       		.byte	0
- 1124 00c1 0C       		.uleb128 0xc
- 1125 00c2 2E       		.uleb128 0x2e
- 1126 00c3 00       		.byte	0
- 1127 00c4 3F       		.uleb128 0x3f
- 1128 00c5 0C       		.uleb128 0xc
- 1129 00c6 03       		.uleb128 0x3
- 1130 00c7 0E       		.uleb128 0xe
- 1131 00c8 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 34
+ 1075 008f 12       		.uleb128 0x12
+ 1076 0090 01       		.uleb128 0x1
+ 1077 0091 40       		.uleb128 0x40
+ 1078 0092 06       		.uleb128 0x6
+ 1079 0093 9642     		.uleb128 0x2116
+ 1080 0095 0C       		.uleb128 0xc
+ 1081 0096 00       		.byte	0
+ 1082 0097 00       		.byte	0
+ 1083 0098 0A       		.uleb128 0xa
+ 1084 0099 2E       		.uleb128 0x2e
+ 1085 009a 01       		.byte	0x1
+ 1086 009b 3F       		.uleb128 0x3f
+ 1087 009c 0C       		.uleb128 0xc
+ 1088 009d 03       		.uleb128 0x3
+ 1089 009e 0E       		.uleb128 0xe
+ 1090 009f 3A       		.uleb128 0x3a
+ 1091 00a0 0B       		.uleb128 0xb
+ 1092 00a1 3B       		.uleb128 0x3b
+ 1093 00a2 05       		.uleb128 0x5
+ 1094 00a3 27       		.uleb128 0x27
+ 1095 00a4 0C       		.uleb128 0xc
+ 1096 00a5 11       		.uleb128 0x11
+ 1097 00a6 01       		.uleb128 0x1
+ 1098 00a7 12       		.uleb128 0x12
+ 1099 00a8 01       		.uleb128 0x1
+ 1100 00a9 40       		.uleb128 0x40
+ 1101 00aa 06       		.uleb128 0x6
+ 1102 00ab 9742     		.uleb128 0x2117
+ 1103 00ad 0C       		.uleb128 0xc
+ 1104 00ae 01       		.uleb128 0x1
+ 1105 00af 13       		.uleb128 0x13
+ 1106 00b0 00       		.byte	0
+ 1107 00b1 00       		.byte	0
+ 1108 00b2 0B       		.uleb128 0xb
+ 1109 00b3 05       		.uleb128 0x5
+ 1110 00b4 00       		.byte	0
+ 1111 00b5 03       		.uleb128 0x3
+ 1112 00b6 0E       		.uleb128 0xe
+ 1113 00b7 3A       		.uleb128 0x3a
+ 1114 00b8 0B       		.uleb128 0xb
+ 1115 00b9 3B       		.uleb128 0x3b
+ 1116 00ba 05       		.uleb128 0x5
+ 1117 00bb 49       		.uleb128 0x49
+ 1118 00bc 13       		.uleb128 0x13
+ 1119 00bd 02       		.uleb128 0x2
+ 1120 00be 0A       		.uleb128 0xa
+ 1121 00bf 00       		.byte	0
+ 1122 00c0 00       		.byte	0
+ 1123 00c1 0C       		.uleb128 0xc
+ 1124 00c2 2E       		.uleb128 0x2e
+ 1125 00c3 00       		.byte	0
+ 1126 00c4 3F       		.uleb128 0x3f
+ 1127 00c5 0C       		.uleb128 0xc
+ 1128 00c6 03       		.uleb128 0x3
+ 1129 00c7 0E       		.uleb128 0xe
+ 1130 00c8 3A       		.uleb128 0x3a
+ 1131 00c9 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 34
 
 
- 1132 00c9 0B       		.uleb128 0xb
- 1133 00ca 3B       		.uleb128 0x3b
- 1134 00cb 05       		.uleb128 0x5
- 1135 00cc 27       		.uleb128 0x27
- 1136 00cd 0C       		.uleb128 0xc
- 1137 00ce 11       		.uleb128 0x11
- 1138 00cf 01       		.uleb128 0x1
- 1139 00d0 12       		.uleb128 0x12
- 1140 00d1 01       		.uleb128 0x1
- 1141 00d2 40       		.uleb128 0x40
- 1142 00d3 06       		.uleb128 0x6
- 1143 00d4 9742     		.uleb128 0x2117
- 1144 00d6 0C       		.uleb128 0xc
- 1145 00d7 00       		.byte	0
- 1146 00d8 00       		.byte	0
- 1147 00d9 0D       		.uleb128 0xd
- 1148 00da 2E       		.uleb128 0x2e
- 1149 00db 00       		.byte	0
- 1150 00dc 3F       		.uleb128 0x3f
- 1151 00dd 0C       		.uleb128 0xc
- 1152 00de 03       		.uleb128 0x3
- 1153 00df 0E       		.uleb128 0xe
- 1154 00e0 3A       		.uleb128 0x3a
- 1155 00e1 0B       		.uleb128 0xb
- 1156 00e2 3B       		.uleb128 0x3b
- 1157 00e3 05       		.uleb128 0x5
- 1158 00e4 27       		.uleb128 0x27
- 1159 00e5 0C       		.uleb128 0xc
- 1160 00e6 49       		.uleb128 0x49
- 1161 00e7 13       		.uleb128 0x13
- 1162 00e8 11       		.uleb128 0x11
- 1163 00e9 01       		.uleb128 0x1
- 1164 00ea 12       		.uleb128 0x12
- 1165 00eb 01       		.uleb128 0x1
- 1166 00ec 40       		.uleb128 0x40
- 1167 00ed 06       		.uleb128 0x6
- 1168 00ee 9742     		.uleb128 0x2117
- 1169 00f0 0C       		.uleb128 0xc
- 1170 00f1 00       		.byte	0
- 1171 00f2 00       		.byte	0
- 1172 00f3 0E       		.uleb128 0xe
- 1173 00f4 2E       		.uleb128 0x2e
- 1174 00f5 00       		.byte	0
- 1175 00f6 3F       		.uleb128 0x3f
- 1176 00f7 0C       		.uleb128 0xc
- 1177 00f8 03       		.uleb128 0x3
- 1178 00f9 0E       		.uleb128 0xe
- 1179 00fa 3A       		.uleb128 0x3a
- 1180 00fb 0B       		.uleb128 0xb
- 1181 00fc 3B       		.uleb128 0x3b
- 1182 00fd 05       		.uleb128 0x5
- 1183 00fe 27       		.uleb128 0x27
- 1184 00ff 0C       		.uleb128 0xc
- 1185 0100 49       		.uleb128 0x49
- 1186 0101 13       		.uleb128 0x13
- 1187 0102 11       		.uleb128 0x11
- 1188 0103 01       		.uleb128 0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 35
+ 1132 00ca 3B       		.uleb128 0x3b
+ 1133 00cb 05       		.uleb128 0x5
+ 1134 00cc 27       		.uleb128 0x27
+ 1135 00cd 0C       		.uleb128 0xc
+ 1136 00ce 11       		.uleb128 0x11
+ 1137 00cf 01       		.uleb128 0x1
+ 1138 00d0 12       		.uleb128 0x12
+ 1139 00d1 01       		.uleb128 0x1
+ 1140 00d2 40       		.uleb128 0x40
+ 1141 00d3 06       		.uleb128 0x6
+ 1142 00d4 9742     		.uleb128 0x2117
+ 1143 00d6 0C       		.uleb128 0xc
+ 1144 00d7 00       		.byte	0
+ 1145 00d8 00       		.byte	0
+ 1146 00d9 0D       		.uleb128 0xd
+ 1147 00da 2E       		.uleb128 0x2e
+ 1148 00db 00       		.byte	0
+ 1149 00dc 3F       		.uleb128 0x3f
+ 1150 00dd 0C       		.uleb128 0xc
+ 1151 00de 03       		.uleb128 0x3
+ 1152 00df 0E       		.uleb128 0xe
+ 1153 00e0 3A       		.uleb128 0x3a
+ 1154 00e1 0B       		.uleb128 0xb
+ 1155 00e2 3B       		.uleb128 0x3b
+ 1156 00e3 05       		.uleb128 0x5
+ 1157 00e4 27       		.uleb128 0x27
+ 1158 00e5 0C       		.uleb128 0xc
+ 1159 00e6 49       		.uleb128 0x49
+ 1160 00e7 13       		.uleb128 0x13
+ 1161 00e8 11       		.uleb128 0x11
+ 1162 00e9 01       		.uleb128 0x1
+ 1163 00ea 12       		.uleb128 0x12
+ 1164 00eb 01       		.uleb128 0x1
+ 1165 00ec 40       		.uleb128 0x40
+ 1166 00ed 06       		.uleb128 0x6
+ 1167 00ee 9742     		.uleb128 0x2117
+ 1168 00f0 0C       		.uleb128 0xc
+ 1169 00f1 00       		.byte	0
+ 1170 00f2 00       		.byte	0
+ 1171 00f3 0E       		.uleb128 0xe
+ 1172 00f4 2E       		.uleb128 0x2e
+ 1173 00f5 00       		.byte	0
+ 1174 00f6 3F       		.uleb128 0x3f
+ 1175 00f7 0C       		.uleb128 0xc
+ 1176 00f8 03       		.uleb128 0x3
+ 1177 00f9 0E       		.uleb128 0xe
+ 1178 00fa 3A       		.uleb128 0x3a
+ 1179 00fb 0B       		.uleb128 0xb
+ 1180 00fc 3B       		.uleb128 0x3b
+ 1181 00fd 05       		.uleb128 0x5
+ 1182 00fe 27       		.uleb128 0x27
+ 1183 00ff 0C       		.uleb128 0xc
+ 1184 0100 11       		.uleb128 0x11
+ 1185 0101 01       		.uleb128 0x1
+ 1186 0102 12       		.uleb128 0x12
+ 1187 0103 01       		.uleb128 0x1
+ 1188 0104 40       		.uleb128 0x40
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 35
 
 
- 1189 0104 12       		.uleb128 0x12
- 1190 0105 01       		.uleb128 0x1
- 1191 0106 40       		.uleb128 0x40
- 1192 0107 06       		.uleb128 0x6
- 1193 0108 9642     		.uleb128 0x2116
- 1194 010a 0C       		.uleb128 0xc
- 1195 010b 00       		.byte	0
- 1196 010c 00       		.byte	0
- 1197 010d 0F       		.uleb128 0xf
- 1198 010e 2E       		.uleb128 0x2e
- 1199 010f 01       		.byte	0x1
- 1200 0110 3F       		.uleb128 0x3f
- 1201 0111 0C       		.uleb128 0xc
- 1202 0112 03       		.uleb128 0x3
- 1203 0113 0E       		.uleb128 0xe
- 1204 0114 3A       		.uleb128 0x3a
- 1205 0115 0B       		.uleb128 0xb
- 1206 0116 3B       		.uleb128 0x3b
- 1207 0117 05       		.uleb128 0x5
- 1208 0118 27       		.uleb128 0x27
- 1209 0119 0C       		.uleb128 0xc
- 1210 011a 11       		.uleb128 0x11
- 1211 011b 01       		.uleb128 0x1
- 1212 011c 12       		.uleb128 0x12
- 1213 011d 01       		.uleb128 0x1
- 1214 011e 40       		.uleb128 0x40
- 1215 011f 06       		.uleb128 0x6
- 1216 0120 9642     		.uleb128 0x2116
- 1217 0122 0C       		.uleb128 0xc
- 1218 0123 01       		.uleb128 0x1
- 1219 0124 13       		.uleb128 0x13
- 1220 0125 00       		.byte	0
- 1221 0126 00       		.byte	0
- 1222 0127 10       		.uleb128 0x10
- 1223 0128 2E       		.uleb128 0x2e
- 1224 0129 00       		.byte	0
- 1225 012a 3F       		.uleb128 0x3f
- 1226 012b 0C       		.uleb128 0xc
- 1227 012c 03       		.uleb128 0x3
- 1228 012d 0E       		.uleb128 0xe
- 1229 012e 3A       		.uleb128 0x3a
- 1230 012f 0B       		.uleb128 0xb
- 1231 0130 3B       		.uleb128 0x3b
- 1232 0131 05       		.uleb128 0x5
- 1233 0132 27       		.uleb128 0x27
- 1234 0133 0C       		.uleb128 0xc
- 1235 0134 11       		.uleb128 0x11
- 1236 0135 01       		.uleb128 0x1
- 1237 0136 12       		.uleb128 0x12
- 1238 0137 01       		.uleb128 0x1
- 1239 0138 40       		.uleb128 0x40
- 1240 0139 06       		.uleb128 0x6
- 1241 013a 9642     		.uleb128 0x2116
- 1242 013c 0C       		.uleb128 0xc
- 1243 013d 00       		.byte	0
- 1244 013e 00       		.byte	0
- 1245 013f 11       		.uleb128 0x11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 36
+ 1189 0105 06       		.uleb128 0x6
+ 1190 0106 9642     		.uleb128 0x2116
+ 1191 0108 0C       		.uleb128 0xc
+ 1192 0109 00       		.byte	0
+ 1193 010a 00       		.byte	0
+ 1194 010b 0F       		.uleb128 0xf
+ 1195 010c 34       		.uleb128 0x34
+ 1196 010d 00       		.byte	0
+ 1197 010e 03       		.uleb128 0x3
+ 1198 010f 0E       		.uleb128 0xe
+ 1199 0110 3A       		.uleb128 0x3a
+ 1200 0111 0B       		.uleb128 0xb
+ 1201 0112 3B       		.uleb128 0x3b
+ 1202 0113 0B       		.uleb128 0xb
+ 1203 0114 49       		.uleb128 0x49
+ 1204 0115 13       		.uleb128 0x13
+ 1205 0116 3F       		.uleb128 0x3f
+ 1206 0117 0C       		.uleb128 0xc
+ 1207 0118 02       		.uleb128 0x2
+ 1208 0119 0A       		.uleb128 0xa
+ 1209 011a 00       		.byte	0
+ 1210 011b 00       		.byte	0
+ 1211 011c 00       		.byte	0
+ 1212              		.section	.debug_loc,"",%progbits
+ 1213              	.Ldebug_loc0:
+ 1214              	.LLST0:
+ 1215 0000 00000000 		.4byte	.LFB0
+ 1216 0004 02000000 		.4byte	.LCFI0
+ 1217 0008 0200     		.2byte	0x2
+ 1218 000a 7D       		.byte	0x7d
+ 1219 000b 00       		.sleb128 0
+ 1220 000c 02000000 		.4byte	.LCFI0
+ 1221 0010 04000000 		.4byte	.LCFI1
+ 1222 0014 0200     		.2byte	0x2
+ 1223 0016 7D       		.byte	0x7d
+ 1224 0017 0C       		.sleb128 12
+ 1225 0018 04000000 		.4byte	.LCFI1
+ 1226 001c 06000000 		.4byte	.LCFI2
+ 1227 0020 0200     		.2byte	0x2
+ 1228 0022 7D       		.byte	0x7d
+ 1229 0023 18       		.sleb128 24
+ 1230 0024 06000000 		.4byte	.LCFI2
+ 1231 0028 54000000 		.4byte	.LFE0
+ 1232 002c 0200     		.2byte	0x2
+ 1233 002e 77       		.byte	0x77
+ 1234 002f 18       		.sleb128 24
+ 1235 0030 00000000 		.4byte	0
+ 1236 0034 00000000 		.4byte	0
+ 1237              	.LLST1:
+ 1238 0038 00000000 		.4byte	.LFB1
+ 1239 003c 02000000 		.4byte	.LCFI3
+ 1240 0040 0200     		.2byte	0x2
+ 1241 0042 7D       		.byte	0x7d
+ 1242 0043 00       		.sleb128 0
+ 1243 0044 02000000 		.4byte	.LCFI3
+ 1244 0048 04000000 		.4byte	.LCFI4
+ 1245 004c 0200     		.2byte	0x2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 36
 
 
- 1246 0140 34       		.uleb128 0x34
- 1247 0141 00       		.byte	0
- 1248 0142 03       		.uleb128 0x3
- 1249 0143 0E       		.uleb128 0xe
- 1250 0144 3A       		.uleb128 0x3a
- 1251 0145 0B       		.uleb128 0xb
- 1252 0146 3B       		.uleb128 0x3b
- 1253 0147 0B       		.uleb128 0xb
- 1254 0148 49       		.uleb128 0x49
- 1255 0149 13       		.uleb128 0x13
- 1256 014a 3F       		.uleb128 0x3f
- 1257 014b 0C       		.uleb128 0xc
- 1258 014c 02       		.uleb128 0x2
- 1259 014d 0A       		.uleb128 0xa
- 1260 014e 00       		.byte	0
- 1261 014f 00       		.byte	0
- 1262 0150 00       		.byte	0
- 1263              		.section	.debug_loc,"",%progbits
- 1264              	.Ldebug_loc0:
- 1265              	.LLST0:
- 1266 0000 00000000 		.4byte	.LFB0
- 1267 0004 02000000 		.4byte	.LCFI0
- 1268 0008 0200     		.2byte	0x2
- 1269 000a 7D       		.byte	0x7d
- 1270 000b 00       		.sleb128 0
- 1271 000c 02000000 		.4byte	.LCFI0
- 1272 0010 04000000 		.4byte	.LCFI1
- 1273 0014 0200     		.2byte	0x2
- 1274 0016 7D       		.byte	0x7d
- 1275 0017 0C       		.sleb128 12
- 1276 0018 04000000 		.4byte	.LCFI1
- 1277 001c 06000000 		.4byte	.LCFI2
- 1278 0020 0200     		.2byte	0x2
- 1279 0022 7D       		.byte	0x7d
- 1280 0023 18       		.sleb128 24
- 1281 0024 06000000 		.4byte	.LCFI2
- 1282 0028 54000000 		.4byte	.LFE0
- 1283 002c 0200     		.2byte	0x2
- 1284 002e 77       		.byte	0x77
- 1285 002f 18       		.sleb128 24
- 1286 0030 00000000 		.4byte	0
- 1287 0034 00000000 		.4byte	0
- 1288              	.LLST1:
- 1289 0038 00000000 		.4byte	.LFB1
- 1290 003c 02000000 		.4byte	.LCFI3
- 1291 0040 0200     		.2byte	0x2
- 1292 0042 7D       		.byte	0x7d
- 1293 0043 00       		.sleb128 0
- 1294 0044 02000000 		.4byte	.LCFI3
- 1295 0048 04000000 		.4byte	.LCFI4
- 1296 004c 0200     		.2byte	0x2
- 1297 004e 7D       		.byte	0x7d
- 1298 004f 08       		.sleb128 8
- 1299 0050 04000000 		.4byte	.LCFI4
- 1300 0054 20000000 		.4byte	.LFE1
- 1301 0058 0200     		.2byte	0x2
- 1302 005a 77       		.byte	0x77
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 37
+ 1246 004e 7D       		.byte	0x7d
+ 1247 004f 08       		.sleb128 8
+ 1248 0050 04000000 		.4byte	.LCFI4
+ 1249 0054 20000000 		.4byte	.LFE1
+ 1250 0058 0200     		.2byte	0x2
+ 1251 005a 77       		.byte	0x77
+ 1252 005b 08       		.sleb128 8
+ 1253 005c 00000000 		.4byte	0
+ 1254 0060 00000000 		.4byte	0
+ 1255              	.LLST2:
+ 1256 0064 00000000 		.4byte	.LFB2
+ 1257 0068 02000000 		.4byte	.LCFI5
+ 1258 006c 0200     		.2byte	0x2
+ 1259 006e 7D       		.byte	0x7d
+ 1260 006f 00       		.sleb128 0
+ 1261 0070 02000000 		.4byte	.LCFI5
+ 1262 0074 04000000 		.4byte	.LCFI6
+ 1263 0078 0200     		.2byte	0x2
+ 1264 007a 7D       		.byte	0x7d
+ 1265 007b 08       		.sleb128 8
+ 1266 007c 04000000 		.4byte	.LCFI6
+ 1267 0080 24000000 		.4byte	.LFE2
+ 1268 0084 0200     		.2byte	0x2
+ 1269 0086 77       		.byte	0x77
+ 1270 0087 08       		.sleb128 8
+ 1271 0088 00000000 		.4byte	0
+ 1272 008c 00000000 		.4byte	0
+ 1273              	.LLST3:
+ 1274 0090 00000000 		.4byte	.LFB3
+ 1275 0094 02000000 		.4byte	.LCFI7
+ 1276 0098 0200     		.2byte	0x2
+ 1277 009a 7D       		.byte	0x7d
+ 1278 009b 00       		.sleb128 0
+ 1279 009c 02000000 		.4byte	.LCFI7
+ 1280 00a0 04000000 		.4byte	.LCFI8
+ 1281 00a4 0200     		.2byte	0x2
+ 1282 00a6 7D       		.byte	0x7d
+ 1283 00a7 08       		.sleb128 8
+ 1284 00a8 04000000 		.4byte	.LCFI8
+ 1285 00ac 1C000000 		.4byte	.LFE3
+ 1286 00b0 0200     		.2byte	0x2
+ 1287 00b2 77       		.byte	0x77
+ 1288 00b3 08       		.sleb128 8
+ 1289 00b4 00000000 		.4byte	0
+ 1290 00b8 00000000 		.4byte	0
+ 1291              	.LLST4:
+ 1292 00bc 00000000 		.4byte	.LFB4
+ 1293 00c0 02000000 		.4byte	.LCFI9
+ 1294 00c4 0200     		.2byte	0x2
+ 1295 00c6 7D       		.byte	0x7d
+ 1296 00c7 00       		.sleb128 0
+ 1297 00c8 02000000 		.4byte	.LCFI9
+ 1298 00cc 04000000 		.4byte	.LCFI10
+ 1299 00d0 0200     		.2byte	0x2
+ 1300 00d2 7D       		.byte	0x7d
+ 1301 00d3 08       		.sleb128 8
+ 1302 00d4 04000000 		.4byte	.LCFI10
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 37
 
 
- 1303 005b 08       		.sleb128 8
- 1304 005c 00000000 		.4byte	0
- 1305 0060 00000000 		.4byte	0
- 1306              	.LLST2:
- 1307 0064 00000000 		.4byte	.LFB2
- 1308 0068 02000000 		.4byte	.LCFI5
- 1309 006c 0200     		.2byte	0x2
- 1310 006e 7D       		.byte	0x7d
- 1311 006f 00       		.sleb128 0
- 1312 0070 02000000 		.4byte	.LCFI5
- 1313 0074 04000000 		.4byte	.LCFI6
- 1314 0078 0200     		.2byte	0x2
- 1315 007a 7D       		.byte	0x7d
- 1316 007b 08       		.sleb128 8
- 1317 007c 04000000 		.4byte	.LCFI6
- 1318 0080 24000000 		.4byte	.LFE2
- 1319 0084 0200     		.2byte	0x2
- 1320 0086 77       		.byte	0x77
- 1321 0087 08       		.sleb128 8
- 1322 0088 00000000 		.4byte	0
- 1323 008c 00000000 		.4byte	0
- 1324              	.LLST3:
- 1325 0090 00000000 		.4byte	.LFB3
- 1326 0094 02000000 		.4byte	.LCFI7
- 1327 0098 0200     		.2byte	0x2
- 1328 009a 7D       		.byte	0x7d
- 1329 009b 00       		.sleb128 0
- 1330 009c 02000000 		.4byte	.LCFI7
- 1331 00a0 04000000 		.4byte	.LCFI8
- 1332 00a4 0200     		.2byte	0x2
- 1333 00a6 7D       		.byte	0x7d
- 1334 00a7 08       		.sleb128 8
- 1335 00a8 04000000 		.4byte	.LCFI8
- 1336 00ac 1C000000 		.4byte	.LFE3
- 1337 00b0 0200     		.2byte	0x2
- 1338 00b2 77       		.byte	0x77
- 1339 00b3 08       		.sleb128 8
- 1340 00b4 00000000 		.4byte	0
- 1341 00b8 00000000 		.4byte	0
- 1342              	.LLST4:
- 1343 00bc 00000000 		.4byte	.LFB4
- 1344 00c0 02000000 		.4byte	.LCFI9
- 1345 00c4 0200     		.2byte	0x2
- 1346 00c6 7D       		.byte	0x7d
- 1347 00c7 00       		.sleb128 0
- 1348 00c8 02000000 		.4byte	.LCFI9
- 1349 00cc 04000000 		.4byte	.LCFI10
- 1350 00d0 0200     		.2byte	0x2
- 1351 00d2 7D       		.byte	0x7d
- 1352 00d3 08       		.sleb128 8
- 1353 00d4 04000000 		.4byte	.LCFI10
- 1354 00d8 06000000 		.4byte	.LCFI11
- 1355 00dc 0200     		.2byte	0x2
- 1356 00de 7D       		.byte	0x7d
- 1357 00df 10       		.sleb128 16
- 1358 00e0 06000000 		.4byte	.LCFI11
- 1359 00e4 20000000 		.4byte	.LFE4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 38
+ 1303 00d8 06000000 		.4byte	.LCFI11
+ 1304 00dc 0200     		.2byte	0x2
+ 1305 00de 7D       		.byte	0x7d
+ 1306 00df 10       		.sleb128 16
+ 1307 00e0 06000000 		.4byte	.LCFI11
+ 1308 00e4 20000000 		.4byte	.LFE4
+ 1309 00e8 0200     		.2byte	0x2
+ 1310 00ea 77       		.byte	0x77
+ 1311 00eb 10       		.sleb128 16
+ 1312 00ec 00000000 		.4byte	0
+ 1313 00f0 00000000 		.4byte	0
+ 1314              	.LLST5:
+ 1315 00f4 00000000 		.4byte	.LFB5
+ 1316 00f8 02000000 		.4byte	.LCFI12
+ 1317 00fc 0200     		.2byte	0x2
+ 1318 00fe 7D       		.byte	0x7d
+ 1319 00ff 00       		.sleb128 0
+ 1320 0100 02000000 		.4byte	.LCFI12
+ 1321 0104 04000000 		.4byte	.LCFI13
+ 1322 0108 0200     		.2byte	0x2
+ 1323 010a 7D       		.byte	0x7d
+ 1324 010b 08       		.sleb128 8
+ 1325 010c 04000000 		.4byte	.LCFI13
+ 1326 0110 10000000 		.4byte	.LFE5
+ 1327 0114 0200     		.2byte	0x2
+ 1328 0116 77       		.byte	0x77
+ 1329 0117 08       		.sleb128 8
+ 1330 0118 00000000 		.4byte	0
+ 1331 011c 00000000 		.4byte	0
+ 1332              	.LLST6:
+ 1333 0120 00000000 		.4byte	.LFB6
+ 1334 0124 02000000 		.4byte	.LCFI14
+ 1335 0128 0200     		.2byte	0x2
+ 1336 012a 7D       		.byte	0x7d
+ 1337 012b 00       		.sleb128 0
+ 1338 012c 02000000 		.4byte	.LCFI14
+ 1339 0130 04000000 		.4byte	.LCFI15
+ 1340 0134 0200     		.2byte	0x2
+ 1341 0136 7D       		.byte	0x7d
+ 1342 0137 08       		.sleb128 8
+ 1343 0138 04000000 		.4byte	.LCFI15
+ 1344 013c 14000000 		.4byte	.LFE6
+ 1345 0140 0200     		.2byte	0x2
+ 1346 0142 77       		.byte	0x77
+ 1347 0143 08       		.sleb128 8
+ 1348 0144 00000000 		.4byte	0
+ 1349 0148 00000000 		.4byte	0
+ 1350              	.LLST7:
+ 1351 014c 00000000 		.4byte	.LFB7
+ 1352 0150 02000000 		.4byte	.LCFI16
+ 1353 0154 0200     		.2byte	0x2
+ 1354 0156 7D       		.byte	0x7d
+ 1355 0157 00       		.sleb128 0
+ 1356 0158 02000000 		.4byte	.LCFI16
+ 1357 015c 04000000 		.4byte	.LCFI17
+ 1358 0160 0200     		.2byte	0x2
+ 1359 0162 7D       		.byte	0x7d
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 38
 
 
- 1360 00e8 0200     		.2byte	0x2
- 1361 00ea 77       		.byte	0x77
- 1362 00eb 10       		.sleb128 16
- 1363 00ec 00000000 		.4byte	0
- 1364 00f0 00000000 		.4byte	0
- 1365              	.LLST5:
- 1366 00f4 00000000 		.4byte	.LFB5
- 1367 00f8 02000000 		.4byte	.LCFI12
- 1368 00fc 0200     		.2byte	0x2
- 1369 00fe 7D       		.byte	0x7d
- 1370 00ff 00       		.sleb128 0
- 1371 0100 02000000 		.4byte	.LCFI12
- 1372 0104 04000000 		.4byte	.LCFI13
- 1373 0108 0200     		.2byte	0x2
- 1374 010a 7D       		.byte	0x7d
- 1375 010b 08       		.sleb128 8
- 1376 010c 04000000 		.4byte	.LCFI13
- 1377 0110 10000000 		.4byte	.LFE5
- 1378 0114 0200     		.2byte	0x2
- 1379 0116 77       		.byte	0x77
- 1380 0117 08       		.sleb128 8
- 1381 0118 00000000 		.4byte	0
- 1382 011c 00000000 		.4byte	0
- 1383              	.LLST6:
- 1384 0120 00000000 		.4byte	.LFB6
- 1385 0124 02000000 		.4byte	.LCFI14
- 1386 0128 0200     		.2byte	0x2
- 1387 012a 7D       		.byte	0x7d
- 1388 012b 00       		.sleb128 0
- 1389 012c 02000000 		.4byte	.LCFI14
- 1390 0130 04000000 		.4byte	.LCFI15
- 1391 0134 0200     		.2byte	0x2
- 1392 0136 7D       		.byte	0x7d
- 1393 0137 08       		.sleb128 8
- 1394 0138 04000000 		.4byte	.LCFI15
- 1395 013c 14000000 		.4byte	.LFE6
- 1396 0140 0200     		.2byte	0x2
- 1397 0142 77       		.byte	0x77
- 1398 0143 08       		.sleb128 8
- 1399 0144 00000000 		.4byte	0
- 1400 0148 00000000 		.4byte	0
- 1401              	.LLST7:
- 1402 014c 00000000 		.4byte	.LFB7
- 1403 0150 02000000 		.4byte	.LCFI16
- 1404 0154 0200     		.2byte	0x2
- 1405 0156 7D       		.byte	0x7d
- 1406 0157 00       		.sleb128 0
- 1407 0158 02000000 		.4byte	.LCFI16
- 1408 015c 04000000 		.4byte	.LCFI17
- 1409 0160 0200     		.2byte	0x2
- 1410 0162 7D       		.byte	0x7d
- 1411 0163 08       		.sleb128 8
- 1412 0164 04000000 		.4byte	.LCFI17
- 1413 0168 14000000 		.4byte	.LFE7
- 1414 016c 0200     		.2byte	0x2
- 1415 016e 77       		.byte	0x77
- 1416 016f 08       		.sleb128 8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 39
+ 1360 0163 08       		.sleb128 8
+ 1361 0164 04000000 		.4byte	.LCFI17
+ 1362 0168 14000000 		.4byte	.LFE7
+ 1363 016c 0200     		.2byte	0x2
+ 1364 016e 77       		.byte	0x77
+ 1365 016f 08       		.sleb128 8
+ 1366 0170 00000000 		.4byte	0
+ 1367 0174 00000000 		.4byte	0
+ 1368              	.LLST8:
+ 1369 0178 00000000 		.4byte	.LFB8
+ 1370 017c 02000000 		.4byte	.LCFI18
+ 1371 0180 0200     		.2byte	0x2
+ 1372 0182 7D       		.byte	0x7d
+ 1373 0183 00       		.sleb128 0
+ 1374 0184 02000000 		.4byte	.LCFI18
+ 1375 0188 04000000 		.4byte	.LCFI19
+ 1376 018c 0200     		.2byte	0x2
+ 1377 018e 7D       		.byte	0x7d
+ 1378 018f 08       		.sleb128 8
+ 1379 0190 04000000 		.4byte	.LCFI19
+ 1380 0194 06000000 		.4byte	.LCFI20
+ 1381 0198 0200     		.2byte	0x2
+ 1382 019a 7D       		.byte	0x7d
+ 1383 019b 10       		.sleb128 16
+ 1384 019c 06000000 		.4byte	.LCFI20
+ 1385 01a0 20000000 		.4byte	.LFE8
+ 1386 01a4 0200     		.2byte	0x2
+ 1387 01a6 77       		.byte	0x77
+ 1388 01a7 10       		.sleb128 16
+ 1389 01a8 00000000 		.4byte	0
+ 1390 01ac 00000000 		.4byte	0
+ 1391              	.LLST9:
+ 1392 01b0 00000000 		.4byte	.LFB9
+ 1393 01b4 02000000 		.4byte	.LCFI21
+ 1394 01b8 0200     		.2byte	0x2
+ 1395 01ba 7D       		.byte	0x7d
+ 1396 01bb 00       		.sleb128 0
+ 1397 01bc 02000000 		.4byte	.LCFI21
+ 1398 01c0 04000000 		.4byte	.LCFI22
+ 1399 01c4 0200     		.2byte	0x2
+ 1400 01c6 7D       		.byte	0x7d
+ 1401 01c7 08       		.sleb128 8
+ 1402 01c8 04000000 		.4byte	.LCFI22
+ 1403 01cc 14000000 		.4byte	.LFE9
+ 1404 01d0 0200     		.2byte	0x2
+ 1405 01d2 77       		.byte	0x77
+ 1406 01d3 08       		.sleb128 8
+ 1407 01d4 00000000 		.4byte	0
+ 1408 01d8 00000000 		.4byte	0
+ 1409              	.LLST10:
+ 1410 01dc 00000000 		.4byte	.LFB10
+ 1411 01e0 02000000 		.4byte	.LCFI23
+ 1412 01e4 0200     		.2byte	0x2
+ 1413 01e6 7D       		.byte	0x7d
+ 1414 01e7 00       		.sleb128 0
+ 1415 01e8 02000000 		.4byte	.LCFI23
+ 1416 01ec 04000000 		.4byte	.LCFI24
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 39
 
 
- 1417 0170 00000000 		.4byte	0
- 1418 0174 00000000 		.4byte	0
- 1419              	.LLST8:
- 1420 0178 00000000 		.4byte	.LFB8
- 1421 017c 02000000 		.4byte	.LCFI18
- 1422 0180 0200     		.2byte	0x2
- 1423 0182 7D       		.byte	0x7d
- 1424 0183 00       		.sleb128 0
- 1425 0184 02000000 		.4byte	.LCFI18
- 1426 0188 04000000 		.4byte	.LCFI19
- 1427 018c 0200     		.2byte	0x2
- 1428 018e 7D       		.byte	0x7d
- 1429 018f 08       		.sleb128 8
- 1430 0190 04000000 		.4byte	.LCFI19
- 1431 0194 06000000 		.4byte	.LCFI20
- 1432 0198 0200     		.2byte	0x2
- 1433 019a 7D       		.byte	0x7d
- 1434 019b 10       		.sleb128 16
- 1435 019c 06000000 		.4byte	.LCFI20
- 1436 01a0 20000000 		.4byte	.LFE8
- 1437 01a4 0200     		.2byte	0x2
- 1438 01a6 77       		.byte	0x77
- 1439 01a7 10       		.sleb128 16
- 1440 01a8 00000000 		.4byte	0
- 1441 01ac 00000000 		.4byte	0
- 1442              	.LLST9:
- 1443 01b0 00000000 		.4byte	.LFB9
- 1444 01b4 02000000 		.4byte	.LCFI21
- 1445 01b8 0200     		.2byte	0x2
- 1446 01ba 7D       		.byte	0x7d
- 1447 01bb 00       		.sleb128 0
- 1448 01bc 02000000 		.4byte	.LCFI21
- 1449 01c0 04000000 		.4byte	.LCFI22
- 1450 01c4 0200     		.2byte	0x2
- 1451 01c6 7D       		.byte	0x7d
- 1452 01c7 08       		.sleb128 8
- 1453 01c8 04000000 		.4byte	.LCFI22
- 1454 01cc 18000000 		.4byte	.LFE9
- 1455 01d0 0200     		.2byte	0x2
- 1456 01d2 77       		.byte	0x77
- 1457 01d3 08       		.sleb128 8
- 1458 01d4 00000000 		.4byte	0
- 1459 01d8 00000000 		.4byte	0
- 1460              	.LLST10:
- 1461 01dc 00000000 		.4byte	.LFB10
- 1462 01e0 02000000 		.4byte	.LCFI23
- 1463 01e4 0200     		.2byte	0x2
- 1464 01e6 7D       		.byte	0x7d
- 1465 01e7 00       		.sleb128 0
- 1466 01e8 02000000 		.4byte	.LCFI23
- 1467 01ec 04000000 		.4byte	.LCFI24
- 1468 01f0 0200     		.2byte	0x2
- 1469 01f2 7D       		.byte	0x7d
- 1470 01f3 08       		.sleb128 8
- 1471 01f4 04000000 		.4byte	.LCFI24
- 1472 01f8 06000000 		.4byte	.LCFI25
- 1473 01fc 0200     		.2byte	0x2
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 40
+ 1417 01f0 0200     		.2byte	0x2
+ 1418 01f2 7D       		.byte	0x7d
+ 1419 01f3 08       		.sleb128 8
+ 1420 01f4 04000000 		.4byte	.LCFI24
+ 1421 01f8 06000000 		.4byte	.LCFI25
+ 1422 01fc 0200     		.2byte	0x2
+ 1423 01fe 7D       		.byte	0x7d
+ 1424 01ff 10       		.sleb128 16
+ 1425 0200 06000000 		.4byte	.LCFI25
+ 1426 0204 20000000 		.4byte	.LFE10
+ 1427 0208 0200     		.2byte	0x2
+ 1428 020a 77       		.byte	0x77
+ 1429 020b 10       		.sleb128 16
+ 1430 020c 00000000 		.4byte	0
+ 1431 0210 00000000 		.4byte	0
+ 1432              	.LLST11:
+ 1433 0214 00000000 		.4byte	.LFB11
+ 1434 0218 02000000 		.4byte	.LCFI26
+ 1435 021c 0200     		.2byte	0x2
+ 1436 021e 7D       		.byte	0x7d
+ 1437 021f 00       		.sleb128 0
+ 1438 0220 02000000 		.4byte	.LCFI26
+ 1439 0224 04000000 		.4byte	.LCFI27
+ 1440 0228 0200     		.2byte	0x2
+ 1441 022a 7D       		.byte	0x7d
+ 1442 022b 08       		.sleb128 8
+ 1443 022c 04000000 		.4byte	.LCFI27
+ 1444 0230 14000000 		.4byte	.LFE11
+ 1445 0234 0200     		.2byte	0x2
+ 1446 0236 77       		.byte	0x77
+ 1447 0237 08       		.sleb128 8
+ 1448 0238 00000000 		.4byte	0
+ 1449 023c 00000000 		.4byte	0
+ 1450              	.LLST12:
+ 1451 0240 00000000 		.4byte	.LFB12
+ 1452 0244 02000000 		.4byte	.LCFI28
+ 1453 0248 0200     		.2byte	0x2
+ 1454 024a 7D       		.byte	0x7d
+ 1455 024b 00       		.sleb128 0
+ 1456 024c 02000000 		.4byte	.LCFI28
+ 1457 0250 04000000 		.4byte	.LCFI29
+ 1458 0254 0200     		.2byte	0x2
+ 1459 0256 7D       		.byte	0x7d
+ 1460 0257 08       		.sleb128 8
+ 1461 0258 04000000 		.4byte	.LCFI29
+ 1462 025c 06000000 		.4byte	.LCFI30
+ 1463 0260 0200     		.2byte	0x2
+ 1464 0262 7D       		.byte	0x7d
+ 1465 0263 10       		.sleb128 16
+ 1466 0264 06000000 		.4byte	.LCFI30
+ 1467 0268 20000000 		.4byte	.LFE12
+ 1468 026c 0200     		.2byte	0x2
+ 1469 026e 77       		.byte	0x77
+ 1470 026f 10       		.sleb128 16
+ 1471 0270 00000000 		.4byte	0
+ 1472 0274 00000000 		.4byte	0
+ 1473              	.LLST13:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 40
 
 
- 1474 01fe 7D       		.byte	0x7d
- 1475 01ff 10       		.sleb128 16
- 1476 0200 06000000 		.4byte	.LCFI25
- 1477 0204 20000000 		.4byte	.LFE10
- 1478 0208 0200     		.2byte	0x2
- 1479 020a 77       		.byte	0x77
- 1480 020b 10       		.sleb128 16
- 1481 020c 00000000 		.4byte	0
- 1482 0210 00000000 		.4byte	0
- 1483              	.LLST11:
- 1484 0214 00000000 		.4byte	.LFB11
- 1485 0218 02000000 		.4byte	.LCFI26
- 1486 021c 0200     		.2byte	0x2
- 1487 021e 7D       		.byte	0x7d
- 1488 021f 00       		.sleb128 0
- 1489 0220 02000000 		.4byte	.LCFI26
- 1490 0224 04000000 		.4byte	.LCFI27
- 1491 0228 0200     		.2byte	0x2
- 1492 022a 7D       		.byte	0x7d
- 1493 022b 08       		.sleb128 8
- 1494 022c 04000000 		.4byte	.LCFI27
- 1495 0230 18000000 		.4byte	.LFE11
- 1496 0234 0200     		.2byte	0x2
- 1497 0236 77       		.byte	0x77
- 1498 0237 08       		.sleb128 8
- 1499 0238 00000000 		.4byte	0
- 1500 023c 00000000 		.4byte	0
- 1501              	.LLST12:
- 1502 0240 00000000 		.4byte	.LFB12
- 1503 0244 02000000 		.4byte	.LCFI28
- 1504 0248 0200     		.2byte	0x2
- 1505 024a 7D       		.byte	0x7d
- 1506 024b 00       		.sleb128 0
- 1507 024c 02000000 		.4byte	.LCFI28
- 1508 0250 04000000 		.4byte	.LCFI29
- 1509 0254 0200     		.2byte	0x2
- 1510 0256 7D       		.byte	0x7d
- 1511 0257 08       		.sleb128 8
- 1512 0258 04000000 		.4byte	.LCFI29
- 1513 025c 06000000 		.4byte	.LCFI30
- 1514 0260 0200     		.2byte	0x2
- 1515 0262 7D       		.byte	0x7d
- 1516 0263 10       		.sleb128 16
- 1517 0264 06000000 		.4byte	.LCFI30
- 1518 0268 20000000 		.4byte	.LFE12
- 1519 026c 0200     		.2byte	0x2
- 1520 026e 77       		.byte	0x77
- 1521 026f 10       		.sleb128 16
- 1522 0270 00000000 		.4byte	0
- 1523 0274 00000000 		.4byte	0
- 1524              	.LLST13:
- 1525 0278 00000000 		.4byte	.LFB13
- 1526 027c 02000000 		.4byte	.LCFI31
- 1527 0280 0200     		.2byte	0x2
- 1528 0282 7D       		.byte	0x7d
- 1529 0283 00       		.sleb128 0
- 1530 0284 02000000 		.4byte	.LCFI31
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 41
+ 1474 0278 00000000 		.4byte	.LFB13
+ 1475 027c 02000000 		.4byte	.LCFI31
+ 1476 0280 0200     		.2byte	0x2
+ 1477 0282 7D       		.byte	0x7d
+ 1478 0283 00       		.sleb128 0
+ 1479 0284 02000000 		.4byte	.LCFI31
+ 1480 0288 04000000 		.4byte	.LCFI32
+ 1481 028c 0200     		.2byte	0x2
+ 1482 028e 7D       		.byte	0x7d
+ 1483 028f 08       		.sleb128 8
+ 1484 0290 04000000 		.4byte	.LCFI32
+ 1485 0294 1C000000 		.4byte	.LFE13
+ 1486 0298 0200     		.2byte	0x2
+ 1487 029a 77       		.byte	0x77
+ 1488 029b 08       		.sleb128 8
+ 1489 029c 00000000 		.4byte	0
+ 1490 02a0 00000000 		.4byte	0
+ 1491              	.LLST14:
+ 1492 02a4 00000000 		.4byte	.LFB14
+ 1493 02a8 02000000 		.4byte	.LCFI33
+ 1494 02ac 0200     		.2byte	0x2
+ 1495 02ae 7D       		.byte	0x7d
+ 1496 02af 00       		.sleb128 0
+ 1497 02b0 02000000 		.4byte	.LCFI33
+ 1498 02b4 04000000 		.4byte	.LCFI34
+ 1499 02b8 0200     		.2byte	0x2
+ 1500 02ba 7D       		.byte	0x7d
+ 1501 02bb 08       		.sleb128 8
+ 1502 02bc 04000000 		.4byte	.LCFI34
+ 1503 02c0 1C000000 		.4byte	.LFE14
+ 1504 02c4 0200     		.2byte	0x2
+ 1505 02c6 77       		.byte	0x77
+ 1506 02c7 08       		.sleb128 8
+ 1507 02c8 00000000 		.4byte	0
+ 1508 02cc 00000000 		.4byte	0
+ 1509              		.section	.debug_aranges,"",%progbits
+ 1510 0000 8C000000 		.4byte	0x8c
+ 1511 0004 0200     		.2byte	0x2
+ 1512 0006 00000000 		.4byte	.Ldebug_info0
+ 1513 000a 04       		.byte	0x4
+ 1514 000b 00       		.byte	0
+ 1515 000c 0000     		.2byte	0
+ 1516 000e 0000     		.2byte	0
+ 1517 0010 00000000 		.4byte	.LFB0
+ 1518 0014 54000000 		.4byte	.LFE0-.LFB0
+ 1519 0018 00000000 		.4byte	.LFB1
+ 1520 001c 20000000 		.4byte	.LFE1-.LFB1
+ 1521 0020 00000000 		.4byte	.LFB2
+ 1522 0024 24000000 		.4byte	.LFE2-.LFB2
+ 1523 0028 00000000 		.4byte	.LFB3
+ 1524 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 1525 0030 00000000 		.4byte	.LFB4
+ 1526 0034 20000000 		.4byte	.LFE4-.LFB4
+ 1527 0038 00000000 		.4byte	.LFB5
+ 1528 003c 10000000 		.4byte	.LFE5-.LFB5
+ 1529 0040 00000000 		.4byte	.LFB6
+ 1530 0044 14000000 		.4byte	.LFE6-.LFB6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 41
 
 
- 1531 0288 04000000 		.4byte	.LCFI32
- 1532 028c 0200     		.2byte	0x2
- 1533 028e 7D       		.byte	0x7d
- 1534 028f 08       		.sleb128 8
- 1535 0290 04000000 		.4byte	.LCFI32
- 1536 0294 20000000 		.4byte	.LFE13
- 1537 0298 0200     		.2byte	0x2
- 1538 029a 77       		.byte	0x77
- 1539 029b 08       		.sleb128 8
- 1540 029c 00000000 		.4byte	0
- 1541 02a0 00000000 		.4byte	0
- 1542              	.LLST14:
- 1543 02a4 00000000 		.4byte	.LFB14
- 1544 02a8 02000000 		.4byte	.LCFI33
- 1545 02ac 0200     		.2byte	0x2
- 1546 02ae 7D       		.byte	0x7d
- 1547 02af 00       		.sleb128 0
- 1548 02b0 02000000 		.4byte	.LCFI33
- 1549 02b4 04000000 		.4byte	.LCFI34
- 1550 02b8 0200     		.2byte	0x2
- 1551 02ba 7D       		.byte	0x7d
- 1552 02bb 08       		.sleb128 8
- 1553 02bc 04000000 		.4byte	.LCFI34
- 1554 02c0 1C000000 		.4byte	.LFE14
- 1555 02c4 0200     		.2byte	0x2
- 1556 02c6 77       		.byte	0x77
- 1557 02c7 08       		.sleb128 8
- 1558 02c8 00000000 		.4byte	0
- 1559 02cc 00000000 		.4byte	0
- 1560              		.section	.debug_aranges,"",%progbits
- 1561 0000 8C000000 		.4byte	0x8c
- 1562 0004 0200     		.2byte	0x2
- 1563 0006 00000000 		.4byte	.Ldebug_info0
- 1564 000a 04       		.byte	0x4
- 1565 000b 00       		.byte	0
- 1566 000c 0000     		.2byte	0
- 1567 000e 0000     		.2byte	0
- 1568 0010 00000000 		.4byte	.LFB0
- 1569 0014 54000000 		.4byte	.LFE0-.LFB0
- 1570 0018 00000000 		.4byte	.LFB1
- 1571 001c 20000000 		.4byte	.LFE1-.LFB1
- 1572 0020 00000000 		.4byte	.LFB2
- 1573 0024 24000000 		.4byte	.LFE2-.LFB2
- 1574 0028 00000000 		.4byte	.LFB3
- 1575 002c 1C000000 		.4byte	.LFE3-.LFB3
- 1576 0030 00000000 		.4byte	.LFB4
- 1577 0034 20000000 		.4byte	.LFE4-.LFB4
- 1578 0038 00000000 		.4byte	.LFB5
- 1579 003c 10000000 		.4byte	.LFE5-.LFB5
- 1580 0040 00000000 		.4byte	.LFB6
- 1581 0044 14000000 		.4byte	.LFE6-.LFB6
- 1582 0048 00000000 		.4byte	.LFB7
- 1583 004c 14000000 		.4byte	.LFE7-.LFB7
- 1584 0050 00000000 		.4byte	.LFB8
- 1585 0054 20000000 		.4byte	.LFE8-.LFB8
- 1586 0058 00000000 		.4byte	.LFB9
- 1587 005c 18000000 		.4byte	.LFE9-.LFB9
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 42
+ 1531 0048 00000000 		.4byte	.LFB7
+ 1532 004c 14000000 		.4byte	.LFE7-.LFB7
+ 1533 0050 00000000 		.4byte	.LFB8
+ 1534 0054 20000000 		.4byte	.LFE8-.LFB8
+ 1535 0058 00000000 		.4byte	.LFB9
+ 1536 005c 14000000 		.4byte	.LFE9-.LFB9
+ 1537 0060 00000000 		.4byte	.LFB10
+ 1538 0064 20000000 		.4byte	.LFE10-.LFB10
+ 1539 0068 00000000 		.4byte	.LFB11
+ 1540 006c 14000000 		.4byte	.LFE11-.LFB11
+ 1541 0070 00000000 		.4byte	.LFB12
+ 1542 0074 20000000 		.4byte	.LFE12-.LFB12
+ 1543 0078 00000000 		.4byte	.LFB13
+ 1544 007c 1C000000 		.4byte	.LFE13-.LFB13
+ 1545 0080 00000000 		.4byte	.LFB14
+ 1546 0084 1C000000 		.4byte	.LFE14-.LFB14
+ 1547 0088 00000000 		.4byte	0
+ 1548 008c 00000000 		.4byte	0
+ 1549              		.section	.debug_ranges,"",%progbits
+ 1550              	.Ldebug_ranges0:
+ 1551 0000 00000000 		.4byte	.LFB0
+ 1552 0004 54000000 		.4byte	.LFE0
+ 1553 0008 00000000 		.4byte	.LFB1
+ 1554 000c 20000000 		.4byte	.LFE1
+ 1555 0010 00000000 		.4byte	.LFB2
+ 1556 0014 24000000 		.4byte	.LFE2
+ 1557 0018 00000000 		.4byte	.LFB3
+ 1558 001c 1C000000 		.4byte	.LFE3
+ 1559 0020 00000000 		.4byte	.LFB4
+ 1560 0024 20000000 		.4byte	.LFE4
+ 1561 0028 00000000 		.4byte	.LFB5
+ 1562 002c 10000000 		.4byte	.LFE5
+ 1563 0030 00000000 		.4byte	.LFB6
+ 1564 0034 14000000 		.4byte	.LFE6
+ 1565 0038 00000000 		.4byte	.LFB7
+ 1566 003c 14000000 		.4byte	.LFE7
+ 1567 0040 00000000 		.4byte	.LFB8
+ 1568 0044 20000000 		.4byte	.LFE8
+ 1569 0048 00000000 		.4byte	.LFB9
+ 1570 004c 14000000 		.4byte	.LFE9
+ 1571 0050 00000000 		.4byte	.LFB10
+ 1572 0054 20000000 		.4byte	.LFE10
+ 1573 0058 00000000 		.4byte	.LFB11
+ 1574 005c 14000000 		.4byte	.LFE11
+ 1575 0060 00000000 		.4byte	.LFB12
+ 1576 0064 20000000 		.4byte	.LFE12
+ 1577 0068 00000000 		.4byte	.LFB13
+ 1578 006c 1C000000 		.4byte	.LFE13
+ 1579 0070 00000000 		.4byte	.LFB14
+ 1580 0074 1C000000 		.4byte	.LFE14
+ 1581 0078 00000000 		.4byte	0
+ 1582 007c 00000000 		.4byte	0
+ 1583              		.section	.debug_line,"",%progbits
+ 1584              	.Ldebug_line0:
+ 1585 0000 75010000 		.section	.debug_str,"MS",%progbits,1
+ 1585      02004900 
+ 1585      00000201 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 42
 
 
- 1588 0060 00000000 		.4byte	.LFB10
- 1589 0064 20000000 		.4byte	.LFE10-.LFB10
- 1590 0068 00000000 		.4byte	.LFB11
- 1591 006c 18000000 		.4byte	.LFE11-.LFB11
- 1592 0070 00000000 		.4byte	.LFB12
- 1593 0074 20000000 		.4byte	.LFE12-.LFB12
- 1594 0078 00000000 		.4byte	.LFB13
- 1595 007c 20000000 		.4byte	.LFE13-.LFB13
- 1596 0080 00000000 		.4byte	.LFB14
- 1597 0084 1C000000 		.4byte	.LFE14-.LFB14
- 1598 0088 00000000 		.4byte	0
- 1599 008c 00000000 		.4byte	0
- 1600              		.section	.debug_ranges,"",%progbits
- 1601              	.Ldebug_ranges0:
- 1602 0000 00000000 		.4byte	.LFB0
- 1603 0004 54000000 		.4byte	.LFE0
- 1604 0008 00000000 		.4byte	.LFB1
- 1605 000c 20000000 		.4byte	.LFE1
- 1606 0010 00000000 		.4byte	.LFB2
- 1607 0014 24000000 		.4byte	.LFE2
- 1608 0018 00000000 		.4byte	.LFB3
- 1609 001c 1C000000 		.4byte	.LFE3
- 1610 0020 00000000 		.4byte	.LFB4
- 1611 0024 20000000 		.4byte	.LFE4
- 1612 0028 00000000 		.4byte	.LFB5
- 1613 002c 10000000 		.4byte	.LFE5
- 1614 0030 00000000 		.4byte	.LFB6
- 1615 0034 14000000 		.4byte	.LFE6
- 1616 0038 00000000 		.4byte	.LFB7
- 1617 003c 14000000 		.4byte	.LFE7
- 1618 0040 00000000 		.4byte	.LFB8
- 1619 0044 20000000 		.4byte	.LFE8
- 1620 0048 00000000 		.4byte	.LFB9
- 1621 004c 18000000 		.4byte	.LFE9
- 1622 0050 00000000 		.4byte	.LFB10
- 1623 0054 20000000 		.4byte	.LFE10
- 1624 0058 00000000 		.4byte	.LFB11
- 1625 005c 18000000 		.4byte	.LFE11
- 1626 0060 00000000 		.4byte	.LFB12
- 1627 0064 20000000 		.4byte	.LFE12
- 1628 0068 00000000 		.4byte	.LFB13
- 1629 006c 20000000 		.4byte	.LFE13
- 1630 0070 00000000 		.4byte	.LFB14
- 1631 0074 1C000000 		.4byte	.LFE14
- 1632 0078 00000000 		.4byte	0
- 1633 007c 00000000 		.4byte	0
- 1634              		.section	.debug_line,"",%progbits
- 1635              	.Ldebug_line0:
- 1636 0000 75010000 		.section	.debug_str,"MS",%progbits,1
- 1636      02004900 
- 1636      00000201 
- 1636      FB0E0D00 
- 1636      01010101 
- 1637              	.LASF15:
- 1638 0000 72656733 		.ascii	"reg32\000"
- 1638      3200
- 1639              	.LASF24:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 43
+ 1585      FB0E0D00 
+ 1585      01010101 
+ 1586              	.LASF15:
+ 1587 0000 72656731 		.ascii	"reg16\000"
+ 1587      3600
+ 1588              	.LASF19:
+ 1589 0006 77617465 		.ascii	"waterTimer_Stop\000"
+ 1589      7254696D 
+ 1589      65725F53 
+ 1589      746F7000 
+ 1590              	.LASF24:
+ 1591 0016 77617465 		.ascii	"waterTimer_ReadControlRegister\000"
+ 1591      7254696D 
+ 1591      65725F52 
+ 1591      65616443 
+ 1591      6F6E7472 
+ 1592              	.LASF30:
+ 1593 0035 70657269 		.ascii	"period\000"
+ 1593      6F6400
+ 1594              	.LASF3:
+ 1595 003c 73686F72 		.ascii	"short unsigned int\000"
+ 1595      7420756E 
+ 1595      7369676E 
+ 1595      65642069 
+ 1595      6E7400
+ 1596              	.LASF13:
+ 1597 004f 63686172 		.ascii	"char\000"
+ 1597      00
+ 1598              	.LASF22:
+ 1599 0054 77617465 		.ascii	"waterTimer_SoftwareCapture\000"
+ 1599      7254696D 
+ 1599      65725F53 
+ 1599      6F667477 
+ 1599      61726543 
+ 1600              	.LASF34:
+ 1601 006f 77617465 		.ascii	"waterTimer_ReadCounter\000"
+ 1601      7254696D 
+ 1601      65725F52 
+ 1601      65616443 
+ 1601      6F756E74 
+ 1602              	.LASF11:
+ 1603 0086 666C6F61 		.ascii	"float\000"
+ 1603      7400
+ 1604              	.LASF33:
+ 1605 008c 636F756E 		.ascii	"counter\000"
+ 1605      74657200 
+ 1606              	.LASF37:
+ 1607 0094 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\waterTimer.c\000"
+ 1607      6E657261 
+ 1607      7465645F 
+ 1607      536F7572 
+ 1607      63655C50 
+ 1608              	.LASF1:
+ 1609 00ba 756E7369 		.ascii	"unsigned char\000"
+ 1609      676E6564 
+ 1609      20636861 
+ 1609      7200
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 43
 
 
- 1640 0006 77617465 		.ascii	"waterTimer_ReadControlRegister\000"
- 1640      7254696D 
- 1640      65725F52 
- 1640      65616443 
- 1640      6F6E7472 
- 1641              	.LASF30:
- 1642 0025 70657269 		.ascii	"period\000"
- 1642      6F6400
- 1643              	.LASF3:
- 1644 002c 73686F72 		.ascii	"short unsigned int\000"
- 1644      7420756E 
- 1644      7369676E 
- 1644      65642069 
- 1644      6E7400
- 1645              	.LASF13:
- 1646 003f 63686172 		.ascii	"char\000"
- 1646      00
- 1647              	.LASF22:
- 1648 0044 77617465 		.ascii	"waterTimer_SoftwareCapture\000"
- 1648      7254696D 
- 1648      65725F53 
- 1648      6F667477 
- 1648      61726543 
- 1649              	.LASF34:
- 1650 005f 77617465 		.ascii	"waterTimer_ReadCounter\000"
- 1650      7254696D 
- 1650      65725F52 
- 1650      65616443 
- 1650      6F756E74 
- 1651              	.LASF11:
- 1652 0076 666C6F61 		.ascii	"float\000"
- 1652      7400
- 1653              	.LASF33:
- 1654 007c 636F756E 		.ascii	"counter\000"
- 1654      74657200 
- 1655              	.LASF37:
- 1656 0084 2E5C4765 		.ascii	".\\Generated_Source\\PSoC4\\waterTimer.c\000"
- 1656      6E657261 
- 1656      7465645F 
- 1656      536F7572 
- 1656      63655C50 
- 1657              	.LASF1:
- 1658 00aa 756E7369 		.ascii	"unsigned char\000"
- 1658      676E6564 
- 1658      20636861 
- 1658      7200
- 1659              	.LASF14:
- 1660 00b8 72656738 		.ascii	"reg8\000"
- 1660      00
- 1661              	.LASF5:
- 1662 00bd 6C6F6E67 		.ascii	"long unsigned int\000"
- 1662      20756E73 
- 1662      69676E65 
- 1662      6420696E 
- 1662      7400
- 1663              	.LASF25:
- 1664 00cf 77617465 		.ascii	"waterTimer_WriteControlRegister\000"
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 44
+ 1610              	.LASF14:
+ 1611 00c8 72656738 		.ascii	"reg8\000"
+ 1611      00
+ 1612              	.LASF5:
+ 1613 00cd 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1613      20756E73 
+ 1613      69676E65 
+ 1613      6420696E 
+ 1613      7400
+ 1614              	.LASF25:
+ 1615 00df 77617465 		.ascii	"waterTimer_WriteControlRegister\000"
+ 1615      7254696D 
+ 1615      65725F57 
+ 1615      72697465 
+ 1615      436F6E74 
+ 1616              	.LASF9:
+ 1617 00ff 75696E74 		.ascii	"uint8\000"
+ 1617      3800
+ 1618              	.LASF27:
+ 1619 0105 636F6E74 		.ascii	"control\000"
+ 1619      726F6C00 
+ 1620              	.LASF17:
+ 1621 010d 77617465 		.ascii	"waterTimer_Enable\000"
+ 1621      7254696D 
+ 1621      65725F45 
+ 1621      6E61626C 
+ 1621      6500
+ 1622              	.LASF29:
+ 1623 011f 77617465 		.ascii	"waterTimer_WritePeriod\000"
+ 1623      7254696D 
+ 1623      65725F57 
+ 1623      72697465 
+ 1623      50657269 
+ 1624              	.LASF40:
+ 1625 0136 77617465 		.ascii	"waterTimer_initVar\000"
+ 1625      7254696D 
+ 1625      65725F69 
+ 1625      6E697456 
+ 1625      617200
+ 1626              	.LASF31:
+ 1627 0149 77617465 		.ascii	"waterTimer_ReadCapture\000"
+ 1627      7254696D 
+ 1627      65725F52 
+ 1627      65616443 
+ 1627      61707475 
+ 1628              	.LASF12:
+ 1629 0160 646F7562 		.ascii	"double\000"
+ 1629      6C6500
+ 1630              	.LASF28:
+ 1631 0167 77617465 		.ascii	"waterTimer_ReadPeriod\000"
+ 1631      7254696D 
+ 1631      65725F52 
+ 1631      65616450 
+ 1631      6572696F 
+ 1632              	.LASF10:
+ 1633 017d 75696E74 		.ascii	"uint16\000"
+ 1633      313600
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 44
 
 
+ 1634              	.LASF32:
+ 1635 0184 77617465 		.ascii	"waterTimer_WriteCounter\000"
+ 1635      7254696D 
+ 1635      65725F57 
+ 1635      72697465 
+ 1635      436F756E 
+ 1636              	.LASF35:
+ 1637 019c 77617465 		.ascii	"waterTimer_ClearFIFO\000"
+ 1637      7254696D 
+ 1637      65725F43 
+ 1637      6C656172 
+ 1637      4649464F 
+ 1638              	.LASF8:
+ 1639 01b1 756E7369 		.ascii	"unsigned int\000"
+ 1639      676E6564 
+ 1639      20696E74 
+ 1639      00
+ 1640              	.LASF7:
+ 1641 01be 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1641      206C6F6E 
+ 1641      6720756E 
+ 1641      7369676E 
+ 1641      65642069 
+ 1642              	.LASF20:
+ 1643 01d5 77617465 		.ascii	"waterTimer_Init\000"
+ 1643      7254696D 
+ 1643      65725F49 
+ 1643      6E697400 
+ 1644              	.LASF16:
+ 1645 01e5 73697A65 		.ascii	"sizetype\000"
+ 1645      74797065 
+ 1645      00
+ 1646              	.LASF6:
+ 1647 01ee 6C6F6E67 		.ascii	"long long int\000"
+ 1647      206C6F6E 
+ 1647      6720696E 
+ 1647      7400
+ 1648              	.LASF26:
+ 1649 01fc 696E7465 		.ascii	"interruptMode\000"
+ 1649      72727570 
+ 1649      744D6F64 
+ 1649      6500
+ 1650              	.LASF38:
+ 1651 020a 433A5C63 		.ascii	"C:\\controllers\\controllers.cydsn\000"
+ 1651      6F6E7472 
+ 1651      6F6C6C65 
+ 1651      72735C63 
+ 1651      6F6E7472 
+ 1652              	.LASF2:
+ 1653 022b 73686F72 		.ascii	"short int\000"
+ 1653      7420696E 
+ 1653      7400
+ 1654              	.LASF18:
+ 1655 0235 77617465 		.ascii	"waterTimer_Start\000"
+ 1655      7254696D 
+ 1655      65725F53 
+ 1655      74617274 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1vIEQr.s 			page 45
+
+
+ 1655      00
+ 1656              	.LASF36:
+ 1657 0246 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1657      4320342E 
+ 1657      372E3320 
+ 1657      32303133 
+ 1657      30333132 
+ 1658 0279 616E6368 		.ascii	"anch revision 196615]\000"
+ 1658      20726576 
+ 1658      6973696F 
+ 1658      6E203139 
+ 1658      36363135 
+ 1659              	.LASF23:
+ 1660 028f 77617465 		.ascii	"waterTimer_ReadStatusRegister\000"
+ 1660      7254696D 
+ 1660      65725F52 
+ 1660      65616453 
+ 1660      74617475 
+ 1661              	.LASF4:
+ 1662 02ad 6C6F6E67 		.ascii	"long int\000"
+ 1662      20696E74 
+ 1662      00
+ 1663              	.LASF21:
+ 1664 02b6 77617465 		.ascii	"waterTimer_SetInterruptMode\000"
  1664      7254696D 
- 1664      65725F57 
- 1664      72697465 
- 1664      436F6E74 
- 1665              	.LASF9:
- 1666 00ef 75696E74 		.ascii	"uint8\000"
- 1666      3800
- 1667              	.LASF27:
- 1668 00f5 636F6E74 		.ascii	"control\000"
- 1668      726F6C00 
- 1669              	.LASF17:
- 1670 00fd 77617465 		.ascii	"waterTimer_Enable\000"
- 1670      7254696D 
- 1670      65725F45 
- 1670      6E61626C 
- 1670      6500
- 1671              	.LASF29:
- 1672 010f 77617465 		.ascii	"waterTimer_WritePeriod\000"
- 1672      7254696D 
- 1672      65725F57 
- 1672      72697465 
- 1672      50657269 
- 1673              	.LASF40:
- 1674 0126 77617465 		.ascii	"waterTimer_initVar\000"
- 1674      7254696D 
- 1674      65725F69 
- 1674      6E697456 
- 1674      617200
- 1675              	.LASF31:
- 1676 0139 77617465 		.ascii	"waterTimer_ReadCapture\000"
- 1676      7254696D 
- 1676      65725F52 
- 1676      65616443 
- 1676      61707475 
- 1677              	.LASF12:
- 1678 0150 646F7562 		.ascii	"double\000"
- 1678      6C6500
- 1679              	.LASF28:
- 1680 0157 77617465 		.ascii	"waterTimer_ReadPeriod\000"
- 1680      7254696D 
- 1680      65725F52 
- 1680      65616450 
- 1680      6572696F 
- 1681              	.LASF32:
- 1682 016d 77617465 		.ascii	"waterTimer_WriteCounter\000"
- 1682      7254696D 
- 1682      65725F57 
- 1682      72697465 
- 1682      436F756E 
- 1683              	.LASF10:
- 1684 0185 75696E74 		.ascii	"uint32\000"
- 1684      333200
- 1685              	.LASF35:
- 1686 018c 77617465 		.ascii	"waterTimer_ClearFIFO\000"
- 1686      7254696D 
- 1686      65725F43 
- 1686      6C656172 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 45
-
-
- 1686      4649464F 
- 1687              	.LASF8:
- 1688 01a1 756E7369 		.ascii	"unsigned int\000"
- 1688      676E6564 
- 1688      20696E74 
- 1688      00
- 1689              	.LASF7:
- 1690 01ae 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1690      206C6F6E 
- 1690      6720756E 
- 1690      7369676E 
- 1690      65642069 
- 1691              	.LASF20:
- 1692 01c5 77617465 		.ascii	"waterTimer_Init\000"
- 1692      7254696D 
- 1692      65725F49 
- 1692      6E697400 
- 1693              	.LASF16:
- 1694 01d5 73697A65 		.ascii	"sizetype\000"
- 1694      74797065 
- 1694      00
- 1695              	.LASF6:
- 1696 01de 6C6F6E67 		.ascii	"long long int\000"
- 1696      206C6F6E 
- 1696      6720696E 
- 1696      7400
- 1697              	.LASF26:
- 1698 01ec 696E7465 		.ascii	"interruptMode\000"
- 1698      72727570 
- 1698      744D6F64 
- 1698      6500
- 1699              	.LASF38:
- 1700 01fa 433A5C63 		.ascii	"C:\\controllers\\controllers.cydsn\000"
- 1700      6F6E7472 
- 1700      6F6C6C65 
- 1700      72735C63 
- 1700      6F6E7472 
- 1701              	.LASF19:
- 1702 021b 77617465 		.ascii	"waterTimer_Stop\000"
- 1702      7254696D 
- 1702      65725F53 
- 1702      746F7000 
- 1703              	.LASF2:
- 1704 022b 73686F72 		.ascii	"short int\000"
- 1704      7420696E 
- 1704      7400
- 1705              	.LASF18:
- 1706 0235 77617465 		.ascii	"waterTimer_Start\000"
- 1706      7254696D 
- 1706      65725F53 
- 1706      74617274 
- 1706      00
- 1707              	.LASF36:
- 1708 0246 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1708      4320342E 
- 1708      372E3320 
- 1708      32303133 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccUg91dw.s 			page 46
-
-
- 1708      30333132 
- 1709 0279 616E6368 		.ascii	"anch revision 196615]\000"
- 1709      20726576 
- 1709      6973696F 
- 1709      6E203139 
- 1709      36363135 
- 1710              	.LASF23:
- 1711 028f 77617465 		.ascii	"waterTimer_ReadStatusRegister\000"
- 1711      7254696D 
- 1711      65725F52 
- 1711      65616453 
- 1711      74617475 
- 1712              	.LASF4:
- 1713 02ad 6C6F6E67 		.ascii	"long int\000"
- 1713      20696E74 
- 1713      00
- 1714              	.LASF21:
- 1715 02b6 77617465 		.ascii	"waterTimer_SetInterruptMode\000"
- 1715      7254696D 
- 1715      65725F53 
- 1715      6574496E 
- 1715      74657272 
- 1716              	.LASF0:
- 1717 02d2 7369676E 		.ascii	"signed char\000"
- 1717      65642063 
- 1717      68617200 
- 1718              	.LASF39:
- 1719 02de 77617465 		.ascii	"waterTimer_interruptState\000"
- 1719      7254696D 
- 1719      65725F69 
- 1719      6E746572 
- 1719      72757074 
- 1720              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1664      65725F53 
+ 1664      6574496E 
+ 1664      74657272 
+ 1665              	.LASF0:
+ 1666 02d2 7369676E 		.ascii	"signed char\000"
+ 1666      65642063 
+ 1666      68617200 
+ 1667              	.LASF39:
+ 1668 02de 77617465 		.ascii	"waterTimer_interruptState\000"
+ 1668      7254696D 
+ 1668      65725F69 
+ 1668      6E746572 
+ 1668      72757074 
+ 1669              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

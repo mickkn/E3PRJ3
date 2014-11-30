@@ -539,7 +539,7 @@ function getElementsByClass(rootNode, elemName, className)
 <tr> <td class="prop"> Project :</td>
 <td class="proptext"> controllers</td></tr>
 <tr> <td class="prop"> Build Time :</td>
-<td class="proptext"> 11/27/14 20:35:11</td></tr>
+<td class="proptext"> 11/30/14 16:02:57</td></tr>
 <tr> <td class="prop"> Device :</td>
 <td class="proptext"> CY8C4245AXI-483</td></tr>
 <tr> <td class="prop"> Temperature :</td>
@@ -585,14 +585,30 @@ Clock Summary Section</span>
 </thead> 
 <tbody>
 <tr> 
+ <td class = "text_info">ADC_SAR_Seq_0_intClock(FFB)</td>
+ <td class = "text_info">ADC_SAR_Seq_0_intClock(FFB)</td>
+ <td class = "number">3.000&nbsp;MHz</td>
+ <td class = "number">3.000&nbsp;MHz</td>
+ <td class = "number"> N/A </td>
+ <td class = "text_info"> </td>
+</tr>
+<tr> 
  <td class = "text_info">CyHFCLK</td>
  <td class = "text_info">CyHFCLK</td>
- <td class = "number">24.000&nbsp;MHz</td>
- <td class = "number">24.000&nbsp;MHz</td>
- <td class = "number">34.616&nbsp;MHz</td>
+ <td class = "number">6.000&nbsp;MHz</td>
+ <td class = "number">6.000&nbsp;MHz</td>
+ <td class = "number">43.350&nbsp;MHz</td>
  <td class = "text_info"></td>
 </tr>
 <tr> 
+ <td class = "text_info">ADC_SAR_Seq_0_intClock</td>
+ <td class = "text_info">CyHFCLK</td>
+ <td class = "number">3.000&nbsp;MHz</td>
+ <td class = "number">3.000&nbsp;MHz</td>
+ <td class = "number"> N/A </td>
+ <td class = "text_info"> </td>
+</tr>
+<tr> 
  <td class = "text_info">CyILO</td>
  <td class = "text_info">CyILO</td>
  <td class = "number">32.000&nbsp;kHz</td>
@@ -603,8 +619,8 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CyIMO</td>
  <td class = "text_info">CyIMO</td>
- <td class = "number">24.000&nbsp;MHz</td>
- <td class = "number">24.000&nbsp;MHz</td>
+ <td class = "number">6.000&nbsp;MHz</td>
+ <td class = "number">6.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -619,8 +635,8 @@ Clock Summary Section</span>
 <tr> 
  <td class = "text_info">CySYSCLK</td>
  <td class = "text_info">CySYSCLK</td>
- <td class = "number">24.000&nbsp;MHz</td>
- <td class = "number">24.000&nbsp;MHz</td>
+ <td class = "number">6.000&nbsp;MHz</td>
+ <td class = "number">6.000&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
 </tr>
@@ -644,15 +660,15 @@ Setup Subsection</span>
 <div>
 <a href="#" style="text-decoration: none; color: inherit;">
 <span class="sec_head"><span style="font-family: monospace;">+</span>
-Source Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</span>
+Source Clock : CyHFCLK : Positive edge(Required Frequency 6&nbsp;MHz)</span>
 </a>
 </div><div class="sta_secbody"><div class="sta_sec" >
 <div>
 <a href="#" style="text-decoration: none; color: inherit;">
 <span class="sec_head"><span style="font-family: monospace;">+</span>
-Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</span>
+Destination Clock : CyHFCLK : Positive edge(Required Frequency 6&nbsp;MHz)</span>
 </a>
-</div><div class="sta_secbody"><div class="sta_sec_desc">Path Delay Requirement : 41.6667ns(24&nbsp;MHz)</div>
+</div><div class="sta_secbody"><div class="sta_sec_desc">Path Delay Requirement : 166.667ns(6&nbsp;MHz)</div>
 <table class="sta_tscs">
  <thead> 
 <tr> 
@@ -666,11 +682,11 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">34.616&nbsp;MHz</td>
- <td class = "number">28.888</td>
- <td class = "number">12.779</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">43.350&nbsp;MHz</td>
+ <td class = "number">23.068</td>
+ <td class = "number">143.599</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -689,48 +705,30 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
  <td class = "number">2.320</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "number">1.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.z0__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
  <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
  <td class = "number">2.960</td>
 </tr>
 <tr> 
@@ -738,51 +736,33 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
  <td class = "text_info"> </td>
  <td class = "number">1</td>
  <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "number">4.068</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">2.988</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">9.710</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "number">3.310</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
  <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">5.090</td>
@@ -801,11 +781,11 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">36.419&nbsp;MHz</td>
- <td class = "number">27.458</td>
- <td class = "number">14.209</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">43.512&nbsp;MHz</td>
+ <td class = "number">22.982</td>
+ <td class = "number">143.685</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -824,82 +804,64 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(0,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
  <td class = "number">2.320</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.z0__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
  <td class = "number">2.960</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "number">4.068</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:per_zero\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">2.902</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">datapathcell1</td>
  <td class = "text_info">U(0,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">9.710</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">datapathcell2</td>
  <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "number">3.310</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">5.090</td>
@@ -918,11 +880,11 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">38.420&nbsp;MHz</td>
- <td class = "number">26.028</td>
- <td class = "number">15.639</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">46.215&nbsp;MHz</td>
+ <td class = "number">21.638</td>
+ <td class = "number">145.029</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -942,11 +904,11 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 <tbody>
 <tr> 
  <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
  <td class = "number">3.850</td>
 </tr>
 <tr> 
@@ -954,51 +916,33 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
  <td class = "text_info"> </td>
  <td class = "number">1</td>
  <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "number">4.068</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">2.988</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">9.710</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "number">3.310</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
  <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">5.090</td>
@@ -1017,11 +961,11 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">39.096&nbsp;MHz</td>
- <td class = "number">25.578</td>
- <td class = "number">16.089</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">46.399&nbsp;MHz</td>
+ <td class = "number">21.552</td>
+ <td class = "number">145.115</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1041,576 +985,45 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 <tbody>
 <tr> 
  <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "number">2.320</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
  <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "number">1.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "number">2.960</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/cs_addr_0</td>
- <td class = "number">4.068</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "number">9.710</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">5.090</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">39.096&nbsp;MHz</td>
- <td class = "number">25.578</td>
- <td class = "number">16.089</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "number">2.320</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "number">1.430</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "number">2.960</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "number">4.068</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "number">9.710</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">5.090</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">41.411&nbsp;MHz</td>
- <td class = "number">24.148</td>
- <td class = "number">17.519</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "number">2.320</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "number">2.960</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/cs_addr_0</td>
- <td class = "number">4.068</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "number">9.710</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">5.090</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">41.411&nbsp;MHz</td>
- <td class = "number">24.148</td>
- <td class = "number">17.519</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "number">2.320</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.z0__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/z0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0i</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "number">2.960</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "number">4.068</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "number">9.710</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">5.090</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">43.768&nbsp;MHz</td>
- <td class = "number">22.848</td>
- <td class = "number">18.819</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "number">1.250</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_1</td>
- <td class = "number">3.488</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell2</td>
- <td class = "text_info">U(0,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "number">9.710</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "number">3.310</td>
-</tr>
-<tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"> </td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info"></td>
- <td class = "text_info">SETUP</td>
- <td class = "number">5.090</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
- <td class = "number">44.018&nbsp;MHz</td>
- <td class = "number">22.718</td>
- <td class = "number">18.949</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="6">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
  <td class = "number">3.850</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/cs_addr_0</td>
- <td class = "number">4.068</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:per_zero\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">2.902</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(0,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">9.710</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">5.090</td>
@@ -1629,11 +1042,11 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
- <td class = "number">44.018&nbsp;MHz</td>
- <td class = "number">22.718</td>
- <td class = "number">18.949</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">49.133&nbsp;MHz</td>
+ <td class = "number">20.353</td>
+ <td class = "number">146.314</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1652,49 +1065,454 @@ Destination Clock : CyHFCLK : Positive edge(Required Frequency 24&nbsp;MHz)</spa
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell1</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "number">3.850</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.580</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/z0_comb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "number">4.068</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "number">2.973</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">datapathcell1</td>
  <td class = "text_info">U(0,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/cs_addr_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">9.710</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"> </td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">datapathcell2</td>
  <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"></td>
  <td class = "text_info">SETUP</td>
  <td class = "number">5.090</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">49.356&nbsp;MHz</td>
+ <td class = "number">20.261</td>
+ <td class = "number">146.406</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">controlcell2</td>
+ <td class = "text_info">U(0,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.580</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "number">2.881</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "number">9.710</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">5.090</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">50.536&nbsp;MHz</td>
+ <td class = "number">19.788</td>
+ <td class = "number">146.879</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "number">2.320</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.z0__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "number">2.960</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:per_zero\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">2.988</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">11.520</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">50.756&nbsp;MHz</td>
+ <td class = "number">19.702</td>
+ <td class = "number">146.965</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(0,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "number">2.320</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.z0__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "number">2.960</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:per_zero\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_0</td>
+ <td class = "number">2.902</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(0,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">11.520</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">50.759&nbsp;MHz</td>
+ <td class = "number">19.701</td>
+ <td class = "number">146.966</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(0,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "number">2.320</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.z0__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "number">2.960</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">2.901</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">11.520</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">50.914&nbsp;MHz</td>
+ <td class = "number">19.641</td>
+ <td class = "number">147.026</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="6">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">U(1,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "number">2.320</td>
+</tr>
+<tr> 
+ <td class = "text_info">Route</td>
+ <td class = "text_info"> </td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.z0__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/z0</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0i</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "number">2.960</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">2.841</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info"></td>
+ <td class = "text_info">SETUP</td>
+ <td class = "number">11.520</td>
 </tr>
 <tr> 
  <td class = "text_info">Clock</td>
@@ -1746,8 +1564,8 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">3.210</td>
  <td class = "text_info"></td>
 </tr>
@@ -1767,28 +1585,28 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">datapathcell1</td>
  <td class = "text_info">U(0,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">3.210</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u0\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/ci</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
- <td class = "text_info">datapathcell3</td>
+ <td class = "text_info">datapathcell2</td>
  <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -1807,8 +1625,8 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">3.210</td>
  <td class = "text_info"></td>
 </tr>
@@ -1829,27 +1647,27 @@ Destination Clock : CyHFCLK : Positive edge</span>
 <tbody>
 <tr> 
  <td class = "text_info">datapathcell3</td>
- <td class = "text_info">U(1,1)</td>
+ <td class = "text_info">U(1,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/clock</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
  <td class = "number">3.210</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1.co_msb__sig\</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u1\/co_msb</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/ci</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0.co_msb__sig\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/co_msb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/ci</td>
  <td class = "number">0.000</td>
 </tr>
 <tr> 
  <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -1868,9 +1686,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/main_4</td>
- <td class = "number">3.481</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "number">4.921</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1889,28 +1707,28 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell2</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.040</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/main_4</td>
- <td class = "number">2.231</td>
+ <td class = "text_info">\waterTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "number">2.881</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell6</td>
+ <td class = "text_info">datapathcell3</td>
  <td class = "text_info">U(1,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u0\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -1929,9 +1747,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/main_3</td>
- <td class = "number">3.481</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "number">5.013</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1950,89 +1768,28 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell1</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/q</td>
- <td class = "number">1.250</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/main_3</td>
- <td class = "number">2.231</td>
-</tr>
-<tr> 
- <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
- <td class = "text_info"> </td>
- <td class = "text_info">HOLD</td>
- <td class = "number">0.000</td>
-</tr>
-<tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info"> </td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info"></td>
- <td class = "text_info">Skew</td>
- <td class = "number">0.000</td>
-</tr>
-</tbody>
- </table> 
-</td>
-</tr>
-<tr> 
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/main_2</td>
- <td class = "number">3.782</td>
- <td class = "text_info"></td>
-</tr>
-<tr class="sta_path">
-<td class="sta_path"  colspan="4">
-<table class="sta_path">
- <thead> 
-<tr> 
-<th>Type</th>
-<th>Location</th>
-<th>Fanout</th>
-<th>Instance/Net</th>
-<th>Source</th>
-<th>Dest</th>
-<th>Delay (ns)</th>
-</tr>
-</thead> 
-<tbody>
-<tr> 
- <td class = "text_info">macrocell4</td>
- <td class = "text_info">U(1,0)</td>
- <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.040</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/main_2</td>
- <td class = "number">2.532</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\/cs_addr_1</td>
+ <td class = "number">2.973</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">datapathcell1</td>
+ <td class = "text_info">U(0,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u0\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -2051,9 +1808,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/main_1</td>
- <td class = "number">3.782</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_1</td>
+ <td class = "number">5.075</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2072,28 +1829,28 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell2</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.040</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/main_1</td>
- <td class = "number">2.532</td>
+ <td class = "text_info">\waterTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_1</td>
+ <td class = "number">3.035</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -2112,9 +1869,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
  <td class = "text_info">Net_42/main_0</td>
- <td class = "number">3.787</td>
+ <td class = "number">5.091</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2133,26 +1890,26 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell2</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.040</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\</td>
- <td class = "text_info">\waterTimer:TimerUDB:run_mode\/q</td>
+ <td class = "text_info">\waterTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
  <td class = "text_info">Net_42/main_0</td>
- <td class = "number">2.537</td>
+ <td class = "number">3.051</td>
 </tr>
 <tr> 
  <td class = "text_info">macrocell2</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
  <td class = "text_info">Net_42</td>
  <td class = "text_info"> </td>
@@ -2173,9 +1930,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/main_1</td>
- <td class = "number">4.080</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_1</td>
+ <td class = "number">5.136</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2194,28 +1951,28 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell1</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.040</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">Route</td>
+ <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/main_1</td>
- <td class = "number">2.830</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_1</td>
+ <td class = "number">3.096</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -2234,9 +1991,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/main_0</td>
- <td class = "number">4.080</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">Net_148/main_0</td>
+ <td class = "number">5.156</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2255,28 +2012,28 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">controlcell1</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "number">2.040</td>
 </tr>
 <tr> 
  <td class = "text_info">Route</td>
  <td class = "text_info"></td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\/main_0</td>
- <td class = "number">2.830</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:control_7\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sCTRLReg:SyncCtl:ctrlreg\/control_7</td>
+ <td class = "text_info">Net_148/main_0</td>
+ <td class = "number">3.116</td>
 </tr>
 <tr> 
- <td class = "text_info">macrocell7</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">macrocell1</td>
+ <td class = "text_info">U(1,1)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:trig_disable\</td>
+ <td class = "text_info">Net_148</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>
@@ -2295,9 +2052,9 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </td>
 </tr>
 <tr> 
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/cs_addr_1</td>
- <td class = "number">4.091</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">6.111</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -2316,28 +2073,89 @@ Destination Clock : CyHFCLK : Positive edge</span>
 </thead> 
 <tbody>
 <tr> 
- <td class = "text_info">macrocell6</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/clock_0</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "number">1.250</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/clock</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "number">3.270</td>
 </tr>
 <tr> 
- <td class = "text_info">Route</td>
- <td class = "text_info"></td>
+ <td class = "text_info">datapathcell4</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\</td>
- <td class = "text_info">\waterTimer:TimerUDB:timer_enable\/q</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\/cs_addr_1</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
  <td class = "number">2.841</td>
 </tr>
 <tr> 
  <td class = "text_info">datapathcell4</td>
- <td class = "text_info">U(1,0)</td>
+ <td class = "text_info">U(0,0)</td>
  <td class = "number">1</td>
- <td class = "text_info">\waterTimer:TimerUDB:sT24:timerdp:u2\</td>
+ <td class = "text_info">\waterTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info">HOLD</td>
+ <td class = "number">0.000</td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info"> </td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info"></td>
+ <td class = "text_info">Skew</td>
+ <td class = "number">0.000</td>
+</tr>
+</tbody>
+ </table> 
+</td>
+</tr>
+<tr> 
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">6.171</td>
+ <td class = "text_info"></td>
+</tr>
+<tr class="sta_path">
+<td class="sta_path"  colspan="4">
+<table class="sta_path">
+ <thead> 
+<tr> 
+<th>Type</th>
+<th>Location</th>
+<th>Fanout</th>
+<th>Instance/Net</th>
+<th>Source</th>
+<th>Dest</th>
+<th>Delay (ns)</th>
+</tr>
+</thead> 
+<tbody>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/clock</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "number">3.270</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/z0_comb</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\/cs_addr_0</td>
+ <td class = "number">2.901</td>
+</tr>
+<tr> 
+ <td class = "text_info">datapathcell2</td>
+ <td class = "text_info">U(1,1)</td>
+ <td class = "number">1</td>
+ <td class = "text_info">\logDataTimer:TimerUDB:sT16:timerdp:u1\</td>
  <td class = "text_info"> </td>
  <td class = "text_info">HOLD</td>
  <td class = "number">0.000</td>

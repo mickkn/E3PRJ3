@@ -36,7 +36,7 @@ extern uint8 waterTimer_initVar;
 *           Parameter Defaults
 **************************************/
 
-#define waterTimer_Resolution                 24u
+#define waterTimer_Resolution                 16u
 #define waterTimer_UsingFixedFunction         0u
 #define waterTimer_UsingHWCaptureCounter      0u
 #define waterTimer_SoftwareCaptureMode        0u
@@ -44,7 +44,7 @@ extern uint8 waterTimer_initVar;
 #define waterTimer_UsingHWEnable              0u
 #define waterTimer_EnableTriggerMode          0u
 #define waterTimer_InterruptOnCaptureCount    0u
-#define waterTimer_RunModeUsed                1u
+#define waterTimer_RunModeUsed                0u
 #define waterTimer_ControlRegRemoved          0u
 
 
@@ -61,8 +61,8 @@ typedef struct
     uint8 TimerEnableState;
     #if(!waterTimer_UsingFixedFunction)
         #if (CY_UDB_V0)
-            uint32 TimerUdb;                 /* Timer internal counter value */
-            uint32 TimerPeriod;              /* Timer Period value       */
+            uint16 TimerUdb;                 /* Timer internal counter value */
+            uint16 TimerPeriod;              /* Timer Period value       */
             uint8 InterruptMaskValue;       /* Timer Compare Value */
             #if (waterTimer_UsingHWCaptureCounter)
                 uint8 TimerCaptureCounter;  /* Timer Capture Counter Value */
@@ -70,7 +70,7 @@ typedef struct
         #endif /* variables for non retention registers in CY_UDB_V0 */
 
         #if (CY_UDB_V1)
-            uint32 TimerUdb;
+            uint16 TimerUdb;
             uint8 InterruptMaskValue;
             #if (waterTimer_UsingHWCaptureCounter)
                 uint8 TimerCaptureCounter;
@@ -102,13 +102,13 @@ uint8   waterTimer_ReadStatusRegister(void) ;
         ;
 #endif /* (!waterTimer_ControlRegRemoved) */
 
-uint32  waterTimer_ReadPeriod(void) ;
-void    waterTimer_WritePeriod(uint32 period) \
+uint16  waterTimer_ReadPeriod(void) ;
+void    waterTimer_WritePeriod(uint16 period) \
     ;
-uint32  waterTimer_ReadCounter(void) ;
-void    waterTimer_WriteCounter(uint32 counter) \
+uint16  waterTimer_ReadCounter(void) ;
+void    waterTimer_WriteCounter(uint16 counter) \
     ;
-uint32  waterTimer_ReadCapture(void) ;
+uint16  waterTimer_ReadCapture(void) ;
 void    waterTimer_SoftwareCapture(void) ;
 
 
@@ -175,7 +175,7 @@ void waterTimer_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define waterTimer_INIT_PERIOD             16777215u
+#define waterTimer_INIT_PERIOD             65535u
 #define waterTimer_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << waterTimer_CTRL_CAP_MODE_SHIFT))
 #define waterTimer_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << waterTimer_CTRL_TRIG_MODE_SHIFT))
 #if (waterTimer_UsingFixedFunction)
@@ -320,50 +320,50 @@ void waterTimer_Wakeup(void)        ;
     #define waterTimer_CONTROL             (* (reg8 *) waterTimer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG )
     
     #if(waterTimer_Resolution <= 8u) /* 8-bit Timer */
-        #define waterTimer_CAPTURE_LSB         (* (reg8 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-        #define waterTimer_CAPTURE_LSB_PTR       ((reg8 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-        #define waterTimer_PERIOD_LSB          (* (reg8 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-        #define waterTimer_PERIOD_LSB_PTR        ((reg8 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-        #define waterTimer_COUNTER_LSB         (* (reg8 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
-        #define waterTimer_COUNTER_LSB_PTR       ((reg8 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
+        #define waterTimer_CAPTURE_LSB         (* (reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define waterTimer_CAPTURE_LSB_PTR       ((reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define waterTimer_PERIOD_LSB          (* (reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define waterTimer_PERIOD_LSB_PTR        ((reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define waterTimer_COUNTER_LSB         (* (reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #define waterTimer_COUNTER_LSB_PTR       ((reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
     #elif(waterTimer_Resolution <= 16u) /* 8-bit Timer */
         #if(CY_PSOC3) /* 8-bit addres space */
-            #define waterTimer_CAPTURE_LSB         (* (reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-            #define waterTimer_CAPTURE_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-            #define waterTimer_PERIOD_LSB          (* (reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-            #define waterTimer_PERIOD_LSB_PTR        ((reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-            #define waterTimer_COUNTER_LSB         (* (reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
-            #define waterTimer_COUNTER_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
+            #define waterTimer_CAPTURE_LSB         (* (reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define waterTimer_CAPTURE_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define waterTimer_PERIOD_LSB          (* (reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define waterTimer_PERIOD_LSB_PTR        ((reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define waterTimer_COUNTER_LSB         (* (reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+            #define waterTimer_COUNTER_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
         #else /* 16-bit address space */
-            #define waterTimer_CAPTURE_LSB         (* (reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__16BIT_F0_REG )
-            #define waterTimer_CAPTURE_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__16BIT_F0_REG )
-            #define waterTimer_PERIOD_LSB          (* (reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__16BIT_D0_REG )
-            #define waterTimer_PERIOD_LSB_PTR        ((reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__16BIT_D0_REG )
-            #define waterTimer_COUNTER_LSB         (* (reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__16BIT_A0_REG )
-            #define waterTimer_COUNTER_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT24_timerdp_u0__16BIT_A0_REG )
+            #define waterTimer_CAPTURE_LSB         (* (reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG )
+            #define waterTimer_CAPTURE_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG )
+            #define waterTimer_PERIOD_LSB          (* (reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG )
+            #define waterTimer_PERIOD_LSB_PTR        ((reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG )
+            #define waterTimer_COUNTER_LSB         (* (reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG )
+            #define waterTimer_COUNTER_LSB_PTR       ((reg16 *) waterTimer_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG )
         #endif /* CY_PSOC3 */
     #elif(waterTimer_Resolution <= 24u)/* 24-bit Timer */
-        #define waterTimer_CAPTURE_LSB         (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-        #define waterTimer_CAPTURE_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-        #define waterTimer_PERIOD_LSB          (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-        #define waterTimer_PERIOD_LSB_PTR        ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-        #define waterTimer_COUNTER_LSB         (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
-        #define waterTimer_COUNTER_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
+        #define waterTimer_CAPTURE_LSB         (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define waterTimer_CAPTURE_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define waterTimer_PERIOD_LSB          (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define waterTimer_PERIOD_LSB_PTR        ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define waterTimer_COUNTER_LSB         (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #define waterTimer_COUNTER_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
     #else /* 32-bit Timer */
         #if(CY_PSOC3 || CY_PSOC5) /* 8-bit address space */
-            #define waterTimer_CAPTURE_LSB         (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-            #define waterTimer_CAPTURE_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__F0_REG )
-            #define waterTimer_PERIOD_LSB          (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-            #define waterTimer_PERIOD_LSB_PTR        ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__D0_REG )
-            #define waterTimer_COUNTER_LSB         (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
-            #define waterTimer_COUNTER_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__A0_REG )
+            #define waterTimer_CAPTURE_LSB         (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define waterTimer_CAPTURE_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define waterTimer_PERIOD_LSB          (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define waterTimer_PERIOD_LSB_PTR        ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define waterTimer_COUNTER_LSB         (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+            #define waterTimer_COUNTER_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
         #else /* 32-bit address space */
-            #define waterTimer_CAPTURE_LSB         (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__32BIT_F0_REG )
-            #define waterTimer_CAPTURE_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__32BIT_F0_REG )
-            #define waterTimer_PERIOD_LSB          (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__32BIT_D0_REG )
-            #define waterTimer_PERIOD_LSB_PTR        ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__32BIT_D0_REG )
-            #define waterTimer_COUNTER_LSB         (* (reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__32BIT_A0_REG )
-            #define waterTimer_COUNTER_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT24_timerdp_u0__32BIT_A0_REG )
+            #define waterTimer_CAPTURE_LSB         (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__32BIT_F0_REG )
+            #define waterTimer_CAPTURE_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__32BIT_F0_REG )
+            #define waterTimer_PERIOD_LSB          (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__32BIT_D0_REG )
+            #define waterTimer_PERIOD_LSB_PTR        ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__32BIT_D0_REG )
+            #define waterTimer_COUNTER_LSB         (* (reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__32BIT_A0_REG )
+            #define waterTimer_COUNTER_LSB_PTR       ((reg32 *) waterTimer_TimerUDB_sT16_timerdp_u0__32BIT_A0_REG )
         #endif /* CY_PSOC3 || CY_PSOC5 */ 
     #endif
 

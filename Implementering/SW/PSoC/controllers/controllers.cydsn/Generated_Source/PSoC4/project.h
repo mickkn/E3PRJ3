@@ -22,6 +22,15 @@
 #include <waterTimer.h>
 #include <logDataInterrupt.h>
 #include <waterInterrupt.h>
+#include <ADC_SAR_Seq_0.h>
+#include <ADC_in.h>
+#include <ADC_in_aliases.h>
+#include <SLC.h>
+#include <SLC_aliases.h>
+#include <water_pin.h>
+#include <water_pin_aliases.h>
+#include <ADC_SAR_Seq_0_intClock.h>
+#include <ADC_SAR_Seq_0_IRQ.h>
 #include <core_cm0_psoc4.h>
 #include <core_cm0.h>
 #include <CyFlash.h>

@@ -10,11 +10,15 @@
 #define LOADDATA_H
 
 #include "buffer.h"
+#include "parameters.h"
+#include "sensorPackage.h"
+#define LOGDATATIMEOUT 8   // in sec
+#define WATERTIMEOUT 10     // in sec
     
 // Private methods
 
 // Public methods
-extern void loadData_init( buffer *);   // parameters *, sensorPackage *,
+extern void loadData_init(parameters *, buffer *);
 extern int loadData_getBuffer( char **, unsigned int * len);
 extern int loadData_movementDetect();
 extern int loadData_logDataTimeout();

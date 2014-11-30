@@ -24,6 +24,23 @@
   <file name="C:\controllers\controllers.cydsn\codegentemp\logDataInterrupt.h" value="NONE;logDataInterrupt" />
   <file name="C:\controllers\controllers.cydsn\codegentemp\waterInterrupt.c" value="ARM_C_FILE;waterInterrupt" />
   <file name="C:\controllers\controllers.cydsn\codegentemp\waterInterrupt.h" value="NONE;waterInterrupt" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0.c" value="ARM_C_FILE;ADC_SAR_Seq_0" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0.h" value="NONE;ADC_SAR_Seq_0" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0_PM.c" value="ARM_C_FILE;ADC_SAR_Seq_0" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0_INT.c" value="ARM_C_FILE;ADC_SAR_Seq_0" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_in.c" value="ARM_C_FILE;ADC_in" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_in.h" value="NONE;ADC_in" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_in_aliases.h" value="NONE;ADC_in" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\SLC.c" value="ARM_C_FILE;SLC" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\SLC.h" value="NONE;SLC" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\SLC_aliases.h" value="NONE;SLC" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\water_pin.c" value="ARM_C_FILE;water_pin" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\water_pin.h" value="NONE;water_pin" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\water_pin_aliases.h" value="NONE;water_pin" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0_intClock.c" value="ARM_C_FILE;ADC_SAR_Seq_0_intClock" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0_intClock.h" value="NONE;ADC_SAR_Seq_0_intClock" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0_IRQ.c" value="ARM_C_FILE;ADC_SAR_Seq_0_IRQ" />
+  <file name="C:\controllers\controllers.cydsn\codegentemp\ADC_SAR_Seq_0_IRQ.h" value="NONE;ADC_SAR_Seq_0_IRQ" />
   <file name="C:\controllers\controllers.cydsn\codegentemp\cm0gcc.ld" value="NONE;cy_boot" />
   <file name="C:\controllers\controllers.cydsn\codegentemp\Cm0RealView.scat" value="NONE;cy_boot" />
   <file name="C:\controllers\controllers.cydsn\codegentemp\Cm0Start.c" value="ARM_C_FILE;cy_boot" />

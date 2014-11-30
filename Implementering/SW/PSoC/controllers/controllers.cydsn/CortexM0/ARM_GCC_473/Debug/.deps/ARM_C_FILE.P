@@ -1,4 +1,4 @@
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/Cm0Start.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/Cm0Start.c 
+C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/cyfitter_cfg.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c 
 
 C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h : 
 
@@ -10,57 +10,7 @@ C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h :
 
 C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h : 
 
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/CyFlash.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyFlash.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyFlash.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyFlash.h : 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyFlash.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/CyLib.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/cyPm.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyPm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyPm.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyPm.h : 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyPm.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/cyfitter_cfg.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c 
-
 C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/cymetadata.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cymetadata.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cymetadata.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/cyutils.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyutils.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyutils.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/logDataInterrupt.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataInterrupt.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataInterrupt.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataInterrupt.h : 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataInterrupt.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/logDataTimer.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer.h : 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/logDataTimer_PM.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer_PM.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/logDataTimer_PM.c : 
-
-C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/waterInterrupt.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/waterInterrupt.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/waterInterrupt.c 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/waterInterrupt.h : 
-
-C:/controllers/controllers.cydsn/Generated_Source/PSoC4/waterInterrupt.c : 
 
 C:/controllers/controllers.cydsn/CortexM0/ARM_GCC_473/Debug/waterTimer.o : C:/controllers/controllers.cydsn/Generated_Source/PSoC4/CyLib.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cyfitter.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/cytypes.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/waterTimer.h C:/controllers/controllers.cydsn/Generated_Source/PSoC4/waterTimer.c 
 

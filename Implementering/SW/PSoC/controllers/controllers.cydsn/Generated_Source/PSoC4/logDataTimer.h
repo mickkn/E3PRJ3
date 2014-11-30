@@ -36,7 +36,7 @@ extern uint8 logDataTimer_initVar;
 *           Parameter Defaults
 **************************************/
 
-#define logDataTimer_Resolution                 8u
+#define logDataTimer_Resolution                 16u
 #define logDataTimer_UsingFixedFunction         0u
 #define logDataTimer_UsingHWCaptureCounter      0u
 #define logDataTimer_SoftwareCaptureMode        0u
@@ -61,8 +61,8 @@ typedef struct
     uint8 TimerEnableState;
     #if(!logDataTimer_UsingFixedFunction)
         #if (CY_UDB_V0)
-            uint8 TimerUdb;                 /* Timer internal counter value */
-            uint8 TimerPeriod;              /* Timer Period value       */
+            uint16 TimerUdb;                 /* Timer internal counter value */
+            uint16 TimerPeriod;              /* Timer Period value       */
             uint8 InterruptMaskValue;       /* Timer Compare Value */
             #if (logDataTimer_UsingHWCaptureCounter)
                 uint8 TimerCaptureCounter;  /* Timer Capture Counter Value */
@@ -70,7 +70,7 @@ typedef struct
         #endif /* variables for non retention registers in CY_UDB_V0 */
 
         #if (CY_UDB_V1)
-            uint8 TimerUdb;
+            uint16 TimerUdb;
             uint8 InterruptMaskValue;
             #if (logDataTimer_UsingHWCaptureCounter)
                 uint8 TimerCaptureCounter;
@@ -102,13 +102,13 @@ uint8   logDataTimer_ReadStatusRegister(void) ;
         ;
 #endif /* (!logDataTimer_ControlRegRemoved) */
 
-uint8  logDataTimer_ReadPeriod(void) ;
-void    logDataTimer_WritePeriod(uint8 period) \
+uint16  logDataTimer_ReadPeriod(void) ;
+void    logDataTimer_WritePeriod(uint16 period) \
     ;
-uint8  logDataTimer_ReadCounter(void) ;
-void    logDataTimer_WriteCounter(uint8 counter) \
+uint16  logDataTimer_ReadCounter(void) ;
+void    logDataTimer_WriteCounter(uint16 counter) \
     ;
-uint8  logDataTimer_ReadCapture(void) ;
+uint16  logDataTimer_ReadCapture(void) ;
 void    logDataTimer_SoftwareCapture(void) ;
 
 
@@ -175,7 +175,7 @@ void logDataTimer_Wakeup(void)        ;
 *    Initialial Parameter Constants
 ***************************************/
 
-#define logDataTimer_INIT_PERIOD             255u
+#define logDataTimer_INIT_PERIOD             65535u
 #define logDataTimer_INIT_CAPTURE_MODE       ((uint8)((uint8)0u << logDataTimer_CTRL_CAP_MODE_SHIFT))
 #define logDataTimer_INIT_TRIGGER_MODE       ((uint8)((uint8)0u << logDataTimer_CTRL_TRIG_MODE_SHIFT))
 #if (logDataTimer_UsingFixedFunction)
@@ -320,50 +320,50 @@ void logDataTimer_Wakeup(void)        ;
     #define logDataTimer_CONTROL             (* (reg8 *) logDataTimer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG )
     
     #if(logDataTimer_Resolution <= 8u) /* 8-bit Timer */
-        #define logDataTimer_CAPTURE_LSB         (* (reg8 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-        #define logDataTimer_CAPTURE_LSB_PTR       ((reg8 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-        #define logDataTimer_PERIOD_LSB          (* (reg8 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-        #define logDataTimer_PERIOD_LSB_PTR        ((reg8 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-        #define logDataTimer_COUNTER_LSB         (* (reg8 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
-        #define logDataTimer_COUNTER_LSB_PTR       ((reg8 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
+        #define logDataTimer_CAPTURE_LSB         (* (reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define logDataTimer_CAPTURE_LSB_PTR       ((reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define logDataTimer_PERIOD_LSB          (* (reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define logDataTimer_PERIOD_LSB_PTR        ((reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define logDataTimer_COUNTER_LSB         (* (reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #define logDataTimer_COUNTER_LSB_PTR       ((reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
     #elif(logDataTimer_Resolution <= 16u) /* 8-bit Timer */
         #if(CY_PSOC3) /* 8-bit addres space */
-            #define logDataTimer_CAPTURE_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-            #define logDataTimer_CAPTURE_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-            #define logDataTimer_PERIOD_LSB          (* (reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-            #define logDataTimer_PERIOD_LSB_PTR        ((reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-            #define logDataTimer_COUNTER_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
-            #define logDataTimer_COUNTER_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
+            #define logDataTimer_CAPTURE_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define logDataTimer_CAPTURE_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define logDataTimer_PERIOD_LSB          (* (reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define logDataTimer_PERIOD_LSB_PTR        ((reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define logDataTimer_COUNTER_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+            #define logDataTimer_COUNTER_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
         #else /* 16-bit address space */
-            #define logDataTimer_CAPTURE_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__16BIT_F0_REG )
-            #define logDataTimer_CAPTURE_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__16BIT_F0_REG )
-            #define logDataTimer_PERIOD_LSB          (* (reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__16BIT_D0_REG )
-            #define logDataTimer_PERIOD_LSB_PTR        ((reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__16BIT_D0_REG )
-            #define logDataTimer_COUNTER_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__16BIT_A0_REG )
-            #define logDataTimer_COUNTER_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT8_timerdp_u0__16BIT_A0_REG )
+            #define logDataTimer_CAPTURE_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG )
+            #define logDataTimer_CAPTURE_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__16BIT_F0_REG )
+            #define logDataTimer_PERIOD_LSB          (* (reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG )
+            #define logDataTimer_PERIOD_LSB_PTR        ((reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__16BIT_D0_REG )
+            #define logDataTimer_COUNTER_LSB         (* (reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG )
+            #define logDataTimer_COUNTER_LSB_PTR       ((reg16 *) logDataTimer_TimerUDB_sT16_timerdp_u0__16BIT_A0_REG )
         #endif /* CY_PSOC3 */
     #elif(logDataTimer_Resolution <= 24u)/* 24-bit Timer */
-        #define logDataTimer_CAPTURE_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-        #define logDataTimer_CAPTURE_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-        #define logDataTimer_PERIOD_LSB          (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-        #define logDataTimer_PERIOD_LSB_PTR        ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-        #define logDataTimer_COUNTER_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
-        #define logDataTimer_COUNTER_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
+        #define logDataTimer_CAPTURE_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define logDataTimer_CAPTURE_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+        #define logDataTimer_PERIOD_LSB          (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define logDataTimer_PERIOD_LSB_PTR        ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+        #define logDataTimer_COUNTER_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+        #define logDataTimer_COUNTER_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
     #else /* 32-bit Timer */
         #if(CY_PSOC3 || CY_PSOC5) /* 8-bit address space */
-            #define logDataTimer_CAPTURE_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-            #define logDataTimer_CAPTURE_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__F0_REG )
-            #define logDataTimer_PERIOD_LSB          (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-            #define logDataTimer_PERIOD_LSB_PTR        ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__D0_REG )
-            #define logDataTimer_COUNTER_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
-            #define logDataTimer_COUNTER_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__A0_REG )
+            #define logDataTimer_CAPTURE_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define logDataTimer_CAPTURE_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__F0_REG )
+            #define logDataTimer_PERIOD_LSB          (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define logDataTimer_PERIOD_LSB_PTR        ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__D0_REG )
+            #define logDataTimer_COUNTER_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+            #define logDataTimer_COUNTER_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
         #else /* 32-bit address space */
-            #define logDataTimer_CAPTURE_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__32BIT_F0_REG )
-            #define logDataTimer_CAPTURE_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__32BIT_F0_REG )
-            #define logDataTimer_PERIOD_LSB          (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__32BIT_D0_REG )
-            #define logDataTimer_PERIOD_LSB_PTR        ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__32BIT_D0_REG )
-            #define logDataTimer_COUNTER_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__32BIT_A0_REG )
-            #define logDataTimer_COUNTER_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT8_timerdp_u0__32BIT_A0_REG )
+            #define logDataTimer_CAPTURE_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__32BIT_F0_REG )
+            #define logDataTimer_CAPTURE_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__32BIT_F0_REG )
+            #define logDataTimer_PERIOD_LSB          (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__32BIT_D0_REG )
+            #define logDataTimer_PERIOD_LSB_PTR        ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__32BIT_D0_REG )
+            #define logDataTimer_COUNTER_LSB         (* (reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__32BIT_A0_REG )
+            #define logDataTimer_COUNTER_LSB_PTR       ((reg32 *) logDataTimer_TimerUDB_sT16_timerdp_u0__32BIT_A0_REG )
         #endif /* CY_PSOC3 || CY_PSOC5 */ 
     #endif
 
