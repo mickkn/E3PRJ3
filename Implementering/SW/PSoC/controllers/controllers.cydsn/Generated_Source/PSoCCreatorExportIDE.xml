@@ -37,6 +37,9 @@
           <File BuildType="BUILD" Toolchain="">.\sensorPackage.c</File>
           <File BuildType="BUILD" Toolchain="">.\sprinkler.c</File>
           <File BuildType="BUILD" Toolchain="">.\tempSensor.c</File>
+          <File BuildType="BUILD" Toolchain="">.\onOff.c</File>
+          <File BuildType="BUILD" Toolchain="">.\config.c</File>
+          <File BuildType="BUILD" Toolchain="">.\addRemove.c</File>
           <File BuildType="BUILD" Toolchain="">.\loadData.h</File>
           <File BuildType="BUILD" Toolchain="">.\buffer.h</File>
           <File BuildType="BUILD" Toolchain="">.\parameters.h</File>
@@ -44,6 +47,9 @@
           <File BuildType="BUILD" Toolchain="">.\sensorPackage.h</File>
           <File BuildType="BUILD" Toolchain="">.\sprinkler.h</File>
           <File BuildType="BUILD" Toolchain="">.\tempSensor.h</File>
+          <File BuildType="BUILD" Toolchain="">.\onOff.h</File>
+          <File BuildType="BUILD" Toolchain="">.\config.h</File>
+          <File BuildType="BUILD" Toolchain="">.\addRemove.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\controllers\controllers.cydsn\Generated_Source\PSoC4">

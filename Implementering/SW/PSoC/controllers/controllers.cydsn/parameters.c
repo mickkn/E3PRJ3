@@ -8,6 +8,7 @@
 
 #include "parameters.h"
 
+
 extern void parameters_init(parameters * const this)
 {
 	this->active_ = 0;

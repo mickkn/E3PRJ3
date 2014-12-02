@@ -8,7 +8,6 @@
 
 #include "loadData.h"
 #include <stdio.h>
-//#include <string.h>
 
 // Private data
 static parameters * parametersPtr_;

@@ -12,7 +12,31 @@
 <CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
 <dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
 <CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
-<file name=".\CortexM0\ARM_GCC_473\Debug\humiSensor.o">
+<file name=".\CortexM0\ARM_GCC_473\Debug\addRemove.o">
+<dep name=".\addRemove.c" />
+<dep name=".\addRemove.h" />
+</file>
+<file name=".\addRemove.c" />
+<file name=".\addRemove.h" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\config.o">
+<dep name=".\buffer.h" />
+<dep name=".\config.c" />
+<dep name=".\config.h" />
+<dep name=".\parameters.h" />
+</file>
+<file name=".\buffer.h" />
+<file name=".\config.c" />
+<file name=".\config.h" />
+<file name=".\parameters.h" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\onOff.o">
+<dep name=".\buffer.h" />
+<dep name=".\onOff.c" />
+<dep name=".\onOff.h" />
+<dep name=".\parameters.h" />
+</file>
+<file name=".\onOff.c" />
+<file name=".\onOff.h" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\test_controllers.o">
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
@@ -40,8 +64,17 @@
 <dep name=".\Generated_Source\PSoC4\waterTimer.h" />
 <dep name=".\Generated_Source\PSoC4\water_pin.h" />
 <dep name=".\Generated_Source\PSoC4\water_pin_aliases.h" />
-<dep name=".\humiSensor.c" />
+<dep name=".\addRemove.h" />
+<dep name=".\buffer.h" />
+<dep name=".\config.h" />
 <dep name=".\humiSensor.h" />
+<dep name=".\loadData.h" />
+<dep name=".\onOff.h" />
+<dep name=".\parameters.h" />
+<dep name=".\sensorPackage.h" />
+<dep name=".\sprinkler.h" />
+<dep name=".\tempSensor.h" />
+<dep name=".\test_controllers.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
 <file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
@@ -70,8 +103,12 @@
 <file name=".\Generated_Source\PSoC4\waterTimer.h" />
 <file name=".\Generated_Source\PSoC4\water_pin.h" />
 <file name=".\Generated_Source\PSoC4\water_pin_aliases.h" />
-<file name=".\humiSensor.c" />
 <file name=".\humiSensor.h" />
+<file name=".\loadData.h" />
+<file name=".\sensorPackage.h" />
+<file name=".\sprinkler.h" />
+<file name=".\tempSensor.h" />
+<file name=".\test_controllers.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\loadData.o">
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
@@ -109,13 +146,39 @@
 <dep name=".\sprinkler.h" />
 <dep name=".\tempSensor.h" />
 </file>
-<file name=".\buffer.h" />
 <file name=".\loadData.c" />
-<file name=".\loadData.h" />
-<file name=".\parameters.h" />
-<file name=".\sensorPackage.h" />
-<file name=".\sprinkler.h" />
-<file name=".\tempSensor.h" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\humiSensor.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_in.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_in_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\SLC.h" />
+<dep name=".\Generated_Source\PSoC4\SLC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\logDataInterrupt.h" />
+<dep name=".\Generated_Source\PSoC4\logDataTimer.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\waterInterrupt.h" />
+<dep name=".\Generated_Source\PSoC4\waterTimer.h" />
+<dep name=".\Generated_Source\PSoC4\water_pin.h" />
+<dep name=".\Generated_Source\PSoC4\water_pin_aliases.h" />
+<dep name=".\humiSensor.c" />
+<dep name=".\humiSensor.h" />
+</file>
+<file name=".\humiSensor.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\sensorPackage.o">
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
@@ -215,44 +278,6 @@
 <dep name=".\tempSensor.h" />
 </file>
 <file name=".\tempSensor.c" />
-<file name=".\CortexM0\ARM_GCC_473\Debug\test_controllers.o">
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_in.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_in_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\SLC.h" />
-<dep name=".\Generated_Source\PSoC4\SLC_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
-<dep name=".\Generated_Source\PSoC4\cyPm.h" />
-<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC4\cypins.h" />
-<dep name=".\Generated_Source\PSoC4\cytypes.h" />
-<dep name=".\Generated_Source\PSoC4\logDataInterrupt.h" />
-<dep name=".\Generated_Source\PSoC4\logDataTimer.h" />
-<dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name=".\Generated_Source\PSoC4\waterInterrupt.h" />
-<dep name=".\Generated_Source\PSoC4\waterTimer.h" />
-<dep name=".\Generated_Source\PSoC4\water_pin.h" />
-<dep name=".\Generated_Source\PSoC4\water_pin_aliases.h" />
-<dep name=".\buffer.h" />
-<dep name=".\humiSensor.h" />
-<dep name=".\loadData.h" />
-<dep name=".\parameters.h" />
-<dep name=".\sensorPackage.h" />
-<dep name=".\sprinkler.h" />
-<dep name=".\tempSensor.h" />
-<dep name=".\test_controllers.c" />
-</file>
-<file name=".\test_controllers.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o">
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
 <dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
@@ -467,6 +492,9 @@
 <dep name=".\CortexM0\ARM_GCC_473\Debug\sensorPackage.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\sprinkler.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\tempSensor.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\onOff.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\config.o" />
+<dep name=".\CortexM0\ARM_GCC_473\Debug\addRemove.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\cymetadata.o" />
 <dep name=".\CortexM0\ARM_GCC_473\Debug\Cm0Start.o" />
@@ -538,6 +566,9 @@
 <name_val_pair name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_INT.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\onOff.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\config.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\addRemove.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\Bjørn\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;C:\controllers\controllers.cydsn\controllers.cyprj&quot; &quot;-d&quot; &quot;CY8C4245AXI-483&quot; &quot;-s&quot; &quot;C:\controllers\controllers.cydsn\Generated_Source\PSoC4&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=LE&quot; " />
@@ -1273,7 +1304,7 @@
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130618333801439081" />
+<deps_time v="130620152515421597" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="bf610382-39c6-441f-80b8-b04622ea7845">

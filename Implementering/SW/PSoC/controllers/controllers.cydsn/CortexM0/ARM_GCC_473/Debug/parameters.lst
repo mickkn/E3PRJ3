@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -36,9 +36,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
    8:.\parameters.c **** 
    9:.\parameters.c **** #include "parameters.h"
   10:.\parameters.c **** 
-  11:.\parameters.c **** extern void parameters_init(parameters * const this)
-  12:.\parameters.c **** {
-  26              		.loc 1 12 0
+  11:.\parameters.c **** 
+  12:.\parameters.c **** extern void parameters_init(parameters * const this)
+  13:.\parameters.c **** {
+  26              		.loc 1 13 0
   27              		.cfi_startproc
   28 0000 80B5     		push	{r7, lr}
   29              	.LCFI0:
@@ -52,26 +53,26 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
   37              	.LCFI2:
   38              		.cfi_def_cfa_register 7
   39 0006 7860     		str	r0, [r7, #4]
-  13:.\parameters.c **** 	this->active_ = 0;
-  40              		.loc 1 13 0
+  14:.\parameters.c **** 	this->active_ = 0;
+  40              		.loc 1 14 0
   41 0008 7B68     		ldr	r3, [r7, #4]
   42 000a 0022     		mov	r2, #0
   43 000c 1A72     		strb	r2, [r3, #8]
-  14:.\parameters.c **** 	this->humidity_ = 10;
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 2
 
 
-  44              		.loc 1 14 0
+  15:.\parameters.c **** 	this->humidity_ = 10;
+  44              		.loc 1 15 0
   45 000e 7B68     		ldr	r3, [r7, #4]
   46 0010 034A     		ldr	r2, .L2
   47 0012 5A60     		str	r2, [r3, #4]
-  15:.\parameters.c **** 	this->temperature_ = 30;
-  48              		.loc 1 15 0
+  16:.\parameters.c **** 	this->temperature_ = 30;
+  48              		.loc 1 16 0
   49 0014 7B68     		ldr	r3, [r7, #4]
   50 0016 034A     		ldr	r2, .L2+4
   51 0018 1A60     		str	r2, [r3]
-  16:.\parameters.c **** }
-  52              		.loc 1 16 0
+  17:.\parameters.c **** }
+  52              		.loc 1 17 0
   53 001a BD46     		mov	sp, r7
   54 001c 02B0     		add	sp, sp, #8
   55              		@ sp needed for prologue
@@ -92,10 +93,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
   70              		.type	parameters_exit, %function
   71              	parameters_exit:
   72              	.LFB1:
-  17:.\parameters.c **** 
-  18:.\parameters.c **** extern void parameters_exit(parameters * const this)
-  19:.\parameters.c **** {
-  73              		.loc 1 19 0
+  18:.\parameters.c **** 
+  19:.\parameters.c **** extern void parameters_exit(parameters * const this)
+  20:.\parameters.c **** {
+  73              		.loc 1 20 0
   74              		.cfi_startproc
   75 0000 80B5     		push	{r7, lr}
   76              	.LCFI3:
@@ -109,18 +110,18 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
   84              	.LCFI5:
   85              		.cfi_def_cfa_register 7
   86 0006 7860     		str	r0, [r7, #4]
-  20:.\parameters.c **** 
-  21:.\parameters.c **** }
-  87              		.loc 1 21 0
+  21:.\parameters.c **** 
+  22:.\parameters.c **** }
+  87              		.loc 1 22 0
   88 0008 BD46     		mov	sp, r7
   89 000a 02B0     		add	sp, sp, #8
   90              		@ sp needed for prologue
   91 000c 80BD     		pop	{r7, pc}
   92              		.cfi_endproc
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 3
+
+
   93              	.LFE1:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 3
-
-
   94              		.size	parameters_exit, .-parameters_exit
   95 000e C046     		.section	.text.parameters_setTemp,"ax",%progbits
   96              		.align	2
@@ -130,10 +131,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  100              		.type	parameters_setTemp, %function
  101              	parameters_setTemp:
  102              	.LFB2:
-  22:.\parameters.c **** 
-  23:.\parameters.c **** int parameters_setTemp(parameters * const this, const float temp)
-  24:.\parameters.c **** {
- 103              		.loc 1 24 0
+  23:.\parameters.c **** 
+  24:.\parameters.c **** int parameters_setTemp(parameters * const this, const float temp)
+  25:.\parameters.c **** {
+ 103              		.loc 1 25 0
  104              		.cfi_startproc
  105 0000 80B5     		push	{r7, lr}
  106              	.LCFI6:
@@ -148,17 +149,17 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  115              		.cfi_def_cfa_register 7
  116 0006 7860     		str	r0, [r7, #4]
  117 0008 3960     		str	r1, [r7]
-  25:.\parameters.c **** 	this->temperature_ = temp;
- 118              		.loc 1 25 0
+  26:.\parameters.c **** 	this->temperature_ = temp;
+ 118              		.loc 1 26 0
  119 000a 7B68     		ldr	r3, [r7, #4]
  120 000c 3A68     		ldr	r2, [r7]
  121 000e 1A60     		str	r2, [r3]
-  26:.\parameters.c **** 
-  27:.\parameters.c **** 	return 0;
- 122              		.loc 1 27 0
+  27:.\parameters.c **** 
+  28:.\parameters.c **** 	return 0;
+ 122              		.loc 1 28 0
  123 0010 0023     		mov	r3, #0
-  28:.\parameters.c **** }
- 124              		.loc 1 28 0
+  29:.\parameters.c **** }
+ 124              		.loc 1 29 0
  125 0012 181C     		mov	r0, r3
  126 0014 BD46     		mov	sp, r7
  127 0016 02B0     		add	sp, sp, #8
@@ -175,13 +176,13 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  138              		.type	parameters_getTemp, %function
  139              	parameters_getTemp:
  140              	.LFB3:
-  29:.\parameters.c **** 
-  30:.\parameters.c **** int parameters_getTemp(parameters * const this, float * temp)
-  31:.\parameters.c **** {
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 4
+  30:.\parameters.c **** 
+  31:.\parameters.c **** int parameters_getTemp(parameters * const this, float * temp)
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 4
 
 
- 141              		.loc 1 31 0
+  32:.\parameters.c **** {
+ 141              		.loc 1 32 0
  142              		.cfi_startproc
  143 0000 80B5     		push	{r7, lr}
  144              	.LCFI9:
@@ -196,18 +197,18 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  153              		.cfi_def_cfa_register 7
  154 0006 7860     		str	r0, [r7, #4]
  155 0008 3960     		str	r1, [r7]
-  32:.\parameters.c **** 	*temp = this->temperature_;
- 156              		.loc 1 32 0
+  33:.\parameters.c **** 	*temp = this->temperature_;
+ 156              		.loc 1 33 0
  157 000a 7B68     		ldr	r3, [r7, #4]
  158 000c 1A68     		ldr	r2, [r3]
  159 000e 3B68     		ldr	r3, [r7]
  160 0010 1A60     		str	r2, [r3]
-  33:.\parameters.c **** 
-  34:.\parameters.c **** 	return 0;
- 161              		.loc 1 34 0
+  34:.\parameters.c **** 
+  35:.\parameters.c **** 	return 0;
+ 161              		.loc 1 35 0
  162 0012 0023     		mov	r3, #0
-  35:.\parameters.c **** }
- 163              		.loc 1 35 0
+  36:.\parameters.c **** }
+ 163              		.loc 1 36 0
  164 0014 181C     		mov	r0, r3
  165 0016 BD46     		mov	sp, r7
  166 0018 02B0     		add	sp, sp, #8
@@ -224,10 +225,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  177              		.type	parameters_setHumi, %function
  178              	parameters_setHumi:
  179              	.LFB4:
-  36:.\parameters.c **** 
-  37:.\parameters.c **** int parameters_setHumi(parameters * const this, const float humi)
-  38:.\parameters.c **** {
- 180              		.loc 1 38 0
+  37:.\parameters.c **** 
+  38:.\parameters.c **** int parameters_setHumi(parameters * const this, const float humi)
+  39:.\parameters.c **** {
+ 180              		.loc 1 39 0
  181              		.cfi_startproc
  182 0000 80B5     		push	{r7, lr}
  183              	.LCFI12:
@@ -237,25 +238,25 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  187 0002 82B0     		sub	sp, sp, #8
  188              	.LCFI13:
  189              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 5
+
+
  190 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 5
-
-
  191              	.LCFI14:
  192              		.cfi_def_cfa_register 7
  193 0006 7860     		str	r0, [r7, #4]
  194 0008 3960     		str	r1, [r7]
-  39:.\parameters.c **** 	this->humidity_ = humi;
- 195              		.loc 1 39 0
+  40:.\parameters.c **** 	this->humidity_ = humi;
+ 195              		.loc 1 40 0
  196 000a 7B68     		ldr	r3, [r7, #4]
  197 000c 3A68     		ldr	r2, [r7]
  198 000e 5A60     		str	r2, [r3, #4]
-  40:.\parameters.c **** 
-  41:.\parameters.c **** 	return 0;
- 199              		.loc 1 41 0
+  41:.\parameters.c **** 
+  42:.\parameters.c **** 	return 0;
+ 199              		.loc 1 42 0
  200 0010 0023     		mov	r3, #0
-  42:.\parameters.c **** }
- 201              		.loc 1 42 0
+  43:.\parameters.c **** }
+ 201              		.loc 1 43 0
  202 0012 181C     		mov	r0, r3
  203 0014 BD46     		mov	sp, r7
  204 0016 02B0     		add	sp, sp, #8
@@ -272,10 +273,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  215              		.type	parameters_getHumi, %function
  216              	parameters_getHumi:
  217              	.LFB5:
-  43:.\parameters.c **** 
-  44:.\parameters.c **** int parameters_getHumi(parameters * const this, float * humi)
-  45:.\parameters.c **** {
- 218              		.loc 1 45 0
+  44:.\parameters.c **** 
+  45:.\parameters.c **** int parameters_getHumi(parameters * const this, float * humi)
+  46:.\parameters.c **** {
+ 218              		.loc 1 46 0
  219              		.cfi_startproc
  220 0000 80B5     		push	{r7, lr}
  221              	.LCFI15:
@@ -290,22 +291,22 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  230              		.cfi_def_cfa_register 7
  231 0006 7860     		str	r0, [r7, #4]
  232 0008 3960     		str	r1, [r7]
-  46:.\parameters.c **** 	 *humi = this->humidity_;
- 233              		.loc 1 46 0
+  47:.\parameters.c **** 	 *humi = this->humidity_;
+ 233              		.loc 1 47 0
  234 000a 7B68     		ldr	r3, [r7, #4]
  235 000c 5A68     		ldr	r2, [r3, #4]
  236 000e 3B68     		ldr	r3, [r7]
  237 0010 1A60     		str	r2, [r3]
-  47:.\parameters.c **** 
-  48:.\parameters.c **** 	return 0;
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 6
+  48:.\parameters.c **** 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 6
 
 
- 238              		.loc 1 48 0
+  49:.\parameters.c **** 	return 0;
+ 238              		.loc 1 49 0
  239 0012 0023     		mov	r3, #0
-  49:.\parameters.c **** 
-  50:.\parameters.c **** }
- 240              		.loc 1 50 0
+  50:.\parameters.c **** 
+  51:.\parameters.c **** }
+ 240              		.loc 1 51 0
  241 0014 181C     		mov	r0, r3
  242 0016 BD46     		mov	sp, r7
  243 0018 02B0     		add	sp, sp, #8
@@ -322,10 +323,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  254              		.type	parameters_setActive, %function
  255              	parameters_setActive:
  256              	.LFB6:
-  51:.\parameters.c **** 
-  52:.\parameters.c **** int parameters_setActive(parameters * const this, const unsigned char a)
-  53:.\parameters.c **** {
- 257              		.loc 1 53 0
+  52:.\parameters.c **** 
+  53:.\parameters.c **** int parameters_setActive(parameters * const this, const unsigned char a)
+  54:.\parameters.c **** {
+ 257              		.loc 1 54 0
  258              		.cfi_startproc
  259 0000 80B5     		push	{r7, lr}
  260              	.LCFI18:
@@ -342,25 +343,25 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  271 0008 0A1C     		mov	r2, r1
  272 000a FB1C     		add	r3, r7, #3
  273 000c 1A70     		strb	r2, [r3]
-  54:.\parameters.c **** 	this->active_ = a;
- 274              		.loc 1 54 0
+  55:.\parameters.c **** 	this->active_ = a;
+ 274              		.loc 1 55 0
  275 000e 7B68     		ldr	r3, [r7, #4]
  276 0010 FA1C     		add	r2, r7, #3
  277 0012 1278     		ldrb	r2, [r2]
  278 0014 1A72     		strb	r2, [r3, #8]
-  55:.\parameters.c **** 
-  56:.\parameters.c **** 	return 0;
- 279              		.loc 1 56 0
+  56:.\parameters.c **** 
+  57:.\parameters.c **** 	return 0;
+ 279              		.loc 1 57 0
  280 0016 0023     		mov	r3, #0
-  57:.\parameters.c **** }
- 281              		.loc 1 57 0
+  58:.\parameters.c **** }
+ 281              		.loc 1 58 0
  282 0018 181C     		mov	r0, r3
  283 001a BD46     		mov	sp, r7
  284 001c 02B0     		add	sp, sp, #8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 7
+
+
  285              		@ sp needed for prologue
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 7
-
-
  286 001e 80BD     		pop	{r7, pc}
  287              		.cfi_endproc
  288              	.LFE6:
@@ -373,10 +374,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  295              		.type	parameters_getActive, %function
  296              	parameters_getActive:
  297              	.LFB7:
-  58:.\parameters.c **** 
-  59:.\parameters.c **** int parameters_getActive(parameters * const this, unsigned char * a)
-  60:.\parameters.c **** {
- 298              		.loc 1 60 0
+  59:.\parameters.c **** 
+  60:.\parameters.c **** int parameters_getActive(parameters * const this, unsigned char * a)
+  61:.\parameters.c **** {
+ 298              		.loc 1 61 0
  299              		.cfi_startproc
  300 0000 80B5     		push	{r7, lr}
  301              	.LCFI21:
@@ -391,18 +392,18 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  310              		.cfi_def_cfa_register 7
  311 0006 7860     		str	r0, [r7, #4]
  312 0008 3960     		str	r1, [r7]
-  61:.\parameters.c **** 	*a = this->active_;
- 313              		.loc 1 61 0
+  62:.\parameters.c **** 	*a = this->active_;
+ 313              		.loc 1 62 0
  314 000a 7B68     		ldr	r3, [r7, #4]
  315 000c 1A7A     		ldrb	r2, [r3, #8]
  316 000e 3B68     		ldr	r3, [r7]
  317 0010 1A70     		strb	r2, [r3]
-  62:.\parameters.c **** 
-  63:.\parameters.c **** 	return 0;
- 318              		.loc 1 63 0
+  63:.\parameters.c **** 
+  64:.\parameters.c **** 	return 0;
+ 318              		.loc 1 64 0
  319 0012 0023     		mov	r3, #0
-  64:.\parameters.c **** }...
- 320              		.loc 1 64 0
+  65:.\parameters.c **** }...
+ 320              		.loc 1 65 0
  321 0014 181C     		mov	r0, r3
  322 0016 BD46     		mov	sp, r7
  323 0018 02B0     		add	sp, sp, #8
@@ -417,10 +418,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  332              		.section	.debug_info,"",%progbits
  333              	.Ldebug_info0:
  334 0000 4E020000 		.4byte	0x24e
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 8
+
+
  335 0004 0200     		.2byte	0x2
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 8
-
-
  336 0006 00000000 		.4byte	.Ldebug_abbrev0
  337 000a 04       		.byte	0x4
  338 000b 01       		.uleb128 0x1
@@ -477,13 +478,13 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  389 0074 13       		.byte	0x13
  390 0075 29000000 		.4byte	0x29
  391 0079 06       		.uleb128 0x6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 9
+
+
  392 007a 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 9
-
-
  393 007b 6C000000 		.4byte	.LASF5
  394 007f 01       		.byte	0x1
- 395 0080 0B       		.byte	0xb
+ 395 0080 0C       		.byte	0xc
  396 0081 01       		.byte	0x1
  397 0082 00000000 		.4byte	.LFB0
  398 0086 28000000 		.4byte	.LFE0
@@ -493,7 +494,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  402 0093 07       		.uleb128 0x7
  403 0094 F9000000 		.4byte	.LASF7
  404 0098 01       		.byte	0x1
- 405 0099 0B       		.byte	0xb
+ 405 0099 0C       		.byte	0xc
  406 009a A2000000 		.4byte	0xa2
  407 009e 02       		.byte	0x2
  408 009f 91       		.byte	0x91
@@ -508,7 +509,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  417 00ae 01       		.byte	0x1
  418 00af 1F010000 		.4byte	.LASF6
  419 00b3 01       		.byte	0x1
- 420 00b4 12       		.byte	0x12
+ 420 00b4 13       		.byte	0x13
  421 00b5 01       		.byte	0x1
  422 00b6 00000000 		.4byte	.LFB1
  423 00ba 0E000000 		.4byte	.LFE1
@@ -518,7 +519,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  427 00c7 07       		.uleb128 0x7
  428 00c8 F9000000 		.4byte	.LASF7
  429 00cc 01       		.byte	0x1
- 430 00cd 12       		.byte	0x12
+ 430 00cd 13       		.byte	0x13
  431 00ce A2000000 		.4byte	0xa2
  432 00d2 02       		.byte	0x2
  433 00d3 91       		.byte	0x91
@@ -528,7 +529,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  437 00d7 01       		.byte	0x1
  438 00d8 00000000 		.4byte	.LASF9
  439 00dc 01       		.byte	0x1
- 440 00dd 17       		.byte	0x17
+ 440 00dd 18       		.byte	0x18
  441 00de 01       		.byte	0x1
  442 00df 11010000 		.4byte	0x111
  443 00e3 00000000 		.4byte	.LFB2
@@ -537,12 +538,12 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  446 00ef 01       		.byte	0x1
  447 00f0 11010000 		.4byte	0x111
  448 00f4 07       		.uleb128 0x7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 10
+
+
  449 00f5 F9000000 		.4byte	.LASF7
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 10
-
-
  450 00f9 01       		.byte	0x1
- 451 00fa 17       		.byte	0x17
+ 451 00fa 18       		.byte	0x18
  452 00fb A2000000 		.4byte	0xa2
  453 00ff 02       		.byte	0x2
  454 0100 91       		.byte	0x91
@@ -550,7 +551,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  456 0102 07       		.uleb128 0x7
  457 0103 D0000000 		.4byte	.LASF8
  458 0107 01       		.byte	0x1
- 459 0108 17       		.byte	0x17
+ 459 0108 18       		.byte	0x18
  460 0109 18010000 		.4byte	0x118
  461 010d 02       		.byte	0x2
  462 010e 91       		.byte	0x91
@@ -566,7 +567,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  472 011e 01       		.byte	0x1
  473 011f 13000000 		.4byte	.LASF10
  474 0123 01       		.byte	0x1
- 475 0124 1E       		.byte	0x1e
+ 475 0124 1F       		.byte	0x1f
  476 0125 01       		.byte	0x1
  477 0126 11010000 		.4byte	0x111
  478 012a 00000000 		.4byte	.LFB3
@@ -577,7 +578,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  483 013b 07       		.uleb128 0x7
  484 013c F9000000 		.4byte	.LASF7
  485 0140 01       		.byte	0x1
- 486 0141 1E       		.byte	0x1e
+ 486 0141 1F       		.byte	0x1f
  487 0142 A2000000 		.4byte	0xa2
  488 0146 02       		.byte	0x2
  489 0147 91       		.byte	0x91
@@ -585,7 +586,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  491 0149 07       		.uleb128 0x7
  492 014a D0000000 		.4byte	.LASF8
  493 014e 01       		.byte	0x1
- 494 014f 1E       		.byte	0x1e
+ 494 014f 1F       		.byte	0x1f
  495 0150 58010000 		.4byte	0x158
  496 0154 02       		.byte	0x2
  497 0155 91       		.byte	0x91
@@ -597,11 +598,11 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  503 015e 0A       		.uleb128 0xa
  504 015f 01       		.byte	0x1
  505 0160 FE000000 		.4byte	.LASF11
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 11
+
+
  506 0164 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 11
-
-
- 507 0165 25       		.byte	0x25
+ 507 0165 26       		.byte	0x26
  508 0166 01       		.byte	0x1
  509 0167 11010000 		.4byte	0x111
  510 016b 00000000 		.4byte	.LFB4
@@ -612,7 +613,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  515 017c 07       		.uleb128 0x7
  516 017d F9000000 		.4byte	.LASF7
  517 0181 01       		.byte	0x1
- 518 0182 25       		.byte	0x25
+ 518 0182 26       		.byte	0x26
  519 0183 A2000000 		.4byte	0xa2
  520 0187 02       		.byte	0x2
  521 0188 91       		.byte	0x91
@@ -620,7 +621,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  523 018a 07       		.uleb128 0x7
  524 018b 67010000 		.4byte	.LASF12
  525 018f 01       		.byte	0x1
- 526 0190 25       		.byte	0x25
+ 526 0190 26       		.byte	0x26
  527 0191 18010000 		.4byte	0x118
  528 0195 02       		.byte	0x2
  529 0196 91       		.byte	0x91
@@ -630,7 +631,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  533 019a 01       		.byte	0x1
  534 019b 39010000 		.4byte	.LASF13
  535 019f 01       		.byte	0x1
- 536 01a0 2C       		.byte	0x2c
+ 536 01a0 2D       		.byte	0x2d
  537 01a1 01       		.byte	0x1
  538 01a2 11010000 		.4byte	0x111
  539 01a6 00000000 		.4byte	.LFB5
@@ -641,7 +642,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  544 01b7 07       		.uleb128 0x7
  545 01b8 F9000000 		.4byte	.LASF7
  546 01bc 01       		.byte	0x1
- 547 01bd 2C       		.byte	0x2c
+ 547 01bd 2D       		.byte	0x2d
  548 01be A2000000 		.4byte	0xa2
  549 01c2 02       		.byte	0x2
  550 01c3 91       		.byte	0x91
@@ -649,7 +650,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  552 01c5 07       		.uleb128 0x7
  553 01c6 67010000 		.4byte	.LASF12
  554 01ca 01       		.byte	0x1
- 555 01cb 2C       		.byte	0x2c
+ 555 01cb 2D       		.byte	0x2d
  556 01cc 58010000 		.4byte	0x158
  557 01d0 02       		.byte	0x2
  558 01d1 91       		.byte	0x91
@@ -657,12 +658,12 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  560 01d3 00       		.byte	0
  561 01d4 0A       		.uleb128 0xa
  562 01d5 01       		.byte	0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 12
+
+
  563 01d6 4C010000 		.4byte	.LASF14
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 12
-
-
  564 01da 01       		.byte	0x1
- 565 01db 34       		.byte	0x34
+ 565 01db 35       		.byte	0x35
  566 01dc 01       		.byte	0x1
  567 01dd 11010000 		.4byte	0x111
  568 01e1 00000000 		.4byte	.LFB6
@@ -673,7 +674,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  573 01f2 07       		.uleb128 0x7
  574 01f3 F9000000 		.4byte	.LASF7
  575 01f7 01       		.byte	0x1
- 576 01f8 34       		.byte	0x34
+ 576 01f8 35       		.byte	0x35
  577 01f9 A2000000 		.4byte	0xa2
  578 01fd 02       		.byte	0x2
  579 01fe 91       		.byte	0x91
@@ -681,7 +682,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  581 0200 0C       		.uleb128 0xc
  582 0201 6100     		.ascii	"a\000"
  583 0203 01       		.byte	0x1
- 584 0204 34       		.byte	0x34
+ 584 0204 35       		.byte	0x35
  585 0205 0D020000 		.4byte	0x20d
  586 0209 02       		.byte	0x2
  587 020a 91       		.byte	0x91
@@ -693,7 +694,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  593 0213 01       		.byte	0x1
  594 0214 D5000000 		.4byte	.LASF15
  595 0218 01       		.byte	0x1
- 596 0219 3B       		.byte	0x3b
+ 596 0219 3C       		.byte	0x3c
  597 021a 01       		.byte	0x1
  598 021b 11010000 		.4byte	0x111
  599 021f 00000000 		.4byte	.LFB7
@@ -704,7 +705,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  604 0230 07       		.uleb128 0x7
  605 0231 F9000000 		.4byte	.LASF7
  606 0235 01       		.byte	0x1
- 607 0236 3B       		.byte	0x3b
+ 607 0236 3C       		.byte	0x3c
  608 0237 A2000000 		.4byte	0xa2
  609 023b 02       		.byte	0x2
  610 023c 91       		.byte	0x91
@@ -712,15 +713,15 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  612 023e 0C       		.uleb128 0xc
  613 023f 6100     		.ascii	"a\000"
  614 0241 01       		.byte	0x1
- 615 0242 3B       		.byte	0x3b
+ 615 0242 3C       		.byte	0x3c
  616 0243 4B020000 		.4byte	0x24b
  617 0247 02       		.byte	0x2
  618 0248 91       		.byte	0x91
  619 0249 70       		.sleb128 -16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 13
+
+
  620 024a 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 13
-
-
  621 024b 09       		.uleb128 0x9
  622 024c 04       		.byte	0x4
  623 024d 67000000 		.4byte	0x67
@@ -777,10 +778,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  674 002f 38       		.uleb128 0x38
  675 0030 0A       		.uleb128 0xa
  676 0031 00       		.byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 14
+
+
  677 0032 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 14
-
-
  678 0033 04       		.uleb128 0x4
  679 0034 24       		.uleb128 0x24
  680 0035 00       		.byte	0
@@ -837,10 +838,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  731 0069 0E       		.uleb128 0xe
  732 006a 3A       		.uleb128 0x3a
  733 006b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 15
+
+
  734 006c 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 15
-
-
  735 006d 0B       		.uleb128 0xb
  736 006e 49       		.uleb128 0x49
  737 006f 13       		.uleb128 0x13
@@ -897,10 +898,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  788 00a3 0B       		.uleb128 0xb
  789 00a4 0B       		.uleb128 0xb
  790 00a5 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 16
+
+
  791 00a6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 16
-
-
  792 00a7 03       		.uleb128 0x3
  793 00a8 08       		.uleb128 0x8
  794 00a9 00       		.byte	0
@@ -957,10 +958,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  845 004c 0200     		.2byte	0x2
  846 004e 7D       		.byte	0x7d
  847 004f 08       		.sleb128 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 17
+
+
  848 0050 04000000 		.4byte	.LCFI4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 17
-
-
  849 0054 06000000 		.4byte	.LCFI5
  850 0058 0200     		.2byte	0x2
  851 005a 7D       		.byte	0x7d
@@ -1017,10 +1018,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  902 00d6 77       		.byte	0x77
  903 00d7 10       		.sleb128 16
  904 00d8 00000000 		.4byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 18
+
+
  905 00dc 00000000 		.4byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 18
-
-
  906              	.LLST4:
  907 00e0 00000000 		.4byte	.LFB4
  908 00e4 02000000 		.4byte	.LCFI12
@@ -1077,10 +1078,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  959 0160 04000000 		.4byte	.LCFI19
  960 0164 0200     		.2byte	0x2
  961 0166 7D       		.byte	0x7d
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 19
+
+
  962 0167 08       		.sleb128 8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 19
-
-
  963 0168 04000000 		.4byte	.LCFI19
  964 016c 06000000 		.4byte	.LCFI20
  965 0170 0200     		.2byte	0x2
@@ -1137,10 +1138,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  1016 0038 00000000 		.4byte	.LFB5
  1017 003c 1C000000 		.4byte	.LFE5-.LFB5
  1018 0040 00000000 		.4byte	.LFB6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 20
+
+
  1019 0044 20000000 		.4byte	.LFE6-.LFB6
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 20
-
-
  1020 0048 00000000 		.4byte	.LFB7
  1021 004c 1C000000 		.4byte	.LFE7-.LFB7
  1022 0050 00000000 		.4byte	0
@@ -1197,10 +1198,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  1056 004f 70617261 		.ascii	"parameters_type\000"
  1056      6D657465 
  1056      72735F74 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 21
+
+
  1056      79706500 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 21
-
-
  1057              	.LASF0:
  1058 005f 74656D70 		.ascii	"temperature_\000"
  1058      65726174 
@@ -1257,10 +1258,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 1
  1078              	.LASF6:
  1079 011f 70617261 		.ascii	"parameters_exit\000"
  1079      6D657465 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 22
+
+
  1079      72735F65 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccOJf1xQ.s 			page 22
-
-
  1079      78697400 
  1080              	.LASF1:
  1081 012f 68756D69 		.ascii	"humidity_\000"

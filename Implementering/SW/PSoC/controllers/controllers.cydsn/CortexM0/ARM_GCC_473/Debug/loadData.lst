@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -53,24 +53,23 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
    8:.\loadData.c  **** 
    9:.\loadData.c  **** #include "loadData.h"
   10:.\loadData.c  **** #include <stdio.h>
-  11:.\loadData.c  **** //#include <string.h>
-  12:.\loadData.c  **** 
-  13:.\loadData.c  **** // Private data
-  14:.\loadData.c  **** static parameters * parametersPtr_;
-  15:.\loadData.c  **** static buffer * bufferPtr_;
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 2
+  11:.\loadData.c  **** 
+  12:.\loadData.c  **** // Private data
+  13:.\loadData.c  **** static parameters * parametersPtr_;
+  14:.\loadData.c  **** static buffer * bufferPtr_;
+  15:.\loadData.c  **** static unsigned char movement_;
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 2
 
 
-  16:.\loadData.c  **** static unsigned char movement_;
-  17:.\loadData.c  **** // sensorPackage is implicit known, as it contains only methods
-  18:.\loadData.c  **** static unsigned int logDataTimeoutCounter_;
-  19:.\loadData.c  **** static unsigned int waterTimeoutCounter_;
+  16:.\loadData.c  **** // sensorPackage is implicit known, as it contains only methods
+  17:.\loadData.c  **** static unsigned int logDataTimeoutCounter_;
+  18:.\loadData.c  **** static unsigned int waterTimeoutCounter_;
+  19:.\loadData.c  **** 
   20:.\loadData.c  **** 
-  21:.\loadData.c  **** 
-  22:.\loadData.c  **** // Public methods
-  23:.\loadData.c  **** CY_ISR(logDataISR)
-  24:.\loadData.c  **** {
-  43              		.loc 1 24 0
+  21:.\loadData.c  **** // Public methods
+  22:.\loadData.c  **** CY_ISR(logDataISR)
+  23:.\loadData.c  **** {
+  43              		.loc 1 23 0
   44              		.cfi_startproc
   45 0000 98B5     		push	{r3, r4, r7, lr}
   46              	.LCFI0:
@@ -82,8 +81,8 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
   52 0002 00AF     		add	r7, sp, #0
   53              	.LCFI1:
   54              		.cfi_def_cfa_register 7
-  25:.\loadData.c  ****     if(logDataTimeoutCounter_ >= LOGDATATIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
-  55              		.loc 1 25 0
+  24:.\loadData.c  ****     if(logDataTimeoutCounter_ >= LOGDATATIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
+  55              		.loc 1 24 0
   56 0004 104B     		ldr	r3, .L7+8
   57 0006 1B68     		ldr	r3, [r3]
   58 0008 181C     		mov	r0, r3
@@ -99,32 +98,32 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
   68 0020 002B     		cmp	r3, #0
   69 0022 05D0     		beq	.L6
   70              	.L5:
-  26:.\loadData.c  ****     {
-  27:.\loadData.c  ****         loadData_logDataTimeout();
-  71              		.loc 1 27 0
+  25:.\loadData.c  ****     {
+  26:.\loadData.c  ****         loadData_logDataTimeout();
+  71              		.loc 1 26 0
   72 0024 FFF7FEFF 		bl	loadData_logDataTimeout
-  28:.\loadData.c  ****         logDataTimeoutCounter_ = 0;
-  73              		.loc 1 28 0
+  27:.\loadData.c  ****         logDataTimeoutCounter_ = 0;
+  73              		.loc 1 27 0
   74 0028 074B     		ldr	r3, .L7+8
   75 002a 0022     		mov	r2, #0
   76 002c 1A60     		str	r2, [r3]
   77 002e 04E0     		b	.L1
   78              	.L6:
-  29:.\loadData.c  ****     }
-  30:.\loadData.c  ****     else
-  31:.\loadData.c  ****         logDataTimeoutCounter_++;
-  79              		.loc 1 31 0
+  28:.\loadData.c  ****     }
+  29:.\loadData.c  ****     else
+  30:.\loadData.c  ****         logDataTimeoutCounter_++;
+  79              		.loc 1 30 0
   80 0030 054B     		ldr	r3, .L7+8
   81 0032 1B68     		ldr	r3, [r3]
   82 0034 5A1C     		add	r2, r3, #1
   83 0036 044B     		ldr	r3, .L7+8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 3
-
-
   84 0038 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 3
+
+
   85              	.L1:
-  32:.\loadData.c  **** }
-  86              		.loc 1 32 0
+  31:.\loadData.c  **** }
+  86              		.loc 1 31 0
   87 003a BD46     		mov	sp, r7
   88              		@ sp needed for prologue
   89 003c 98BD     		pop	{r3, r4, r7, pc}
@@ -145,10 +144,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  104              		.type	waterISR, %function
  105              	waterISR:
  106              	.LFB34:
-  33:.\loadData.c  **** 
-  34:.\loadData.c  **** CY_ISR(waterISR)
-  35:.\loadData.c  **** {
- 107              		.loc 1 35 0
+  32:.\loadData.c  **** 
+  33:.\loadData.c  **** CY_ISR(waterISR)
+  34:.\loadData.c  **** {
+ 107              		.loc 1 34 0
  108              		.cfi_startproc
  109 0000 98B5     		push	{r3, r4, r7, lr}
  110              	.LCFI2:
@@ -160,8 +159,8 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  116 0002 00AF     		add	r7, sp, #0
  117              	.LCFI3:
  118              		.cfi_def_cfa_register 7
-  36:.\loadData.c  ****     if(waterTimeoutCounter_ >= WATERTIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
- 119              		.loc 1 36 0
+  35:.\loadData.c  ****     if(waterTimeoutCounter_ >= WATERTIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
+ 119              		.loc 1 35 0
  120 0004 104B     		ldr	r3, .L15+8
  121 0006 1B68     		ldr	r3, [r3]
  122 0008 181C     		mov	r0, r3
@@ -177,32 +176,32 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  132 0020 002B     		cmp	r3, #0
  133 0022 05D0     		beq	.L14
  134              	.L13:
-  37:.\loadData.c  ****     {
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 4
+  36:.\loadData.c  ****     {
+  37:.\loadData.c  ****         loadData_waterTimeout();
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 4
 
 
-  38:.\loadData.c  ****         loadData_waterTimeout();
- 135              		.loc 1 38 0
+ 135              		.loc 1 37 0
  136 0024 FFF7FEFF 		bl	loadData_waterTimeout
-  39:.\loadData.c  ****         waterTimeoutCounter_ = 0;
- 137              		.loc 1 39 0
+  38:.\loadData.c  ****         waterTimeoutCounter_ = 0;
+ 137              		.loc 1 38 0
  138 0028 074B     		ldr	r3, .L15+8
  139 002a 0022     		mov	r2, #0
  140 002c 1A60     		str	r2, [r3]
  141 002e 04E0     		b	.L9
  142              	.L14:
-  40:.\loadData.c  ****     }
-  41:.\loadData.c  ****     else
-  42:.\loadData.c  ****         waterTimeoutCounter_++;
- 143              		.loc 1 42 0
+  39:.\loadData.c  ****     }
+  40:.\loadData.c  ****     else
+  41:.\loadData.c  ****         waterTimeoutCounter_++;
+ 143              		.loc 1 41 0
  144 0030 054B     		ldr	r3, .L15+8
  145 0032 1B68     		ldr	r3, [r3]
  146 0034 5A1C     		add	r2, r3, #1
  147 0036 044B     		ldr	r3, .L15+8
  148 0038 1A60     		str	r2, [r3]
  149              	.L9:
-  43:.\loadData.c  **** }
- 150              		.loc 1 43 0
+  42:.\loadData.c  **** }
+ 150              		.loc 1 42 0
  151 003a BD46     		mov	sp, r7
  152              		@ sp needed for prologue
  153 003c 98BD     		pop	{r3, r4, r7, pc}
@@ -223,11 +222,11 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  168              		.type	loadData_init, %function
  169              	loadData_init:
  170              	.LFB35:
+  43:.\loadData.c  **** 
   44:.\loadData.c  **** 
-  45:.\loadData.c  **** 
-  46:.\loadData.c  **** extern void loadData_init(parameters *par, buffer *buf) 
-  47:.\loadData.c  **** {
- 171              		.loc 1 47 0
+  45:.\loadData.c  **** extern void loadData_init(parameters *par, buffer *buf) 
+  46:.\loadData.c  **** {
+ 171              		.loc 1 46 0
  172              		.cfi_startproc
  173 0000 80B5     		push	{r7, lr}
  174              	.LCFI4:
@@ -238,70 +237,70 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  179              	.LCFI5:
  180              		.cfi_def_cfa_offset 16
  181 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 5
-
-
  182              	.LCFI6:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 5
+
+
  183              		.cfi_def_cfa_register 7
  184 0006 7860     		str	r0, [r7, #4]
  185 0008 3960     		str	r1, [r7]
-  48:.\loadData.c  ****     // Set pointers accordingly
-  49:.\loadData.c  ****     parametersPtr_ = par;
- 186              		.loc 1 49 0
+  47:.\loadData.c  ****     // Set pointers accordingly
+  48:.\loadData.c  ****     parametersPtr_ = par;
+ 186              		.loc 1 48 0
  187 000a 0D4B     		ldr	r3, .L18
  188 000c 7A68     		ldr	r2, [r7, #4]
  189 000e 1A60     		str	r2, [r3]
-  50:.\loadData.c  ****     bufferPtr_ = buf;
- 190              		.loc 1 50 0
+  49:.\loadData.c  ****     bufferPtr_ = buf;
+ 190              		.loc 1 49 0
  191 0010 0C4B     		ldr	r3, .L18+4
  192 0012 3A68     		ldr	r2, [r7]
  193 0014 1A60     		str	r2, [r3]
-  51:.\loadData.c  ****     // sensorPackage is implicit known, as it contains only methods
+  50:.\loadData.c  ****     // sensorPackage is implicit known, as it contains only methods
+  51:.\loadData.c  ****     
   52:.\loadData.c  ****     
-  53:.\loadData.c  ****     
-  54:.\loadData.c  ****     // Start logData timer
-  55:.\loadData.c  ****     logDataTimeoutCounter_ = 0;
- 194              		.loc 1 55 0
+  53:.\loadData.c  ****     // Start logData timer
+  54:.\loadData.c  ****     logDataTimeoutCounter_ = 0;
+ 194              		.loc 1 54 0
  195 0016 0C4B     		ldr	r3, .L18+8
  196 0018 0022     		mov	r2, #0
  197 001a 1A60     		str	r2, [r3]
-  56:.\loadData.c  ****     logDataTimer_Start();
- 198              		.loc 1 56 0
+  55:.\loadData.c  ****     logDataTimer_Start();
+ 198              		.loc 1 55 0
  199 001c FFF7FEFF 		bl	logDataTimer_Start
-  57:.\loadData.c  ****     logDataInterrupt_StartEx(logDataISR);
- 200              		.loc 1 57 0
+  56:.\loadData.c  ****     logDataInterrupt_StartEx(logDataISR);
+ 200              		.loc 1 56 0
  201 0020 0A4B     		ldr	r3, .L18+12
  202 0022 181C     		mov	r0, r3
  203 0024 FFF7FEFF 		bl	logDataInterrupt_StartEx
-  58:.\loadData.c  ****     
-  59:.\loadData.c  ****     // Initialize water timer
-  60:.\loadData.c  ****     waterTimeoutCounter_ = 0;
- 204              		.loc 1 60 0
+  57:.\loadData.c  ****     
+  58:.\loadData.c  ****     // Initialize water timer
+  59:.\loadData.c  ****     waterTimeoutCounter_ = 0;
+ 204              		.loc 1 59 0
  205 0028 094B     		ldr	r3, .L18+16
  206 002a 0022     		mov	r2, #0
  207 002c 1A60     		str	r2, [r3]
-  61:.\loadData.c  ****     waterInterrupt_StartEx(waterISR);
- 208              		.loc 1 61 0
+  60:.\loadData.c  ****     waterInterrupt_StartEx(waterISR);
+ 208              		.loc 1 60 0
  209 002e 094B     		ldr	r3, .L18+20
  210 0030 181C     		mov	r0, r3
  211 0032 FFF7FEFF 		bl	waterInterrupt_StartEx
-  62:.\loadData.c  ****     // Get first sensor reading
-  63:.\loadData.c  ****     loadData_logDataTimeout();
- 212              		.loc 1 63 0
+  61:.\loadData.c  ****     // Get first sensor reading
+  62:.\loadData.c  ****     loadData_logDataTimeout();
+ 212              		.loc 1 62 0
  213 0036 FFF7FEFF 		bl	loadData_logDataTimeout
+  63:.\loadData.c  ****     
   64:.\loadData.c  ****     
-  65:.\loadData.c  ****     
-  66:.\loadData.c  **** }
- 214              		.loc 1 66 0
+  65:.\loadData.c  **** }
+ 214              		.loc 1 65 0
  215 003a BD46     		mov	sp, r7
  216 003c 02B0     		add	sp, sp, #8
  217              		@ sp needed for prologue
  218 003e 80BD     		pop	{r7, pc}
  219              	.L19:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 6
-
-
  220              		.align	2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 6
+
+
  221              	.L18:
  222 0040 00000000 		.word	parametersPtr_
  223 0044 04000000 		.word	bufferPtr_
@@ -320,10 +319,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  236              		.type	loadData_getBuffer, %function
  237              	loadData_getBuffer:
  238              	.LFB36:
-  67:.\loadData.c  **** 
-  68:.\loadData.c  **** int loadData_getBuffer( char ** buf, unsigned int * len)
-  69:.\loadData.c  **** {
- 239              		.loc 1 69 0
+  66:.\loadData.c  **** 
+  67:.\loadData.c  **** int loadData_getBuffer( char ** buf, unsigned int * len)
+  68:.\loadData.c  **** {
+ 239              		.loc 1 68 0
  240              		.cfi_startproc
  241 0000 80B5     		push	{r7, lr}
  242              	.LCFI7:
@@ -338,8 +337,8 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  251              		.cfi_def_cfa_register 7
  252 0006 7860     		str	r0, [r7, #4]
  253 0008 3960     		str	r1, [r7]
-  70:.\loadData.c  ****     buffer_getData(bufferPtr_, buf, len);
- 254              		.loc 1 70 0
+  69:.\loadData.c  ****     buffer_getData(bufferPtr_, buf, len);
+ 254              		.loc 1 69 0
  255 000a 074B     		ldr	r3, .L22
  256 000c 1968     		ldr	r1, [r3]
  257 000e 7A68     		ldr	r2, [r7, #4]
@@ -348,20 +347,20 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  260 0014 111C     		mov	r1, r2
  261 0016 1A1C     		mov	r2, r3
  262 0018 FFF7FEFF 		bl	buffer_getData
-  71:.\loadData.c  ****     return 0;
- 263              		.loc 1 71 0
+  70:.\loadData.c  ****     return 0;
+ 263              		.loc 1 70 0
  264 001c 0023     		mov	r3, #0
-  72:.\loadData.c  **** }
- 265              		.loc 1 72 0
+  71:.\loadData.c  **** }
+ 265              		.loc 1 71 0
  266 001e 181C     		mov	r0, r3
  267 0020 BD46     		mov	sp, r7
  268 0022 02B0     		add	sp, sp, #8
  269              		@ sp needed for prologue
  270 0024 80BD     		pop	{r7, pc}
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 7
-
-
  271              	.L23:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 7
+
+
  272 0026 C046     		.align	2
  273              	.L22:
  274 0028 04000000 		.word	bufferPtr_
@@ -376,10 +375,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  283              		.type	loadData_movementDetect, %function
  284              	loadData_movementDetect:
  285              	.LFB37:
-  73:.\loadData.c  **** 
-  74:.\loadData.c  **** int loadData_movementDetect()
-  75:.\loadData.c  **** {
- 286              		.loc 1 75 0
+  72:.\loadData.c  **** 
+  73:.\loadData.c  **** int loadData_movementDetect()
+  74:.\loadData.c  **** {
+ 286              		.loc 1 74 0
  287              		.cfi_startproc
  288 0000 80B5     		push	{r7, lr}
  289              	.LCFI10:
@@ -389,39 +388,39 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  293 0002 00AF     		add	r7, sp, #0
  294              	.LCFI11:
  295              		.cfi_def_cfa_register 7
-  76:.\loadData.c  ****     // Clear active flag in parameters
-  77:.\loadData.c  ****     parameters_setActive(parametersPtr_, 0);
- 296              		.loc 1 77 0
+  75:.\loadData.c  ****     // Clear active flag in parameters
+  76:.\loadData.c  ****     parameters_setActive(parametersPtr_, 0);
+ 296              		.loc 1 76 0
  297 0004 074B     		ldr	r3, .L26
  298 0006 1B68     		ldr	r3, [r3]
  299 0008 181C     		mov	r0, r3
  300 000a 0021     		mov	r1, #0
  301 000c FFF7FEFF 		bl	parameters_setActive
-  78:.\loadData.c  ****     
-  79:.\loadData.c  ****     // Start 30 minute timer
-  80:.\loadData.c  ****     waterTimer_Start();
- 302              		.loc 1 80 0
+  77:.\loadData.c  ****     
+  78:.\loadData.c  ****     // Start 30 minute timer
+  79:.\loadData.c  ****     waterTimer_Start();
+ 302              		.loc 1 79 0
  303 0010 FFF7FEFF 		bl	waterTimer_Start
-  81:.\loadData.c  ****     
-  82:.\loadData.c  ****     // Set movement flag
-  83:.\loadData.c  ****     movement_ = 1;
- 304              		.loc 1 83 0
+  80:.\loadData.c  ****     
+  81:.\loadData.c  ****     // Set movement flag
+  82:.\loadData.c  ****     movement_ = 1;
+ 304              		.loc 1 82 0
  305 0014 044B     		ldr	r3, .L26+4
  306 0016 0122     		mov	r2, #1
  307 0018 1A70     		strb	r2, [r3]
-  84:.\loadData.c  ****     
-  85:.\loadData.c  ****     return 0;
- 308              		.loc 1 85 0
+  83:.\loadData.c  ****     
+  84:.\loadData.c  ****     return 0;
+ 308              		.loc 1 84 0
  309 001a 0023     		mov	r3, #0
-  86:.\loadData.c  **** }
- 310              		.loc 1 86 0
+  85:.\loadData.c  **** }
+ 310              		.loc 1 85 0
  311 001c 181C     		mov	r0, r3
  312 001e BD46     		mov	sp, r7
  313              		@ sp needed for prologue
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 8
-
-
  314 0020 80BD     		pop	{r7, pc}
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 8
+
+
  315              	.L27:
  316 0022 C046     		.align	2
  317              	.L26:
@@ -460,10 +459,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  346              		.type	loadData_logDataTimeout, %function
  347              	loadData_logDataTimeout:
  348              	.LFB38:
-  87:.\loadData.c  **** 
-  88:.\loadData.c  **** int loadData_logDataTimeout()
-  89:.\loadData.c  **** {
- 349              		.loc 1 89 0
+  86:.\loadData.c  **** 
+  87:.\loadData.c  **** int loadData_logDataTimeout()
+  88:.\loadData.c  **** {
+ 349              		.loc 1 88 0
  350              		.cfi_startproc
  351 0000 90B5     		push	{r4, r7, lr}
  352              	.LCFI12:
@@ -477,16 +476,16 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  360 0004 02AF     		add	r7, sp, #8
  361              	.LCFI14:
  362              		.cfi_def_cfa 7, 56
-  90:.\loadData.c  ****     int ret;    // Error flag
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 9
+  89:.\loadData.c  ****     int ret;    // Error flag
+  90:.\loadData.c  ****     
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 9
 
 
-  91:.\loadData.c  ****     
-  92:.\loadData.c  ****     // Collect data limits from parameters
-  93:.\loadData.c  ****     unsigned char active;
-  94:.\loadData.c  ****     float tempLimit, humiLimit;
-  95:.\loadData.c  ****     parameters_getActive(parametersPtr_, &active);
- 363              		.loc 1 95 0
+  91:.\loadData.c  ****     // Collect data limits from parameters
+  92:.\loadData.c  ****     unsigned char active;
+  93:.\loadData.c  ****     float tempLimit, humiLimit;
+  94:.\loadData.c  ****     parameters_getActive(parametersPtr_, &active);
+ 363              		.loc 1 94 0
  364 0006 524B     		ldr	r3, .L38
  365 0008 1A68     		ldr	r2, [r3]
  366 000a 3B1C     		mov	r3, r7
@@ -494,8 +493,8 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  368 000e 101C     		mov	r0, r2
  369 0010 191C     		mov	r1, r3
  370 0012 FFF7FEFF 		bl	parameters_getActive
-  96:.\loadData.c  ****     parameters_getTemp(parametersPtr_, &tempLimit);
- 371              		.loc 1 96 0
+  95:.\loadData.c  ****     parameters_getTemp(parametersPtr_, &tempLimit);
+ 371              		.loc 1 95 0
  372 0016 4E4B     		ldr	r3, .L38
  373 0018 1A68     		ldr	r2, [r3]
  374 001a 3B1C     		mov	r3, r7
@@ -503,8 +502,8 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  376 001e 101C     		mov	r0, r2
  377 0020 191C     		mov	r1, r3
  378 0022 FFF7FEFF 		bl	parameters_getTemp
-  97:.\loadData.c  ****     parameters_getHumi(parametersPtr_, &humiLimit);
- 379              		.loc 1 97 0
+  96:.\loadData.c  ****     parameters_getHumi(parametersPtr_, &humiLimit);
+ 379              		.loc 1 96 0
  380 0026 4A4B     		ldr	r3, .L38
  381 0028 1A68     		ldr	r2, [r3]
  382 002a 3B1C     		mov	r3, r7
@@ -512,13 +511,13 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  384 002e 101C     		mov	r0, r2
  385 0030 191C     		mov	r1, r3
  386 0032 FFF7FEFF 		bl	parameters_getHumi
+  97:.\loadData.c  ****     
   98:.\loadData.c  ****     
-  99:.\loadData.c  ****     
- 100:.\loadData.c  ****     // Collect data from sensorpackage
- 101:.\loadData.c  ****     float temp, humi;
- 102:.\loadData.c  ****     //sensorPackage_getData(&temp, &humi);
- 103:.\loadData.c  ****     temp = logDataTimeoutCounter_%100;
- 387              		.loc 1 103 0
+  99:.\loadData.c  ****     // Collect data from sensorpackage
+ 100:.\loadData.c  ****     float temp, humi;
+ 101:.\loadData.c  ****     //sensorPackage_getData(&temp, &humi);
+ 102:.\loadData.c  ****     temp = logDataTimeoutCounter_%100;
+ 387              		.loc 1 102 0
  388 0036 474B     		ldr	r3, .L38+4
  389 0038 1B68     		ldr	r3, [r3]
  390 003a 181C     		mov	r0, r3
@@ -529,34 +528,34 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  395 0046 FFF7FEFF 		bl	__aeabi_ui2f
  396 004a 031C     		add	r3, r0, #0
  397 004c 3B62     		str	r3, [r7, #32]
- 104:.\loadData.c  ****     humi = 40;
- 398              		.loc 1 104 0
+ 103:.\loadData.c  ****     humi = 40;
+ 398              		.loc 1 103 0
  399 004e 424B     		ldr	r3, .L38+8
  400 0050 FB61     		str	r3, [r7, #28]
- 105:.\loadData.c  ****     
- 106:.\loadData.c  ****     // Create water flag and initialize
- 107:.\loadData.c  ****     unsigned char water;
- 108:.\loadData.c  ****     water = '0';
- 401              		.loc 1 108 0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 10
-
-
+ 104:.\loadData.c  ****     
+ 105:.\loadData.c  ****     // Create water flag and initialize
+ 106:.\loadData.c  ****     unsigned char water;
+ 107:.\loadData.c  ****     water = '0';
+ 401              		.loc 1 107 0
  402 0052 3B1C     		mov	r3, r7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 10
+
+
  403 0054 2733     		add	r3, r3, #39
  404 0056 3022     		mov	r2, #48
  405 0058 1A70     		strb	r2, [r3]
- 109:.\loadData.c  ****     
- 110:.\loadData.c  ****     // Save data as string i buffer, with movement set accordingly
- 111:.\loadData.c  ****     
- 112:.\loadData.c  ****     char data[11];
- 113:.\loadData.c  ****     data[0] = 'D';
- 406              		.loc 1 113 0
+ 108:.\loadData.c  ****     
+ 109:.\loadData.c  ****     // Save data as string i buffer, with movement set accordingly
+ 110:.\loadData.c  ****     
+ 111:.\loadData.c  ****     char data[11];
+ 112:.\loadData.c  ****     data[0] = 'D';
+ 406              		.loc 1 112 0
  407 005a 3B1C     		mov	r3, r7
  408 005c 4422     		mov	r2, #68
  409 005e 1A70     		strb	r2, [r3]
- 114:.\loadData.c  **** 
- 115:.\loadData.c  ****     ret = snprintf(data + 1, 6, "%05.1f", temp);   // Convert temp float to 4 character, 1 decimal 
- 410              		.loc 1 115 0
+ 113:.\loadData.c  **** 
+ 114:.\loadData.c  ****     ret = snprintf(data + 1, 6, "%05.1f", temp);   // Convert temp float to 4 character, 1 decimal 
+ 410              		.loc 1 114 0
  411 0060 386A     		ldr	r0, [r7, #32]
  412 0062 FFF7FEFF 		bl	__aeabi_f2d
  413 0066 031C     		mov	r3, r0
@@ -571,14 +570,14 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  422 0078 FFF7FEFF 		bl	snprintf
  423 007c 031C     		mov	r3, r0
  424 007e BB61     		str	r3, [r7, #24]
- 116:.\loadData.c  ****     if(ret != 5) // In case of failure, write error to buffer
- 425              		.loc 1 116 0
+ 115:.\loadData.c  ****     if(ret != 5) // In case of failure, write error to buffer
+ 425              		.loc 1 115 0
  426 0080 BB69     		ldr	r3, [r7, #24]
  427 0082 052B     		cmp	r3, #5
  428 0084 0AD0     		beq	.L29
- 117:.\loadData.c  ****     {
- 118:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E022", 4);
- 429              		.loc 1 118 0
+ 116:.\loadData.c  ****     {
+ 117:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E022", 4);
+ 429              		.loc 1 117 0
  430 0086 364B     		ldr	r3, .L38+16
  431 0088 1A68     		ldr	r2, [r3]
  432 008a 364B     		ldr	r3, .L38+20
@@ -586,22 +585,22 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  434 008e 191C     		mov	r1, r3
  435 0090 0422     		mov	r2, #4
  436 0092 FFF7FEFF 		bl	buffer_saveData
- 119:.\loadData.c  ****         return -22;
- 437              		.loc 1 119 0
+ 118:.\loadData.c  ****         return -22;
+ 437              		.loc 1 118 0
  438 0096 1623     		mov	r3, #22
  439 0098 5B42     		neg	r3, r3
  440 009a 55E0     		b	.L37
  441              	.L29:
- 120:.\loadData.c  ****     }
- 121:.\loadData.c  ****     
- 122:.\loadData.c  ****     ret = snprintf(data + 6, 4, "%03.0f", humi);  // Convert humi float to 3 character, 0 left-padd
- 442              		.loc 1 122 0
+ 119:.\loadData.c  ****     }
+ 120:.\loadData.c  ****     
+ 121:.\loadData.c  ****     ret = snprintf(data + 6, 4, "%03.0f", humi);  // Convert humi float to 3 character, 0 left-padd
+ 442              		.loc 1 121 0
  443 009c F869     		ldr	r0, [r7, #28]
  444 009e FFF7FEFF 		bl	__aeabi_f2d
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 11
-
-
  445 00a2 031C     		mov	r3, r0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 11
+
+
  446 00a4 0C1C     		mov	r4, r1
  447 00a6 3A1C     		mov	r2, r7
  448 00a8 911D     		add	r1, r2, #6
@@ -613,14 +612,14 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  454 00b4 FFF7FEFF 		bl	snprintf
  455 00b8 031C     		mov	r3, r0
  456 00ba BB61     		str	r3, [r7, #24]
- 123:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
- 457              		.loc 1 123 0
+ 122:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
+ 457              		.loc 1 122 0
  458 00bc BB69     		ldr	r3, [r7, #24]
  459 00be 032B     		cmp	r3, #3
  460 00c0 0AD0     		beq	.L31
- 124:.\loadData.c  ****     {
- 125:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E023", 4);
- 461              		.loc 1 125 0
+ 123:.\loadData.c  ****     {
+ 124:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E023", 4);
+ 461              		.loc 1 124 0
  462 00c2 274B     		ldr	r3, .L38+16
  463 00c4 1A68     		ldr	r2, [r3]
  464 00c6 294B     		ldr	r3, .L38+28
@@ -628,23 +627,23 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  466 00ca 191C     		mov	r1, r3
  467 00cc 0422     		mov	r2, #4
  468 00ce FFF7FEFF 		bl	buffer_saveData
- 126:.\loadData.c  ****         return -23;
- 469              		.loc 1 126 0
+ 125:.\loadData.c  ****         return -23;
+ 469              		.loc 1 125 0
  470 00d2 1723     		mov	r3, #23
  471 00d4 5B42     		neg	r3, r3
  472 00d6 37E0     		b	.L37
  473              	.L31:
- 127:.\loadData.c  ****     }
- 128:.\loadData.c  ****     
- 129:.\loadData.c  ****     // If sensor values are out of parameter limits and system is active, activate water
- 130:.\loadData.c  ****     if(active == 1 && (temp > tempLimit || humi < humiLimit))
- 474              		.loc 1 130 0
+ 126:.\loadData.c  ****     }
+ 127:.\loadData.c  ****     
+ 128:.\loadData.c  ****     // If sensor values are out of parameter limits and system is active, activate water
+ 129:.\loadData.c  ****     if(active == 1 && (temp > tempLimit || humi < humiLimit))
+ 474              		.loc 1 129 0
  475 00d8 3B1C     		mov	r3, r7
  476 00da 1733     		add	r3, r3, #23
  477 00dc 1B78     		ldrb	r3, [r3]
  478 00de 012B     		cmp	r3, #1
  479 00e0 16D1     		bne	.L32
- 480              		.loc 1 130 0 is_stmt 0 discriminator 1
+ 480              		.loc 1 129 0 is_stmt 0 discriminator 1
  481 00e2 3B69     		ldr	r3, [r7, #16]
  482 00e4 386A     		ldr	r0, [r7, #32]
  483 00e6 191C     		add	r1, r3, #0
@@ -658,58 +657,58 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  491 00f8 FFF7FEFF 		bl	__aeabi_fcmplt
  492 00fc 031C     		mov	r3, r0
  493 00fe 002B     		cmp	r3, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 12
-
-
  494 0100 06D0     		beq	.L32
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 12
+
+
  495              	.L33:
- 131:.\loadData.c  ****     {
- 132:.\loadData.c  ****         sensorPackage_water(1);
- 496              		.loc 1 132 0 is_stmt 1
+ 130:.\loadData.c  ****     {
+ 131:.\loadData.c  ****         sensorPackage_water(1);
+ 496              		.loc 1 131 0 is_stmt 1
  497 0102 0120     		mov	r0, #1
  498 0104 FFF7FEFF 		bl	sensorPackage_water
- 133:.\loadData.c  ****         // Start water timer
- 134:.\loadData.c  ****         
- 135:.\loadData.c  ****         water = '1';
- 499              		.loc 1 135 0
+ 132:.\loadData.c  ****         // Start water timer
+ 133:.\loadData.c  ****         
+ 134:.\loadData.c  ****         water = '1';
+ 499              		.loc 1 134 0
  500 0108 3B1C     		mov	r3, r7
  501 010a 2733     		add	r3, r3, #39
  502 010c 3122     		mov	r2, #49
  503 010e 1A70     		strb	r2, [r3]
  504              	.L32:
- 136:.\loadData.c  ****     }
- 137:.\loadData.c  ****     
- 138:.\loadData.c  ****     data[9] = water;
- 505              		.loc 1 138 0
+ 135:.\loadData.c  ****     }
+ 136:.\loadData.c  ****     
+ 137:.\loadData.c  ****     data[9] = water;
+ 505              		.loc 1 137 0
  506 0110 3B1C     		mov	r3, r7
  507 0112 3A1C     		mov	r2, r7
  508 0114 2732     		add	r2, r2, #39
  509 0116 1278     		ldrb	r2, [r2]
  510 0118 5A72     		strb	r2, [r3, #9]
- 139:.\loadData.c  ****     if(movement_ == 0)
- 511              		.loc 1 139 0
+ 138:.\loadData.c  ****     if(movement_ == 0)
+ 511              		.loc 1 138 0
  512 011a 154B     		ldr	r3, .L38+32
  513 011c 1B78     		ldrb	r3, [r3]
  514 011e 002B     		cmp	r3, #0
  515 0120 03D1     		bne	.L35
- 140:.\loadData.c  ****         data[10] = '0';
- 516              		.loc 1 140 0
+ 139:.\loadData.c  ****         data[10] = '0';
+ 516              		.loc 1 139 0
  517 0122 3B1C     		mov	r3, r7
  518 0124 3022     		mov	r2, #48
  519 0126 9A72     		strb	r2, [r3, #10]
  520 0128 02E0     		b	.L36
  521              	.L35:
- 141:.\loadData.c  ****     else
- 142:.\loadData.c  ****         data[10] = '1';
- 522              		.loc 1 142 0
+ 140:.\loadData.c  ****     else
+ 141:.\loadData.c  ****         data[10] = '1';
+ 522              		.loc 1 141 0
  523 012a 3B1C     		mov	r3, r7
  524 012c 3122     		mov	r2, #49
  525 012e 9A72     		strb	r2, [r3, #10]
  526              	.L36:
- 143:.\loadData.c  ****      
- 144:.\loadData.c  ****     // Save data in buffer object for later use
- 145:.\loadData.c  ****     buffer_saveData(bufferPtr_, data, 11);
- 527              		.loc 1 145 0
+ 142:.\loadData.c  ****      
+ 143:.\loadData.c  ****     // Save data in buffer object for later use
+ 144:.\loadData.c  ****     buffer_saveData(bufferPtr_, data, 11);
+ 527              		.loc 1 144 0
  528 0130 0B4B     		ldr	r3, .L38+16
  529 0132 1A68     		ldr	r2, [r3]
  530 0134 3B1C     		mov	r3, r7
@@ -717,23 +716,23 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  532 0138 191C     		mov	r1, r3
  533 013a 0B22     		mov	r2, #11
  534 013c FFF7FEFF 		bl	buffer_saveData
- 146:.\loadData.c  ****         
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 13
+ 145:.\loadData.c  ****         
+ 146:.\loadData.c  ****     // Clear movement flag
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 13
 
 
- 147:.\loadData.c  ****     // Clear movement flag
- 148:.\loadData.c  ****     movement_ = 0;
- 535              		.loc 1 148 0
+ 147:.\loadData.c  ****     movement_ = 0;
+ 535              		.loc 1 147 0
  536 0140 0B4B     		ldr	r3, .L38+32
  537 0142 0022     		mov	r2, #0
  538 0144 1A70     		strb	r2, [r3]
- 149:.\loadData.c  ****     
- 150:.\loadData.c  ****     return 0;
- 539              		.loc 1 150 0
+ 148:.\loadData.c  ****     
+ 149:.\loadData.c  ****     return 0;
+ 539              		.loc 1 149 0
  540 0146 0023     		mov	r3, #0
  541              	.L37:
- 151:.\loadData.c  **** }
- 542              		.loc 1 151 0
+ 150:.\loadData.c  **** }
+ 542              		.loc 1 150 0
  543 0148 181C     		mov	r0, r3
  544 014a BD46     		mov	sp, r7
  545 014c 0BB0     		add	sp, sp, #44
@@ -762,9 +761,9 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  568              		.type	loadData_waterTimeout, %function
  569              	loadData_waterTimeout:
  570              	.LFB39:
- 152:.\loadData.c  **** int  loadData_waterTimeout()
- 153:.\loadData.c  **** {
- 571              		.loc 1 153 0
+ 151:.\loadData.c  **** int  loadData_waterTimeout()
+ 152:.\loadData.c  **** {
+ 571              		.loc 1 152 0
  572              		.cfi_startproc
  573 0000 80B5     		push	{r7, lr}
  574              	.LCFI15:
@@ -774,27 +773,27 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  578 0002 00AF     		add	r7, sp, #0
  579              	.LCFI16:
  580              		.cfi_def_cfa_register 7
- 154:.\loadData.c  ****     // Set active_ flag in parameters
- 155:.\loadData.c  ****     parameters_setActive(parametersPtr_, 1);
- 581              		.loc 1 155 0
+ 153:.\loadData.c  ****     // Set active_ flag in parameters
+ 154:.\loadData.c  ****     parameters_setActive(parametersPtr_, 1);
+ 581              		.loc 1 154 0
  582 0004 054B     		ldr	r3, .L42
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 14
-
-
  583 0006 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 14
+
+
  584 0008 181C     		mov	r0, r3
  585 000a 0121     		mov	r1, #1
  586 000c FFF7FEFF 		bl	parameters_setActive
- 156:.\loadData.c  ****     
- 157:.\loadData.c  ****     waterTimer_Stop();
- 587              		.loc 1 157 0
+ 155:.\loadData.c  ****     
+ 156:.\loadData.c  ****     waterTimer_Stop();
+ 587              		.loc 1 156 0
  588 0010 FFF7FEFF 		bl	waterTimer_Stop
- 158:.\loadData.c  ****     
- 159:.\loadData.c  ****     return 0;
- 589              		.loc 1 159 0
+ 157:.\loadData.c  ****     
+ 158:.\loadData.c  ****     return 0;
+ 589              		.loc 1 158 0
  590 0014 0023     		mov	r3, #0
- 160:.\loadData.c  **** }
- 591              		.loc 1 160 0
+ 159:.\loadData.c  **** }
+ 591              		.loc 1 159 0
  592 0016 181C     		mov	r0, r3
  593 0018 BD46     		mov	sp, r7
  594              		@ sp needed for prologue
@@ -838,10 +837,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  632 003c 60000000 		.4byte	0x60
  633 0040 02       		.byte	0x2
  634 0041 23       		.byte	0x23
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 15
-
-
  635 0042 00       		.uleb128 0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 15
+
+
  636 0043 03       		.uleb128 0x3
  637 0044 5E000000 		.4byte	.LASF1
  638 0048 02       		.byte	0x2
@@ -898,10 +897,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  689 00a8 23       		.byte	0x23
  690 00a9 00       		.uleb128 0
  691 00aa 03       		.uleb128 0x3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 16
-
-
  692 00ab 7F000000 		.4byte	.LASF9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 16
+
+
  693 00af 03       		.byte	0x3
  694 00b0 11       		.byte	0x11
  695 00b1 C7000000 		.4byte	0xc7
@@ -958,10 +957,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  746 010b 08       		.byte	0x8
  747 010c 07       		.byte	0x7
  748 010d 72010000 		.4byte	.LASF21
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 17
-
-
  749 0111 08       		.uleb128 0x8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 17
+
+
  750 0112 04       		.byte	0x4
  751 0113 05       		.byte	0x5
  752 0114 696E7400 		.ascii	"int\000"
@@ -976,7 +975,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  761 0126 01       		.byte	0x1
  762 0127 CC000000 		.4byte	.LASF23
  763 012b 01       		.byte	0x1
- 764 012c 17       		.byte	0x17
+ 764 012c 16       		.byte	0x16
  765 012d 01       		.byte	0x1
  766 012e 00000000 		.4byte	.LFB33
  767 0132 4C000000 		.4byte	.LFE33
@@ -986,7 +985,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  771 013c 01       		.byte	0x1
  772 013d 31020000 		.4byte	.LASF24
  773 0141 01       		.byte	0x1
- 774 0142 22       		.byte	0x22
+ 774 0142 21       		.byte	0x21
  775 0143 01       		.byte	0x1
  776 0144 00000000 		.4byte	.LFB34
  777 0148 4C000000 		.4byte	.LFE34
@@ -996,7 +995,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  781 0152 01       		.byte	0x1
  782 0153 29000000 		.4byte	.LASF26
  783 0157 01       		.byte	0x1
- 784 0158 2E       		.byte	0x2e
+ 784 0158 2D       		.byte	0x2d
  785 0159 01       		.byte	0x1
  786 015a 00000000 		.4byte	.LFB35
  787 015e 58000000 		.4byte	.LFE35
@@ -1006,7 +1005,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  791 016b 0C       		.uleb128 0xc
  792 016c 70617200 		.ascii	"par\000"
  793 0170 01       		.byte	0x1
- 794 0171 2E       		.byte	0x2e
+ 794 0171 2D       		.byte	0x2d
  795 0172 88010000 		.4byte	0x188
  796 0176 02       		.byte	0x2
  797 0177 91       		.byte	0x91
@@ -1014,14 +1013,14 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  799 0179 0C       		.uleb128 0xc
  800 017a 62756600 		.ascii	"buf\000"
  801 017e 01       		.byte	0x1
- 802 017f 2E       		.byte	0x2e
+ 802 017f 2D       		.byte	0x2d
  803 0180 8E010000 		.4byte	0x18e
  804 0184 02       		.byte	0x2
  805 0185 91       		.byte	0x91
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 18
-
-
  806 0186 70       		.sleb128 -16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 18
+
+
  807 0187 00       		.byte	0
  808 0188 09       		.uleb128 0x9
  809 0189 04       		.byte	0x4
@@ -1033,7 +1032,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  815 0195 01       		.byte	0x1
  816 0196 89000000 		.4byte	.LASF44
  817 019a 01       		.byte	0x1
- 818 019b 44       		.byte	0x44
+ 818 019b 43       		.byte	0x43
  819 019c 01       		.byte	0x1
  820 019d 11010000 		.4byte	0x111
  821 01a1 00000000 		.4byte	.LFB36
@@ -1044,7 +1043,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  826 01b2 0C       		.uleb128 0xc
  827 01b3 62756600 		.ascii	"buf\000"
  828 01b7 01       		.byte	0x1
- 829 01b8 44       		.byte	0x44
+ 829 01b8 43       		.byte	0x43
  830 01b9 CF010000 		.4byte	0x1cf
  831 01bd 02       		.byte	0x2
  832 01be 91       		.byte	0x91
@@ -1052,7 +1051,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  834 01c0 0C       		.uleb128 0xc
  835 01c1 6C656E00 		.ascii	"len\000"
  836 01c5 01       		.byte	0x1
- 837 01c6 44       		.byte	0x44
+ 837 01c6 43       		.byte	0x43
  838 01c7 D5010000 		.4byte	0x1d5
  839 01cb 02       		.byte	0x2
  840 01cc 91       		.byte	0x91
@@ -1068,7 +1067,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  850 01dc 01       		.byte	0x1
  851 01dd 39010000 		.4byte	.LASF25
  852 01e1 01       		.byte	0x1
- 853 01e2 4A       		.byte	0x4a
+ 853 01e2 49       		.byte	0x49
  854 01e3 11010000 		.4byte	0x111
  855 01e7 00000000 		.4byte	.LFB37
  856 01eb 2C000000 		.4byte	.LFE37
@@ -1078,10 +1077,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  860 01f5 01       		.byte	0x1
  861 01f6 4F020000 		.4byte	.LASF27
  862 01fa 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 19
+ 863 01fb 57       		.byte	0x57
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 19
 
 
- 863 01fb 58       		.byte	0x58
  864 01fc 11010000 		.4byte	0x111
  865 0200 00000000 		.4byte	.LFB38
  866 0204 74010000 		.4byte	.LFE38
@@ -1091,7 +1090,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  870 0211 10       		.uleb128 0x10
  871 0212 72657400 		.ascii	"ret\000"
  872 0216 01       		.byte	0x1
- 873 0217 5A       		.byte	0x5a
+ 873 0217 59       		.byte	0x59
  874 0218 11010000 		.4byte	0x111
  875 021c 02       		.byte	0x2
  876 021d 91       		.byte	0x91
@@ -1099,7 +1098,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  878 021f 11       		.uleb128 0x11
  879 0220 22000000 		.4byte	.LASF28
  880 0224 01       		.byte	0x1
- 881 0225 5D       		.byte	0x5d
+ 881 0225 5C       		.byte	0x5c
  882 0226 CE000000 		.4byte	0xce
  883 022a 02       		.byte	0x2
  884 022b 91       		.byte	0x91
@@ -1107,7 +1106,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  886 022d 11       		.uleb128 0x11
  887 022e 60010000 		.4byte	.LASF29
  888 0232 01       		.byte	0x1
- 889 0233 5E       		.byte	0x5e
+ 889 0233 5D       		.byte	0x5d
  890 0234 C7000000 		.4byte	0xc7
  891 0238 02       		.byte	0x2
  892 0239 91       		.byte	0x91
@@ -1115,7 +1114,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  894 023b 11       		.uleb128 0x11
  895 023c 37000000 		.4byte	.LASF30
  896 0240 01       		.byte	0x1
- 897 0241 5E       		.byte	0x5e
+ 897 0241 5D       		.byte	0x5d
  898 0242 C7000000 		.4byte	0xc7
  899 0246 02       		.byte	0x2
  900 0247 91       		.byte	0x91
@@ -1123,7 +1122,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  902 0249 11       		.uleb128 0x11
  903 024a F4000000 		.4byte	.LASF31
  904 024e 01       		.byte	0x1
- 905 024f 65       		.byte	0x65
+ 905 024f 64       		.byte	0x64
  906 0250 C7000000 		.4byte	0xc7
  907 0254 02       		.byte	0x2
  908 0255 91       		.byte	0x91
@@ -1131,18 +1130,18 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  910 0257 11       		.uleb128 0x11
  911 0258 16010000 		.4byte	.LASF32
  912 025c 01       		.byte	0x1
- 913 025d 65       		.byte	0x65
+ 913 025d 64       		.byte	0x64
  914 025e C7000000 		.4byte	0xc7
  915 0262 02       		.byte	0x2
  916 0263 91       		.byte	0x91
  917 0264 64       		.sleb128 -28
  918 0265 11       		.uleb128 0x11
  919 0266 D1010000 		.4byte	.LASF33
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 20
-
-
  920 026a 01       		.byte	0x1
- 921 026b 6B       		.byte	0x6b
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 20
+
+
+ 921 026b 6A       		.byte	0x6a
  922 026c CE000000 		.4byte	0xce
  923 0270 02       		.byte	0x2
  924 0271 91       		.byte	0x91
@@ -1150,7 +1149,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  926 0273 11       		.uleb128 0x11
  927 0274 A2000000 		.4byte	.LASF34
  928 0278 01       		.byte	0x1
- 929 0279 70       		.byte	0x70
+ 929 0279 6F       		.byte	0x6f
  930 027a 82020000 		.4byte	0x282
  931 027e 02       		.byte	0x2
  932 027f 91       		.byte	0x91
@@ -1167,7 +1166,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  943 0293 01       		.byte	0x1
  944 0294 23010000 		.4byte	.LASF35
  945 0298 01       		.byte	0x1
- 946 0299 98       		.byte	0x98
+ 946 0299 97       		.byte	0x97
  947 029a 11010000 		.4byte	0x111
  948 029e 00000000 		.4byte	.LFB39
  949 02a2 20000000 		.4byte	.LFE39
@@ -1176,7 +1175,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  952 02ab 11       		.uleb128 0x11
  953 02ac 51010000 		.4byte	.LASF36
  954 02b0 01       		.byte	0x1
- 955 02b1 0E       		.byte	0xe
+ 955 02b1 0D       		.byte	0xd
  956 02b2 88010000 		.4byte	0x188
  957 02b6 05       		.byte	0x5
  958 02b7 03       		.byte	0x3
@@ -1184,7 +1183,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  960 02bc 11       		.uleb128 0x11
  961 02bd 89010000 		.4byte	.LASF37
  962 02c1 01       		.byte	0x1
- 963 02c2 0F       		.byte	0xf
+ 963 02c2 0E       		.byte	0xe
  964 02c3 8E010000 		.4byte	0x18e
  965 02c7 05       		.byte	0x5
  966 02c8 03       		.byte	0x3
@@ -1192,18 +1191,18 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  968 02cd 11       		.uleb128 0x11
  969 02ce 0C010000 		.4byte	.LASF38
  970 02d2 01       		.byte	0x1
- 971 02d3 10       		.byte	0x10
+ 971 02d3 0F       		.byte	0xf
  972 02d4 CE000000 		.4byte	0xce
  973 02d8 05       		.byte	0x5
  974 02d9 03       		.byte	0x3
  975 02da 08000000 		.4byte	movement_
  976 02de 11       		.uleb128 0x11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 21
-
-
  977 02df A7000000 		.4byte	.LASF39
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 21
+
+
  978 02e3 01       		.byte	0x1
- 979 02e4 12       		.byte	0x12
+ 979 02e4 11       		.byte	0x11
  980 02e5 7E000000 		.4byte	0x7e
  981 02e9 05       		.byte	0x5
  982 02ea 03       		.byte	0x3
@@ -1211,7 +1210,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  984 02ef 11       		.uleb128 0x11
  985 02f0 00000000 		.4byte	.LASF40
  986 02f4 01       		.byte	0x1
- 987 02f5 13       		.byte	0x13
+ 987 02f5 12       		.byte	0x12
  988 02f6 7E000000 		.4byte	0x7e
  989 02fa 05       		.byte	0x5
  990 02fb 03       		.byte	0x3
@@ -1258,10 +1257,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1031 0024 03       		.uleb128 0x3
  1032 0025 0D       		.uleb128 0xd
  1033 0026 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 22
-
-
  1034 0027 03       		.uleb128 0x3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 22
+
+
  1035 0028 0E       		.uleb128 0xe
  1036 0029 3A       		.uleb128 0x3a
  1037 002a 0B       		.uleb128 0xb
@@ -1318,10 +1317,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1088 005d 08       		.uleb128 0x8
  1089 005e 24       		.uleb128 0x24
  1090 005f 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 23
-
-
  1091 0060 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 23
+
+
  1092 0061 0B       		.uleb128 0xb
  1093 0062 3E       		.uleb128 0x3e
  1094 0063 0B       		.uleb128 0xb
@@ -1378,10 +1377,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1145 0097 01       		.uleb128 0x1
  1146 0098 12       		.uleb128 0x12
  1147 0099 01       		.uleb128 0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 24
-
-
  1148 009a 40       		.uleb128 0x40
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 24
+
+
  1149 009b 06       		.uleb128 0x6
  1150 009c 9642     		.uleb128 0x2116
  1151 009e 0C       		.uleb128 0xc
@@ -1438,10 +1437,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1202 00d2 0C       		.uleb128 0xc
  1203 00d3 03       		.uleb128 0x3
  1204 00d4 0E       		.uleb128 0xe
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 25
-
-
  1205 00d5 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 25
+
+
  1206 00d6 0B       		.uleb128 0xb
  1207 00d7 3B       		.uleb128 0x3b
  1208 00d8 0B       		.uleb128 0xb
@@ -1498,10 +1497,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1259 010d 00       		.byte	0
  1260 010e 00       		.byte	0
  1261 010f 11       		.uleb128 0x11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 26
-
-
  1262 0110 34       		.uleb128 0x34
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 26
+
+
  1263 0111 00       		.byte	0
  1264 0112 03       		.uleb128 0x3
  1265 0113 0E       		.uleb128 0xe
@@ -1558,10 +1557,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1316 0058 00000000 		.4byte	.LFB35
  1317 005c 02000000 		.4byte	.LCFI4
  1318 0060 0200     		.2byte	0x2
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 27
-
-
  1319 0062 7D       		.byte	0x7d
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 27
+
+
  1320 0063 00       		.sleb128 0
  1321 0064 02000000 		.4byte	.LCFI4
  1322 0068 04000000 		.4byte	.LCFI5
@@ -1618,10 +1617,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1373 00e4 2C000000 		.4byte	.LFE37
  1374 00e8 0200     		.2byte	0x2
  1375 00ea 77       		.byte	0x77
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 28
-
-
  1376 00eb 08       		.sleb128 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 28
+
+
  1377 00ec 00000000 		.4byte	0
  1378 00f0 00000000 		.4byte	0
  1379              	.LLST5:
@@ -1678,10 +1677,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1430 0018 00000000 		.4byte	.LFB34
  1431 001c 4C000000 		.4byte	.LFE34-.LFB34
  1432 0020 00000000 		.4byte	.LFB35
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 29
-
-
  1433 0024 58000000 		.4byte	.LFE35-.LFB35
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 29
+
+
  1434 0028 00000000 		.4byte	.LFB36
  1435 002c 2C000000 		.4byte	.LFE36-.LFB36
  1436 0030 00000000 		.4byte	.LFB37
@@ -1738,10 +1737,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1472      7400
  1473              	.LASF30:
  1474 0037 68756D69 		.ascii	"humiLimit\000"
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 30
-
-
  1474      4C696D69 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 30
+
+
  1474      7400
  1475              	.LASF7:
  1476 0041 70617261 		.ascii	"parameters_type\000"
@@ -1798,10 +1797,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1500 00cc 6C6F6744 		.ascii	"logDataISR\000"
  1500      61746149 
  1500      535200
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 31
-
-
  1501              	.LASF14:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 31
+
+
  1502 00d7 70617261 		.ascii	"parameters\000"
  1502      6D657465 
  1502      727300
@@ -1858,10 +1857,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1526 0172 6C6F6E67 		.ascii	"long long unsigned int\000"
  1526      206C6F6E 
  1526      6720756E 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 32
-
-
  1526      7369676E 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 32
+
+
  1526      65642069 
  1527              	.LASF37:
  1528 0189 62756666 		.ascii	"bufferPtr_\000"
@@ -1918,10 +1917,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 1
  1551 0243 7369676E 		.ascii	"signed char\000"
  1551      65642063 
  1551      68617200 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccqXHhYE.s 			page 33
-
-
  1552              	.LASF27:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 33
+
+
  1553 024f 6C6F6164 		.ascii	"loadData_logDataTimeout\000"
  1553      44617461 
  1553      5F6C6F67 
