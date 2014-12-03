@@ -1,0 +1,1933 @@
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"loadData.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.bss
+  18              		.align	2
+  19              	parametersPtr_:
+  20 0000 00000000 		.space	4
+  21              		.align	2
+  22              	bufferPtr_:
+  23 0004 00000000 		.space	4
+  24              	movement_:
+  25 0008 00       		.space	1
+  26 0009 000000   		.align	2
+  27              	logDataTimeoutCounter_:
+  28 000c 00000000 		.space	4
+  29              		.align	2
+  30              	waterTimeoutCounter_:
+  31 0010 00000000 		.space	4
+  32              		.global	__aeabi_ui2d
+  33              		.global	__aeabi_dcmpge
+  34              		.section	.text.logDataISR,"ax",%progbits
+  35              		.align	2
+  36              		.global	logDataISR
+  37              		.code	16
+  38              		.thumb_func
+  39              		.type	logDataISR, %function
+  40              	logDataISR:
+  41              	.LFB33:
+  42              		.file 1 ".\\loadData.c"
+   1:.\loadData.c  **** /*
+   2:.\loadData.c  **** * File: loadData.c 
+   3:.\loadData.c  **** * Description: Implementation of controller class loadData
+   4:.\loadData.c  **** * Project: PRJ3
+   5:.\loadData.c  **** * 
+   6:.\loadData.c  **** * Author: Bjørn Sørensen
+   7:.\loadData.c  **** */
+   8:.\loadData.c  **** 
+   9:.\loadData.c  **** #include "loadData.h"
+  10:.\loadData.c  **** #include <stdio.h>
+  11:.\loadData.c  **** 
+  12:.\loadData.c  **** // Private data
+  13:.\loadData.c  **** static parameters * parametersPtr_;
+  14:.\loadData.c  **** static buffer * bufferPtr_;
+  15:.\loadData.c  **** static unsigned char movement_;
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 2
+
+
+  16:.\loadData.c  **** // sensorPackage is implicit known, as it contains only methods
+  17:.\loadData.c  **** static unsigned int logDataTimeoutCounter_;
+  18:.\loadData.c  **** static unsigned int waterTimeoutCounter_;
+  19:.\loadData.c  **** 
+  20:.\loadData.c  **** 
+  21:.\loadData.c  **** // Public methods
+  22:.\loadData.c  **** CY_ISR(logDataISR)
+  23:.\loadData.c  **** {
+  43              		.loc 1 23 0
+  44              		.cfi_startproc
+  45 0000 98B5     		push	{r3, r4, r7, lr}
+  46              	.LCFI0:
+  47              		.cfi_def_cfa_offset 16
+  48              		.cfi_offset 3, -16
+  49              		.cfi_offset 4, -12
+  50              		.cfi_offset 7, -8
+  51              		.cfi_offset 14, -4
+  52 0002 00AF     		add	r7, sp, #0
+  53              	.LCFI1:
+  54              		.cfi_def_cfa_register 7
+  24:.\loadData.c  ****     if(logDataTimeoutCounter_ >= LOGDATATIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
+  55              		.loc 1 24 0
+  56 0004 104B     		ldr	r3, .L7+8
+  57 0006 1B68     		ldr	r3, [r3]
+  58 0008 181C     		mov	r0, r3
+  59 000a FFF7FEFF 		bl	__aeabi_ui2d
+  60 000e 031C     		mov	r3, r0
+  61 0010 0C1C     		mov	r4, r1
+  62 0012 181C     		mov	r0, r3
+  63 0014 211C     		mov	r1, r4
+  64 0016 0B4B     		ldr	r3, .L7+4
+  65 0018 094A     		ldr	r2, .L7
+  66 001a FFF7FEFF 		bl	__aeabi_dcmpge
+  67 001e 031C     		mov	r3, r0
+  68 0020 002B     		cmp	r3, #0
+  69 0022 05D0     		beq	.L6
+  70              	.L5:
+  25:.\loadData.c  ****     {
+  26:.\loadData.c  ****         loadData_logDataTimeout();
+  71              		.loc 1 26 0
+  72 0024 FFF7FEFF 		bl	loadData_logDataTimeout
+  27:.\loadData.c  ****         logDataTimeoutCounter_ = 0;
+  73              		.loc 1 27 0
+  74 0028 074B     		ldr	r3, .L7+8
+  75 002a 0022     		mov	r2, #0
+  76 002c 1A60     		str	r2, [r3]
+  77 002e 04E0     		b	.L1
+  78              	.L6:
+  28:.\loadData.c  ****     }
+  29:.\loadData.c  ****     else
+  30:.\loadData.c  ****         logDataTimeoutCounter_++;
+  79              		.loc 1 30 0
+  80 0030 054B     		ldr	r3, .L7+8
+  81 0032 1B68     		ldr	r3, [r3]
+  82 0034 5A1C     		add	r2, r3, #1
+  83 0036 044B     		ldr	r3, .L7+8
+  84 0038 1A60     		str	r2, [r3]
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 3
+
+
+  85              	.L1:
+  31:.\loadData.c  **** }
+  86              		.loc 1 31 0
+  87 003a BD46     		mov	sp, r7
+  88              		@ sp needed for prologue
+  89 003c 98BD     		pop	{r3, r4, r7, pc}
+  90              	.L8:
+  91 003e C046     		.align	3
+  92              	.L7:
+  93 0040 C98C9B39 		.word	966495433
+  94 0044 32E38640 		.word	1082581810
+  95 0048 0C000000 		.word	logDataTimeoutCounter_
+  96              		.cfi_endproc
+  97              	.LFE33:
+  98              		.size	logDataISR, .-logDataISR
+  99 004c C046C046 		.section	.text.waterISR,"ax",%progbits
+ 100              		.align	2
+ 101              		.global	waterISR
+ 102              		.code	16
+ 103              		.thumb_func
+ 104              		.type	waterISR, %function
+ 105              	waterISR:
+ 106              	.LFB34:
+  32:.\loadData.c  **** 
+  33:.\loadData.c  **** CY_ISR(waterISR)
+  34:.\loadData.c  **** {
+ 107              		.loc 1 34 0
+ 108              		.cfi_startproc
+ 109 0000 98B5     		push	{r3, r4, r7, lr}
+ 110              	.LCFI2:
+ 111              		.cfi_def_cfa_offset 16
+ 112              		.cfi_offset 3, -16
+ 113              		.cfi_offset 4, -12
+ 114              		.cfi_offset 7, -8
+ 115              		.cfi_offset 14, -4
+ 116 0002 00AF     		add	r7, sp, #0
+ 117              	.LCFI3:
+ 118              		.cfi_def_cfa_register 7
+  35:.\loadData.c  ****     if(waterTimeoutCounter_ >= WATERTIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
+ 119              		.loc 1 35 0
+ 120 0004 104B     		ldr	r3, .L15+8
+ 121 0006 1B68     		ldr	r3, [r3]
+ 122 0008 181C     		mov	r0, r3
+ 123 000a FFF7FEFF 		bl	__aeabi_ui2d
+ 124 000e 031C     		mov	r3, r0
+ 125 0010 0C1C     		mov	r4, r1
+ 126 0012 181C     		mov	r0, r3
+ 127 0014 211C     		mov	r1, r4
+ 128 0016 0B4B     		ldr	r3, .L15+4
+ 129 0018 094A     		ldr	r2, .L15
+ 130 001a FFF7FEFF 		bl	__aeabi_dcmpge
+ 131 001e 031C     		mov	r3, r0
+ 132 0020 002B     		cmp	r3, #0
+ 133 0022 05D0     		beq	.L14
+ 134              	.L13:
+  36:.\loadData.c  ****     {
+  37:.\loadData.c  ****         loadData_waterTimeout();
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 4
+
+
+ 135              		.loc 1 37 0
+ 136 0024 FFF7FEFF 		bl	loadData_waterTimeout
+  38:.\loadData.c  ****         waterTimeoutCounter_ = 0;
+ 137              		.loc 1 38 0
+ 138 0028 074B     		ldr	r3, .L15+8
+ 139 002a 0022     		mov	r2, #0
+ 140 002c 1A60     		str	r2, [r3]
+ 141 002e 04E0     		b	.L9
+ 142              	.L14:
+  39:.\loadData.c  ****     }
+  40:.\loadData.c  ****     else
+  41:.\loadData.c  ****         waterTimeoutCounter_++;
+ 143              		.loc 1 41 0
+ 144 0030 054B     		ldr	r3, .L15+8
+ 145 0032 1B68     		ldr	r3, [r3]
+ 146 0034 5A1C     		add	r2, r3, #1
+ 147 0036 044B     		ldr	r3, .L15+8
+ 148 0038 1A60     		str	r2, [r3]
+ 149              	.L9:
+  42:.\loadData.c  **** }
+ 150              		.loc 1 42 0
+ 151 003a BD46     		mov	sp, r7
+ 152              		@ sp needed for prologue
+ 153 003c 98BD     		pop	{r3, r4, r7, pc}
+ 154              	.L16:
+ 155 003e C046     		.align	3
+ 156              	.L15:
+ 157 0040 FB6F02C8 		.word	-939364357
+ 158 0044 FE9B8C40 		.word	1082956798
+ 159 0048 10000000 		.word	waterTimeoutCounter_
+ 160              		.cfi_endproc
+ 161              	.LFE34:
+ 162              		.size	waterISR, .-waterISR
+ 163 004c C046C046 		.section	.text.loadData_init,"ax",%progbits
+ 164              		.align	2
+ 165              		.global	loadData_init
+ 166              		.code	16
+ 167              		.thumb_func
+ 168              		.type	loadData_init, %function
+ 169              	loadData_init:
+ 170              	.LFB35:
+  43:.\loadData.c  **** 
+  44:.\loadData.c  **** 
+  45:.\loadData.c  **** extern void loadData_init(parameters *par, buffer *buf) 
+  46:.\loadData.c  **** {
+ 171              		.loc 1 46 0
+ 172              		.cfi_startproc
+ 173 0000 80B5     		push	{r7, lr}
+ 174              	.LCFI4:
+ 175              		.cfi_def_cfa_offset 8
+ 176              		.cfi_offset 7, -8
+ 177              		.cfi_offset 14, -4
+ 178 0002 82B0     		sub	sp, sp, #8
+ 179              	.LCFI5:
+ 180              		.cfi_def_cfa_offset 16
+ 181 0004 00AF     		add	r7, sp, #0
+ 182              	.LCFI6:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 5
+
+
+ 183              		.cfi_def_cfa_register 7
+ 184 0006 7860     		str	r0, [r7, #4]
+ 185 0008 3960     		str	r1, [r7]
+  47:.\loadData.c  ****     // Set pointers accordingly
+  48:.\loadData.c  ****     parametersPtr_ = par;
+ 186              		.loc 1 48 0
+ 187 000a 0D4B     		ldr	r3, .L18
+ 188 000c 7A68     		ldr	r2, [r7, #4]
+ 189 000e 1A60     		str	r2, [r3]
+  49:.\loadData.c  ****     bufferPtr_ = buf;
+ 190              		.loc 1 49 0
+ 191 0010 0C4B     		ldr	r3, .L18+4
+ 192 0012 3A68     		ldr	r2, [r7]
+ 193 0014 1A60     		str	r2, [r3]
+  50:.\loadData.c  ****     // sensorPackage is implicit known, as it contains only methods
+  51:.\loadData.c  ****     
+  52:.\loadData.c  ****     
+  53:.\loadData.c  ****     // Start logData timer
+  54:.\loadData.c  ****     logDataTimeoutCounter_ = 0;
+ 194              		.loc 1 54 0
+ 195 0016 0C4B     		ldr	r3, .L18+8
+ 196 0018 0022     		mov	r2, #0
+ 197 001a 1A60     		str	r2, [r3]
+  55:.\loadData.c  ****     logDataTimer_Start();
+ 198              		.loc 1 55 0
+ 199 001c FFF7FEFF 		bl	logDataTimer_Start
+  56:.\loadData.c  ****     logDataInterrupt_StartEx(logDataISR);
+ 200              		.loc 1 56 0
+ 201 0020 0A4B     		ldr	r3, .L18+12
+ 202 0022 181C     		mov	r0, r3
+ 203 0024 FFF7FEFF 		bl	logDataInterrupt_StartEx
+  57:.\loadData.c  ****     
+  58:.\loadData.c  ****     // Initialize water timer
+  59:.\loadData.c  ****     waterTimeoutCounter_ = 0;
+ 204              		.loc 1 59 0
+ 205 0028 094B     		ldr	r3, .L18+16
+ 206 002a 0022     		mov	r2, #0
+ 207 002c 1A60     		str	r2, [r3]
+  60:.\loadData.c  ****     waterInterrupt_StartEx(waterISR);
+ 208              		.loc 1 60 0
+ 209 002e 094B     		ldr	r3, .L18+20
+ 210 0030 181C     		mov	r0, r3
+ 211 0032 FFF7FEFF 		bl	waterInterrupt_StartEx
+  61:.\loadData.c  ****     // Get first sensor reading
+  62:.\loadData.c  ****     loadData_logDataTimeout();
+ 212              		.loc 1 62 0
+ 213 0036 FFF7FEFF 		bl	loadData_logDataTimeout
+  63:.\loadData.c  ****     
+  64:.\loadData.c  ****     
+  65:.\loadData.c  **** }
+ 214              		.loc 1 65 0
+ 215 003a BD46     		mov	sp, r7
+ 216 003c 02B0     		add	sp, sp, #8
+ 217              		@ sp needed for prologue
+ 218 003e 80BD     		pop	{r7, pc}
+ 219              	.L19:
+ 220              		.align	2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 6
+
+
+ 221              	.L18:
+ 222 0040 00000000 		.word	parametersPtr_
+ 223 0044 04000000 		.word	bufferPtr_
+ 224 0048 0C000000 		.word	logDataTimeoutCounter_
+ 225 004c 00000000 		.word	logDataISR
+ 226 0050 10000000 		.word	waterTimeoutCounter_
+ 227 0054 00000000 		.word	waterISR
+ 228              		.cfi_endproc
+ 229              	.LFE35:
+ 230              		.size	loadData_init, .-loadData_init
+ 231              		.section	.text.loadData_getBuffer,"ax",%progbits
+ 232              		.align	2
+ 233              		.global	loadData_getBuffer
+ 234              		.code	16
+ 235              		.thumb_func
+ 236              		.type	loadData_getBuffer, %function
+ 237              	loadData_getBuffer:
+ 238              	.LFB36:
+  66:.\loadData.c  **** 
+  67:.\loadData.c  **** int loadData_getBuffer( char ** buf, unsigned int * len)
+  68:.\loadData.c  **** {
+ 239              		.loc 1 68 0
+ 240              		.cfi_startproc
+ 241 0000 80B5     		push	{r7, lr}
+ 242              	.LCFI7:
+ 243              		.cfi_def_cfa_offset 8
+ 244              		.cfi_offset 7, -8
+ 245              		.cfi_offset 14, -4
+ 246 0002 82B0     		sub	sp, sp, #8
+ 247              	.LCFI8:
+ 248              		.cfi_def_cfa_offset 16
+ 249 0004 00AF     		add	r7, sp, #0
+ 250              	.LCFI9:
+ 251              		.cfi_def_cfa_register 7
+ 252 0006 7860     		str	r0, [r7, #4]
+ 253 0008 3960     		str	r1, [r7]
+  69:.\loadData.c  ****     buffer_getData(bufferPtr_, buf, len);
+ 254              		.loc 1 69 0
+ 255 000a 074B     		ldr	r3, .L22
+ 256 000c 1968     		ldr	r1, [r3]
+ 257 000e 7A68     		ldr	r2, [r7, #4]
+ 258 0010 3B68     		ldr	r3, [r7]
+ 259 0012 081C     		mov	r0, r1
+ 260 0014 111C     		mov	r1, r2
+ 261 0016 1A1C     		mov	r2, r3
+ 262 0018 FFF7FEFF 		bl	buffer_getData
+  70:.\loadData.c  ****     return 0;
+ 263              		.loc 1 70 0
+ 264 001c 0023     		mov	r3, #0
+  71:.\loadData.c  **** }
+ 265              		.loc 1 71 0
+ 266 001e 181C     		mov	r0, r3
+ 267 0020 BD46     		mov	sp, r7
+ 268 0022 02B0     		add	sp, sp, #8
+ 269              		@ sp needed for prologue
+ 270 0024 80BD     		pop	{r7, pc}
+ 271              	.L23:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 7
+
+
+ 272 0026 C046     		.align	2
+ 273              	.L22:
+ 274 0028 04000000 		.word	bufferPtr_
+ 275              		.cfi_endproc
+ 276              	.LFE36:
+ 277              		.size	loadData_getBuffer, .-loadData_getBuffer
+ 278              		.section	.text.loadData_movementDetect,"ax",%progbits
+ 279              		.align	2
+ 280              		.global	loadData_movementDetect
+ 281              		.code	16
+ 282              		.thumb_func
+ 283              		.type	loadData_movementDetect, %function
+ 284              	loadData_movementDetect:
+ 285              	.LFB37:
+  72:.\loadData.c  **** 
+  73:.\loadData.c  **** int loadData_movementDetect()
+  74:.\loadData.c  **** {
+ 286              		.loc 1 74 0
+ 287              		.cfi_startproc
+ 288 0000 80B5     		push	{r7, lr}
+ 289              	.LCFI10:
+ 290              		.cfi_def_cfa_offset 8
+ 291              		.cfi_offset 7, -8
+ 292              		.cfi_offset 14, -4
+ 293 0002 00AF     		add	r7, sp, #0
+ 294              	.LCFI11:
+ 295              		.cfi_def_cfa_register 7
+  75:.\loadData.c  ****     // Clear active flag in parameters
+  76:.\loadData.c  ****     parameters_setActive(parametersPtr_, 0);
+ 296              		.loc 1 76 0
+ 297 0004 074B     		ldr	r3, .L26
+ 298 0006 1B68     		ldr	r3, [r3]
+ 299 0008 181C     		mov	r0, r3
+ 300 000a 0021     		mov	r1, #0
+ 301 000c FFF7FEFF 		bl	parameters_setActive
+  77:.\loadData.c  ****     
+  78:.\loadData.c  ****     // Start 30 minute timer
+  79:.\loadData.c  ****     waterTimer_Start();
+ 302              		.loc 1 79 0
+ 303 0010 FFF7FEFF 		bl	waterTimer_Start
+  80:.\loadData.c  ****     
+  81:.\loadData.c  ****     // Set movement flag
+  82:.\loadData.c  ****     movement_ = 1;
+ 304              		.loc 1 82 0
+ 305 0014 044B     		ldr	r3, .L26+4
+ 306 0016 0122     		mov	r2, #1
+ 307 0018 1A70     		strb	r2, [r3]
+  83:.\loadData.c  ****     
+  84:.\loadData.c  ****     return 0;
+ 308              		.loc 1 84 0
+ 309 001a 0023     		mov	r3, #0
+  85:.\loadData.c  **** }
+ 310              		.loc 1 85 0
+ 311 001c 181C     		mov	r0, r3
+ 312 001e BD46     		mov	sp, r7
+ 313              		@ sp needed for prologue
+ 314 0020 80BD     		pop	{r7, pc}
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 8
+
+
+ 315              	.L27:
+ 316 0022 C046     		.align	2
+ 317              	.L26:
+ 318 0024 00000000 		.word	parametersPtr_
+ 319 0028 08000000 		.word	movement_
+ 320              		.cfi_endproc
+ 321              	.LFE37:
+ 322              		.size	loadData_movementDetect, .-loadData_movementDetect
+ 323              		.global	__aeabi_uidivmod
+ 324              		.global	__aeabi_ui2f
+ 325              		.global	__aeabi_f2d
+ 326              		.section	.rodata
+ 327              		.align	2
+ 328              	.LC13:
+ 329 0000 2530352E 		.ascii	"%05.1f\000"
+ 329      316600
+ 330 0007 00       		.align	2
+ 331              	.LC16:
+ 332 0008 45303232 		.ascii	"E022\000"
+ 332      00
+ 333 000d 000000   		.align	2
+ 334              	.LC18:
+ 335 0010 2530332E 		.ascii	"%03.0f\000"
+ 335      306600
+ 336 0017 00       		.align	2
+ 337              	.LC20:
+ 338 0018 45303233 		.ascii	"E023\000"
+ 338      00
+ 339              		.global	__aeabi_fcmpgt
+ 340              		.global	__aeabi_fcmplt
+ 341 001d 000000   		.section	.text.loadData_logDataTimeout,"ax",%progbits
+ 342              		.align	2
+ 343              		.global	loadData_logDataTimeout
+ 344              		.code	16
+ 345              		.thumb_func
+ 346              		.type	loadData_logDataTimeout, %function
+ 347              	loadData_logDataTimeout:
+ 348              	.LFB38:
+  86:.\loadData.c  **** 
+  87:.\loadData.c  **** int loadData_logDataTimeout()
+  88:.\loadData.c  **** {
+ 349              		.loc 1 88 0
+ 350              		.cfi_startproc
+ 351 0000 90B5     		push	{r4, r7, lr}
+ 352              	.LCFI12:
+ 353              		.cfi_def_cfa_offset 12
+ 354              		.cfi_offset 4, -12
+ 355              		.cfi_offset 7, -8
+ 356              		.cfi_offset 14, -4
+ 357 0002 8DB0     		sub	sp, sp, #52
+ 358              	.LCFI13:
+ 359              		.cfi_def_cfa_offset 64
+ 360 0004 02AF     		add	r7, sp, #8
+ 361              	.LCFI14:
+ 362              		.cfi_def_cfa 7, 56
+  89:.\loadData.c  ****     int ret;    // Error flag
+  90:.\loadData.c  ****     
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 9
+
+
+  91:.\loadData.c  ****     // Collect data limits from parameters
+  92:.\loadData.c  ****     unsigned char active;
+  93:.\loadData.c  ****     float tempLimit, humiLimit;
+  94:.\loadData.c  ****     parameters_getActive(parametersPtr_, &active);
+ 363              		.loc 1 94 0
+ 364 0006 524B     		ldr	r3, .L38
+ 365 0008 1A68     		ldr	r2, [r3]
+ 366 000a 3B1C     		mov	r3, r7
+ 367 000c 1733     		add	r3, r3, #23
+ 368 000e 101C     		mov	r0, r2
+ 369 0010 191C     		mov	r1, r3
+ 370 0012 FFF7FEFF 		bl	parameters_getActive
+  95:.\loadData.c  ****     parameters_getTemp(parametersPtr_, &tempLimit);
+ 371              		.loc 1 95 0
+ 372 0016 4E4B     		ldr	r3, .L38
+ 373 0018 1A68     		ldr	r2, [r3]
+ 374 001a 3B1C     		mov	r3, r7
+ 375 001c 1033     		add	r3, r3, #16
+ 376 001e 101C     		mov	r0, r2
+ 377 0020 191C     		mov	r1, r3
+ 378 0022 FFF7FEFF 		bl	parameters_getTemp
+  96:.\loadData.c  ****     parameters_getHumi(parametersPtr_, &humiLimit);
+ 379              		.loc 1 96 0
+ 380 0026 4A4B     		ldr	r3, .L38
+ 381 0028 1A68     		ldr	r2, [r3]
+ 382 002a 3B1C     		mov	r3, r7
+ 383 002c 0C33     		add	r3, r3, #12
+ 384 002e 101C     		mov	r0, r2
+ 385 0030 191C     		mov	r1, r3
+ 386 0032 FFF7FEFF 		bl	parameters_getHumi
+  97:.\loadData.c  ****     
+  98:.\loadData.c  ****     
+  99:.\loadData.c  ****     // Collect data from sensorpackage
+ 100:.\loadData.c  ****     float temp, humi;
+ 101:.\loadData.c  ****     //sensorPackage_getData(&temp, &humi);
+ 102:.\loadData.c  ****     temp = logDataTimeoutCounter_%100;
+ 387              		.loc 1 102 0
+ 388 0036 474B     		ldr	r3, .L38+4
+ 389 0038 1B68     		ldr	r3, [r3]
+ 390 003a 181C     		mov	r0, r3
+ 391 003c 6421     		mov	r1, #100
+ 392 003e FFF7FEFF 		bl	__aeabi_uidivmod
+ 393 0042 0B1C     		mov	r3, r1
+ 394 0044 181C     		mov	r0, r3
+ 395 0046 FFF7FEFF 		bl	__aeabi_ui2f
+ 396 004a 031C     		add	r3, r0, #0
+ 397 004c 3B62     		str	r3, [r7, #32]
+ 103:.\loadData.c  ****     humi = 40;
+ 398              		.loc 1 103 0
+ 399 004e 424B     		ldr	r3, .L38+8
+ 400 0050 FB61     		str	r3, [r7, #28]
+ 104:.\loadData.c  ****     
+ 105:.\loadData.c  ****     // Create water flag and initialize
+ 106:.\loadData.c  ****     unsigned char water;
+ 107:.\loadData.c  ****     water = '0';
+ 401              		.loc 1 107 0
+ 402 0052 3B1C     		mov	r3, r7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 10
+
+
+ 403 0054 2733     		add	r3, r3, #39
+ 404 0056 3022     		mov	r2, #48
+ 405 0058 1A70     		strb	r2, [r3]
+ 108:.\loadData.c  ****     
+ 109:.\loadData.c  ****     // Save data as string i buffer, with movement set accordingly
+ 110:.\loadData.c  ****     
+ 111:.\loadData.c  ****     char data[11];
+ 112:.\loadData.c  ****     data[0] = 'D';
+ 406              		.loc 1 112 0
+ 407 005a 3B1C     		mov	r3, r7
+ 408 005c 4422     		mov	r2, #68
+ 409 005e 1A70     		strb	r2, [r3]
+ 113:.\loadData.c  **** 
+ 114:.\loadData.c  ****     ret = snprintf(data + 1, 6, "%05.1f", temp);   // Convert temp float to 4 character, 1 decimal 
+ 410              		.loc 1 114 0
+ 411 0060 386A     		ldr	r0, [r7, #32]
+ 412 0062 FFF7FEFF 		bl	__aeabi_f2d
+ 413 0066 031C     		mov	r3, r0
+ 414 0068 0C1C     		mov	r4, r1
+ 415 006a 3A1C     		mov	r2, r7
+ 416 006c 511C     		add	r1, r2, #1
+ 417 006e 3B4A     		ldr	r2, .L38+12
+ 418 0070 0093     		str	r3, [sp]
+ 419 0072 0194     		str	r4, [sp, #4]
+ 420 0074 081C     		mov	r0, r1
+ 421 0076 0621     		mov	r1, #6
+ 422 0078 FFF7FEFF 		bl	snprintf
+ 423 007c 031C     		mov	r3, r0
+ 424 007e BB61     		str	r3, [r7, #24]
+ 115:.\loadData.c  ****     if(ret != 5) // In case of failure, write error to buffer
+ 425              		.loc 1 115 0
+ 426 0080 BB69     		ldr	r3, [r7, #24]
+ 427 0082 052B     		cmp	r3, #5
+ 428 0084 0AD0     		beq	.L29
+ 116:.\loadData.c  ****     {
+ 117:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E022", 4);
+ 429              		.loc 1 117 0
+ 430 0086 364B     		ldr	r3, .L38+16
+ 431 0088 1A68     		ldr	r2, [r3]
+ 432 008a 364B     		ldr	r3, .L38+20
+ 433 008c 101C     		mov	r0, r2
+ 434 008e 191C     		mov	r1, r3
+ 435 0090 0422     		mov	r2, #4
+ 436 0092 FFF7FEFF 		bl	buffer_saveData
+ 118:.\loadData.c  ****         return -22;
+ 437              		.loc 1 118 0
+ 438 0096 1623     		mov	r3, #22
+ 439 0098 5B42     		neg	r3, r3
+ 440 009a 55E0     		b	.L37
+ 441              	.L29:
+ 119:.\loadData.c  ****     }
+ 120:.\loadData.c  ****     
+ 121:.\loadData.c  ****     ret = snprintf(data + 6, 4, "%03.0f", humi);  // Convert humi float to 3 character, 0 left-padd
+ 442              		.loc 1 121 0
+ 443 009c F869     		ldr	r0, [r7, #28]
+ 444 009e FFF7FEFF 		bl	__aeabi_f2d
+ 445 00a2 031C     		mov	r3, r0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 11
+
+
+ 446 00a4 0C1C     		mov	r4, r1
+ 447 00a6 3A1C     		mov	r2, r7
+ 448 00a8 911D     		add	r1, r2, #6
+ 449 00aa 2F4A     		ldr	r2, .L38+24
+ 450 00ac 0093     		str	r3, [sp]
+ 451 00ae 0194     		str	r4, [sp, #4]
+ 452 00b0 081C     		mov	r0, r1
+ 453 00b2 0421     		mov	r1, #4
+ 454 00b4 FFF7FEFF 		bl	snprintf
+ 455 00b8 031C     		mov	r3, r0
+ 456 00ba BB61     		str	r3, [r7, #24]
+ 122:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
+ 457              		.loc 1 122 0
+ 458 00bc BB69     		ldr	r3, [r7, #24]
+ 459 00be 032B     		cmp	r3, #3
+ 460 00c0 0AD0     		beq	.L31
+ 123:.\loadData.c  ****     {
+ 124:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E023", 4);
+ 461              		.loc 1 124 0
+ 462 00c2 274B     		ldr	r3, .L38+16
+ 463 00c4 1A68     		ldr	r2, [r3]
+ 464 00c6 294B     		ldr	r3, .L38+28
+ 465 00c8 101C     		mov	r0, r2
+ 466 00ca 191C     		mov	r1, r3
+ 467 00cc 0422     		mov	r2, #4
+ 468 00ce FFF7FEFF 		bl	buffer_saveData
+ 125:.\loadData.c  ****         return -23;
+ 469              		.loc 1 125 0
+ 470 00d2 1723     		mov	r3, #23
+ 471 00d4 5B42     		neg	r3, r3
+ 472 00d6 37E0     		b	.L37
+ 473              	.L31:
+ 126:.\loadData.c  ****     }
+ 127:.\loadData.c  ****     
+ 128:.\loadData.c  ****     // If sensor values are out of parameter limits and system is active, activate water
+ 129:.\loadData.c  ****     if(active == 1 && (temp > tempLimit || humi < humiLimit))
+ 474              		.loc 1 129 0
+ 475 00d8 3B1C     		mov	r3, r7
+ 476 00da 1733     		add	r3, r3, #23
+ 477 00dc 1B78     		ldrb	r3, [r3]
+ 478 00de 012B     		cmp	r3, #1
+ 479 00e0 16D1     		bne	.L32
+ 480              		.loc 1 129 0 is_stmt 0 discriminator 1
+ 481 00e2 3B69     		ldr	r3, [r7, #16]
+ 482 00e4 386A     		ldr	r0, [r7, #32]
+ 483 00e6 191C     		add	r1, r3, #0
+ 484 00e8 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 485 00ec 031C     		mov	r3, r0
+ 486 00ee 002B     		cmp	r3, #0
+ 487 00f0 07D1     		bne	.L33
+ 488 00f2 FB68     		ldr	r3, [r7, #12]
+ 489 00f4 F869     		ldr	r0, [r7, #28]
+ 490 00f6 191C     		add	r1, r3, #0
+ 491 00f8 FFF7FEFF 		bl	__aeabi_fcmplt
+ 492 00fc 031C     		mov	r3, r0
+ 493 00fe 002B     		cmp	r3, #0
+ 494 0100 06D0     		beq	.L32
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 12
+
+
+ 495              	.L33:
+ 130:.\loadData.c  ****     {
+ 131:.\loadData.c  ****         sensorPackage_water(1);
+ 496              		.loc 1 131 0 is_stmt 1
+ 497 0102 0120     		mov	r0, #1
+ 498 0104 FFF7FEFF 		bl	sensorPackage_water
+ 132:.\loadData.c  ****         // Start water timer
+ 133:.\loadData.c  ****         
+ 134:.\loadData.c  ****         water = '1';
+ 499              		.loc 1 134 0
+ 500 0108 3B1C     		mov	r3, r7
+ 501 010a 2733     		add	r3, r3, #39
+ 502 010c 3122     		mov	r2, #49
+ 503 010e 1A70     		strb	r2, [r3]
+ 504              	.L32:
+ 135:.\loadData.c  ****     }
+ 136:.\loadData.c  ****     
+ 137:.\loadData.c  ****     data[9] = water;
+ 505              		.loc 1 137 0
+ 506 0110 3B1C     		mov	r3, r7
+ 507 0112 3A1C     		mov	r2, r7
+ 508 0114 2732     		add	r2, r2, #39
+ 509 0116 1278     		ldrb	r2, [r2]
+ 510 0118 5A72     		strb	r2, [r3, #9]
+ 138:.\loadData.c  ****     if(movement_ == 0)
+ 511              		.loc 1 138 0
+ 512 011a 154B     		ldr	r3, .L38+32
+ 513 011c 1B78     		ldrb	r3, [r3]
+ 514 011e 002B     		cmp	r3, #0
+ 515 0120 03D1     		bne	.L35
+ 139:.\loadData.c  ****         data[10] = '0';
+ 516              		.loc 1 139 0
+ 517 0122 3B1C     		mov	r3, r7
+ 518 0124 3022     		mov	r2, #48
+ 519 0126 9A72     		strb	r2, [r3, #10]
+ 520 0128 02E0     		b	.L36
+ 521              	.L35:
+ 140:.\loadData.c  ****     else
+ 141:.\loadData.c  ****         data[10] = '1';
+ 522              		.loc 1 141 0
+ 523 012a 3B1C     		mov	r3, r7
+ 524 012c 3122     		mov	r2, #49
+ 525 012e 9A72     		strb	r2, [r3, #10]
+ 526              	.L36:
+ 142:.\loadData.c  ****      
+ 143:.\loadData.c  ****     // Save data in buffer object for later use
+ 144:.\loadData.c  ****     buffer_saveData(bufferPtr_, data, 11);
+ 527              		.loc 1 144 0
+ 528 0130 0B4B     		ldr	r3, .L38+16
+ 529 0132 1A68     		ldr	r2, [r3]
+ 530 0134 3B1C     		mov	r3, r7
+ 531 0136 101C     		mov	r0, r2
+ 532 0138 191C     		mov	r1, r3
+ 533 013a 0B22     		mov	r2, #11
+ 534 013c FFF7FEFF 		bl	buffer_saveData
+ 145:.\loadData.c  ****         
+ 146:.\loadData.c  ****     // Clear movement flag
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 13
+
+
+ 147:.\loadData.c  ****     movement_ = 0;
+ 535              		.loc 1 147 0
+ 536 0140 0B4B     		ldr	r3, .L38+32
+ 537 0142 0022     		mov	r2, #0
+ 538 0144 1A70     		strb	r2, [r3]
+ 148:.\loadData.c  ****     
+ 149:.\loadData.c  ****     return 0;
+ 539              		.loc 1 149 0
+ 540 0146 0023     		mov	r3, #0
+ 541              	.L37:
+ 150:.\loadData.c  **** }
+ 542              		.loc 1 150 0
+ 543 0148 181C     		mov	r0, r3
+ 544 014a BD46     		mov	sp, r7
+ 545 014c 0BB0     		add	sp, sp, #44
+ 546              		@ sp needed for prologue
+ 547 014e 90BD     		pop	{r4, r7, pc}
+ 548              	.L39:
+ 549              		.align	2
+ 550              	.L38:
+ 551 0150 00000000 		.word	parametersPtr_
+ 552 0154 0C000000 		.word	logDataTimeoutCounter_
+ 553 0158 00002042 		.word	1109393408
+ 554 015c 00000000 		.word	.LC13
+ 555 0160 04000000 		.word	bufferPtr_
+ 556 0164 08000000 		.word	.LC16
+ 557 0168 10000000 		.word	.LC18
+ 558 016c 18000000 		.word	.LC20
+ 559 0170 08000000 		.word	movement_
+ 560              		.cfi_endproc
+ 561              	.LFE38:
+ 562              		.size	loadData_logDataTimeout, .-loadData_logDataTimeout
+ 563              		.section	.text.loadData_waterTimeout,"ax",%progbits
+ 564              		.align	2
+ 565              		.global	loadData_waterTimeout
+ 566              		.code	16
+ 567              		.thumb_func
+ 568              		.type	loadData_waterTimeout, %function
+ 569              	loadData_waterTimeout:
+ 570              	.LFB39:
+ 151:.\loadData.c  **** int  loadData_waterTimeout()
+ 152:.\loadData.c  **** {
+ 571              		.loc 1 152 0
+ 572              		.cfi_startproc
+ 573 0000 80B5     		push	{r7, lr}
+ 574              	.LCFI15:
+ 575              		.cfi_def_cfa_offset 8
+ 576              		.cfi_offset 7, -8
+ 577              		.cfi_offset 14, -4
+ 578 0002 00AF     		add	r7, sp, #0
+ 579              	.LCFI16:
+ 580              		.cfi_def_cfa_register 7
+ 153:.\loadData.c  ****     // Set active_ flag in parameters
+ 154:.\loadData.c  ****     parameters_setActive(parametersPtr_, 1);
+ 581              		.loc 1 154 0
+ 582 0004 054B     		ldr	r3, .L42
+ 583 0006 1B68     		ldr	r3, [r3]
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 14
+
+
+ 584 0008 181C     		mov	r0, r3
+ 585 000a 0121     		mov	r1, #1
+ 586 000c FFF7FEFF 		bl	parameters_setActive
+ 155:.\loadData.c  ****     
+ 156:.\loadData.c  ****     waterTimer_Stop();
+ 587              		.loc 1 156 0
+ 588 0010 FFF7FEFF 		bl	waterTimer_Stop
+ 157:.\loadData.c  ****     
+ 158:.\loadData.c  ****     return 0;
+ 589              		.loc 1 158 0
+ 590 0014 0023     		mov	r3, #0
+ 159:.\loadData.c  **** }
+ 591              		.loc 1 159 0
+ 592 0016 181C     		mov	r0, r3
+ 593 0018 BD46     		mov	sp, r7
+ 594              		@ sp needed for prologue
+ 595 001a 80BD     		pop	{r7, pc}
+ 596              	.L43:
+ 597              		.align	2
+ 598              	.L42:
+ 599 001c 00000000 		.word	parametersPtr_
+ 600              		.cfi_endproc
+ 601              	.LFE39:
+ 602              		.size	loadData_waterTimeout, .-loadData_waterTimeout
+ 603              		.text
+ 604              	.Letext0:
+ 605              		.file 2 ".\\buffer.h"
+ 606              		.file 3 ".\\parameters.h"
+ 607              		.section	.debug_info,"",%progbits
+ 608              	.Ldebug_info0:
+ 609 0000 FD020000 		.4byte	0x2fd
+ 610 0004 0200     		.2byte	0x2
+ 611 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 612 000a 04       		.byte	0x4
+ 613 000b 01       		.uleb128 0x1
+ 614 000c E8010000 		.4byte	.LASF41
+ 615 0010 01       		.byte	0x1
+ 616 0011 72000000 		.4byte	.LASF42
+ 617 0015 B0010000 		.4byte	.LASF43
+ 618 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 619 001d 00000000 		.4byte	0
+ 620 0021 00000000 		.4byte	0
+ 621 0025 00000000 		.4byte	.Ldebug_line0
+ 622 0029 02       		.uleb128 0x2
+ 623 002a 67020000 		.4byte	.LASF6
+ 624 002e 3C       		.byte	0x3c
+ 625 002f 02       		.byte	0x2
+ 626 0030 0F       		.byte	0xf
+ 627 0031 60000000 		.4byte	0x60
+ 628 0035 03       		.uleb128 0x3
+ 629 0036 6A000000 		.4byte	.LASF0
+ 630 003a 02       		.byte	0x2
+ 631 003b 11       		.byte	0x11
+ 632 003c 60000000 		.4byte	0x60
+ 633 0040 02       		.byte	0x2
+ 634 0041 23       		.byte	0x23
+ 635 0042 00       		.uleb128 0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 15
+
+
+ 636 0043 03       		.uleb128 0x3
+ 637 0044 5E000000 		.4byte	.LASF1
+ 638 0048 02       		.byte	0x2
+ 639 0049 12       		.byte	0x12
+ 640 004a 7E000000 		.4byte	0x7e
+ 641 004e 02       		.byte	0x2
+ 642 004f 23       		.byte	0x23
+ 643 0050 34       		.uleb128 0x34
+ 644 0051 03       		.uleb128 0x3
+ 645 0052 1B010000 		.4byte	.LASF2
+ 646 0056 02       		.byte	0x2
+ 647 0057 13       		.byte	0x13
+ 648 0058 7E000000 		.4byte	0x7e
+ 649 005c 02       		.byte	0x2
+ 650 005d 23       		.byte	0x23
+ 651 005e 38       		.uleb128 0x38
+ 652 005f 00       		.byte	0
+ 653 0060 04       		.uleb128 0x4
+ 654 0061 77000000 		.4byte	0x77
+ 655 0065 70000000 		.4byte	0x70
+ 656 0069 05       		.uleb128 0x5
+ 657 006a 70000000 		.4byte	0x70
+ 658 006e 32       		.byte	0x32
+ 659 006f 00       		.byte	0
+ 660 0070 06       		.uleb128 0x6
+ 661 0071 04       		.byte	0x4
+ 662 0072 07       		.byte	0x7
+ 663 0073 94010000 		.4byte	.LASF3
+ 664 0077 06       		.uleb128 0x6
+ 665 0078 01       		.byte	0x1
+ 666 0079 08       		.byte	0x8
+ 667 007a AB010000 		.4byte	.LASF4
+ 668 007e 06       		.uleb128 0x6
+ 669 007f 04       		.byte	0x4
+ 670 0080 07       		.byte	0x7
+ 671 0081 51000000 		.4byte	.LASF5
+ 672 0085 07       		.uleb128 0x7
+ 673 0086 E1010000 		.4byte	.LASF13
+ 674 008a 02       		.byte	0x2
+ 675 008b 14       		.byte	0x14
+ 676 008c 29000000 		.4byte	0x29
+ 677 0090 02       		.uleb128 0x2
+ 678 0091 41000000 		.4byte	.LASF7
+ 679 0095 0C       		.byte	0xc
+ 680 0096 03       		.byte	0x3
+ 681 0097 0E       		.byte	0xe
+ 682 0098 C7000000 		.4byte	0xc7
+ 683 009c 03       		.uleb128 0x3
+ 684 009d 15000000 		.4byte	.LASF8
+ 685 00a1 03       		.byte	0x3
+ 686 00a2 10       		.byte	0x10
+ 687 00a3 C7000000 		.4byte	0xc7
+ 688 00a7 02       		.byte	0x2
+ 689 00a8 23       		.byte	0x23
+ 690 00a9 00       		.uleb128 0
+ 691 00aa 03       		.uleb128 0x3
+ 692 00ab 7F000000 		.4byte	.LASF9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 16
+
+
+ 693 00af 03       		.byte	0x3
+ 694 00b0 11       		.byte	0x11
+ 695 00b1 C7000000 		.4byte	0xc7
+ 696 00b5 02       		.byte	0x2
+ 697 00b6 23       		.byte	0x23
+ 698 00b7 04       		.uleb128 0x4
+ 699 00b8 03       		.uleb128 0x3
+ 700 00b9 6A010000 		.4byte	.LASF10
+ 701 00bd 03       		.byte	0x3
+ 702 00be 12       		.byte	0x12
+ 703 00bf CE000000 		.4byte	0xce
+ 704 00c3 02       		.byte	0x2
+ 705 00c4 23       		.byte	0x23
+ 706 00c5 08       		.uleb128 0x8
+ 707 00c6 00       		.byte	0
+ 708 00c7 06       		.uleb128 0x6
+ 709 00c8 04       		.byte	0x4
+ 710 00c9 04       		.byte	0x4
+ 711 00ca 9C000000 		.4byte	.LASF11
+ 712 00ce 06       		.uleb128 0x6
+ 713 00cf 01       		.byte	0x1
+ 714 00d0 08       		.byte	0x8
+ 715 00d1 BE000000 		.4byte	.LASF12
+ 716 00d5 07       		.uleb128 0x7
+ 717 00d6 D7000000 		.4byte	.LASF14
+ 718 00da 03       		.byte	0x3
+ 719 00db 13       		.byte	0x13
+ 720 00dc 90000000 		.4byte	0x90
+ 721 00e0 06       		.uleb128 0x6
+ 722 00e1 01       		.byte	0x1
+ 723 00e2 06       		.byte	0x6
+ 724 00e3 43020000 		.4byte	.LASF15
+ 725 00e7 06       		.uleb128 0x6
+ 726 00e8 02       		.byte	0x2
+ 727 00e9 05       		.byte	0x5
+ 728 00ea D7010000 		.4byte	.LASF16
+ 729 00ee 06       		.uleb128 0x6
+ 730 00ef 02       		.byte	0x2
+ 731 00f0 07       		.byte	0x7
+ 732 00f1 F9000000 		.4byte	.LASF17
+ 733 00f5 06       		.uleb128 0x6
+ 734 00f6 04       		.byte	0x4
+ 735 00f7 05       		.byte	0x5
+ 736 00f8 3A020000 		.4byte	.LASF18
+ 737 00fc 06       		.uleb128 0x6
+ 738 00fd 04       		.byte	0x4
+ 739 00fe 07       		.byte	0x7
+ 740 00ff E2000000 		.4byte	.LASF19
+ 741 0103 06       		.uleb128 0x6
+ 742 0104 08       		.byte	0x8
+ 743 0105 05       		.byte	0x5
+ 744 0106 9D010000 		.4byte	.LASF20
+ 745 010a 06       		.uleb128 0x6
+ 746 010b 08       		.byte	0x8
+ 747 010c 07       		.byte	0x7
+ 748 010d 72010000 		.4byte	.LASF21
+ 749 0111 08       		.uleb128 0x8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 17
+
+
+ 750 0112 04       		.byte	0x4
+ 751 0113 05       		.byte	0x5
+ 752 0114 696E7400 		.ascii	"int\000"
+ 753 0118 06       		.uleb128 0x6
+ 754 0119 08       		.byte	0x8
+ 755 011a 04       		.byte	0x4
+ 756 011b 63000000 		.4byte	.LASF22
+ 757 011f 09       		.uleb128 0x9
+ 758 0120 04       		.byte	0x4
+ 759 0121 77000000 		.4byte	0x77
+ 760 0125 0A       		.uleb128 0xa
+ 761 0126 01       		.byte	0x1
+ 762 0127 CC000000 		.4byte	.LASF23
+ 763 012b 01       		.byte	0x1
+ 764 012c 16       		.byte	0x16
+ 765 012d 01       		.byte	0x1
+ 766 012e 00000000 		.4byte	.LFB33
+ 767 0132 4C000000 		.4byte	.LFE33
+ 768 0136 00000000 		.4byte	.LLST0
+ 769 013a 01       		.byte	0x1
+ 770 013b 0A       		.uleb128 0xa
+ 771 013c 01       		.byte	0x1
+ 772 013d 31020000 		.4byte	.LASF24
+ 773 0141 01       		.byte	0x1
+ 774 0142 21       		.byte	0x21
+ 775 0143 01       		.byte	0x1
+ 776 0144 00000000 		.4byte	.LFB34
+ 777 0148 4C000000 		.4byte	.LFE34
+ 778 014c 2C000000 		.4byte	.LLST1
+ 779 0150 01       		.byte	0x1
+ 780 0151 0B       		.uleb128 0xb
+ 781 0152 01       		.byte	0x1
+ 782 0153 29000000 		.4byte	.LASF26
+ 783 0157 01       		.byte	0x1
+ 784 0158 2D       		.byte	0x2d
+ 785 0159 01       		.byte	0x1
+ 786 015a 00000000 		.4byte	.LFB35
+ 787 015e 58000000 		.4byte	.LFE35
+ 788 0162 58000000 		.4byte	.LLST2
+ 789 0166 01       		.byte	0x1
+ 790 0167 88010000 		.4byte	0x188
+ 791 016b 0C       		.uleb128 0xc
+ 792 016c 70617200 		.ascii	"par\000"
+ 793 0170 01       		.byte	0x1
+ 794 0171 2D       		.byte	0x2d
+ 795 0172 88010000 		.4byte	0x188
+ 796 0176 02       		.byte	0x2
+ 797 0177 91       		.byte	0x91
+ 798 0178 74       		.sleb128 -12
+ 799 0179 0C       		.uleb128 0xc
+ 800 017a 62756600 		.ascii	"buf\000"
+ 801 017e 01       		.byte	0x1
+ 802 017f 2D       		.byte	0x2d
+ 803 0180 8E010000 		.4byte	0x18e
+ 804 0184 02       		.byte	0x2
+ 805 0185 91       		.byte	0x91
+ 806 0186 70       		.sleb128 -16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 18
+
+
+ 807 0187 00       		.byte	0
+ 808 0188 09       		.uleb128 0x9
+ 809 0189 04       		.byte	0x4
+ 810 018a D5000000 		.4byte	0xd5
+ 811 018e 09       		.uleb128 0x9
+ 812 018f 04       		.byte	0x4
+ 813 0190 85000000 		.4byte	0x85
+ 814 0194 0D       		.uleb128 0xd
+ 815 0195 01       		.byte	0x1
+ 816 0196 89000000 		.4byte	.LASF44
+ 817 019a 01       		.byte	0x1
+ 818 019b 43       		.byte	0x43
+ 819 019c 01       		.byte	0x1
+ 820 019d 11010000 		.4byte	0x111
+ 821 01a1 00000000 		.4byte	.LFB36
+ 822 01a5 2C000000 		.4byte	.LFE36
+ 823 01a9 90000000 		.4byte	.LLST3
+ 824 01ad 01       		.byte	0x1
+ 825 01ae CF010000 		.4byte	0x1cf
+ 826 01b2 0C       		.uleb128 0xc
+ 827 01b3 62756600 		.ascii	"buf\000"
+ 828 01b7 01       		.byte	0x1
+ 829 01b8 43       		.byte	0x43
+ 830 01b9 CF010000 		.4byte	0x1cf
+ 831 01bd 02       		.byte	0x2
+ 832 01be 91       		.byte	0x91
+ 833 01bf 74       		.sleb128 -12
+ 834 01c0 0C       		.uleb128 0xc
+ 835 01c1 6C656E00 		.ascii	"len\000"
+ 836 01c5 01       		.byte	0x1
+ 837 01c6 43       		.byte	0x43
+ 838 01c7 D5010000 		.4byte	0x1d5
+ 839 01cb 02       		.byte	0x2
+ 840 01cc 91       		.byte	0x91
+ 841 01cd 70       		.sleb128 -16
+ 842 01ce 00       		.byte	0
+ 843 01cf 09       		.uleb128 0x9
+ 844 01d0 04       		.byte	0x4
+ 845 01d1 1F010000 		.4byte	0x11f
+ 846 01d5 09       		.uleb128 0x9
+ 847 01d6 04       		.byte	0x4
+ 848 01d7 7E000000 		.4byte	0x7e
+ 849 01db 0E       		.uleb128 0xe
+ 850 01dc 01       		.byte	0x1
+ 851 01dd 39010000 		.4byte	.LASF25
+ 852 01e1 01       		.byte	0x1
+ 853 01e2 49       		.byte	0x49
+ 854 01e3 11010000 		.4byte	0x111
+ 855 01e7 00000000 		.4byte	.LFB37
+ 856 01eb 2C000000 		.4byte	.LFE37
+ 857 01ef C8000000 		.4byte	.LLST4
+ 858 01f3 01       		.byte	0x1
+ 859 01f4 0F       		.uleb128 0xf
+ 860 01f5 01       		.byte	0x1
+ 861 01f6 4F020000 		.4byte	.LASF27
+ 862 01fa 01       		.byte	0x1
+ 863 01fb 57       		.byte	0x57
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 19
+
+
+ 864 01fc 11010000 		.4byte	0x111
+ 865 0200 00000000 		.4byte	.LFB38
+ 866 0204 74010000 		.4byte	.LFE38
+ 867 0208 F4000000 		.4byte	.LLST5
+ 868 020c 01       		.byte	0x1
+ 869 020d 82020000 		.4byte	0x282
+ 870 0211 10       		.uleb128 0x10
+ 871 0212 72657400 		.ascii	"ret\000"
+ 872 0216 01       		.byte	0x1
+ 873 0217 59       		.byte	0x59
+ 874 0218 11010000 		.4byte	0x111
+ 875 021c 02       		.byte	0x2
+ 876 021d 91       		.byte	0x91
+ 877 021e 60       		.sleb128 -32
+ 878 021f 11       		.uleb128 0x11
+ 879 0220 22000000 		.4byte	.LASF28
+ 880 0224 01       		.byte	0x1
+ 881 0225 5C       		.byte	0x5c
+ 882 0226 CE000000 		.4byte	0xce
+ 883 022a 02       		.byte	0x2
+ 884 022b 91       		.byte	0x91
+ 885 022c 5F       		.sleb128 -33
+ 886 022d 11       		.uleb128 0x11
+ 887 022e 60010000 		.4byte	.LASF29
+ 888 0232 01       		.byte	0x1
+ 889 0233 5D       		.byte	0x5d
+ 890 0234 C7000000 		.4byte	0xc7
+ 891 0238 02       		.byte	0x2
+ 892 0239 91       		.byte	0x91
+ 893 023a 58       		.sleb128 -40
+ 894 023b 11       		.uleb128 0x11
+ 895 023c 37000000 		.4byte	.LASF30
+ 896 0240 01       		.byte	0x1
+ 897 0241 5D       		.byte	0x5d
+ 898 0242 C7000000 		.4byte	0xc7
+ 899 0246 02       		.byte	0x2
+ 900 0247 91       		.byte	0x91
+ 901 0248 54       		.sleb128 -44
+ 902 0249 11       		.uleb128 0x11
+ 903 024a F4000000 		.4byte	.LASF31
+ 904 024e 01       		.byte	0x1
+ 905 024f 64       		.byte	0x64
+ 906 0250 C7000000 		.4byte	0xc7
+ 907 0254 02       		.byte	0x2
+ 908 0255 91       		.byte	0x91
+ 909 0256 68       		.sleb128 -24
+ 910 0257 11       		.uleb128 0x11
+ 911 0258 16010000 		.4byte	.LASF32
+ 912 025c 01       		.byte	0x1
+ 913 025d 64       		.byte	0x64
+ 914 025e C7000000 		.4byte	0xc7
+ 915 0262 02       		.byte	0x2
+ 916 0263 91       		.byte	0x91
+ 917 0264 64       		.sleb128 -28
+ 918 0265 11       		.uleb128 0x11
+ 919 0266 D1010000 		.4byte	.LASF33
+ 920 026a 01       		.byte	0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 20
+
+
+ 921 026b 6A       		.byte	0x6a
+ 922 026c CE000000 		.4byte	0xce
+ 923 0270 02       		.byte	0x2
+ 924 0271 91       		.byte	0x91
+ 925 0272 6F       		.sleb128 -17
+ 926 0273 11       		.uleb128 0x11
+ 927 0274 A2000000 		.4byte	.LASF34
+ 928 0278 01       		.byte	0x1
+ 929 0279 6F       		.byte	0x6f
+ 930 027a 82020000 		.4byte	0x282
+ 931 027e 02       		.byte	0x2
+ 932 027f 91       		.byte	0x91
+ 933 0280 48       		.sleb128 -56
+ 934 0281 00       		.byte	0
+ 935 0282 04       		.uleb128 0x4
+ 936 0283 77000000 		.4byte	0x77
+ 937 0287 92020000 		.4byte	0x292
+ 938 028b 05       		.uleb128 0x5
+ 939 028c 70000000 		.4byte	0x70
+ 940 0290 0A       		.byte	0xa
+ 941 0291 00       		.byte	0
+ 942 0292 0E       		.uleb128 0xe
+ 943 0293 01       		.byte	0x1
+ 944 0294 23010000 		.4byte	.LASF35
+ 945 0298 01       		.byte	0x1
+ 946 0299 97       		.byte	0x97
+ 947 029a 11010000 		.4byte	0x111
+ 948 029e 00000000 		.4byte	.LFB39
+ 949 02a2 20000000 		.4byte	.LFE39
+ 950 02a6 2D010000 		.4byte	.LLST6
+ 951 02aa 01       		.byte	0x1
+ 952 02ab 11       		.uleb128 0x11
+ 953 02ac 51010000 		.4byte	.LASF36
+ 954 02b0 01       		.byte	0x1
+ 955 02b1 0D       		.byte	0xd
+ 956 02b2 88010000 		.4byte	0x188
+ 957 02b6 05       		.byte	0x5
+ 958 02b7 03       		.byte	0x3
+ 959 02b8 00000000 		.4byte	parametersPtr_
+ 960 02bc 11       		.uleb128 0x11
+ 961 02bd 89010000 		.4byte	.LASF37
+ 962 02c1 01       		.byte	0x1
+ 963 02c2 0E       		.byte	0xe
+ 964 02c3 8E010000 		.4byte	0x18e
+ 965 02c7 05       		.byte	0x5
+ 966 02c8 03       		.byte	0x3
+ 967 02c9 04000000 		.4byte	bufferPtr_
+ 968 02cd 11       		.uleb128 0x11
+ 969 02ce 0C010000 		.4byte	.LASF38
+ 970 02d2 01       		.byte	0x1
+ 971 02d3 0F       		.byte	0xf
+ 972 02d4 CE000000 		.4byte	0xce
+ 973 02d8 05       		.byte	0x5
+ 974 02d9 03       		.byte	0x3
+ 975 02da 08000000 		.4byte	movement_
+ 976 02de 11       		.uleb128 0x11
+ 977 02df A7000000 		.4byte	.LASF39
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 21
+
+
+ 978 02e3 01       		.byte	0x1
+ 979 02e4 11       		.byte	0x11
+ 980 02e5 7E000000 		.4byte	0x7e
+ 981 02e9 05       		.byte	0x5
+ 982 02ea 03       		.byte	0x3
+ 983 02eb 0C000000 		.4byte	logDataTimeoutCounter_
+ 984 02ef 11       		.uleb128 0x11
+ 985 02f0 00000000 		.4byte	.LASF40
+ 986 02f4 01       		.byte	0x1
+ 987 02f5 12       		.byte	0x12
+ 988 02f6 7E000000 		.4byte	0x7e
+ 989 02fa 05       		.byte	0x5
+ 990 02fb 03       		.byte	0x3
+ 991 02fc 10000000 		.4byte	waterTimeoutCounter_
+ 992 0300 00       		.byte	0
+ 993              		.section	.debug_abbrev,"",%progbits
+ 994              	.Ldebug_abbrev0:
+ 995 0000 01       		.uleb128 0x1
+ 996 0001 11       		.uleb128 0x11
+ 997 0002 01       		.byte	0x1
+ 998 0003 25       		.uleb128 0x25
+ 999 0004 0E       		.uleb128 0xe
+ 1000 0005 13       		.uleb128 0x13
+ 1001 0006 0B       		.uleb128 0xb
+ 1002 0007 03       		.uleb128 0x3
+ 1003 0008 0E       		.uleb128 0xe
+ 1004 0009 1B       		.uleb128 0x1b
+ 1005 000a 0E       		.uleb128 0xe
+ 1006 000b 55       		.uleb128 0x55
+ 1007 000c 06       		.uleb128 0x6
+ 1008 000d 11       		.uleb128 0x11
+ 1009 000e 01       		.uleb128 0x1
+ 1010 000f 52       		.uleb128 0x52
+ 1011 0010 01       		.uleb128 0x1
+ 1012 0011 10       		.uleb128 0x10
+ 1013 0012 06       		.uleb128 0x6
+ 1014 0013 00       		.byte	0
+ 1015 0014 00       		.byte	0
+ 1016 0015 02       		.uleb128 0x2
+ 1017 0016 13       		.uleb128 0x13
+ 1018 0017 01       		.byte	0x1
+ 1019 0018 03       		.uleb128 0x3
+ 1020 0019 0E       		.uleb128 0xe
+ 1021 001a 0B       		.uleb128 0xb
+ 1022 001b 0B       		.uleb128 0xb
+ 1023 001c 3A       		.uleb128 0x3a
+ 1024 001d 0B       		.uleb128 0xb
+ 1025 001e 3B       		.uleb128 0x3b
+ 1026 001f 0B       		.uleb128 0xb
+ 1027 0020 01       		.uleb128 0x1
+ 1028 0021 13       		.uleb128 0x13
+ 1029 0022 00       		.byte	0
+ 1030 0023 00       		.byte	0
+ 1031 0024 03       		.uleb128 0x3
+ 1032 0025 0D       		.uleb128 0xd
+ 1033 0026 00       		.byte	0
+ 1034 0027 03       		.uleb128 0x3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 22
+
+
+ 1035 0028 0E       		.uleb128 0xe
+ 1036 0029 3A       		.uleb128 0x3a
+ 1037 002a 0B       		.uleb128 0xb
+ 1038 002b 3B       		.uleb128 0x3b
+ 1039 002c 0B       		.uleb128 0xb
+ 1040 002d 49       		.uleb128 0x49
+ 1041 002e 13       		.uleb128 0x13
+ 1042 002f 38       		.uleb128 0x38
+ 1043 0030 0A       		.uleb128 0xa
+ 1044 0031 00       		.byte	0
+ 1045 0032 00       		.byte	0
+ 1046 0033 04       		.uleb128 0x4
+ 1047 0034 01       		.uleb128 0x1
+ 1048 0035 01       		.byte	0x1
+ 1049 0036 49       		.uleb128 0x49
+ 1050 0037 13       		.uleb128 0x13
+ 1051 0038 01       		.uleb128 0x1
+ 1052 0039 13       		.uleb128 0x13
+ 1053 003a 00       		.byte	0
+ 1054 003b 00       		.byte	0
+ 1055 003c 05       		.uleb128 0x5
+ 1056 003d 21       		.uleb128 0x21
+ 1057 003e 00       		.byte	0
+ 1058 003f 49       		.uleb128 0x49
+ 1059 0040 13       		.uleb128 0x13
+ 1060 0041 2F       		.uleb128 0x2f
+ 1061 0042 0B       		.uleb128 0xb
+ 1062 0043 00       		.byte	0
+ 1063 0044 00       		.byte	0
+ 1064 0045 06       		.uleb128 0x6
+ 1065 0046 24       		.uleb128 0x24
+ 1066 0047 00       		.byte	0
+ 1067 0048 0B       		.uleb128 0xb
+ 1068 0049 0B       		.uleb128 0xb
+ 1069 004a 3E       		.uleb128 0x3e
+ 1070 004b 0B       		.uleb128 0xb
+ 1071 004c 03       		.uleb128 0x3
+ 1072 004d 0E       		.uleb128 0xe
+ 1073 004e 00       		.byte	0
+ 1074 004f 00       		.byte	0
+ 1075 0050 07       		.uleb128 0x7
+ 1076 0051 16       		.uleb128 0x16
+ 1077 0052 00       		.byte	0
+ 1078 0053 03       		.uleb128 0x3
+ 1079 0054 0E       		.uleb128 0xe
+ 1080 0055 3A       		.uleb128 0x3a
+ 1081 0056 0B       		.uleb128 0xb
+ 1082 0057 3B       		.uleb128 0x3b
+ 1083 0058 0B       		.uleb128 0xb
+ 1084 0059 49       		.uleb128 0x49
+ 1085 005a 13       		.uleb128 0x13
+ 1086 005b 00       		.byte	0
+ 1087 005c 00       		.byte	0
+ 1088 005d 08       		.uleb128 0x8
+ 1089 005e 24       		.uleb128 0x24
+ 1090 005f 00       		.byte	0
+ 1091 0060 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 23
+
+
+ 1092 0061 0B       		.uleb128 0xb
+ 1093 0062 3E       		.uleb128 0x3e
+ 1094 0063 0B       		.uleb128 0xb
+ 1095 0064 03       		.uleb128 0x3
+ 1096 0065 08       		.uleb128 0x8
+ 1097 0066 00       		.byte	0
+ 1098 0067 00       		.byte	0
+ 1099 0068 09       		.uleb128 0x9
+ 1100 0069 0F       		.uleb128 0xf
+ 1101 006a 00       		.byte	0
+ 1102 006b 0B       		.uleb128 0xb
+ 1103 006c 0B       		.uleb128 0xb
+ 1104 006d 49       		.uleb128 0x49
+ 1105 006e 13       		.uleb128 0x13
+ 1106 006f 00       		.byte	0
+ 1107 0070 00       		.byte	0
+ 1108 0071 0A       		.uleb128 0xa
+ 1109 0072 2E       		.uleb128 0x2e
+ 1110 0073 00       		.byte	0
+ 1111 0074 3F       		.uleb128 0x3f
+ 1112 0075 0C       		.uleb128 0xc
+ 1113 0076 03       		.uleb128 0x3
+ 1114 0077 0E       		.uleb128 0xe
+ 1115 0078 3A       		.uleb128 0x3a
+ 1116 0079 0B       		.uleb128 0xb
+ 1117 007a 3B       		.uleb128 0x3b
+ 1118 007b 0B       		.uleb128 0xb
+ 1119 007c 27       		.uleb128 0x27
+ 1120 007d 0C       		.uleb128 0xc
+ 1121 007e 11       		.uleb128 0x11
+ 1122 007f 01       		.uleb128 0x1
+ 1123 0080 12       		.uleb128 0x12
+ 1124 0081 01       		.uleb128 0x1
+ 1125 0082 40       		.uleb128 0x40
+ 1126 0083 06       		.uleb128 0x6
+ 1127 0084 9642     		.uleb128 0x2116
+ 1128 0086 0C       		.uleb128 0xc
+ 1129 0087 00       		.byte	0
+ 1130 0088 00       		.byte	0
+ 1131 0089 0B       		.uleb128 0xb
+ 1132 008a 2E       		.uleb128 0x2e
+ 1133 008b 01       		.byte	0x1
+ 1134 008c 3F       		.uleb128 0x3f
+ 1135 008d 0C       		.uleb128 0xc
+ 1136 008e 03       		.uleb128 0x3
+ 1137 008f 0E       		.uleb128 0xe
+ 1138 0090 3A       		.uleb128 0x3a
+ 1139 0091 0B       		.uleb128 0xb
+ 1140 0092 3B       		.uleb128 0x3b
+ 1141 0093 0B       		.uleb128 0xb
+ 1142 0094 27       		.uleb128 0x27
+ 1143 0095 0C       		.uleb128 0xc
+ 1144 0096 11       		.uleb128 0x11
+ 1145 0097 01       		.uleb128 0x1
+ 1146 0098 12       		.uleb128 0x12
+ 1147 0099 01       		.uleb128 0x1
+ 1148 009a 40       		.uleb128 0x40
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 24
+
+
+ 1149 009b 06       		.uleb128 0x6
+ 1150 009c 9642     		.uleb128 0x2116
+ 1151 009e 0C       		.uleb128 0xc
+ 1152 009f 01       		.uleb128 0x1
+ 1153 00a0 13       		.uleb128 0x13
+ 1154 00a1 00       		.byte	0
+ 1155 00a2 00       		.byte	0
+ 1156 00a3 0C       		.uleb128 0xc
+ 1157 00a4 05       		.uleb128 0x5
+ 1158 00a5 00       		.byte	0
+ 1159 00a6 03       		.uleb128 0x3
+ 1160 00a7 08       		.uleb128 0x8
+ 1161 00a8 3A       		.uleb128 0x3a
+ 1162 00a9 0B       		.uleb128 0xb
+ 1163 00aa 3B       		.uleb128 0x3b
+ 1164 00ab 0B       		.uleb128 0xb
+ 1165 00ac 49       		.uleb128 0x49
+ 1166 00ad 13       		.uleb128 0x13
+ 1167 00ae 02       		.uleb128 0x2
+ 1168 00af 0A       		.uleb128 0xa
+ 1169 00b0 00       		.byte	0
+ 1170 00b1 00       		.byte	0
+ 1171 00b2 0D       		.uleb128 0xd
+ 1172 00b3 2E       		.uleb128 0x2e
+ 1173 00b4 01       		.byte	0x1
+ 1174 00b5 3F       		.uleb128 0x3f
+ 1175 00b6 0C       		.uleb128 0xc
+ 1176 00b7 03       		.uleb128 0x3
+ 1177 00b8 0E       		.uleb128 0xe
+ 1178 00b9 3A       		.uleb128 0x3a
+ 1179 00ba 0B       		.uleb128 0xb
+ 1180 00bb 3B       		.uleb128 0x3b
+ 1181 00bc 0B       		.uleb128 0xb
+ 1182 00bd 27       		.uleb128 0x27
+ 1183 00be 0C       		.uleb128 0xc
+ 1184 00bf 49       		.uleb128 0x49
+ 1185 00c0 13       		.uleb128 0x13
+ 1186 00c1 11       		.uleb128 0x11
+ 1187 00c2 01       		.uleb128 0x1
+ 1188 00c3 12       		.uleb128 0x12
+ 1189 00c4 01       		.uleb128 0x1
+ 1190 00c5 40       		.uleb128 0x40
+ 1191 00c6 06       		.uleb128 0x6
+ 1192 00c7 9642     		.uleb128 0x2116
+ 1193 00c9 0C       		.uleb128 0xc
+ 1194 00ca 01       		.uleb128 0x1
+ 1195 00cb 13       		.uleb128 0x13
+ 1196 00cc 00       		.byte	0
+ 1197 00cd 00       		.byte	0
+ 1198 00ce 0E       		.uleb128 0xe
+ 1199 00cf 2E       		.uleb128 0x2e
+ 1200 00d0 00       		.byte	0
+ 1201 00d1 3F       		.uleb128 0x3f
+ 1202 00d2 0C       		.uleb128 0xc
+ 1203 00d3 03       		.uleb128 0x3
+ 1204 00d4 0E       		.uleb128 0xe
+ 1205 00d5 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 25
+
+
+ 1206 00d6 0B       		.uleb128 0xb
+ 1207 00d7 3B       		.uleb128 0x3b
+ 1208 00d8 0B       		.uleb128 0xb
+ 1209 00d9 49       		.uleb128 0x49
+ 1210 00da 13       		.uleb128 0x13
+ 1211 00db 11       		.uleb128 0x11
+ 1212 00dc 01       		.uleb128 0x1
+ 1213 00dd 12       		.uleb128 0x12
+ 1214 00de 01       		.uleb128 0x1
+ 1215 00df 40       		.uleb128 0x40
+ 1216 00e0 06       		.uleb128 0x6
+ 1217 00e1 9642     		.uleb128 0x2116
+ 1218 00e3 0C       		.uleb128 0xc
+ 1219 00e4 00       		.byte	0
+ 1220 00e5 00       		.byte	0
+ 1221 00e6 0F       		.uleb128 0xf
+ 1222 00e7 2E       		.uleb128 0x2e
+ 1223 00e8 01       		.byte	0x1
+ 1224 00e9 3F       		.uleb128 0x3f
+ 1225 00ea 0C       		.uleb128 0xc
+ 1226 00eb 03       		.uleb128 0x3
+ 1227 00ec 0E       		.uleb128 0xe
+ 1228 00ed 3A       		.uleb128 0x3a
+ 1229 00ee 0B       		.uleb128 0xb
+ 1230 00ef 3B       		.uleb128 0x3b
+ 1231 00f0 0B       		.uleb128 0xb
+ 1232 00f1 49       		.uleb128 0x49
+ 1233 00f2 13       		.uleb128 0x13
+ 1234 00f3 11       		.uleb128 0x11
+ 1235 00f4 01       		.uleb128 0x1
+ 1236 00f5 12       		.uleb128 0x12
+ 1237 00f6 01       		.uleb128 0x1
+ 1238 00f7 40       		.uleb128 0x40
+ 1239 00f8 06       		.uleb128 0x6
+ 1240 00f9 9642     		.uleb128 0x2116
+ 1241 00fb 0C       		.uleb128 0xc
+ 1242 00fc 01       		.uleb128 0x1
+ 1243 00fd 13       		.uleb128 0x13
+ 1244 00fe 00       		.byte	0
+ 1245 00ff 00       		.byte	0
+ 1246 0100 10       		.uleb128 0x10
+ 1247 0101 34       		.uleb128 0x34
+ 1248 0102 00       		.byte	0
+ 1249 0103 03       		.uleb128 0x3
+ 1250 0104 08       		.uleb128 0x8
+ 1251 0105 3A       		.uleb128 0x3a
+ 1252 0106 0B       		.uleb128 0xb
+ 1253 0107 3B       		.uleb128 0x3b
+ 1254 0108 0B       		.uleb128 0xb
+ 1255 0109 49       		.uleb128 0x49
+ 1256 010a 13       		.uleb128 0x13
+ 1257 010b 02       		.uleb128 0x2
+ 1258 010c 0A       		.uleb128 0xa
+ 1259 010d 00       		.byte	0
+ 1260 010e 00       		.byte	0
+ 1261 010f 11       		.uleb128 0x11
+ 1262 0110 34       		.uleb128 0x34
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 26
+
+
+ 1263 0111 00       		.byte	0
+ 1264 0112 03       		.uleb128 0x3
+ 1265 0113 0E       		.uleb128 0xe
+ 1266 0114 3A       		.uleb128 0x3a
+ 1267 0115 0B       		.uleb128 0xb
+ 1268 0116 3B       		.uleb128 0x3b
+ 1269 0117 0B       		.uleb128 0xb
+ 1270 0118 49       		.uleb128 0x49
+ 1271 0119 13       		.uleb128 0x13
+ 1272 011a 02       		.uleb128 0x2
+ 1273 011b 0A       		.uleb128 0xa
+ 1274 011c 00       		.byte	0
+ 1275 011d 00       		.byte	0
+ 1276 011e 00       		.byte	0
+ 1277              		.section	.debug_loc,"",%progbits
+ 1278              	.Ldebug_loc0:
+ 1279              	.LLST0:
+ 1280 0000 00000000 		.4byte	.LFB33
+ 1281 0004 02000000 		.4byte	.LCFI0
+ 1282 0008 0200     		.2byte	0x2
+ 1283 000a 7D       		.byte	0x7d
+ 1284 000b 00       		.sleb128 0
+ 1285 000c 02000000 		.4byte	.LCFI0
+ 1286 0010 04000000 		.4byte	.LCFI1
+ 1287 0014 0200     		.2byte	0x2
+ 1288 0016 7D       		.byte	0x7d
+ 1289 0017 10       		.sleb128 16
+ 1290 0018 04000000 		.4byte	.LCFI1
+ 1291 001c 4C000000 		.4byte	.LFE33
+ 1292 0020 0200     		.2byte	0x2
+ 1293 0022 77       		.byte	0x77
+ 1294 0023 10       		.sleb128 16
+ 1295 0024 00000000 		.4byte	0
+ 1296 0028 00000000 		.4byte	0
+ 1297              	.LLST1:
+ 1298 002c 00000000 		.4byte	.LFB34
+ 1299 0030 02000000 		.4byte	.LCFI2
+ 1300 0034 0200     		.2byte	0x2
+ 1301 0036 7D       		.byte	0x7d
+ 1302 0037 00       		.sleb128 0
+ 1303 0038 02000000 		.4byte	.LCFI2
+ 1304 003c 04000000 		.4byte	.LCFI3
+ 1305 0040 0200     		.2byte	0x2
+ 1306 0042 7D       		.byte	0x7d
+ 1307 0043 10       		.sleb128 16
+ 1308 0044 04000000 		.4byte	.LCFI3
+ 1309 0048 4C000000 		.4byte	.LFE34
+ 1310 004c 0200     		.2byte	0x2
+ 1311 004e 77       		.byte	0x77
+ 1312 004f 10       		.sleb128 16
+ 1313 0050 00000000 		.4byte	0
+ 1314 0054 00000000 		.4byte	0
+ 1315              	.LLST2:
+ 1316 0058 00000000 		.4byte	.LFB35
+ 1317 005c 02000000 		.4byte	.LCFI4
+ 1318 0060 0200     		.2byte	0x2
+ 1319 0062 7D       		.byte	0x7d
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 27
+
+
+ 1320 0063 00       		.sleb128 0
+ 1321 0064 02000000 		.4byte	.LCFI4
+ 1322 0068 04000000 		.4byte	.LCFI5
+ 1323 006c 0200     		.2byte	0x2
+ 1324 006e 7D       		.byte	0x7d
+ 1325 006f 08       		.sleb128 8
+ 1326 0070 04000000 		.4byte	.LCFI5
+ 1327 0074 06000000 		.4byte	.LCFI6
+ 1328 0078 0200     		.2byte	0x2
+ 1329 007a 7D       		.byte	0x7d
+ 1330 007b 10       		.sleb128 16
+ 1331 007c 06000000 		.4byte	.LCFI6
+ 1332 0080 58000000 		.4byte	.LFE35
+ 1333 0084 0200     		.2byte	0x2
+ 1334 0086 77       		.byte	0x77
+ 1335 0087 10       		.sleb128 16
+ 1336 0088 00000000 		.4byte	0
+ 1337 008c 00000000 		.4byte	0
+ 1338              	.LLST3:
+ 1339 0090 00000000 		.4byte	.LFB36
+ 1340 0094 02000000 		.4byte	.LCFI7
+ 1341 0098 0200     		.2byte	0x2
+ 1342 009a 7D       		.byte	0x7d
+ 1343 009b 00       		.sleb128 0
+ 1344 009c 02000000 		.4byte	.LCFI7
+ 1345 00a0 04000000 		.4byte	.LCFI8
+ 1346 00a4 0200     		.2byte	0x2
+ 1347 00a6 7D       		.byte	0x7d
+ 1348 00a7 08       		.sleb128 8
+ 1349 00a8 04000000 		.4byte	.LCFI8
+ 1350 00ac 06000000 		.4byte	.LCFI9
+ 1351 00b0 0200     		.2byte	0x2
+ 1352 00b2 7D       		.byte	0x7d
+ 1353 00b3 10       		.sleb128 16
+ 1354 00b4 06000000 		.4byte	.LCFI9
+ 1355 00b8 2C000000 		.4byte	.LFE36
+ 1356 00bc 0200     		.2byte	0x2
+ 1357 00be 77       		.byte	0x77
+ 1358 00bf 10       		.sleb128 16
+ 1359 00c0 00000000 		.4byte	0
+ 1360 00c4 00000000 		.4byte	0
+ 1361              	.LLST4:
+ 1362 00c8 00000000 		.4byte	.LFB37
+ 1363 00cc 02000000 		.4byte	.LCFI10
+ 1364 00d0 0200     		.2byte	0x2
+ 1365 00d2 7D       		.byte	0x7d
+ 1366 00d3 00       		.sleb128 0
+ 1367 00d4 02000000 		.4byte	.LCFI10
+ 1368 00d8 04000000 		.4byte	.LCFI11
+ 1369 00dc 0200     		.2byte	0x2
+ 1370 00de 7D       		.byte	0x7d
+ 1371 00df 08       		.sleb128 8
+ 1372 00e0 04000000 		.4byte	.LCFI11
+ 1373 00e4 2C000000 		.4byte	.LFE37
+ 1374 00e8 0200     		.2byte	0x2
+ 1375 00ea 77       		.byte	0x77
+ 1376 00eb 08       		.sleb128 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 28
+
+
+ 1377 00ec 00000000 		.4byte	0
+ 1378 00f0 00000000 		.4byte	0
+ 1379              	.LLST5:
+ 1380 00f4 00000000 		.4byte	.LFB38
+ 1381 00f8 02000000 		.4byte	.LCFI12
+ 1382 00fc 0200     		.2byte	0x2
+ 1383 00fe 7D       		.byte	0x7d
+ 1384 00ff 00       		.sleb128 0
+ 1385 0100 02000000 		.4byte	.LCFI12
+ 1386 0104 04000000 		.4byte	.LCFI13
+ 1387 0108 0200     		.2byte	0x2
+ 1388 010a 7D       		.byte	0x7d
+ 1389 010b 0C       		.sleb128 12
+ 1390 010c 04000000 		.4byte	.LCFI13
+ 1391 0110 06000000 		.4byte	.LCFI14
+ 1392 0114 0300     		.2byte	0x3
+ 1393 0116 7D       		.byte	0x7d
+ 1394 0117 C000     		.sleb128 64
+ 1395 0119 06000000 		.4byte	.LCFI14
+ 1396 011d 74010000 		.4byte	.LFE38
+ 1397 0121 0200     		.2byte	0x2
+ 1398 0123 77       		.byte	0x77
+ 1399 0124 38       		.sleb128 56
+ 1400 0125 00000000 		.4byte	0
+ 1401 0129 00000000 		.4byte	0
+ 1402              	.LLST6:
+ 1403 012d 00000000 		.4byte	.LFB39
+ 1404 0131 02000000 		.4byte	.LCFI15
+ 1405 0135 0200     		.2byte	0x2
+ 1406 0137 7D       		.byte	0x7d
+ 1407 0138 00       		.sleb128 0
+ 1408 0139 02000000 		.4byte	.LCFI15
+ 1409 013d 04000000 		.4byte	.LCFI16
+ 1410 0141 0200     		.2byte	0x2
+ 1411 0143 7D       		.byte	0x7d
+ 1412 0144 08       		.sleb128 8
+ 1413 0145 04000000 		.4byte	.LCFI16
+ 1414 0149 20000000 		.4byte	.LFE39
+ 1415 014d 0200     		.2byte	0x2
+ 1416 014f 77       		.byte	0x77
+ 1417 0150 08       		.sleb128 8
+ 1418 0151 00000000 		.4byte	0
+ 1419 0155 00000000 		.4byte	0
+ 1420              		.section	.debug_aranges,"",%progbits
+ 1421 0000 4C000000 		.4byte	0x4c
+ 1422 0004 0200     		.2byte	0x2
+ 1423 0006 00000000 		.4byte	.Ldebug_info0
+ 1424 000a 04       		.byte	0x4
+ 1425 000b 00       		.byte	0
+ 1426 000c 0000     		.2byte	0
+ 1427 000e 0000     		.2byte	0
+ 1428 0010 00000000 		.4byte	.LFB33
+ 1429 0014 4C000000 		.4byte	.LFE33-.LFB33
+ 1430 0018 00000000 		.4byte	.LFB34
+ 1431 001c 4C000000 		.4byte	.LFE34-.LFB34
+ 1432 0020 00000000 		.4byte	.LFB35
+ 1433 0024 58000000 		.4byte	.LFE35-.LFB35
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 29
+
+
+ 1434 0028 00000000 		.4byte	.LFB36
+ 1435 002c 2C000000 		.4byte	.LFE36-.LFB36
+ 1436 0030 00000000 		.4byte	.LFB37
+ 1437 0034 2C000000 		.4byte	.LFE37-.LFB37
+ 1438 0038 00000000 		.4byte	.LFB38
+ 1439 003c 74010000 		.4byte	.LFE38-.LFB38
+ 1440 0040 00000000 		.4byte	.LFB39
+ 1441 0044 20000000 		.4byte	.LFE39-.LFB39
+ 1442 0048 00000000 		.4byte	0
+ 1443 004c 00000000 		.4byte	0
+ 1444              		.section	.debug_ranges,"",%progbits
+ 1445              	.Ldebug_ranges0:
+ 1446 0000 00000000 		.4byte	.LFB33
+ 1447 0004 4C000000 		.4byte	.LFE33
+ 1448 0008 00000000 		.4byte	.LFB34
+ 1449 000c 4C000000 		.4byte	.LFE34
+ 1450 0010 00000000 		.4byte	.LFB35
+ 1451 0014 58000000 		.4byte	.LFE35
+ 1452 0018 00000000 		.4byte	.LFB36
+ 1453 001c 2C000000 		.4byte	.LFE36
+ 1454 0020 00000000 		.4byte	.LFB37
+ 1455 0024 2C000000 		.4byte	.LFE37
+ 1456 0028 00000000 		.4byte	.LFB38
+ 1457 002c 74010000 		.4byte	.LFE38
+ 1458 0030 00000000 		.4byte	.LFB39
+ 1459 0034 20000000 		.4byte	.LFE39
+ 1460 0038 00000000 		.4byte	0
+ 1461 003c 00000000 		.4byte	0
+ 1462              		.section	.debug_line,"",%progbits
+ 1463              	.Ldebug_line0:
+ 1464 0000 F6000000 		.section	.debug_str,"MS",%progbits,1
+ 1464      02004300 
+ 1464      00000201 
+ 1464      FB0E0D00 
+ 1464      01010101 
+ 1465              	.LASF40:
+ 1466 0000 77617465 		.ascii	"waterTimeoutCounter_\000"
+ 1466      7254696D 
+ 1466      656F7574 
+ 1466      436F756E 
+ 1466      7465725F 
+ 1467              	.LASF8:
+ 1468 0015 74656D70 		.ascii	"temperature_\000"
+ 1468      65726174 
+ 1468      7572655F 
+ 1468      00
+ 1469              	.LASF28:
+ 1470 0022 61637469 		.ascii	"active\000"
+ 1470      766500
+ 1471              	.LASF26:
+ 1472 0029 6C6F6164 		.ascii	"loadData_init\000"
+ 1472      44617461 
+ 1472      5F696E69 
+ 1472      7400
+ 1473              	.LASF30:
+ 1474 0037 68756D69 		.ascii	"humiLimit\000"
+ 1474      4C696D69 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 30
+
+
+ 1474      7400
+ 1475              	.LASF7:
+ 1476 0041 70617261 		.ascii	"parameters_type\000"
+ 1476      6D657465 
+ 1476      72735F74 
+ 1476      79706500 
+ 1477              	.LASF5:
+ 1478 0051 756E7369 		.ascii	"unsigned int\000"
+ 1478      676E6564 
+ 1478      20696E74 
+ 1478      00
+ 1479              	.LASF1:
+ 1480 005e 6C656E5F 		.ascii	"len_\000"
+ 1480      00
+ 1481              	.LASF22:
+ 1482 0063 646F7562 		.ascii	"double\000"
+ 1482      6C6500
+ 1483              	.LASF0:
+ 1484 006a 62756666 		.ascii	"buffer_\000"
+ 1484      65725F00 
+ 1485              	.LASF42:
+ 1486 0072 2E5C6C6F 		.ascii	".\\loadData.c\000"
+ 1486      61644461 
+ 1486      74612E63 
+ 1486      00
+ 1487              	.LASF9:
+ 1488 007f 68756D69 		.ascii	"humidity_\000"
+ 1488      64697479 
+ 1488      5F00
+ 1489              	.LASF44:
+ 1490 0089 6C6F6164 		.ascii	"loadData_getBuffer\000"
+ 1490      44617461 
+ 1490      5F676574 
+ 1490      42756666 
+ 1490      657200
+ 1491              	.LASF11:
+ 1492 009c 666C6F61 		.ascii	"float\000"
+ 1492      7400
+ 1493              	.LASF34:
+ 1494 00a2 64617461 		.ascii	"data\000"
+ 1494      00
+ 1495              	.LASF39:
+ 1496 00a7 6C6F6744 		.ascii	"logDataTimeoutCounter_\000"
+ 1496      61746154 
+ 1496      696D656F 
+ 1496      7574436F 
+ 1496      756E7465 
+ 1497              	.LASF12:
+ 1498 00be 756E7369 		.ascii	"unsigned char\000"
+ 1498      676E6564 
+ 1498      20636861 
+ 1498      7200
+ 1499              	.LASF23:
+ 1500 00cc 6C6F6744 		.ascii	"logDataISR\000"
+ 1500      61746149 
+ 1500      535200
+ 1501              	.LASF14:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 31
+
+
+ 1502 00d7 70617261 		.ascii	"parameters\000"
+ 1502      6D657465 
+ 1502      727300
+ 1503              	.LASF19:
+ 1504 00e2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1504      20756E73 
+ 1504      69676E65 
+ 1504      6420696E 
+ 1504      7400
+ 1505              	.LASF31:
+ 1506 00f4 74656D70 		.ascii	"temp\000"
+ 1506      00
+ 1507              	.LASF17:
+ 1508 00f9 73686F72 		.ascii	"short unsigned int\000"
+ 1508      7420756E 
+ 1508      7369676E 
+ 1508      65642069 
+ 1508      6E7400
+ 1509              	.LASF38:
+ 1510 010c 6D6F7665 		.ascii	"movement_\000"
+ 1510      6D656E74 
+ 1510      5F00
+ 1511              	.LASF32:
+ 1512 0116 68756D69 		.ascii	"humi\000"
+ 1512      00
+ 1513              	.LASF2:
+ 1514 011b 63757273 		.ascii	"cursor_\000"
+ 1514      6F725F00 
+ 1515              	.LASF35:
+ 1516 0123 6C6F6164 		.ascii	"loadData_waterTimeout\000"
+ 1516      44617461 
+ 1516      5F776174 
+ 1516      65725469 
+ 1516      6D656F75 
+ 1517              	.LASF25:
+ 1518 0139 6C6F6164 		.ascii	"loadData_movementDetect\000"
+ 1518      44617461 
+ 1518      5F6D6F76 
+ 1518      656D656E 
+ 1518      74446574 
+ 1519              	.LASF36:
+ 1520 0151 70617261 		.ascii	"parametersPtr_\000"
+ 1520      6D657465 
+ 1520      72735074 
+ 1520      725F00
+ 1521              	.LASF29:
+ 1522 0160 74656D70 		.ascii	"tempLimit\000"
+ 1522      4C696D69 
+ 1522      7400
+ 1523              	.LASF10:
+ 1524 016a 61637469 		.ascii	"active_\000"
+ 1524      76655F00 
+ 1525              	.LASF21:
+ 1526 0172 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1526      206C6F6E 
+ 1526      6720756E 
+ 1526      7369676E 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 32
+
+
+ 1526      65642069 
+ 1527              	.LASF37:
+ 1528 0189 62756666 		.ascii	"bufferPtr_\000"
+ 1528      65725074 
+ 1528      725F00
+ 1529              	.LASF3:
+ 1530 0194 73697A65 		.ascii	"sizetype\000"
+ 1530      74797065 
+ 1530      00
+ 1531              	.LASF20:
+ 1532 019d 6C6F6E67 		.ascii	"long long int\000"
+ 1532      206C6F6E 
+ 1532      6720696E 
+ 1532      7400
+ 1533              	.LASF4:
+ 1534 01ab 63686172 		.ascii	"char\000"
+ 1534      00
+ 1535              	.LASF43:
+ 1536 01b0 433A5C63 		.ascii	"C:\\controllers\\controllers.cydsn\000"
+ 1536      6F6E7472 
+ 1536      6F6C6C65 
+ 1536      72735C63 
+ 1536      6F6E7472 
+ 1537              	.LASF33:
+ 1538 01d1 77617465 		.ascii	"water\000"
+ 1538      7200
+ 1539              	.LASF16:
+ 1540 01d7 73686F72 		.ascii	"short int\000"
+ 1540      7420696E 
+ 1540      7400
+ 1541              	.LASF13:
+ 1542 01e1 62756666 		.ascii	"buffer\000"
+ 1542      657200
+ 1543              	.LASF41:
+ 1544 01e8 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1544      4320342E 
+ 1544      372E3320 
+ 1544      32303133 
+ 1544      30333132 
+ 1545 021b 616E6368 		.ascii	"anch revision 196615]\000"
+ 1545      20726576 
+ 1545      6973696F 
+ 1545      6E203139 
+ 1545      36363135 
+ 1546              	.LASF24:
+ 1547 0231 77617465 		.ascii	"waterISR\000"
+ 1547      72495352 
+ 1547      00
+ 1548              	.LASF18:
+ 1549 023a 6C6F6E67 		.ascii	"long int\000"
+ 1549      20696E74 
+ 1549      00
+ 1550              	.LASF15:
+ 1551 0243 7369676E 		.ascii	"signed char\000"
+ 1551      65642063 
+ 1551      68617200 
+ 1552              	.LASF27:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccTaeBq0.s 			page 33
+
+
+ 1553 024f 6C6F6164 		.ascii	"loadData_logDataTimeout\000"
+ 1553      44617461 
+ 1553      5F6C6F67 
+ 1553      44617461 
+ 1553      54696D65 
+ 1554              	.LASF6:
+ 1555 0267 62756666 		.ascii	"buffer_type\000"
+ 1555      65725F74 
+ 1555      79706500 
+ 1556              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

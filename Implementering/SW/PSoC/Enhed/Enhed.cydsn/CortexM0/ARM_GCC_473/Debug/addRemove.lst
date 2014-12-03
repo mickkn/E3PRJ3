@@ -1,0 +1,331 @@
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccNNavmI.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"addRemove.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.addRemove_init,"ax",%progbits
+  18              		.align	2
+  19              		.global	addRemove_init
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	addRemove_init, %function
+  23              	addRemove_init:
+  24              	.LFB0:
+  25              		.file 1 ".\\addRemove.c"
+   1:.\addRemove.c **** /*
+   2:.\addRemove.c **** * File: addRemove.c
+   3:.\addRemove.c **** * Description: Implementation for EasyWater8000 controller class addRemove
+   4:.\addRemove.c **** * Project: PRJ3
+   5:.\addRemove.c **** * 
+   6:.\addRemove.c **** * Author: Bjørn Sørensen
+   7:.\addRemove.c **** */
+   8:.\addRemove.c **** 
+   9:.\addRemove.c **** #include "addRemove.h"
+  10:.\addRemove.c **** 
+  11:.\addRemove.c **** // Private data
+  12:.\addRemove.c **** 
+  13:.\addRemove.c **** // Public methods
+  14:.\addRemove.c **** void addRemove_init( )
+  15:.\addRemove.c **** {
+  26              		.loc 1 15 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 00AF     		add	r7, sp, #0
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_register 7
+  16:.\addRemove.c **** 
+  17:.\addRemove.c **** }
+  36              		.loc 1 17 0
+  37 0004 BD46     		mov	sp, r7
+  38              		@ sp needed for prologue
+  39 0006 80BD     		pop	{r7, pc}
+  40              		.cfi_endproc
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccNNavmI.s 			page 2
+
+
+  41              	.LFE0:
+  42              		.size	addRemove_init, .-addRemove_init
+  43              		.section	.text.addRemove_verify,"ax",%progbits
+  44              		.align	2
+  45              		.global	addRemove_verify
+  46              		.code	16
+  47              		.thumb_func
+  48              		.type	addRemove_verify, %function
+  49              	addRemove_verify:
+  50              	.LFB1:
+  18:.\addRemove.c **** 
+  19:.\addRemove.c **** int addRemove_verify( )
+  20:.\addRemove.c **** {
+  51              		.loc 1 20 0
+  52              		.cfi_startproc
+  53 0000 80B5     		push	{r7, lr}
+  54              	.LCFI2:
+  55              		.cfi_def_cfa_offset 8
+  56              		.cfi_offset 7, -8
+  57              		.cfi_offset 14, -4
+  58 0002 00AF     		add	r7, sp, #0
+  59              	.LCFI3:
+  60              		.cfi_def_cfa_register 7
+  21:.\addRemove.c ****     return 0;
+  61              		.loc 1 21 0
+  62 0004 0023     		mov	r3, #0
+  22:.\addRemove.c **** }...
+  63              		.loc 1 22 0
+  64 0006 181C     		mov	r0, r3
+  65 0008 BD46     		mov	sp, r7
+  66              		@ sp needed for prologue
+  67 000a 80BD     		pop	{r7, pc}
+  68              		.cfi_endproc
+  69              	.LFE1:
+  70              		.size	addRemove_verify, .-addRemove_verify
+  71              		.text
+  72              	.Letext0:
+  73              		.section	.debug_info,"",%progbits
+  74              	.Ldebug_info0:
+  75 0000 5B000000 		.4byte	0x5b
+  76 0004 0200     		.2byte	0x2
+  77 0006 00000000 		.4byte	.Ldebug_abbrev0
+  78 000a 04       		.byte	0x4
+  79 000b 01       		.uleb128 0x1
+  80 000c 11000000 		.4byte	.LASF0
+  81 0010 01       		.byte	0x1
+  82 0011 7E000000 		.4byte	.LASF1
+  83 0015 5A000000 		.4byte	.LASF2
+  84 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  85 001d 00000000 		.4byte	0
+  86 0021 00000000 		.4byte	0
+  87 0025 00000000 		.4byte	.Ldebug_line0
+  88 0029 02       		.uleb128 0x2
+  89 002a 01       		.byte	0x1
+  90 002b 6F000000 		.4byte	.LASF3
+  91 002f 01       		.byte	0x1
+  92 0030 0E       		.byte	0xe
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccNNavmI.s 			page 3
+
+
+  93 0031 00000000 		.4byte	.LFB0
+  94 0035 08000000 		.4byte	.LFE0
+  95 0039 00000000 		.4byte	.LLST0
+  96 003d 01       		.byte	0x1
+  97 003e 03       		.uleb128 0x3
+  98 003f 01       		.byte	0x1
+  99 0040 00000000 		.4byte	.LASF4
+ 100 0044 01       		.byte	0x1
+ 101 0045 13       		.byte	0x13
+ 102 0046 57000000 		.4byte	0x57
+ 103 004a 00000000 		.4byte	.LFB1
+ 104 004e 0C000000 		.4byte	.LFE1
+ 105 0052 2C000000 		.4byte	.LLST1
+ 106 0056 01       		.byte	0x1
+ 107 0057 04       		.uleb128 0x4
+ 108 0058 04       		.byte	0x4
+ 109 0059 05       		.byte	0x5
+ 110 005a 696E7400 		.ascii	"int\000"
+ 111 005e 00       		.byte	0
+ 112              		.section	.debug_abbrev,"",%progbits
+ 113              	.Ldebug_abbrev0:
+ 114 0000 01       		.uleb128 0x1
+ 115 0001 11       		.uleb128 0x11
+ 116 0002 01       		.byte	0x1
+ 117 0003 25       		.uleb128 0x25
+ 118 0004 0E       		.uleb128 0xe
+ 119 0005 13       		.uleb128 0x13
+ 120 0006 0B       		.uleb128 0xb
+ 121 0007 03       		.uleb128 0x3
+ 122 0008 0E       		.uleb128 0xe
+ 123 0009 1B       		.uleb128 0x1b
+ 124 000a 0E       		.uleb128 0xe
+ 125 000b 55       		.uleb128 0x55
+ 126 000c 06       		.uleb128 0x6
+ 127 000d 11       		.uleb128 0x11
+ 128 000e 01       		.uleb128 0x1
+ 129 000f 52       		.uleb128 0x52
+ 130 0010 01       		.uleb128 0x1
+ 131 0011 10       		.uleb128 0x10
+ 132 0012 06       		.uleb128 0x6
+ 133 0013 00       		.byte	0
+ 134 0014 00       		.byte	0
+ 135 0015 02       		.uleb128 0x2
+ 136 0016 2E       		.uleb128 0x2e
+ 137 0017 00       		.byte	0
+ 138 0018 3F       		.uleb128 0x3f
+ 139 0019 0C       		.uleb128 0xc
+ 140 001a 03       		.uleb128 0x3
+ 141 001b 0E       		.uleb128 0xe
+ 142 001c 3A       		.uleb128 0x3a
+ 143 001d 0B       		.uleb128 0xb
+ 144 001e 3B       		.uleb128 0x3b
+ 145 001f 0B       		.uleb128 0xb
+ 146 0020 11       		.uleb128 0x11
+ 147 0021 01       		.uleb128 0x1
+ 148 0022 12       		.uleb128 0x12
+ 149 0023 01       		.uleb128 0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccNNavmI.s 			page 4
+
+
+ 150 0024 40       		.uleb128 0x40
+ 151 0025 06       		.uleb128 0x6
+ 152 0026 9742     		.uleb128 0x2117
+ 153 0028 0C       		.uleb128 0xc
+ 154 0029 00       		.byte	0
+ 155 002a 00       		.byte	0
+ 156 002b 03       		.uleb128 0x3
+ 157 002c 2E       		.uleb128 0x2e
+ 158 002d 00       		.byte	0
+ 159 002e 3F       		.uleb128 0x3f
+ 160 002f 0C       		.uleb128 0xc
+ 161 0030 03       		.uleb128 0x3
+ 162 0031 0E       		.uleb128 0xe
+ 163 0032 3A       		.uleb128 0x3a
+ 164 0033 0B       		.uleb128 0xb
+ 165 0034 3B       		.uleb128 0x3b
+ 166 0035 0B       		.uleb128 0xb
+ 167 0036 49       		.uleb128 0x49
+ 168 0037 13       		.uleb128 0x13
+ 169 0038 11       		.uleb128 0x11
+ 170 0039 01       		.uleb128 0x1
+ 171 003a 12       		.uleb128 0x12
+ 172 003b 01       		.uleb128 0x1
+ 173 003c 40       		.uleb128 0x40
+ 174 003d 06       		.uleb128 0x6
+ 175 003e 9742     		.uleb128 0x2117
+ 176 0040 0C       		.uleb128 0xc
+ 177 0041 00       		.byte	0
+ 178 0042 00       		.byte	0
+ 179 0043 04       		.uleb128 0x4
+ 180 0044 24       		.uleb128 0x24
+ 181 0045 00       		.byte	0
+ 182 0046 0B       		.uleb128 0xb
+ 183 0047 0B       		.uleb128 0xb
+ 184 0048 3E       		.uleb128 0x3e
+ 185 0049 0B       		.uleb128 0xb
+ 186 004a 03       		.uleb128 0x3
+ 187 004b 08       		.uleb128 0x8
+ 188 004c 00       		.byte	0
+ 189 004d 00       		.byte	0
+ 190 004e 00       		.byte	0
+ 191              		.section	.debug_loc,"",%progbits
+ 192              	.Ldebug_loc0:
+ 193              	.LLST0:
+ 194 0000 00000000 		.4byte	.LFB0
+ 195 0004 02000000 		.4byte	.LCFI0
+ 196 0008 0200     		.2byte	0x2
+ 197 000a 7D       		.byte	0x7d
+ 198 000b 00       		.sleb128 0
+ 199 000c 02000000 		.4byte	.LCFI0
+ 200 0010 04000000 		.4byte	.LCFI1
+ 201 0014 0200     		.2byte	0x2
+ 202 0016 7D       		.byte	0x7d
+ 203 0017 08       		.sleb128 8
+ 204 0018 04000000 		.4byte	.LCFI1
+ 205 001c 08000000 		.4byte	.LFE0
+ 206 0020 0200     		.2byte	0x2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccNNavmI.s 			page 5
+
+
+ 207 0022 77       		.byte	0x77
+ 208 0023 08       		.sleb128 8
+ 209 0024 00000000 		.4byte	0
+ 210 0028 00000000 		.4byte	0
+ 211              	.LLST1:
+ 212 002c 00000000 		.4byte	.LFB1
+ 213 0030 02000000 		.4byte	.LCFI2
+ 214 0034 0200     		.2byte	0x2
+ 215 0036 7D       		.byte	0x7d
+ 216 0037 00       		.sleb128 0
+ 217 0038 02000000 		.4byte	.LCFI2
+ 218 003c 04000000 		.4byte	.LCFI3
+ 219 0040 0200     		.2byte	0x2
+ 220 0042 7D       		.byte	0x7d
+ 221 0043 08       		.sleb128 8
+ 222 0044 04000000 		.4byte	.LCFI3
+ 223 0048 0C000000 		.4byte	.LFE1
+ 224 004c 0200     		.2byte	0x2
+ 225 004e 77       		.byte	0x77
+ 226 004f 08       		.sleb128 8
+ 227 0050 00000000 		.4byte	0
+ 228 0054 00000000 		.4byte	0
+ 229              		.section	.debug_aranges,"",%progbits
+ 230 0000 24000000 		.4byte	0x24
+ 231 0004 0200     		.2byte	0x2
+ 232 0006 00000000 		.4byte	.Ldebug_info0
+ 233 000a 04       		.byte	0x4
+ 234 000b 00       		.byte	0
+ 235 000c 0000     		.2byte	0
+ 236 000e 0000     		.2byte	0
+ 237 0010 00000000 		.4byte	.LFB0
+ 238 0014 08000000 		.4byte	.LFE0-.LFB0
+ 239 0018 00000000 		.4byte	.LFB1
+ 240 001c 0C000000 		.4byte	.LFE1-.LFB1
+ 241 0020 00000000 		.4byte	0
+ 242 0024 00000000 		.4byte	0
+ 243              		.section	.debug_ranges,"",%progbits
+ 244              	.Ldebug_ranges0:
+ 245 0000 00000000 		.4byte	.LFB0
+ 246 0004 08000000 		.4byte	.LFE0
+ 247 0008 00000000 		.4byte	.LFB1
+ 248 000c 0C000000 		.4byte	.LFE1
+ 249 0010 00000000 		.4byte	0
+ 250 0014 00000000 		.4byte	0
+ 251              		.section	.debug_line,"",%progbits
+ 252              	.Ldebug_line0:
+ 253 0000 4B000000 		.section	.debug_str,"MS",%progbits,1
+ 253      02002400 
+ 253      00000201 
+ 253      FB0E0D00 
+ 253      01010101 
+ 254              	.LASF4:
+ 255 0000 61646452 		.ascii	"addRemove_verify\000"
+ 255      656D6F76 
+ 255      655F7665 
+ 255      72696679 
+ 255      00
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccNNavmI.s 			page 6
+
+
+ 256              	.LASF0:
+ 257 0011 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 257      4320342E 
+ 257      372E3320 
+ 257      32303133 
+ 257      30333132 
+ 258 0044 616E6368 		.ascii	"anch revision 196615]\000"
+ 258      20726576 
+ 258      6973696F 
+ 258      6E203139 
+ 258      36363135 
+ 259              	.LASF2:
+ 260 005a 433A5C45 		.ascii	"C:\\Enhed\\Enhed.cydsn\000"
+ 260      6E686564 
+ 260      5C456E68 
+ 260      65642E63 
+ 260      7964736E 
+ 261              	.LASF3:
+ 262 006f 61646452 		.ascii	"addRemove_init\000"
+ 262      656D6F76 
+ 262      655F696E 
+ 262      697400
+ 263              	.LASF1:
+ 264 007e 2E5C6164 		.ascii	".\\addRemove.c\000"
+ 264      6452656D 
+ 264      6F76652E 
+ 264      6300
+ 265              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

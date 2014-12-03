@@ -1,0 +1,804 @@
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"onOff.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.bss
+  18              		.align	2
+  19              	parametersPtr_:
+  20 0000 00000000 		.space	4
+  21              		.align	2
+  22              	bufferPtr_:
+  23 0004 00000000 		.space	4
+  24              		.section	.text.onOff_init,"ax",%progbits
+  25              		.align	2
+  26              		.global	onOff_init
+  27              		.code	16
+  28              		.thumb_func
+  29              		.type	onOff_init, %function
+  30              	onOff_init:
+  31              	.LFB0:
+  32              		.file 1 ".\\onOff.c"
+   1:.\onOff.c     **** /*
+   2:.\onOff.c     **** * File: onOff.c
+   3:.\onOff.c     **** * Description: Implementation for EasyWater8000 controller class onOff
+   4:.\onOff.c     **** * Project: PRJ3
+   5:.\onOff.c     **** * 
+   6:.\onOff.c     **** * Author: Bjørn Sørensen
+   7:.\onOff.c     **** */
+   8:.\onOff.c     **** 
+   9:.\onOff.c     **** #include "onOff.h"
+  10:.\onOff.c     **** 
+  11:.\onOff.c     **** // Private data
+  12:.\onOff.c     **** static parameters * parametersPtr_;
+  13:.\onOff.c     **** static buffer * bufferPtr_;
+  14:.\onOff.c     **** 
+  15:.\onOff.c     **** // Public methods
+  16:.\onOff.c     **** void onOff_init(parameters * parPtr, buffer * bufPtr)
+  17:.\onOff.c     **** {
+  33              		.loc 1 17 0
+  34              		.cfi_startproc
+  35 0000 80B5     		push	{r7, lr}
+  36              	.LCFI0:
+  37              		.cfi_def_cfa_offset 8
+  38              		.cfi_offset 7, -8
+  39              		.cfi_offset 14, -4
+  40 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 2
+
+
+  41              	.LCFI1:
+  42              		.cfi_def_cfa_offset 16
+  43 0004 00AF     		add	r7, sp, #0
+  44              	.LCFI2:
+  45              		.cfi_def_cfa_register 7
+  46 0006 7860     		str	r0, [r7, #4]
+  47 0008 3960     		str	r1, [r7]
+  18:.\onOff.c     ****     parametersPtr_ = parPtr;
+  48              		.loc 1 18 0
+  49 000a 044B     		ldr	r3, .L2
+  50 000c 7A68     		ldr	r2, [r7, #4]
+  51 000e 1A60     		str	r2, [r3]
+  19:.\onOff.c     ****     bufferPtr_ = bufPtr;
+  52              		.loc 1 19 0
+  53 0010 034B     		ldr	r3, .L2+4
+  54 0012 3A68     		ldr	r2, [r7]
+  55 0014 1A60     		str	r2, [r3]
+  20:.\onOff.c     **** }
+  56              		.loc 1 20 0
+  57 0016 BD46     		mov	sp, r7
+  58 0018 02B0     		add	sp, sp, #8
+  59              		@ sp needed for prologue
+  60 001a 80BD     		pop	{r7, pc}
+  61              	.L3:
+  62              		.align	2
+  63              	.L2:
+  64 001c 00000000 		.word	parametersPtr_
+  65 0020 04000000 		.word	bufferPtr_
+  66              		.cfi_endproc
+  67              	.LFE0:
+  68              		.size	onOff_init, .-onOff_init
+  69              		.section	.rodata
+  70              		.align	2
+  71              	.LC3:
+  72 0000 45303233 		.ascii	"E023\000"
+  72      00
+  73 0005 000000   		.section	.text.onOff_turnOnOff,"ax",%progbits
+  74              		.align	2
+  75              		.global	onOff_turnOnOff
+  76              		.code	16
+  77              		.thumb_func
+  78              		.type	onOff_turnOnOff, %function
+  79              	onOff_turnOnOff:
+  80              	.LFB1:
+  21:.\onOff.c     **** 
+  22:.\onOff.c     **** int onOff_turnOnOff(const unsigned char state)
+  23:.\onOff.c     **** {
+  81              		.loc 1 23 0
+  82              		.cfi_startproc
+  83 0000 80B5     		push	{r7, lr}
+  84              	.LCFI3:
+  85              		.cfi_def_cfa_offset 8
+  86              		.cfi_offset 7, -8
+  87              		.cfi_offset 14, -4
+  88 0002 82B0     		sub	sp, sp, #8
+  89              	.LCFI4:
+  90              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 3
+
+
+  91 0004 00AF     		add	r7, sp, #0
+  92              	.LCFI5:
+  93              		.cfi_def_cfa_register 7
+  94 0006 021C     		mov	r2, r0
+  95 0008 FB1D     		add	r3, r7, #7
+  96 000a 1A70     		strb	r2, [r3]
+  24:.\onOff.c     ****     if(state != 0 && state != 1)    // State out of range 0 | 1, record error
+  97              		.loc 1 24 0
+  98 000c FB1D     		add	r3, r7, #7
+  99 000e 1B78     		ldrb	r3, [r3]
+ 100 0010 002B     		cmp	r3, #0
+ 101 0012 0ED0     		beq	.L5
+ 102              		.loc 1 24 0 is_stmt 0 discriminator 1
+ 103 0014 FB1D     		add	r3, r7, #7
+ 104 0016 1B78     		ldrb	r3, [r3]
+ 105 0018 012B     		cmp	r3, #1
+ 106 001a 0AD0     		beq	.L5
+  25:.\onOff.c     ****     {
+  26:.\onOff.c     ****         buffer_saveData(bufferPtr_, "E023", 4);
+ 107              		.loc 1 26 0 is_stmt 1
+ 108 001c 0B4B     		ldr	r3, .L7
+ 109 001e 1A68     		ldr	r2, [r3]
+ 110 0020 0B4B     		ldr	r3, .L7+4
+ 111 0022 101C     		mov	r0, r2
+ 112 0024 191C     		mov	r1, r3
+ 113 0026 0422     		mov	r2, #4
+ 114 0028 FFF7FEFF 		bl	buffer_saveData
+  27:.\onOff.c     ****         return -23;
+ 115              		.loc 1 27 0
+ 116 002c 1723     		mov	r3, #23
+ 117 002e 5B42     		neg	r3, r3
+ 118 0030 08E0     		b	.L6
+ 119              	.L5:
+  28:.\onOff.c     ****     }
+  29:.\onOff.c     ****     
+  30:.\onOff.c     ****     parameters_setActive(parametersPtr_, state);    // Save state to parameters
+ 120              		.loc 1 30 0
+ 121 0032 084B     		ldr	r3, .L7+8
+ 122 0034 1A68     		ldr	r2, [r3]
+ 123 0036 FB1D     		add	r3, r7, #7
+ 124 0038 1B78     		ldrb	r3, [r3]
+ 125 003a 101C     		mov	r0, r2
+ 126 003c 191C     		mov	r1, r3
+ 127 003e FFF7FEFF 		bl	parameters_setActive
+  31:.\onOff.c     ****     return 0;
+ 128              		.loc 1 31 0
+ 129 0042 0023     		mov	r3, #0
+ 130              	.L6:
+  32:.\onOff.c     **** }...
+ 131              		.loc 1 32 0
+ 132 0044 181C     		mov	r0, r3
+ 133 0046 BD46     		mov	sp, r7
+ 134 0048 02B0     		add	sp, sp, #8
+ 135              		@ sp needed for prologue
+ 136 004a 80BD     		pop	{r7, pc}
+ 137              	.L8:
+ 138              		.align	2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 4
+
+
+ 139              	.L7:
+ 140 004c 04000000 		.word	bufferPtr_
+ 141 0050 00000000 		.word	.LC3
+ 142 0054 00000000 		.word	parametersPtr_
+ 143              		.cfi_endproc
+ 144              	.LFE1:
+ 145              		.size	onOff_turnOnOff, .-onOff_turnOnOff
+ 146              		.text
+ 147              	.Letext0:
+ 148              		.file 2 ".\\parameters.h"
+ 149              		.file 3 ".\\buffer.h"
+ 150              		.section	.debug_info,"",%progbits
+ 151              	.Ldebug_info0:
+ 152 0000 7B010000 		.4byte	0x17b
+ 153 0004 0200     		.2byte	0x2
+ 154 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 155 000a 04       		.byte	0x4
+ 156 000b 01       		.uleb128 0x1
+ 157 000c 3E000000 		.4byte	.LASF20
+ 158 0010 01       		.byte	0x1
+ 159 0011 D4000000 		.4byte	.LASF21
+ 160 0015 00000000 		.4byte	.LASF22
+ 161 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 162 001d 00000000 		.4byte	0
+ 163 0021 00000000 		.4byte	0
+ 164 0025 00000000 		.4byte	.Ldebug_line0
+ 165 0029 02       		.uleb128 0x2
+ 166 002a B7000000 		.4byte	.LASF5
+ 167 002e 0C       		.byte	0xc
+ 168 002f 02       		.byte	0x2
+ 169 0030 0E       		.byte	0xe
+ 170 0031 60000000 		.4byte	0x60
+ 171 0035 03       		.uleb128 0x3
+ 172 0036 1E010000 		.4byte	.LASF0
+ 173 003a 02       		.byte	0x2
+ 174 003b 10       		.byte	0x10
+ 175 003c 60000000 		.4byte	0x60
+ 176 0040 02       		.byte	0x2
+ 177 0041 23       		.byte	0x23
+ 178 0042 00       		.uleb128 0
+ 179 0043 03       		.uleb128 0x3
+ 180 0044 2C000000 		.4byte	.LASF1
+ 181 0048 02       		.byte	0x2
+ 182 0049 11       		.byte	0x11
+ 183 004a 60000000 		.4byte	0x60
+ 184 004e 02       		.byte	0x2
+ 185 004f 23       		.byte	0x23
+ 186 0050 04       		.uleb128 0x4
+ 187 0051 03       		.uleb128 0x3
+ 188 0052 36000000 		.4byte	.LASF2
+ 189 0056 02       		.byte	0x2
+ 190 0057 12       		.byte	0x12
+ 191 0058 67000000 		.4byte	0x67
+ 192 005c 02       		.byte	0x2
+ 193 005d 23       		.byte	0x23
+ 194 005e 08       		.uleb128 0x8
+ 195 005f 00       		.byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 5
+
+
+ 196 0060 04       		.uleb128 0x4
+ 197 0061 04       		.byte	0x4
+ 198 0062 04       		.byte	0x4
+ 199 0063 18010000 		.4byte	.LASF3
+ 200 0067 04       		.uleb128 0x4
+ 201 0068 01       		.byte	0x1
+ 202 0069 08       		.byte	0x8
+ 203 006a A4000000 		.4byte	.LASF4
+ 204 006e 05       		.uleb128 0x5
+ 205 006f DE000000 		.4byte	.LASF13
+ 206 0073 02       		.byte	0x2
+ 207 0074 13       		.byte	0x13
+ 208 0075 29000000 		.4byte	0x29
+ 209 0079 02       		.uleb128 0x2
+ 210 007a E9000000 		.4byte	.LASF6
+ 211 007e 3C       		.byte	0x3c
+ 212 007f 03       		.byte	0x3
+ 213 0080 0F       		.byte	0xf
+ 214 0081 B0000000 		.4byte	0xb0
+ 215 0085 03       		.uleb128 0x3
+ 216 0086 C7000000 		.4byte	.LASF7
+ 217 008a 03       		.byte	0x3
+ 218 008b 11       		.byte	0x11
+ 219 008c B0000000 		.4byte	0xb0
+ 220 0090 02       		.byte	0x2
+ 221 0091 23       		.byte	0x23
+ 222 0092 00       		.uleb128 0
+ 223 0093 03       		.uleb128 0x3
+ 224 0094 CF000000 		.4byte	.LASF8
+ 225 0098 03       		.byte	0x3
+ 226 0099 12       		.byte	0x12
+ 227 009a CE000000 		.4byte	0xce
+ 228 009e 02       		.byte	0x2
+ 229 009f 23       		.byte	0x23
+ 230 00a0 34       		.uleb128 0x34
+ 231 00a1 03       		.uleb128 0x3
+ 232 00a2 24000000 		.4byte	.LASF9
+ 233 00a6 03       		.byte	0x3
+ 234 00a7 13       		.byte	0x13
+ 235 00a8 CE000000 		.4byte	0xce
+ 236 00ac 02       		.byte	0x2
+ 237 00ad 23       		.byte	0x23
+ 238 00ae 38       		.uleb128 0x38
+ 239 00af 00       		.byte	0
+ 240 00b0 06       		.uleb128 0x6
+ 241 00b1 C7000000 		.4byte	0xc7
+ 242 00b5 C0000000 		.4byte	0xc0
+ 243 00b9 07       		.uleb128 0x7
+ 244 00ba C0000000 		.4byte	0xc0
+ 245 00be 32       		.byte	0x32
+ 246 00bf 00       		.byte	0
+ 247 00c0 04       		.uleb128 0x4
+ 248 00c1 04       		.byte	0x4
+ 249 00c2 07       		.byte	0x7
+ 250 00c3 39010000 		.4byte	.LASF10
+ 251 00c7 04       		.uleb128 0x4
+ 252 00c8 01       		.byte	0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 6
+
+
+ 253 00c9 08       		.byte	0x8
+ 254 00ca B2000000 		.4byte	.LASF11
+ 255 00ce 04       		.uleb128 0x4
+ 256 00cf 04       		.byte	0x4
+ 257 00d0 07       		.byte	0x7
+ 258 00d1 F5000000 		.4byte	.LASF12
+ 259 00d5 05       		.uleb128 0x5
+ 260 00d6 2B010000 		.4byte	.LASF14
+ 261 00da 03       		.byte	0x3
+ 262 00db 14       		.byte	0x14
+ 263 00dc 79000000 		.4byte	0x79
+ 264 00e0 08       		.uleb128 0x8
+ 265 00e1 01       		.byte	0x1
+ 266 00e2 87000000 		.4byte	.LASF23
+ 267 00e6 01       		.byte	0x1
+ 268 00e7 10       		.byte	0x10
+ 269 00e8 01       		.byte	0x1
+ 270 00e9 00000000 		.4byte	.LFB0
+ 271 00ed 24000000 		.4byte	.LFE0
+ 272 00f1 00000000 		.4byte	.LLST0
+ 273 00f5 01       		.byte	0x1
+ 274 00f6 17010000 		.4byte	0x117
+ 275 00fa 09       		.uleb128 0x9
+ 276 00fb 32010000 		.4byte	.LASF15
+ 277 00ff 01       		.byte	0x1
+ 278 0100 10       		.byte	0x10
+ 279 0101 17010000 		.4byte	0x117
+ 280 0105 02       		.byte	0x2
+ 281 0106 91       		.byte	0x91
+ 282 0107 74       		.sleb128 -12
+ 283 0108 09       		.uleb128 0x9
+ 284 0109 9D000000 		.4byte	.LASF16
+ 285 010d 01       		.byte	0x1
+ 286 010e 10       		.byte	0x10
+ 287 010f 1D010000 		.4byte	0x11d
+ 288 0113 02       		.byte	0x2
+ 289 0114 91       		.byte	0x91
+ 290 0115 70       		.sleb128 -16
+ 291 0116 00       		.byte	0
+ 292 0117 0A       		.uleb128 0xa
+ 293 0118 04       		.byte	0x4
+ 294 0119 6E000000 		.4byte	0x6e
+ 295 011d 0A       		.uleb128 0xa
+ 296 011e 04       		.byte	0x4
+ 297 011f D5000000 		.4byte	0xd5
+ 298 0123 0B       		.uleb128 0xb
+ 299 0124 01       		.byte	0x1
+ 300 0125 08010000 		.4byte	.LASF24
+ 301 0129 01       		.byte	0x1
+ 302 012a 16       		.byte	0x16
+ 303 012b 01       		.byte	0x1
+ 304 012c 50010000 		.4byte	0x150
+ 305 0130 00000000 		.4byte	.LFB1
+ 306 0134 58000000 		.4byte	.LFE1
+ 307 0138 38000000 		.4byte	.LLST1
+ 308 013c 01       		.byte	0x1
+ 309 013d 50010000 		.4byte	0x150
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 7
+
+
+ 310 0141 09       		.uleb128 0x9
+ 311 0142 02010000 		.4byte	.LASF17
+ 312 0146 01       		.byte	0x1
+ 313 0147 16       		.byte	0x16
+ 314 0148 57010000 		.4byte	0x157
+ 315 014c 02       		.byte	0x2
+ 316 014d 91       		.byte	0x91
+ 317 014e 77       		.sleb128 -9
+ 318 014f 00       		.byte	0
+ 319 0150 0C       		.uleb128 0xc
+ 320 0151 04       		.byte	0x4
+ 321 0152 05       		.byte	0x5
+ 322 0153 696E7400 		.ascii	"int\000"
+ 323 0157 0D       		.uleb128 0xd
+ 324 0158 67000000 		.4byte	0x67
+ 325 015c 0E       		.uleb128 0xe
+ 326 015d 15000000 		.4byte	.LASF18
+ 327 0161 01       		.byte	0x1
+ 328 0162 0C       		.byte	0xc
+ 329 0163 17010000 		.4byte	0x117
+ 330 0167 05       		.byte	0x5
+ 331 0168 03       		.byte	0x3
+ 332 0169 00000000 		.4byte	parametersPtr_
+ 333 016d 0E       		.uleb128 0xe
+ 334 016e 92000000 		.4byte	.LASF19
+ 335 0172 01       		.byte	0x1
+ 336 0173 0D       		.byte	0xd
+ 337 0174 1D010000 		.4byte	0x11d
+ 338 0178 05       		.byte	0x5
+ 339 0179 03       		.byte	0x3
+ 340 017a 04000000 		.4byte	bufferPtr_
+ 341 017e 00       		.byte	0
+ 342              		.section	.debug_abbrev,"",%progbits
+ 343              	.Ldebug_abbrev0:
+ 344 0000 01       		.uleb128 0x1
+ 345 0001 11       		.uleb128 0x11
+ 346 0002 01       		.byte	0x1
+ 347 0003 25       		.uleb128 0x25
+ 348 0004 0E       		.uleb128 0xe
+ 349 0005 13       		.uleb128 0x13
+ 350 0006 0B       		.uleb128 0xb
+ 351 0007 03       		.uleb128 0x3
+ 352 0008 0E       		.uleb128 0xe
+ 353 0009 1B       		.uleb128 0x1b
+ 354 000a 0E       		.uleb128 0xe
+ 355 000b 55       		.uleb128 0x55
+ 356 000c 06       		.uleb128 0x6
+ 357 000d 11       		.uleb128 0x11
+ 358 000e 01       		.uleb128 0x1
+ 359 000f 52       		.uleb128 0x52
+ 360 0010 01       		.uleb128 0x1
+ 361 0011 10       		.uleb128 0x10
+ 362 0012 06       		.uleb128 0x6
+ 363 0013 00       		.byte	0
+ 364 0014 00       		.byte	0
+ 365 0015 02       		.uleb128 0x2
+ 366 0016 13       		.uleb128 0x13
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 8
+
+
+ 367 0017 01       		.byte	0x1
+ 368 0018 03       		.uleb128 0x3
+ 369 0019 0E       		.uleb128 0xe
+ 370 001a 0B       		.uleb128 0xb
+ 371 001b 0B       		.uleb128 0xb
+ 372 001c 3A       		.uleb128 0x3a
+ 373 001d 0B       		.uleb128 0xb
+ 374 001e 3B       		.uleb128 0x3b
+ 375 001f 0B       		.uleb128 0xb
+ 376 0020 01       		.uleb128 0x1
+ 377 0021 13       		.uleb128 0x13
+ 378 0022 00       		.byte	0
+ 379 0023 00       		.byte	0
+ 380 0024 03       		.uleb128 0x3
+ 381 0025 0D       		.uleb128 0xd
+ 382 0026 00       		.byte	0
+ 383 0027 03       		.uleb128 0x3
+ 384 0028 0E       		.uleb128 0xe
+ 385 0029 3A       		.uleb128 0x3a
+ 386 002a 0B       		.uleb128 0xb
+ 387 002b 3B       		.uleb128 0x3b
+ 388 002c 0B       		.uleb128 0xb
+ 389 002d 49       		.uleb128 0x49
+ 390 002e 13       		.uleb128 0x13
+ 391 002f 38       		.uleb128 0x38
+ 392 0030 0A       		.uleb128 0xa
+ 393 0031 00       		.byte	0
+ 394 0032 00       		.byte	0
+ 395 0033 04       		.uleb128 0x4
+ 396 0034 24       		.uleb128 0x24
+ 397 0035 00       		.byte	0
+ 398 0036 0B       		.uleb128 0xb
+ 399 0037 0B       		.uleb128 0xb
+ 400 0038 3E       		.uleb128 0x3e
+ 401 0039 0B       		.uleb128 0xb
+ 402 003a 03       		.uleb128 0x3
+ 403 003b 0E       		.uleb128 0xe
+ 404 003c 00       		.byte	0
+ 405 003d 00       		.byte	0
+ 406 003e 05       		.uleb128 0x5
+ 407 003f 16       		.uleb128 0x16
+ 408 0040 00       		.byte	0
+ 409 0041 03       		.uleb128 0x3
+ 410 0042 0E       		.uleb128 0xe
+ 411 0043 3A       		.uleb128 0x3a
+ 412 0044 0B       		.uleb128 0xb
+ 413 0045 3B       		.uleb128 0x3b
+ 414 0046 0B       		.uleb128 0xb
+ 415 0047 49       		.uleb128 0x49
+ 416 0048 13       		.uleb128 0x13
+ 417 0049 00       		.byte	0
+ 418 004a 00       		.byte	0
+ 419 004b 06       		.uleb128 0x6
+ 420 004c 01       		.uleb128 0x1
+ 421 004d 01       		.byte	0x1
+ 422 004e 49       		.uleb128 0x49
+ 423 004f 13       		.uleb128 0x13
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 9
+
+
+ 424 0050 01       		.uleb128 0x1
+ 425 0051 13       		.uleb128 0x13
+ 426 0052 00       		.byte	0
+ 427 0053 00       		.byte	0
+ 428 0054 07       		.uleb128 0x7
+ 429 0055 21       		.uleb128 0x21
+ 430 0056 00       		.byte	0
+ 431 0057 49       		.uleb128 0x49
+ 432 0058 13       		.uleb128 0x13
+ 433 0059 2F       		.uleb128 0x2f
+ 434 005a 0B       		.uleb128 0xb
+ 435 005b 00       		.byte	0
+ 436 005c 00       		.byte	0
+ 437 005d 08       		.uleb128 0x8
+ 438 005e 2E       		.uleb128 0x2e
+ 439 005f 01       		.byte	0x1
+ 440 0060 3F       		.uleb128 0x3f
+ 441 0061 0C       		.uleb128 0xc
+ 442 0062 03       		.uleb128 0x3
+ 443 0063 0E       		.uleb128 0xe
+ 444 0064 3A       		.uleb128 0x3a
+ 445 0065 0B       		.uleb128 0xb
+ 446 0066 3B       		.uleb128 0x3b
+ 447 0067 0B       		.uleb128 0xb
+ 448 0068 27       		.uleb128 0x27
+ 449 0069 0C       		.uleb128 0xc
+ 450 006a 11       		.uleb128 0x11
+ 451 006b 01       		.uleb128 0x1
+ 452 006c 12       		.uleb128 0x12
+ 453 006d 01       		.uleb128 0x1
+ 454 006e 40       		.uleb128 0x40
+ 455 006f 06       		.uleb128 0x6
+ 456 0070 9742     		.uleb128 0x2117
+ 457 0072 0C       		.uleb128 0xc
+ 458 0073 01       		.uleb128 0x1
+ 459 0074 13       		.uleb128 0x13
+ 460 0075 00       		.byte	0
+ 461 0076 00       		.byte	0
+ 462 0077 09       		.uleb128 0x9
+ 463 0078 05       		.uleb128 0x5
+ 464 0079 00       		.byte	0
+ 465 007a 03       		.uleb128 0x3
+ 466 007b 0E       		.uleb128 0xe
+ 467 007c 3A       		.uleb128 0x3a
+ 468 007d 0B       		.uleb128 0xb
+ 469 007e 3B       		.uleb128 0x3b
+ 470 007f 0B       		.uleb128 0xb
+ 471 0080 49       		.uleb128 0x49
+ 472 0081 13       		.uleb128 0x13
+ 473 0082 02       		.uleb128 0x2
+ 474 0083 0A       		.uleb128 0xa
+ 475 0084 00       		.byte	0
+ 476 0085 00       		.byte	0
+ 477 0086 0A       		.uleb128 0xa
+ 478 0087 0F       		.uleb128 0xf
+ 479 0088 00       		.byte	0
+ 480 0089 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 10
+
+
+ 481 008a 0B       		.uleb128 0xb
+ 482 008b 49       		.uleb128 0x49
+ 483 008c 13       		.uleb128 0x13
+ 484 008d 00       		.byte	0
+ 485 008e 00       		.byte	0
+ 486 008f 0B       		.uleb128 0xb
+ 487 0090 2E       		.uleb128 0x2e
+ 488 0091 01       		.byte	0x1
+ 489 0092 3F       		.uleb128 0x3f
+ 490 0093 0C       		.uleb128 0xc
+ 491 0094 03       		.uleb128 0x3
+ 492 0095 0E       		.uleb128 0xe
+ 493 0096 3A       		.uleb128 0x3a
+ 494 0097 0B       		.uleb128 0xb
+ 495 0098 3B       		.uleb128 0x3b
+ 496 0099 0B       		.uleb128 0xb
+ 497 009a 27       		.uleb128 0x27
+ 498 009b 0C       		.uleb128 0xc
+ 499 009c 49       		.uleb128 0x49
+ 500 009d 13       		.uleb128 0x13
+ 501 009e 11       		.uleb128 0x11
+ 502 009f 01       		.uleb128 0x1
+ 503 00a0 12       		.uleb128 0x12
+ 504 00a1 01       		.uleb128 0x1
+ 505 00a2 40       		.uleb128 0x40
+ 506 00a3 06       		.uleb128 0x6
+ 507 00a4 9642     		.uleb128 0x2116
+ 508 00a6 0C       		.uleb128 0xc
+ 509 00a7 01       		.uleb128 0x1
+ 510 00a8 13       		.uleb128 0x13
+ 511 00a9 00       		.byte	0
+ 512 00aa 00       		.byte	0
+ 513 00ab 0C       		.uleb128 0xc
+ 514 00ac 24       		.uleb128 0x24
+ 515 00ad 00       		.byte	0
+ 516 00ae 0B       		.uleb128 0xb
+ 517 00af 0B       		.uleb128 0xb
+ 518 00b0 3E       		.uleb128 0x3e
+ 519 00b1 0B       		.uleb128 0xb
+ 520 00b2 03       		.uleb128 0x3
+ 521 00b3 08       		.uleb128 0x8
+ 522 00b4 00       		.byte	0
+ 523 00b5 00       		.byte	0
+ 524 00b6 0D       		.uleb128 0xd
+ 525 00b7 26       		.uleb128 0x26
+ 526 00b8 00       		.byte	0
+ 527 00b9 49       		.uleb128 0x49
+ 528 00ba 13       		.uleb128 0x13
+ 529 00bb 00       		.byte	0
+ 530 00bc 00       		.byte	0
+ 531 00bd 0E       		.uleb128 0xe
+ 532 00be 34       		.uleb128 0x34
+ 533 00bf 00       		.byte	0
+ 534 00c0 03       		.uleb128 0x3
+ 535 00c1 0E       		.uleb128 0xe
+ 536 00c2 3A       		.uleb128 0x3a
+ 537 00c3 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 11
+
+
+ 538 00c4 3B       		.uleb128 0x3b
+ 539 00c5 0B       		.uleb128 0xb
+ 540 00c6 49       		.uleb128 0x49
+ 541 00c7 13       		.uleb128 0x13
+ 542 00c8 02       		.uleb128 0x2
+ 543 00c9 0A       		.uleb128 0xa
+ 544 00ca 00       		.byte	0
+ 545 00cb 00       		.byte	0
+ 546 00cc 00       		.byte	0
+ 547              		.section	.debug_loc,"",%progbits
+ 548              	.Ldebug_loc0:
+ 549              	.LLST0:
+ 550 0000 00000000 		.4byte	.LFB0
+ 551 0004 02000000 		.4byte	.LCFI0
+ 552 0008 0200     		.2byte	0x2
+ 553 000a 7D       		.byte	0x7d
+ 554 000b 00       		.sleb128 0
+ 555 000c 02000000 		.4byte	.LCFI0
+ 556 0010 04000000 		.4byte	.LCFI1
+ 557 0014 0200     		.2byte	0x2
+ 558 0016 7D       		.byte	0x7d
+ 559 0017 08       		.sleb128 8
+ 560 0018 04000000 		.4byte	.LCFI1
+ 561 001c 06000000 		.4byte	.LCFI2
+ 562 0020 0200     		.2byte	0x2
+ 563 0022 7D       		.byte	0x7d
+ 564 0023 10       		.sleb128 16
+ 565 0024 06000000 		.4byte	.LCFI2
+ 566 0028 24000000 		.4byte	.LFE0
+ 567 002c 0200     		.2byte	0x2
+ 568 002e 77       		.byte	0x77
+ 569 002f 10       		.sleb128 16
+ 570 0030 00000000 		.4byte	0
+ 571 0034 00000000 		.4byte	0
+ 572              	.LLST1:
+ 573 0038 00000000 		.4byte	.LFB1
+ 574 003c 02000000 		.4byte	.LCFI3
+ 575 0040 0200     		.2byte	0x2
+ 576 0042 7D       		.byte	0x7d
+ 577 0043 00       		.sleb128 0
+ 578 0044 02000000 		.4byte	.LCFI3
+ 579 0048 04000000 		.4byte	.LCFI4
+ 580 004c 0200     		.2byte	0x2
+ 581 004e 7D       		.byte	0x7d
+ 582 004f 08       		.sleb128 8
+ 583 0050 04000000 		.4byte	.LCFI4
+ 584 0054 06000000 		.4byte	.LCFI5
+ 585 0058 0200     		.2byte	0x2
+ 586 005a 7D       		.byte	0x7d
+ 587 005b 10       		.sleb128 16
+ 588 005c 06000000 		.4byte	.LCFI5
+ 589 0060 58000000 		.4byte	.LFE1
+ 590 0064 0200     		.2byte	0x2
+ 591 0066 77       		.byte	0x77
+ 592 0067 10       		.sleb128 16
+ 593 0068 00000000 		.4byte	0
+ 594 006c 00000000 		.4byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 12
+
+
+ 595              		.section	.debug_aranges,"",%progbits
+ 596 0000 24000000 		.4byte	0x24
+ 597 0004 0200     		.2byte	0x2
+ 598 0006 00000000 		.4byte	.Ldebug_info0
+ 599 000a 04       		.byte	0x4
+ 600 000b 00       		.byte	0
+ 601 000c 0000     		.2byte	0
+ 602 000e 0000     		.2byte	0
+ 603 0010 00000000 		.4byte	.LFB0
+ 604 0014 24000000 		.4byte	.LFE0-.LFB0
+ 605 0018 00000000 		.4byte	.LFB1
+ 606 001c 58000000 		.4byte	.LFE1-.LFB1
+ 607 0020 00000000 		.4byte	0
+ 608 0024 00000000 		.4byte	0
+ 609              		.section	.debug_ranges,"",%progbits
+ 610              	.Ldebug_ranges0:
+ 611 0000 00000000 		.4byte	.LFB0
+ 612 0004 24000000 		.4byte	.LFE0
+ 613 0008 00000000 		.4byte	.LFB1
+ 614 000c 58000000 		.4byte	.LFE1
+ 615 0010 00000000 		.4byte	0
+ 616 0014 00000000 		.4byte	0
+ 617              		.section	.debug_line,"",%progbits
+ 618              	.Ldebug_line0:
+ 619 0000 74000000 		.section	.debug_str,"MS",%progbits,1
+ 619      02004000 
+ 619      00000201 
+ 619      FB0E0D00 
+ 619      01010101 
+ 620              	.LASF22:
+ 621 0000 433A5C45 		.ascii	"C:\\Enhed\\Enhed.cydsn\000"
+ 621      6E686564 
+ 621      5C456E68 
+ 621      65642E63 
+ 621      7964736E 
+ 622              	.LASF18:
+ 623 0015 70617261 		.ascii	"parametersPtr_\000"
+ 623      6D657465 
+ 623      72735074 
+ 623      725F00
+ 624              	.LASF9:
+ 625 0024 63757273 		.ascii	"cursor_\000"
+ 625      6F725F00 
+ 626              	.LASF1:
+ 627 002c 68756D69 		.ascii	"humidity_\000"
+ 627      64697479 
+ 627      5F00
+ 628              	.LASF2:
+ 629 0036 61637469 		.ascii	"active_\000"
+ 629      76655F00 
+ 630              	.LASF20:
+ 631 003e 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 631      4320342E 
+ 631      372E3320 
+ 631      32303133 
+ 631      30333132 
+ 632 0071 616E6368 		.ascii	"anch revision 196615]\000"
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 13
+
+
+ 632      20726576 
+ 632      6973696F 
+ 632      6E203139 
+ 632      36363135 
+ 633              	.LASF23:
+ 634 0087 6F6E4F66 		.ascii	"onOff_init\000"
+ 634      665F696E 
+ 634      697400
+ 635              	.LASF19:
+ 636 0092 62756666 		.ascii	"bufferPtr_\000"
+ 636      65725074 
+ 636      725F00
+ 637              	.LASF16:
+ 638 009d 62756650 		.ascii	"bufPtr\000"
+ 638      747200
+ 639              	.LASF4:
+ 640 00a4 756E7369 		.ascii	"unsigned char\000"
+ 640      676E6564 
+ 640      20636861 
+ 640      7200
+ 641              	.LASF11:
+ 642 00b2 63686172 		.ascii	"char\000"
+ 642      00
+ 643              	.LASF5:
+ 644 00b7 70617261 		.ascii	"parameters_type\000"
+ 644      6D657465 
+ 644      72735F74 
+ 644      79706500 
+ 645              	.LASF7:
+ 646 00c7 62756666 		.ascii	"buffer_\000"
+ 646      65725F00 
+ 647              	.LASF8:
+ 648 00cf 6C656E5F 		.ascii	"len_\000"
+ 648      00
+ 649              	.LASF21:
+ 650 00d4 2E5C6F6E 		.ascii	".\\onOff.c\000"
+ 650      4F66662E 
+ 650      6300
+ 651              	.LASF13:
+ 652 00de 70617261 		.ascii	"parameters\000"
+ 652      6D657465 
+ 652      727300
+ 653              	.LASF6:
+ 654 00e9 62756666 		.ascii	"buffer_type\000"
+ 654      65725F74 
+ 654      79706500 
+ 655              	.LASF12:
+ 656 00f5 756E7369 		.ascii	"unsigned int\000"
+ 656      676E6564 
+ 656      20696E74 
+ 656      00
+ 657              	.LASF17:
+ 658 0102 73746174 		.ascii	"state\000"
+ 658      6500
+ 659              	.LASF24:
+ 660 0108 6F6E4F66 		.ascii	"onOff_turnOnOff\000"
+ 660      665F7475 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cccesP7l.s 			page 14
+
+
+ 660      726E4F6E 
+ 660      4F666600 
+ 661              	.LASF3:
+ 662 0118 666C6F61 		.ascii	"float\000"
+ 662      7400
+ 663              	.LASF0:
+ 664 011e 74656D70 		.ascii	"temperature_\000"
+ 664      65726174 
+ 664      7572655F 
+ 664      00
+ 665              	.LASF14:
+ 666 012b 62756666 		.ascii	"buffer\000"
+ 666      657200
+ 667              	.LASF15:
+ 668 0132 70617250 		.ascii	"parPtr\000"
+ 668      747200
+ 669              	.LASF10:
+ 670 0139 73697A65 		.ascii	"sizetype\000"
+ 670      74797065 
+ 670      00
+ 671              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

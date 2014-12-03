@@ -1,0 +1,1288 @@
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 6
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"parameters.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.parameters_init,"ax",%progbits
+  18              		.align	2
+  19              		.global	parameters_init
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	parameters_init, %function
+  23              	parameters_init:
+  24              	.LFB0:
+  25              		.file 1 ".\\parameters.c"
+   1:.\parameters.c **** /*
+   2:.\parameters.c **** * File: parameters.c
+   3:.\parameters.c **** * Description: Implementation of EasyWater8000 class parameters
+   4:.\parameters.c **** * Project: PRJ3
+   5:.\parameters.c **** * 
+   6:.\parameters.c **** * Author: Jesper Christensen
+   7:.\parameters.c **** */
+   8:.\parameters.c **** 
+   9:.\parameters.c **** #include "parameters.h"
+  10:.\parameters.c **** 
+  11:.\parameters.c **** 
+  12:.\parameters.c **** extern void parameters_init(parameters * const this)
+  13:.\parameters.c **** {
+  26              		.loc 1 13 0
+  27              		.cfi_startproc
+  28 0000 80B5     		push	{r7, lr}
+  29              	.LCFI0:
+  30              		.cfi_def_cfa_offset 8
+  31              		.cfi_offset 7, -8
+  32              		.cfi_offset 14, -4
+  33 0002 82B0     		sub	sp, sp, #8
+  34              	.LCFI1:
+  35              		.cfi_def_cfa_offset 16
+  36 0004 00AF     		add	r7, sp, #0
+  37              	.LCFI2:
+  38              		.cfi_def_cfa_register 7
+  39 0006 7860     		str	r0, [r7, #4]
+  14:.\parameters.c **** 	this->active_ = 0;
+  40              		.loc 1 14 0
+  41 0008 7B68     		ldr	r3, [r7, #4]
+  42 000a 0022     		mov	r2, #0
+  43 000c 1A72     		strb	r2, [r3, #8]
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 2
+
+
+  15:.\parameters.c **** 	this->humidity_ = 10;
+  44              		.loc 1 15 0
+  45 000e 7B68     		ldr	r3, [r7, #4]
+  46 0010 034A     		ldr	r2, .L2
+  47 0012 5A60     		str	r2, [r3, #4]
+  16:.\parameters.c **** 	this->temperature_ = 30;
+  48              		.loc 1 16 0
+  49 0014 7B68     		ldr	r3, [r7, #4]
+  50 0016 034A     		ldr	r2, .L2+4
+  51 0018 1A60     		str	r2, [r3]
+  17:.\parameters.c **** }
+  52              		.loc 1 17 0
+  53 001a BD46     		mov	sp, r7
+  54 001c 02B0     		add	sp, sp, #8
+  55              		@ sp needed for prologue
+  56 001e 80BD     		pop	{r7, pc}
+  57              	.L3:
+  58              		.align	2
+  59              	.L2:
+  60 0020 00002041 		.word	1092616192
+  61 0024 0000F041 		.word	1106247680
+  62              		.cfi_endproc
+  63              	.LFE0:
+  64              		.size	parameters_init, .-parameters_init
+  65              		.section	.text.parameters_exit,"ax",%progbits
+  66              		.align	2
+  67              		.global	parameters_exit
+  68              		.code	16
+  69              		.thumb_func
+  70              		.type	parameters_exit, %function
+  71              	parameters_exit:
+  72              	.LFB1:
+  18:.\parameters.c **** 
+  19:.\parameters.c **** extern void parameters_exit(parameters * const this)
+  20:.\parameters.c **** {
+  73              		.loc 1 20 0
+  74              		.cfi_startproc
+  75 0000 80B5     		push	{r7, lr}
+  76              	.LCFI3:
+  77              		.cfi_def_cfa_offset 8
+  78              		.cfi_offset 7, -8
+  79              		.cfi_offset 14, -4
+  80 0002 82B0     		sub	sp, sp, #8
+  81              	.LCFI4:
+  82              		.cfi_def_cfa_offset 16
+  83 0004 00AF     		add	r7, sp, #0
+  84              	.LCFI5:
+  85              		.cfi_def_cfa_register 7
+  86 0006 7860     		str	r0, [r7, #4]
+  21:.\parameters.c **** 
+  22:.\parameters.c **** }
+  87              		.loc 1 22 0
+  88 0008 BD46     		mov	sp, r7
+  89 000a 02B0     		add	sp, sp, #8
+  90              		@ sp needed for prologue
+  91 000c 80BD     		pop	{r7, pc}
+  92              		.cfi_endproc
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 3
+
+
+  93              	.LFE1:
+  94              		.size	parameters_exit, .-parameters_exit
+  95 000e C046     		.section	.text.parameters_setTemp,"ax",%progbits
+  96              		.align	2
+  97              		.global	parameters_setTemp
+  98              		.code	16
+  99              		.thumb_func
+ 100              		.type	parameters_setTemp, %function
+ 101              	parameters_setTemp:
+ 102              	.LFB2:
+  23:.\parameters.c **** 
+  24:.\parameters.c **** int parameters_setTemp(parameters * const this, const float temp)
+  25:.\parameters.c **** {
+ 103              		.loc 1 25 0
+ 104              		.cfi_startproc
+ 105 0000 80B5     		push	{r7, lr}
+ 106              	.LCFI6:
+ 107              		.cfi_def_cfa_offset 8
+ 108              		.cfi_offset 7, -8
+ 109              		.cfi_offset 14, -4
+ 110 0002 82B0     		sub	sp, sp, #8
+ 111              	.LCFI7:
+ 112              		.cfi_def_cfa_offset 16
+ 113 0004 00AF     		add	r7, sp, #0
+ 114              	.LCFI8:
+ 115              		.cfi_def_cfa_register 7
+ 116 0006 7860     		str	r0, [r7, #4]
+ 117 0008 3960     		str	r1, [r7]
+  26:.\parameters.c **** 	this->temperature_ = temp;
+ 118              		.loc 1 26 0
+ 119 000a 7B68     		ldr	r3, [r7, #4]
+ 120 000c 3A68     		ldr	r2, [r7]
+ 121 000e 1A60     		str	r2, [r3]
+  27:.\parameters.c **** 
+  28:.\parameters.c **** 	return 0;
+ 122              		.loc 1 28 0
+ 123 0010 0023     		mov	r3, #0
+  29:.\parameters.c **** }
+ 124              		.loc 1 29 0
+ 125 0012 181C     		mov	r0, r3
+ 126 0014 BD46     		mov	sp, r7
+ 127 0016 02B0     		add	sp, sp, #8
+ 128              		@ sp needed for prologue
+ 129 0018 80BD     		pop	{r7, pc}
+ 130              		.cfi_endproc
+ 131              	.LFE2:
+ 132              		.size	parameters_setTemp, .-parameters_setTemp
+ 133 001a C046     		.section	.text.parameters_getTemp,"ax",%progbits
+ 134              		.align	2
+ 135              		.global	parameters_getTemp
+ 136              		.code	16
+ 137              		.thumb_func
+ 138              		.type	parameters_getTemp, %function
+ 139              	parameters_getTemp:
+ 140              	.LFB3:
+  30:.\parameters.c **** 
+  31:.\parameters.c **** int parameters_getTemp(parameters * const this, float * temp)
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 4
+
+
+  32:.\parameters.c **** {
+ 141              		.loc 1 32 0
+ 142              		.cfi_startproc
+ 143 0000 80B5     		push	{r7, lr}
+ 144              	.LCFI9:
+ 145              		.cfi_def_cfa_offset 8
+ 146              		.cfi_offset 7, -8
+ 147              		.cfi_offset 14, -4
+ 148 0002 82B0     		sub	sp, sp, #8
+ 149              	.LCFI10:
+ 150              		.cfi_def_cfa_offset 16
+ 151 0004 00AF     		add	r7, sp, #0
+ 152              	.LCFI11:
+ 153              		.cfi_def_cfa_register 7
+ 154 0006 7860     		str	r0, [r7, #4]
+ 155 0008 3960     		str	r1, [r7]
+  33:.\parameters.c **** 	*temp = this->temperature_;
+ 156              		.loc 1 33 0
+ 157 000a 7B68     		ldr	r3, [r7, #4]
+ 158 000c 1A68     		ldr	r2, [r3]
+ 159 000e 3B68     		ldr	r3, [r7]
+ 160 0010 1A60     		str	r2, [r3]
+  34:.\parameters.c **** 
+  35:.\parameters.c **** 	return 0;
+ 161              		.loc 1 35 0
+ 162 0012 0023     		mov	r3, #0
+  36:.\parameters.c **** }
+ 163              		.loc 1 36 0
+ 164 0014 181C     		mov	r0, r3
+ 165 0016 BD46     		mov	sp, r7
+ 166 0018 02B0     		add	sp, sp, #8
+ 167              		@ sp needed for prologue
+ 168 001a 80BD     		pop	{r7, pc}
+ 169              		.cfi_endproc
+ 170              	.LFE3:
+ 171              		.size	parameters_getTemp, .-parameters_getTemp
+ 172              		.section	.text.parameters_setHumi,"ax",%progbits
+ 173              		.align	2
+ 174              		.global	parameters_setHumi
+ 175              		.code	16
+ 176              		.thumb_func
+ 177              		.type	parameters_setHumi, %function
+ 178              	parameters_setHumi:
+ 179              	.LFB4:
+  37:.\parameters.c **** 
+  38:.\parameters.c **** int parameters_setHumi(parameters * const this, const float humi)
+  39:.\parameters.c **** {
+ 180              		.loc 1 39 0
+ 181              		.cfi_startproc
+ 182 0000 80B5     		push	{r7, lr}
+ 183              	.LCFI12:
+ 184              		.cfi_def_cfa_offset 8
+ 185              		.cfi_offset 7, -8
+ 186              		.cfi_offset 14, -4
+ 187 0002 82B0     		sub	sp, sp, #8
+ 188              	.LCFI13:
+ 189              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 5
+
+
+ 190 0004 00AF     		add	r7, sp, #0
+ 191              	.LCFI14:
+ 192              		.cfi_def_cfa_register 7
+ 193 0006 7860     		str	r0, [r7, #4]
+ 194 0008 3960     		str	r1, [r7]
+  40:.\parameters.c **** 	this->humidity_ = humi;
+ 195              		.loc 1 40 0
+ 196 000a 7B68     		ldr	r3, [r7, #4]
+ 197 000c 3A68     		ldr	r2, [r7]
+ 198 000e 5A60     		str	r2, [r3, #4]
+  41:.\parameters.c **** 
+  42:.\parameters.c **** 	return 0;
+ 199              		.loc 1 42 0
+ 200 0010 0023     		mov	r3, #0
+  43:.\parameters.c **** }
+ 201              		.loc 1 43 0
+ 202 0012 181C     		mov	r0, r3
+ 203 0014 BD46     		mov	sp, r7
+ 204 0016 02B0     		add	sp, sp, #8
+ 205              		@ sp needed for prologue
+ 206 0018 80BD     		pop	{r7, pc}
+ 207              		.cfi_endproc
+ 208              	.LFE4:
+ 209              		.size	parameters_setHumi, .-parameters_setHumi
+ 210 001a C046     		.section	.text.parameters_getHumi,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	parameters_getHumi
+ 213              		.code	16
+ 214              		.thumb_func
+ 215              		.type	parameters_getHumi, %function
+ 216              	parameters_getHumi:
+ 217              	.LFB5:
+  44:.\parameters.c **** 
+  45:.\parameters.c **** int parameters_getHumi(parameters * const this, float * humi)
+  46:.\parameters.c **** {
+ 218              		.loc 1 46 0
+ 219              		.cfi_startproc
+ 220 0000 80B5     		push	{r7, lr}
+ 221              	.LCFI15:
+ 222              		.cfi_def_cfa_offset 8
+ 223              		.cfi_offset 7, -8
+ 224              		.cfi_offset 14, -4
+ 225 0002 82B0     		sub	sp, sp, #8
+ 226              	.LCFI16:
+ 227              		.cfi_def_cfa_offset 16
+ 228 0004 00AF     		add	r7, sp, #0
+ 229              	.LCFI17:
+ 230              		.cfi_def_cfa_register 7
+ 231 0006 7860     		str	r0, [r7, #4]
+ 232 0008 3960     		str	r1, [r7]
+  47:.\parameters.c **** 	 *humi = this->humidity_;
+ 233              		.loc 1 47 0
+ 234 000a 7B68     		ldr	r3, [r7, #4]
+ 235 000c 5A68     		ldr	r2, [r3, #4]
+ 236 000e 3B68     		ldr	r3, [r7]
+ 237 0010 1A60     		str	r2, [r3]
+  48:.\parameters.c **** 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 6
+
+
+  49:.\parameters.c **** 	return 0;
+ 238              		.loc 1 49 0
+ 239 0012 0023     		mov	r3, #0
+  50:.\parameters.c **** 
+  51:.\parameters.c **** }
+ 240              		.loc 1 51 0
+ 241 0014 181C     		mov	r0, r3
+ 242 0016 BD46     		mov	sp, r7
+ 243 0018 02B0     		add	sp, sp, #8
+ 244              		@ sp needed for prologue
+ 245 001a 80BD     		pop	{r7, pc}
+ 246              		.cfi_endproc
+ 247              	.LFE5:
+ 248              		.size	parameters_getHumi, .-parameters_getHumi
+ 249              		.section	.text.parameters_setActive,"ax",%progbits
+ 250              		.align	2
+ 251              		.global	parameters_setActive
+ 252              		.code	16
+ 253              		.thumb_func
+ 254              		.type	parameters_setActive, %function
+ 255              	parameters_setActive:
+ 256              	.LFB6:
+  52:.\parameters.c **** 
+  53:.\parameters.c **** int parameters_setActive(parameters * const this, const unsigned char a)
+  54:.\parameters.c **** {
+ 257              		.loc 1 54 0
+ 258              		.cfi_startproc
+ 259 0000 80B5     		push	{r7, lr}
+ 260              	.LCFI18:
+ 261              		.cfi_def_cfa_offset 8
+ 262              		.cfi_offset 7, -8
+ 263              		.cfi_offset 14, -4
+ 264 0002 82B0     		sub	sp, sp, #8
+ 265              	.LCFI19:
+ 266              		.cfi_def_cfa_offset 16
+ 267 0004 00AF     		add	r7, sp, #0
+ 268              	.LCFI20:
+ 269              		.cfi_def_cfa_register 7
+ 270 0006 7860     		str	r0, [r7, #4]
+ 271 0008 0A1C     		mov	r2, r1
+ 272 000a FB1C     		add	r3, r7, #3
+ 273 000c 1A70     		strb	r2, [r3]
+  55:.\parameters.c **** 	this->active_ = a;
+ 274              		.loc 1 55 0
+ 275 000e 7B68     		ldr	r3, [r7, #4]
+ 276 0010 FA1C     		add	r2, r7, #3
+ 277 0012 1278     		ldrb	r2, [r2]
+ 278 0014 1A72     		strb	r2, [r3, #8]
+  56:.\parameters.c **** 
+  57:.\parameters.c **** 	return 0;
+ 279              		.loc 1 57 0
+ 280 0016 0023     		mov	r3, #0
+  58:.\parameters.c **** }
+ 281              		.loc 1 58 0
+ 282 0018 181C     		mov	r0, r3
+ 283 001a BD46     		mov	sp, r7
+ 284 001c 02B0     		add	sp, sp, #8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 7
+
+
+ 285              		@ sp needed for prologue
+ 286 001e 80BD     		pop	{r7, pc}
+ 287              		.cfi_endproc
+ 288              	.LFE6:
+ 289              		.size	parameters_setActive, .-parameters_setActive
+ 290              		.section	.text.parameters_getActive,"ax",%progbits
+ 291              		.align	2
+ 292              		.global	parameters_getActive
+ 293              		.code	16
+ 294              		.thumb_func
+ 295              		.type	parameters_getActive, %function
+ 296              	parameters_getActive:
+ 297              	.LFB7:
+  59:.\parameters.c **** 
+  60:.\parameters.c **** int parameters_getActive(parameters * const this, unsigned char * a)
+  61:.\parameters.c **** {
+ 298              		.loc 1 61 0
+ 299              		.cfi_startproc
+ 300 0000 80B5     		push	{r7, lr}
+ 301              	.LCFI21:
+ 302              		.cfi_def_cfa_offset 8
+ 303              		.cfi_offset 7, -8
+ 304              		.cfi_offset 14, -4
+ 305 0002 82B0     		sub	sp, sp, #8
+ 306              	.LCFI22:
+ 307              		.cfi_def_cfa_offset 16
+ 308 0004 00AF     		add	r7, sp, #0
+ 309              	.LCFI23:
+ 310              		.cfi_def_cfa_register 7
+ 311 0006 7860     		str	r0, [r7, #4]
+ 312 0008 3960     		str	r1, [r7]
+  62:.\parameters.c **** 	*a = this->active_;
+ 313              		.loc 1 62 0
+ 314 000a 7B68     		ldr	r3, [r7, #4]
+ 315 000c 1A7A     		ldrb	r2, [r3, #8]
+ 316 000e 3B68     		ldr	r3, [r7]
+ 317 0010 1A70     		strb	r2, [r3]
+  63:.\parameters.c **** 
+  64:.\parameters.c **** 	return 0;
+ 318              		.loc 1 64 0
+ 319 0012 0023     		mov	r3, #0
+  65:.\parameters.c **** }...
+ 320              		.loc 1 65 0
+ 321 0014 181C     		mov	r0, r3
+ 322 0016 BD46     		mov	sp, r7
+ 323 0018 02B0     		add	sp, sp, #8
+ 324              		@ sp needed for prologue
+ 325 001a 80BD     		pop	{r7, pc}
+ 326              		.cfi_endproc
+ 327              	.LFE7:
+ 328              		.size	parameters_getActive, .-parameters_getActive
+ 329              		.text
+ 330              	.Letext0:
+ 331              		.file 2 ".\\parameters.h"
+ 332              		.section	.debug_info,"",%progbits
+ 333              	.Ldebug_info0:
+ 334 0000 4E020000 		.4byte	0x24e
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 8
+
+
+ 335 0004 0200     		.2byte	0x2
+ 336 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 337 000a 04       		.byte	0x4
+ 338 000b 01       		.uleb128 0x1
+ 339 000c 7C000000 		.4byte	.LASF16
+ 340 0010 01       		.byte	0x1
+ 341 0011 EA000000 		.4byte	.LASF17
+ 342 0015 26000000 		.4byte	.LASF18
+ 343 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 344 001d 00000000 		.4byte	0
+ 345 0021 00000000 		.4byte	0
+ 346 0025 00000000 		.4byte	.Ldebug_line0
+ 347 0029 02       		.uleb128 0x2
+ 348 002a 4F000000 		.4byte	.LASF19
+ 349 002e 0C       		.byte	0xc
+ 350 002f 02       		.byte	0x2
+ 351 0030 0E       		.byte	0xe
+ 352 0031 60000000 		.4byte	0x60
+ 353 0035 03       		.uleb128 0x3
+ 354 0036 5F000000 		.4byte	.LASF0
+ 355 003a 02       		.byte	0x2
+ 356 003b 10       		.byte	0x10
+ 357 003c 60000000 		.4byte	0x60
+ 358 0040 02       		.byte	0x2
+ 359 0041 23       		.byte	0x23
+ 360 0042 00       		.uleb128 0
+ 361 0043 03       		.uleb128 0x3
+ 362 0044 2F010000 		.4byte	.LASF1
+ 363 0048 02       		.byte	0x2
+ 364 0049 11       		.byte	0x11
+ 365 004a 60000000 		.4byte	0x60
+ 366 004e 02       		.byte	0x2
+ 367 004f 23       		.byte	0x23
+ 368 0050 04       		.uleb128 0x4
+ 369 0051 03       		.uleb128 0x3
+ 370 0052 47000000 		.4byte	.LASF2
+ 371 0056 02       		.byte	0x2
+ 372 0057 12       		.byte	0x12
+ 373 0058 67000000 		.4byte	0x67
+ 374 005c 02       		.byte	0x2
+ 375 005d 23       		.byte	0x23
+ 376 005e 08       		.uleb128 0x8
+ 377 005f 00       		.byte	0
+ 378 0060 04       		.uleb128 0x4
+ 379 0061 04       		.byte	0x4
+ 380 0062 04       		.byte	0x4
+ 381 0063 61010000 		.4byte	.LASF3
+ 382 0067 04       		.uleb128 0x4
+ 383 0068 01       		.byte	0x1
+ 384 0069 08       		.byte	0x8
+ 385 006a 11010000 		.4byte	.LASF4
+ 386 006e 05       		.uleb128 0x5
+ 387 006f C5000000 		.4byte	.LASF20
+ 388 0073 02       		.byte	0x2
+ 389 0074 13       		.byte	0x13
+ 390 0075 29000000 		.4byte	0x29
+ 391 0079 06       		.uleb128 0x6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 9
+
+
+ 392 007a 01       		.byte	0x1
+ 393 007b 6C000000 		.4byte	.LASF5
+ 394 007f 01       		.byte	0x1
+ 395 0080 0C       		.byte	0xc
+ 396 0081 01       		.byte	0x1
+ 397 0082 00000000 		.4byte	.LFB0
+ 398 0086 28000000 		.4byte	.LFE0
+ 399 008a 00000000 		.4byte	.LLST0
+ 400 008e 01       		.byte	0x1
+ 401 008f A2000000 		.4byte	0xa2
+ 402 0093 07       		.uleb128 0x7
+ 403 0094 F9000000 		.4byte	.LASF7
+ 404 0098 01       		.byte	0x1
+ 405 0099 0C       		.byte	0xc
+ 406 009a A2000000 		.4byte	0xa2
+ 407 009e 02       		.byte	0x2
+ 408 009f 91       		.byte	0x91
+ 409 00a0 74       		.sleb128 -12
+ 410 00a1 00       		.byte	0
+ 411 00a2 08       		.uleb128 0x8
+ 412 00a3 A7000000 		.4byte	0xa7
+ 413 00a7 09       		.uleb128 0x9
+ 414 00a8 04       		.byte	0x4
+ 415 00a9 6E000000 		.4byte	0x6e
+ 416 00ad 06       		.uleb128 0x6
+ 417 00ae 01       		.byte	0x1
+ 418 00af 1F010000 		.4byte	.LASF6
+ 419 00b3 01       		.byte	0x1
+ 420 00b4 13       		.byte	0x13
+ 421 00b5 01       		.byte	0x1
+ 422 00b6 00000000 		.4byte	.LFB1
+ 423 00ba 0E000000 		.4byte	.LFE1
+ 424 00be 38000000 		.4byte	.LLST1
+ 425 00c2 01       		.byte	0x1
+ 426 00c3 D6000000 		.4byte	0xd6
+ 427 00c7 07       		.uleb128 0x7
+ 428 00c8 F9000000 		.4byte	.LASF7
+ 429 00cc 01       		.byte	0x1
+ 430 00cd 13       		.byte	0x13
+ 431 00ce A2000000 		.4byte	0xa2
+ 432 00d2 02       		.byte	0x2
+ 433 00d3 91       		.byte	0x91
+ 434 00d4 74       		.sleb128 -12
+ 435 00d5 00       		.byte	0
+ 436 00d6 0A       		.uleb128 0xa
+ 437 00d7 01       		.byte	0x1
+ 438 00d8 00000000 		.4byte	.LASF9
+ 439 00dc 01       		.byte	0x1
+ 440 00dd 18       		.byte	0x18
+ 441 00de 01       		.byte	0x1
+ 442 00df 11010000 		.4byte	0x111
+ 443 00e3 00000000 		.4byte	.LFB2
+ 444 00e7 1A000000 		.4byte	.LFE2
+ 445 00eb 70000000 		.4byte	.LLST2
+ 446 00ef 01       		.byte	0x1
+ 447 00f0 11010000 		.4byte	0x111
+ 448 00f4 07       		.uleb128 0x7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 10
+
+
+ 449 00f5 F9000000 		.4byte	.LASF7
+ 450 00f9 01       		.byte	0x1
+ 451 00fa 18       		.byte	0x18
+ 452 00fb A2000000 		.4byte	0xa2
+ 453 00ff 02       		.byte	0x2
+ 454 0100 91       		.byte	0x91
+ 455 0101 74       		.sleb128 -12
+ 456 0102 07       		.uleb128 0x7
+ 457 0103 D0000000 		.4byte	.LASF8
+ 458 0107 01       		.byte	0x1
+ 459 0108 18       		.byte	0x18
+ 460 0109 18010000 		.4byte	0x118
+ 461 010d 02       		.byte	0x2
+ 462 010e 91       		.byte	0x91
+ 463 010f 70       		.sleb128 -16
+ 464 0110 00       		.byte	0
+ 465 0111 0B       		.uleb128 0xb
+ 466 0112 04       		.byte	0x4
+ 467 0113 05       		.byte	0x5
+ 468 0114 696E7400 		.ascii	"int\000"
+ 469 0118 08       		.uleb128 0x8
+ 470 0119 60000000 		.4byte	0x60
+ 471 011d 0A       		.uleb128 0xa
+ 472 011e 01       		.byte	0x1
+ 473 011f 13000000 		.4byte	.LASF10
+ 474 0123 01       		.byte	0x1
+ 475 0124 1F       		.byte	0x1f
+ 476 0125 01       		.byte	0x1
+ 477 0126 11010000 		.4byte	0x111
+ 478 012a 00000000 		.4byte	.LFB3
+ 479 012e 1C000000 		.4byte	.LFE3
+ 480 0132 A8000000 		.4byte	.LLST3
+ 481 0136 01       		.byte	0x1
+ 482 0137 58010000 		.4byte	0x158
+ 483 013b 07       		.uleb128 0x7
+ 484 013c F9000000 		.4byte	.LASF7
+ 485 0140 01       		.byte	0x1
+ 486 0141 1F       		.byte	0x1f
+ 487 0142 A2000000 		.4byte	0xa2
+ 488 0146 02       		.byte	0x2
+ 489 0147 91       		.byte	0x91
+ 490 0148 74       		.sleb128 -12
+ 491 0149 07       		.uleb128 0x7
+ 492 014a D0000000 		.4byte	.LASF8
+ 493 014e 01       		.byte	0x1
+ 494 014f 1F       		.byte	0x1f
+ 495 0150 58010000 		.4byte	0x158
+ 496 0154 02       		.byte	0x2
+ 497 0155 91       		.byte	0x91
+ 498 0156 70       		.sleb128 -16
+ 499 0157 00       		.byte	0
+ 500 0158 09       		.uleb128 0x9
+ 501 0159 04       		.byte	0x4
+ 502 015a 60000000 		.4byte	0x60
+ 503 015e 0A       		.uleb128 0xa
+ 504 015f 01       		.byte	0x1
+ 505 0160 FE000000 		.4byte	.LASF11
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 11
+
+
+ 506 0164 01       		.byte	0x1
+ 507 0165 26       		.byte	0x26
+ 508 0166 01       		.byte	0x1
+ 509 0167 11010000 		.4byte	0x111
+ 510 016b 00000000 		.4byte	.LFB4
+ 511 016f 1A000000 		.4byte	.LFE4
+ 512 0173 E0000000 		.4byte	.LLST4
+ 513 0177 01       		.byte	0x1
+ 514 0178 99010000 		.4byte	0x199
+ 515 017c 07       		.uleb128 0x7
+ 516 017d F9000000 		.4byte	.LASF7
+ 517 0181 01       		.byte	0x1
+ 518 0182 26       		.byte	0x26
+ 519 0183 A2000000 		.4byte	0xa2
+ 520 0187 02       		.byte	0x2
+ 521 0188 91       		.byte	0x91
+ 522 0189 74       		.sleb128 -12
+ 523 018a 07       		.uleb128 0x7
+ 524 018b 67010000 		.4byte	.LASF12
+ 525 018f 01       		.byte	0x1
+ 526 0190 26       		.byte	0x26
+ 527 0191 18010000 		.4byte	0x118
+ 528 0195 02       		.byte	0x2
+ 529 0196 91       		.byte	0x91
+ 530 0197 70       		.sleb128 -16
+ 531 0198 00       		.byte	0
+ 532 0199 0A       		.uleb128 0xa
+ 533 019a 01       		.byte	0x1
+ 534 019b 39010000 		.4byte	.LASF13
+ 535 019f 01       		.byte	0x1
+ 536 01a0 2D       		.byte	0x2d
+ 537 01a1 01       		.byte	0x1
+ 538 01a2 11010000 		.4byte	0x111
+ 539 01a6 00000000 		.4byte	.LFB5
+ 540 01aa 1C000000 		.4byte	.LFE5
+ 541 01ae 18010000 		.4byte	.LLST5
+ 542 01b2 01       		.byte	0x1
+ 543 01b3 D4010000 		.4byte	0x1d4
+ 544 01b7 07       		.uleb128 0x7
+ 545 01b8 F9000000 		.4byte	.LASF7
+ 546 01bc 01       		.byte	0x1
+ 547 01bd 2D       		.byte	0x2d
+ 548 01be A2000000 		.4byte	0xa2
+ 549 01c2 02       		.byte	0x2
+ 550 01c3 91       		.byte	0x91
+ 551 01c4 74       		.sleb128 -12
+ 552 01c5 07       		.uleb128 0x7
+ 553 01c6 67010000 		.4byte	.LASF12
+ 554 01ca 01       		.byte	0x1
+ 555 01cb 2D       		.byte	0x2d
+ 556 01cc 58010000 		.4byte	0x158
+ 557 01d0 02       		.byte	0x2
+ 558 01d1 91       		.byte	0x91
+ 559 01d2 70       		.sleb128 -16
+ 560 01d3 00       		.byte	0
+ 561 01d4 0A       		.uleb128 0xa
+ 562 01d5 01       		.byte	0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 12
+
+
+ 563 01d6 4C010000 		.4byte	.LASF14
+ 564 01da 01       		.byte	0x1
+ 565 01db 35       		.byte	0x35
+ 566 01dc 01       		.byte	0x1
+ 567 01dd 11010000 		.4byte	0x111
+ 568 01e1 00000000 		.4byte	.LFB6
+ 569 01e5 20000000 		.4byte	.LFE6
+ 570 01e9 50010000 		.4byte	.LLST6
+ 571 01ed 01       		.byte	0x1
+ 572 01ee 0D020000 		.4byte	0x20d
+ 573 01f2 07       		.uleb128 0x7
+ 574 01f3 F9000000 		.4byte	.LASF7
+ 575 01f7 01       		.byte	0x1
+ 576 01f8 35       		.byte	0x35
+ 577 01f9 A2000000 		.4byte	0xa2
+ 578 01fd 02       		.byte	0x2
+ 579 01fe 91       		.byte	0x91
+ 580 01ff 74       		.sleb128 -12
+ 581 0200 0C       		.uleb128 0xc
+ 582 0201 6100     		.ascii	"a\000"
+ 583 0203 01       		.byte	0x1
+ 584 0204 35       		.byte	0x35
+ 585 0205 0D020000 		.4byte	0x20d
+ 586 0209 02       		.byte	0x2
+ 587 020a 91       		.byte	0x91
+ 588 020b 73       		.sleb128 -13
+ 589 020c 00       		.byte	0
+ 590 020d 08       		.uleb128 0x8
+ 591 020e 67000000 		.4byte	0x67
+ 592 0212 0A       		.uleb128 0xa
+ 593 0213 01       		.byte	0x1
+ 594 0214 D5000000 		.4byte	.LASF15
+ 595 0218 01       		.byte	0x1
+ 596 0219 3C       		.byte	0x3c
+ 597 021a 01       		.byte	0x1
+ 598 021b 11010000 		.4byte	0x111
+ 599 021f 00000000 		.4byte	.LFB7
+ 600 0223 1C000000 		.4byte	.LFE7
+ 601 0227 88010000 		.4byte	.LLST7
+ 602 022b 01       		.byte	0x1
+ 603 022c 4B020000 		.4byte	0x24b
+ 604 0230 07       		.uleb128 0x7
+ 605 0231 F9000000 		.4byte	.LASF7
+ 606 0235 01       		.byte	0x1
+ 607 0236 3C       		.byte	0x3c
+ 608 0237 A2000000 		.4byte	0xa2
+ 609 023b 02       		.byte	0x2
+ 610 023c 91       		.byte	0x91
+ 611 023d 74       		.sleb128 -12
+ 612 023e 0C       		.uleb128 0xc
+ 613 023f 6100     		.ascii	"a\000"
+ 614 0241 01       		.byte	0x1
+ 615 0242 3C       		.byte	0x3c
+ 616 0243 4B020000 		.4byte	0x24b
+ 617 0247 02       		.byte	0x2
+ 618 0248 91       		.byte	0x91
+ 619 0249 70       		.sleb128 -16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 13
+
+
+ 620 024a 00       		.byte	0
+ 621 024b 09       		.uleb128 0x9
+ 622 024c 04       		.byte	0x4
+ 623 024d 67000000 		.4byte	0x67
+ 624 0251 00       		.byte	0
+ 625              		.section	.debug_abbrev,"",%progbits
+ 626              	.Ldebug_abbrev0:
+ 627 0000 01       		.uleb128 0x1
+ 628 0001 11       		.uleb128 0x11
+ 629 0002 01       		.byte	0x1
+ 630 0003 25       		.uleb128 0x25
+ 631 0004 0E       		.uleb128 0xe
+ 632 0005 13       		.uleb128 0x13
+ 633 0006 0B       		.uleb128 0xb
+ 634 0007 03       		.uleb128 0x3
+ 635 0008 0E       		.uleb128 0xe
+ 636 0009 1B       		.uleb128 0x1b
+ 637 000a 0E       		.uleb128 0xe
+ 638 000b 55       		.uleb128 0x55
+ 639 000c 06       		.uleb128 0x6
+ 640 000d 11       		.uleb128 0x11
+ 641 000e 01       		.uleb128 0x1
+ 642 000f 52       		.uleb128 0x52
+ 643 0010 01       		.uleb128 0x1
+ 644 0011 10       		.uleb128 0x10
+ 645 0012 06       		.uleb128 0x6
+ 646 0013 00       		.byte	0
+ 647 0014 00       		.byte	0
+ 648 0015 02       		.uleb128 0x2
+ 649 0016 13       		.uleb128 0x13
+ 650 0017 01       		.byte	0x1
+ 651 0018 03       		.uleb128 0x3
+ 652 0019 0E       		.uleb128 0xe
+ 653 001a 0B       		.uleb128 0xb
+ 654 001b 0B       		.uleb128 0xb
+ 655 001c 3A       		.uleb128 0x3a
+ 656 001d 0B       		.uleb128 0xb
+ 657 001e 3B       		.uleb128 0x3b
+ 658 001f 0B       		.uleb128 0xb
+ 659 0020 01       		.uleb128 0x1
+ 660 0021 13       		.uleb128 0x13
+ 661 0022 00       		.byte	0
+ 662 0023 00       		.byte	0
+ 663 0024 03       		.uleb128 0x3
+ 664 0025 0D       		.uleb128 0xd
+ 665 0026 00       		.byte	0
+ 666 0027 03       		.uleb128 0x3
+ 667 0028 0E       		.uleb128 0xe
+ 668 0029 3A       		.uleb128 0x3a
+ 669 002a 0B       		.uleb128 0xb
+ 670 002b 3B       		.uleb128 0x3b
+ 671 002c 0B       		.uleb128 0xb
+ 672 002d 49       		.uleb128 0x49
+ 673 002e 13       		.uleb128 0x13
+ 674 002f 38       		.uleb128 0x38
+ 675 0030 0A       		.uleb128 0xa
+ 676 0031 00       		.byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 14
+
+
+ 677 0032 00       		.byte	0
+ 678 0033 04       		.uleb128 0x4
+ 679 0034 24       		.uleb128 0x24
+ 680 0035 00       		.byte	0
+ 681 0036 0B       		.uleb128 0xb
+ 682 0037 0B       		.uleb128 0xb
+ 683 0038 3E       		.uleb128 0x3e
+ 684 0039 0B       		.uleb128 0xb
+ 685 003a 03       		.uleb128 0x3
+ 686 003b 0E       		.uleb128 0xe
+ 687 003c 00       		.byte	0
+ 688 003d 00       		.byte	0
+ 689 003e 05       		.uleb128 0x5
+ 690 003f 16       		.uleb128 0x16
+ 691 0040 00       		.byte	0
+ 692 0041 03       		.uleb128 0x3
+ 693 0042 0E       		.uleb128 0xe
+ 694 0043 3A       		.uleb128 0x3a
+ 695 0044 0B       		.uleb128 0xb
+ 696 0045 3B       		.uleb128 0x3b
+ 697 0046 0B       		.uleb128 0xb
+ 698 0047 49       		.uleb128 0x49
+ 699 0048 13       		.uleb128 0x13
+ 700 0049 00       		.byte	0
+ 701 004a 00       		.byte	0
+ 702 004b 06       		.uleb128 0x6
+ 703 004c 2E       		.uleb128 0x2e
+ 704 004d 01       		.byte	0x1
+ 705 004e 3F       		.uleb128 0x3f
+ 706 004f 0C       		.uleb128 0xc
+ 707 0050 03       		.uleb128 0x3
+ 708 0051 0E       		.uleb128 0xe
+ 709 0052 3A       		.uleb128 0x3a
+ 710 0053 0B       		.uleb128 0xb
+ 711 0054 3B       		.uleb128 0x3b
+ 712 0055 0B       		.uleb128 0xb
+ 713 0056 27       		.uleb128 0x27
+ 714 0057 0C       		.uleb128 0xc
+ 715 0058 11       		.uleb128 0x11
+ 716 0059 01       		.uleb128 0x1
+ 717 005a 12       		.uleb128 0x12
+ 718 005b 01       		.uleb128 0x1
+ 719 005c 40       		.uleb128 0x40
+ 720 005d 06       		.uleb128 0x6
+ 721 005e 9742     		.uleb128 0x2117
+ 722 0060 0C       		.uleb128 0xc
+ 723 0061 01       		.uleb128 0x1
+ 724 0062 13       		.uleb128 0x13
+ 725 0063 00       		.byte	0
+ 726 0064 00       		.byte	0
+ 727 0065 07       		.uleb128 0x7
+ 728 0066 05       		.uleb128 0x5
+ 729 0067 00       		.byte	0
+ 730 0068 03       		.uleb128 0x3
+ 731 0069 0E       		.uleb128 0xe
+ 732 006a 3A       		.uleb128 0x3a
+ 733 006b 0B       		.uleb128 0xb
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 15
+
+
+ 734 006c 3B       		.uleb128 0x3b
+ 735 006d 0B       		.uleb128 0xb
+ 736 006e 49       		.uleb128 0x49
+ 737 006f 13       		.uleb128 0x13
+ 738 0070 02       		.uleb128 0x2
+ 739 0071 0A       		.uleb128 0xa
+ 740 0072 00       		.byte	0
+ 741 0073 00       		.byte	0
+ 742 0074 08       		.uleb128 0x8
+ 743 0075 26       		.uleb128 0x26
+ 744 0076 00       		.byte	0
+ 745 0077 49       		.uleb128 0x49
+ 746 0078 13       		.uleb128 0x13
+ 747 0079 00       		.byte	0
+ 748 007a 00       		.byte	0
+ 749 007b 09       		.uleb128 0x9
+ 750 007c 0F       		.uleb128 0xf
+ 751 007d 00       		.byte	0
+ 752 007e 0B       		.uleb128 0xb
+ 753 007f 0B       		.uleb128 0xb
+ 754 0080 49       		.uleb128 0x49
+ 755 0081 13       		.uleb128 0x13
+ 756 0082 00       		.byte	0
+ 757 0083 00       		.byte	0
+ 758 0084 0A       		.uleb128 0xa
+ 759 0085 2E       		.uleb128 0x2e
+ 760 0086 01       		.byte	0x1
+ 761 0087 3F       		.uleb128 0x3f
+ 762 0088 0C       		.uleb128 0xc
+ 763 0089 03       		.uleb128 0x3
+ 764 008a 0E       		.uleb128 0xe
+ 765 008b 3A       		.uleb128 0x3a
+ 766 008c 0B       		.uleb128 0xb
+ 767 008d 3B       		.uleb128 0x3b
+ 768 008e 0B       		.uleb128 0xb
+ 769 008f 27       		.uleb128 0x27
+ 770 0090 0C       		.uleb128 0xc
+ 771 0091 49       		.uleb128 0x49
+ 772 0092 13       		.uleb128 0x13
+ 773 0093 11       		.uleb128 0x11
+ 774 0094 01       		.uleb128 0x1
+ 775 0095 12       		.uleb128 0x12
+ 776 0096 01       		.uleb128 0x1
+ 777 0097 40       		.uleb128 0x40
+ 778 0098 06       		.uleb128 0x6
+ 779 0099 9742     		.uleb128 0x2117
+ 780 009b 0C       		.uleb128 0xc
+ 781 009c 01       		.uleb128 0x1
+ 782 009d 13       		.uleb128 0x13
+ 783 009e 00       		.byte	0
+ 784 009f 00       		.byte	0
+ 785 00a0 0B       		.uleb128 0xb
+ 786 00a1 24       		.uleb128 0x24
+ 787 00a2 00       		.byte	0
+ 788 00a3 0B       		.uleb128 0xb
+ 789 00a4 0B       		.uleb128 0xb
+ 790 00a5 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 16
+
+
+ 791 00a6 0B       		.uleb128 0xb
+ 792 00a7 03       		.uleb128 0x3
+ 793 00a8 08       		.uleb128 0x8
+ 794 00a9 00       		.byte	0
+ 795 00aa 00       		.byte	0
+ 796 00ab 0C       		.uleb128 0xc
+ 797 00ac 05       		.uleb128 0x5
+ 798 00ad 00       		.byte	0
+ 799 00ae 03       		.uleb128 0x3
+ 800 00af 08       		.uleb128 0x8
+ 801 00b0 3A       		.uleb128 0x3a
+ 802 00b1 0B       		.uleb128 0xb
+ 803 00b2 3B       		.uleb128 0x3b
+ 804 00b3 0B       		.uleb128 0xb
+ 805 00b4 49       		.uleb128 0x49
+ 806 00b5 13       		.uleb128 0x13
+ 807 00b6 02       		.uleb128 0x2
+ 808 00b7 0A       		.uleb128 0xa
+ 809 00b8 00       		.byte	0
+ 810 00b9 00       		.byte	0
+ 811 00ba 00       		.byte	0
+ 812              		.section	.debug_loc,"",%progbits
+ 813              	.Ldebug_loc0:
+ 814              	.LLST0:
+ 815 0000 00000000 		.4byte	.LFB0
+ 816 0004 02000000 		.4byte	.LCFI0
+ 817 0008 0200     		.2byte	0x2
+ 818 000a 7D       		.byte	0x7d
+ 819 000b 00       		.sleb128 0
+ 820 000c 02000000 		.4byte	.LCFI0
+ 821 0010 04000000 		.4byte	.LCFI1
+ 822 0014 0200     		.2byte	0x2
+ 823 0016 7D       		.byte	0x7d
+ 824 0017 08       		.sleb128 8
+ 825 0018 04000000 		.4byte	.LCFI1
+ 826 001c 06000000 		.4byte	.LCFI2
+ 827 0020 0200     		.2byte	0x2
+ 828 0022 7D       		.byte	0x7d
+ 829 0023 10       		.sleb128 16
+ 830 0024 06000000 		.4byte	.LCFI2
+ 831 0028 28000000 		.4byte	.LFE0
+ 832 002c 0200     		.2byte	0x2
+ 833 002e 77       		.byte	0x77
+ 834 002f 10       		.sleb128 16
+ 835 0030 00000000 		.4byte	0
+ 836 0034 00000000 		.4byte	0
+ 837              	.LLST1:
+ 838 0038 00000000 		.4byte	.LFB1
+ 839 003c 02000000 		.4byte	.LCFI3
+ 840 0040 0200     		.2byte	0x2
+ 841 0042 7D       		.byte	0x7d
+ 842 0043 00       		.sleb128 0
+ 843 0044 02000000 		.4byte	.LCFI3
+ 844 0048 04000000 		.4byte	.LCFI4
+ 845 004c 0200     		.2byte	0x2
+ 846 004e 7D       		.byte	0x7d
+ 847 004f 08       		.sleb128 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 17
+
+
+ 848 0050 04000000 		.4byte	.LCFI4
+ 849 0054 06000000 		.4byte	.LCFI5
+ 850 0058 0200     		.2byte	0x2
+ 851 005a 7D       		.byte	0x7d
+ 852 005b 10       		.sleb128 16
+ 853 005c 06000000 		.4byte	.LCFI5
+ 854 0060 0E000000 		.4byte	.LFE1
+ 855 0064 0200     		.2byte	0x2
+ 856 0066 77       		.byte	0x77
+ 857 0067 10       		.sleb128 16
+ 858 0068 00000000 		.4byte	0
+ 859 006c 00000000 		.4byte	0
+ 860              	.LLST2:
+ 861 0070 00000000 		.4byte	.LFB2
+ 862 0074 02000000 		.4byte	.LCFI6
+ 863 0078 0200     		.2byte	0x2
+ 864 007a 7D       		.byte	0x7d
+ 865 007b 00       		.sleb128 0
+ 866 007c 02000000 		.4byte	.LCFI6
+ 867 0080 04000000 		.4byte	.LCFI7
+ 868 0084 0200     		.2byte	0x2
+ 869 0086 7D       		.byte	0x7d
+ 870 0087 08       		.sleb128 8
+ 871 0088 04000000 		.4byte	.LCFI7
+ 872 008c 06000000 		.4byte	.LCFI8
+ 873 0090 0200     		.2byte	0x2
+ 874 0092 7D       		.byte	0x7d
+ 875 0093 10       		.sleb128 16
+ 876 0094 06000000 		.4byte	.LCFI8
+ 877 0098 1A000000 		.4byte	.LFE2
+ 878 009c 0200     		.2byte	0x2
+ 879 009e 77       		.byte	0x77
+ 880 009f 10       		.sleb128 16
+ 881 00a0 00000000 		.4byte	0
+ 882 00a4 00000000 		.4byte	0
+ 883              	.LLST3:
+ 884 00a8 00000000 		.4byte	.LFB3
+ 885 00ac 02000000 		.4byte	.LCFI9
+ 886 00b0 0200     		.2byte	0x2
+ 887 00b2 7D       		.byte	0x7d
+ 888 00b3 00       		.sleb128 0
+ 889 00b4 02000000 		.4byte	.LCFI9
+ 890 00b8 04000000 		.4byte	.LCFI10
+ 891 00bc 0200     		.2byte	0x2
+ 892 00be 7D       		.byte	0x7d
+ 893 00bf 08       		.sleb128 8
+ 894 00c0 04000000 		.4byte	.LCFI10
+ 895 00c4 06000000 		.4byte	.LCFI11
+ 896 00c8 0200     		.2byte	0x2
+ 897 00ca 7D       		.byte	0x7d
+ 898 00cb 10       		.sleb128 16
+ 899 00cc 06000000 		.4byte	.LCFI11
+ 900 00d0 1C000000 		.4byte	.LFE3
+ 901 00d4 0200     		.2byte	0x2
+ 902 00d6 77       		.byte	0x77
+ 903 00d7 10       		.sleb128 16
+ 904 00d8 00000000 		.4byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 18
+
+
+ 905 00dc 00000000 		.4byte	0
+ 906              	.LLST4:
+ 907 00e0 00000000 		.4byte	.LFB4
+ 908 00e4 02000000 		.4byte	.LCFI12
+ 909 00e8 0200     		.2byte	0x2
+ 910 00ea 7D       		.byte	0x7d
+ 911 00eb 00       		.sleb128 0
+ 912 00ec 02000000 		.4byte	.LCFI12
+ 913 00f0 04000000 		.4byte	.LCFI13
+ 914 00f4 0200     		.2byte	0x2
+ 915 00f6 7D       		.byte	0x7d
+ 916 00f7 08       		.sleb128 8
+ 917 00f8 04000000 		.4byte	.LCFI13
+ 918 00fc 06000000 		.4byte	.LCFI14
+ 919 0100 0200     		.2byte	0x2
+ 920 0102 7D       		.byte	0x7d
+ 921 0103 10       		.sleb128 16
+ 922 0104 06000000 		.4byte	.LCFI14
+ 923 0108 1A000000 		.4byte	.LFE4
+ 924 010c 0200     		.2byte	0x2
+ 925 010e 77       		.byte	0x77
+ 926 010f 10       		.sleb128 16
+ 927 0110 00000000 		.4byte	0
+ 928 0114 00000000 		.4byte	0
+ 929              	.LLST5:
+ 930 0118 00000000 		.4byte	.LFB5
+ 931 011c 02000000 		.4byte	.LCFI15
+ 932 0120 0200     		.2byte	0x2
+ 933 0122 7D       		.byte	0x7d
+ 934 0123 00       		.sleb128 0
+ 935 0124 02000000 		.4byte	.LCFI15
+ 936 0128 04000000 		.4byte	.LCFI16
+ 937 012c 0200     		.2byte	0x2
+ 938 012e 7D       		.byte	0x7d
+ 939 012f 08       		.sleb128 8
+ 940 0130 04000000 		.4byte	.LCFI16
+ 941 0134 06000000 		.4byte	.LCFI17
+ 942 0138 0200     		.2byte	0x2
+ 943 013a 7D       		.byte	0x7d
+ 944 013b 10       		.sleb128 16
+ 945 013c 06000000 		.4byte	.LCFI17
+ 946 0140 1C000000 		.4byte	.LFE5
+ 947 0144 0200     		.2byte	0x2
+ 948 0146 77       		.byte	0x77
+ 949 0147 10       		.sleb128 16
+ 950 0148 00000000 		.4byte	0
+ 951 014c 00000000 		.4byte	0
+ 952              	.LLST6:
+ 953 0150 00000000 		.4byte	.LFB6
+ 954 0154 02000000 		.4byte	.LCFI18
+ 955 0158 0200     		.2byte	0x2
+ 956 015a 7D       		.byte	0x7d
+ 957 015b 00       		.sleb128 0
+ 958 015c 02000000 		.4byte	.LCFI18
+ 959 0160 04000000 		.4byte	.LCFI19
+ 960 0164 0200     		.2byte	0x2
+ 961 0166 7D       		.byte	0x7d
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 19
+
+
+ 962 0167 08       		.sleb128 8
+ 963 0168 04000000 		.4byte	.LCFI19
+ 964 016c 06000000 		.4byte	.LCFI20
+ 965 0170 0200     		.2byte	0x2
+ 966 0172 7D       		.byte	0x7d
+ 967 0173 10       		.sleb128 16
+ 968 0174 06000000 		.4byte	.LCFI20
+ 969 0178 20000000 		.4byte	.LFE6
+ 970 017c 0200     		.2byte	0x2
+ 971 017e 77       		.byte	0x77
+ 972 017f 10       		.sleb128 16
+ 973 0180 00000000 		.4byte	0
+ 974 0184 00000000 		.4byte	0
+ 975              	.LLST7:
+ 976 0188 00000000 		.4byte	.LFB7
+ 977 018c 02000000 		.4byte	.LCFI21
+ 978 0190 0200     		.2byte	0x2
+ 979 0192 7D       		.byte	0x7d
+ 980 0193 00       		.sleb128 0
+ 981 0194 02000000 		.4byte	.LCFI21
+ 982 0198 04000000 		.4byte	.LCFI22
+ 983 019c 0200     		.2byte	0x2
+ 984 019e 7D       		.byte	0x7d
+ 985 019f 08       		.sleb128 8
+ 986 01a0 04000000 		.4byte	.LCFI22
+ 987 01a4 06000000 		.4byte	.LCFI23
+ 988 01a8 0200     		.2byte	0x2
+ 989 01aa 7D       		.byte	0x7d
+ 990 01ab 10       		.sleb128 16
+ 991 01ac 06000000 		.4byte	.LCFI23
+ 992 01b0 1C000000 		.4byte	.LFE7
+ 993 01b4 0200     		.2byte	0x2
+ 994 01b6 77       		.byte	0x77
+ 995 01b7 10       		.sleb128 16
+ 996 01b8 00000000 		.4byte	0
+ 997 01bc 00000000 		.4byte	0
+ 998              		.section	.debug_aranges,"",%progbits
+ 999 0000 54000000 		.4byte	0x54
+ 1000 0004 0200     		.2byte	0x2
+ 1001 0006 00000000 		.4byte	.Ldebug_info0
+ 1002 000a 04       		.byte	0x4
+ 1003 000b 00       		.byte	0
+ 1004 000c 0000     		.2byte	0
+ 1005 000e 0000     		.2byte	0
+ 1006 0010 00000000 		.4byte	.LFB0
+ 1007 0014 28000000 		.4byte	.LFE0-.LFB0
+ 1008 0018 00000000 		.4byte	.LFB1
+ 1009 001c 0E000000 		.4byte	.LFE1-.LFB1
+ 1010 0020 00000000 		.4byte	.LFB2
+ 1011 0024 1A000000 		.4byte	.LFE2-.LFB2
+ 1012 0028 00000000 		.4byte	.LFB3
+ 1013 002c 1C000000 		.4byte	.LFE3-.LFB3
+ 1014 0030 00000000 		.4byte	.LFB4
+ 1015 0034 1A000000 		.4byte	.LFE4-.LFB4
+ 1016 0038 00000000 		.4byte	.LFB5
+ 1017 003c 1C000000 		.4byte	.LFE5-.LFB5
+ 1018 0040 00000000 		.4byte	.LFB6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 20
+
+
+ 1019 0044 20000000 		.4byte	.LFE6-.LFB6
+ 1020 0048 00000000 		.4byte	.LFB7
+ 1021 004c 1C000000 		.4byte	.LFE7-.LFB7
+ 1022 0050 00000000 		.4byte	0
+ 1023 0054 00000000 		.4byte	0
+ 1024              		.section	.debug_ranges,"",%progbits
+ 1025              	.Ldebug_ranges0:
+ 1026 0000 00000000 		.4byte	.LFB0
+ 1027 0004 28000000 		.4byte	.LFE0
+ 1028 0008 00000000 		.4byte	.LFB1
+ 1029 000c 0E000000 		.4byte	.LFE1
+ 1030 0010 00000000 		.4byte	.LFB2
+ 1031 0014 1A000000 		.4byte	.LFE2
+ 1032 0018 00000000 		.4byte	.LFB3
+ 1033 001c 1C000000 		.4byte	.LFE3
+ 1034 0020 00000000 		.4byte	.LFB4
+ 1035 0024 1A000000 		.4byte	.LFE4
+ 1036 0028 00000000 		.4byte	.LFB5
+ 1037 002c 1C000000 		.4byte	.LFE5
+ 1038 0030 00000000 		.4byte	.LFB6
+ 1039 0034 20000000 		.4byte	.LFE6
+ 1040 0038 00000000 		.4byte	.LFB7
+ 1041 003c 1C000000 		.4byte	.LFE7
+ 1042 0040 00000000 		.4byte	0
+ 1043 0044 00000000 		.4byte	0
+ 1044              		.section	.debug_line,"",%progbits
+ 1045              	.Ldebug_line0:
+ 1046 0000 CC000000 		.section	.debug_str,"MS",%progbits,1
+ 1046      02003700 
+ 1046      00000201 
+ 1046      FB0E0D00 
+ 1046      01010101 
+ 1047              	.LASF9:
+ 1048 0000 70617261 		.ascii	"parameters_setTemp\000"
+ 1048      6D657465 
+ 1048      72735F73 
+ 1048      65745465 
+ 1048      6D7000
+ 1049              	.LASF10:
+ 1050 0013 70617261 		.ascii	"parameters_getTemp\000"
+ 1050      6D657465 
+ 1050      72735F67 
+ 1050      65745465 
+ 1050      6D7000
+ 1051              	.LASF18:
+ 1052 0026 433A5C63 		.ascii	"C:\\controllers\\controllers.cydsn\000"
+ 1052      6F6E7472 
+ 1052      6F6C6C65 
+ 1052      72735C63 
+ 1052      6F6E7472 
+ 1053              	.LASF2:
+ 1054 0047 61637469 		.ascii	"active_\000"
+ 1054      76655F00 
+ 1055              	.LASF19:
+ 1056 004f 70617261 		.ascii	"parameters_type\000"
+ 1056      6D657465 
+ 1056      72735F74 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 21
+
+
+ 1056      79706500 
+ 1057              	.LASF0:
+ 1058 005f 74656D70 		.ascii	"temperature_\000"
+ 1058      65726174 
+ 1058      7572655F 
+ 1058      00
+ 1059              	.LASF5:
+ 1060 006c 70617261 		.ascii	"parameters_init\000"
+ 1060      6D657465 
+ 1060      72735F69 
+ 1060      6E697400 
+ 1061              	.LASF16:
+ 1062 007c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1062      4320342E 
+ 1062      372E3320 
+ 1062      32303133 
+ 1062      30333132 
+ 1063 00af 616E6368 		.ascii	"anch revision 196615]\000"
+ 1063      20726576 
+ 1063      6973696F 
+ 1063      6E203139 
+ 1063      36363135 
+ 1064              	.LASF20:
+ 1065 00c5 70617261 		.ascii	"parameters\000"
+ 1065      6D657465 
+ 1065      727300
+ 1066              	.LASF8:
+ 1067 00d0 74656D70 		.ascii	"temp\000"
+ 1067      00
+ 1068              	.LASF15:
+ 1069 00d5 70617261 		.ascii	"parameters_getActive\000"
+ 1069      6D657465 
+ 1069      72735F67 
+ 1069      65744163 
+ 1069      74697665 
+ 1070              	.LASF17:
+ 1071 00ea 2E5C7061 		.ascii	".\\parameters.c\000"
+ 1071      72616D65 
+ 1071      74657273 
+ 1071      2E6300
+ 1072              	.LASF7:
+ 1073 00f9 74686973 		.ascii	"this\000"
+ 1073      00
+ 1074              	.LASF11:
+ 1075 00fe 70617261 		.ascii	"parameters_setHumi\000"
+ 1075      6D657465 
+ 1075      72735F73 
+ 1075      65744875 
+ 1075      6D6900
+ 1076              	.LASF4:
+ 1077 0111 756E7369 		.ascii	"unsigned char\000"
+ 1077      676E6564 
+ 1077      20636861 
+ 1077      7200
+ 1078              	.LASF6:
+ 1079 011f 70617261 		.ascii	"parameters_exit\000"
+ 1079      6D657465 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccHoJ0Df.s 			page 22
+
+
+ 1079      72735F65 
+ 1079      78697400 
+ 1080              	.LASF1:
+ 1081 012f 68756D69 		.ascii	"humidity_\000"
+ 1081      64697479 
+ 1081      5F00
+ 1082              	.LASF13:
+ 1083 0139 70617261 		.ascii	"parameters_getHumi\000"
+ 1083      6D657465 
+ 1083      72735F67 
+ 1083      65744875 
+ 1083      6D6900
+ 1084              	.LASF14:
+ 1085 014c 70617261 		.ascii	"parameters_setActive\000"
+ 1085      6D657465 
+ 1085      72735F73 
+ 1085      65744163 
+ 1085      74697665 
+ 1086              	.LASF3:
+ 1087 0161 666C6F61 		.ascii	"float\000"
+ 1087      7400
+ 1088              	.LASF12:
+ 1089 0167 68756D69 		.ascii	"humi\000"
+ 1089      00
+ 1090              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
