@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -25,20 +25,20 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   22              		.type	tempSensor_init, %function
   23              	tempSensor_init:
   24              	.LFB33:
-  25              		.file 1 "X:\\3.Semester\\PRJ3\\psoc_api_2\\psoc_api_2.cydsn\\tempSensor.c"
-   1:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** //tempSensor.c
-   2:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** //
-   3:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** //Author: Jakob Schmidt
-   4:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** //Version: 1.2
-   5:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** //Date: 14-11-14
-   6:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-   7:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** #include "tempSensor.h"
-   8:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** #include "sensorPackage.h"
-   9:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  10:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** #define CHANNEL_1 0
-  11:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  12:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** void tempSensor_init()
-  13:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** {
+  25              		.file 1 ".\\tempSensor.c"
+   1:.\tempSensor.c **** //tempSensor.c
+   2:.\tempSensor.c **** //
+   3:.\tempSensor.c **** //Author: Jakob Schmidt
+   4:.\tempSensor.c **** //Version: 1.1
+   5:.\tempSensor.c **** //Date: 14-11-14
+   6:.\tempSensor.c **** 
+   7:.\tempSensor.c **** #include "tempSensor.h"
+   8:.\tempSensor.c **** 
+   9:.\tempSensor.c **** #define vin_max 3.3
+  10:.\tempSensor.c **** #define CHANNEL_1 0
+  11:.\tempSensor.c **** 
+  12:.\tempSensor.c **** void tempSensor_init()
+  13:.\tempSensor.c **** {
   26              		.loc 1 13 0
   27              		.cfi_startproc
   28 0000 80B5     		push	{r7, lr}
@@ -49,8 +49,8 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   33 0002 00AF     		add	r7, sp, #0
   34              	.LCFI1:
   35              		.cfi_def_cfa_register 7
-  14:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****    //Do nothing
-  15:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** }
+  14:.\tempSensor.c ****    //Do nothing
+  15:.\tempSensor.c **** }
   36              		.loc 1 15 0
   37 0004 BD46     		mov	sp, r7
   38              		@ sp needed for prologue
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   40              		.cfi_endproc
   41              	.LFE33:
   42              		.size	tempSensor_init, .-tempSensor_init
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 2
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 2
 
 
   43              		.section	.text.tempSensor_exit,"ax",%progbits
@@ -69,10 +69,10 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   48              		.type	tempSensor_exit, %function
   49              	tempSensor_exit:
   50              	.LFB34:
-  16:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  17:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  18:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** void tempSensor_exit()
-  19:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** {
+  16:.\tempSensor.c **** 
+  17:.\tempSensor.c **** 
+  18:.\tempSensor.c **** void tempSensor_exit()
+  19:.\tempSensor.c **** {
   51              		.loc 1 19 0
   52              		.cfi_startproc
   53 0000 80B5     		push	{r7, lr}
@@ -83,8 +83,8 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   58 0002 00AF     		add	r7, sp, #0
   59              	.LCFI3:
   60              		.cfi_def_cfa_register 7
-  20:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Do nothing
-  21:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** }
+  20:.\tempSensor.c ****     //Do nothing
+  21:.\tempSensor.c **** }
   61              		.loc 1 21 0
   62 0004 BD46     		mov	sp, r7
   63              		@ sp needed for prologue
@@ -105,11 +105,11 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   78              		.type	tempSensor_getValue, %function
   79              	tempSensor_getValue:
   80              	.LFB35:
-  22:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  23:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  24:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** //Public methods implementation
-  25:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** int tempSensor_getValue(float *val)
-  26:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** {
+  22:.\tempSensor.c **** 
+  23:.\tempSensor.c **** 
+  24:.\tempSensor.c **** //Public methods implementation
+  25:.\tempSensor.c **** int tempSensor_getValue(float *val)
+  26:.\tempSensor.c **** {
   81              		.loc 1 26 0
   82              		.cfi_startproc
   83 0000 90B5     		push	{r4, r7, lr}
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   86              		.cfi_offset 4, -12
   87              		.cfi_offset 7, -8
   88              		.cfi_offset 14, -4
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 3
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 3
 
 
   89 0002 87B0     		sub	sp, sp, #28
@@ -128,40 +128,40 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
   93              	.LCFI6:
   94              		.cfi_def_cfa_register 7
   95 0006 7860     		str	r0, [r7, #4]
-  27:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Varibles
-  28:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     int16 ADCresult;
-  29:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //uint8 ADC_Channel = 0;
-  30:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     uint8 select = 0;
+  27:.\tempSensor.c ****     //Varibles
+  28:.\tempSensor.c ****     int16 ADCresult;
+  29:.\tempSensor.c ****     //uint8 ADC_Channel = 0;
+  30:.\tempSensor.c ****     uint8 select = 0;
   96              		.loc 1 30 0
   97 0008 3B1C     		mov	r3, r7
   98 000a 1733     		add	r3, r3, #23
   99 000c 0022     		mov	r2, #0
  100 000e 1A70     		strb	r2, [r3]
-  31:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     float vin_result;
-  32:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     float pwm_result;
-  33:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     
-  34:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Set SCL low for temp data out
-  35:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     P_FT2_Write(select);
+  31:.\tempSensor.c ****     float vin_result;
+  32:.\tempSensor.c ****     float pwm_result;
+  33:.\tempSensor.c ****     
+  34:.\tempSensor.c ****     //Set SCL low for temp data out
+  35:.\tempSensor.c ****     P_FT2_Write(select);
  101              		.loc 1 35 0
  102 0010 3B1C     		mov	r3, r7
  103 0012 1733     		add	r3, r3, #23
  104 0014 1B78     		ldrb	r3, [r3]
  105 0016 181C     		mov	r0, r3
  106 0018 FFF7FEFF 		bl	P_FT2_Write
-  36:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     
-  37:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Start conversion
-  38:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     ADC_SAR_Seq_0_StartConvert();
+  36:.\tempSensor.c ****     
+  37:.\tempSensor.c ****     //Start conversion
+  38:.\tempSensor.c ****     ADC_SAR_Seq_0_StartConvert();
  107              		.loc 1 38 0
  108 001c FFF7FEFF 		bl	ADC_SAR_Seq_0_StartConvert
-  39:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     
-  40:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Wait until conversion is done
-  41:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     ADC_SAR_Seq_0_IsEndConversion(ADC_SAR_Seq_0_WAIT_FOR_RESULT);
+  39:.\tempSensor.c ****     
+  40:.\tempSensor.c ****     //Wait until conversion is done
+  41:.\tempSensor.c ****     ADC_SAR_Seq_0_IsEndConversion(ADC_SAR_Seq_0_WAIT_FOR_RESULT);
  109              		.loc 1 41 0
  110 0020 0220     		mov	r0, #2
  111 0022 FFF7FEFF 		bl	ADC_SAR_Seq_0_IsEndConversion
-  42:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     
-  43:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Read value from ADC register
-  44:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     ADCresult = ADC_SAR_Seq_0_GetResult16(CHANNEL_1);
+  42:.\tempSensor.c ****     
+  43:.\tempSensor.c ****     //Read value from ADC register
+  44:.\tempSensor.c ****     ADCresult = ADC_SAR_Seq_0_GetResult16(CHANNEL_1);
  112              		.loc 1 44 0
  113 0026 3C1C     		mov	r4, r7
  114 0028 1434     		add	r4, r4, #20
@@ -169,25 +169,25 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  116 002c FFF7FEFF 		bl	ADC_SAR_Seq_0_GetResult16
  117 0030 031C     		mov	r3, r0
  118 0032 2380     		strh	r3, [r4]
-  45:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  46:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Convert to voltage
-  47:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     vin_result = ADC_SAR_Seq_0_CountsTo_Volts(CHANNEL_1, ADCresult);
+  45:.\tempSensor.c **** 
+  46:.\tempSensor.c ****     //Convert to voltage
+  47:.\tempSensor.c ****     vin_result = ADC_SAR_Seq_0_CountsTo_Volts(CHANNEL_1, ADCresult);
  119              		.loc 1 47 0
  120 0034 3B1C     		mov	r3, r7
  121 0036 1433     		add	r3, r3, #20
  122 0038 0022     		mov	r2, #0
  123 003a 9B5E     		ldrsh	r3, [r3, r2]
  124 003c 0020     		mov	r0, #0
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 4
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 4
 
 
  125 003e 191C     		mov	r1, r3
  126 0040 FFF7FEFF 		bl	ADC_SAR_Seq_0_CountsTo_Volts
  127 0044 031C     		add	r3, r0, #0
  128 0046 3B61     		str	r3, [r7, #16]
-  48:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** 
-  49:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Conver from voltage to PWM
-  50:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     pwm_result = (vin_result/vin_max);
+  48:.\tempSensor.c **** 
+  49:.\tempSensor.c ****     //Conver from voltage to PWM
+  50:.\tempSensor.c ****     pwm_result = (vin_result/vin_max);
  129              		.loc 1 50 0
  130 0048 3869     		ldr	r0, [r7, #16]
  131 004a FFF7FEFF 		bl	__aeabi_f2d
@@ -205,9 +205,9 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  143 0066 FFF7FEFF 		bl	__aeabi_d2f
  144 006a 031C     		add	r3, r0, #0
  145 006c FB60     		str	r3, [r7, #12]
-  51:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     
-  52:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     //Store trueData in val pointer
-  53:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     *val = -46.85+175.72*(pwm_result);
+  51:.\tempSensor.c ****     
+  52:.\tempSensor.c ****     //Store trueData in val pointer
+  53:.\tempSensor.c ****     *val = -46.85+175.72*(pwm_result);
  146              		.loc 1 53 0
  147 006e F868     		ldr	r0, [r7, #12]
  148 0070 FFF7FEFF 		bl	__aeabi_f2d
@@ -233,12 +233,12 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  168 00a0 021C     		add	r2, r0, #0
  169 00a2 7B68     		ldr	r3, [r7, #4]
  170 00a4 1A60     		str	r2, [r3]
-  54:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     
-  55:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c ****     return 0;
+  54:.\tempSensor.c ****     
+  55:.\tempSensor.c ****     return 0;
  171              		.loc 1 55 0
  172 00a6 0023     		mov	r3, #0
-  56:X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c **** }...
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 5
+  56:.\tempSensor.c **** }...
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 5
 
 
  173              		.loc 1 56 0
@@ -269,10 +269,10 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  198 0006 00000000 		.4byte	.Ldebug_abbrev0
  199 000a 04       		.byte	0x4
  200 000b 01       		.uleb128 0x1
- 201 000c BC000000 		.4byte	.LASF21
+ 201 000c 3D000000 		.4byte	.LASF21
  202 0010 01       		.byte	0x1
- 203 0011 21000000 		.4byte	.LASF22
- 204 0015 6A000000 		.4byte	.LASF23
+ 203 0011 2E000000 		.4byte	.LASF22
+ 204 0015 FD000000 		.4byte	.LASF23
  205 0019 00000000 		.4byte	.Ldebug_ranges0+0
  206 001d 00000000 		.4byte	0
  207 0021 00000000 		.4byte	0
@@ -280,15 +280,15 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  209 0029 02       		.uleb128 0x2
  210 002a 01       		.byte	0x1
  211 002b 06       		.byte	0x6
- 212 002c 87010000 		.4byte	.LASF0
+ 212 002c 4D010000 		.4byte	.LASF0
  213 0030 02       		.uleb128 0x2
  214 0031 01       		.byte	0x1
  215 0032 08       		.byte	0x8
- 216 0033 59010000 		.4byte	.LASF1
+ 216 0033 DA000000 		.4byte	.LASF1
  217 0037 02       		.uleb128 0x2
  218 0038 02       		.byte	0x2
  219 0039 05       		.byte	0x5
- 220 003a 9F010000 		.4byte	.LASF2
+ 220 003a 65010000 		.4byte	.LASF2
  221 003e 02       		.uleb128 0x2
  222 003f 02       		.byte	0x2
  223 0040 07       		.byte	0x7
@@ -296,14 +296,14 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  225 0045 02       		.uleb128 0x2
  226 0046 04       		.byte	0x4
  227 0047 05       		.byte	0x5
- 228 0048 6C010000 		.4byte	.LASF4
+ 228 0048 ED000000 		.4byte	.LASF4
  229 004c 02       		.uleb128 0x2
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 6
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 6
 
 
  230 004d 04       		.byte	0x4
  231 004e 07       		.byte	0x7
- 232 004f 0B010000 		.4byte	.LASF5
+ 232 004f 8C000000 		.4byte	.LASF5
  233 0053 02       		.uleb128 0x2
  234 0054 08       		.byte	0x8
  235 0055 05       		.byte	0x5
@@ -311,7 +311,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  237 005a 02       		.uleb128 0x2
  238 005b 08       		.byte	0x8
  239 005c 07       		.byte	0x7
- 240 005d 2D010000 		.4byte	.LASF7
+ 240 005d AE000000 		.4byte	.LASF7
  241 0061 03       		.uleb128 0x3
  242 0062 04       		.byte	0x4
  243 0063 05       		.byte	0x5
@@ -319,36 +319,36 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  245 0068 02       		.uleb128 0x2
  246 0069 04       		.byte	0x4
  247 006a 07       		.byte	0x7
- 248 006b 5D000000 		.4byte	.LASF8
+ 248 006b 21000000 		.4byte	.LASF8
  249 006f 04       		.uleb128 0x4
- 250 0070 05010000 		.4byte	.LASF9
+ 250 0070 86000000 		.4byte	.LASF9
  251 0074 02       		.byte	0x2
  252 0075 5B       		.byte	0x5b
  253 0076 30000000 		.4byte	0x30
  254 007a 04       		.uleb128 0x4
- 255 007b 99010000 		.4byte	.LASF10
+ 255 007b 5F010000 		.4byte	.LASF10
  256 007f 02       		.byte	0x2
  257 0080 5F       		.byte	0x5f
  258 0081 37000000 		.4byte	0x37
  259 0085 02       		.uleb128 0x2
  260 0086 04       		.byte	0x4
  261 0087 04       		.byte	0x4
- 262 0088 93010000 		.4byte	.LASF11
+ 262 0088 59010000 		.4byte	.LASF11
  263 008c 02       		.uleb128 0x2
  264 008d 08       		.byte	0x8
  265 008e 04       		.byte	0x4
- 266 008f 75010000 		.4byte	.LASF12
+ 266 008f F6000000 		.4byte	.LASF12
  267 0093 02       		.uleb128 0x2
  268 0094 01       		.byte	0x1
  269 0095 08       		.byte	0x8
- 270 0096 67010000 		.4byte	.LASF13
+ 270 0096 E8000000 		.4byte	.LASF13
  271 009a 02       		.uleb128 0x2
  272 009b 04       		.byte	0x4
  273 009c 07       		.byte	0x7
- 274 009d D4010000 		.4byte	.LASF14
+ 274 009d 9A010000 		.4byte	.LASF14
  275 00a1 05       		.uleb128 0x5
  276 00a2 01       		.byte	0x1
- 277 00a3 C4010000 		.4byte	.LASF15
+ 277 00a3 8A010000 		.4byte	.LASF15
  278 00a7 01       		.byte	0x1
  279 00a8 0C       		.byte	0xc
  280 00a9 00000000 		.4byte	.LFB33
@@ -357,8 +357,8 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  283 00b5 01       		.byte	0x1
  284 00b6 05       		.uleb128 0x5
  285 00b7 01       		.byte	0x1
- 286 00b8 1D010000 		.4byte	.LASF16
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 7
+ 286 00b8 9E000000 		.4byte	.LASF16
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 7
 
 
  287 00bc 01       		.byte	0x1
@@ -369,7 +369,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  292 00ca 01       		.byte	0x1
  293 00cb 06       		.uleb128 0x6
  294 00cc 01       		.byte	0x1
- 295 00cd B0010000 		.4byte	.LASF24
+ 295 00cd 76010000 		.4byte	.LASF24
  296 00d1 01       		.byte	0x1
  297 00d2 19       		.byte	0x19
  298 00d3 01       		.byte	0x1
@@ -388,7 +388,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  311 00f5 91       		.byte	0x91
  312 00f6 5C       		.sleb128 -36
  313 00f7 08       		.uleb128 0x8
- 314 00f8 4F010000 		.4byte	.LASF17
+ 314 00f8 D0000000 		.4byte	.LASF17
  315 00fc 01       		.byte	0x1
  316 00fd 1C       		.byte	0x1c
  317 00fe 7A000000 		.4byte	0x7a
@@ -396,7 +396,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  319 0103 91       		.byte	0x91
  320 0104 6C       		.sleb128 -20
  321 0105 08       		.uleb128 0x8
- 322 0106 A9010000 		.4byte	.LASF18
+ 322 0106 6F010000 		.4byte	.LASF18
  323 010a 01       		.byte	0x1
  324 010b 1E       		.byte	0x1e
  325 010c 6F000000 		.4byte	0x6f
@@ -404,7 +404,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  327 0111 91       		.byte	0x91
  328 0112 6F       		.sleb128 -17
  329 0113 08       		.uleb128 0x8
- 330 0114 44010000 		.4byte	.LASF19
+ 330 0114 C5000000 		.4byte	.LASF19
  331 0118 01       		.byte	0x1
  332 0119 1F       		.byte	0x1f
  333 011a 85000000 		.4byte	0x85
@@ -412,13 +412,13 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  335 011f 91       		.byte	0x91
  336 0120 68       		.sleb128 -24
  337 0121 08       		.uleb128 0x8
- 338 0122 7C010000 		.4byte	.LASF20
+ 338 0122 42010000 		.4byte	.LASF20
  339 0126 01       		.byte	0x1
  340 0127 20       		.byte	0x20
  341 0128 85000000 		.4byte	0x85
  342 012c 02       		.byte	0x2
  343 012d 91       		.byte	0x91
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 8
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 8
 
 
  344 012e 64       		.sleb128 -28
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  398 002e 03       		.uleb128 0x3
  399 002f 0E       		.uleb128 0xe
  400 0030 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 9
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 9
 
 
  401 0031 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  455 0069 00       		.byte	0
  456 006a 07       		.uleb128 0x7
  457 006b 05       		.uleb128 0x5
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 10
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 10
 
 
  458 006c 00       		.byte	0
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  512 0022 77       		.byte	0x77
  513 0023 08       		.sleb128 8
  514 0024 00000000 		.4byte	0
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 11
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 11
 
 
  515 0028 00000000 		.4byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  569 0020 00000000 		.4byte	.LFB35
  570 0024 C8000000 		.4byte	.LFE35-.LFB35
  571 0028 00000000 		.4byte	0
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 12
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 12
 
 
  572 002c 00000000 		.4byte	0
@@ -674,8 +674,8 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  582 001c 00000000 		.4byte	0
  583              		.section	.debug_line,"",%progbits
  584              	.Ldebug_line0:
- 585 0000 B9000000 		.section	.debug_str,"MS",%progbits,1
- 585      02007800 
+ 585 0000 8C000000 		.section	.debug_str,"MS",%progbits,1
+ 585      02004B00 
  585      00000201 
  585      FB0E0D00 
  585      01010101 
@@ -690,126 +690,121 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 1
  589      7369676E 
  589      65642069 
  589      6E7400
- 590              	.LASF22:
- 591 0021 583A5C33 		.ascii	"X:\\3.Semester\\PRJ3\\psoc_api_2\\psoc_api_2.cydsn\\"
- 591      2E53656D 
- 591      65737465 
- 591      725C5052 
- 591      4A335C70 
- 592 0050 74656D70 		.ascii	"tempSensor.c\000"
- 592      53656E73 
- 592      6F722E63 
- 592      00
- 593              	.LASF8:
- 594 005d 756E7369 		.ascii	"unsigned int\000"
- 594      676E6564 
- 594      20696E74 
- 594      00
- 595              	.LASF23:
- 596 006a 5C5C7073 		.ascii	"\\\\psf\\Home\\Documents\\E3PRJ3\\Implementering\\S"
- 596      665C486F 
- 596      6D655C44 
- 596      6F63756D 
- 596      656E7473 
- 597 0096 575C5053 		.ascii	"W\\PSoC\\sensorPackage\\psoc_api_2.cydsn\000"
- 597      6F435C73 
- 597      656E736F 
- 597      72506163 
- 597      6B616765 
- 598              	.LASF21:
- 599 00bc 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 13
+ 590              	.LASF8:
+ 591 0021 756E7369 		.ascii	"unsigned int\000"
+ 591      676E6564 
+ 591      20696E74 
+ 591      00
+ 592              	.LASF22:
+ 593 002e 2E5C7465 		.ascii	".\\tempSensor.c\000"
+ 593      6D705365 
+ 593      6E736F72 
+ 593      2E6300
+ 594              	.LASF21:
+ 595 003d 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 595      4320342E 
+ 595      372E3320 
+ 595      32303133 
+ 595      30333132 
+ 596 0070 616E6368 		.ascii	"anch revision 196615]\000"
+ 596      20726576 
+ 596      6973696F 
+ 596      6E203139 
+ 596      36363135 
+ 597              	.LASF9:
+ 598 0086 75696E74 		.ascii	"uint8\000"
+ 598      3800
+ 599              	.LASF5:
+ 600 008c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 600      20756E73 
+ 600      69676E65 
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 13
 
 
- 599      4320342E 
- 599      372E3320 
- 599      32303133 
- 599      30333132 
- 600 00ef 616E6368 		.ascii	"anch revision 196615]\000"
- 600      20726576 
- 600      6973696F 
- 600      6E203139 
- 600      36363135 
- 601              	.LASF9:
- 602 0105 75696E74 		.ascii	"uint8\000"
- 602      3800
- 603              	.LASF5:
- 604 010b 6C6F6E67 		.ascii	"long unsigned int\000"
- 604      20756E73 
- 604      69676E65 
- 604      6420696E 
- 604      7400
- 605              	.LASF16:
- 606 011d 74656D70 		.ascii	"tempSensor_exit\000"
- 606      53656E73 
- 606      6F725F65 
- 606      78697400 
- 607              	.LASF7:
- 608 012d 6C6F6E67 		.ascii	"long long unsigned int\000"
- 608      206C6F6E 
- 608      6720756E 
- 608      7369676E 
- 608      65642069 
- 609              	.LASF19:
- 610 0144 76696E5F 		.ascii	"vin_result\000"
- 610      72657375 
- 610      6C7400
- 611              	.LASF17:
- 612 014f 41444372 		.ascii	"ADCresult\000"
- 612      6573756C 
- 612      7400
- 613              	.LASF1:
- 614 0159 756E7369 		.ascii	"unsigned char\000"
- 614      676E6564 
- 614      20636861 
- 614      7200
- 615              	.LASF13:
- 616 0167 63686172 		.ascii	"char\000"
- 616      00
- 617              	.LASF4:
- 618 016c 6C6F6E67 		.ascii	"long int\000"
- 618      20696E74 
- 618      00
- 619              	.LASF12:
- 620 0175 646F7562 		.ascii	"double\000"
- 620      6C6500
- 621              	.LASF20:
- 622 017c 70776D5F 		.ascii	"pwm_result\000"
- 622      72657375 
- 622      6C7400
- 623              	.LASF0:
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccrH0gX5.s 			page 14
+ 600      6420696E 
+ 600      7400
+ 601              	.LASF16:
+ 602 009e 74656D70 		.ascii	"tempSensor_exit\000"
+ 602      53656E73 
+ 602      6F725F65 
+ 602      78697400 
+ 603              	.LASF7:
+ 604 00ae 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 604      206C6F6E 
+ 604      6720756E 
+ 604      7369676E 
+ 604      65642069 
+ 605              	.LASF19:
+ 606 00c5 76696E5F 		.ascii	"vin_result\000"
+ 606      72657375 
+ 606      6C7400
+ 607              	.LASF17:
+ 608 00d0 41444372 		.ascii	"ADCresult\000"
+ 608      6573756C 
+ 608      7400
+ 609              	.LASF1:
+ 610 00da 756E7369 		.ascii	"unsigned char\000"
+ 610      676E6564 
+ 610      20636861 
+ 610      7200
+ 611              	.LASF13:
+ 612 00e8 63686172 		.ascii	"char\000"
+ 612      00
+ 613              	.LASF4:
+ 614 00ed 6C6F6E67 		.ascii	"long int\000"
+ 614      20696E74 
+ 614      00
+ 615              	.LASF12:
+ 616 00f6 646F7562 		.ascii	"double\000"
+ 616      6C6500
+ 617              	.LASF23:
+ 618 00fd 433A5C55 		.ascii	"C:\\Users\\mickkirkegaardnielse\\Desktop\\sensorPac"
+ 618      73657273 
+ 618      5C6D6963 
+ 618      6B6B6972 
+ 618      6B656761 
+ 619 012c 6B616765 		.ascii	"kage\\psoc_api_2.cydsn\000"
+ 619      5C70736F 
+ 619      635F6170 
+ 619      695F322E 
+ 619      63796473 
+ 620              	.LASF20:
+ 621 0142 70776D5F 		.ascii	"pwm_result\000"
+ 621      72657375 
+ 621      6C7400
+ 622              	.LASF0:
+ 623 014d 7369676E 		.ascii	"signed char\000"
+ 623      65642063 
+ 623      68617200 
+ 624              	.LASF11:
+ 625 0159 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cc9DoqBg.s 			page 14
 
 
- 624 0187 7369676E 		.ascii	"signed char\000"
- 624      65642063 
- 624      68617200 
- 625              	.LASF11:
- 626 0193 666C6F61 		.ascii	"float\000"
- 626      7400
- 627              	.LASF10:
- 628 0199 696E7431 		.ascii	"int16\000"
- 628      3600
- 629              	.LASF2:
- 630 019f 73686F72 		.ascii	"short int\000"
- 630      7420696E 
- 630      7400
- 631              	.LASF18:
- 632 01a9 73656C65 		.ascii	"select\000"
- 632      637400
- 633              	.LASF24:
- 634 01b0 74656D70 		.ascii	"tempSensor_getValue\000"
- 634      53656E73 
- 634      6F725F67 
- 634      65745661 
- 634      6C756500 
- 635              	.LASF15:
- 636 01c4 74656D70 		.ascii	"tempSensor_init\000"
- 636      53656E73 
- 636      6F725F69 
- 636      6E697400 
- 637              	.LASF14:
- 638 01d4 73697A65 		.ascii	"sizetype\000"
- 638      74797065 
- 638      00
- 639              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 625      7400
+ 626              	.LASF10:
+ 627 015f 696E7431 		.ascii	"int16\000"
+ 627      3600
+ 628              	.LASF2:
+ 629 0165 73686F72 		.ascii	"short int\000"
+ 629      7420696E 
+ 629      7400
+ 630              	.LASF18:
+ 631 016f 73656C65 		.ascii	"select\000"
+ 631      637400
+ 632              	.LASF24:
+ 633 0176 74656D70 		.ascii	"tempSensor_getValue\000"
+ 633      53656E73 
+ 633      6F725F67 
+ 633      65745661 
+ 633      6C756500 
+ 634              	.LASF15:
+ 635 018a 74656D70 		.ascii	"tempSensor_init\000"
+ 635      53656E73 
+ 635      6F725F69 
+ 635      6E697400 
+ 636              	.LASF14:
+ 637 019a 73697A65 		.ascii	"sizetype\000"
+ 637      74797065 
+ 637      00
+ 638              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

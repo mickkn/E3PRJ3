@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
   44 000a 0023     		mov	r3, #0
   45 000c 7B60     		str	r3, [r7, #4]
   12:.\main.c      ****     float humi = 0;
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 2
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 2
 
 
   46              		.loc 1 12 0 discriminator 1
@@ -88,10 +88,10 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
   67 0006 00000000 		.4byte	.Ldebug_abbrev0
   68 000a 04       		.byte	0x4
   69 000b 01       		.uleb128 0x1
-  70 000c 77000000 		.4byte	.LASF15
+  70 000c 25000000 		.4byte	.LASF15
   71 0010 01       		.byte	0x1
-  72 0011 3B010000 		.4byte	.LASF16
-  73 0015 1B000000 		.4byte	.LASF17
+  72 0011 2E010000 		.4byte	.LASF16
+  73 0015 C4000000 		.4byte	.LASF17
   74 0019 00000000 		.4byte	.Ldebug_ranges0+0
   75 001d 00000000 		.4byte	0
   76 0021 00000000 		.4byte	0
@@ -99,30 +99,30 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
   78 0029 02       		.uleb128 0x2
   79 002a 01       		.byte	0x1
   80 002b 06       		.byte	0x6
-  81 002c 29010000 		.4byte	.LASF0
+  81 002c 1C010000 		.4byte	.LASF0
   82 0030 02       		.uleb128 0x2
   83 0031 01       		.byte	0x1
   84 0032 08       		.byte	0x8
-  85 0033 E9000000 		.4byte	.LASF1
+  85 0033 97000000 		.4byte	.LASF1
   86 0037 02       		.uleb128 0x2
   87 0038 02       		.byte	0x2
   88 0039 05       		.byte	0x5
-  89 003a 05010000 		.4byte	.LASF2
+  89 003a B3000000 		.4byte	.LASF2
   90 003e 02       		.uleb128 0x2
   91 003f 02       		.byte	0x2
   92 0040 07       		.byte	0x7
-  93 0041 16010000 		.4byte	.LASF3
+  93 0041 09010000 		.4byte	.LASF3
   94 0045 02       		.uleb128 0x2
   95 0046 04       		.byte	0x4
   96 0047 05       		.byte	0x5
-  97 0048 FC000000 		.4byte	.LASF4
+  97 0048 AA000000 		.4byte	.LASF4
   98 004c 02       		.uleb128 0x2
   99 004d 04       		.byte	0x4
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 3
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 3
 
 
  100 004e 07       		.byte	0x7
- 101 004f C0000000 		.4byte	.LASF5
+ 101 004f 6E000000 		.4byte	.LASF5
  102 0053 02       		.uleb128 0x2
  103 0054 08       		.byte	0x8
  104 0055 05       		.byte	0x5
@@ -130,7 +130,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  106 005a 02       		.uleb128 0x2
  107 005b 08       		.byte	0x8
  108 005c 07       		.byte	0x7
- 109 005d D2000000 		.4byte	.LASF7
+ 109 005d 80000000 		.4byte	.LASF7
  110 0061 03       		.uleb128 0x3
  111 0062 04       		.byte	0x4
  112 0063 05       		.byte	0x5
@@ -142,22 +142,22 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  118 006f 02       		.uleb128 0x2
  119 0070 04       		.byte	0x4
  120 0071 04       		.byte	0x4
- 121 0072 35010000 		.4byte	.LASF9
+ 121 0072 28010000 		.4byte	.LASF9
  122 0076 02       		.uleb128 0x2
  123 0077 08       		.byte	0x8
  124 0078 04       		.byte	0x4
- 125 0079 0F010000 		.4byte	.LASF10
+ 125 0079 BD000000 		.4byte	.LASF10
  126 007d 02       		.uleb128 0x2
  127 007e 01       		.byte	0x1
  128 007f 08       		.byte	0x8
- 129 0080 F7000000 		.4byte	.LASF11
+ 129 0080 A5000000 		.4byte	.LASF11
  130 0084 02       		.uleb128 0x2
  131 0085 04       		.byte	0x4
  132 0086 07       		.byte	0x7
- 133 0087 49010000 		.4byte	.LASF12
+ 133 0087 3C010000 		.4byte	.LASF12
  134 008b 04       		.uleb128 0x4
  135 008c 01       		.byte	0x1
- 136 008d 72000000 		.4byte	.LASF18
+ 136 008d 20000000 		.4byte	.LASF18
  137 0091 01       		.byte	0x1
  138 0092 04       		.byte	0x4
  139 0093 61000000 		.4byte	0x61
@@ -169,7 +169,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  145 00a5 06000000 		.4byte	.LBB2
  146 00a9 1E000000 		.4byte	.LBE2
  147 00ad 06       		.uleb128 0x6
- 148 00ae 6D000000 		.4byte	.LASF13
+ 148 00ae 1B000000 		.4byte	.LASF13
  149 00b2 01       		.byte	0x1
  150 00b3 0B       		.byte	0xb
  151 00b4 6F000000 		.4byte	0x6f
@@ -177,8 +177,8 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  153 00b9 91       		.byte	0x91
  154 00ba 74       		.sleb128 -12
  155 00bb 06       		.uleb128 0x6
- 156 00bc 44010000 		.4byte	.LASF14
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 4
+ 156 00bc 37010000 		.4byte	.LASF14
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 4
 
 
  157 00c0 01       		.byte	0x1
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  211 002b 04       		.uleb128 0x4
  212 002c 2E       		.uleb128 0x2e
  213 002d 01       		.byte	0x1
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 5
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 5
 
 
  214 002e 3F       		.uleb128 0x3f
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  268 0010 04000000 		.4byte	.LCFI1
  269 0014 0200     		.2byte	0x2
  270 0016 7D       		.byte	0x7d
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 6
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 6
 
 
  271 0017 08       		.sleb128 8
@@ -349,93 +349,93 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 1
  308      676E6564 
  308      20696E74 
  308      00
- 309              	.LASF17:
- 310 001b 5C5C7073 		.ascii	"\\\\psf\\Home\\Documents\\E3PRJ3\\Implementering\\S"
- 310      665C486F 
- 310      6D655C44 
- 310      6F63756D 
- 310      656E7473 
- 311 0047 575C5053 		.ascii	"W\\PSoC\\sensorPackage\\psoc_api_2.cydsn\000"
- 311      6F435C73 
- 311      656E736F 
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 7
+ 309              	.LASF13:
+ 310 001b 74656D70 		.ascii	"temp\000"
+ 310      00
+ 311              	.LASF18:
+ 312 0020 6D61696E 		.ascii	"main\000"
+ 312      00
+ 313              	.LASF15:
+ 314 0025 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 314      4320342E 
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 7
 
 
- 311      72506163 
- 311      6B616765 
- 312              	.LASF13:
- 313 006d 74656D70 		.ascii	"temp\000"
- 313      00
- 314              	.LASF18:
- 315 0072 6D61696E 		.ascii	"main\000"
- 315      00
- 316              	.LASF15:
- 317 0077 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 317      4320342E 
- 317      372E3320 
- 317      32303133 
- 317      30333132 
- 318 00aa 616E6368 		.ascii	"anch revision 196615]\000"
- 318      20726576 
- 318      6973696F 
- 318      6E203139 
- 318      36363135 
- 319              	.LASF5:
- 320 00c0 6C6F6E67 		.ascii	"long unsigned int\000"
- 320      20756E73 
- 320      69676E65 
- 320      6420696E 
- 320      7400
- 321              	.LASF7:
- 322 00d2 6C6F6E67 		.ascii	"long long unsigned int\000"
- 322      206C6F6E 
- 322      6720756E 
- 322      7369676E 
- 322      65642069 
- 323              	.LASF1:
- 324 00e9 756E7369 		.ascii	"unsigned char\000"
- 324      676E6564 
- 324      20636861 
- 324      7200
- 325              	.LASF11:
- 326 00f7 63686172 		.ascii	"char\000"
- 326      00
- 327              	.LASF4:
- 328 00fc 6C6F6E67 		.ascii	"long int\000"
- 328      20696E74 
- 328      00
- 329              	.LASF2:
- 330 0105 73686F72 		.ascii	"short int\000"
- 330      7420696E 
- 330      7400
- 331              	.LASF10:
- 332 010f 646F7562 		.ascii	"double\000"
- 332      6C6500
+ 314      372E3320 
+ 314      32303133 
+ 314      30333132 
+ 315 0058 616E6368 		.ascii	"anch revision 196615]\000"
+ 315      20726576 
+ 315      6973696F 
+ 315      6E203139 
+ 315      36363135 
+ 316              	.LASF5:
+ 317 006e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 317      20756E73 
+ 317      69676E65 
+ 317      6420696E 
+ 317      7400
+ 318              	.LASF7:
+ 319 0080 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 319      206C6F6E 
+ 319      6720756E 
+ 319      7369676E 
+ 319      65642069 
+ 320              	.LASF1:
+ 321 0097 756E7369 		.ascii	"unsigned char\000"
+ 321      676E6564 
+ 321      20636861 
+ 321      7200
+ 322              	.LASF11:
+ 323 00a5 63686172 		.ascii	"char\000"
+ 323      00
+ 324              	.LASF4:
+ 325 00aa 6C6F6E67 		.ascii	"long int\000"
+ 325      20696E74 
+ 325      00
+ 326              	.LASF2:
+ 327 00b3 73686F72 		.ascii	"short int\000"
+ 327      7420696E 
+ 327      7400
+ 328              	.LASF10:
+ 329 00bd 646F7562 		.ascii	"double\000"
+ 329      6C6500
+ 330              	.LASF17:
+ 331 00c4 433A5C55 		.ascii	"C:\\Users\\mickkirkegaardnielse\\Desktop\\sensorPac"
+ 331      73657273 
+ 331      5C6D6963 
+ 331      6B6B6972 
+ 331      6B656761 
+ 332 00f3 6B616765 		.ascii	"kage\\psoc_api_2.cydsn\000"
+ 332      5C70736F 
+ 332      635F6170 
+ 332      695F322E 
+ 332      63796473 
  333              	.LASF3:
- 334 0116 73686F72 		.ascii	"short unsigned int\000"
+ 334 0109 73686F72 		.ascii	"short unsigned int\000"
  334      7420756E 
  334      7369676E 
  334      65642069 
  334      6E7400
  335              	.LASF0:
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\cccuOx40.s 			page 8
+ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 8
 
 
- 336 0129 7369676E 		.ascii	"signed char\000"
+ 336 011c 7369676E 		.ascii	"signed char\000"
  336      65642063 
  336      68617200 
  337              	.LASF9:
- 338 0135 666C6F61 		.ascii	"float\000"
+ 338 0128 666C6F61 		.ascii	"float\000"
  338      7400
  339              	.LASF16:
- 340 013b 2E5C6D61 		.ascii	".\\main.c\000"
+ 340 012e 2E5C6D61 		.ascii	".\\main.c\000"
  340      696E2E63 
  340      00
  341              	.LASF14:
- 342 0144 68756D69 		.ascii	"humi\000"
+ 342 0137 68756D69 		.ascii	"humi\000"
  342      00
  343              	.LASF12:
- 344 0149 73697A65 		.ascii	"sizetype\000"
+ 344 013c 73697A65 		.ascii	"sizetype\000"
  344      74797065 
  344      00
  345              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

@@ -1,47 +1,12 @@
---------------- Build Started: 11/21/2014 15:19:32 Project: psoc_api_2, Configuration: ARM GCC 4.7.3 Debug ---------------
-cydsfit.exe "-.appdatapath" "C:\Users\jakob-schmidt-89\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0" "-.fdsnotice" "-.fdswarpdepfile=warp_dependencies.txt" "-.fdselabdepfile=elab_dependencies.txt" "-.fdsbldfile=generated_files.txt" "-p" "\\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\psoc_api_2.cyprj" "-d" "CY8C4245AXI-483" "-s" "\\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\Generated_Source\PSoC4" "--" "-yv2" "-v3" "-ygs" "-q10" "-o2" "-.fftcfgtype=LE"
-Elaborating Design...
-ADD: sdb.M0065: information: Analog terminal "ADC_in.analog_0" on TopDesign is unconnected.
- * \\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\TopDesign\TopDesign.cysch (Signal: Net_62)
- * \\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\TopDesign\TopDesign.cysch (Shape_9.1)
-ADD: sdb.M0065: information: Analog terminal "ADC_SAR_Seq_0.vinPlus0" on TopDesign is unconnected.
- * \\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\TopDesign\TopDesign.cysch (Signal: Net_54)
- * \\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\TopDesign\TopDesign.cysch (Shape_1.20)
- * \\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\TopDesign\TopDesign.cysch (Shape_2)
-HDL Generation ...
-Synthesis ...
-Place and Route ...
-Tech mapping ...
-Info: mpr.M0037: Unused pieces of the design have been optimized out. See the Tech mapping section of the report file for details. (App=cydsfit)
-Analog Placement ...
-Analog Routing ...
-Analog Code Generation ...
-Digital Placement ...
-Digital Routing ...
-Bitstream Generation ...
-Static timing analysis ...
-API Generation ...
-Dependency Generation ...
-Clean Temporary Files ...
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_473\Debug\main.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\humiSensor.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c -o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
-X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c: In function 'humiSensor_getValue':
-X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c:48:5: warning: implicit declaration of function 'ADC_SAR_Seq_0_CountsTo_Volts' [-Wimplicit-function-declaration]
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\sensorPackage.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.c -o .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\sprinkler.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sprinkler.c -o .\CortexM0\ARM_GCC_473\Debug\sprinkler.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\tempSensor.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c -o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o
-X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c: In function 'tempSensor_getValue':
-X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c:47:5: warning: implicit declaration of function 'ADC_SAR_Seq_0_CountsTo_Volts' [-Wimplicit-function-declaration]
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.lst -ffunction-sections -c .\Generated_Source\PSoC4\ADC_SAR_Seq_0.c -o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_PM.lst -ffunction-sections -c .\Generated_Source\PSoC4\ADC_SAR_Seq_0_PM.c -o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_PM.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_INT.lst -ffunction-sections -c .\Generated_Source\PSoC4\ADC_SAR_Seq_0_INT.c -o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_INT.o
-arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_PM.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_INT.o .\CortexM0\ARM_GCC_473\Debug\ADC_in.o .\CortexM0\ARM_GCC_473\Debug\SLC.o .\CortexM0\ARM_GCC_473\Debug\water_pin.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_intClock.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_IRQ.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o
+--------------- Build Started: 12/03/2014 12:00:19 Project: psoc_api_2, Configuration: ARM GCC 4.7.3 Debug ---------------
+The code generation step is up to date.
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\humiSensor.lst -ffunction-sections -c .\humiSensor.c -o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\tempSensor.lst -ffunction-sections -c .\tempSensor.c -o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o
+arm-none-eabi-ar.exe -rs .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_PM.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_INT.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_intClock.o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0_IRQ.o .\CortexM0\ARM_GCC_473\Debug\CyBootAsmGnu.o .\CortexM0\ARM_GCC_473\Debug\CyFlash.o .\CortexM0\ARM_GCC_473\Debug\CyLib.o .\CortexM0\ARM_GCC_473\Debug\cyPm.o .\CortexM0\ARM_GCC_473\Debug\cyutils.o .\CortexM0\ARM_GCC_473\Debug\P_FT1.o .\CortexM0\ARM_GCC_473\Debug\P_FT2.o .\CortexM0\ARM_GCC_473\Debug\P_VP.o
 arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a
-arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o .\CortexM0\ARM_GCC_473\Debug\sprinkler.o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
-.\CortexM0\ARM_GCC_473\Debug\humiSensor.o: In function `humiSensor_getValue':
-X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn/humiSensor.c:48: undefined reference to `ADC_SAR_Seq_0_CountsTo_Volts'
-.\CortexM0\ARM_GCC_473\Debug\tempSensor.o: In function `tempSensor_getValue':
-X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn/tempSensor.c:47: undefined reference to `ADC_SAR_Seq_0_CountsTo_Volts'
-collect2.exe: error: ld returned 1 exit status
-The command 'arm-none-eabi-gcc.exe' failed with exit code '1'.
---------------- Build Failed: 11/21/2014 15:20:53 ---------------
+arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o .\CortexM0\ARM_GCC_473\Debug\sprinkler.o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a "C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
+cyelftool.exe -C C:\Users\mickkirkegaardnielse\Desktop\sensorPackage\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf --flash_size 32768 --flash_row_size 128
+cyelftool.exe -S C:\Users\mickkirkegaardnielse\Desktop\sensorPackage\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf
+Flash used: 11054 of 32768 bytes (33,7 %).
+SRAM used: 1540 of 4096 bytes (37,6 %).
+--------------- Build Succeeded: 12/03/2014 12:00:21 ---------------

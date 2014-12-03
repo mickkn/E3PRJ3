@@ -6,7 +6,7 @@
 
 #Build Date:         Mar 26 2013 14:54:34
 
-#File Generated:     Nov 28 2014 11:06:41
+#File Generated:     Dec 3 2014 11:59:08
 
 #Purpose:            
 
@@ -14,7 +14,7 @@
 
 #***************************************************************************
 
-Executing : C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\bin/sjplacer.exe --proj-name psoc_api_2 --netlist-vh2 psoc_api_2_p.vh2 --arch-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file pins_44-TQFP.xml --lib-file psoc_api_2_p.lib --sdc-file psoc_api_2.sdc --io-pcf psoc_api_2.pci --outdir .
+Executing : C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\bin/sjplacer.exe --proj-name psoc_api_2 --netlist-vh2 psoc_api_2_p.vh2 --arch-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark --rrg-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/route_arch-rrg.cydata --irq-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/irqconn.cydata --dsi-conn-file C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/dsiconn.cydata --pins-file pins_44-TQFP.xml --lib-file psoc_api_2_p.lib --sdc-file psoc_api_2.sdc --io-pcf psoc_api_2.pci --outdir .
 
 		Softjin Techologies Placer, Version 1.1
 
@@ -23,7 +23,7 @@ Build Date : Jul 22 2013	11:20:09
 D2004: Option and Settings Summary
 =============================================================
 Netlist vh2 file          - psoc_api_2_p.vh2
-Architecture file         - C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark
+Architecture file         - C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark
 Package                   - 
 Defparam file             - 
 SDC file                  - psoc_api_2.sdc
@@ -34,7 +34,7 @@ IO Placement file         - psoc_api_2.pci
 D2050: Starting reading inputs for placer
 =============================================================
 D2065: Reading netlist file : "psoc_api_2_p.vh2"
-D2065: Reading arch file : "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark"
+D2065: Reading arch file : "C:\Program Files\Cypress\PSoC Creator\3.0\PSoC Creator\dev/psoc4/psoc4a/placer.ark"
 D2051: Reading of inputs for placer completed successfully
 
 D2053: Starting placement of the design

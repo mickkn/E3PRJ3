@@ -1,5 +1,5 @@
--- Project:   \\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\psoc_api_2.cyprj
--- Generated: 11/28/2014 11:06:43
+-- Project:   C:\Users\mickkirkegaardnielse\Desktop\sensorPackage\psoc_api_2.cydsn\psoc_api_2.cyprj
+-- Generated: 12/03/2014 11:59:10
 -- 
 
 ENTITY psoc_api_2 IS
