@@ -7,7 +7,7 @@
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-I. -I./Generated_Source/PSoC4 -mcpu=cortex-m0 -mthumb -g -alh=${OutputDir}/${CompileFile}.lst " />
       <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=${OutputDir}\${CompileFile}.lst -ffunction-sections " />
-      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,${OutputDir}\${ProjectShortName}.map -specs=nano.specs -Wl,--gc-sections " />
+      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,${OutputDir}\${ProjectShortName}.map -specs=nano.specs -Wl,--gc-sections -u _printf_float " />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM Keil MDK" Selected="False">
@@ -18,7 +18,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="Enhed" Path="C:\Enhed\Enhed.cydsn" Version="4.10" Type="Normal">
+  <Project Name="Enhed" Path="C:\Enhed\Enhed.cydsn" Version="4.11" Type="Normal">
     <CMSIS_SVD_File>Enhed.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>

@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: logDataTimer.h
-* Version 2.50
+* Version 2.60
 *
 *  Description:
 *     Contains the function prototypes and constants available to the timer
@@ -10,14 +10,14 @@
 *     None
 *
 ********************************************************************************
-* Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#if !defined(CY_Timer_v2_30_logDataTimer_H)
-#define CY_Timer_v2_30_logDataTimer_H
+#if !defined(CY_Timer_v2_60_logDataTimer_H)
+#define CY_Timer_v2_60_logDataTimer_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -28,7 +28,7 @@ extern uint8 logDataTimer_initVar;
 /* Check to see if required defines such as CY_PSOC5LP are available */
 /* They are defined starting with cy_boot v3.0 */
 #if !defined (CY_PSOC5LP)
-    #error Component Timer_v2_50 requires cy_boot v3.0 or later
+    #error Component Timer_v2_60 requires cy_boot v3.0 or later
 #endif /* (CY_ PSOC5LP) */
 
 
@@ -47,6 +47,14 @@ extern uint8 logDataTimer_initVar;
 #define logDataTimer_RunModeUsed                0u
 #define logDataTimer_ControlRegRemoved          0u
 
+#if defined(logDataTimer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG)
+    #define logDataTimer_UDB_CONTROL_REG_REMOVED            (0u)
+#elif  (logDataTimer_UsingFixedFunction)
+    #define logDataTimer_UDB_CONTROL_REG_REMOVED            (0u)
+#else 
+    #define logDataTimer_UDB_CONTROL_REG_REMOVED            (1u)
+#endif /* End logDataTimer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG */
+
 
 /***************************************
 *       Type defines
@@ -60,27 +68,18 @@ typedef struct
 {
     uint8 TimerEnableState;
     #if(!logDataTimer_UsingFixedFunction)
-        #if (CY_UDB_V0)
-            uint16 TimerUdb;                 /* Timer internal counter value */
-            uint16 TimerPeriod;              /* Timer Period value       */
-            uint8 InterruptMaskValue;       /* Timer Compare Value */
-            #if (logDataTimer_UsingHWCaptureCounter)
-                uint8 TimerCaptureCounter;  /* Timer Capture Counter Value */
-            #endif /* variable declaration for backing up Capture Counter value*/
-        #endif /* variables for non retention registers in CY_UDB_V0 */
 
-        #if (CY_UDB_V1)
-            uint16 TimerUdb;
-            uint8 InterruptMaskValue;
-            #if (logDataTimer_UsingHWCaptureCounter)
-                uint8 TimerCaptureCounter;
-            #endif /* variable declarations for backing up non retention registers in CY_UDB_V1 */
-        #endif /* (CY_UDB_V1) */
+        uint16 TimerUdb;
+        uint8 InterruptMaskValue;
+        #if (logDataTimer_UsingHWCaptureCounter)
+            uint8 TimerCaptureCounter;
+        #endif /* variable declarations for backing up non retention registers in CY_UDB_V1 */
 
-        #if (!logDataTimer_ControlRegRemoved)
+        #if (!logDataTimer_UDB_CONTROL_REG_REMOVED)
             uint8 TimerControlRegister;
         #endif /* variable declaration for backing up enable state of the Timer */
     #endif /* define backup variables only for UDB implementation. Fixed function registers are all retention */
+
 }logDataTimer_backupStruct;
 
 
@@ -96,21 +95,17 @@ uint8   logDataTimer_ReadStatusRegister(void) ;
 /* Deprecated function. Do not use this in future. Retained for backward compatibility */
 #define logDataTimer_GetInterruptSource() logDataTimer_ReadStatusRegister()
 
-#if(!logDataTimer_ControlRegRemoved)
+#if(!logDataTimer_UDB_CONTROL_REG_REMOVED)
     uint8   logDataTimer_ReadControlRegister(void) ;
-    void    logDataTimer_WriteControlRegister(uint8 control) \
-        ;
-#endif /* (!logDataTimer_ControlRegRemoved) */
+    void    logDataTimer_WriteControlRegister(uint8 control) ;
+#endif /* (!logDataTimer_UDB_CONTROL_REG_REMOVED) */
 
 uint16  logDataTimer_ReadPeriod(void) ;
-void    logDataTimer_WritePeriod(uint16 period) \
-    ;
+void    logDataTimer_WritePeriod(uint16 period) ;
 uint16  logDataTimer_ReadCounter(void) ;
-void    logDataTimer_WriteCounter(uint16 counter) \
-    ;
+void    logDataTimer_WriteCounter(uint16 counter) ;
 uint16  logDataTimer_ReadCapture(void) ;
 void    logDataTimer_SoftwareCapture(void) ;
-
 
 #if(!logDataTimer_UsingFixedFunction) /* UDB Prototypes */
     #if (logDataTimer_SoftwareCaptureMode)
@@ -120,21 +115,19 @@ void    logDataTimer_SoftwareCapture(void) ;
     #if (logDataTimer_SoftwareTriggerMode)
         void    logDataTimer_SetTriggerMode(uint8 triggerMode) ;
     #endif /* (logDataTimer_SoftwareTriggerMode) */
+
     #if (logDataTimer_EnableTriggerMode)
         void    logDataTimer_EnableTrigger(void) ;
         void    logDataTimer_DisableTrigger(void) ;
     #endif /* (logDataTimer_EnableTriggerMode) */
 
+
     #if(logDataTimer_InterruptOnCaptureCount)
-        #if(!logDataTimer_ControlRegRemoved)
-            void    logDataTimer_SetInterruptCount(uint8 interruptCount) \
-                ;
-        #endif /* (!logDataTimer_ControlRegRemoved) */
+        void    logDataTimer_SetInterruptCount(uint8 interruptCount) ;
     #endif /* (logDataTimer_InterruptOnCaptureCount) */
 
     #if (logDataTimer_UsingHWCaptureCounter)
-        void    logDataTimer_SetCaptureCount(uint8 captureCount) \
-            ;
+        void    logDataTimer_SetCaptureCount(uint8 captureCount) ;
         uint8   logDataTimer_ReadCaptureCount(void) ;
     #endif /* (logDataTimer_UsingHWCaptureCounter) */
 
@@ -256,8 +249,8 @@ void logDataTimer_Wakeup(void)        ;
     #if (CY_PSOC5A)
         /* Use CFG1 Mode bits to set run mode */
         /* As defined by Verilog Implementation */
-        #define logDataTimer_CTRL_MODE_SHIFT                     0x01u
-        #define logDataTimer_CTRL_MODE_MASK                     ((uint8)((uint8)0x07u << logDataTimer_CTRL_MODE_SHIFT))
+        #define logDataTimer_CTRL_MODE_SHIFT                 0x01u
+        #define logDataTimer_CTRL_MODE_MASK                 ((uint8)((uint8)0x07u << logDataTimer_CTRL_MODE_SHIFT))
     #endif /* (CY_PSOC5A) */
     #if (CY_PSOC3 || CY_PSOC5LP)
         /* Control3 Register Bit Locations */
@@ -367,6 +360,8 @@ void logDataTimer_Wakeup(void)        ;
         #endif /* CY_PSOC3 || CY_PSOC5 */ 
     #endif
 
+    #define logDataTimer_COUNTER_LSB_PTR_8BIT       ((reg8 *) logDataTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+    
     #if (logDataTimer_UsingHWCaptureCounter)
         #define logDataTimer_CAP_COUNT              (*(reg8 *) logDataTimer_TimerUDB_sCapCount_counter__PERIOD_REG )
         #define logDataTimer_CAP_COUNT_PTR          ( (reg8 *) logDataTimer_TimerUDB_sCapCount_counter__PERIOD_REG )

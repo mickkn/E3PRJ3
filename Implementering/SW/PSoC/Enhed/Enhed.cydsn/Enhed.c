@@ -1,6 +1,6 @@
 /*
-* File: test_controllers.c
-* Description: Test program for controller classes
+* File: Enhed.c
+* Description: Samlet application for EasyWater8000 enhed
 * Project: PRJ3
 * 
 * Author: Bjørn Sørensen
@@ -8,6 +8,7 @@
 
 
 #include <project.h>
+
 // Controllers
 #include "loadData.h"
 #include "onOff.h"
@@ -21,6 +22,7 @@
 // Boundary
 #include "sensorPackage.h"
 #include "spi_handler.h"
+#include "movement.h"
 
 int main()
 {
@@ -33,6 +35,10 @@ int main()
     
     parameters paramObj;
     parameters_init(&paramObj);
+
+    // Init boundary
+    sensorPackage_init();
+    movement_init();
     
     // Init controllers
     addRemove_init();
@@ -40,11 +46,11 @@ int main()
     loadData_init(&paramObj, &bufferObj);
     onOff_init(&paramObj, &bufferObj);
     
-    // Init boundary
-    sensorPackage_init();
-    
     // Stay here and wait for timer og SPI interrupts
     while(1);
+   
+    // Exits (Never used)
+    sensorPackage_exit();
     
     return 0;
 }

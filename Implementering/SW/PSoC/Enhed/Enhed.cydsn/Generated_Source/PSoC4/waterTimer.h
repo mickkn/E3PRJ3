@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: waterTimer.h
-* Version 2.50
+* Version 2.60
 *
 *  Description:
 *     Contains the function prototypes and constants available to the timer
@@ -10,14 +10,14 @@
 *     None
 *
 ********************************************************************************
-* Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
 ********************************************************************************/
 
-#if !defined(CY_Timer_v2_30_waterTimer_H)
-#define CY_Timer_v2_30_waterTimer_H
+#if !defined(CY_Timer_v2_60_waterTimer_H)
+#define CY_Timer_v2_60_waterTimer_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -28,7 +28,7 @@ extern uint8 waterTimer_initVar;
 /* Check to see if required defines such as CY_PSOC5LP are available */
 /* They are defined starting with cy_boot v3.0 */
 #if !defined (CY_PSOC5LP)
-    #error Component Timer_v2_50 requires cy_boot v3.0 or later
+    #error Component Timer_v2_60 requires cy_boot v3.0 or later
 #endif /* (CY_ PSOC5LP) */
 
 
@@ -47,6 +47,14 @@ extern uint8 waterTimer_initVar;
 #define waterTimer_RunModeUsed                0u
 #define waterTimer_ControlRegRemoved          0u
 
+#if defined(waterTimer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG)
+    #define waterTimer_UDB_CONTROL_REG_REMOVED            (0u)
+#elif  (waterTimer_UsingFixedFunction)
+    #define waterTimer_UDB_CONTROL_REG_REMOVED            (0u)
+#else 
+    #define waterTimer_UDB_CONTROL_REG_REMOVED            (1u)
+#endif /* End waterTimer_TimerUDB_sCTRLReg_SyncCtl_ctrlreg__CONTROL_REG */
+
 
 /***************************************
 *       Type defines
@@ -60,27 +68,18 @@ typedef struct
 {
     uint8 TimerEnableState;
     #if(!waterTimer_UsingFixedFunction)
-        #if (CY_UDB_V0)
-            uint16 TimerUdb;                 /* Timer internal counter value */
-            uint16 TimerPeriod;              /* Timer Period value       */
-            uint8 InterruptMaskValue;       /* Timer Compare Value */
-            #if (waterTimer_UsingHWCaptureCounter)
-                uint8 TimerCaptureCounter;  /* Timer Capture Counter Value */
-            #endif /* variable declaration for backing up Capture Counter value*/
-        #endif /* variables for non retention registers in CY_UDB_V0 */
 
-        #if (CY_UDB_V1)
-            uint16 TimerUdb;
-            uint8 InterruptMaskValue;
-            #if (waterTimer_UsingHWCaptureCounter)
-                uint8 TimerCaptureCounter;
-            #endif /* variable declarations for backing up non retention registers in CY_UDB_V1 */
-        #endif /* (CY_UDB_V1) */
+        uint16 TimerUdb;
+        uint8 InterruptMaskValue;
+        #if (waterTimer_UsingHWCaptureCounter)
+            uint8 TimerCaptureCounter;
+        #endif /* variable declarations for backing up non retention registers in CY_UDB_V1 */
 
-        #if (!waterTimer_ControlRegRemoved)
+        #if (!waterTimer_UDB_CONTROL_REG_REMOVED)
             uint8 TimerControlRegister;
         #endif /* variable declaration for backing up enable state of the Timer */
     #endif /* define backup variables only for UDB implementation. Fixed function registers are all retention */
+
 }waterTimer_backupStruct;
 
 
@@ -96,21 +95,17 @@ uint8   waterTimer_ReadStatusRegister(void) ;
 /* Deprecated function. Do not use this in future. Retained for backward compatibility */
 #define waterTimer_GetInterruptSource() waterTimer_ReadStatusRegister()
 
-#if(!waterTimer_ControlRegRemoved)
+#if(!waterTimer_UDB_CONTROL_REG_REMOVED)
     uint8   waterTimer_ReadControlRegister(void) ;
-    void    waterTimer_WriteControlRegister(uint8 control) \
-        ;
-#endif /* (!waterTimer_ControlRegRemoved) */
+    void    waterTimer_WriteControlRegister(uint8 control) ;
+#endif /* (!waterTimer_UDB_CONTROL_REG_REMOVED) */
 
 uint16  waterTimer_ReadPeriod(void) ;
-void    waterTimer_WritePeriod(uint16 period) \
-    ;
+void    waterTimer_WritePeriod(uint16 period) ;
 uint16  waterTimer_ReadCounter(void) ;
-void    waterTimer_WriteCounter(uint16 counter) \
-    ;
+void    waterTimer_WriteCounter(uint16 counter) ;
 uint16  waterTimer_ReadCapture(void) ;
 void    waterTimer_SoftwareCapture(void) ;
-
 
 #if(!waterTimer_UsingFixedFunction) /* UDB Prototypes */
     #if (waterTimer_SoftwareCaptureMode)
@@ -120,21 +115,19 @@ void    waterTimer_SoftwareCapture(void) ;
     #if (waterTimer_SoftwareTriggerMode)
         void    waterTimer_SetTriggerMode(uint8 triggerMode) ;
     #endif /* (waterTimer_SoftwareTriggerMode) */
+
     #if (waterTimer_EnableTriggerMode)
         void    waterTimer_EnableTrigger(void) ;
         void    waterTimer_DisableTrigger(void) ;
     #endif /* (waterTimer_EnableTriggerMode) */
 
+
     #if(waterTimer_InterruptOnCaptureCount)
-        #if(!waterTimer_ControlRegRemoved)
-            void    waterTimer_SetInterruptCount(uint8 interruptCount) \
-                ;
-        #endif /* (!waterTimer_ControlRegRemoved) */
+        void    waterTimer_SetInterruptCount(uint8 interruptCount) ;
     #endif /* (waterTimer_InterruptOnCaptureCount) */
 
     #if (waterTimer_UsingHWCaptureCounter)
-        void    waterTimer_SetCaptureCount(uint8 captureCount) \
-            ;
+        void    waterTimer_SetCaptureCount(uint8 captureCount) ;
         uint8   waterTimer_ReadCaptureCount(void) ;
     #endif /* (waterTimer_UsingHWCaptureCounter) */
 
@@ -256,8 +249,8 @@ void waterTimer_Wakeup(void)        ;
     #if (CY_PSOC5A)
         /* Use CFG1 Mode bits to set run mode */
         /* As defined by Verilog Implementation */
-        #define waterTimer_CTRL_MODE_SHIFT                     0x01u
-        #define waterTimer_CTRL_MODE_MASK                     ((uint8)((uint8)0x07u << waterTimer_CTRL_MODE_SHIFT))
+        #define waterTimer_CTRL_MODE_SHIFT                 0x01u
+        #define waterTimer_CTRL_MODE_MASK                 ((uint8)((uint8)0x07u << waterTimer_CTRL_MODE_SHIFT))
     #endif /* (CY_PSOC5A) */
     #if (CY_PSOC3 || CY_PSOC5LP)
         /* Control3 Register Bit Locations */
@@ -367,6 +360,8 @@ void waterTimer_Wakeup(void)        ;
         #endif /* CY_PSOC3 || CY_PSOC5 */ 
     #endif
 
+    #define waterTimer_COUNTER_LSB_PTR_8BIT       ((reg8 *) waterTimer_TimerUDB_sT16_timerdp_u0__A0_REG )
+    
     #if (waterTimer_UsingHWCaptureCounter)
         #define waterTimer_CAP_COUNT              (*(reg8 *) waterTimer_TimerUDB_sCapCount_counter__PERIOD_REG )
         #define waterTimer_CAP_COUNT_PTR          ( (reg8 *) waterTimer_TimerUDB_sCapCount_counter__PERIOD_REG )

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
    5:.\spi_handler.c **** * 
    6:.\spi_handler.c **** * Author: Mick Kirkegaard & Poul Overgaard
    7:.\spi_handler.c **** */
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 2
 
 
    8:.\spi_handler.c **** 
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
   77 001a 854B     		ldr	r3, .L19
   78 001c 1B68     		ldr	r3, [r3]
   79 001e 854A     		ldr	r2, .L19+4
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 3
 
 
   80 0020 391C     		mov	r1, r7
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  117 005e 1B78     		ldrb	r3, [r3]
  118 0060 413B     		sub	r3, r3, #65
  119 0062 152B     		cmp	r3, #21
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 4
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 4
 
 
  120 0064 00D9     		bls	.LCB62
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
   60:.\spi_handler.c ****                     spiCounter = 0;
  167              		.loc 1 60 0
  168 0088 694B     		ldr	r3, .L19
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 5
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 5
 
 
  169 008a 0022     		mov	r2, #0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  200              		.loc 1 83 0
  201              		.code	16
  202 00bc 0020     		mov	r0, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 6
 
 
  203 00be FFF7FEFF 		bl	GREEN_LED_Write
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  243 00fe 5049     		ldr	r1, .L19+16
  244 0100 7B69     		ldr	r3, [r7, #20]
  245 0102 CB18     		add	r3, r1, r3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 7
 
 
  246 0104 1A70     		strb	r2, [r3]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  287 014e 3B1D     		add	r3, r7, #4
  288 0150 101C     		mov	r0, r2
  289 0152 191C     		mov	r1, r3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 8
 
 
  290 0154 FFF7FEFF 		bl	config_config
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  325 018c FFF7FEFF 		bl	addRemove_verify
  326 0190 47E0     		b	.L3
  327              	.L8:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 9
 
 
  126:.\spi_handler.c ****                     
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  366 01d2 9A42     		cmp	r2, r3
  367 01d4 EFD3     		bcc	.L18
  140:.\spi_handler.c ****                     }
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 10
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 10
 
 
  141:.\spi_handler.c ****                     
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  408 0218 FFF7FEFF 		bl	SPIS_1_SpiUartClearRxBuffer
  155:.\spi_handler.c ****                     spiCounter = 0;
  409              		.loc 1 155 0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 11
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 11
 
 
  410 021c 044B     		ldr	r3, .L19
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  456 001d 00000000 		.4byte	0
  457 0021 00000000 		.4byte	0
  458 0025 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 12
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 12
 
 
  459 0029 02       		.uleb128 0x2
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  513 0089 01       		.byte	0x1
  514 008a 08       		.byte	0x8
  515 008b 0A010000 		.4byte	.LASF11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 13
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 13
 
 
  516 008f 04       		.uleb128 0x4
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  570 00fa 01       		.byte	0x1
  571 00fb 62       		.byte	0x62
  572 00fc 7A000000 		.4byte	0x7a
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 14
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 14
 
 
  573 0100 02       		.byte	0x2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  627 0166 94000000 		.4byte	.LASF19
  628 016a 01       		.byte	0x1
  629 016b 0E       		.byte	0xe
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 15
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 15
 
 
  630 016c 88000000 		.4byte	0x88
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  684 01de 00       		.byte	0
  685 01df 0D       		.uleb128 0xd
  686 01e0 B4000000 		.4byte	.LASF23
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 16
 
 
  687 01e4 01       		.byte	0x1
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  741 002c 16       		.uleb128 0x16
  742 002d 00       		.byte	0
  743 002e 03       		.uleb128 0x3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 17
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 17
 
 
  744 002f 0E       		.uleb128 0xe
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  798 0066 08       		.uleb128 0x8
  799 0067 3A       		.uleb128 0x3a
  800 0068 0B       		.uleb128 0xb
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 18
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 18
 
 
  801 0069 3B       		.uleb128 0x3b
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  855 009f 0E       		.uleb128 0xe
  856 00a0 3A       		.uleb128 0x3a
  857 00a1 0B       		.uleb128 0xb
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 19
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 19
 
 
  858 00a2 3B       		.uleb128 0x3b
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  912 0000 1C000000 		.4byte	0x1c
  913 0004 0200     		.2byte	0x2
  914 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 20
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 20
 
 
  915 000a 04       		.byte	0x4
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  948              	.LASF18:
  949 0058 73706954 		.ascii	"spiTxBuffer\000"
  949      78427566 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 21
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 21
 
 
  949      66657200 
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 1
  974              	.LASF25:
  975 00fa 2E5C7370 		.ascii	".\\spi_handler.c\000"
  975      695F6861 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclYUsPr.s 			page 22
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cci2lzJd.s 			page 22
 
 
  975      6E646C65 

@@ -1,4 +1,4 @@
---------------- Clean Started: 12/03/2014 09:11:53 Project: Enhed, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Clean Started: 12/03/2014 13:57:33 Project: Enhed, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\Enhed.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\addRemove.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\buffer.o"
@@ -60,4 +60,4 @@ Deleting file ".\Enhed_timing.html"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\ARM_C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\GNU_ARM_ASM_FILE.P"
---------------- Clean Succeeded: 12/03/2014 09:11:53 ---------------
+--------------- Clean Succeeded: 12/03/2014 13:57:34 ---------------

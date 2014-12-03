@@ -33,7 +33,7 @@ int humiSensor_getValue(float *val)
     float pwm_result;
    
     //Set SCL high for humi data out
-    SLC_Write(select);
+    P_FT2_Write(select);
     
     //Start conversion
     ADC_SAR_Seq_0_StartConvert();

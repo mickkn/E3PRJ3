@@ -1,6 +1,6 @@
 /*******************************************************************************
 * File Name: waterTimer_PM.c
-* Version 2.50
+* Version 2.60
 *
 *  Description:
 *     This file provides the power management source code to API for the
@@ -10,13 +10,14 @@
 *     None
 *
 *******************************************************************************
-* Copyright 2008-2012, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2008-2014, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
 ********************************************************************************/
 
 #include "waterTimer.h"
+
 static waterTimer_backupStruct waterTimer_backup;
 
 
@@ -42,25 +43,13 @@ static waterTimer_backupStruct waterTimer_backup;
 void waterTimer_SaveConfig(void) 
 {
     #if (!waterTimer_UsingFixedFunction)
-        /* Backup the UDB non-rentention registers for CY_UDB_V0 */
-        #if (CY_UDB_V0)
-            waterTimer_backup.TimerUdb = waterTimer_ReadCounter();
-            waterTimer_backup.TimerPeriod = waterTimer_ReadPeriod();
-            waterTimer_backup.InterruptMaskValue = waterTimer_STATUS_MASK;
-            #if (waterTimer_UsingHWCaptureCounter)
-                waterTimer_backup.TimerCaptureCounter = waterTimer_ReadCaptureCount();
-            #endif /* Backup the UDB non-rentention register capture counter for CY_UDB_V0 */
-        #endif /* Backup the UDB non-rentention registers for CY_UDB_V0 */
+        waterTimer_backup.TimerUdb = waterTimer_ReadCounter();
+        waterTimer_backup.InterruptMaskValue = waterTimer_STATUS_MASK;
+        #if (waterTimer_UsingHWCaptureCounter)
+            waterTimer_backup.TimerCaptureCounter = waterTimer_ReadCaptureCount();
+        #endif /* Back Up capture counter register  */
 
-        #if (CY_UDB_V1)
-            waterTimer_backup.TimerUdb = waterTimer_ReadCounter();
-            waterTimer_backup.InterruptMaskValue = waterTimer_STATUS_MASK;
-            #if (waterTimer_UsingHWCaptureCounter)
-                waterTimer_backup.TimerCaptureCounter = waterTimer_ReadCaptureCount();
-            #endif /* Back Up capture counter register  */
-        #endif /* Backup non retention registers, interrupt mask and capture counter for CY_UDB_V1 */
-
-        #if(!waterTimer_ControlRegRemoved)
+        #if(!waterTimer_UDB_CONTROL_REG_REMOVED)
             waterTimer_backup.TimerControlRegister = waterTimer_ReadControlRegister();
         #endif /* Backup the enable state of the Timer component */
     #endif /* Backup non retention registers in UDB implementation. All fixed function registers are retention */
@@ -88,35 +77,14 @@ void waterTimer_SaveConfig(void)
 void waterTimer_RestoreConfig(void) 
 {   
     #if (!waterTimer_UsingFixedFunction)
-        /* Restore the UDB non-rentention registers for CY_UDB_V0 */
-        #if (CY_UDB_V0)
-            /* Interrupt State Backup for Critical Region*/
-            uint8 waterTimer_interruptState;
 
-            waterTimer_WriteCounter(waterTimer_backup.TimerUdb);
-            waterTimer_WritePeriod(waterTimer_backup.TimerPeriod);
-            /* CyEnterCriticalRegion and CyExitCriticalRegion are used to mark following region critical*/
-            /* Enter Critical Region*/
-            waterTimer_interruptState = CyEnterCriticalSection();
-            /* Use the interrupt output of the status register for IRQ output */
-            waterTimer_STATUS_AUX_CTRL |= waterTimer_STATUS_ACTL_INT_EN_MASK;
-            /* Exit Critical Region*/
-            CyExitCriticalSection(waterTimer_interruptState);
-            waterTimer_STATUS_MASK =waterTimer_backup.InterruptMaskValue;
-            #if (waterTimer_UsingHWCaptureCounter)
-                waterTimer_SetCaptureCount(waterTimer_backup.TimerCaptureCounter);
-            #endif /* Restore the UDB non-rentention register capture counter for CY_UDB_V0 */
-        #endif /* Restore the UDB non-rentention registers for CY_UDB_V0 */
+        waterTimer_WriteCounter(waterTimer_backup.TimerUdb);
+        waterTimer_STATUS_MASK =waterTimer_backup.InterruptMaskValue;
+        #if (waterTimer_UsingHWCaptureCounter)
+            waterTimer_SetCaptureCount(waterTimer_backup.TimerCaptureCounter);
+        #endif /* Restore Capture counter register*/
 
-        #if (CY_UDB_V1)
-            waterTimer_WriteCounter(waterTimer_backup.TimerUdb);
-            waterTimer_STATUS_MASK =waterTimer_backup.InterruptMaskValue;
-            #if (waterTimer_UsingHWCaptureCounter)
-                waterTimer_SetCaptureCount(waterTimer_backup.TimerCaptureCounter);
-            #endif /* Restore Capture counter register*/
-        #endif /* Restore up non retention registers, interrupt mask and capture counter for CY_UDB_V1 */
-
-        #if(!waterTimer_ControlRegRemoved)
+        #if(!waterTimer_UDB_CONTROL_REG_REMOVED)
             waterTimer_WriteControlRegister(waterTimer_backup.TimerControlRegister);
         #endif /* Restore the enable state of the Timer component */
     #endif /* Restore non retention registers in the UDB implementation only */
@@ -143,7 +111,7 @@ void waterTimer_RestoreConfig(void)
 *******************************************************************************/
 void waterTimer_Sleep(void) 
 {
-    #if(!waterTimer_ControlRegRemoved)
+    #if(!waterTimer_UDB_CONTROL_REG_REMOVED)
         /* Save Counter's enable state */
         if(waterTimer_CTRL_ENABLE == (waterTimer_CONTROL & waterTimer_CTRL_ENABLE))
         {
@@ -182,7 +150,7 @@ void waterTimer_Sleep(void)
 void waterTimer_Wakeup(void) 
 {
     waterTimer_RestoreConfig();
-    #if(!waterTimer_ControlRegRemoved)
+    #if(!waterTimer_UDB_CONTROL_REG_REMOVED)
         if(waterTimer_backup.TimerEnableState == 1u)
         {     /* Enable Timer's operation */
                 waterTimer_Enable();

@@ -1,0 +1,91 @@
+\BOOKMARK [0][-]{chapter.1}{Ordliste}{}% 1
+\BOOKMARK [0][-]{chapter.2}{Kravspecifikation}{}% 2
+\BOOKMARK [1][-]{section.2.1}{Indledning}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{Akt\370rer}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.3}{Usecases}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.3.1}{UC1: Tilf\370j/fjern enhed}{section.2.3}% 6
+\BOOKMARK [2][-]{subsection.2.3.2}{UC2: Konfig}{section.2.3}% 7
+\BOOKMARK [2][-]{subsection.2.3.3}{UC3: Aktiver/deaktiver}{section.2.3}% 8
+\BOOKMARK [2][-]{subsection.2.3.4}{UC4: Databehandling}{section.2.3}% 9
+\BOOKMARK [2][-]{subsection.2.3.5}{UC5: Tjek status}{section.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.3.6}{UC6: Udskriv log}{section.2.3}% 11
+\BOOKMARK [1][-]{section.2.4}{Ikke-funktionelle krav}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.5}{Grafiske brugerflade-skitser \(BS\)}{chapter.2}% 13
+\BOOKMARK [0][-]{chapter.3}{Forunders\370gelse}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Sprinkler}{chapter.3}% 15
+\BOOKMARK [2][-]{subsection.3.1.1}{Sprinkler valg}{section.3.1}% 16
+\BOOKMARK [1][-]{section.3.2}{Temperatursensor \(SK\)}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.3}{Bev\346gelsessensor \(SK\)}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.1}{Bev\346gelsessensor valg}{section.3.3}% 19
+\BOOKMARK [1][-]{section.3.4}{Fugtsensor \(SK og LB\)}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.4.1}{Fugtsensor valg}{section.3.4}% 21
+\BOOKMARK [0][-]{chapter.4}{Systemarkitektur}{}% 22
+\BOOKMARK [1][-]{section.4.1}{Dom\346nemodel \(JC\)}{chapter.4}% 23
+\BOOKMARK [1][-]{section.4.2}{Hardware beskrivelse \(HW\)}{chapter.4}% 24
+\BOOKMARK [2][-]{subsection.4.2.1}{BDD}{section.4.2}% 25
+\BOOKMARK [2][-]{subsection.4.2.2}{BDD Master}{section.4.2}% 26
+\BOOKMARK [2][-]{subsection.4.2.3}{BDD Enhed}{section.4.2}% 27
+\BOOKMARK [2][-]{subsection.4.2.4}{IBD}{section.4.2}% 28
+\BOOKMARK [2][-]{subsection.4.2.5}{Gr\346nseflade}{section.4.2}% 29
+\BOOKMARK [2][-]{subsection.4.2.6}{Signal beskrivelse}{section.4.2}% 30
+\BOOKMARK [1][-]{section.4.3}{Software beskrivelse}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.3.1}{Logical View \(JC\)}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.2}{Deployment View \(JC\)}{section.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.3.3}{Implementation View \(BS\)}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.4}{Data View \(BS\)}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.5}{Kommunikationsprotokol \(BS MK PO\)}{section.4.3}% 36
+\BOOKMARK [0][-]{chapter.5}{Hardwaredesign}{}% 37
+\BOOKMARK [1][-]{section.5.1}{Prototypemodel}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{Temperatur- og fugtsensor \(JS LB\)}{chapter.5}% 39
+\BOOKMARK [2][-]{subsection.5.2.1}{Foranliggende filter}{section.5.2}% 40
+\BOOKMARK [2][-]{subsection.5.2.2}{Pr\346cisions- og st\370jh\345ndtering}{section.5.2}% 41
+\BOOKMARK [1][-]{section.5.3}{PIR-sensor \(MK PO SK\)}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.4}{Sprinkler-pumpe system \(MK PO SK\)}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.4.1}{230V/5V rel\346}{section.5.4}% 44
+\BOOKMARK [2][-]{subsection.5.4.2}{Alpha 2 pumpen}{section.5.4}% 45
+\BOOKMARK [2][-]{subsection.5.4.3}{Rel\346 styring}{section.5.4}% 46
+\BOOKMARK [2][-]{subsection.5.4.4}{Driver}{section.5.4}% 47
+\BOOKMARK [1][-]{section.5.5}{Str\370mforsyning og tilslutnings-print \(MK PO SK\)}{chapter.5}% 48
+\BOOKMARK [2][-]{subsection.5.5.1}{Str\370mforsyning}{section.5.5}% 49
+\BOOKMARK [2][-]{subsection.5.5.2}{Tilslutningsprint}{section.5.5}% 50
+\BOOKMARK [1][-]{section.5.6}{SPI \(MK PO SK\)}{chapter.5}% 51
+\BOOKMARK [2][-]{subsection.5.6.1}{Kernemodul og Driver}{section.5.6}% 52
+\BOOKMARK [2][-]{subsection.5.6.2}{SPI API}{section.5.6}% 53
+\BOOKMARK [2][-]{subsection.5.6.3}{SPI Handler}{section.5.6}% 54
+\BOOKMARK [1][-]{section.5.7}{Hardware forbindelser \(HW\)}{chapter.5}% 55
+\BOOKMARK [2][-]{subsection.5.7.1}{Enhed \(HW\)}{section.5.7}% 56
+\BOOKMARK [2][-]{subsection.5.7.2}{Master \(HW\)}{section.5.7}% 57
+\BOOKMARK [0][-]{chapter.6}{Softwaredesign}{}% 58
+\BOOKMARK [1][-]{section.6.1}{Dataprotokol \(BS\)}{chapter.6}% 59
+\BOOKMARK [1][-]{section.6.2}{Applikationsmodeller \(JC BS\)}{chapter.6}% 60
+\BOOKMARK [2][-]{subsection.6.2.1}{Master}{section.6.2}% 61
+\BOOKMARK [2][-]{subsection.6.2.2}{Enhed}{section.6.2}% 62
+\BOOKMARK [1][-]{section.6.3}{Klassebeskrivelser}{chapter.6}% 63
+\BOOKMARK [2][-]{subsection.6.3.1}{Master \(JC\)}{section.6.3}% 64
+\BOOKMARK [2][-]{subsection.6.3.2}{Enhed \(BS\)}{section.6.3}% 65
+\BOOKMARK [1][-]{section.6.4}{Statisk Klassediagram Devkit8000 \(JC\)}{chapter.6}% 66
+\BOOKMARK [0][-]{chapter.7}{Implementering}{}% 67
+\BOOKMARK [1][-]{section.7.1}{Fugt- og temperatursensor \(LB\)}{chapter.7}% 68
+\BOOKMARK [1][-]{section.7.2}{Tilslutningsprint \(SK\)}{chapter.7}% 69
+\BOOKMARK [1][-]{section.7.3}{PSoC API \(JS\)}{chapter.7}% 70
+\BOOKMARK [1][-]{section.7.4}{230V rel\346 \(PO\)}{chapter.7}% 71
+\BOOKMARK [1][-]{section.7.5}{SPI \(MK PO\)}{chapter.7}% 72
+\BOOKMARK [2][-]{subsection.7.5.1}{SPI Driver}{section.7.5}% 73
+\BOOKMARK [2][-]{subsection.7.5.2}{SPI API}{section.7.5}% 74
+\BOOKMARK [2][-]{subsection.7.5.3}{SPI Handler}{section.7.5}% 75
+\BOOKMARK [1][-]{section.7.6}{PIR API \(SK MK\)}{chapter.7}% 76
+\BOOKMARK [0][-]{chapter.8}{Modultest}{}% 77
+\BOOKMARK [1][-]{section.8.1}{SPI \(MK PO\)}{chapter.8}% 78
+\BOOKMARK [2][-]{subsection.8.1.1}{API}{section.8.1}% 79
+\BOOKMARK [2][-]{subsection.8.1.2}{Handler}{section.8.1}% 80
+\BOOKMARK [1][-]{section.8.2}{PIR sensor \(SK\)}{chapter.8}% 81
+\BOOKMARK [1][-]{section.8.3}{PIR API \(SK\)}{chapter.8}% 82
+\BOOKMARK [1][-]{section.8.4}{Tilslutningsprint \(SK\)}{chapter.8}% 83
+\BOOKMARK [1][-]{section.8.5}{230V rel\346 \(PO\)}{chapter.8}% 84
+\BOOKMARK [1][-]{section.8.6}{PSoC API}{chapter.8}% 85
+\BOOKMARK [1][-]{section.8.7}{Fugt- og temperatur-sensor print \(JS LB\)}{chapter.8}% 86
+\BOOKMARK [0][-]{chapter.9}{Integrationstest}{}% 87
+\BOOKMARK [1][-]{section.9.1}{SPI \(MK PO\)}{chapter.9}% 88
+\BOOKMARK [1][-]{section.9.2}{PIR \(SK\)}{chapter.9}% 89
+\BOOKMARK [0][-]{chapter.10}{Accepttestspecifikation}{}% 90
+\BOOKMARK [0][-]{chapter.11}{Bilag \(CD-indhold\)}{}% 91

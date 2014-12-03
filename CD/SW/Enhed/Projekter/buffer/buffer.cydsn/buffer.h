@@ -9,7 +9,7 @@
 #ifndef BUFFER_H
 #define BUFFER_H
 
-#define BUFFER_LENGTH 51
+#define BUFFER_LENGTH 11+10*4   // 1 data reading and 10 errors
 
 // Private:
 typedef struct buffer_type
@@ -17,6 +17,8 @@ typedef struct buffer_type
     char buffer_[BUFFER_LENGTH];    // Can hold 1 data reading and 10 errors
     unsigned int len_;              // Length of buffer_[]
     unsigned int cursor_;           // Points to next free index
+    unsigned int dataIndex_;        // Holds index of data, if it has been written
+    unsigned char dataWritten_;     // Flag to indicate wheter data has been written
 } buffer;
 
 // Public:

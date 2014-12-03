@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -53,12 +53,12 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
   37              	.LCFI2:
   38              		.cfi_def_cfa_register 7
   39 0006 7860     		str	r0, [r7, #4]
-  14:.\parameters.c **** 	this->active_ = 0;
+  14:.\parameters.c **** 	this->active_ = 1;
   40              		.loc 1 14 0
   41 0008 7B68     		ldr	r3, [r7, #4]
-  42 000a 0022     		mov	r2, #0
+  42 000a 0122     		mov	r2, #1
   43 000c 1A72     		strb	r2, [r3, #8]
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 2
 
 
   15:.\parameters.c **** 	this->humidity_ = 10;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
   90              		@ sp needed for prologue
   91 000c 80BD     		pop	{r7, pc}
   92              		.cfi_endproc
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 3
 
 
   93              	.LFE1:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  140              	.LFB3:
   30:.\parameters.c **** 
   31:.\parameters.c **** int parameters_getTemp(parameters * const this, float * temp)
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 4
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 4
 
 
   32:.\parameters.c **** {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  187 0002 82B0     		sub	sp, sp, #8
  188              	.LCFI13:
  189              		.cfi_def_cfa_offset 16
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 5
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 5
 
 
  190 0004 00AF     		add	r7, sp, #0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  236 000e 3B68     		ldr	r3, [r7]
  237 0010 1A60     		str	r2, [r3]
   48:.\parameters.c **** 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 6
 
 
   49:.\parameters.c **** 	return 0;
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  282 0018 181C     		mov	r0, r3
  283 001a BD46     		mov	sp, r7
  284 001c 02B0     		add	sp, sp, #8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 7
 
 
  285              		@ sp needed for prologue
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  332              		.section	.debug_info,"",%progbits
  333              	.Ldebug_info0:
  334 0000 4E020000 		.4byte	0x24e
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 8
 
 
  335 0004 0200     		.2byte	0x2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  389 0074 13       		.byte	0x13
  390 0075 29000000 		.4byte	0x29
  391 0079 06       		.uleb128 0x6
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 9
 
 
  392 007a 01       		.byte	0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  446 00ef 01       		.byte	0x1
  447 00f0 11010000 		.4byte	0x111
  448 00f4 07       		.uleb128 0x7
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 10
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 10
 
 
  449 00f5 E8000000 		.4byte	.LASF7
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  503 015e 0A       		.uleb128 0xa
  504 015f 01       		.byte	0x1
  505 0160 ED000000 		.4byte	.LASF11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 11
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 11
 
 
  506 0164 01       		.byte	0x1
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  560 01d3 00       		.byte	0
  561 01d4 0A       		.uleb128 0xa
  562 01d5 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 12
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 12
 
 
  563 01d6 2B010000 		.4byte	.LASF14
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  617 0247 02       		.byte	0x2
  618 0248 91       		.byte	0x91
  619 0249 70       		.sleb128 -16
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 13
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 13
 
 
  620 024a 00       		.byte	0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  674 002f 38       		.uleb128 0x38
  675 0030 0A       		.uleb128 0xa
  676 0031 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 14
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 14
 
 
  677 0032 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  731 0069 0E       		.uleb128 0xe
  732 006a 3A       		.uleb128 0x3a
  733 006b 0B       		.uleb128 0xb
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 15
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 15
 
 
  734 006c 3B       		.uleb128 0x3b
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  788 00a3 0B       		.uleb128 0xb
  789 00a4 0B       		.uleb128 0xb
  790 00a5 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 16
 
 
  791 00a6 0B       		.uleb128 0xb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  845 004c 0200     		.2byte	0x2
  846 004e 7D       		.byte	0x7d
  847 004f 08       		.sleb128 8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 17
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 17
 
 
  848 0050 04000000 		.4byte	.LCFI4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  902 00d6 77       		.byte	0x77
  903 00d7 10       		.sleb128 16
  904 00d8 00000000 		.4byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 18
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 18
 
 
  905 00dc 00000000 		.4byte	0
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  959 0160 04000000 		.4byte	.LCFI19
  960 0164 0200     		.2byte	0x2
  961 0166 7D       		.byte	0x7d
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 19
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 19
 
 
  962 0167 08       		.sleb128 8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  1016 0038 00000000 		.4byte	.LFB5
  1017 003c 1C000000 		.4byte	.LFE5-.LFB5
  1018 0040 00000000 		.4byte	.LFB6
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 20
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 20
 
 
  1019 0044 20000000 		.4byte	.LFE6-.LFB6
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  1056      6D657465 
  1056      72735F65 
  1056      78697400 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 21
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 21
 
 
  1057              	.LASF0:
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 1
  1079 010e 68756D69 		.ascii	"humidity_\000"
  1079      64697479 
  1079      5F00
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccokVY7s.s 			page 22
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cch2IG84.s 			page 22
 
 
  1080              	.LASF13:
