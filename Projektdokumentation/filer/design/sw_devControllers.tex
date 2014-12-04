@@ -62,10 +62,10 @@
 }
 \textbf{Ansvar:} at styre forløbet i UC4: Databehandling . \
 
-\verb+int menuloadData( )+ \\
+\verb+void getData( )+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} Sættes igang med et interrupt styret af en timer. Henter log over SPI netværket og gemmer den.\\
+\textbf{Beskrivelse:} Kaldes af en uafhængig tråd når en timer løber ud. Skal hente log-data over SPI netværket. Kontrollerer om der er nogle sensor-læsninger i mellem dataen og gemme denne i \verb+log+-objektet. Fejl gemmes ikke i \verb+log+.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_status}}

@@ -1,8 +1,0 @@
-Last Modified Date & Time: 12/03/2014 13:24:29
-
-Project : buffer
-		Design Wide APIs
-
-		cy_boot	v 4.10	v 4.11
-
-
