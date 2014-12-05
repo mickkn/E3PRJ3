@@ -8,37 +8,37 @@
 		\multicolumn{2}{|l|}{\textbf{UC2: Konfig}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Ændre default parametre på en Enhed			\\\hline
+		\textbf{Mål}								&Ændre parametre på en Enhed		\\\hline
 		\textbf{Initialisering}					&Bruger							\\\hline
 		\textbf{Aktører og Stakeholders}			&Bruger(Primær)					\\\hline
 		\textbf{Referencer}						&Ingen							\\\hline
 		\textbf{AASH}							&1								\\\hline
-		\textbf{Efterfølgende tilstand}			&Ingen							\\\hline
+		\textbf{Efterfølgende tilstand}			&Enhed bruger nye parametre		\\\hline
 		\textbf{Hovedforløb}					
 			&\begin{enumerate}
 	
 				\item Bruger vælger ''Konfig'' i hovedmenu
 				
-				\item \label{uc2afbryd}Bruger vælger den Enhed, der ønskes omkonfigureret.\newline
+				\item \label{uc2afbryd}Bruger vælger den Enhed, der ønskes omkonfigureret\newline
 				\textbf{[Undtagelse \ref{uc2afbryd}.a]} \newline
-					Bruger vælger afbryd
+					Bruger vælger ''Afbryd''
 				
-				\item \label{uc2afbryd2}Bruger ændrer parametre på den valgte Enhed.
+				\item \label{uc2afbryd2}Bruger ændrer parametre på den valgte Enhed
 				\textbf{[Undtagelse \ref{uc2afbryd2}.a]} \newline
 					Der indtastes ugyldige værdier	
 									
 				\item \label{uc2afbryd3} Bruger vælger ''Gem''\newline
 				\textbf{[Undtagelse \ref{uc2afbryd3}.a]} \newline
-					Bruger vælger afbryd
+					Bruger vælger ''Afbryd''
 				
-				\item Master sender de nye indstillinger til den valgte Enhed. 
+				\item Master sender de nye indstillinger til den valgte Enhed
 			
 	
 			\end{enumerate}\\\hline
 		\textbf{Undtagelser}
 			&\begin{enumerate}[label=\ref{uc2afbryd}.a]
 				
-				\item Bruger vælger ''afbryd''
+				\item Bruger vælger ''Afbryd''
 				
 					\subitem Skærmen viser hovedmenu
 			\end{enumerate}
@@ -52,9 +52,9 @@
 			
 			\begin{enumerate}[label=\ref{uc2afbryd3}.a]
 				
-				\item Bruger vælger ''afbryd''
+				\item Bruger vælger ''Afbryd''
 				
-				\subitem Skærmen viser Konfig-menu
+				\subitem Skærmen viser ''Konfig''-menu
 				
 
 			\end{enumerate}														\\\hline

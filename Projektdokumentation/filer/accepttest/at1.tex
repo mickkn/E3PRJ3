@@ -21,87 +21,87 @@
 %%%% Tabel Opsætning
 
 \textbf{1}	&Bruger vælger ''Tilføj/ fjern enhed'' i hovedmenu 
-			&Visuel: Menu fremkommer på skærmen 
+			&Visuel: ''Tilføj/fjern''-menu åbner på skærmen 
 			&N/A 
 			&N/A \\\hline
 			 
 \textbf{2}	&Bruger vælger "Tilføj enhed" 
-			&Visuel: Menu for "Tilføj enhed" fremkommer på masters skærm  
+			&Visuel: ''Tilføj enhed''-menu åbner på skærmen  
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{3}	&Der udføres visuelt en test for om listen med opsatte enheder fremkommer
-			&Visuel: Listen vises for bruger med opsatte enheder
+\textbf{3}	&En liste af opsatte enheder præsenteres på skærmen
+			&Visuel: Listen vises for bruger med evt. opsatte Enheder
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{3.a}	&Der testes visuelt om indtastning er mulig
-			&Felt for indtastningen er til rådighed for bruger
+\textbf{3a}	&Master beder bruger om at indtaste informationer
+			&Visuel: Det er muligt at indtaste informationer
 			&N/A
 			&N/A \\\hline 
 			
-\textbf{3.b}&Bruger indtaster navn (hul 1) og adresse (0x01) for Enhed
+\textbf{3b}&Bruger indtaster hul-nr. <1> og adresse på Enhed <1>
 			&Visuel: Den indtastede information vises på skærmen 
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{3b.a}&Bruger indtaster navn: <tom> og adresse: 0xFF
+\textbf{3b.a}&Bruger indtaster navn: <tom> og adresse: <99>
 			&Master giver fejlmeddelelse omkring ugyldig indtastning
 			&N/A 
 			&N/A \\\hline
 						 
-\textbf{3.c}&Masterenhed tilføjer Enhed til systemet med default parametre
+\textbf{3c}&Master tilføjer Enhed til systemet med default parametre
 			&Visuel: Enheden tilføjes med de indtastede informationer
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{3.d}&Enheden forbindes til kommunikationsnetværket
-			&Testes i 3.e
+\textbf{3d}&Enheden forbindes til kommunikationsnetværket
+			&Visuel: Stik er koblet korrekt i iht. tabel \ref{table:enhed_forbindelse}
 			&N/A
 			&N/A \\\hline  
 			
-\textbf{3.e}&Master verificere forbindelse til Enhed og sender dato og tidspunkt
+\textbf{3e}&Master verificere forbindelse til Enhed
 			&Visuel: Master viser godkendt Enhed
 			&N/A 
 			&N/A \\\hline 
 			
-\textbf{3e.a}&Forbindelsen mellem enhed og master afbrydes
-			&Visuel: Master giver besked om mistet kommunikation
+\textbf{3e.a}&Forbindelsen mellem Enhed og Master afbrydes
+			&Visuel: Master giver fejlbesked og mulighed for at forsøge igen eller gå tilbage
 			&N/A 
 			&N/A \\\hline
 						
-\textbf{4}	&Bruger vælger "Fjern enhed" 
-			&Visuel: Menu for "Fjern enhed" fremkommer på skærmen 
+\textbf{4}	&Bruger vælger ''Fjern enhed'' 
+			&Visuel: ''Fjern enhed''-menu åbner på skærmenen 
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{5}	&Der udføres visuelt en test for, om listen med opsatte enheder fremkommer 
-			&Listen præsenteres på skærmen 
+\textbf{5}	&En liste af opsatte enheder præsenteres på skærmen 
+			&Visuel: Listen vises for bruger med opsatte Enheder 
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{5.a}&Bruger indtaster adresse (0x01) på Enhed der ønskes fjernet
-			&Visuel: Bekræftelse vises på skærmen
+\textbf{5.a}&Bruger indtaster adresse <1> på Enhed
+			&Visuel: Muligt at skrive adresse
 			&N/A 
 			&N/A \\\hline
 			 
 \textbf{5.b}&Master deaktivere Enhed
-			&Visuel: Adressen accepteres og Enhed deaktiveres
+			&Visuel: Enhed 1 deaktiveres
 			&N/A 
 			&N/A \\\hline
 			
-\textbf{5.c}&Der testes visuelt at master giver information omkring at Enhed er slettet fra systemet
-			&Al information om enhed slettes fra systemet 
+\textbf{5.c}&Master sletter Enhed fra systemet
+			&Visuel: Enhed fjernes fra Enhedslisten 
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{6}	&Der testes visuelt at enheden er fjernet fra listen over opsatte enheder 
-			&Den opdateret liste præsenteres på skærmen 
+\textbf{6}	&Master opdaterer liste med opsatte enheder 
+			&Visuel: En opdateret liste præsenteres på skærmen 
 			&N/A 
 			&N/A \\\hline
 			 
-\textbf{7}	&Brugeren vælger at returnere til hovedmenuen
-			&Visuel: Master returnerer til hovedmenuen
+\textbf{7}	&Bruger kan returnere til hovedmenu eller opsætte ny Enhed
+			&Visuel: Det er muligt at returnere til hovedmenu eller opsætte ny Enhed
 			&N/A
 			&N/A \\\hline
 

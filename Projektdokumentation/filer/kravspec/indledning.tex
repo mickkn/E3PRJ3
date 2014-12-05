@@ -1,9 +1,8 @@
-Gruppen vil udvikle et system til vanding af golfbaner. I forbindelse med stigende temperature bliver det mere kritisk, at vandingen af golfbaner sker på de rigtige tidspunkter, for at holde banen spilbar. For at spare på ressourcerne er det også kritisk, ikke at spilde store mængder vand, på vanding af områder som ikke trænger til det.
+Gruppen vil udvikle et system til vanding af golfbaner. I forbindelse med stigende temperature bliver det mere kritisk, at vandingen af golfbaner sker på de rigtige tidspunkter, for at holde banen spilbar. For at spare på ressourcerne er det også kritisk, ikke at spilde store mængder vand, på vanding af områder som ikke trænger til det. 
 
-Med et system af intelligente enheder der arbejder autonomt, men som modtager indstillinger for vandingen fra en masterenhed styres vandingen på hele Golfbanen centralt. På denne måde sparer man arbejdstid for greenkeeperen og vandingen sker kun når det er nødvendigt.
-Systemet kaldes for EasyWater8000.
+Med et system af intelligente enheder der arbejder autonomt, men som modtager indstillinger for vandingen fra en Master, styres vandingen på hele Golfbanen centralt. På denne måde sparer man arbejdstid for greenkeeperen og vandingen sker kun når det er nødvendigt. Systemet kaldes for EasyWater8000. 
+Normalt vil man placere en af disse enheder ved hvert hul på golfbanen og lave et netværk af sensorer lokalt til denne enhed. Enheden kan herved overvåge området og vande hvis nødvendigt. Alle enhederne forbindes til et netværk, som er koblet sammen med en masterenhed. Grænseværdierne, for f.eks. jordfugtigheden, der afgør hvornår enheden, skal påbegynde vanding kommer fra Master og styres igennem denne af greenkeeperen. 
 
-Normalt vil man placere en af disse enheder ved hvert hul på golfbanen og lave et netværk af sensorer lokalt til denne enhed. Enheden kan herved overvåge området og vande hvis nødvendigt. Alle enhederne forbindes til et netværk, som er koblet sammen med en Master. Grænseværdierne, for f.eks. jordfugtigheden, der afgør hvornår enheden, skal påbegynde vanding kommer fra Master og styres igennem denne af greenkeeperen. 
 
 \begin{figure}[ht] \centering
 \fbox{\includegraphics[height=4.1cm]{filer/indledning/billeder/hul_med_sprinkler}}
@@ -31,4 +30,4 @@ En Enhed består altså af:
 \end{enumerate}
 
 Fugt- og temperatursensorerne registrerer banens behov for vanding. Bevægelsessensoren registrerer om der er spillere på det pågældende hul. Sprinkleren sørger for vandingen når der skal vandes. Denne skjules nede i græsset og kommer op når vandingen skal være aktiv.
-PSoC controller-boardet bliver hjernen i Enheden. Denne styrer kommunikationen til Master og holder styr på de generelle funktioner for Enheden så som udlæsning af data, aktivering af sprinkler mv.
+PSoC4 controller-boardet bliver hjernen i Enheden. Denne holder styr på de generelle funktioner for Enheden så som udlæsning af data, aktivering af sprinkler m.v.
