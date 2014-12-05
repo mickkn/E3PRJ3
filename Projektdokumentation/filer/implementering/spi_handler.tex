@@ -2,7 +2,7 @@
 
 \subsubsection*{Top-design - PSoC Creator 3.0}
 
-Topdesignet (figur\ref{lab:topdesign_spi}) består af en SPI blok, samt 3 digitale output pins. Herunder beskrives hvordan elementerne i topdesignet skal indstilles.
+Figur \ref{lab:topdesign_spi} viser topdesignet, der består af en SPI blok, samt 3 digitale output pins. Herunder beskrives hvordan elementerne i topdesignet skal indstilles.
 
 \begin{figure}[H] \centering
 {\includegraphics[width=0.4\textwidth]{filer/implementering/spi/spi_handler_topdesign}}
@@ -69,7 +69,8 @@ CY_ISR(isr_spi_rx) {
 
 Alle kommandoer der kræver et svar tilbage på SPI, bruger \verb+'R'+ casen, men eftersom PSoC4 kræver noget tid\footnote{HAL Exercise 7: Oplyses det at PSoC4 kræver 50us, men dette er ikke et problem da der laves én læsning ad gangen og der er min. 300ms i mellem hver læsning} til at hente og skrive i tx-bufferen er koden lavet sådan at man er på forkant med en læsning. Dvs. når der laves en læsning \verb+'R'+ fra Masteren, er der allerede skrevet til tx-bufferen, så man reelt læser data ud med det samme. 
 
-Det er derfor switchen tilgåes ved alle ''Read'' kommandoer, så hvor der f.eks. skal verificeres, laves der en læsning af Enhedens enhedsnummer. I eksemplet nedenfor er en global char brugt som enhedsnummer, denne læses ind i tx-bufferen når case \verb+'V'+ køres. Og når så case \verb+'R'+ køres, læses unitNo variablen først, hvorefter der skrives en ny værdi ind i tx-bufferen til næste \verb+'R'+ køres.
+Det er derfor switchen tilgåes ved alle ''Read'' kommandoer, så hvor der f.eks. skal verificeres, laves der en læsning af Enhedens enhedsnummer. I eksemplet nedenfor er en global char brugt som enhedsnummer, denne læses ind i tx-bufferen når case \verb+'V'+ køres. Når så case \verb+'R'+ køres, læses unitNo variablen først, hvorefter der skrives en ny værdi ind i tx-bufferen til næste \verb+'R'+ køres.
+
 
 \begin{lstlisting}[language=C]
 char unitNo = '1';

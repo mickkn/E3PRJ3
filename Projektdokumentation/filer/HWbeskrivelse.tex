@@ -39,10 +39,10 @@ IBD diagrammet giver et internt overblik over hvordan hele systemet er forbundet
 
 \begin{table}[H] %% Blok og Signal Tabel
 \subsection{Grænseflade}
-For at opnå forståelse for signalerne mellem blokkene laves en grænseflade beskrivelse, der beskriver de enkelte blokkes porte og hvilke signaler der løber imellem disse.
+For at opnå forståelse for signalerne mellem blokkene laves en grænseflade beskrivelse, der beskriver de enkelte blokkes porte og hvilke signaler der sendes imellem disse.
 
 \subsubsection{Blok beskrivelse}
-Til at beskrive blokkene nærmere anvendes tabeller som ses herunder. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
+Til at beskrive blokkene nærmere anvendes tabel \ref{table:Bloktabel}. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
 
 \caption{Tabel med beskrivelse af respektive blokke}
 \begin{small}
@@ -62,11 +62,11 @@ Enhed(PSoC) & Enhed er grænsefladen til den fysiske verden igennem sensorer & S
 FT-sensor & Måler temperatur og fugt & FT-Analog & Analog signal til Enhed \\ \cline{3-4}
 & & FT-TTL 	& Signal fra Enhed 	\\ \hline
 
-PIR-sensor & Detektere bevægelse & PIR-TTL & Signal til Enhed \\ \hline
+PIR-sensor & Detekterer bevægelse & PIR-TTL & Signal til Enhed \\ \hline
 
-Vandpumpe & Forsyner sprinkler med vand & Vand:Vand & Vand til Sprinkler \\ \hline
+Vandpumpe & Forsyner sprinkler med vand & Vand:Vand & Vand til sprinkler \\ \hline
  
-Sprinkler & Fordeler vand på golfbane & Vand:Vand & Vand til Golfbane \\ \hline
+Sprinkler & Fordeler vand på golfbane & Vand:Vand & Vand til golfbane \\ \hline
 
 Spændingsforsyning & Forsyner EasyWater8000, Master har sin egen spændingsforsyning & Power:3,3VDC \newline Max strømbelastning: 3,4A & Forsyning til FT-sensor \\ \cline{3-4}
 & & Power:5VDC \newline Max strømbelastning:2,2A		& Forsyning til PIR-sensor, Enhed 	\\ \hline
@@ -77,7 +77,7 @@ Spændingsforsyning & Forsyner EasyWater8000, Master har sin egen spændingsfors
 
 \begin{table}[H]
 \subsection{Signal beskrivelse}
-For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel som kan ses herunder. Hvert signal er beskrevet. Området et signal er defineret under, er også beskrevet. Blok og terminal indgår også. 
+For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel (tabel\ref{table:Signaltabel}). Hvert signal er beskrevet, og området et signal er defineret under, er også beskrevet. Blok og terminal indgår også. 
 \caption{Tabel over signaler med terminaler}
 \begin{small}
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2,2cm}|}
