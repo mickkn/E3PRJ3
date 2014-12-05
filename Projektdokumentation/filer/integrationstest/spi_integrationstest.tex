@@ -2,13 +2,13 @@
 \label{section:spi_integrationstest}
 %tekst
 
-I det følgende testes SPI kommunikationen. Alle kommandoer testes for sig og dokumenteres herunder ved logik analyse billeder samt tabeller der er udarbejdet af eksporterede .txt filer fra Salae Logic \footnote{Salae Logic er softwaren der benyttes til USB logic analyser. Det er herfra at analyse billeder samt data til tabellerne er fra}. 
+I det følgende testes SPI-kommunikationen. Alle kommandoer testes for sig og dokumenteres herunder ved logik analyse billeder samt tabeller der er udarbejdet af eksporterede .txt filer fra Salae Logic \footnote{Salae Logic er softwaren der benyttes til USB logic analyser. Det er herfra at analysebilleder samt data til tabellerne er fra}. 
 
 
 % Aktiver
 \subsubsection*{Aktiver}
 
-Aktiver testes med et test objekt
+Aktiver testes med et testobjekt
 
 \begin{lstlisting}[language=C]
 int main(void){
@@ -20,14 +20,14 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/integrationstest/billeder/spi_activate}}
-\caption{Analyse billede for kommandoen aktiver}
+\caption{Analysebillede for kommandoen aktiver}
 \label{lab:scop_activate}
 \end{figure}
 
 Tabel \ref{table:scop_activate} viser dataoverførelsen. Som det ses har kun MOSI betydning for aktiver, da aktiver er en write metode. 
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline 
@@ -44,7 +44,7 @@ Tabel \ref{table:scop_activate} viser dataoverførelsen. Som det ses har kun MOS
 
 % Deaktiver
 \subsubsection*{Deaktiver}
-Deaktiver testes med et test objekt
+Deaktiver testes med et testobjekt
 
 \begin{lstlisting}[language=C]
 int main(void){
@@ -56,14 +56,14 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/integrationstest/billeder/spi_deactivate}}
-\caption{Analyse billede for kommandoen deaktiver}
+\caption{Analysebillede for kommandoen deaktiver}
 \label{lab:scop_deactivate}
 \end{figure}
 
 Tabel \ref{table:scop_deactivate} viser dataoverførelsen. Som det ses har kun MOSI betydning for deaktiver, da deaktiver er en write metode. 
 
 \begin{table}[h]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline 
@@ -97,14 +97,14 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/integrationstest/billeder/spi_config}}
-\caption{Analyse billede for kommandoen config}
+\caption{Analysebillede for kommandoen config}
 \label{lab:scop_config}
 \end{figure}
 
 Tabel \ref{table:scop_config} viser dataoverførelsen. Som det ses har kun MOSI betydning for config, da config er en write metode. 
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
 		\hline 
@@ -136,7 +136,7 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/integrationstest/billeder/spi_verify}}
-\caption{Analyse billede for kommandoen verificer}
+\caption{Analysebillede for kommandoen verificer}
 \label{lab:scop_verify}
 \end{figure}
 
@@ -144,7 +144,7 @@ Tabel \ref{table:scop_verify} viser dataoverførelsen. Som det ses overføres de
  
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|c|}
 		\hline 
@@ -162,7 +162,7 @@ Tabel \ref{table:scop_verify} viser dataoverførelsen. Som det ses overføres de
 % Log
 
 \subsubsection*{Log}
-Getlog metoden testes vha. et test-objekt og med en test buffer i form af et char array på Enheden. Der er også sat en for-løkke ind til at udskrive strengene i vektoren.
+Getlog metoden testes vha. et testobjekt og med en testbuffer i form af et char array på Enheden. Der er også sat en for-løkke ind til at udskrive strengene i vektoren.
 
 \begin{lstlisting}[language=C]
 char testGetLog[] = "DTTT.TFFFVBEXXX";
@@ -182,7 +182,7 @@ char testGetLog[] = "DTTT.TFFFVBEXXX";
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/integrationstest/billeder/spi_getlog_and_error}}
-\caption{Analyse billede for kommandoen getLog}
+\caption{Analysebillede for kommandoen getLog}
 \label{lab:scop_getlog}
 \end{figure}
 
@@ -209,7 +209,7 @@ Tabel \ref{table:scop_getlog1} og \ref{table:scop_getlog2} viser dataoverførels
 
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel del 2}
+	\caption{Analysedata eksporteret til tabel del 2}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|c|c|c|c|}
 		\hline 
@@ -238,4 +238,4 @@ Der er ligeledes testet med et mere komplekst char array med flere data og error
 
 \subsubsection*{Begrænsninger}
 
-Ovenstående modultest er udført med et 7cm langt fladkabel til forbindelsen mellem Master og Enhed. Der er testet med et 22cm langt fladkabel, her var der en fejlrate på mere end 10\%. Ydermere er det nødvendigt at være opmærksom på ikke at lade nogle kabler krydse fladkablet, da dette giver støj og vil medføre fejl. Der er ikke oplevet fejl ved at benytte fladkablet på 7cm, så længe støjkilder holdes på afstand.   
+Ovenstående modultest er udført med et 7 cm langt fladkabel til forbindelsen mellem Master og Enhed. Der er testet med et 22 cm langt fladkabel, her var der en fejlrate på mere end 10 \%. Ydermere er det nødvendigt at være opmærksom på ikke at lade nogle kabler krydse fladkablet, da dette giver støj og vil medføre fejl. Der er ikke oplevet fejl ved at benytte fladkablet på 7 cm, så længe støjkilder holdes på afstand.   
