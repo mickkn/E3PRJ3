@@ -66,12 +66,12 @@
 \verb+int movementDetekt( )+ \\
 \textbf{Parametre:} Ingen. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal deaktiverer vanding ved at sætte \verb+active_+-flaget i \verb+parameters+-objektet til 0. Skal også starte en timer med udløb på 30 minutter. Skal sætte flaget \verb+movement_+ til 1, så der næste gang der gemmes data, registreres bevægelse. \\
+\textbf{Beskrivelse:} Skal deaktivere vanding ved at sætte \verb+active_+-flaget i \verb+parameters+-objektet til 0. Skal også starte en timer med udløb på 30 minutter. Skal sætte flaget \verb+movement_+ til 1, så der næste gang der gemmes data, registreres bevægelse. \\
 
 \verb+int logDataTimeout( )+ \\
 \textbf{Parametre:} Ingen. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal aflæses data fra \verb+sensorPackage+ og gemme disse i \verb+buffer+-objektet. Afhængig af \verb+movement_+-flaget, tilføjes passende \verb+char+ efter målt data i hht. dataprotokollen, og flaget sættes til 0. \\
+\textbf{Beskrivelse:} Skal aflæse data fra \verb+sensorPackage+ og gemme disse i \verb+buffer+-objektet. Afhængig af \verb+movement_+-flaget, tilføjes passende \verb+char+ efter målt data i hht. dataprotokollen, og flaget sættes til 0. \\
 
 \verb+int waterTimeout( )+ \\
 \textbf{Parametre:} Ingen. \\
