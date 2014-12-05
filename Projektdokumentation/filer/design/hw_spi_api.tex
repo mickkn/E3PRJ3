@@ -1,6 +1,6 @@
 % SPI API
 
-SPI\_api er en klasse til at styre SPI kommunikationen. Den består af en række metoder beskrevet i afsnit \ref{fig:SPI API klassediagram}. I de følgende sektioner beskrives i pseudo-kode hvordan metoderne skal implementeres. Alle metoderne afsluttes med at sende et 'C' til Enheden. Det sørger for at TxBufferen til SPI nulstilles, så den er klar til næste opgave.
+SPI\_api er en klasse til at styre SPI-kommunikationen. Den består af en række metoder beskrevet i afsnit \ref{fig:SPI API klassediagram}. I de følgende sektioner beskrives i pseudo-kode, hvordan metoderne skal implementeres. Alle metoderne afsluttes med at sende et 'C' til Enheden. Det sørger for at TX-bufferen til SPI nulstilles, så den er klar til næste opgave.
 
 \subsubsection*{int activate(int unit) const}
 
@@ -43,7 +43,7 @@ Return error if mismatch
 \subsubsection*{int config(int unit, float temp, float humi)} 
 
 Metoden skal sørge for at åbne kernefilen, skrive til den og lukke den igen.
-Den håndtere 2 floats, som skal konverteres til chars for at kunne sendes via SPI.
+Den håndterer 2 floats, som skal konverteres til chars for at kunne sendes via SPI.
 
 \begin{lstlisting}[language=C]
 Open file

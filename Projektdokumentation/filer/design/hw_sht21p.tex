@@ -7,7 +7,7 @@
 \label{lab:sht_filter}
 \end{figure}
 
-Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret temperatur og fugtsensor SHT21P. Denne er valgt ud fra at der således ikke behøves en sensor for hver af de to målinger, dermed sparres der et komponent. SHT21P sender en PWM ud som midles til en DC-spænding med et 2. ordens lavpasfilter. Denne spændingen sendes ind i en A/D-convertor i PSoCen hvor denne behandles i en funktion, for så at returnere en temperatur eller fugt. Et select ben på SHT21P angiver hvorvidt denne måler temp. eller fugt. SCL HIGH(1) giver fugt output, SCL LOW(0) giver temperatur output.
+Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret temperatur- og fugtsensor SHT21P. Denne er valgt ud fra at der således ikke behøves en sensor for hver af de to målinger, dermed sparres der et komponent. SHT21P sender en PWM ud som midles til en DC-spænding med et 2. ordens lavpasfilter. Denne spænding sendes ind i en A/D-convertor i PSoCen hvor denne behandles i en funktion, for så at returnere en temperatur eller fugt. Et select ben på SHT21P angiver hvorvidt denne måler temperatur eller fugt. SCL HIGH(1) giver fugt output, SCL LOW(0) giver temperatur output.
 
 \subsection{Foranliggende filter}
 \begin{figure}[htb]
@@ -44,8 +44,8 @@ step = \frac{2970}{140} = 21 \frac{mV}{^{\circ}C}
 f_c = \frac{1}{2 \pi * R1 * C1} = \frac{1}{2 \pi * 6,1*10^3  * 2,2*10^{-6}} = 12 Hz\pm5 \%
 \end{equation}
 
-Da komponenternes værdi har en afvigelse på $\pm$5 \%.
-$f_c$ ligger således en dekade under 120 Hz og da filteret er designet som et 2. ordens filter, vil det dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet 100 gange og tilbage er den tilnærmede DC-værdi. 
+Komponenternes værdi har en afvigelse på $\pm$5 \%.
+$f_c$ og ligger således en dekade under 120 Hz. Filteret er designet som et 2. ordens filter og vil derfor dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet 100 gange og tilbage er den tilnærmede DC-værdi. 
 
 \begin{equation}
 Gain = 20 * \log_{10}(x) <=> 40 dB = 20 * \log_ {10}(x) <=> x = 100

@@ -1,4 +1,4 @@
-Serial Parrallel Interface (SPI) er en måde at lave hurtig seriel dataudveksling på. SPI er udviklet af Motorola og fungerer ved at man, som regel, har en enkelt master enhed der styrer flere slave enheder. Ved SPI er der er ingen fejl-check men adressering af flere ender kan dog være HW krævende. I EasyWater8000 projektet er der SPI kommunikation imellem Master(devkit8000)
+Serial Parrallel Interface (SPI) er en måde at lave hurtig seriel dataudveksling på. SPI er udviklet af Motorola og fungerer ved at man, som regel, har en enkelt masterenhed der styrer flere slaveenheder. Ved SPI er der er ingen fejl-check men adressering af flere enheder kan dog være HW krævende. I EasyWater8000 projektet er der SPI kommunikation imellem Master(devkit8000)
 og Enhed(PSoC), det giver muligheden for at overføre flere data på samme tid imellem disse to.
 
 \begin{figure}[H] \centering
@@ -16,7 +16,7 @@ På figur \ref{lab:SPI} ses en typisk opkobling imellem Master og Slave, det kr�
 	\item SCLK står for "Serial clock" 
 \end{itemize}
 
-SPI kommunikation er baseret på skifteregister princippet, som ses på figur \ref{lab:SPI_REGISTER}. Der vælges hvilken slave der 
+SPI-kommunikation er baseret på skifteregister princippet, som ses på figur \ref{lab:SPI_REGISTER}. Der vælges hvilken slave der 
 ønskes at skrives til ved slave select(SS), derefter shiftes et 8-bit register 1 bit ad gangen. Serial clock er den clock der sørger for at
 shiftningen af bits sker korrekt, clockfrekvensen må ikke overstige grænsen for hvad enhederne kan håndtere.
 
@@ -27,18 +27,18 @@ shiftningen af bits sker korrekt, clockfrekvensen må ikke overstige grænsen fo
 \raggedright
 \end{figure}  
 
-En oftes anvendt kommunikation mellem master og slave foregår ved at master sætter SS til 0. Den fortæller nu til slaven at den er klar til 
-dataoverførelse. Nu sender masteren en bit over til slaven og påbegynder en full duplex data transmission, samtidigt sender slaven en bit over
+En oftes anvendt kommunikation imellem master og slave foregår ved at master sætter SS til 0. Den fortæller nu til slaven at den er klar til 
+dataoverførsel. Nu sender masteren en bit over til slaven og påbegynder en full duplex data transmission, samtidigt sender slaven en bit over
 til masteren. Denne process fortsætter indtil masteren har sendt alle sine bits, derefter stopper masteren med at toggle på clocken og slave 
 enheder bliver frigivet.
 
-SPI kan køre både Full- og halfduplex, dvs. at der kan være 2-vejs kommunikation ved Full-duplex eller 1-vejs kommunikation ved Half-duplex. I EasyWater8000 er der behov for at der kommunikeres 2 veje, så det er Full duplex. Men da Enheden fungere som slave, kan den ikke selvstændigt sende til Masteren, men behøver et kald om at nu skal den sende information. Dette tages der forbehold for i implementeringen.
+SPI kan køre både full- og halfduplex, dvs. at der kan være 2-vejs kommunikation ved full-duplex eller 1-vejs kommunikation ved half-duplex. I EasyWater8000 er der behov for at der kommunikeres 2 veje, så det er full duplex. Men da Enheden fungerer som slave, kan den ikke selvstændigt sende til Masteren, men behøver et kald, om at nu skal den sende information. Dette tages der forbehold for i implementeringen.
 
 \subsection{Kernemodul og Driver}
 
-I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}, der er dog lavet kraftigt om i driveren, så det tilpasses EasyWater8000s behov. Kernemodulet er der ikke lavet de store ændringer i så denne beskrives ikke i projektet.
+I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI-kommunikation}, der er dog lavet kraftigt om i driveren, så det tilpasses EasyWater8000s behov. Kernemodulet er der ikke lavet de store ændringer i så denne beskrives ikke i projektet.
 
-Driveren opbygges med en Skrive og en Læse metode, der begge kan læse eller skrive én 8 bits karakter(char).
+Driveren opbygges med en skrive- og læsemetode, der begge kan læse eller skrive én 8 bits karakter(char).
 
 \begin{lstlisting}[language=C]
 int write(data){
