@@ -2,9 +2,9 @@
 
 %tekst
 
-I følgende afsnit testes temperatur- og fugtighedssensoren samt lavpasfilteret monteret på printet sammen med. Der testes for om temperatur og fugtighedsændringer registreres korrekt og om omregningen fra DC-niveau til værdi stemmer overens med scenariet i test. Scopbillederne er taget med et agilent oscilloskop.
+I følgende afsnit testes fugt- og temperatursensoren sammen med lavpasfilter på det færdigudarbejdet PCB. Der testes for om temperatur og fugtighedsændringer registreres korrekt og om omregningen fra DC-niveau til værdi stemmer overens med scenariet i test. Scopbillederne er taget med et agilent oscilloskop.
 
-SHT21P-sensoren udsender et PWM-signal med en frekvens på ca 120 hz og en amplitude på 0V til Vcc. Ud fra PWMen kan temperatur og fugtighed udregnes med følgende formler som er hentet fra databladet:
+SHT21p-sensoren udsender et PWM-signal med en frekvens på 120 hz i området 0V til VCC. Ud fra PWMen kan temperatur og fugtighed udregnes med følgende formler som er hentet fra databladet:
 
 \begin{equation}
 -6+125*duty cycle= fugtighed i \%
@@ -14,7 +14,9 @@ SHT21P-sensoren udsender et PWM-signal med en frekvens på ca 120 hz og en ampli
 -46.85+175.72*duty cycle= temperatur i grader celsius
 \end{equation}
 
-PWM-signalet bliver igennem et 2. ordens lavpasfilter midlet til en DC. Ud fra denne DC og Vcc spændingen udregnes fugtigheden og temperaturen ved følgende formler. 
+PWM-signalet bliver, gennem et 2. ordens lavpasfilter, midlet til en DC. Ud fra denne DC-
+og VCC-værdi beregnes fugtigheden og temperaturen ved følgende formler.
+
 
 \begin{equation}
 -6+125*\frac{målt DC}{Vcc}= fugtighed i \%
@@ -24,12 +26,14 @@ PWM-signalet bliver igennem et 2. ordens lavpasfilter midlet til en DC. Ud fra d
 -46.85+175.72*\frac{målt DC}{Vcc}=temperatur i grader celsius
 \end{equation}
 
-Sensoren er forsynet med 3,3V men grundet et lille tab i sensoren svinger PWMen mellem 0 og 3,28V. Vcc er derfor defineret som 3,28V
+Sensoren er forsynet med 3,3V men grundet et lille tab i sensoren svinger PWMen mellem
+0 og 3,28 V.
+
 
 %Billede af målt PWM.
 
 
-Første test laves ved stuetemperatur. Til test af SHT21P sensoren bruges et færdigt termometer og fugtighedsmåler, af modellen Velleman - Thermo/Hygrometer. På billedet ses det at begge sensorer er i samme rum og at de bliver udsat for samme forhold. 
+Første test laves ved stuetemperatur. Til test af SHT21p sensoren bruges et færdigt termometer og fugtighedsmåler, af modellen Velleman - Thermo/Hygrometer. På \ref{lab:test_stue} ses det at begge sensorer er i samme rum og at de bliver udsat for samme forhold. 
 
 \begin{figure}[h]
 \centering
@@ -38,7 +42,7 @@ Første test laves ved stuetemperatur. Til test af SHT21P sensoren bruges et fæ
 \label{lab:test_stue}
 \end{figure}
 
-Som scop billedet viser måles både en DC og et PWM signal. DCen er signalet efter lavpasfilteret og PWMen er den rå data fra sensoren. 
+Som figur \ref{lab:test_stue} viser måles både en DC- og et PWM-signal. DCen er signalet efter lavpasfilteret og PWMen er den rå data fra sensoren. 
 Sensorens SCL-ben er sat højt og sensoren måler derfor fugtighed. PWMen måles til at have en duty cycle på 37 \% og spændingen efter filteret måles til 1,2 V. Ud fra databladet kan duty cyclen omregnes til fugtighed med følgende formel:
 
 Fugtighed regnet ud fra duty cycle
@@ -70,7 +74,7 @@ Samme målinger foretages:
 \begin{figure}[h]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_varmt}}
-\caption{Billede af test ved høj temperatur incl oscilloskop billede}
+\caption{Billede af test ved høj temperatur ink. oscilloskopbillede}
 \label{lab:test_varmt}
 \end{figure}
 
@@ -86,7 +90,8 @@ Med følgende formel regnes fugtigheden ud fra DC-værdien.
 -6+125*\frac{0,402}{3,28}= 9,32\%
 \end{equation}
 
-SCL-benet ligges nu lav ved at forbinde det til ground og temperaturen måles. Sensoren giver en pwm på 67,1 \% og en spænding efter filteret på 2,14 V Ud fra PWM regnes nu temperaturen.
+SCL-benet sættes nu lavt ved at forbinde det til ground og temperaturen måles. Sensoren giver en PWM på 67,1 \% og en spænding efter filteret på 2,14 V. Ud fra PWM beregnes temperaturen.
+
 
 \begin{equation}
 -46.85+175.72*0,671=71,06
@@ -98,7 +103,7 @@ Temperaturen regnes ud fra DCen som følger.
 -46.85+175.72*\frac{1,31}{3,28}=67,8
 \end{equation}
 
-For også og teste om sensoren kunne måle en høj luftfugtig foretages også en måling efter at have åndet på sensoren. Da der allerede er målt temperatur ved både stuetemperatur og høj temperatur udelades temperaturtest af denne test. 
+For også at teste om sensoren kunne måle en høj luftfugtig foretages en måling efter at have åndet på sensoren. Da der allerede er målt temperatur ved både stuetemperatur og høj temperatur udelades temperaturtest af denne test. 
 
 \begin{figure}[h]
 \centering
@@ -107,7 +112,7 @@ For også og teste om sensoren kunne måle en høj luftfugtig foretages også en
 \label{lab:test_fugtig}
 \end{figure}
 
-Ved testen sendte sensoren en PWM ud med en duty cycle på 69,2\% og en spænding på 2,24V efter filteret. 
+Ved testen sendte sensoren en PWM ud med en duty cycle på 69,2 \% og en spænding på 2,24 V efter filteret.
 
 
 \begin{equation}
@@ -121,7 +126,7 @@ Med følgende formel regnes fugtigheden ud fra DC-værdien.
 \end{equation}
 
 
-En test i med lav temperatur blev også fortaget. Temperaturen blev sænket ved hjælp af frysespray. Grundet den lave temperatur kom der kondensvand på sensoren som derfor målte en meget høj luftfugtighed. På grund af dette er måling af luftfugtighed udeladt af denne test. 
+En test ved lav temperatur blev også fortaget. Temperaturen blev sænket ved hjælp af frysespray. Grundet den lave temperatur kom der kondensvand på sensoren som derfor målte en meget høj luftfugtighed. På grund af dette er måling af luftfugtighed udeladt af denne test. 
 
 
 \begin{figure}[h]
@@ -131,7 +136,8 @@ En test i med lav temperatur blev også fortaget. Temperaturen blev sænket ved 
 \label{lab:test_kold}
 \end{figure}
 
-Sensoren giver en PWM på 20,4\% og en spænding efter filteret på 642mV, temperatur udregnes herefter.
+Sensoren giver en PWM på 20,4 \% og en spænding efter filteret på 642 mV, temperatur beregnes herefter.
+
 
 \begin{equation}
 -46.85+175.72*0,204=11

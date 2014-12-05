@@ -16,14 +16,15 @@
 		\textbf{Efterfølgende tilstand}			&Data gemt i Enhed og logget i Master + evt. vanding 	\\\hline
 		\textbf{Hovedforløb}						
 		
-		&I et fast interval udføres nedenstående forløb på Enhed for hver tilkoblede Komponentpakke:
+		&I et fast interval, udføres nedenstående forløb på Enhed for hver tilkoblede Komponentpakke:
 			\begin{enumerate}
 			
 				\item Sensorernes data for temperatur og fugtighed udlæses fra Golfbanen
 				
 				\item \label{uc4vandstart} Vanding startes på områder med for lave værdier
 				
-					\textbf{[Undtagelse \ref{uc4vandstart}.a]} Bevægelse registreret 				
+					\textbf{[Undtagelse \ref{uc4vandstart}.a]} \newline
+					Bevægelse registreret 				
 				
 				\item Enhed gemmer data i en buffer til senere udlæsning fra Master				
 			
@@ -32,7 +33,7 @@
 			I et andet fast interval udføres nedenstående forløb på Master for hver opsatte Enhed:
 			\begin{enumerate}[resume]
 			
-				\item Master henter information fra bufferen i Enheden
+				\item Master henter information fra buffer i Enhed
 				
 				\item Master gemmer data i log
 			\end{enumerate}
@@ -45,7 +46,7 @@
 				
 				\item \label{uc4deactivate} Vanding deaktiveres 30 min	
 				
-				\item Enhed gemmer hændelse i en buffer til senere udlæsning fra Master 
+				\item Enhed gemmer hændelse i buffer til senere udlæsning fra Master 
 				
 			\end{enumerate}\\\hline
 

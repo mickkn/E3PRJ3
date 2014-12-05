@@ -12,7 +12,7 @@
 \textbf{Ansvar:} Gemme information om grænseværdier mv. til det autonome vandingssystem. \
 
 \verb+int setTemp( float temp const ) +\\
-\textbf{Parametre:} temperatur. \\
+\textbf{Parametre:} Temperatur. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne temperatur i medlemsdata \verb+temperature_+. \\
 
@@ -22,7 +22,7 @@
 \textbf{Beskrivelse:} Returnerer medlem \verb+temperature_+ i reference. \\
 
 \verb+int setHumi( float humi const )+ \\
-\textbf{Parametre:} humidity. \\
+\textbf{Parametre:} Humidity. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
 \textbf{Beskrivelse:} Gemmer modtagne humidity i medlemsdata \verb+humidity_+. \\
 
@@ -51,7 +51,7 @@
 {\centering
 \textbf{buffer}\par
 }
-\textbf{Ansvar:} Holde data fra sensorerne indtil de udlæses af Master \
+\textbf{Ansvar:} Holde data fra sensorerne indtil de udlæses af Master. \
 
 \verb+buffer( )+ \\
 \textbf{Parametre:} Ingen. \\
@@ -66,4 +66,4 @@
 \verb+int getData( char * buf, unsigned int * len )+ \\
 \textbf{Parametre:} Pointer til char array til data. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal returnerer data fra \verb+buffer_+ i pointer og nulstille \verb+cursor_+-medlemmet.\\
+\textbf{Beskrivelse:} Skal returnere data fra \verb+buffer_+ i pointer og nulstille \verb+cursor_+-medlemmet.\\

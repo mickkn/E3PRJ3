@@ -1,4 +1,4 @@
-Sprinkler-pumpe systemet består af en Hunter PS Pop-up sprinkler og en Alpha 2 pumpe fra Grundfoss, disse forbindes med passende slanger og fittings. For at styre sprinkleren, skal Alpha 2 pumpen kunne tændes og afbrydes. Dette gøres via et 230V/5V relæ. Dette relæ styres via én pin Enheden. 
+Sprinkler-pumpe systemet består af en Hunter PS Pop-up sprinkler og en Alpha 2 pumpe fra Grundfoss, disse forbindes med passende slanger og fittings. For at styre sprinkleren, skal Alpha 2 pumpen kunne tændes og afbrydes. Dette gøres via et 230V/5V relæ. Dette relæ styres via én pin på Enheden. 
 
 
 
@@ -6,7 +6,7 @@ Sprinkler-pumpe systemet består af en Hunter PS Pop-up sprinkler og en Alpha 2 
 
 \subsection{230V/5V relæ}
 
-For at 230V/5V relæet kan blive en realitet, er det pålagt, at dette bygges i en lukket kasse og godkendes af en elektronikværksteds-ansvarlig. Kassen som bygges har et 230Vac apparatstik ind og et 230Vac stikkontakt ud. For at skabe forbindelse/afbrydelse af denne 230Vac strøm benyttes et relæ, dette relæ styrers af 5V. Når 5V  tilføjes relæets spole, klikker relæet og der skabes gennemgang fra apparatstik til stikkontakt. Dette lukkede kredsløb bygges som sagt ind i en lukke kasse med gennemsigtigt låg. Relæet der benyttes er et Finder 40.52s Figuren \ref{lab:RELAY} viser kredsløbet for dette lukkede kredsløb.
+For at 230V/5V relæet kan blive en realitet, er det pålagt, at dette bygges i en lukket kasse og godkendes af en elektronikværksteds-ansvarlig. Kassen som bygges har et 230Vac apparatstik ind og et 230Vac stikkontakt ud. For at skabe forbindelse/afbrydelse af denne 230Vac strøm benyttes et relæ, dette relæ styres af 5V. Når 5V  tilføjes relæets spole, klikker relæet og der skabes gennemgang fra apparatstik til stikkontakt. Dette lukkede kredsløb bygges som tidligere nævnt, ind i en lukket kasse med gennemsigtigt låg. Relæet der benyttes er et Finder 40.52s Figuren \ref{lab:RELAY} viser kredsløbet for dette lukkede kredsløb.
 
 \begin{figure}[H] \centering
 {\includegraphics[width=\textwidth]{filer/design/Billeder/230VAC_KREDS}}
@@ -39,7 +39,7 @@ I følge databladet for Finder 40.52s (figur \ref{lab:finder4052s}), kræver rel
 
 PSoC'ens udgang giver hverken strøm eller spænding nok til at trække relæet. PSoC'en afgiver 3,3V og relæet kræver 3,7V-8,8V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 100mA, derfor skal transistoren opfylde dette krav, det gør BC517 den kan leverer 500 mA. \newline
 
-R1(Ibase) modstanden er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Spændingen ved PSoC'en er 3,3V (Spændingen kan ske at falde en smule hvis den bliver belastet, men det har ingen betydning for kredsløbet) og spændingen ved transistoren base ben er 1,4V, det giver en spænding på 1,8V over modstanden. Ibase strømmen er beregnet udfra ohmslov og der er valgt en modstand på 18 kohm, der begrænser strømmen til 0,1 mA, se formel \ref{eq:Ibase}.
+På figur \ref{lab:BC517} ses R1(Ibase) modstanden er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Spændingen ved PSoC'en er 3,3V (Spændingen kan ske at falde en smule hvis den bliver belastet, men det har ingen betydning for kredsløbet) og spændingen ved transistoren base ben er 1,4V, det giver en spænding på 1,8V over modstanden. Ibase strømmen er beregnet udfra ohmslov og der er valgt en modstand på 18 kohm, der begrænser strømmen til 0,1 mA, se formel \ref{eq:Ibase}.
 \newline \newline
 Strømforstærkningen er faktisk 30000 gange i transistoren, så en strøm på 3 uA burde være nok, men der er taget et valg om at strømmen skal være 0,1 mA. BC517 er oplyst til at have et spændingsfald på 1V i mættet tilstand, det efterlader 4 V til relæet, hvilket også er nok da relæet virker indenfor 3,7V - 8,8V, se figur \ref{lab:finder4052s}. Der er foretaget en observation af at hvis modstanden blev alt for stor ville relæet tage længere tid om at trække, det er ikke lykkedes at finde en fornuftigt forklaring på dette. Dioden er indsat for at beskytte transistoren, den beskytter mod tilbageløbende strøm fra spolen i relæet.
 

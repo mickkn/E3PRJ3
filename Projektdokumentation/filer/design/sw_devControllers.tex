@@ -13,9 +13,9 @@
 \textbf{Ansvar:} at styre forløbet i UC1: Tilføj / fjern enhed. \
 
 \verb+int menuAddRemove( ) const+ \\
-\textbf{Parametre:} Modtager ingen parametre \\
-\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} Modtager information fra brugeren omkring enhed, verificere enheden over SPI netværket og gemme information i databasen..\\
+\textbf{Parametre:} Modtager ingen parametre. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Modtager information fra brugeren omkring Enhed. Verificerer Enheden over SPI netværket og gemmer information i databasen.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_config}}
@@ -26,12 +26,12 @@
 {\centering
 \textbf{Config}\par
 }
-\textbf{Ansvar:} at styre forløbet i UC2: Konfig. \
+\textbf{Ansvar:} At styre forløbet i UC2: Konfig. \
 
 \verb+int menuConfig( ) const+ \\
-\textbf{Parametre:} Modtager ingen parametre \\
-\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} Modtager information fra brugeren omkring enhed og parametre. Parametrene skrives til den pågældende enhed på SPI netværket.\\
+\textbf{Parametre:} Modtager ingen parametre. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Modtager information fra brugeren omkring Enhed og parametre. Parametrene skrives til den pågældende Enhed på SPI netværket.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_onOff}}
@@ -44,12 +44,12 @@
 {\centering
 \textbf{onOff}\par
 }
-\textbf{Ansvar:} at styre forløbet i UC3: Aktiver / deaktiver. \
+\textbf{Ansvar:} At styre forløbet i UC3: Aktiver / deaktiver. \
 
 \verb+int menuOnOff( ) const+ \\
-\textbf{Parametre:} Modtager ingen parametre \\
-\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} Modtager information fra brugeren omkring hvilken enhed som ønskes aktiveret eller deaktiveret. Enheden modtager informationen over SPI netværket.\\
+\textbf{Parametre:} Modtager ingen parametre. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Modtager information fra brugeren omkring hvilken Enhed som ønskes aktiveret eller deaktiveret. Enheden modtager informationen over SPI netværket.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_loadData}}
@@ -60,7 +60,7 @@
 {\centering
 \textbf{loadData}\par
 }
-\textbf{Ansvar:} at styre forløbet i UC4: Databehandling . \
+\textbf{Ansvar:} At styre forløbet i UC4: Databehandling. \
 
 \verb+void getData( )+ \\
 \textbf{Parametre:} Modtager ingen parametre \\
@@ -81,9 +81,9 @@
 \textbf{Ansvar:} at styre forløbet i UC5: Tjek status. \
 
 \verb+int menuStatus( ) const+ \\
-\textbf{Parametre:} Modtager ingen parametre \\
-\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} Henter den seneste log i hukommelsen og viser brugeren den, for den ønskede enhed.\\
+\textbf{Parametre:} Modtager ingen parametre. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Henter den seneste log i hukommelsen og viser brugeren den, for den ønskede Enhed.\\
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/sw_logView}}
@@ -97,7 +97,7 @@
 \textbf{Ansvar:} at styre forløbet i UC6: Udskriv log. \
 
 \verb+int menuLog( ) const+ \\
-\textbf{Parametre:} Modtager ingen parametre \\
-\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen \\
-\textbf{Beskrivelse:} Henter hele loggen i hukommelsen og viser brugeren den, for den ønskede enhed.\\
+\textbf{Parametre:} Modtager ingen parametre. \\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Henter hele loggen i hukommelsen og viser brugeren den, for den ønskede Enhed.\\
 

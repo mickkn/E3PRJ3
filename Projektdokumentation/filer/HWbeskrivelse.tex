@@ -23,7 +23,7 @@ BDD diagrammet for Master, viser at Master består af ét Devkit8000, som kobles
 \label{lab:bddenhed}
 \raggedright
 \end{figure}
-BDD diagrammet for Enhed, viser at én Enhed består af én PSoC som kan kobles sammen med op til 20 Vandpumper, 20 FT sensorer (Fugt- og Temperatursensorer) samt 1 PIR-sensor. Sprinkler bliver i systemet koblet sammen med én Vandpumpe.
+BDD diagrammet for Enhed, viser at én Enhed består af én PSoC som kan kobles sammen med op til 20 Vandpumper, 20 FT-sensorer (Fugt- og Temperatursensorer) samt 1 PIR-sensor. Sprinkleren bliver i systemet koblet sammen med én Vandpumpe.
 
 \begin{figure}[H] \centering
 \subsection{IBD}
@@ -33,16 +33,16 @@ BDD diagrammet for Enhed, viser at én Enhed består af én PSoC som kan kobles 
 \raggedright
 \end{figure}
 IBD diagrammet giver et internt overblik over hvordan hele systemet er forbundet. Der ses hvilke typer signaler der bliver sendt imellem de forskellige blokke. \newline \newline
-\textbf{Spændingsforsyning}: Spændingsforsyningens forbindelser er ikke påtegnet da dette ville give et uoverskueligt diagram, de er i stedet beskrevet med standardflowports. Spændingsforsyningen forsyner enhed (PSoC), FT sensor, PIR-sensor samt relæet i vandpumpen. Master(devkit8000) har sin egen spændingsforsyning.  \newline \newline
+\textbf{Spændingsforsyning}: Spændingsforsyningens forbindelser er ikke påtegnet da dette ville give et uoverskueligt diagram, de er i stedet beskrevet med standardflowports. Spændingsforsyningen forsyner Enhed (PSoC), FT sensor, PIR-sensor samt relæet i vandpumpen. Master (Devkit8000) har sin egen spændingsforsyning.  \newline \newline
 \textbf{FT sensor}: Blokken beskriver at fugt- og temperatursensor er integreret i en chip. \newline \newline
 \textbf{Relæ styring}: Blokken beskriver at vandpumpen består af et relæ, der står for at tænde/slukke for den. \newline \newline
 
 \begin{table}[H] %% Blok og Signal Tabel
 \subsection{Grænseflade}
-For at opnå forståelse for signalerne mellem blokkene laves en grænseflade beskrivelse, der beskriver de enkelte blokkes porte og hvilke signaler der løber imellem disse.
+For at opnå forståelse for signalerne mellem blokkene laves en grænseflade beskrivelse, der beskriver de enkelte blokkes porte og hvilke signaler der sendes imellem disse.
 
 \subsubsection{Blok beskrivelse}
-Til at beskrive blokkene nærmere anvendes tabeller som ses herunder. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
+Til at beskrive blokkene nærmere anvendes tabel \ref{table:Bloktabel}. Her er hvert signal i en respektiv blok kommenteret og blokkens funktion er kort beskrevet. 
 
 \caption{Tabel med beskrivelse af respektive blokke}
 \begin{small}
@@ -62,11 +62,11 @@ Enhed(PSoC) & Enhed er grænsefladen til den fysiske verden igennem sensorer & S
 FT-sensor & Måler temperatur og fugt & FT-Analog & Analog signal til Enhed \\ \cline{3-4}
 & & FT-TTL 	& Signal fra Enhed 	\\ \hline
 
-PIR-sensor & Detektere bevægelse & PIR-TTL & Signal til Enhed \\ \hline
+PIR-sensor & Detekterer bevægelse & PIR-TTL & Signal til Enhed \\ \hline
 
-Vandpumpe & Forsyner sprinkler med vand & Vand:Vand & Vand til Sprinkler \\ \hline
+Vandpumpe & Forsyner sprinkler med vand & Vand:Vand & Vand til sprinkler \\ \hline
  
-Sprinkler & Fordeler vand på golfbane & Vand:Vand & Vand til Golfbane \\ \hline
+Sprinkler & Fordeler vand på golfbane & Vand:Vand & Vand til golfbane \\ \hline
 
 Spændingsforsyning & Forsyner EasyWater8000, Master har sin egen spændingsforsyning & Power:3,3VDC \newline Max strømbelastning: 3,4A & Forsyning til FT-sensor \\ \cline{3-4}
 & & Power:5VDC \newline Max strømbelastning:2,2A		& Forsyning til PIR-sensor, Enhed 	\\ \hline
@@ -77,7 +77,7 @@ Spændingsforsyning & Forsyner EasyWater8000, Master har sin egen spændingsfors
 
 \begin{table}[H]
 \subsection{Signal beskrivelse}
-For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel som kan ses herunder. Hvert signal er beskrevet. Området et signal er defineret under, er også beskrevet. Blok og terminal indgår også. 
+For at fuldende beskrivelsen af grænsefladen er der lavet en signaltabel (tabel\ref{table:Signaltabel}). Hvert signal er beskrevet, og området et signal er defineret under, er også beskrevet. Blok og terminal indgår også. 
 \caption{Tabel over signaler med terminaler}
 \begin{small}
 \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2cm}|p{2,2cm}|}

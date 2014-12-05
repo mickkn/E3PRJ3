@@ -2,13 +2,13 @@
 
 \subsection{API}
 
-APIen testes med en logic-analyzer koblet på \verb+MOSI+, \verb+CLK+ og \verb+ENABLE+ benene på Devkit8000. Der køres derefter et testprogram, hvor hver enkelt metode testes.
+APIen testes med en Logic-Analyzer koblet på \verb+MOSI+, \verb+CLK+ og \verb+ENABLE+ benene på Devkit8000. Der køres derefter et testprogram, hvor hver enkelt metode testes.
 
 
 % Aktiver
 \subsubsection*{Aktiver}
 
-Aktiver testes med et test objekt
+Aktiver testes med et testobjekt
 
 \begin{lstlisting}[language=C]
 int main(void){
@@ -20,14 +20,14 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/mt_activate}}
-\caption{Analyse billede for kommandoen aktiver}
+\caption{Analysebillede for kommandoen aktiver}
 \label{lab:mt_activate}
 \end{figure}
 
 Tabel \ref{table:mt_activate} viser hvad der ligger på \verb+MOSI+ transmissionen. Helt som forventet.
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline 
@@ -43,7 +43,7 @@ Tabel \ref{table:mt_activate} viser hvad der ligger på \verb+MOSI+ transmission
 % Deaktiver
 \subsubsection*{Deaktiver}
 
-Deaktiver testes med et test objekt
+Deaktiver testes med et testobjekt
 
 \begin{lstlisting}[language=C]
 int main(void){
@@ -55,14 +55,14 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/mt_deactivate}}
-\caption{Analyse billede for kommandoen deaktiver}
+\caption{Analysebillede for kommandoen deaktiver}
 \label{lab:mt_deactivate}
 \end{figure}
 
 Tabel \ref{table:mt_deactivate} viser hvad der ligger på \verb+MOSI+ transmissionen. Helt som forventet.
 
 \begin{table}[h]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|}
 		\hline 
@@ -92,14 +92,14 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/mt_config}}
-\caption{Analyse billede for kommandoen config}
+\caption{Analysebillede for kommandoen config}
 \label{lab:mt_config}
 \end{figure}
 
 Tabel \ref{table:mt_config} viser hvad der ligger på \verb+MOSI+ transmissionen. Helt som forventet.
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|c|c|c|c|c|c|c|c|}
 		\hline 
@@ -116,7 +116,7 @@ Tabel \ref{table:mt_config} viser hvad der ligger på \verb+MOSI+ transmissionen
 
 % Verificer
 \subsubsection*{Verificer}
-Verify testes med et test objekt og der sendes et 1-tal af sted til sammenligning med Enhedens enhedsnummer.
+Verify testes med et testobjekt og der sendes et 1-tal af sted til sammenligning med Enhedens enhedsnummer.
 
 \begin{lstlisting}[language=C]
 int main(void){
@@ -128,7 +128,7 @@ int main(void){
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/mt_verify}}
-\caption{Analyse billede for kommandoen verificer}
+\caption{Analysebillede for kommandoen verificer}
 \label{lab:mt_verify}
 \end{figure}
 
@@ -139,7 +139,7 @@ Da der i testen ikke er koblet en Enhed på, returneres der en fejl i debug-cons
 Tabel \ref{table:mt_verify} viser hvad der sendes på \verb+MOSI+ linjen, som forventet
 
 \begin{table}[H]
-	\caption{Analyse data eksporteret til tabel}
+	\caption{Analysedata eksporteret til tabel}
 	\centering
 	\begin{tabular}{|l|c|c|c|}
 		\hline 
@@ -154,8 +154,8 @@ Tabel \ref{table:mt_verify} viser hvad der sendes på \verb+MOSI+ linjen, som fo
 % Log
 
 \subsubsection*{Log}
-Getlog metoden testes med et test-objekt, men eftersom der læses på data fra Enheden har det ikke været muligt at teste metoden alene, den testes derfor først i integrationstesten af SPI, se afsnit \ref{section:spi_integrationstest}.
+GetLog metoden testes med et test-objekt, men eftersom der læses på data fra Enheden har det ikke været muligt at teste metoden alene, den testes derfor først i integrationstesten af SPI, se afsnit \ref{section:spi_integrationstest}.
 
 \subsection{Handler}
 
-Handleren testes i Integrationstesten af SPI kommunikationen, hvor Devkit8000 og PSoC kobles sammen med testprogrammer installeret.
+ Handleren testes i integrationstesten af SPI-kommunikationen, hvor Devkit8000 og PSoC kobles sammen med testprogrammer installeret.

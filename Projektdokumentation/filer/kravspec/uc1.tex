@@ -8,7 +8,7 @@
 		\multicolumn{2}{|l|}{\textbf{UC1: Tilføj\slash fjern enhed}} \\\hline %% HUSK UCECASE NUMMER + NAVN
 		\endhead	
 		
-		\textbf{Mål}								&Bruger kan tilføje eller fjerne enheder fra systemet			\\\hline
+		\textbf{Mål}								&Bruger kan tilføje eller fjerne Enheder fra systemet			\\\hline
 		\textbf{Initialisering}					&Bruger														\\\hline
 		\textbf{Aktører og Stakeholders}			&Bruger(Primær)												\\\hline 
 		\textbf{Referencer}						&Ingen														\\\hline
@@ -35,7 +35,7 @@
 					
 					\item Enhed forbindes til kommunikationsnetværket
 					
-					\item \label{uc1verif} Master verificerer forbindelsen til Enhed og sender dato og tidspunkt
+					\item \label{uc1verif} Master verificerer forbindelsen til Enhed
 						
 					\textbf{[Undtagelse \ref{uc1verif}.a]} \newline
 					Enheden kan ikke verificeres
@@ -71,9 +71,7 @@
 			
 			\begin{enumerate}[label=\ref{uc1verif}.a]
 				
-				\item Master viser fejlbesked angående verificering af enheden
-				
-				\item Bruger kan forsøge igen (Gå til UC1.\ref{uc1verif} eller afbryde)
+				\item Master viser fejlbesked angående verificering af enheden. Bruger kan forsøge igen (Gå til UC1.\ref{uc1verif} eller vælge ''Tilbage'')
 
 			\end{enumerate}														\\\hline
 	\end{longtable} 

@@ -9,7 +9,7 @@ PSoC APIen testet i PSoC creator med den indbyggede debug-funktion. I main filen
 \label{lab:sht_testmain}
 \end{figure}
 
-Først initialiseres de nødvendige 'objekter' hvor opsætninger af komponenter også initialiseres. I en uendelig for-løkke oprettes to variabler til lagring af temperatur- og fugtighedsdata og disse sættes lige med nul. Herefter kaldes funktionen til aflæsning af data, denne kalder to funktioner, en for temperatur og en for fugtighed. Disse funktioner sørger selv for at sensorens select ben bliver sat lav for temperatur og høj for fugtighed. 
+Først initialiseres de nødvendige 'objekter' hvor opsætninger af komponenter også initialiseres. I en uendelig for-løkke oprettes to variabler til lagring af temperatur- og fugtighedsdata og disse sættes lige med nul. Derefter kaldes funktionen til aflæsning af data, denne kalder to funktioner, en for temperatur og en for fugtighed. Disse funktioner sørger selv for at sensorens select-ben bliver sat lav for temperatur og høj for fugtighed. 
 
 ADCen forbindes til GND og VCC for at teste nogle værdier, dette vil give hvad der svarer til 0 og 100 \% duty cycle. 
   
@@ -32,4 +32,4 @@ For 0 \% duty cycle vil $temp = -46,85$ og $fugt = -6,0$ i forhold til datablade
 for 100 \% duty cycle vil $temp = 128,9$ og $fugt = 119$ i forhold til databladet.
 Fugtigheden er, som nævnt under design, kun defineret ved 0...100 \% duty cycle og ovenstående værdi er udelukkende teoretisk og bruges kun for at teste funktionen. 
 
-Disse værdier stemmer godt overens, men en minimal afvigelse, med de udlæste værdier for debug og testen kan derfor antages som godkendt.
+Disse værdier stemmer godt overens, dog med en minimal afvigelse, med de udlæste værdier for debug og testen kan derfor antages som godkendt.

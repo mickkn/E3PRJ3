@@ -30,37 +30,37 @@
 			&N/A \\ \hline 
 			
 \textbf{2.a}	&PIR-sensoren påvirkes med bevægelse
-			&Vandingen bliver afbrudt på baggrund af registreret bevægelse.
+			&Se punkt 6 og 7
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{3}	&Der testes visuelt at Enhed har gemt behandlingerne af data i buffer
-			&Data er gemt og kan tilgås via Masterens log
+\textbf{3}	&Enhed gemmer data i en buffer til senere udlæsning fra Master
+			&Ikke testbart
 			&N/A
 			&N/A \\ \hline 
 
-\textbf{4}	&Master henter information fra bufferen i Enhed
-			&Testes i 5
+\textbf{4}	&Master henter information fra buffer i Enhed
+			&Visuel: Enhed indikere at der er hentet log (lilla rgb-lysdiode)
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{5}	&Bruger tilgår log i Master 
-			&Visuel: Informationen ligger tilgængelig i loggen
+\textbf{5}	&Master gemmer data i log 
+			&Visuel: Informationen ligger tilgængelig i loggen UC6
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{6}	&Ved test måles det at der sendes et signal til Enhed ved registreret bevægelse
-			&Enhed registrer signalet fra PIR-sensor 
+\textbf{6}	&Enhed modtager besked ved bevægelse
+			&Visuel: Enhed deaktiveres i 30 min (rød rgb-lysdiode)
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{7}	&Ved test ændres værdier for Enhed således at denne ville starte en vanding
-			&Vandingen er ikke mulig i 30 min.
+\textbf{7}	&Vanding deaktiveres 30 min
+			&Vandingen er ikke mulig i 30 min
 			&N/A
 			&N/A \\ \hline 
 			
-\textbf{8}	&Der testes visuelt at Enhed har gemt behandlingerne af data i buffer
-			&Testes i 5
+\textbf{8}	&Enhed gemmer hændelse i buffer til senere udlæsning fra Master
+			&Ikke testbart
 			&N/A
 			&N/A \\ \hline 					
 			

@@ -1,6 +1,6 @@
 %% SW arkitektur: Logical View
 
-Logical View skal danne et overblik over hvilke softwarepakker der befinder sig på vores platforme. Blokkene inde i de respektive pakker kan sammen med domænemodellen hjælpe med at give et overblik over hvilke klasser og kernemoduler der skal bruges.
+Logical View skal danne et overblik over hvilke softwarepakker der befinder sig på platforme. Blokkene inde i de respektive pakker kan sammen med domænemodellen, hjælpe med at give et overblik over hvilke klasser og kernemoduler der skal bruges.
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=0.7]{filer/systemarkitektur/logical_view_devkit}}
@@ -8,7 +8,7 @@ Logical View skal danne et overblik over hvilke softwarepakker der befinder sig 
 \label{fig:Logical View Devkit8000}
 \end{figure}
 
-Figur \ref{fig:Logical View Devkit8000} illustrerer hvilke softwarepakker der ligger på Masteren. I bunden er \textit{Device drivers}-pakken som håndterer SPI kommunikationen imellem Devkit8000 og PSoC. I midten ligger \textit{Hardware API}-pakken som håndterer protokol-vedtægter ifm. kommunikationen. \textit{Application}-pakken tager sig af alt UI samt log og fejlhåndtering.
+Figur \ref{fig:Logical View Devkit8000} illustrerer hvilke softwarepakker der ligger på Masteren. I bunden er \textit{Device drivers}-pakken som håndterer SPI kommunikationen imellem Master og Enhed. I midten ligger \textit{Hardware API}-pakken som håndterer protokol-vedtægter ifm. kommunikationen. \textit{Application}-pakken tager sig af alt UI samt log og fejlhåndtering.
 
 \clearpage
 
