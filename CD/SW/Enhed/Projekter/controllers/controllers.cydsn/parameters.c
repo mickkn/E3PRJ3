@@ -11,7 +11,7 @@
 
 extern void parameters_init(parameters * const this)
 {
-	this->active_ = 0;
+	this->active_ = 1;
 	this->humidity_ = 10;
 	this->temperature_ = 30;
 }

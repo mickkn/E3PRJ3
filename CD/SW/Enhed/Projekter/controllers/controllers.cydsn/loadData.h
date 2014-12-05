@@ -12,6 +12,8 @@
 #include "buffer.h"
 #include "parameters.h"
 #include "sensorPackage.h"
+#include <stdio.h>           // snprint
+    
 #define LOGDATATIMEOUT 8   // in sec
 #define WATERTIMEOUT 10     // in sec
     

@@ -1,0 +1,17 @@
+Last Modified Date & Time: 12/05/2014 12:25:57
+
+Project : controllers
+		Schematic : TopDesign
+
+		logDataTimer	v 2.50tv 2.60
+		waterTimer	v 2.50tv 2.60
+		ADC_in	v 2.0tv 2.5
+		SLC	v 2.0tv 2.5
+		water_pin	v 2.0tv 2.5
+
+Project : controllers
+		Design Wide APIs
+
+		cy_boot	v 4.10	v 4.11
+
+

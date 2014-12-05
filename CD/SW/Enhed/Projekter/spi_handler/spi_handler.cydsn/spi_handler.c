@@ -9,14 +9,20 @@
 #include "SPI_handler.h"
 
 char spiBuffer[64];
-char spiTxBuffer[256]; 
-char testGetLog[] = "DTTT.TFFFVBEXXX"; // (D)ata+(E)rror: TTT.TFFFVB+EXXX
+char spiTxBuffer[64]; 
 char unitNo = '1';
 int spiCounter = 0;
 int spiReadCounter = 0;
-unsigned int len = sizeof(testGetLog);
+unsigned int len;// = sizeof(testGetLog);
 char tempBuffer[6]; // T T T . T \0
 char humiBuffer[4]; // F F F \0
+
+void spi_init()
+{
+    SPIS_1_Start();
+	SPIS_1_SetCustomInterruptHandler(isr_spi_rx);
+	SPIS_1_SpiUartClearTxBuffer();
+}
 
 /*
  * SPI RX ISR
@@ -60,7 +66,7 @@ CY_ISR(isr_spi_rx) {
                     spiCounter = 0;
                     
                     /*Call method*/
-                    //turnOnOff(true)
+                    onOff_turnOnOff(1);
                     
                 break;
             case 'D':
@@ -73,7 +79,7 @@ CY_ISR(isr_spi_rx) {
                     spiCounter = 0;
                     
                     /*Call method*/
-                    //turnOnOff(false)
+                    onOff_turnOnOff(0);
                     
                 break;
             case 'P':
@@ -103,7 +109,7 @@ CY_ISR(isr_spi_rx) {
                     humiValue = (float)atof(humiBuffer);
                     
                     /* Call method */
-                    //config( &tempValue, &humiValue);
+                    config_config(&tempValue, &humiValue);
                     
                     /* Clear Buffer and Counter */
                     SPIS_1_SpiUartClearTxBuffer();
@@ -120,24 +126,25 @@ CY_ISR(isr_spi_rx) {
                     SPIS_1_SpiUartClearTxBuffer();
                     SPIS_1_SpiUartWriteTxData(unitNo);
                     spiCounter = 0;
+                    
+                    /* Call method */
+                    addRemove_verify();
+                    
     			break;
             case 'L':
                     GREEN_LED_Write(1);
                     RED_LED_Write(0);
                     BLUE_LED_Write(0);
                     
+                    char * buf;
                     /* Call method */
-                    //getBuffer(*buf, len);
+                    loadData_getBuffer(&buf, &len);
                     
-                    //for(c = 0 ; c < len ; c++){
-                    //spiTxBuffer[c] = buf[c];
-                    //}
-                    
-                    // Test metode
-                    for(c = 0 ; c < len ; c++){
-                        spiTxBuffer[c] = testGetLog[c];
+                    for(c = 0 ; c < len ; c++)
+                    {
+                        spiTxBuffer[c] = buf[c];
                     }
-                    
+
                     SPIS_1_SpiUartClearTxBuffer();
                     SPIS_1_SpiUartWriteTxData((char)len);
                     spiCounter = 0;

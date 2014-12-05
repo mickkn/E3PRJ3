@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="controllers\controllers\Source Files\addRemove.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="controllers\controllers\controllers.cydwr">
 <ExpandedNodeIds>
 <v>controllers</v>
 <v>controllers\controllers</v>
@@ -138,9 +138,6 @@
 <v>controllers\controllers\Source Files\config.c</v>
 <v>controllers\controllers\Source Files\humiSensor.c</v>
 <v>controllers\controllers\Source Files\loadData.c</v>
-<v>controllers\controllers\Source Files\onOff.c</v>
-<v>controllers\controllers\Source Files\parameters.c</v>
-<v>controllers\controllers\Source Files\sensorPackage.c</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -220,12 +217,12 @@
 <v>controllers\controllers</v>
 <v>controllers\controllers\PSoC 4 Architecture TRM</v>
 <v>controllers\controllers\PSoC 4200 Family Datasheet</v>
-<v>controllers\controllers\System Reference Guide v4_10</v>
+<v>controllers\controllers\System Reference Guide v4_11</v>
 <v>controllers\controllers\ADC_SAR_SEQ_P4_v1_10</v>
 <v>controllers\controllers\cy_clock_v2_20</v>
 <v>controllers\controllers\cy_isr_v1_70</v>
-<v>controllers\controllers\cy_pins_v2_0</v>
-<v>controllers\controllers\Timer_v2_50</v>
+<v>controllers\controllers\cy_pins_v2_5</v>
+<v>controllers\controllers\Timer_v2_60</v>
 <v>controllers\controllers\ZeroTerminal</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
@@ -233,12 +230,12 @@
 <v>controllers\controllers</v>
 <v>controllers\controllers\PSoC 4 Architecture TRM</v>
 <v>controllers\controllers\PSoC 4200 Family Datasheet</v>
-<v>controllers\controllers\System Reference Guide v4_10</v>
+<v>controllers\controllers\System Reference Guide v4_11</v>
 <v>controllers\controllers\ADC_SAR_SEQ_P4_v1_10</v>
 <v>controllers\controllers\cy_clock_v2_20</v>
 <v>controllers\controllers\cy_isr_v1_70</v>
-<v>controllers\controllers\cy_pins_v2_0</v>
-<v>controllers\controllers\Timer_v2_50</v>
+<v>controllers\controllers\cy_pins_v2_5</v>
+<v>controllers\controllers\Timer_v2_60</v>
 <v>controllers\controllers\ZeroTerminal</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
@@ -261,6 +258,7 @@
 <name v=".\controllers.cydsn\config.c" />
 <name v=".\controllers.cydsn\addRemove.h" />
 <name v=".\controllers.cydsn\addRemove.c" />
+<name v=".\controllers.cydsn\controllers.cydwr" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

@@ -20,8 +20,7 @@ int main()
 
     CyGlobalIntEnable; /* Her bliver global interrupts aktiveret. */
     
-    isr_pir_StartEx(P_PIR); /*Her bliver pir interruptet startet*/
-    
+
     for(;;)
     {
         /* Place your application code here. */

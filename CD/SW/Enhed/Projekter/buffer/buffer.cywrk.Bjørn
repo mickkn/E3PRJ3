@@ -84,15 +84,6 @@
 <v>buffer\buffer\Generated_Source\PSoC4\cy_boot\core_cmInstr.h</v>
 <v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyBootAsmGnu.s</v>
 <v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyBootAsmIar.s</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyBootAsmRv.s</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyFlash.c</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyFlash.h</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyLib.c</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\CyLib.h</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\cypins.h</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\cyPm.c</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\cyPm.h</v>
-<v>buffer\buffer\Generated_Source\PSoC4\cy_boot\cytypes.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -136,23 +127,6 @@
 <VisibleNodeIds>
 <v>buffer</v>
 <v>buffer\buffer</v>
-<v>buffer\buffer\CortexM0</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\buffer.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\Listing Files\test_buffer.lst</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\buffer.elf</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\buffer.hex</v>
-<v>buffer\buffer\CortexM0\ARM_GCC_473\Debug\buffer.map</v>
 <v>buffer\buffer\buffer.rpt</v>
 <v>buffer\buffer\buffer_timing.html</v>
 </VisibleNodeIds>
