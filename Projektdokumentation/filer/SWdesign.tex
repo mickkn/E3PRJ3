@@ -1,37 +1,38 @@
 \chapter{Softwaredesign}
 
-\section{Dataprotokol (BS)}
+\section{Dataprotokol (BS)}\ref{header:dataprotokol}
 \input{filer/design/sw_dataprotokol}
 
 \section{Applikationsmodeller (JC BS)}
+Selve designet af softwaren bygger på de følgende applikationsmodeller. Her laves der sekvens- og klassediagrammer over hver del af systemet samt klassebeskrivelser hvor funktionen for de enkelte metoder beskrives.
+
 \input{filer/design/sw_applikationsmodel}
 
-\section{Klassebeskrivelser}
+% Klassebeskrivelser
+\subsection{Klassebeskrivelser}
 Her følger klassebeskrivelser for de udledte klasser fra applikationsmodellerne.
 
-\subsection{Master (JC)}
+% Master
+\subsubsection{Master (JC)}
 \input{filer/design/sw_klasseSPI}
-
 \input{filer/design/sw_devControllers}
-
 \input{filer/design/sw_domain}
 
-\subsection{Enhed (BS)}
+% Enhed
+\subsubsection{Enhed (BS)}
 Her følger klassebeskrivelser til Enhed. 
-Bemærk at alt kode til PSoC er skrevet i \verb+C+, hvorfor det ikke er muligt at lave klasser. Beskrivelserne tager dog udgangspunkt i \verb-C++-, men skal fortolkes iht. beskrivelsen i \textit{UML-Light}\footnote{T-133 UML-Light af Finn Overgaard Hansen. Benyttet i forbindelse med faget I1OPRG (Objektorienteret PRoGrammering)på 1. semester.} 
+Bemærk at alt kode til PSoC er skrevet i \verb+C+, hvorfor det ikke er muligt at lave klasser. Beskrivelserne tager dog udgangspunkt i \verb-C++-, men skal fortolkes iht. beskrivelsen i \textit{UML-Light}\footnote{T-133 UML-Light af Finn Overgaard Hansen. Benyttet i forbindelse med faget I1OPRG (Objektorienteret PRoGrammering) på 1. semester.} 
 
 \input{filer/design/sw_psoc_controller}
-
 \input{filer/design/sw_psoc_domain}
-
 \input{filer/design/sw_psoc_boundary}
-
 \input{filer/design/sw_psoc_interrupt}
 
 \clearpage
 
+% Statiske klassediagrammer
 \section{Statisk klassediagram}
-Efter sekvensdiagrammerne, klassediagrammet og klassebsekrivelser er designfasen så langt at der nu kan sammensættes et statisk klassediagram som viser det samlede software design.
+Efter sekvensdiagrammerne, klassediagrammet og klassebeskrivelser er designfasen så langt at der nu kan sammensættes et statisk klassediagram som viser det samlede software design. 
 
 \subsection{Master (JC)}
 \input{filer/design/sw_klassediagram_static}

@@ -2,7 +2,7 @@
 
 \begin{figure}[htbp] \centering
 {\includegraphics[scale=1.5]{filer/design/Klassediagrammer/SPI_API}}
-\caption{klassediagram SPI API}
+\caption{Klasse SPI\_api}
 \label{fig:SPI API klassediagram}
 \end{figure} 
 
@@ -14,24 +14,24 @@
 \verb+int activate( int unit ) const +\\
 \textbf{Parametre:} Modtager en integer på Enhed som skal aktiveres. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Metoden skal aktivere Enheden \verb+unit+ over SPI netværket.\\
+\textbf{Beskrivelse:} Metoden skal aktivere Enheden \verb+unit+ over SPI netværket ved brug af kommandoen \verb+"AC"+.\\
 
 \verb+int deactivate( int unit ) const+ \\
-\textbf{Parametre:}  Modtager en integer på følgende Enhed som skal deaktiveres.\\
-\textbf{Returværdi}: 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Metoden skal deaktivere Enheden \verb+unit+ over SPI netværket.\\
+\textbf{Parametre:} Modtager en integer på Enhed som skal deaktiveres.\\
+\textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
+\textbf{Beskrivelse:} Metoden skal deaktivere Enheden \verb+unit+ over SPI netværket ved brug af kommandoen \verb+"DC"+.\\
 
 \verb+int verify( int unit ) const+ \\
-\textbf{Parametre:}  Modtager en integer på følgende Enhed som skal verificeres.\\
+\textbf{Parametre:}  Modtager en integer på Enhed som skal verificeres.\\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen.   \\
-\textbf{Beskrivelse:} Metoden skal verificere om Enheden \verb+unit+ er tilkoblet SPI netværket.\\
+\textbf{Beskrivelse:} Metoden skal verificere om Enheden \verb+unit+ er tilkoblet SPI netværket ved at sende kommandoen \verb+"VRC"+. Når \verb+'R'+ sendes, modtages samtidigt enhedens nummer. Hvis det modtagende nummer er identisk med \verb+unit+ er verificeringen succesfuld.\\
 
 \verb+int config( int unit, float temp, float humi ) const +\\
-\textbf{Parametre:} Modtager en integer på følgende Enhed som skal konfigureres. Derudover modtager den to floats med parametrene som skal skrives til Enhed. \\
+\textbf{Parametre:} Modtager en integer på Enhed som skal konfigureres. Derudover modtager den to floats med parametrene som skal skrives til Enhed. \\
 \textbf{Returværdi:}  0 ved succes ellers negativ i overenstemmelse med fejl-listen.   \\
-\textbf{Beskrivelse:} Metoden skal sende konfigurations-parametrene i \verb+float+ til Enheden \verb+unit+ over SPI netværket.\\
+\textbf{Beskrivelse:} Metoden skal sende konfigurations-parametrene i \verb+float+ til Enheden \verb+unit+ over SPI netværket med brug af kommandoen \verb+"PTTT.THHHC"+. Se Kommunikationsprotokollen, \ref{header:kommunikationsprotokol}, for detaljer.\\
 
-\verb+int getLog( & vector<string> , int * units, int size )+ \\
-\textbf{Parametre:}  Modtager en referance til en vector af typen string som loggen skal gemmes i. Pointer til array af Enheder som skal logges samt int med antallet af Enheder i arrayet. \\
+\verb+int getLog( vector<string> &, int * units, int size )+ \\
+\textbf{Parametre:}  Modtager en reference til en \verb+vector+ af typen \verb+string+ som loggen skal gemmes i. Pointer til array af Enheder som skal logges samt integer med antallet af Enheder i arrayet. \\
 \textbf{Returværdi:}  0 ved succes ellers negativ i overenstemmelse med fejl-listen.   \\
-\textbf{Beskrivelse:} Metoden skal hente log fra Enheder i arrayet \verb+units+ på SPI netværket og gemme dem i \verb+vector+ i henhold til dataprotokollen. \\
+\textbf{Beskrivelse:} Metoden skal hente log fra Enheder i arrayet \verb+units+ på SPI netværket med kommandoen \verb+LRR..+ (Se Kommunikationsprotokollen, \ref{header:kommunikationsprotokol}, for detaljer) og gemme dem i \verb+vector+ i henhold til dataprotokollen, \ref{header:dataprotokol}. \\
