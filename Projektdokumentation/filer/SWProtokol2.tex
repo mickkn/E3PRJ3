@@ -11,8 +11,8 @@ Opsætningen er som følger:
   \item Antal bits: 1 char pr. transmission
 \end{itemize}
 
-Hastigheden er valgt på baggrund af I3HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}. PSoC'en kan køre 8MHz, men der er ikke behov for så høj hastighed. Stabiliteten blev forbedret væsentligt ved at vælge en lavere hastighed. 
-\newline SPI mode: 0 er valgt på baggrund ad default indstillinger. 
+Hastigheden er valgt på baggrund af I3HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}. PSoC'en kan køre 8 MHz, men der er ikke behov for så høj hastighed. Stabiliteten blev forbedret væsentligt ved at vælge en lavere hastighed. 
+\newline SPI mode: 0 er valgt på baggrund af default indstillinger. 
 \newline CPOL = 0 vil sige at clocken er lav når den er passiv (aktiv-høj). 
 \newline CPHA = 0 vil sige at data udlæses på rising-edge. 
 \newline Der transmitteres en karakter pr. transmission dvs. 8 bits.
@@ -58,7 +58,7 @@ Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sende
 
 \subsubsection{Aktiver}
 
-Aktiver handler ikke på enhedsnummeret og derfor 
+Aktiver handler ikke på enhedsnummeret.
 
 \begin{table}[H]
 	\caption{Data-formatering for aktiver}
@@ -123,7 +123,7 @@ Ved parameter indstilling skal der sendes følgende parametre til Enheden.
 	\item Nedre fugtighedsgrænse
 \end{enumerate}
 
-Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}, hvor der ønskes en øvre temperaturgrænse på $24,0\,^{\circ}\mathrm{C}$ og en nedre fugtighedsgrænse på 30. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
+Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}, hvor der ønskes en øvre temperaturgrænse på $24,0\,^{\circ}\mathrm{C}$ og en nedre fugtighedsgrænse på 30\%. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
 
 \begin{table}[H]
 	\caption{Eksempel på data-formatering for parametre}
@@ -142,7 +142,7 @@ Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en ko
 
 \subsubsection{Log}
 
-Når Master skal hente log fra Enhed, sendes der et 'L' for at starte modtagelsen af loggen. Herefter laves 1 læsning for at udlæse data bufferens størrelse. Og herefter laves der én læsning ad gangen indtil der kommer enten et 'D' for Data eller et 'E' for Fejl. Ses i tabel \ref{table:SWProtokol-log} som et X antal gange.
+Når Master skal hente log fra Enhed, sendes der et 'L' for at starte modtagelsen af loggen. Herefter laves en læsning for at udlæse databufferens størrelse. Og herefter laves der én læsning ad gangen indtil der kommer enten et 'D' for Data eller et 'E' for Fejl. Ses i tabel \ref{table:SWProtokol-log} som et X antal gange.
 
 \begin{table}[H]
 	\caption{Data-formatering for log}
@@ -161,7 +161,7 @@ Når Master skal hente log fra Enhed, sendes der et 'L' for at starte modtagelse
 
 \subsubsection*{Log-data}
 
-Når der kommer et 'D' læses der iht. dataprotokollen 10 gange. I tabel \ref{table:SWProtokol-logdata} vises et eksempel på en udlæsning af temperaturen $28,5\,^{\circ}\mathrm{C}$, en fugtighed på 39, ingen vanding og ingen bevægelse.
+Når der kommer et 'D' læses der iht. dataprotokollen 10 gange. I tabel \ref{table:SWProtokol-logdata} vises et eksempel på en udlæsning af temperaturen $28,5\,^{\circ}\mathrm{C}$, en fugtighed på 39\%, ingen vanding og ingen bevægelse.
 
 \begin{table}[H]
 	\caption{Data-formatering for log (data)}

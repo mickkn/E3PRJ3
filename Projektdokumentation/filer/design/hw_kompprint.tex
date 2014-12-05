@@ -2,9 +2,9 @@
 
 For at frigøre sig fra laboratoriets strømforsyningerne udarbejdes egen strømforsyning. Vha. en 230Vac/12Vdc switch-mode konverter og egnede spændingens-regulatorer designes en strømforsyning til netop dette projekt. Masteren (DevKit8000) har sin egen strømforsyning og denne ændres ikke. Enheden (PSoC4) skal forsynes med 5V dc via USB. Relæstyringen skal forsynes med 5V dc. PIR sensoren skal forsynes med 5-20 V dc. Temperatur/fugt sensoren skal forsynes med 3,3V dc. 
 
-230Vac/12Vdc switch-mode konverteren er fra en gammel computer. Denne kan give 2 amperre og er forsynet med et DC stik (12V) og en stikprop (230Vac). Denne transformer bruges som den er. 
+230Vac/12Vdc switch-mode konverteren er fra en gammel computer. Denne kan give 2 amperer og er forsynet med et DC stik (12V) og en stikprop (230Vac). Denne transformer bruges som den er. 
 
-For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra databladet \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan give et output på max 1A ved korrekt køling.  
+For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra figur \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan give et output på max 1A ved korrekt køling.  
 \newline
 Uden køling må der max afsættes 1 W i serieregulatoren, da dens arbejdstemperatur ved 1 W ligger på 100$^{\circ}$C.  I formel \ref{eq:effekt_1} er der fortaget en effektberegning på LM7805. Spændingsforskellen imellem $V_{DC}$ og $V_{OUT}$ ganges på det samlede strømforbrug. Strømforbruget er fundet i samtlige datablade for hver komponent. Effektudregningen i \ref{eq:effekt_2} viser at ved fuld belastning er det nødvendigt at køle, det er der gjort med køleplader. 
 
@@ -13,7 +13,7 @@ P = (V_{DC}-V_{out})*I_{samlet}
 \label{eq:effekt_1}
 \end{equation}
 \begin{equation} 
-P = (12V - 5V)*0,6 A= 4,2 W 
+P = (12V - 5V)*0,6665 A= 4,7 W 
 \label{eq:effekt_2}
 \end{equation}
 
@@ -24,7 +24,7 @@ P = (12V - 5V)*0,6 A= 4,2 W
 \raggedright
 \end{figure}
 
-Spændingsregulatoren LM7805 er opbygget i mutilsim, sammen med 12V dc forsyningen. Kredløbet er simuleret og dette viser at outputtet er de ønskede 5 V.
+Spændingsregulatoren LM7805 er opbygget i Multisim se figur \ref{lab:LM7805_SIMULERING}, sammen med 12V dc forsyningen. Kredløbet er simuleret og dette viser at outputtet er de ønskede 5 V.
 
 \begin{figure}[H] \centering
 {\includegraphics[width=\textwidth]{filer/design/Billeder/LM7805_SIMULATION}}
@@ -34,9 +34,9 @@ Spændingsregulatoren LM7805 er opbygget i mutilsim, sammen med 12V dc forsyning
 \end{figure}
 
 
-For at opnå 3,3V benyttes en justerbar spændingsregulator LM317. Denne regulator kan levere 1,2V-33V 3A. Det er fugt,-temperatursensoren der skal forsynes med 3,3V/180uA, det er LM317'erns opgave. 
+For at opnå 3,3V benyttes en justerbar spændingsregulator LM317. Denne regulator kan levere 1,2V-33V 3A. Det er fugt- og temperatursensoren der skal forsynes med 3,3 V / 180 uA, det er LM317'erns opgave. 
 
-LM317 er slået op iPad appen "Electronic Toolbox", vha. denne gives hvordan opsætningen af denne skal være for at opnå 3,3V 
+LM317 er slået op på iPad appen "Electronic Toolbox", vha. denne gives hvordan opsætningen af denne skal være for at opnå 3,3V 
  
 \begin{figure}[H] \centering
 {\includegraphics[width=\textwidth]{filer/design/Billeder/LM317}}
@@ -66,7 +66,7 @@ V_{out} = 1,25 V*(1+\frac{390\Omega}{240\Omega})+50uA*390\Omega = 3,3 V
 \end{equation}
 
 
-I formel \ref{eq:effekt_4} er der fortaget en effektberegning på LM317. Den bliver belastet med FT-sensoren som har et strømforbrug på 180 uA, plus $I_X$ som er strømmen der løber ned i modstandene, den er fundet ved at finde strømmen der løber i R1 vha. ohms lov og ligge den sammen med strømmen fra ben 1 se \ref{eq:effekt_5}. Effektudregningen viser at det ikke er nødvendigt med køling, men der er dog  fortaget køling med køleplader alligevel. Det skyldes at det er altid en god ide at køle på et komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed.
+I formel \ref{eq:effekt_4} er der fortaget en effektberegning på LM317. Den bliver belastet med FT-sensoren som har et strømforbrug på 180 uA, plus $I_X$ som er strømmen der løber ned i modstandene. Den er fundet ved at finde strømmen der løber i R1 vha. ohms lov og ligge den sammen med strømmen fra ben 1 se \ref{eq:effekt_5}. Effektudregningen viser at det ikke er nødvendigt med køling, men der er dog  fortaget køling med køleplader alligevel. Det skyldes at det er altid en god ide at køle på et komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed.
 
 \begin{equation} 
 I_X = \frac{1,25V}{250\Omega}+50uA = 5,2 mA  
