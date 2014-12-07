@@ -9,7 +9,7 @@
 
 Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret temperatur- og fugtsensor SHT21P. Denne er valgt ud fra at der således ikke behøves en sensor for hver af de to målinger, dermed sparres der et komponent. SHT21P sender en PWM ud som midles til en DC-spænding med et 2. ordens lavpasfilter. Denne spænding sendes ind i en A/D-convertor i PSoCen hvor denne behandles i en funktion, for så at returnere en temperatur eller fugt. Et select ben på SHT21P angiver hvorvidt denne måler temperatur eller fugt. SCL HIGH(1) giver fugt output, SCL LOW(0) giver temperatur output.
 
-\subsection{Foranliggende filter}
+\subsection{Midlingsfilter}
 \begin{figure}[htb]
 \centering
 {\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht21p_filter_pic.png}}
@@ -19,7 +19,7 @@ Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombineret
 
 2. ordens filteret er sammensat af to lavpasfiltre. Det første filter, bestående af R1 og C1 bestemmer knækfrekvensen. Det efterfølgende filter, R2 og C2, er valgt som en faktor 10 af R1 og C1 hvilket vil resultere i et 2. ordens filter, men samtidig vil de to ikke påvirke hinanden og kan derfor forbindes direkte uden en buffer. 
 
-Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under 120 Hz, vil der opnås en stor dæmpning, således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 V. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ligningerne for udregning af fugt og temp., er opgivet som en funktion af PWMen, er begge lineære og der kan derfor regnes med et step i volt på grader celsius. Funktionerne herfor er opgivet i databladet for SHT21P. 
+Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under 120 Hz, vil der opnås en stor dæmpning, således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 V. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ligningerne for udregning af fugt og temperatur, er opgivet som en funktion af PWMen, er begge lineære og der kan derfor regnes med et step i volt på grader celsius. Funktionerne herfor er opgivet i databladet for SHT21P. 
 På figur \ref{lab:sht_plot_mable} kan det ses at kurven for fugtighed går fra -6 \% til 120 \%, denne er dog kun defineret ved 0 til 100 \%. 
 
 % PLOT FRA MAPLE HER!
