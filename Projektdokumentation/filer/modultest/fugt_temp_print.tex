@@ -7,11 +7,11 @@ I følgende afsnit testes fugt- og temperatursensoren sammen med lavpasfilter p�
 SHT21p-sensoren udsender et PWM-signal med en frekvens på 120 hz i området 0V til VCC. Ud fra PWMen kan temperatur og fugtighed udregnes med følgende formler som er hentet fra databladet:
 
 \begin{equation}
--6+125*duty cycle= fugtighed i \%
+-6+125*duty cycle= fugtighed \ i \ \%
 \end{equation}
 
 \begin{equation}
--46.85+175.72*duty cycle= temperatur i grader celsius
+-46.85+175.72*duty cycle= temperatur \ i \ grader \ celsius
 \end{equation}
 
 PWM-signalet bliver, gennem et 2. ordens lavpasfilter, midlet til en DC. Ud fra denne DC-
@@ -19,11 +19,11 @@ og VCC-værdi beregnes fugtigheden og temperaturen ved følgende formler.
 
 
 \begin{equation}
--6+125*\frac{målt DC}{Vcc}= fugtighed i \%
+-6+125*\frac{målt DC}{Vcc}= fugtighed \ i \ \%
 \end{equation}
 
 \begin{equation}
--46.85+175.72*\frac{målt DC}{Vcc}=temperatur i grader celsius
+-46.85+175.72*\frac{målt DC}{Vcc}=temperatur \ i \ grader \ celsius
 \end{equation}
 
 Sensoren er forsynet med 3,3V men grundet et lille tab i sensoren svinger PWMen mellem
