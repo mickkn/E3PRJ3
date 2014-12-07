@@ -11,35 +11,47 @@
 }
 \textbf{Ansvar:} Gemme information om grænseværdier mv. til det autonome vandingssystem. \
 
-\verb+int setTemp( float temp const ) +\\
+\textbf{Attributter:}
+\begin{itemize}
+	\item \verb+float temperature_+ Øvre temperaturgrænse
+	\item \verb+float humidity_+ Nedre fugtighedsgrænse
+	\item \verb+unsigned char active_+ Flag for om vanding er aktiv eller ikke
+\end{itemize}
+
+\verb+void init( parameters * const this ) +\\
+\textbf{Parametre:} Pointer til aktuelt objekt. \\
+\textbf{Returværdi:} Ingen. \\
+\textbf{Beskrivelse:} Initialiserer medlemsattributterne: \verb+active_+: 1, \verb+humidity_+: 10 og \verb+temperature_+: 30. \\
+
+\verb+int setTemp( parameters * const this, const float temp ) +\\
 \textbf{Parametre:} Temperatur. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Gemmer modtagne temperatur i medlemsdata \verb+temperature_+. \\
+\textbf{Beskrivelse:} Gemmer modtagne data i medlem \verb+temperature_+. \\
 
-\verb+int getTemp( float * temp )+ \\
-\textbf{Parametre:} Pointer til at gemme temperatur i. \\
+\verb+int getTemp( parameters * const this, float * temp )+ \\
+\textbf{Parametre:} Pointer til at gemme data i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Returnerer medlem \verb+temperature_+ i reference. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+temperature_+ i modtagne pointer. \\
 
-\verb+int setHumi( float humi const )+ \\
+\verb+int setHumi( parameters * const this, const float humi )+ \\
 \textbf{Parametre:} Humidity. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Gemmer modtagne humidity i medlemsdata \verb+humidity_+. \\
+\textbf{Beskrivelse:} Gemmer modtagne data i medlem \verb+humidity_+. \\
 
-\verb+int getHumi( float * humi )+ \\
-\textbf{Parametre:} Pointer til at gemme humidity i. \\
+\verb+int getHumi( parameters * const this, float * humi )+ \\
+\textbf{Parametre:} Pointer til at gemme data i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Returnerer medlem \verb+humidity_+ i reference. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+humidity_+ i modtagne pointer. \\
 
-\verb+int setActive( unsigned char const )+ \\
+\verb+int setActive( parameters * const this, const unsigned char )+ \\
 \textbf{Parametre:} 1 = aktiv, 0 = inaktiv. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Gemmer modtagne char i medlemsdata \verb+active_+. \\
+\textbf{Beskrivelse:} Gemmer modtagne data i medlem \verb+active_+. \\
 
-\verb+int getActive( unsigned char * )+ \\
-\textbf{Parametre:} Pointer til at gemme unsigned char i. \\
+\verb+int getActive( parameters * const this, unsigned char * )+ \\
+\textbf{Parametre:} Pointer til at gemme data i. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Returnerer medlem \verb+active_+ i pointer. \\
+\textbf{Beskrivelse:} Returnerer medlem \verb+active_+ i modtagne pointer. \\
 
 
 \begin{figure}[htbp] \centering
@@ -51,19 +63,28 @@
 {\centering
 \textbf{buffer}\par
 }
-\textbf{Ansvar:} Holde data fra sensorerne indtil de udlæses af Master. \
+\textbf{Ansvar:} Holde data fra sensorerne indtil de udlæses af Master. Gemmer også fejlbeskeder fra systemet. \
 
-\verb+buffer( )+ \\
-\textbf{Parametre:} Ingen. \\
+\textbf{Attributter:}
+\begin{itemize}
+	\item \verb+char buffer_[]+ Array til at holde 1 datalæsning og 10 fejl.
+	\item \verb+unsigned int len_+ Længden på arrayet
+	\item \verb+unsigned int cursor_+ Index på næste frie plads i array
+	\item \verb+unsigned int dataIndex_+ Index på placering af data i array, hvis der tidligere har været gemt data
+	\item \verb+unsigned char dataWritten_+ Flag til at indikerer tidligere skrevet data
+\end{itemize}
+
+\verb+void buffer( buffer * )+ \\
+\textbf{Parametre:} Pointer til aktuelt objekt. \\
 \textbf{Returværdi:} Ingen. \\
-\textbf{Beskrivelse:} Skal initialisere \verb+char+ array \verb+buffer_+ med plads til én datamåling og 10 fejl iht. dataprotokol. \\
+\textbf{Beskrivelse:} r \verb+char+ array \verb+buffer_+ med plads til én datamåling og 10 fejl, iht. dataprotokol, \ref{header:dataprotokol}, til 0. Initialiserer også medlemmer til 0 på nær \verb+len_+ som initialiseres til arrayets længde \verb+BUFFER_LENGTH+.\\
 
-\verb+int saveData( char * buf const, unsigned int len const )+ \\
-\textbf{Parametre:} Pointer til buffer med len data. \\
+\verb+int saveData( buffer * const, const char * buf, const unsigned int len )+ \\
+\textbf{Parametre:} Pointer til aktuelt objekt og pointer til buffer med len data. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal gemme modtaget data i \verb+buffer_+-medlemmet og flytte \verb+cursor_+ antallet af karakterer frem.\\
+\textbf{Beskrivelse:} Gemmer modtaget data i array, hvis der er plads til det. Hvis det er en data-logning, kontrolleres der om der ligger en ældre måling i bufferen, som i så fald overskrives. Markøren flyttes iht. hvor meget der skrives ind. \\
 
-\verb+int getData( char * buf, unsigned int * len )+ \\
-\textbf{Parametre:} Pointer til char array til data. \\
+\verb+int getData( buffer * const, char ** buf, unsigned int * len )+ \\
+\textbf{Parametre:} Pointer til aktuelt objekt og pointer til char array til data. \\
 \textbf{Returværdi:} 0 ved succes ellers negativ i overenstemmelse med fejl-listen. \\
-\textbf{Beskrivelse:} Skal returnere data fra \verb+buffer_+ i pointer og nulstille \verb+cursor_+-medlemmet.\\
+\textbf{Beskrivelse:} Returnerer pointeren til array i \verb+buf+ og \verb+cursor_+ i \verb+len+. Nulstiller derefter \verb+cursor_+ og \verb+dataWritten_+.\\
