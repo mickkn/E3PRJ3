@@ -33,17 +33,36 @@ Sensoren er forsynet med 3,3V men grundet et lille tab i sensoren svinger PWMen 
 %Billede af målt PWM.
 
 
-Første test laves ved stuetemperatur. Til test af SHT21p sensoren bruges et færdigt termometer og fugtighedsmåler, af modellen Velleman - Thermo/Hygrometer. På \ref{lab:test_stue} ses det at begge sensorer er i samme rum og at de bliver udsat for samme forhold. 
+Første test laves ved stuetemperatur. Til test af SHT21p sensoren bruges et færdigt termometer og fugtighedsmåler, af modellen Velleman - Thermo/Hygrometer. På figur \ref{lab:TEST_STUE} ses det at begge sensorer er i samme rum og at de bliver udsat for samme forhold. 
 
-\begin{figure}[h]
-\centering
-{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_stue}}
-\caption{Billede af test ved stuetemperatur incl. oscilloskop billede, øverste scopbillede er fugtighed og nederste er temperatur}
-\label{lab:test_stue}
+\begin{figure}[H] \centering
+\begin{minipage}[b]{0.48\textwidth} \centering
+\includegraphics[width=1.00\textwidth]{filer/modultest/Billeder/SCOP_humidSTUETEMP} % Left picture
+\end{minipage} \hfill
+\begin{minipage}[b]{0.48\textwidth} \centering
+\includegraphics[width=1.00\textwidth]{filer/modultest/Billeder/SCOP_tempSTUETEMP} % Right picture
+\end{minipage} \\ % Captions og labels
+\begin{minipage}[t]{0.48\textwidth}
+\caption{Oscilloskopbillede af fugthedsmåling ved stuetemperatur} % Left caption and label
+\label{fig:SCOP_FUGT_STUE}
+\end{minipage} \hfill
+\begin{minipage}[t]{0.48\textwidth}
+\caption{Oscilloskopbillede af temperaturmåling ved stuetemperatur} % Right caption and label
+\label{fig:SCOP_TEMP_STUE}
+\end{minipage}
 \end{figure}
 
-Som figur \ref{lab:test_stue} viser måles både en DC- og et PWM-signal. DCen er signalet efter lavpasfilteret og PWMen er den rå data fra sensoren. 
-Sensorens SCL-ben er sat højt og sensoren måler derfor fugtighed. PWMen måles til at have en duty cycle på 37 \% og spændingen efter filteret måles til 1,2 V. Ud fra databladet kan duty cyclen omregnes til fugtighed med følgende formel:
+\begin{figure}[H]
+\centering
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_STUE}}
+\caption{Billede af test ved stuetemperatur}
+\label{lab:TEST_STUE}
+\end{figure}
+
+
+
+Som figur \ref{fig:SCOP_FUGT_STUE} viser måles både en DC- og et PWM-signal. DCen er signalet efter lavpasfilteret og PWMen er den rå data fra sensoren. 
+Sensorens SCL-ben er sat højt, via pull-up-modstanden på sensorprintet, sensoren måler derfor fugtighed. PWMen måles til at have en duty cycle på 37 \% og spændingen efter filteret måles til 1,2 V. Ud fra databladet kan duty cyclen omregnes til fugtighed med følgende formel:
 
 Fugtighed regnet ud fra duty cycle
 \begin{equation}
@@ -55,8 +74,8 @@ Med følende formel regnes fugtigheden ud fra DC-værdien.
 -6+125*\frac{1,2}{3,28}= 39,73\%
 \end{equation}
 
-SCL-benet ligges nu lav og temperaturen måles ved at for.Ud fra PWM regnes nu temperaturen. PWMen måles til at have en duty cycle på 41 \% og en spænding efter filteret på 1.31 V. 
-
+SCL-benet ligges nu lav, ved at forbinde benet til GND, og temperaturen måles. Figur \ref{fig:SCOP_TEMP_STUE} viser målingen. PWMen måles til at have en duty cycle på 41 \% og en spænding efter filteret på 1.31 V. 
+Ud fra PWMen regnes nu temperaturen.
 \begin{equation}
 -46.85+175.72*0,41=25.2
 \end{equation}
@@ -68,17 +87,35 @@ Temperaturen regnes ud fra DCen som følger.
 \end{equation}
 
 
-For at teste andre forhold bruges en varmepistol til at hæve temperatur og sænke fugtigheden. 
+For at teste andre forhold bruges en varmepistol til at hæve temperatur og sænke fugtigheden, figur \ref{lab:TEST_VARM}. 
 Samme målinger foretages:
 
-\begin{figure}[h]
-\centering
-{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_varmt}}
-\caption{Billede af test ved høj temperatur ink. oscilloskopbillede}
-\label{lab:test_varmt}
+
+\begin{figure}[H] \centering
+\begin{minipage}[b]{0.48\textwidth} \centering
+\includegraphics[width=1.00\textwidth]{filer/modultest/Billeder/SCOP_humidVARM} % Left picture
+\end{minipage} \hfill
+\begin{minipage}[b]{0.48\textwidth} \centering
+\includegraphics[width=1.00\textwidth]{filer/modultest/Billeder/SCOP_tempVARM} % Right picture
+\end{minipage} \\ % Captions og labels
+\begin{minipage}[t]{0.48\textwidth}
+\caption{Oscilloskopbillede af fugthedsmåling ved høj temperatur} % Left caption and label
+\label{fig:SCOP_FUGT_VARM}
+\end{minipage} \hfill
+\begin{minipage}[t]{0.48\textwidth}
+\caption{Oscilloskopbillede af temperaturmåling ved høj temperatur} % Right caption and label
+\label{fig:SCOP_TEMP_VARM}
+\end{minipage}
 \end{figure}
 
-Igen regnes værdierne for temperatur og fugtighed ud fra PWMen med en dutycycle på 12,6 \% og DCen med en amplitude på 402 mV
+\begin{figure}[H]
+\centering
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_STUE}}
+\caption{Billede af test ved høj temperatur}
+\label{lab:TEST_VARM}
+\end{figure}
+
+Igen regnes værdierne for temperatur og fugtighed ud fra PWMen med en dutycycle på 12,6 \% og DCen med en amplitude på 402 mV, målt som vist på figur \ref{fig:SCOP_FUGT_VARM}.
 
 \begin{equation}
 -6+125*0,126= 9,75\%
@@ -90,7 +127,8 @@ Med følgende formel regnes fugtigheden ud fra DC-værdien.
 -6+125*\frac{0,402}{3,28}= 9,32\%
 \end{equation}
 
-SCL-benet sættes nu lavt ved at forbinde det til ground og temperaturen måles. Sensoren giver en PWM på 67,1 \% og en spænding efter filteret på 2,14 V. Ud fra PWM beregnes temperaturen.
+SCL-benet sættes nu lavt ved at forbinde det til GND og temperaturen måles. Sensoren giver en PWM på 67,1 \% og en spænding efter filteret på 2,14 V, målt som vist på \ref{fig:SCOP_TEMP_VARM}. 
+Ud fra PWM beregnes temperaturen.
 
 
 \begin{equation}
@@ -103,16 +141,24 @@ Temperaturen regnes ud fra DCen som følger.
 -46.85+175.72*\frac{1,31}{3,28}=67,8
 \end{equation}
 
-For også at teste om sensoren kunne måle en høj luftfugtig foretages en måling efter at have åndet på sensoren. Da der allerede er målt temperatur ved både stuetemperatur og høj temperatur udelades temperaturtest af denne test. 
+For også at teste om sensoren kunne måle en høj luftfugtig foretages en måling efter at have åndet på sensoren, målingen ses på figur \ref{lab:TEST_FUGTIG}. Da der allerede er målt temperatur ved både stuetemperatur og høj temperatur udelades temperaturtest af denne test. 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_fugtig}}
-\caption{Billede af test med høj fugtighed incl oscilloskop billede}
-\label{lab:test_fugtig}
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/SCOP_humidFUGTIG}}
+\caption{Oscilloskopbillede af fugtighedsmåling med høj luftfugtighed}
+\label{lab:SCOP_FUGT_FUGTIG}
 \end{figure}
 
-Ved testen sendte sensoren en PWM ud med en duty cycle på 69,2 \% og en spænding på 2,24 V efter filteret.
+\begin{figure}[H]
+\centering
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_FUGTIG}}
+\caption{Oscilloskopbillede af fugtighedsmåling med høj luftfugtighed}
+\label{lab:TEST_FUGTIG}
+\end{figure}
+
+
+Ved testen sendte sensoren en PWM ud med en duty cycle på 69,2 \% og en spænding på 2,24 V efter filteret, oscilloskopbillede ses på figur \ref{lab:SCOP_FUGT_FUGTIG}.
 
 
 \begin{equation}
@@ -126,17 +172,24 @@ Med følgende formel regnes fugtigheden ud fra DC-værdien.
 \end{equation}
 
 
-En test ved lav temperatur blev også fortaget. Temperaturen blev sænket ved hjælp af frysespray. Grundet den lave temperatur kom der kondensvand på sensoren som derfor målte en meget høj luftfugtighed. På grund af dette er måling af luftfugtighed udeladt af denne test. 
+En test ved lav temperatur blev også fortaget. Temperaturen blev sænket ved hjælp af frysespray, se figur \ref{lab:TEST_KOLD}. Grundet den lave temperatur opstod der kondensvand på sensoren, derfor er fugtighed udeladt af denne måling.
 
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
-{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_kold}}
-\caption{Billede af test med lav temperatur incl oscilloskop billede}
-\label{lab:test_kold}
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/SCOP_tempKOLD}}
+\caption{Oscilloskopbillede af fugtighedsmåling med høj luftfugtighed}
+\label{lab:SCOP_TEMP_KOLD}
 \end{figure}
 
-Sensoren giver en PWM på 20,4 \% og en spænding efter filteret på 642 mV, temperatur beregnes herefter.
+\begin{figure}[H]
+\centering
+{\includegraphics[width=0.90\textwidth]{filer/modultest/Billeder/test_KOLD}}
+\caption{Oscilloskopbillede af fugtighedsmåling med høj luftfugtighed}
+\label{lab:TEST_KOLD}
+\end{figure}
+
+Sensoren giver en PWM på 20,4 \% og en spænding efter filteret på 642 mV,se figur\ref{lab:SCOP_TEMP_KOLD}. Temperatur beregnes herefter.
 
 
 \begin{equation}
@@ -149,4 +202,3 @@ Temperaturen regnes ud fra DCen.
 -46.85+175.72*\frac{0,642}{3,28}=-12,66
 \end{equation}
 
-Grundet at det ikke var muligt at tage billede af den færdig temperatur og fugtighedsmåler og oscilloskopet samtidig godtages det at der er forskel på de to målinger og det skal derfor kun betrages som vejledende da der også var lang reaktionstid på den færdig måler mens SHT21P-sensoren ændrede sig øjeblikkeligt.
