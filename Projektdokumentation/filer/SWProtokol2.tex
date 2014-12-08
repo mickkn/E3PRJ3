@@ -11,10 +11,10 @@ Opsætningen er som følger:
   \item Antal bits: 1 char pr. transmission
 \end{itemize}
 
-Hastigheden er valgt på baggrund af I3HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}. PSoC'en kan køre 8 MHz, men der er ikke behov for så høj hastighed. Stabiliteten blev forbedret væsentligt ved at vælge en lavere hastighed. 
-\newline SPI mode: 0 er valgt på baggrund af default indstillinger. 
-\newline CPOL = 0 vil sige at clocken er lav når den er passiv (aktiv-høj). 
-\newline CPHA = 0 vil sige at data udlæses på rising-edge. 
+Hastigheden er valgt på baggrund af I3HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI Kommunikation}. PSoC4 kan køre 8 MHz, men der er ikke behov for så høj hastighed. Stabiliteten blev forbedret væsentligt ved at vælge en lavere hastighed. 
+\newline SPI-mode = 0 - er valgt på baggrund af default indstillinger. 
+\newline CPOL = 0 - vil sige at clocken er lav når den er passiv (aktiv-høj). 
+\newline CPHA = 0 - vil sige at data udlæses på rising-edge. 
 \newline Der transmitteres en karakter pr. transmission dvs. 8 bits.
 
 Ud fra UC-beskrivelserne er der identificeret følgende scenarier hvor der sendes data mellem Master og Enhed.
@@ -118,12 +118,11 @@ Ved verificering af en Enhed sendes et enhedsnummer til Enheden, som der verific
 Ved parameter indstilling skal der sendes følgende parametre til Enheden.
 
 \begin{enumerate}
-	\item Enhedsnummer (1-18)
 	\item Øvre temperaturgrænse
 	\item Nedre fugtighedsgrænse
 \end{enumerate}
 
-Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}, hvor der ønskes en øvre temperaturgrænse på $24,0\,^{\circ}\mathrm{C}$ og en nedre fugtighedsgrænse på 30\%. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal.
+Parametrene skal sendes i ovenstående rækkefølge og resulterer altså i en kommando som vist i tabel \ref{table:SWProtokol-para}, hvor der ønskes en øvre temperaturgrænse på $24,0\,^{\circ}\mathrm{C}$ og en nedre fugtighedsgrænse på 30\%. Temperaturgrænsen er begrænset til 3 heltal og én decimal. Fugtighedsgrænsen er begrænset til 3 heltal. Der handles ikke på enhedsnummer.
 
 \begin{table}[H]
 	\caption{Eksempel på data-formatering for parametre}
