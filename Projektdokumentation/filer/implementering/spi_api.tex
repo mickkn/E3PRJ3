@@ -75,7 +75,7 @@ for(int i = 0 ; i < 3 ; i++){
 
 Den første \verb+read()+ metode man støder på, læser bufferlængden fra Enheden, som der sørger for der ikke læses på noget data der ikke er tilstede, senere i metoden.
 
-Så er der en for-løkke der starter med at kigge på om der er et 'D' for data eller 'E' for fejl. Disse laver hhv. 10 og 3 læsninger, som der bygges en string af, der pushes til en vector. Hvis der kommer er 'D' ligges det på den første plads i en string sammen med de næste 10 læsninger. Dette er tilsvarende ved en fejl, dog kun med 3 læsninger efter det læste 'E'.
+Så er der en for-løkke der starter med at kigge på om der er et 'D' for data eller 'E' for fejl. Disse laver hhv. 10 og 3 læsninger, som der bygges en string af, der pushes til en vector. Hvis der kommer et 'D' ligges det på den første plads i en string sammen med de næste 10 læsninger. Dette er tilsvarende ved en fejl, dog kun med 3 læsninger efter det læste 'E'.
 
 \begin{lstlisting}[language=C]
 int SPI_api::getLog(vector<string> &data, int * units, int size)
