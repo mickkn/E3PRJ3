@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: testPin.h  
+* File Name: P_FT2.h  
 * Version 2.5
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_testPin_ALIASES_H) /* Pins testPin_ALIASES_H */
-#define CY_PINS_testPin_ALIASES_H
+#if !defined(CY_PINS_P_FT2_ALIASES_H) /* Pins P_FT2_ALIASES_H */
+#define CY_PINS_P_FT2_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -24,9 +24,9 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define testPin_0		testPin__0__PC
+#define P_FT2_0		P_FT2__0__PC
 
-#endif /* End Pins testPin_ALIASES_H */
+#endif /* End Pins P_FT2_ALIASES_H */
 
 
 /* [] END OF FILE */

@@ -2,7 +2,7 @@
 --	Conversion of psoc_api_2.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Dec 08 11:13:11 2014
+--	Mon Dec 08 11:35:21 2014
 --
 
 USE cypress.cypress.all;
@@ -131,34 +131,28 @@ TERMINAL \ADC_SAR_Seq_0:Net_2375_0\ : bit;
 SIGNAL \ADC_SAR_Seq_0:Net_3093\ : bit;
 SIGNAL \ADC_SAR_Seq_0:Net_3090\ : bit;
 TERMINAL Net_54 : bit;
-SIGNAL tmpOE__ADC_in_net_0 : bit;
+SIGNAL tmpOE__P_FT1_net_0 : bit;
 SIGNAL zero : bit;
-SIGNAL tmpFB_0__ADC_in_net_0 : bit;
-SIGNAL tmpIO_0__ADC_in_net_0 : bit;
-TERMINAL tmpSIOVREF__ADC_in_net_0 : bit;
+SIGNAL tmpFB_0__P_FT1_net_0 : bit;
+SIGNAL tmpIO_0__P_FT1_net_0 : bit;
+TERMINAL tmpSIOVREF__P_FT1_net_0 : bit;
 SIGNAL one : bit;
-SIGNAL tmpINTERRUPT_0__ADC_in_net_0 : bit;
-SIGNAL tmpOE__SLC_net_0 : bit;
-SIGNAL tmpFB_0__SLC_net_0 : bit;
-SIGNAL tmpIO_0__SLC_net_0 : bit;
-TERMINAL tmpSIOVREF__SLC_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__SLC_net_0 : bit;
-SIGNAL tmpOE__water_pin_net_0 : bit;
-SIGNAL tmpFB_0__water_pin_net_0 : bit;
-SIGNAL tmpIO_0__water_pin_net_0 : bit;
-TERMINAL tmpSIOVREF__water_pin_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__water_pin_net_0 : bit;
-SIGNAL tmpOE__testPin_net_0 : bit;
-SIGNAL tmpFB_0__testPin_net_0 : bit;
-TERMINAL Net_69 : bit;
-SIGNAL tmpIO_0__testPin_net_0 : bit;
-TERMINAL tmpSIOVREF__testPin_net_0 : bit;
-SIGNAL tmpINTERRUPT_0__testPin_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__P_FT1_net_0 : bit;
+SIGNAL tmpOE__P_FT2_net_0 : bit;
+SIGNAL tmpFB_0__P_FT2_net_0 : bit;
+SIGNAL tmpIO_0__P_FT2_net_0 : bit;
+TERMINAL tmpSIOVREF__P_FT2_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__P_FT2_net_0 : bit;
+SIGNAL tmpOE__P_VP_net_0 : bit;
+SIGNAL tmpFB_0__P_VP_net_0 : bit;
+SIGNAL tmpIO_0__P_VP_net_0 : bit;
+TERMINAL tmpSIOVREF__P_VP_net_0 : bit;
+SIGNAL tmpINTERRUPT_0__P_VP_net_0 : bit;
 BEGIN
 
 zero <=  ('0') ;
 
-tmpOE__ADC_in_net_0 <=  ('1') ;
+tmpOE__P_FT1_net_0 <=  ('1') ;
 
 \ADC_SAR_Seq_0:cy_psoc4_sar\:cy_psoc4_sar_v1_0
 	GENERIC MAP(cy_registers=>"")
@@ -503,7 +497,7 @@ tmpOE__ADC_in_net_0 <=  ('1') ;
 		is_net_join=>'0')
 	PORT MAP(signal1=>Net_54,
 		signal2=>\ADC_SAR_Seq_0:mux_bus_plus_0\);
-ADC_in:cy_psoc3_pins_v1_10
+P_FT1:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"0f93e91d-28e4-4fdd-9813-660c2023516d",
 		drive_mode=>"000",
 		ibuf_enabled=>"0",
@@ -554,21 +548,21 @@ ADC_in:cy_psoc3_pins_v1_10
 		pa_out_clock=>-1,
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1)
-	PORT MAP(oe=>(tmpOE__ADC_in_net_0),
+	PORT MAP(oe=>(tmpOE__P_FT1_net_0),
 		y=>(zero),
-		fb=>(tmpFB_0__ADC_in_net_0),
+		fb=>(tmpFB_0__P_FT1_net_0),
 		analog=>Net_54,
-		io=>(tmpIO_0__ADC_in_net_0),
-		siovref=>(tmpSIOVREF__ADC_in_net_0),
+		io=>(tmpIO_0__P_FT1_net_0),
+		siovref=>(tmpSIOVREF__P_FT1_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__ADC_in_net_0,
+		in_clock_en=>tmpOE__P_FT1_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__ADC_in_net_0,
+		out_clock_en=>tmpOE__P_FT1_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__ADC_in_net_0);
-SLC:cy_psoc3_pins_v1_10
+		interrupt=>tmpINTERRUPT_0__P_FT1_net_0);
+P_FT2:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"0e0c9380-6965-4440-8709-ce08a91e474c",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
@@ -619,21 +613,21 @@ SLC:cy_psoc3_pins_v1_10
 		pa_out_clock=>-1,
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1)
-	PORT MAP(oe=>(tmpOE__ADC_in_net_0),
+	PORT MAP(oe=>(tmpOE__P_FT1_net_0),
 		y=>(zero),
-		fb=>(tmpFB_0__SLC_net_0),
+		fb=>(tmpFB_0__P_FT2_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__SLC_net_0),
-		siovref=>(tmpSIOVREF__SLC_net_0),
+		io=>(tmpIO_0__P_FT2_net_0),
+		siovref=>(tmpSIOVREF__P_FT2_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__ADC_in_net_0,
+		in_clock_en=>tmpOE__P_FT1_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__ADC_in_net_0,
+		out_clock_en=>tmpOE__P_FT1_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__SLC_net_0);
-water_pin:cy_psoc3_pins_v1_10
+		interrupt=>tmpINTERRUPT_0__P_FT2_net_0);
+P_VP:cy_psoc3_pins_v1_10
 	GENERIC MAP(id=>"6645c715-bbaf-4dff-8862-1b1426b3d6ae",
 		drive_mode=>"110",
 		ibuf_enabled=>"1",
@@ -684,84 +678,19 @@ water_pin:cy_psoc3_pins_v1_10
 		pa_out_clock=>-1,
 		pa_out_clock_en=>-1,
 		pa_out_reset=>-1)
-	PORT MAP(oe=>(tmpOE__ADC_in_net_0),
+	PORT MAP(oe=>(tmpOE__P_FT1_net_0),
 		y=>(zero),
-		fb=>(tmpFB_0__water_pin_net_0),
+		fb=>(tmpFB_0__P_VP_net_0),
 		analog=>(open),
-		io=>(tmpIO_0__water_pin_net_0),
-		siovref=>(tmpSIOVREF__water_pin_net_0),
+		io=>(tmpIO_0__P_VP_net_0),
+		siovref=>(tmpSIOVREF__P_VP_net_0),
 		annotation=>(open),
 		in_clock=>zero,
-		in_clock_en=>tmpOE__ADC_in_net_0,
+		in_clock_en=>tmpOE__P_FT1_net_0,
 		in_reset=>zero,
 		out_clock=>zero,
-		out_clock_en=>tmpOE__ADC_in_net_0,
+		out_clock_en=>tmpOE__P_FT1_net_0,
 		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__water_pin_net_0);
-testPin:cy_psoc3_pins_v1_10
-	GENERIC MAP(id=>"9c21f726-98a8-4700-addd-1defa38fd9c8",
-		drive_mode=>"000",
-		ibuf_enabled=>"0",
-		init_dr_st=>"1",
-		input_sync=>"1",
-		input_clk_en=>'0',
-		input_sync_mode=>"0",
-		intr_mode=>"00",
-		invert_in_clock=>'0',
-		invert_in_clock_en=>'0',
-		invert_in_reset=>'0',
-		invert_out_clock=>'0',
-		invert_out_clock_en=>'0',
-		invert_out_reset=>'0',
-		io_voltage=>"",
-		layout_mode=>"CONTIGUOUS",
-		output_conn=>"0",
-		output_sync=>"0",
-		output_clk_en=>'0',
-		output_mode=>"0",
-		output_reset=>'0',
-		output_clock_mode=>"0",
-		oe_sync=>"0",
-		oe_conn=>"0",
-		oe_reset=>'0',
-		pin_aliases=>"",
-		pin_mode=>"A",
-		por_state=>4,
-		sio_group_cnt=>0,
-		sio_hifreq=>"",
-		sio_hyst=>"0",
-		sio_ibuf=>"00000000",
-		sio_info=>"00",
-		sio_obuf=>"00000000",
-		sio_refsel=>"00000000",
-		sio_vtrip=>"00000000",
-		slew_rate=>"0",
-		spanning=>'0',
-		sw_only=>'0',
-		vtrip=>"10",
-		width=>1,
-		port_alias_required=>'0',
-		port_alias_group=>"",
-		use_annotation=>"0",
-		pa_in_clock=>-1,
-		pa_in_clock_en=>-1,
-		pa_in_reset=>-1,
-		pa_out_clock=>-1,
-		pa_out_clock_en=>-1,
-		pa_out_reset=>-1)
-	PORT MAP(oe=>(tmpOE__ADC_in_net_0),
-		y=>(zero),
-		fb=>(tmpFB_0__testPin_net_0),
-		analog=>Net_69,
-		io=>(tmpIO_0__testPin_net_0),
-		siovref=>(tmpSIOVREF__testPin_net_0),
-		annotation=>(open),
-		in_clock=>zero,
-		in_clock_en=>tmpOE__ADC_in_net_0,
-		in_reset=>zero,
-		out_clock=>zero,
-		out_clock_en=>tmpOE__ADC_in_net_0,
-		out_reset=>zero,
-		interrupt=>tmpINTERRUPT_0__testPin_net_0);
+		interrupt=>tmpINTERRUPT_0__P_VP_net_0);
 
 END R_T_L;

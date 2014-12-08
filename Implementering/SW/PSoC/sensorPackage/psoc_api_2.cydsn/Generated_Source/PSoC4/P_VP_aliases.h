@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: SLC.h  
+* File Name: P_VP.h  
 * Version 2.5
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_SLC_ALIASES_H) /* Pins SLC_ALIASES_H */
-#define CY_PINS_SLC_ALIASES_H
+#if !defined(CY_PINS_P_VP_ALIASES_H) /* Pins P_VP_ALIASES_H */
+#define CY_PINS_P_VP_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -24,9 +24,9 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define SLC_0		SLC__0__PC
+#define P_VP_0		P_VP__0__PC
 
-#endif /* End Pins SLC_ALIASES_H */
+#endif /* End Pins P_VP_ALIASES_H */
 
 
 /* [] END OF FILE */

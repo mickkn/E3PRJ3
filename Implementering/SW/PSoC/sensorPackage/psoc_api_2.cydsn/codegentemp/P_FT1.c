@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: testPin.c  
+* File Name: P_FT1.c  
 * Version 2.5
 *
 * Description:
@@ -15,18 +15,18 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "testPin.h"
+#include "P_FT1.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        testPin_PC =   (testPin_PC & \
-                                (uint32)(~(uint32)(testPin_DRIVE_MODE_IND_MASK << (testPin_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (testPin_DRIVE_MODE_BITS * (shift))); \
+        P_FT1_PC =   (P_FT1_PC & \
+                                (uint32)(~(uint32)(P_FT1_DRIVE_MODE_IND_MASK << (P_FT1_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (P_FT1_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: testPin_Write
+* Function Name: P_FT1_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,16 +39,16 @@
 *  None 
 *  
 *******************************************************************************/
-void testPin_Write(uint8 value) 
+void P_FT1_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(testPin_DR & (uint8)(~testPin_MASK));
-    drVal = (drVal | ((uint8)(value << testPin_SHIFT) & testPin_MASK));
-    testPin_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(P_FT1_DR & (uint8)(~P_FT1_MASK));
+    drVal = (drVal | ((uint8)(value << P_FT1_SHIFT) & P_FT1_MASK));
+    P_FT1_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: testPin_SetDriveMode
+* Function Name: P_FT1_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -57,27 +57,27 @@ void testPin_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  testPin_DM_STRONG     Strong Drive 
-*  testPin_DM_OD_HI      Open Drain, Drives High 
-*  testPin_DM_OD_LO      Open Drain, Drives Low 
-*  testPin_DM_RES_UP     Resistive Pull Up 
-*  testPin_DM_RES_DWN    Resistive Pull Down 
-*  testPin_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  testPin_DM_DIG_HIZ    High Impedance Digital 
-*  testPin_DM_ALG_HIZ    High Impedance Analog 
+*  P_FT1_DM_STRONG     Strong Drive 
+*  P_FT1_DM_OD_HI      Open Drain, Drives High 
+*  P_FT1_DM_OD_LO      Open Drain, Drives Low 
+*  P_FT1_DM_RES_UP     Resistive Pull Up 
+*  P_FT1_DM_RES_DWN    Resistive Pull Down 
+*  P_FT1_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  P_FT1_DM_DIG_HIZ    High Impedance Digital 
+*  P_FT1_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void testPin_SetDriveMode(uint8 mode) 
+void P_FT1_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(testPin__0__SHIFT, mode);
+	SetP4PinDriveMode(P_FT1__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: testPin_Read
+* Function Name: P_FT1_Read
 ********************************************************************************
 *
 * Summary:
@@ -91,17 +91,17 @@ void testPin_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro testPin_ReadPS calls this function. 
+*  Macro P_FT1_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 testPin_Read(void) 
+uint8 P_FT1_Read(void) 
 {
-    return (uint8)((testPin_PS & testPin_MASK) >> testPin_SHIFT);
+    return (uint8)((P_FT1_PS & P_FT1_MASK) >> P_FT1_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: testPin_ReadDataReg
+* Function Name: P_FT1_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -114,17 +114,17 @@ uint8 testPin_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 testPin_ReadDataReg(void) 
+uint8 P_FT1_ReadDataReg(void) 
 {
-    return (uint8)((testPin_DR & testPin_MASK) >> testPin_SHIFT);
+    return (uint8)((P_FT1_DR & P_FT1_MASK) >> P_FT1_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(testPin_INTSTAT) 
+#if defined(P_FT1_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: testPin_ClearInterrupt
+    * Function Name: P_FT1_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -138,11 +138,11 @@ uint8 testPin_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 testPin_ClearInterrupt(void) 
+    uint8 P_FT1_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(testPin_INTSTAT & testPin_MASK);
-		testPin_INTSTAT = maskedStatus;
-        return maskedStatus >> testPin_SHIFT;
+		uint8 maskedStatus = (uint8)(P_FT1_INTSTAT & P_FT1_MASK);
+		P_FT1_INTSTAT = maskedStatus;
+        return maskedStatus >> P_FT1_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

@@ -32,14 +32,6 @@
 
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.c : 
 
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_in.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.c 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.h : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in_aliases.h : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/ADC_in.c : 
-
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/Cm0Start.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/Cm0Start.c 
 
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
@@ -58,13 +50,29 @@
 
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.c : 
 
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/SLC.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.c 
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/P_FT1.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT1.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT1_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT1.c 
 
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.h : 
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT1.h : 
 
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC_aliases.h : 
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT1_aliases.h : 
 
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/SLC.c : 
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT1.c : 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/P_FT2.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT2.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT2_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT2.c 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT2.h : 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT2_aliases.h : 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_FT2.c : 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/P_VP.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_VP.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_VP_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_VP.c 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_VP.h : 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_VP_aliases.h : 
+
+//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/P_VP.c : 
 
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/cyPm.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/CyLib.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyPm.c 
 
@@ -81,20 +89,4 @@
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/cyutils.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyutils.c 
 
 //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyutils.c : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/testPin.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/testPin.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/testPin_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/testPin.c 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/testPin.h : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/testPin_aliases.h : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/testPin.c : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/CortexM0/ARM_GCC_473/Debug/water_pin.o : //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cydevice_trm.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cyfitter.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/cytypes.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin_aliases.h //psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.c 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.h : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin_aliases.h : 
-
-//psf/Home/Documents/E3PRJ3/Implementering/SW/PSoC/sensorPackage/psoc_api_2.cydsn/Generated_Source/PSoC4/water_pin.c : 
 

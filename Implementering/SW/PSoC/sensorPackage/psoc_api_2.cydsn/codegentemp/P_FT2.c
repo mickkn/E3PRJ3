@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: ADC_in.c  
+* File Name: P_FT2.c  
 * Version 2.5
 *
 * Description:
@@ -15,18 +15,18 @@
 *******************************************************************************/
 
 #include "cytypes.h"
-#include "ADC_in.h"
+#include "P_FT2.h"
 
 #define SetP4PinDriveMode(shift, mode)  \
     do { \
-        ADC_in_PC =   (ADC_in_PC & \
-                                (uint32)(~(uint32)(ADC_in_DRIVE_MODE_IND_MASK << (ADC_in_DRIVE_MODE_BITS * (shift))))) | \
-                                (uint32)((uint32)(mode) << (ADC_in_DRIVE_MODE_BITS * (shift))); \
+        P_FT2_PC =   (P_FT2_PC & \
+                                (uint32)(~(uint32)(P_FT2_DRIVE_MODE_IND_MASK << (P_FT2_DRIVE_MODE_BITS * (shift))))) | \
+                                (uint32)((uint32)(mode) << (P_FT2_DRIVE_MODE_BITS * (shift))); \
     } while (0)
 
 
 /*******************************************************************************
-* Function Name: ADC_in_Write
+* Function Name: P_FT2_Write
 ********************************************************************************
 *
 * Summary:
@@ -39,16 +39,16 @@
 *  None 
 *  
 *******************************************************************************/
-void ADC_in_Write(uint8 value) 
+void P_FT2_Write(uint8 value) 
 {
-    uint8 drVal = (uint8)(ADC_in_DR & (uint8)(~ADC_in_MASK));
-    drVal = (drVal | ((uint8)(value << ADC_in_SHIFT) & ADC_in_MASK));
-    ADC_in_DR = (uint32)drVal;
+    uint8 drVal = (uint8)(P_FT2_DR & (uint8)(~P_FT2_MASK));
+    drVal = (drVal | ((uint8)(value << P_FT2_SHIFT) & P_FT2_MASK));
+    P_FT2_DR = (uint32)drVal;
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_in_SetDriveMode
+* Function Name: P_FT2_SetDriveMode
 ********************************************************************************
 *
 * Summary:
@@ -57,27 +57,27 @@ void ADC_in_Write(uint8 value)
 * Parameters:  
 *  mode:  Change the pins to one of the following drive modes.
 *
-*  ADC_in_DM_STRONG     Strong Drive 
-*  ADC_in_DM_OD_HI      Open Drain, Drives High 
-*  ADC_in_DM_OD_LO      Open Drain, Drives Low 
-*  ADC_in_DM_RES_UP     Resistive Pull Up 
-*  ADC_in_DM_RES_DWN    Resistive Pull Down 
-*  ADC_in_DM_RES_UPDWN  Resistive Pull Up/Down 
-*  ADC_in_DM_DIG_HIZ    High Impedance Digital 
-*  ADC_in_DM_ALG_HIZ    High Impedance Analog 
+*  P_FT2_DM_STRONG     Strong Drive 
+*  P_FT2_DM_OD_HI      Open Drain, Drives High 
+*  P_FT2_DM_OD_LO      Open Drain, Drives Low 
+*  P_FT2_DM_RES_UP     Resistive Pull Up 
+*  P_FT2_DM_RES_DWN    Resistive Pull Down 
+*  P_FT2_DM_RES_UPDWN  Resistive Pull Up/Down 
+*  P_FT2_DM_DIG_HIZ    High Impedance Digital 
+*  P_FT2_DM_ALG_HIZ    High Impedance Analog 
 *
 * Return: 
 *  None
 *
 *******************************************************************************/
-void ADC_in_SetDriveMode(uint8 mode) 
+void P_FT2_SetDriveMode(uint8 mode) 
 {
-	SetP4PinDriveMode(ADC_in__0__SHIFT, mode);
+	SetP4PinDriveMode(P_FT2__0__SHIFT, mode);
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_in_Read
+* Function Name: P_FT2_Read
 ********************************************************************************
 *
 * Summary:
@@ -91,17 +91,17 @@ void ADC_in_SetDriveMode(uint8 mode)
 *  Returns the current value of the Digital Port as a right justified number
 *  
 * Note:
-*  Macro ADC_in_ReadPS calls this function. 
+*  Macro P_FT2_ReadPS calls this function. 
 *  
 *******************************************************************************/
-uint8 ADC_in_Read(void) 
+uint8 P_FT2_Read(void) 
 {
-    return (uint8)((ADC_in_PS & ADC_in_MASK) >> ADC_in_SHIFT);
+    return (uint8)((P_FT2_PS & P_FT2_MASK) >> P_FT2_SHIFT);
 }
 
 
 /*******************************************************************************
-* Function Name: ADC_in_ReadDataReg
+* Function Name: P_FT2_ReadDataReg
 ********************************************************************************
 *
 * Summary:
@@ -114,17 +114,17 @@ uint8 ADC_in_Read(void)
 *  Returns the current value assigned to the Digital Port's data output register
 *  
 *******************************************************************************/
-uint8 ADC_in_ReadDataReg(void) 
+uint8 P_FT2_ReadDataReg(void) 
 {
-    return (uint8)((ADC_in_DR & ADC_in_MASK) >> ADC_in_SHIFT);
+    return (uint8)((P_FT2_DR & P_FT2_MASK) >> P_FT2_SHIFT);
 }
 
 
 /* If Interrupts Are Enabled for this Pins component */ 
-#if defined(ADC_in_INTSTAT) 
+#if defined(P_FT2_INTSTAT) 
 
     /*******************************************************************************
-    * Function Name: ADC_in_ClearInterrupt
+    * Function Name: P_FT2_ClearInterrupt
     ********************************************************************************
     *
     * Summary:
@@ -138,11 +138,11 @@ uint8 ADC_in_ReadDataReg(void)
     *  Returns the value of the interrupt status register
     *  
     *******************************************************************************/
-    uint8 ADC_in_ClearInterrupt(void) 
+    uint8 P_FT2_ClearInterrupt(void) 
     {
-		uint8 maskedStatus = (uint8)(ADC_in_INTSTAT & ADC_in_MASK);
-		ADC_in_INTSTAT = maskedStatus;
-        return maskedStatus >> ADC_in_SHIFT;
+		uint8 maskedStatus = (uint8)(P_FT2_INTSTAT & P_FT2_MASK);
+		P_FT2_INTSTAT = maskedStatus;
+        return maskedStatus >> P_FT2_SHIFT;
     }
 
 #endif /* If Interrupts Are Enabled for this Pins component */ 

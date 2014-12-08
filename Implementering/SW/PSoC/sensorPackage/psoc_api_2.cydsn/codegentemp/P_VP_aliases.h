@@ -1,5 +1,5 @@
 /*******************************************************************************
-* File Name: water_pin.h  
+* File Name: P_VP.h  
 * Version 2.5
 *
 * Description:
@@ -14,8 +14,8 @@
 * the software package with which this file was provided.
 *******************************************************************************/
 
-#if !defined(CY_PINS_water_pin_ALIASES_H) /* Pins water_pin_ALIASES_H */
-#define CY_PINS_water_pin_ALIASES_H
+#if !defined(CY_PINS_P_VP_ALIASES_H) /* Pins P_VP_ALIASES_H */
+#define CY_PINS_P_VP_ALIASES_H
 
 #include "cytypes.h"
 #include "cyfitter.h"
@@ -24,9 +24,9 @@
 /***************************************
 *              Constants        
 ***************************************/
-#define water_pin_0		water_pin__0__PC
+#define P_VP_0		P_VP__0__PC
 
-#endif /* End Pins water_pin_ALIASES_H */
+#endif /* End Pins P_VP_ALIASES_H */
 
 
 /* [] END OF FILE */

@@ -34,6 +34,7 @@ int tempSensor_getValue(float *val)
     //Set SCL low for temp data out
     P_FT2_Write(select);
     
+    //Wait 1000 ms
     CyDelay(1000);
     
     //Start conversion

@@ -5,10 +5,7 @@ int main()
 {  
     //'Objects' initialize
     sensorPackage_init(); 
-    
-    //Set testPin to voltage
-    testPin_Write(100);
-
+   
     for(;;)//Never ending story....
     {
         //Varibles to hold sensor data

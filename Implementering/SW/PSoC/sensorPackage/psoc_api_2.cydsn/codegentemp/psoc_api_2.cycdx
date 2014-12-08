@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <blockRegMap version="1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cypress.com/xsd/cyblockregmap cyblockregmap.xsd" xmlns="http://cypress.com/xsd/cyblockregmap">
-  <block name="water_pin" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="testPin" BASE="0x0" SIZE="0x0" desc="" visible="true" />
-  <block name="SLC" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="P_FT2" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="P_VP" BASE="0x0" SIZE="0x0" desc="" visible="true" />
   <block name="ADC_SAR_Seq_0" BASE="0x0" SIZE="0x0" desc="Sequencing SAR ADC" visible="true">
     <block name="cy_analog_noconnect_18" BASE="0x0" SIZE="0x0" desc="" visible="true" />
     <block name="cy_analog_noconnect_17" BASE="0x0" SIZE="0x0" desc="" visible="true" />
@@ -404,5 +403,5 @@
       <field name="WOUND_RESOLUTION" from="1" to="0" access="R" resetVal="" desc="Maximum SAR resolution allowed" />
     </register>
   </block>
-  <block name="ADC_in" BASE="0x0" SIZE="0x0" desc="" visible="true" />
+  <block name="P_FT1" BASE="0x0" SIZE="0x0" desc="" visible="true" />
 </blockRegMap>
