@@ -25,7 +25,7 @@ Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. 
 På figur \ref{lab:sht_plot_mable} kan det ses at kurven for fugtighed går fra -6 \% til 120 \%, denne er dog kun defineret ved 0 til 100 \%. 
 
 % PLOT FRA MAPLE HER!
-\begin{figure}[htb]
+\begin{figure}[H]
 \centering
 {\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht_plot_maple}}
 \caption{Plot af fugt(rød kurve) og temperatur(blå kurve) som funktion af pwm}
@@ -34,18 +34,28 @@ På figur \ref{lab:sht_plot_mable} kan det ses at kurven for fugtighed går fra 
 
 \subsection{Præcisions- og støjhåndtering}
 
-Ved 10\% duty cycle og 90\% duty cycle vil DC-spændingen give henholdsvis 33 mV og 2970 mV $<=> \Delta V = 2970$ og en temperatur differens gående fra -29 ... 111 ${^{\circ}}$C $<=> \Delta T = 140 {^{\circ}}$C. Da denne er en lineær funktion kan der beregnes et step:
+Ved 10\% duty cycle og 90\% duty cycle vil DC-spændingen, efter filteret, give henholdsvis 33 mV og 2970 mV $<=> \Delta V = 2937$ og en temperatur differens gående fra -29 ... 111 ${^{\circ}}$C $<=> \Delta T = 140 {^{\circ}}$C. Da denne er en lineær funktion kan der beregnes et step:
 
 \begin{equation}
 step = \frac{2970}{140} = 21 \frac{mV}{^{\circ}C}
 \end{equation}
 
+Da udvalget af kondensatorer er meget begrænset i forhold til udvalget af modstande er kondensatoren og knækfrekvensen, $f_c$, fastsat og modstanden udregnet. Kondensatoren er sat til 2,2 nF og knækfrekvensen til 12 Hz. 
 
 \begin{equation}
-f_c = \frac{1}{2 \pi * R1 * C1} = \frac{1}{2 \pi * 6,1*10^3  * 2,2*10^{-6}} = 12 Hz\pm5 \%
+f_c = \frac{1}{2 \pi * R1 * C1} = \frac{1}{2 \pi * R1  * 2,2*10^{-6}} = 12 Hz\pm5 \%
 \end{equation}
 
-Komponenternes værdi har en afvigelse på $\pm$5 \%.
+\begin{equation}
+R1 = \frac{1}{2 \pi * C1  * f_c}
+\end{equation}
+
+\begin{equation}
+R1 = \frac{1}{2 \pi * 2,2*10^{-6}  * 12}
+\end{equation}
+
+\textit{Komponenternes værdi har en afvigelse på $\pm$5 \%.}\\
+
 $f_c$ ligger således en dekade under 120 Hz. Filteret er designet som et 2. ordens filter og vil derfor dæmpe 40 dB pr. dekade. Amplituden vil da være dæmpet 100 gange og tilbage er den tilnærmede DC-værdi. 
 
 \begin{equation}
@@ -53,7 +63,7 @@ Gain = 20 * \log_{10}(x) <=> 40 dB = 20 * \log_ {10}(x) <=> x = 100
 \end{equation} 
 Da det er en dæmpning der er tale om, vil gain være lig med -40 dB hvilket vil give en x-værdi på 0,01 som er det samme som 100 gange dæmpning.
 
-Grundet at værdien kun er tilnærmet skyldes at der stadig vil være oscillation tilbage fra PWMen og det antages at denne svarer til 33 mV. Der vil altså være en usikkerhed i DC-værdien svarende til 1,6 $^{\circ}$C alene fra filteret. De 33 mV er en ideel antagelse ud fra filteret, men nøjagtigheden herfor kan ikke garanteres og der laves derfor en antagelse.
+Grundet at værdien kun er tilnærmet skyldes at der stadig vil være oscillation tilbage fra PWMen og det antages at denne svarer til 33 mV. 33mV svarer til en 100 ganges dæmpning af 3,3V. Der vil altså være en usikkerhed i DC-værdien svarende til 1,6 $^{\circ}$C alene fra filteret. De 33 mV er en ideel antagelse ud fra filteret, men nøjagtigheden herfor kan ikke garanteres og der laves derfor en antagelse.
 
 Dette kan løses i softwaren ved evt. at tage et antal samples og så midle de værdier der er målt med simple gennemsnitsberegning. 
 
@@ -62,7 +72,7 @@ V_{inADC_{avg}} = \frac{V_{in1} + V_{in2} + .. V_{inN}}{N}
 \end{equation} 
 \textit{hvor N = antal samples}
 
-En anden støjfaktor der er værd at tage hensyn til er filterets belastning af udgangen på sensoren. Denne kan have indflydelse på området hvori PWM'en går højt og lavt. Det kan altså ikke med sikkerhed siges at signalet vil gå fra 0 V til 3,3 V, men kan have et offset og en evt. dæmpning. Denne problematik kan løses ved indsættelse af en OpAmp, forbundet som en komparator, med kendt spændingsforsyning i det ønsket område, lige før filteret. Denne vil sørge for, at signalet kommer til at ligge i det valgte område. En OpAmp fra HC14 familien ville kunne klare denne opgave. 
+En anden støjfaktor der er værd at tage hensyn til er filterets belastning af udgangen på sensoren. Denne kan have indflydelse på området hvori PWMen går højt og lavt. Det kan altså ikke med sikkerhed siges at signalet vil gå fra 0 V til 3,3 V, men kan have et offset og en evt. dæmpning. Denne problematik kan løses ved indsættelse af en OpAmp, forbundet som en komparator, med kendt spændingsforsyning i det ønsket område, lige før filteret. Denne vil sørge for, at signalet kommer til at ligge i det valgte område. En OpAmp fra HC14 familien ville kunne klare denne opgave. 
 
 \begin{figure}[htb]
 \centering
@@ -70,3 +80,5 @@ En anden støjfaktor der er værd at tage hensyn til er filterets belastning af 
 \caption{OpAmp til udbedring af evt. støj forårsaget af lavpasfilter}
 \label{lab:sht_opamp}
 \end{figure}
+
+Da komponenterne afviger med 5\% er mere præcis beregninger af støj unødvendig. Støj kan forsage fejlmålinger, men i denne forbindelse vil det højest kunne give afvigelser på et par grader.
