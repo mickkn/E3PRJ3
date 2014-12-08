@@ -1,7 +1,7 @@
 %% psoc_api
 
-API til styring af PSoC, herunder sensor og sprinkler, er implementeret i PSoC Creator. Top designet består af en ADC\_SAR\_Seq, en analog pin og to digitale pins til at styre henholdsvis sprinkler og Select til bestemmelse af temperatur- eller fugtighedsdata for SHT21p.
-I top designet er der angivet følgende pins. ''P\_FT1'', ''P\_FT2'', ''P\_VP'' disse forbindes til henholdsvis pin P2[5], P0[0] og P2[0]. P\_FT1 oprettes som en analog pin og de to andre som digitale output pins. Under konfiguration for de digitale pins fravælges ''HW Connection'' under Digital Output. For nærmere opsætning af pins henvises til figur \ref{lab:P_PV_config} og figur \ref{lab:P_FT2_config}
+API til styring af PSoC4, herunder sensor og sprinkler, er implementeret i PSoC Creator. Top designet består af en ADC\_SAR\_Seq, en analog pin og to digitale pins til at styre henholdsvis sprinkler og Select til bestemmelse af temperatur- eller fugtighedsdata for SHT21p.
+I top designet, se figur \ref{lab:psoc_api_topdesign}, er der angivet følgende pins. ''P\_FT1'', ''P\_FT2'', ''P\_VP'' disse forbindes til henholdsvis pin P2[5], P0[0] og P2[0]. P\_FT1 oprettes som en analog pin og de to andre som digitale output pins. Under konfiguration for de digitale pins fravælges ''HW Connection'' under Digital Output. For nærmere opsætning af pins henvises til figur \ref{lab:P_PV_config} og figur \ref{lab:P_FT2_config}
 
 \begin{figure}[htb]
 \centering
@@ -20,12 +20,12 @@ I top designet er der angivet følgende pins. ''P\_FT1'', ''P\_FT2'', ''P\_VP'' 
 
 Under konfiguration for ADC-komponenten vælges Vref til VDDA og Single ended negative input vælges til Vss. Dette sætter ADCen op til at bruge 0 V som referencespænding.
 
-Da PSoC kun har en SAR komponent er det nødvendigt at initialisere denne i sensorPackage-driveren.
+Da PSoC4 kun har en SAR komponent er det nødvendigt at initialisere denne i sensorPackage-driveren.
 
 \begin{figure}[htb]
 \centering
 {\includegraphics[width=0.70\textwidth]{filer/pics/psoc_api_topdesign}}
-\caption{Top Design for PSoC API}
+\caption{Top Design for PSoC4 API}
 \label{lab:psoc_api_topdesign}
 \end{figure}
 
