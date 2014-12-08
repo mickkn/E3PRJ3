@@ -18,15 +18,18 @@
   <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_SAR_Seq_0.h" value="NONE;ADC_SAR_Seq_0" />
   <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_SAR_Seq_0_PM.c" value="ARM_C_FILE;ADC_SAR_Seq_0" />
   <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_SAR_Seq_0_INT.c" value="ARM_C_FILE;ADC_SAR_Seq_0" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_FT1.c" value="ARM_C_FILE;P_FT1" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_FT1.h" value="NONE;P_FT1" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_FT1_aliases.h" value="NONE;P_FT1" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_FT2.c" value="ARM_C_FILE;P_FT2" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_FT2.h" value="NONE;P_FT2" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_FT2_aliases.h" value="NONE;P_FT2" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_VP.c" value="ARM_C_FILE;P_VP" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_VP.h" value="NONE;P_VP" />
-  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\P_VP_aliases.h" value="NONE;P_VP" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_in.c" value="ARM_C_FILE;ADC_in" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_in.h" value="NONE;ADC_in" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_in_aliases.h" value="NONE;ADC_in" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\SLC.c" value="ARM_C_FILE;SLC" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\SLC.h" value="NONE;SLC" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\SLC_aliases.h" value="NONE;SLC" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\water_pin.c" value="ARM_C_FILE;water_pin" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\water_pin.h" value="NONE;water_pin" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\water_pin_aliases.h" value="NONE;water_pin" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\testPin.c" value="ARM_C_FILE;testPin" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\testPin.h" value="NONE;testPin" />
+  <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\testPin_aliases.h" value="NONE;testPin" />
   <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_SAR_Seq_0_intClock.c" value="ARM_C_FILE;ADC_SAR_Seq_0_intClock" />
   <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_SAR_Seq_0_intClock.h" value="NONE;ADC_SAR_Seq_0_intClock" />
   <file name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\codegentemp\ADC_SAR_Seq_0_IRQ.c" value="ARM_C_FILE;ADC_SAR_Seq_0_IRQ" />
