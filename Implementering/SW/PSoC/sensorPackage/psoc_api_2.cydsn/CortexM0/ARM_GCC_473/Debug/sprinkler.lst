@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
   42              		.size	sprinkler_init, .-sprinkler_init
   43              		.section	.text.sprinkler_exit,"ax",%progbits
   44              		.align	2
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 2
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 2
 
 
   45              		.global	sprinkler_exit
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
   91 000a 1A70     		strb	r2, [r3]
   22:.\sprinkler.c ****     if(active != 1 && active != 0)
   92              		.loc 1 22 0
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 3
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 3
 
 
   93 000c FB1D     		add	r3, r7, #7
@@ -168,9 +168,9 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  130 0006 00000000 		.4byte	.Ldebug_abbrev0
  131 000a 04       		.byte	0x4
  132 000b 01       		.uleb128 0x1
- 133 000c 7C000000 		.4byte	.LASF15
+ 133 000c 55000000 		.4byte	.LASF15
  134 0010 01       		.byte	0x1
- 135 0011 01010000 		.4byte	.LASF16
+ 135 0011 DA000000 		.4byte	.LASF16
  136 0015 1B000000 		.4byte	.LASF17
  137 0019 00000000 		.4byte	.Ldebug_ranges0+0
  138 001d 00000000 		.4byte	0
@@ -178,31 +178,31 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  140 0025 00000000 		.4byte	.Ldebug_line0
  141 0029 02       		.uleb128 0x2
  142 002a 01       		.byte	0x1
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 4
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 4
 
 
  143 002b 06       		.byte	0x6
- 144 002c 32010000 		.4byte	.LASF0
+ 144 002c 0B010000 		.4byte	.LASF0
  145 0030 02       		.uleb128 0x2
  146 0031 01       		.byte	0x1
  147 0032 08       		.byte	0x8
- 148 0033 EE000000 		.4byte	.LASF1
+ 148 0033 C7000000 		.4byte	.LASF1
  149 0037 02       		.uleb128 0x2
  150 0038 02       		.byte	0x2
  151 0039 05       		.byte	0x5
- 152 003a 6D010000 		.4byte	.LASF2
+ 152 003a 55010000 		.4byte	.LASF2
  153 003e 02       		.uleb128 0x2
  154 003f 02       		.byte	0x2
  155 0040 07       		.byte	0x7
- 156 0041 1F010000 		.4byte	.LASF3
+ 156 0041 F8000000 		.4byte	.LASF3
  157 0045 02       		.uleb128 0x2
  158 0046 04       		.byte	0x4
  159 0047 05       		.byte	0x5
- 160 0048 0F010000 		.4byte	.LASF4
+ 160 0048 E8000000 		.4byte	.LASF4
  161 004c 02       		.uleb128 0x2
  162 004d 04       		.byte	0x4
  163 004e 07       		.byte	0x7
- 164 004f C5000000 		.4byte	.LASF5
+ 164 004f 9E000000 		.4byte	.LASF5
  165 0053 02       		.uleb128 0x2
  166 0054 08       		.byte	0x8
  167 0055 05       		.byte	0x5
@@ -210,7 +210,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  169 005a 02       		.uleb128 0x2
  170 005b 08       		.byte	0x8
  171 005c 07       		.byte	0x7
- 172 005d D7000000 		.4byte	.LASF7
+ 172 005d B0000000 		.4byte	.LASF7
  173 0061 03       		.uleb128 0x3
  174 0062 04       		.byte	0x4
  175 0063 05       		.byte	0x5
@@ -222,23 +222,23 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  181 006f 02       		.uleb128 0x2
  182 0070 04       		.byte	0x4
  183 0071 04       		.byte	0x4
- 184 0072 58010000 		.4byte	.LASF9
+ 184 0072 40010000 		.4byte	.LASF9
  185 0076 02       		.uleb128 0x2
  186 0077 08       		.byte	0x8
  187 0078 04       		.byte	0x4
- 188 0079 18010000 		.4byte	.LASF10
+ 188 0079 F1000000 		.4byte	.LASF10
  189 007d 02       		.uleb128 0x2
  190 007e 01       		.byte	0x1
  191 007f 08       		.byte	0x8
- 192 0080 FC000000 		.4byte	.LASF11
+ 192 0080 D5000000 		.4byte	.LASF11
  193 0084 02       		.uleb128 0x2
  194 0085 04       		.byte	0x4
  195 0086 07       		.byte	0x7
- 196 0087 77010000 		.4byte	.LASF12
+ 196 0087 5F010000 		.4byte	.LASF12
  197 008b 04       		.uleb128 0x4
  198 008c 01       		.byte	0x1
- 199 008d 6D000000 		.4byte	.LASF13
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 5
+ 199 008d 31010000 		.4byte	.LASF13
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 5
 
 
  200 0091 01       		.byte	0x1
@@ -249,7 +249,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  205 009f 01       		.byte	0x1
  206 00a0 04       		.uleb128 0x4
  207 00a1 01       		.byte	0x1
- 208 00a2 5E010000 		.4byte	.LASF14
+ 208 00a2 46010000 		.4byte	.LASF14
  209 00a6 01       		.byte	0x1
  210 00a7 0F       		.byte	0xf
  211 00a8 00000000 		.4byte	.LFB34
@@ -258,7 +258,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  214 00b4 01       		.byte	0x1
  215 00b5 05       		.uleb128 0x5
  216 00b6 01       		.byte	0x1
- 217 00b7 45010000 		.4byte	.LASF18
+ 217 00b7 1E010000 		.4byte	.LASF18
  218 00bb 01       		.byte	0x1
  219 00bc 14       		.byte	0x14
  220 00bd 01       		.byte	0x1
@@ -268,7 +268,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  224 00ca 58000000 		.4byte	.LLST2
  225 00ce 01       		.byte	0x1
  226 00cf 06       		.uleb128 0x6
- 227 00d0 3E010000 		.4byte	.LASF19
+ 227 00d0 17010000 		.4byte	.LASF19
  228 00d4 01       		.byte	0x1
  229 00d5 14       		.byte	0x14
  230 00d6 30000000 		.4byte	0x30
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  254 0010 01       		.uleb128 0x1
  255 0011 10       		.uleb128 0x10
  256 0012 06       		.uleb128 0x6
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 6
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 6
 
 
  257 0013 00       		.byte	0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  311 004a 3B       		.uleb128 0x3b
  312 004b 0B       		.uleb128 0xb
  313 004c 27       		.uleb128 0x27
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 7
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 7
 
 
  314 004d 0C       		.uleb128 0xc
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  368 0037 00       		.sleb128 0
  369 0038 02000000 		.4byte	.LCFI2
  370 003c 04000000 		.4byte	.LCFI3
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 8
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 8
 
 
  371 0040 0200     		.2byte	0x2
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  425 000c 08000000 		.4byte	.LFE34
  426 0010 00000000 		.4byte	.LFB35
  427 0014 36000000 		.4byte	.LFE35
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 9
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 9
 
 
  428 0018 00000000 		.4byte	0
@@ -501,103 +501,99 @@ ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 1
  436      20696E74 
  436      00
  437              	.LASF17:
- 438 001b 5C5C7073 		.ascii	"\\\\psf\\Home\\Documents\\E3PRJ3\\Implementering\\S"
- 438      665C486F 
- 438      6D655C44 
- 438      6F63756D 
- 438      656E7473 
- 439 0047 575C5053 		.ascii	"W\\PSoC\\sensorPackage\\psoc_api_2.cydsn\000"
- 439      6F435C73 
- 439      656E736F 
- 439      72506163 
- 439      6B616765 
- 440              	.LASF13:
- 441 006d 73707269 		.ascii	"sprinkler_init\000"
- 441      6E6B6C65 
- 441      725F696E 
- 441      697400
- 442              	.LASF15:
- 443 007c 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 443      4320342E 
- 443      372E3320 
- 443      32303133 
- 443      30333132 
- 444 00af 616E6368 		.ascii	"anch revision 196615]\000"
- 444      20726576 
- 444      6973696F 
- 444      6E203139 
- 444      36363135 
- 445              	.LASF5:
- 446 00c5 6C6F6E67 		.ascii	"long unsigned int\000"
- 446      20756E73 
- 446      69676E65 
- 446      6420696E 
- 446      7400
- 447              	.LASF7:
- 448 00d7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 448      206C6F6E 
- 448      6720756E 
- 448      7369676E 
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 10
+ 438 001b 5C5C7073 		.ascii	"\\\\psf\\Dropbox\\3.Semester\\PRJ3\\psoc_api_2\\pso"
+ 438      665C4472 
+ 438      6F70626F 
+ 438      785C332E 
+ 438      53656D65 
+ 439 0047 635F6170 		.ascii	"c_api_2.cydsn\000"
+ 439      695F322E 
+ 439      63796473 
+ 439      6E00
+ 440              	.LASF15:
+ 441 0055 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 441      4320342E 
+ 441      372E3320 
+ 441      32303133 
+ 441      30333132 
+ 442 0088 616E6368 		.ascii	"anch revision 196615]\000"
+ 442      20726576 
+ 442      6973696F 
+ 442      6E203139 
+ 442      36363135 
+ 443              	.LASF5:
+ 444 009e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 444      20756E73 
+ 444      69676E65 
+ 444      6420696E 
+ 444      7400
+ 445              	.LASF7:
+ 446 00b0 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 446      206C6F6E 
+ 446      6720756E 
+ 446      7369676E 
+ 446      65642069 
+ 447              	.LASF1:
+ 448 00c7 756E7369 		.ascii	"unsigned char\000"
+ 448      676E6564 
+ 448      20636861 
+ 448      7200
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccRpeWaK.s 			page 10
 
 
- 448      65642069 
- 449              	.LASF1:
- 450 00ee 756E7369 		.ascii	"unsigned char\000"
- 450      676E6564 
- 450      20636861 
- 450      7200
- 451              	.LASF11:
- 452 00fc 63686172 		.ascii	"char\000"
- 452      00
- 453              	.LASF16:
- 454 0101 2E5C7370 		.ascii	".\\sprinkler.c\000"
- 454      72696E6B 
- 454      6C65722E 
- 454      6300
- 455              	.LASF4:
- 456 010f 6C6F6E67 		.ascii	"long int\000"
- 456      20696E74 
- 456      00
- 457              	.LASF10:
- 458 0118 646F7562 		.ascii	"double\000"
- 458      6C6500
- 459              	.LASF3:
- 460 011f 73686F72 		.ascii	"short unsigned int\000"
- 460      7420756E 
- 460      7369676E 
- 460      65642069 
- 460      6E7400
- 461              	.LASF0:
- 462 0132 7369676E 		.ascii	"signed char\000"
- 462      65642063 
- 462      68617200 
- 463              	.LASF19:
- 464 013e 61637469 		.ascii	"active\000"
- 464      766500
- 465              	.LASF18:
- 466 0145 73707269 		.ascii	"sprinkler_setValue\000"
+ 449              	.LASF11:
+ 450 00d5 63686172 		.ascii	"char\000"
+ 450      00
+ 451              	.LASF16:
+ 452 00da 2E5C7370 		.ascii	".\\sprinkler.c\000"
+ 452      72696E6B 
+ 452      6C65722E 
+ 452      6300
+ 453              	.LASF4:
+ 454 00e8 6C6F6E67 		.ascii	"long int\000"
+ 454      20696E74 
+ 454      00
+ 455              	.LASF10:
+ 456 00f1 646F7562 		.ascii	"double\000"
+ 456      6C6500
+ 457              	.LASF3:
+ 458 00f8 73686F72 		.ascii	"short unsigned int\000"
+ 458      7420756E 
+ 458      7369676E 
+ 458      65642069 
+ 458      6E7400
+ 459              	.LASF0:
+ 460 010b 7369676E 		.ascii	"signed char\000"
+ 460      65642063 
+ 460      68617200 
+ 461              	.LASF19:
+ 462 0117 61637469 		.ascii	"active\000"
+ 462      766500
+ 463              	.LASF18:
+ 464 011e 73707269 		.ascii	"sprinkler_setValue\000"
+ 464      6E6B6C65 
+ 464      725F7365 
+ 464      7456616C 
+ 464      756500
+ 465              	.LASF13:
+ 466 0131 73707269 		.ascii	"sprinkler_init\000"
  466      6E6B6C65 
- 466      725F7365 
- 466      7456616C 
- 466      756500
+ 466      725F696E 
+ 466      697400
  467              	.LASF9:
- 468 0158 666C6F61 		.ascii	"float\000"
+ 468 0140 666C6F61 		.ascii	"float\000"
  468      7400
  469              	.LASF14:
- 470 015e 73707269 		.ascii	"sprinkler_exit\000"
+ 470 0146 73707269 		.ascii	"sprinkler_exit\000"
  470      6E6B6C65 
  470      725F6578 
  470      697400
  471              	.LASF2:
- 472 016d 73686F72 		.ascii	"short int\000"
+ 472 0155 73686F72 		.ascii	"short int\000"
  472      7420696E 
  472      7400
  473              	.LASF12:
- 474 0177 73697A65 		.ascii	"sizetype\000"
+ 474 015f 73697A65 		.ascii	"sizetype\000"
  474      74797065 
  474      00
  475              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
-ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccbnaIPH.s 			page 11
-
-

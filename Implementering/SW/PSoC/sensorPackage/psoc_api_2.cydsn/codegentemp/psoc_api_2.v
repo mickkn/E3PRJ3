@@ -1,6 +1,6 @@
 // ======================================================================
 // psoc_api_2.v generated from TopDesign.cysch
-// 12/08/2014 at 11:35
+// 12/08/2014 at 13:08
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 

@@ -5,7 +5,7 @@ int main()
 {  
     //'Objects' initialize
     sensorPackage_init(); 
-   
+
     for(;;)//Never ending story....
     {
         //Varibles to hold sensor data
