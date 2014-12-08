@@ -22,5 +22,18 @@
 \section{PIR API (SK MK)}
 \input{filer/implementering/pir_api}
 
+\section{Software (BS JC)}
+Efter sekvensdiagrammerne, klassediagrammet og klassebeskrivelser er designfasen afsluttet. Implementeringen starter så med at lave alle de forskellige klasser. Dette ender ud i de følgende statiske klassediagrammer.
 
+Da vi har arbejdet i Qt frameworket til at oprette og styre vores user interface på Devkit8000 så har vi gjort brug af mange af deres klasser. F.eks anvendes der ofte en \verb+QString+ istedet for en \verb+std::string+. Der er design billeder der viser hvordan vores UI ser ud når det bliver deployed på Devkit8000. Design filerne er dem i UI klassen som starter med \verb+win+ som ses på figur \ref{fig:class_static_dev}. Disse UI billeder har nogle knapper som kan sende nogle signaler til vores funktioner, et såkaldt event system. Event systemet er det som bringer os rundt i UI'en ved at kalde nogle bestemte funktioner når de pågældende knapper bliver trykket på osv.
+
+Selve strukturen er opbygget omkring objektet \verb+QStackedWindget winStack_+. Dette er et objekt i Qt frameworket som kan stacke billeder. Denne er altså en stak af alle de UI billeder som vi har i systemet. Når man skifter vindue, vælger man altså blot hvilket billede som ligger øverst i stakken, og på den måde bliver synligt. 
+
+\subsection{Master (JC)}
+\input{filer/implementering/sw_klassediagram_static}
+
+\clearpage
+
+\subsection{Enhed (BS)}
+\input{filer/implementering/sw_psoc_klassediagram_static}
 
