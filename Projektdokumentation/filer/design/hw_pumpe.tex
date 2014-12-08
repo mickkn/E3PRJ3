@@ -36,7 +36,7 @@ Ifølge databladet for Finder 40.52s (figur \ref{lab:finder4052s}), kræver rel�
 
 PSoC'ens udgang giver hverken strøm eller spænding nok til at trække relæet. PSoC4 afgiver 3,3 V og relæet kræver 3,7 V - 8,8 V. For at opnå dette benyttes en transistor til styringen af relæet. Relæet kræver 100 mA, derfor skal transistoren opfylde dette krav, det gør BC517 den kan tåle 500 mA. \newline
 
-På figur \ref{lab:BC517} ses R1(Ibase) modstanden er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Spændingen ved PSoC'en er 3,3 V (Spændingen kan ske at falde en smule hvis den bliver belastet, men det har ingen betydning for kredsløbet) og spændingen ved transistoren base ben er 1,4 V, det giver en spænding på 1,8 V over modstanden. Ibase strømmen er beregnet ud fra Ohms lov og der er valgt en modstand på 18 kOhm , der begrænser strømmen til 0,1 mA, se formel \ref{eq:Ibase}.
+På figur \ref{lab:BC517} ses R1(Ibase) modstanden. Denne er indsat for at begrænse den strøm der går til transistorens base ben, ifølge databladet for transistoren må Ibase strømmen max være 100 mA. Spændingen ved PSoC'en er 3,3 V (Spændingen kan ske at falde en smule hvis den bliver belastet, men det har ingen betydning for kredsløbet) og spændingen ved transistoren base ben er 1,4 V, det giver en spænding på 1,8 V over modstanden. Ibase strømmen er beregnet ud fra Ohms lov og der er valgt en modstand på 18 kOhm , der begrænser strømmen til 0,1 mA, se formel \ref{eq:Ibase}.
 \newline \newline
 Strømforstærkningen er faktisk 30000 gange i transistoren, så en strøm på 3 uA burde være nok, men der er taget et valg om at strømmen skal være 0,1 mA. BC517 er oplyst til at have et spændingsfald på 1 V i mættet tilstand, det efterlader 4 V til relæet, hvilket også er nok da relæet virker indenfor 3,7 V - 8,8 V, se figur \ref{lab:finder4052s}. Der er foretaget en observation af at hvis modstanden blev alt for stor ville relæet tage længere tid om at trække, det er ikke lykkedes at finde en fornuftigt forklaring på dette. Dioden er indsat for at beskytte transistoren, den beskytter mod tilbageløbende strøm fra spolen i relæet.
 
@@ -62,9 +62,8 @@ Driveren der skal håndtere Sprinkler-pumpe systemet, skal kunne aktivere/deakti
 \subsubsection*{Pseudokode}
 
 \begin{lstlisting}[language=C]
-void controlSprinkler(int address, bool on_off){
-Manage Sprinkler address
-Activate/deactivate corresponding Sprinkler
+void controlSprinkler(bool on_off){
+Activate/deactivate Sprinkler
 }
 \end{lstlisting}
 

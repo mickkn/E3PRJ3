@@ -1,7 +1,7 @@
 %integrationstest
 
-En test af PSoC API og SHT21p, implementeret på PCB, testes som et samlet system og dokumenteres her under.
-Der anvendes et almindelig stuetermometer som referencepunkt for temperaturen. Både PSoC og SHT21p forbindes via tilslutningsprint for yderligere integration.
+En test af PSoC4 API og SHT21p, implementeret på PCB, testes som et samlet system og dokumenteres herunder.
+Der anvendes et almindelig stuetermometer som referencepunkt for temperaturen. Både PSoC4 og SHT21p forbindes via tilslutningsprintet for yderligere integration.
 
 På figur \ref{lab:sht21p_opstilling} ses opstillingen af testen samt det anvendte termometer.
 Ved første måling blev der udskrevet værdier svarende til dem som ses på figur \ref{lab:sht21p_test_resultat}, men ved yderligere målinger faldt temperaturen til omkring 5 ${^{\circ}}$C og fugtigheden steg til omkring 40 \%. 
@@ -28,14 +28,14 @@ humi_{pwn} = \frac{1,0}{3,3} = 0,30
   \begin{minipage}{0.48\textwidth}
     \centering
       \includegraphics[width=\textwidth]{filer/integrationstest/billeder/sht21p_opstilling}
-      \caption{Opstillingen for test af SHT21p sammen med PSoC API}
+      \caption{Opstillingen for test af SHT21p sammen med PSoC4 API}
     \label{lab:sht21p_opstilling}
   \end{minipage}
   \hspace{0.1\textwidth}
   \begin{minipage}{0.48\textwidth}
     \centering
       \includegraphics[width=\textwidth]{filer/integrationstest/billeder/sht21p_test_resultat}
-      \caption{Måleresultater fra PSoCens debug-mode}
+      \caption{Måleresultater fra PSoC4 debug-mode}
     \label{lab:sht21p_test_resultat}
   \end{minipage}
 \end{figure}
