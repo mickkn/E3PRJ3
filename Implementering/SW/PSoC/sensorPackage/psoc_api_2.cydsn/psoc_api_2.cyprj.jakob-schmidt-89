@@ -36,7 +36,7 @@
 <dep name=".\Generated_Source\PSoC4\cypins.h" />
 <dep name=".\Generated_Source\PSoC4\cytypes.h" />
 <dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c" />
+<dep name=".\humiSensor.c" />
 <dep name=".\humiSensor.h" />
 <dep name=".\sensorPackage.h" />
 <dep name=".\sprinkler.h" />
@@ -65,101 +65,11 @@
 <file name=".\Generated_Source\PSoC4\cypins.h" />
 <file name=".\Generated_Source\PSoC4\cytypes.h" />
 <file name=".\Generated_Source\PSoC4\project.h" />
-<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c" />
+<file name=".\humiSensor.c" />
 <file name=".\humiSensor.h" />
 <file name=".\sensorPackage.h" />
 <file name=".\sprinkler.h" />
 <file name=".\tempSensor.h" />
-<file name=".\CortexM0\ARM_GCC_473\Debug\sensorPackage.o">
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
-<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT1.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT1_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT2.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT2_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\P_VP.h" />
-<dep name=".\Generated_Source\PSoC4\P_VP_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
-<dep name=".\Generated_Source\PSoC4\cyPm.h" />
-<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC4\cypins.h" />
-<dep name=".\Generated_Source\PSoC4\cytypes.h" />
-<dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.c" />
-<dep name=".\humiSensor.h" />
-<dep name=".\sensorPackage.h" />
-<dep name=".\sprinkler.h" />
-<dep name=".\tempSensor.h" />
-</file>
-<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.c" />
-<file name=".\CortexM0\ARM_GCC_473\Debug\sprinkler.o">
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
-<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT1.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT1_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT2.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT2_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\P_VP.h" />
-<dep name=".\Generated_Source\PSoC4\P_VP_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
-<dep name=".\Generated_Source\PSoC4\cyPm.h" />
-<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC4\cypins.h" />
-<dep name=".\Generated_Source\PSoC4\cytypes.h" />
-<dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sprinkler.c" />
-<dep name=".\sprinkler.h" />
-</file>
-<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sprinkler.c" />
-<file name=".\CortexM0\ARM_GCC_473\Debug\tempSensor.o">
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
-<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
-<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC4\CyLib.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT1.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT1_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT2.h" />
-<dep name=".\Generated_Source\PSoC4\P_FT2_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\P_VP.h" />
-<dep name=".\Generated_Source\PSoC4\P_VP_aliases.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
-<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
-<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
-<dep name=".\Generated_Source\PSoC4\cyPm.h" />
-<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC4\cypins.h" />
-<dep name=".\Generated_Source\PSoC4\cytypes.h" />
-<dep name=".\Generated_Source\PSoC4\project.h" />
-<dep name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c" />
-<dep name=".\humiSensor.h" />
-<dep name=".\sensorPackage.h" />
-<dep name=".\sprinkler.h" />
-<dep name=".\tempSensor.h" />
-</file>
-<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\main.o">
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
@@ -191,6 +101,96 @@
 <dep name=".\tempSensor.h" />
 </file>
 <file name=".\main.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\sensorPackage.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT1.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT1_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT2.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT2_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\P_VP.h" />
+<dep name=".\Generated_Source\PSoC4\P_VP_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\humiSensor.h" />
+<dep name=".\sensorPackage.c" />
+<dep name=".\sensorPackage.h" />
+<dep name=".\sprinkler.h" />
+<dep name=".\tempSensor.h" />
+</file>
+<file name=".\sensorPackage.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\sprinkler.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT1.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT1_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT2.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT2_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\P_VP.h" />
+<dep name=".\Generated_Source\PSoC4\P_VP_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\sprinkler.c" />
+<dep name=".\sprinkler.h" />
+</file>
+<file name=".\sprinkler.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\tempSensor.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT1.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT1_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT2.h" />
+<dep name=".\Generated_Source\PSoC4\P_FT2_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\P_VP.h" />
+<dep name=".\Generated_Source\PSoC4\P_VP_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\humiSensor.h" />
+<dep name=".\sensorPackage.h" />
+<dep name=".\sprinkler.h" />
+<dep name=".\tempSensor.c" />
+<dep name=".\tempSensor.h" />
+</file>
+<file name=".\tempSensor.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.o">
 <dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_0.h" />
 <dep name=".\Generated_Source\PSoC4\CyLib.h" />
@@ -329,6 +329,8 @@
 <file name=".\Generated_Source\PSoC4\ADC_in_aliases.h" />
 <file name=".\Generated_Source\PSoC4\SLC.h" />
 <file name=".\Generated_Source\PSoC4\SLC_aliases.h" />
+<file name=".\Generated_Source\PSoC4\testPin.h" />
+<file name=".\Generated_Source\PSoC4\testPin_aliases.h" />
 <file name=".\Generated_Source\PSoC4\water_pin.h" />
 <file name=".\Generated_Source\PSoC4\water_pin_aliases.h" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\ADC_in.o">
@@ -349,6 +351,15 @@
 <dep name=".\Generated_Source\PSoC4\SLC.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\SLC.c" />
+<file name=".\CortexM0\ARM_GCC_473\Debug\testPin.o">
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\testPin.h" />
+<dep name=".\Generated_Source\PSoC4\testPin_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\testPin.c" />
+</file>
+<file name=".\Generated_Source\PSoC4\testPin.c" />
 <file name=".\CortexM0\ARM_GCC_473\Debug\water_pin.o">
 <dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
 <dep name=".\Generated_Source\PSoC4\cyfitter.h" />
@@ -358,6 +369,10 @@
 <dep name=".\Generated_Source\PSoC4\water_pin.c" />
 </file>
 <file name=".\Generated_Source\PSoC4\water_pin.c" />
+<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c" />
+<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.c" />
+<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sprinkler.c" />
+<file name="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c" />
 </CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
 </dependency_info>
 </CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
@@ -423,10 +438,15 @@
 <name_val_pair name=".\Generated_Source\PSoC4\cyPm.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\cyutils.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name="\\psf\Dropbox\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
+<name_val_pair name=".\humiSensor.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\sensorPackage.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\sprinkler.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\tempSensor.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name=".\Generated_Source\PSoC4\testPin.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
+<name_val_pair name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\P_FT1.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\P_FT2.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
 <name_val_pair name=".\Generated_Source\PSoC4\P_VP.c" v="&quot;-I. &quot;&quot;-I./Generated_Source/PSoC4 &quot;&quot;-Wno-main &quot;&quot;-mcpu=cortex-m0 &quot;&quot;-mthumb &quot;&quot;-Wall &quot;&quot;-g &quot;&quot;-D &quot;&quot;DEBUG &quot;&quot;-Wa,-alh=${OutputDir}\${CompileFile}.lst &quot;&quot;-ffunction-sections &quot;" />
-<name_val_pair name="\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.hex" v="&quot;-mthumb &quot;&quot;-march=armv6-m &quot;&quot;-T &quot;&quot;.\Generated_Source\PSoC4\cm0gcc.ld &quot;&quot;-g &quot;&quot;-Wl,-Map,${OutputDir}\${ProjectShortName}.map &quot;&quot;-specs=nano.specs &quot;&quot;-Wl,--gc-sections &quot;" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="&quot;-.appdatapath&quot; &quot;C:\Users\jakob-schmidt-89\AppData\Local\Cypress Semiconductor\PSoC Creator\3.0&quot; &quot;-.fdsnotice&quot; &quot;-.fdswarpdepfile=warp_dependencies.txt&quot; &quot;-.fdselabdepfile=elab_dependencies.txt&quot; &quot;-.fdsbldfile=generated_files.txt&quot; &quot;-p&quot; &quot;\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\psoc_api_2.cyprj&quot; &quot;-d&quot; &quot;CY8C4245AXI-483&quot; &quot;-s&quot; &quot;\\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\Generated_Source\PSoC4&quot; &quot;--&quot; &quot;-yv2&quot; &quot;-v3&quot; &quot;-ygs&quot; &quot;-q10&quot; &quot;-o2&quot; &quot;-.fftcfgtype=LE&quot; " />
@@ -1107,6 +1127,45 @@
 <v>.\Generated_Source\PSoC4\Cm0Iar.icf</v>
 <v>.\Generated_Source\PSoC4\CyBootAsmIar.s</v>
 <v>.\Generated_Source\PSoC4\project.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_PM.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_CSHL.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_CSHL.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_INT.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_TunerHelper.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_TunerHelper.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_SMS.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_SMS.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_PVT.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_IP.h</v>
+<v>.\Generated_Source\PSoC4\testPin.c</v>
+<v>.\Generated_Source\PSoC4\testPin.h</v>
+<v>.\Generated_Source\PSoC4\testPin_aliases.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_SampleClk.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_SampleClk.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_Sns.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_Sns.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_Sns_aliases.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_SenseClk.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_1_SenseClk.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_PM.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_CSHL.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_CSHL.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_INT.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_TunerHelper.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_TunerHelper.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_SMS.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_SMS.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_PVT.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_IP.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_SampleClk.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_SampleClk.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_Sns_aliases.h</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_SenseClk.c</v>
+<v>.\Generated_Source\PSoC4\CapSense_CSD_SenseClk.h</v>
 <v>.\Generated_Source\PSoC4\P_FT1.c</v>
 <v>.\Generated_Source\PSoC4\P_FT1.h</v>
 <v>.\Generated_Source\PSoC4\P_FT1_aliases.h</v>
@@ -1129,14 +1188,14 @@
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\or_v1_0\or_v1_0.v</v>
 <v>C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 </warp_dep>
-<deps_time v="130616428064684000" />
+<deps_time v="130625085304700000" />
 <top_block v="TopDesign" />
 <last_generation v="0" />
 </CyGuid_925cc1e1-309e-4e08-b0a1-09a83c35b157>
 </dataGuid>
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
-<deps_time v="130616428130084000" />
+<deps_time v="130625085407600000" />
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">

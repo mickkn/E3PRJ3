@@ -18,7 +18,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="psoc_api_2-000\psoc_api_2\Header Files\sensorPackage.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="psoc_api_2-000\psoc_api_2\Source Files\tempSensor.c">
 <ExpandedNodeIds>
 <v>psoc_api_2-000</v>
 <v>psoc_api_2-000\psoc_api_2</v>
@@ -35,7 +35,6 @@
 <v>psoc_api_2-000\psoc_api_2\Source Files\sensorPackage.c</v>
 <v>psoc_api_2-000\psoc_api_2\Source Files\sprinkler.c</v>
 <v>psoc_api_2-000\psoc_api_2\Source Files\tempSensor.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source</v>
 <v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4</v>
 <v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0</v>
 <v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0\ADC_SAR_Seq_0.c</v>
@@ -101,6 +100,7 @@
 <v>psoc_api_2-000\psoc_api_2\TopDesign.cysch</v>
 <v>psoc_api_2-000\psoc_api_2\psoc_api_2.cydwr</v>
 <v>psoc_api_2-000\psoc_api_2\Header Files</v>
+<v>psoc_api_2-000\psoc_api_2\Header Files\device.h</v>
 <v>psoc_api_2-000\psoc_api_2\Header Files\humiSensor.h</v>
 <v>psoc_api_2-000\psoc_api_2\Header Files\sensorPackage.h</v>
 <v>psoc_api_2-000\psoc_api_2\Header Files\sprinkler.h</v>
@@ -112,25 +112,6 @@
 <v>psoc_api_2-000\psoc_api_2\Source Files\sprinkler.c</v>
 <v>psoc_api_2-000\psoc_api_2\Source Files\tempSensor.c</v>
 <v>psoc_api_2-000\psoc_api_2\Generated_Source</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0\ADC_SAR_Seq_0.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0\ADC_SAR_Seq_0.h</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0\ADC_SAR_Seq_0_INT.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0\ADC_SAR_Seq_0_PM.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock\ADC_SAR_Seq_0_intClock.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0_intClock\ADC_SAR_Seq_0_intClock.h</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ\ADC_SAR_Seq_0_IRQ.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\ADC_SAR_Seq_0_IRQ\ADC_SAR_Seq_0_IRQ.h</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot\cm0gcc.ld</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot\Cm0Iar.icf</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot\Cm0RealView.scat</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot\Cm0Start.c</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot\core_cm0.h</v>
-<v>psoc_api_2-000\psoc_api_2\Generated_Source\PSoC4\cy_boot\core_cm0_psoc4.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -185,6 +166,34 @@
 <VisibleNodeIds>
 <v>psoc_api_2-000</v>
 <v>psoc_api_2-000\psoc_api_2</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\ADC_SAR_Seq_0.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\ADC_SAR_Seq_0_INT.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\ADC_SAR_Seq_0_intClock.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\ADC_SAR_Seq_0_IRQ.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\ADC_SAR_Seq_0_PM.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\Cm0Start.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\CyFlash.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\CyLib.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\cymetadata.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\cyPm.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\cyutils.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\humiSensor.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\main.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\P_FT1.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\P_FT2.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\P_VP.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\sensorPackage.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\sprinkler.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\Listing Files\tempSensor.lst</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\psoc_api_2.hex</v>
+<v>psoc_api_2-000\psoc_api_2\CortexM0\ARM_GCC_473\Debug\psoc_api_2.map</v>
 <v>psoc_api_2-000\psoc_api_2\psoc_api_2.rpt</v>
 <v>psoc_api_2-000\psoc_api_2\psoc_api_2_timing.html</v>
 </VisibleNodeIds>
@@ -224,12 +233,8 @@
 <name v=".\TopDesign\TopDesign.cysch" />
 <name v=".\psoc_api_2.cydwr" />
 <name v=".\main.c" />
-<name v="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.c" />
-<name v="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c" />
-<name v="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c" />
-<name v="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sprinkler.c" />
-<name v="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.h" />
-<name v="X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.h" />
+<name v=".\humiSensor.c" />
+<name v=".\tempSensor.c" />
 </OpenDocs>
 <config v="" />
 <AutoUpdate v="true" />

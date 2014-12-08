@@ -19,8 +19,11 @@ void sprinkler_exit()
 
 int sprinkler_setValue(unsigned char active)
 {   
-    if(active != 1 || active != 0)
+    if(active != 1 && active != 0)
         return -16;
+    
+    //Set pin to water (1/0);
+    P_VP_Write(active);
     
     return 0;
 }

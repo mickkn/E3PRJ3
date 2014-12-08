@@ -1,4 +1,4 @@
---------------- Rebuild Started: 11/28/2014 11:06:25 Project: psoc_api_2, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Rebuild Started: 12/08/2014 11:35:10 Project: psoc_api_2, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\humiSensor.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\sensorPackage.o"
@@ -48,10 +48,10 @@ API Generation ...
 Dependency Generation ...
 Clean Temporary Files ...
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\main.lst -ffunction-sections -c .\main.c -o .\CortexM0\ARM_GCC_473\Debug\main.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\humiSensor.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\humiSensor.c -o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\sensorPackage.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sensorPackage.c -o .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\sprinkler.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\sprinkler.c -o .\CortexM0\ARM_GCC_473\Debug\sprinkler.o
-arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\tempSensor.lst -ffunction-sections -c X:\3.Semester\PRJ3\psoc_api_2\psoc_api_2.cydsn\tempSensor.c -o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\humiSensor.lst -ffunction-sections -c .\humiSensor.c -o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\sensorPackage.lst -ffunction-sections -c .\sensorPackage.c -o .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\sprinkler.lst -ffunction-sections -c .\sprinkler.c -o .\CortexM0\ARM_GCC_473\Debug\sprinkler.o
+arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\tempSensor.lst -ffunction-sections -c .\tempSensor.c -o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.lst -ffunction-sections -c .\Generated_Source\PSoC4\cyfitter_cfg.c -o .\CortexM0\ARM_GCC_473\Debug\cyfitter_cfg.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\cymetadata.lst -ffunction-sections -c .\Generated_Source\PSoC4\cymetadata.c -o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -I. -I./Generated_Source/PSoC4 -Wno-main -mcpu=cortex-m0 -mthumb -Wall -g -D DEBUG -Wa,-alh=.\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.lst -ffunction-sections -c .\Generated_Source\PSoC4\ADC_SAR_Seq_0.c -o .\CortexM0\ARM_GCC_473\Debug\ADC_SAR_Seq_0.o
@@ -73,6 +73,6 @@ arm-none-eabi-ar.exe: creating .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a
 arm-none-eabi-gcc.exe -mthumb -march=armv6-m -T .\Generated_Source\PSoC4\cm0gcc.ld -g -Wl,-Map,.\CortexM0\ARM_GCC_473\Debug\psoc_api_2.map -specs=nano.specs -Wl,--gc-sections -Wl,--start-group -o .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf .\CortexM0\ARM_GCC_473\Debug\main.o .\CortexM0\ARM_GCC_473\Debug\humiSensor.o .\CortexM0\ARM_GCC_473\Debug\sensorPackage.o .\CortexM0\ARM_GCC_473\Debug\sprinkler.o .\CortexM0\ARM_GCC_473\Debug\tempSensor.o .\CortexM0\ARM_GCC_473\Debug\cymetadata.o .\CortexM0\ARM_GCC_473\Debug\Cm0Start.o .\CortexM0\ARM_GCC_473\Debug\psoc_api_2.a "C:\Program Files (x86)\Cypress\PSoC Creator\3.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_473\Debug\CyComponentLibrary.a" -Wl,--end-group
 cyelftool.exe -C \\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf --flash_size 32768 --flash_row_size 128
 cyelftool.exe -S \\psf\Home\Documents\E3PRJ3\Implementering\SW\PSoC\sensorPackage\psoc_api_2.cydsn\CortexM0\ARM_GCC_473\Debug\psoc_api_2.elf
-Flash used: 11054 of 32768 bytes (33.7 %).
+Flash used: 11150 of 32768 bytes (34.0 %).
 SRAM used: 1540 of 4096 bytes (37.6 %).
---------------- Rebuild Succeeded: 11/28/2014 11:06:53 ---------------
+--------------- Rebuild Succeeded: 12/08/2014 11:35:41 ---------------

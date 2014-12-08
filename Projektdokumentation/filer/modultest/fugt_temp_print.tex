@@ -77,13 +77,13 @@ Med følende formel regnes fugtigheden ud fra DC-værdien.
 SCL-benet ligges nu lav, ved at forbinde benet til GND, og temperaturen måles. Figur \ref{fig:SCOP_TEMP_STUE} viser målingen. PWMen måles til at have en duty cycle på 41 \% og en spænding efter filteret på 1.31 V. 
 Ud fra PWMen regnes nu temperaturen.
 \begin{equation}
--46.85+175.72*0,41=25.2
+-46.85+175.72*0,41=25.2^{\circ}C
 \end{equation}
 
 Temperaturen regnes ud fra DCen som følger. 
 
 \begin{equation}
--46.85+175.72*\frac{1,31}{3,28}=23.33
+-46.85+175.72*\frac{1,31}{3,28}=23.33^{\circ}C
 \end{equation}
 
 
@@ -132,13 +132,13 @@ Ud fra PWM beregnes temperaturen.
 
 
 \begin{equation}
--46.85+175.72*0,671=71,06
+-46.85+175.72*0,671=71,06^{\circ}C
 \end{equation}
 
 Temperaturen regnes ud fra DCen som følger. 
 
 \begin{equation}
--46.85+175.72*\frac{1,31}{3,28}=67,8
+-46.85+175.72*\frac{1,31}{3,28}=67,8^{\circ}C
 \end{equation}
 
 For også at teste om sensoren kunne måle en høj luftfugtig foretages en måling efter at have åndet på sensoren, målingen ses på figur \ref{lab:TEST_FUGTIG}. Da der allerede er målt temperatur ved både stuetemperatur og høj temperatur udelades temperaturtest af denne test. 
@@ -193,12 +193,15 @@ Sensoren giver en PWM på 20,4 \% og en spænding efter filteret på 642 mV,se f
 
 
 \begin{equation}
--46.85+175.72*0,204=11
+-46.85+175.72*0,204=-11^{\circ}C
 \end{equation}
 
 Temperaturen regnes ud fra DCen. 
 
 \begin{equation}
--46.85+175.72*\frac{0,642}{3,28}=-12,66
+-46.85+175.72*\frac{0,642}{3,28}=-12,66^{\circ}C
 \end{equation}
+
+
+Testen viser at fugtighedsmålingerne passer meget godt overens når man sammenligner målingen af det velleman hygrometeret, den rå PWM fra sensoren og den midlede DC efter filteret. Temperaturmålingerne er dog ligger dog lidt lavere efter filteret end hvis man regner værdierne med PWMen. Denne forskel kan skyldes at filteret belaster sensoren en smule eller at målingen kan have været upræcis. Det ses at målingerne lavet med SHT21p og Velleman stemmer nogenlunde overens. Da Velleman termo- hygrometeret reagerede meget langsomt på ændringer godtages det at der er afvigelser mellem målingerne lavet af Velleman og SHT21p. 
 

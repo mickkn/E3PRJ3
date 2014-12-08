@@ -1,12 +1,12 @@
 //humiSensor.c
 //
 //Author: Jakob Schmidt
-//Version: 1.1
+//Version: 1.2
 //Date: 14-11-14
 
 #include "humiSensor.h"
+#include "sensorPackage.h"
 
-#define vin_max 3.3
 
 //Constructor implementation
 void humiSensor_init()
@@ -33,7 +33,10 @@ int humiSensor_getValue(float *val)
     float pwm_result;
    
     //Set SCL high for humi data out
-    SLC_Write(select);
+    P_FT2_Write(select);
+    
+    //Wait 1000 ms
+    CyDelay(1000);
     
     //Start conversion
     ADC_SAR_Seq_0_StartConvert();

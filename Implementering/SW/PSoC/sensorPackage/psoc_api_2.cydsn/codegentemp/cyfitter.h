@@ -58,15 +58,15 @@
 #define P_VP__SHIFT 0
 
 /* P_FT1 */
-#define P_FT1__0__DM__MASK 0x38000u
-#define P_FT1__0__DM__SHIFT 15
+#define P_FT1__0__DM__MASK 0xE00u
+#define P_FT1__0__DM__SHIFT 9
 #define P_FT1__0__DR CYREG_PRT2_DR
 #define P_FT1__0__HSIOM CYREG_HSIOM_PORT_SEL2
-#define P_FT1__0__HSIOM_MASK 0x00F00000u
-#define P_FT1__0__HSIOM_SHIFT 20u
+#define P_FT1__0__HSIOM_MASK 0x0000F000u
+#define P_FT1__0__HSIOM_SHIFT 12u
 #define P_FT1__0__INTCFG CYREG_PRT2_INTCFG
 #define P_FT1__0__INTSTAT CYREG_PRT2_INTSTAT
-#define P_FT1__0__MASK 0x20u
+#define P_FT1__0__MASK 0x08u
 #define P_FT1__0__PA__CFG0 CYREG_UDB_PA2_CFG0
 #define P_FT1__0__PA__CFG1 CYREG_UDB_PA2_CFG1
 #define P_FT1__0__PA__CFG10 CYREG_UDB_PA2_CFG10
@@ -86,11 +86,11 @@
 #define P_FT1__0__PC2 CYREG_PRT2_PC2
 #define P_FT1__0__PORT 2u
 #define P_FT1__0__PS CYREG_PRT2_PS
-#define P_FT1__0__SHIFT 5
+#define P_FT1__0__SHIFT 3
 #define P_FT1__DR CYREG_PRT2_DR
 #define P_FT1__INTCFG CYREG_PRT2_INTCFG
 #define P_FT1__INTSTAT CYREG_PRT2_INTSTAT
-#define P_FT1__MASK 0x20u
+#define P_FT1__MASK 0x08u
 #define P_FT1__PA__CFG0 CYREG_UDB_PA2_CFG0
 #define P_FT1__PA__CFG1 CYREG_UDB_PA2_CFG1
 #define P_FT1__PA__CFG10 CYREG_UDB_PA2_CFG10
@@ -110,7 +110,7 @@
 #define P_FT1__PC2 CYREG_PRT2_PC2
 #define P_FT1__PORT 2u
 #define P_FT1__PS CYREG_PRT2_PS
-#define P_FT1__SHIFT 5
+#define P_FT1__SHIFT 3
 
 /* P_FT2 */
 #define P_FT2__0__DM__MASK 0x07u
