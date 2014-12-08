@@ -1,14 +1,17 @@
 //sensorPackage.h
 //
 //Author: Jakob Schmidt
-//Version: 1.2
+//Version: 1.3
 //Date: 17-11-14
+
 #ifndef sensorPackage
 #define sensorPackage
 //#pragma once
 #include "sprinkler.h"
 #include "tempSensor.h"
 #include "humiSensor.h"
+
+#define vin_max 3.3
 
 
 //Constructor

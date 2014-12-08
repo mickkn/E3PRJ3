@@ -1,6 +1,6 @@
 -- ======================================================================
 -- psoc_api_2.ctl generated from psoc_api_2
--- 12/03/2014 at 11:59
+-- 12/08/2014 at 13:08
 -- This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 -- ======================================================================
 

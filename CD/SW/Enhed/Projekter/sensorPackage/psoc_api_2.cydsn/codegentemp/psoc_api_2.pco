@@ -1,5 +1,5 @@
 # psoc_api_2
-# 2014-12-03 10:59:09Z
+# 2014-12-08 12:08:27Z
 
 # IO_2@[IOP=(3)][IoId=(2)] is reserved: SWDDebugEnabled
 dont_use_io iocell 3 2

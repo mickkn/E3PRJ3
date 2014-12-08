@@ -1,7 +1,8 @@
+
 //sensorPackage.c
 //
 //Author: Jakob Schmidt
-//Version: 1.2
+//Version: 1.3
 //Date: 17-14-11
 
 #include "sensorPackage.h"
@@ -40,11 +41,7 @@ int sensorPackage_getData(float *temp_, float *humi_)
 
 int sensorPackage_water(unsigned char water)
 {
-    if(water != 1 || water != 0)
-        return -15;
-    
-    //Set pin to water (1/0);
-    water_pin_Write(water);
+    sprinkler_setValue(water);
     
     return 0;
 }

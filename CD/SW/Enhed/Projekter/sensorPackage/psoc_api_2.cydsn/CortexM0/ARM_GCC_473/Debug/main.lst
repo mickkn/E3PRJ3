@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -44,38 +44,39 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
   36 0004 00AF     		add	r7, sp, #0
   37              	.LCFI2:
   38              		.cfi_def_cfa_register 7
-  39              	.L2:
-  40              	.LBB2:
-   6:.\main.c      ****     for(;;)//Never ending story....
-   7:.\main.c      ****     {
-   8:.\main.c      ****     sensorPackage_init();
-  41              		.loc 1 8 0 discriminator 1
-  42 0006 FFF7FEFF 		bl	sensorPackage_init
-   9:.\main.c      ****     
-  10:.\main.c      ****     //Varibles to hold sensor data
-  11:.\main.c      ****     float temp = 0;
-  43              		.loc 1 11 0 discriminator 1
+   6:.\main.c      ****     //'Objects' initialize
+   7:.\main.c      ****     sensorPackage_init(); 
+  39              		.loc 1 7 0
+  40 0006 FFF7FEFF 		bl	sensorPackage_init
+  41              	.L2:
+  42              	.LBB2:
+   8:.\main.c      **** 
+   9:.\main.c      ****     for(;;)//Never ending story....
+  10:.\main.c      ****     {
+  11:.\main.c      ****         //Varibles to hold sensor data
+  12:.\main.c      ****         float temp = 0;
+  43              		.loc 1 12 0 discriminator 1
   44 000a 0023     		mov	r3, #0
   45 000c 7B60     		str	r3, [r7, #4]
-  12:.\main.c      ****     float humi = 0;
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 2
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 2
 
 
-  46              		.loc 1 12 0 discriminator 1
+  13:.\main.c      ****         float humi = 0;
+  46              		.loc 1 13 0 discriminator 1
   47 000e 0023     		mov	r3, #0
   48 0010 3B60     		str	r3, [r7]
-  13:.\main.c      ****     
-  14:.\main.c      ****     sensorPackage_getData(&temp, &humi);  
-  49              		.loc 1 14 0 discriminator 1
+  14:.\main.c      ****         
+  15:.\main.c      ****         sensorPackage_getData(&temp, &humi);  
+  49              		.loc 1 15 0 discriminator 1
   50 0012 3A1D     		add	r2, r7, #4
   51 0014 3B1C     		mov	r3, r7
   52 0016 101C     		mov	r0, r2
   53 0018 191C     		mov	r1, r3
   54 001a FFF7FEFF 		bl	sensorPackage_getData
   55              	.LBE2:
-  15:.\main.c      ****     }
-  56              		.loc 1 15 0 discriminator 1
-  57 001e F2E7     		b	.L2
+  16:.\main.c      ****     }
+  56              		.loc 1 16 0 discriminator 1
+  57 001e F4E7     		b	.L2
   58              		.cfi_endproc
   59              	.LFE33:
   60              		.size	main, .-main
@@ -88,10 +89,10 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
   67 0006 00000000 		.4byte	.Ldebug_abbrev0
   68 000a 04       		.byte	0x4
   69 000b 01       		.uleb128 0x1
-  70 000c 25000000 		.4byte	.LASF15
+  70 000c 5F000000 		.4byte	.LASF15
   71 0010 01       		.byte	0x1
-  72 0011 2E010000 		.4byte	.LASF16
-  73 0015 C4000000 		.4byte	.LASF17
+  72 0011 23010000 		.4byte	.LASF16
+  73 0015 1B000000 		.4byte	.LASF17
   74 0019 00000000 		.4byte	.Ldebug_ranges0+0
   75 001d 00000000 		.4byte	0
   76 0021 00000000 		.4byte	0
@@ -99,30 +100,30 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
   78 0029 02       		.uleb128 0x2
   79 002a 01       		.byte	0x1
   80 002b 06       		.byte	0x6
-  81 002c 1C010000 		.4byte	.LASF0
+  81 002c 11010000 		.4byte	.LASF0
   82 0030 02       		.uleb128 0x2
   83 0031 01       		.byte	0x1
   84 0032 08       		.byte	0x8
-  85 0033 97000000 		.4byte	.LASF1
+  85 0033 D1000000 		.4byte	.LASF1
   86 0037 02       		.uleb128 0x2
   87 0038 02       		.byte	0x2
   88 0039 05       		.byte	0x5
-  89 003a B3000000 		.4byte	.LASF2
+  89 003a ED000000 		.4byte	.LASF2
   90 003e 02       		.uleb128 0x2
   91 003f 02       		.byte	0x2
   92 0040 07       		.byte	0x7
-  93 0041 09010000 		.4byte	.LASF3
+  93 0041 FE000000 		.4byte	.LASF3
   94 0045 02       		.uleb128 0x2
   95 0046 04       		.byte	0x4
   96 0047 05       		.byte	0x5
-  97 0048 AA000000 		.4byte	.LASF4
+  97 0048 E4000000 		.4byte	.LASF4
   98 004c 02       		.uleb128 0x2
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 3
+
+
   99 004d 04       		.byte	0x4
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 3
-
-
  100 004e 07       		.byte	0x7
- 101 004f 6E000000 		.4byte	.LASF5
+ 101 004f A8000000 		.4byte	.LASF5
  102 0053 02       		.uleb128 0x2
  103 0054 08       		.byte	0x8
  104 0055 05       		.byte	0x5
@@ -130,7 +131,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  106 005a 02       		.uleb128 0x2
  107 005b 08       		.byte	0x8
  108 005c 07       		.byte	0x7
- 109 005d 80000000 		.4byte	.LASF7
+ 109 005d BA000000 		.4byte	.LASF7
  110 0061 03       		.uleb128 0x3
  111 0062 04       		.byte	0x4
  112 0063 05       		.byte	0x5
@@ -142,22 +143,22 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  118 006f 02       		.uleb128 0x2
  119 0070 04       		.byte	0x4
  120 0071 04       		.byte	0x4
- 121 0072 28010000 		.4byte	.LASF9
+ 121 0072 1D010000 		.4byte	.LASF9
  122 0076 02       		.uleb128 0x2
  123 0077 08       		.byte	0x8
  124 0078 04       		.byte	0x4
- 125 0079 BD000000 		.4byte	.LASF10
+ 125 0079 F7000000 		.4byte	.LASF10
  126 007d 02       		.uleb128 0x2
  127 007e 01       		.byte	0x1
  128 007f 08       		.byte	0x8
- 129 0080 A5000000 		.4byte	.LASF11
+ 129 0080 DF000000 		.4byte	.LASF11
  130 0084 02       		.uleb128 0x2
  131 0085 04       		.byte	0x4
  132 0086 07       		.byte	0x7
- 133 0087 3C010000 		.4byte	.LASF12
+ 133 0087 31010000 		.4byte	.LASF12
  134 008b 04       		.uleb128 0x4
  135 008c 01       		.byte	0x1
- 136 008d 20000000 		.4byte	.LASF18
+ 136 008d 5A000000 		.4byte	.LASF18
  137 0091 01       		.byte	0x1
  138 0092 04       		.byte	0x4
  139 0093 61000000 		.4byte	0x61
@@ -166,23 +167,23 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  142 009f 00000000 		.4byte	.LLST0
  143 00a3 01       		.byte	0x1
  144 00a4 05       		.uleb128 0x5
- 145 00a5 06000000 		.4byte	.LBB2
+ 145 00a5 0A000000 		.4byte	.LBB2
  146 00a9 1E000000 		.4byte	.LBE2
  147 00ad 06       		.uleb128 0x6
- 148 00ae 1B000000 		.4byte	.LASF13
+ 148 00ae 55000000 		.4byte	.LASF13
  149 00b2 01       		.byte	0x1
- 150 00b3 0B       		.byte	0xb
+ 150 00b3 0C       		.byte	0xc
  151 00b4 6F000000 		.4byte	0x6f
  152 00b8 02       		.byte	0x2
  153 00b9 91       		.byte	0x91
  154 00ba 74       		.sleb128 -12
  155 00bb 06       		.uleb128 0x6
- 156 00bc 37010000 		.4byte	.LASF14
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 4
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 4
 
 
+ 156 00bc 2C010000 		.4byte	.LASF14
  157 00c0 01       		.byte	0x1
- 158 00c1 0C       		.byte	0xc
+ 158 00c1 0D       		.byte	0xd
  159 00c2 6F000000 		.4byte	0x6f
  160 00c6 02       		.byte	0x2
  161 00c7 91       		.byte	0x91
@@ -237,10 +238,10 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  210 002a 00       		.byte	0
  211 002b 04       		.uleb128 0x4
  212 002c 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 5
+
+
  213 002d 01       		.byte	0x1
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 5
-
-
  214 002e 3F       		.uleb128 0x3f
  215 002f 0C       		.uleb128 0xc
  216 0030 03       		.uleb128 0x3
@@ -297,10 +298,10 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  267 000c 02000000 		.4byte	.LCFI0
  268 0010 04000000 		.4byte	.LCFI1
  269 0014 0200     		.2byte	0x2
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 6
+
+
  270 0016 7D       		.byte	0x7d
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 6
-
-
  271 0017 08       		.sleb128 8
  272 0018 04000000 		.4byte	.LCFI1
  273 001c 06000000 		.4byte	.LCFI2
@@ -334,7 +335,7 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  301 000c 00000000 		.4byte	0
  302              		.section	.debug_line,"",%progbits
  303              	.Ldebug_line0:
- 304 0000 4B000000 		.section	.debug_str,"MS",%progbits,1
+ 304 0000 47000000 		.section	.debug_str,"MS",%progbits,1
  304      02001F00 
  304      00000201 
  304      FB0E0D00 
@@ -349,93 +350,92 @@ ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 1
  308      676E6564 
  308      20696E74 
  308      00
- 309              	.LASF13:
- 310 001b 74656D70 		.ascii	"temp\000"
- 310      00
- 311              	.LASF18:
- 312 0020 6D61696E 		.ascii	"main\000"
- 312      00
- 313              	.LASF15:
- 314 0025 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 314      4320342E 
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 7
+ 309              	.LASF17:
+ 310 001b 5C5C7073 		.ascii	"\\\\psf\\Dropbox\\3.Semester\\PRJ3\\psoc_api_2\\pso"
+ 310      665C4472 
+ 310      6F70626F 
+ 310      785C332E 
+ 310      53656D65 
+ 311 0047 635F6170 		.ascii	"c_api_2.cydsn\000"
+ 311      695F322E 
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 7
 
 
- 314      372E3320 
- 314      32303133 
- 314      30333132 
- 315 0058 616E6368 		.ascii	"anch revision 196615]\000"
- 315      20726576 
- 315      6973696F 
- 315      6E203139 
- 315      36363135 
- 316              	.LASF5:
- 317 006e 6C6F6E67 		.ascii	"long unsigned int\000"
- 317      20756E73 
- 317      69676E65 
- 317      6420696E 
- 317      7400
- 318              	.LASF7:
- 319 0080 6C6F6E67 		.ascii	"long long unsigned int\000"
- 319      206C6F6E 
- 319      6720756E 
- 319      7369676E 
- 319      65642069 
- 320              	.LASF1:
- 321 0097 756E7369 		.ascii	"unsigned char\000"
- 321      676E6564 
- 321      20636861 
- 321      7200
- 322              	.LASF11:
- 323 00a5 63686172 		.ascii	"char\000"
- 323      00
- 324              	.LASF4:
- 325 00aa 6C6F6E67 		.ascii	"long int\000"
- 325      20696E74 
- 325      00
- 326              	.LASF2:
- 327 00b3 73686F72 		.ascii	"short int\000"
- 327      7420696E 
- 327      7400
- 328              	.LASF10:
- 329 00bd 646F7562 		.ascii	"double\000"
- 329      6C6500
- 330              	.LASF17:
- 331 00c4 433A5C55 		.ascii	"C:\\Users\\mickkirkegaardnielse\\Desktop\\sensorPac"
- 331      73657273 
- 331      5C6D6963 
- 331      6B6B6972 
- 331      6B656761 
- 332 00f3 6B616765 		.ascii	"kage\\psoc_api_2.cydsn\000"
- 332      5C70736F 
- 332      635F6170 
- 332      695F322E 
- 332      63796473 
+ 311      63796473 
+ 311      6E00
+ 312              	.LASF13:
+ 313 0055 74656D70 		.ascii	"temp\000"
+ 313      00
+ 314              	.LASF18:
+ 315 005a 6D61696E 		.ascii	"main\000"
+ 315      00
+ 316              	.LASF15:
+ 317 005f 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 317      4320342E 
+ 317      372E3320 
+ 317      32303133 
+ 317      30333132 
+ 318 0092 616E6368 		.ascii	"anch revision 196615]\000"
+ 318      20726576 
+ 318      6973696F 
+ 318      6E203139 
+ 318      36363135 
+ 319              	.LASF5:
+ 320 00a8 6C6F6E67 		.ascii	"long unsigned int\000"
+ 320      20756E73 
+ 320      69676E65 
+ 320      6420696E 
+ 320      7400
+ 321              	.LASF7:
+ 322 00ba 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 322      206C6F6E 
+ 322      6720756E 
+ 322      7369676E 
+ 322      65642069 
+ 323              	.LASF1:
+ 324 00d1 756E7369 		.ascii	"unsigned char\000"
+ 324      676E6564 
+ 324      20636861 
+ 324      7200
+ 325              	.LASF11:
+ 326 00df 63686172 		.ascii	"char\000"
+ 326      00
+ 327              	.LASF4:
+ 328 00e4 6C6F6E67 		.ascii	"long int\000"
+ 328      20696E74 
+ 328      00
+ 329              	.LASF2:
+ 330 00ed 73686F72 		.ascii	"short int\000"
+ 330      7420696E 
+ 330      7400
+ 331              	.LASF10:
+ 332 00f7 646F7562 		.ascii	"double\000"
+ 332      6C6500
  333              	.LASF3:
- 334 0109 73686F72 		.ascii	"short unsigned int\000"
+ 334 00fe 73686F72 		.ascii	"short unsigned int\000"
  334      7420756E 
  334      7369676E 
  334      65642069 
  334      6E7400
  335              	.LASF0:
-ARM GAS  C:\Users\MICKKI~1\AppData\Local\Temp\cct8fXai.s 			page 8
+ARM GAS  C:\Users\JAKOB-~1\AppData\Local\Temp\ccXeQres.s 			page 8
 
 
- 336 011c 7369676E 		.ascii	"signed char\000"
+ 336 0111 7369676E 		.ascii	"signed char\000"
  336      65642063 
  336      68617200 
  337              	.LASF9:
- 338 0128 666C6F61 		.ascii	"float\000"
+ 338 011d 666C6F61 		.ascii	"float\000"
  338      7400
  339              	.LASF16:
- 340 012e 2E5C6D61 		.ascii	".\\main.c\000"
+ 340 0123 2E5C6D61 		.ascii	".\\main.c\000"
  340      696E2E63 
  340      00
  341              	.LASF14:
- 342 0137 68756D69 		.ascii	"humi\000"
+ 342 012c 68756D69 		.ascii	"humi\000"
  342      00
  343              	.LASF12:
- 344 013c 73697A65 		.ascii	"sizetype\000"
+ 344 0131 73697A65 		.ascii	"sizetype\000"
  344      74797065 
  344      00
  345              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

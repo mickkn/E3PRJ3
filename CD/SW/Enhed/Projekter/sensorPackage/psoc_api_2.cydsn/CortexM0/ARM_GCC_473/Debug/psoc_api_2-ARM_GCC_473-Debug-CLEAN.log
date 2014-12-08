@@ -1,4 +1,4 @@
---------------- Clean Started: 12/05/2014 12:33:07 Project: psoc_api_2, Configuration: ARM GCC 4.7.3 Debug ---------------
+--------------- Clean Started: 12/08/2014 13:12:11 Project: psoc_api_2, Configuration: ARM GCC 4.7.3 Debug ---------------
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\main.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\humiSensor.o"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\sensorPackage.o"
@@ -30,4 +30,4 @@ Deleting file ".\psoc_api_2_timing.html"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\ARM_C_FILE.P"
 Deleting file ".\CortexM0\ARM_GCC_473\Debug\.deps\GNU_ARM_ASM_FILE.P"
---------------- Clean Succeeded: 12/05/2014 12:33:07 ---------------
+--------------- Clean Succeeded: 12/08/2014 13:12:12 ---------------
