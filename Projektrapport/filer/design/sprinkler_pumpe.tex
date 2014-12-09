@@ -10,3 +10,27 @@ Sprinkleren skal forsynes med et vandtryk fra en vandpumpe. Grundfos har doneret
     \caption{Kredsløbsdiagram for lukket 230 V / 5 V relæ}
     \label{lab:Relay_box}
 \end{figure}
+
+\subsubsection{Relæ styring}
+
+PSoC4 giver ikke nok spænding eller strøm til sprinkler relæet, det har derfor været nødvendigt at føre signalet igennem en transistor som det ses på figur \ref{lab:BC517}. Relæet kræver en strøm på 100 mA og den trækker indenfor 3,7 V -8,8 V, dette problem løser BC517 transistoren. 
+
+\begin{figure}[H] \centering
+{\includegraphics[width=0.3\textwidth]{Billeder/BC517}}
+\caption{BC517 opsætning}
+\label{lab:BC517}
+\raggedright
+\end{figure} 
+
+Modstanden R1 er indsat for at begrænse den strøm der går ind i transistorens base ben, ifølge databladet må base benet højst belastet med 100 mA. Ibase strømmen er beregnet ud fra Ohms lov og der er valgt en modstand på 18 kohm, der begrænser strømmen til 0,1 mA, se formel \ref{eq:Ibase}.
+
+\begin{equation} 
+Ibase = \frac{3,3V - 1,4V}{18k\Omega} = 0,1mA
+\label{eq:Ibase}
+\end{equation} 
+
+Når PSoC4’s pin til BC517 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emitter på transistoren, herved er der spænding over relæets spole og relæets kontaktsæt klikker herved. Yderlige overvejelser og information kan findes i projektdokumentation afsnit 5.4.3, Relæ-styring.
+
+
+
+
