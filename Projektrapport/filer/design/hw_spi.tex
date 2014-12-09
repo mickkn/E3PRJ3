@@ -1,5 +1,5 @@
 %SPI
-\section{SPI (MK PO SK)}
+\subsection{SPI (MK PO SK)}
 
 Serial Parrallel Interface (SPI) er en måde at lave hurtig seriel dataudveksling på. SPI er udviklet af Motorola og fungerer ved at man, som regel, har en enkelt masterenhed der styrer flere slaveenheder. Ved SPI er der er ingen fejl-check og adressering af flere enheder kan være HW krævende. I EasyWater8000 projektet er der SPI kommunikation imellem Master (Devkit8000) og Enhed (PSoC4), det giver muligheden for at overføre flere data på samme tid imellem disse to.
 
@@ -32,3 +32,11 @@ En ofte anvendt kommunikation imellem master og slave foregår ved at master sæ
 dataoverførsel. Nu sender masteren en bit over til slaven og påbegynder en half-duplex data transmission, samtidigt sender slaven en bit over til masteren. Denne process fortsætter indtil masteren har sendt alle sine bits, derefter stopper masteren med at toggle på clocken og slave enheder bliver frigivet.
 
 SPI kan køre både full- og halfduplex, dvs. at der kan være 2-vejs kommunikation ved full-duplex (flere masterenheder) eller 2-vejs kommunikation ved half-duplex, hvor en masterenhed styrer/skriver til en eller flere slaveenheder. I EasyWater8000 er der behov for at der kommunikeres 2 veje, men da Enheden fungerer som slave, kan den ikke selvstændigt sende til Masteren, men behøver et kald, om at nu skal den sende information. Derfor er det half-duplex der bruges.
+
+\subsubsection*{Kernemodul og driver}
+
+Kernemodulet til SPI kommunikationen sørger for at opsætte filsystemet på Master
+
+\subsubsection*{API}
+
+\subsubsection*{Handler}
