@@ -19,50 +19,50 @@
 \textbf{Godkendt/ \newline Kommentar} \\ \hline 
 \endhead
 
-\textbf{1}	&Der laves en testopstilling hvori det er muligt at ændre omgivelserne til sensoren således at den udlæste data ændres
-			&Visuel: Udlæst data svarer overens med fysiske ændringer
-			&N/A
-			&N/A \\ \hline 
+\textbf{1}	&Systemet opsættes komplet. Tryk på ''Log''
+			&Visuel: Udlæst data svarer overens med fysiske værdier
+			&Som\newline forventet 
+			&Godkendt \\\hline
 			
-\textbf{2}	&Der ændres på omgivelserne således at grænseværdier for Enheden overskrides
-			&Pumpe starter og begynder at vande
-			&N/A
-			&N/A \\ \hline 
+\textbf{2}	&Enhed konfigureres iht. UC2.3. En finger placeres på sensor. Lampe monteres på relæboks-udgang.
+			&Visuel: Lampe tænder.
+			&Som\newline forventet 
+			&Godkendt \\\hline
 			
-\textbf{2.a}	&PIR-sensoren påvirkes med bevægelse
-			&Se punkt 6 og 7
-			&N/A
-			&N/A \\ \hline 
+\textbf{2.a}	&Testes i punkt 7 og 8
+			&
+			&
+			& \\\hline
 			
-\textbf{3}	&Enhed gemmer data i en buffer til senere udlæsning fra Master
-			&Ikke testbart
-			&N/A
-			&N/A \\ \hline 
+\textbf{3}	&''Log'' vælges i hovedmenu
+			&Visuel: Målinger er registreret i loggen
+			&Som\newline forventet 
+			&Godkendt \\\hline
 
-\textbf{4}	&Master henter information fra buffer i Enhed
-			&Visuel: Enhed indikerer at der er hentet log (lilla rgb-lysdiode)
-			&N/A
-			&N/A \\ \hline 
+\textbf{4}	&Testet i punkt 4
+			&
+			&
+			& \\ \hline 
 			
-\textbf{5}	&Master gemmer data i log 
-			&Visuel: Informationen ligger tilgængelig i loggen UC6
-			&N/A
-			&N/A \\ \hline 
+\textbf{5}	&Testet i punkt 4
+			&
+			&
+			& \\ \hline 
 			
-\textbf{6}	&Enhed modtager besked ved bevægelse
-			&Visuel: Enhed deaktiveres i 30 min (rød rgb-lysdiode)
-			&N/A
-			&N/A \\ \hline 
+\textbf{6}	&Lampe monteres på relæboks-udgang. PIR-sensor påvirkes med bevægelse
+			&Visuel: Enhed deaktiveres i 30 min (rød rgb-lysdiode) og lampe slukker
+			&Som\newline forventet 
+			&Godkendt \\\hline 
 			
-\textbf{7}	&Vanding deaktiveres 30 min
-			&Vandingen er ikke mulig i 30 min
-			&N/A
-			&N/A \\ \hline 
+\textbf{7}	&Efter 30 minutter starter autonomt system igen.
+			&Vandingen er ikke mulig i 30 minutter
+			&Som\newline forventet 
+			&Testet med lavere tidsinterval. \newline Godkendt \\\hline
 			
-\textbf{8}	&Enhed gemmer hændelse i buffer til senere udlæsning fra Master
-			&Ikke testbart
-			&N/A
-			&N/A \\ \hline 					
+\textbf{8}	&''Log'' vælges i hovedmenu
+			&Visuel: Bevægelse fremgår af næste logning
+			&Som\newline forventet 
+			&Godkendt \\\hline				
 			
 \end{longtable}
 	\label{ATUC4} 
