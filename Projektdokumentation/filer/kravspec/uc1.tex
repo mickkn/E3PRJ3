@@ -19,20 +19,15 @@
 	
 				\item Bruger vælger ''Tilføj/fjern enhed'' i hovedmenuen
 				
-				\item \label{uc1valg} Bruger vælger ''Tilføj enhed''
-				
 				\item En liste af opsatte enheder præsenteres på skærmen				
+				
+				\item \label{uc1valg} Bruger vælger ''Tilføj enhed''
 				
 				\begin{enumerate}
 					\item \label{uc1indtast} Master beder bruger om at indtaste informationer
 					
-					\item \label{uc1indtast_fejl} Bruger indtaster hul-nr. og adresse på Enhed
-					
-						\textbf{[Undtagelse \ref{uc1indtast_fejl}.a]} \newline
-						Indtastede værdier er ikke gyldige
-					
-					\item Master tilføjer Enhed til systemet med default parametre
-					
+					\item \label{uc1indtast_fejl} Bruger indtaster hul-nr., adresse og parametre på Enhed
+										
 					\item Enhed forbindes til kommunikationsnetværket
 					
 					\item \label{uc1verif} Master verificerer forbindelsen til Enhed
@@ -40,18 +35,15 @@
 					\textbf{[Undtagelse \ref{uc1verif}.a]} \newline
 					Enheden kan ikke verificeres
 					
-					\item Enhed gemmer dato og tidspunkt
+					\item Master tilføjer Enhed til systemet
+
 				\end{enumerate}
 
-				\item Bruger vælger ''Fjern enhed''
-
-				\item En liste af opsatte enheder præsenteres på skærmen
+				\item Bruger vælger celle og trykker ''Fjern enhed''
 
 				\begin{enumerate}
-					
-					\item Bruger indtaster adresse på Enhed
-					
-					\item Master deaktivere Enhed
+
+					\item Master deaktiverer Enhed
 					
 					\item Master sletter Enhed fra systemet
 				
@@ -62,14 +54,7 @@
 				\item Bruger kan returnere til hovedmenuen eller opsætte ny enhed (Gå til UC1.\ref{uc1valg})
 			\end{enumerate}\\\hline
 		\textbf{Undtagelser}
-			&\begin{enumerate}[label=\ref{uc1indtast}.a]
-				
-				\item Master viser fejlbesked omkring ugyldige værdier
-				
-					\subitem Gå til UC1.\ref{uc1indtast}
-			\end{enumerate}
-			
-			\begin{enumerate}[label=\ref{uc1verif}.a]
+			&\begin{enumerate}[label=\ref{uc1verif}.a]
 				
 				\item Master viser fejlbesked angående verificering af enheden. Bruger kan forsøge igen (Gå til UC1.\ref{uc1verif} eller vælge ''Tilbage'')
 
