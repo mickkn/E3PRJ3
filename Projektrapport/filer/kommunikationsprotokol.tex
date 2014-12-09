@@ -1,3 +1,44 @@
 \section{Kommunikationsprotokol (MK, PO)}
+Kommunikationsprotokollen for SPI kommunikationen er herunder beskrevet. Tabel \ref{tabel:SWProtokol-kommandoer} viser de mulige kommandoer for SPI kommunikationen. 
 
-Hej 
+Opsætningen er som følger:
+
+\begin{itemize}
+  \item Hastighed: 1 MHz
+  \item SPI mode: 0 (CPOL 0 - CPHA 0)
+  \item Antal bits: 1 char pr. transmission
+\end{itemize}
+
+PSoC4 kan køre 8 MHz, men der er ikke behov for så høj hastighed. Stabiliteten blev forbedret væsentligt ved at vælge en lavere hastighed. 
+\newline SPI-mode = 0 - er valgt på baggrund af default indstillinger. 
+\newline CPOL = 0 - vil sige at clocken er lav når den er passiv (aktiv-høj). 
+\newline CPHA = 0 - vil sige at data udlæses på rising-edge. 
+\newline Der transmitteres en karakter pr. transmission dvs. 8 bits.
+
+\begin{table}[H]
+\caption{Kommandoer for SPI-kommunikation}
+\centering
+\begin{tabular}{|c|c|l|c|}
+\hline 
+\textbf{ASCII} & \textbf{HEX} & \textbf{Funktion} \\ 
+\hline 
+'A' & 0x41 & Aktiver Enhed \\ 
+\hline 
+'D' & 0x44 & Deaktiver Enhed \\ 
+\hline 
+'P' & 0x50 & Parametre sendes til Enhed \\
+\hline 
+'V' & 0x56 & Verificer Enhed i systemet \\ 
+\hline
+'L' & 0x4c & Forespørg logdata fra Enhed \\ 
+\hline
+'C' & 0x4c & Write buffer og clearing af tx-buffer  \\
+\hline
+'R' & 0x4c & Læsning af data fra Enhed \\
+\hline
+\end{tabular}
+\label{tabel:SWProtokol-kommandoer}
+\end{table} 
+
+
+For yderligere specifikation af de enkelte kommandoer se dokumentationen afsnit 4.3.5 Kommunikationsprotokol.
