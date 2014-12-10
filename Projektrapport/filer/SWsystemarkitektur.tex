@@ -1,4 +1,45 @@
 \section{Softwarearkitektur}
 
+For at få et overblik over hvad der skal laves af software anvendes en metode kaldet N+1\footnote{\url{http://goo.gl/kU89oe} [2014-11-02]}. Metoden kan justeres til at dække det omgang som er nødvendigt. Vi anvender fire dele.
+
+\begin{enumerate}
+	\item Logical View
+	\item Deployment View
+	\item Implementation View
+	\item Data View
+\end{enumerate}
+
+Her følger en kort beskrivelse af indholdet af hvert punkt og de væsentlige konklusioner der laves her fra. Se mere i dokumentationen i afsnit 4.3 Software beskrivelse.
+
+\subsection{Logical View}
+Dette View giver et overblik over hvilke logiske blokke som skal bruges på de forskellige platforme, i dette tilfælde Master (Devkit8000) og Enhed (PSoC4). Det viser også forskellige softwarelag. Disse er udledt ved at kigge UC-beskrivelserne igennem og resonerer over hvilke ting der konceptuelt er nødvendige.
+
+På figur \ref{fig:SW_Logic_view} kan man se de tre lag samt i alt syv pakker. Bemærk at disse ikke nødvendigvis ender med at blive implementeret således, men de giver et overblik over den funktionalitet der er nødvendig.
+
+\figur{1}{SW_Logical_view_devkit}{Logical View for Devkit8000}{fig:SW_Logic_view}
+
+\subsection{Deployment View}
+Her beskrives hvor de logiske pakker fra Logical View ligger på hardware. Dette er for at få et overblik over et distribueret system og for at kunne lave en vurdering af hvilket framework eller programmeringssprog der skal anvendes til de enkelte klasser. På figur \ref{fig:SW_Deployment_model} kan man se hvor de to logiske pakker skal implementeres.
+
+\figur{1}{SW_Deployment_model}{Deployment View for EasyWater8000}{fig:SW_Deployment_model}
+
+\subsection{Implementation View}
+Dette er en kort beskrivelse af hvilken filstruktur der anvendes til opbygningen af software. Dette beskrives for at ensrette kildefilerne og give et godt overblik over hvor de forskellige ting ligger gemt.
+Se dokumentationen afsnit 4.3.3 Implementation View for detaljer.
+
+\subsection{Data View}
+Her beskrives datahåndteringen i systemet. Oprindeligt var det tiltænkt at information om enheder skulle gemmes på Master så de kan findes frem, hvis systemet slukkes og tændes igen. Dette er ikke implementeret, men beskrives alligevel.
+
+Her er beskrivelse af selve filstrukturen af gemt data og hvordan de enkelte filer skal være opbyggede. 
+Et eksempel er vist i listing \ref{list:csv}.
+
+\begin{lstlisting}[caption=Semikolon-separeret datafil til log af enheder, label={list:csv}]
+<enheds-nr>;
+<KP-nr>; <dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
+<KP-nr>; <dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
+...
+<KP-nr>; <dato>; <temperatur>; <fugtighed>; <bevaeglse>; <vanding>;
+\end{lstlisting}
+
 
 \input{filer/kommunikationsprotokol}
