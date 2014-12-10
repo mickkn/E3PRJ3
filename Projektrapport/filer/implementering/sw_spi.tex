@@ -1,7 +1,11 @@
 \subsection{SPI (MK PO)}
 
-
+Der er taget udgangspunkt i HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI-kommunikation} da SPI blev udarbejdet. Hele kildekoden for Kernemodulet er blevet genbrugt med kun få rettelser og dele af Driveren er blevet genbrugt. I designet for SPI, er der lagt op til at der skal kunne sendes en 8 bit \verb+CHAR+ ved hver datatransmission. Derfor har det været nødvendigt at rette driveren til, så den kunne håndtere dette.
 
 \subsubsection*{API}
 
+SPI APIen er en klasse med metoder, skrevet ud fra klassebeskrivelserne i software designet, se Projektdokumentation afsnit 6.2.3 Klassebeskrivelser. Implementeringen kan findes på bilags-CD, se CD/SW/Master/Kildekode/spi\_api.
+
 \subsubsection*{Handler}
+
+Handleren er en switchcase i en interrupt-rutine skrevet simultant med APIen, til at handle på forskellige kommandoer sendt fra Master via APIen. Den tilgår interrupt-rutinen ved en SPI transmission og handler i switchcasen udfra hvilken \verb+CHAR+ der modtages. Implementeringen kan findes på bilags-CD, se CD/SW/Enhed/Kildekode/spi\_handler.
