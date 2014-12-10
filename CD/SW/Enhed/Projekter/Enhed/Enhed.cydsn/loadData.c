@@ -71,29 +71,11 @@ extern void loadData_init(parameters *par, buffer *buf)
 
 int loadData_getBuffer( char ** buf, unsigned int * len)
 {
+    
     buffer_getData(bufferPtr_, buf, len);
-    return 0;
-}
-
-int loadData_movementDetect()
-{
-    unsigned char val;
-    parameters_getActive(parametersPtr_, &val);
-    if(val == 1)
-     {
-        // Clear active flag in parameters
-        parameters_setActive(parametersPtr_, 0);
-        GREEN_LED_Write(1);
-        RED_LED_Write(0);
-        BLUE_LED_Write(1);
-        
-        
-        // Start 30 minute timer
-        waterTimer_Start();
-        
-        // Set movement flag
-        movement_ = 1;
-    }
+            
+    // Clear movement flag
+    movement_ = 0;
     
     return 0;
 }
@@ -105,9 +87,10 @@ int loadData_logDataTimeout()
     blue = BLUE_LED_Read();
     red = RED_LED_Read();
     green = GREEN_LED_Read();
-    RED_LED_Write(0);
-    GREEN_LED_Write(1);
-    BLUE_LED_Write(0);
+    
+    RED_LED_Write(0);   // Yellow for loging data
+    GREEN_LED_Write(0);
+    BLUE_LED_Write(1);
     
     int ret;    // Error flag
     
@@ -152,8 +135,16 @@ int loadData_logDataTimeout()
     {
         // Start water timer
         sensorPackage_water(1);
-                
+        
+        RED_LED_Write(1);   // Yellow for loging data
+        GREEN_LED_Write(1);
+        BLUE_LED_Write(1);
+
         water = '1';
+    }
+    else
+    {
+        sensorPackage_water(0);
     }
     
     data[9] = water;
@@ -164,9 +155,6 @@ int loadData_logDataTimeout()
      
     // Save data in buffer object for later use
     buffer_saveData(bufferPtr_, data, 11);
-        
-    // Clear movement flag
-    movement_ = 0;
 
     RED_LED_Write(red);
     GREEN_LED_Write(green);
@@ -174,6 +162,33 @@ int loadData_logDataTimeout()
     
     return 0;
 }
+
+int loadData_movementDetect()
+{
+    unsigned char val;
+    parameters_getActive(parametersPtr_, &val);
+    if(val == 1)
+     {
+        // Clear active flag in parameters
+        parameters_setActive(parametersPtr_, 0);
+        
+        GREEN_LED_Write(1);
+        RED_LED_Write(0);
+        BLUE_LED_Write(1);
+        
+        sensorPackage_water(0);
+        
+        // Start 30 minute timer
+        waterTimer_Start();
+
+    }
+        
+    // Set movement flag
+    movement_ = 1;
+    
+    return 0;
+}
+
 int  loadData_waterTimeout()
 {
     // Set active_ flag in parameters

@@ -28,5 +28,7 @@ int onOff_turnOnOff(const unsigned char state)
     }
     
     parameters_setActive(parametersPtr_, state);    // Save state to parameters
+    sensorPackage_water(state);
+    
     return 0;
 }

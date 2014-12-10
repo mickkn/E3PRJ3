@@ -53,7 +53,7 @@ CY_ISR(isr_spi_rx) {
      *  'C'   0x43     Clear/write function char
      *  'R'   0x52     Read function char
 	 */
-    
+                     uint8 blue, red, green;   
     if ((cmd == 'R') || (cmd == 'C') || (cmd == 'L') || (cmd == 'V')){
     	switch (spiBuffer[0]) {
             case 'A':
@@ -132,6 +132,11 @@ CY_ISR(isr_spi_rx) {
                     
     			break;
             case 'L':
+
+                    blue = BLUE_LED_Read();
+                    red = RED_LED_Read();
+                    green = GREEN_LED_Read();
+                    
                     GREEN_LED_Write(1);
                     RED_LED_Write(0);
                     BLUE_LED_Write(0);
@@ -149,6 +154,10 @@ CY_ISR(isr_spi_rx) {
                     SPIS_1_SpiUartWriteTxData((char)len);
                     spiCounter = 0;
                     spiReadCounter = 0;
+                    
+                    RED_LED_Write(red);
+                    GREEN_LED_Write(green);
+                    BLUE_LED_Write(blue);
                 break;
             case 'R':
                     SPIS_1_SpiUartClearTxBuffer();

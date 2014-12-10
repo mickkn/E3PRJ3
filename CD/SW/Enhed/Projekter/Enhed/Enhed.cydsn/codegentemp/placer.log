@@ -6,7 +6,7 @@
 
 #Build Date:         Mar 26 2013 14:54:34
 
-#File Generated:     Dec 5 2014 12:34:46
+#File Generated:     Dec 8 2014 13:31:41
 
 #Purpose:            
 
@@ -111,7 +111,7 @@ Clock: SPIS_1_SCBCLK(FFB)   | Frequency: N/A       | Target:   6.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-D2088: Phase 7, elapsed time : 0.2 (sec)
+D2088: Phase 7, elapsed time : 0.1 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	2

@@ -15,7 +15,7 @@
 #include <stdio.h>           // snprint
     
 #define LOGDATATIMEOUT 8   // in sec
-#define WATERTIMEOUT 10     // in sec
+#define WATERTIMEOUT 20     // in sec
     
 // Private methods
 

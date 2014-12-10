@@ -11,6 +11,7 @@
 
 #include "parameters.h"
 #include "buffer.h"
+#include "sensorPackage.h"
 
 extern void onOff_init(parameters *, buffer *);
 extern int onOff_turnOnOff( const unsigned char state );

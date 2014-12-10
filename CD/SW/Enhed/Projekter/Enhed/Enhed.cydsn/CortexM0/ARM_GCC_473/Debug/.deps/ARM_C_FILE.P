@@ -1,0 +1,232 @@
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_INT.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_INT.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_INT.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_IRQ.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_IRQ.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_PM.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_PM.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_PM.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/ADC_SAR_Seq_0_intClock.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/ADC_SAR_Seq_0_intClock.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/BLUE_LED.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/BLUE_LED.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/BLUE_LED_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/BLUE_LED.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/BLUE_LED.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/BLUE_LED_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/BLUE_LED.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/Cm0Start.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/Cm0Start.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/Cm0Start.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/CyFlash.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyFlash.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyPm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyFlash.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyFlash.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyPm.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyFlash.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/CyLib.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/GREEN_LED.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/GREEN_LED.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/GREEN_LED_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/GREEN_LED.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/GREEN_LED.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/GREEN_LED_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/GREEN_LED.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/P_FT1.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT1_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT1.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT1.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT1_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT1.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/P_FT2.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT2.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT2_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT2.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT2.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT2_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_FT2.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/P_PIR.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_PIR.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_PIR_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_PIR.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_PIR.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_PIR_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_PIR.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/P_VP.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_VP.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_VP_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_VP.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_VP.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_VP_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/P_VP.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/RED_LED.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/RED_LED.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/RED_LED_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/RED_LED.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/RED_LED.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/RED_LED_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/RED_LED.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_BOOT.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_BOOT.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_BOOT.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_PM.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PM.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PM.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_SPI.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_SPI_BOOT.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_BOOT.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_BOOT.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_SPI_UART.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_SPI_UART_INT.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PINS.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_PVT.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_INT.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_SPI_UART_INT.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_miso_s.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_miso_s.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_mosi_s.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_mosi_s.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_sclk_s.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_sclk_s.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/SPIS_1_ss_s.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s_aliases.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/SPIS_1_ss_s.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/cyPm.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyPm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyPm.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyPm.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/cyfitter_cfg.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter_cfg.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter_cfg.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/cymetadata.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cymetadata.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cymetadata.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/cyutils.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyutils.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyutils.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/isr_pir.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/isr_pir.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/isr_pir.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/isr_pir.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/isr_pir.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/logDataInterrupt.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataInterrupt.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataInterrupt.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataInterrupt.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataInterrupt.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/logDataTimer.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/logDataTimer_PM.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer_PM.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/logDataTimer_PM.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/waterInterrupt.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterInterrupt.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterInterrupt.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterInterrupt.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterInterrupt.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/waterTimer.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer.h : 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer.c : 
+
+C:/Enhed/Enhed.cydsn/CortexM0/ARM_GCC_473/Debug/waterTimer_PM.o : C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/CyLib.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cydevice_trm.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cyfitter.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/cytypes.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer.h C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer_PM.c 
+
+C:/Enhed/Enhed.cydsn/Generated_Source/PSoC4/waterTimer_PM.c : 
+
