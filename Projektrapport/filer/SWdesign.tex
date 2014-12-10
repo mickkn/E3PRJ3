@@ -1,4 +1,26 @@
 \section{Softwaredesign}
 
+\subsection{Applicationsmodel}
+I softwaredesign fasen lavede vi applications modeller for de forskellige use cases for at få et overblik over hvilke metoder og funktioner vi skulle bruge. Applications modellen består af, at man først laver sekvensdiagrammer for hver use case. Hvis man finder det nødvendigt for at få et overblik kan man også lave state machine over hver use case. Dette følte vi dog ikke vi havde brug for så det step er sprunget over.
+
+3. step i applicationsmodellen er at få alle metode kald i sekvensdiagrammerne, over i et klassediagram. Dette klassediagram er ment som et overblik som kan benyttes når man går igang med den endelige klassebeskrivelse.
+
+I klassebeskrivelsen beslutted der så hvilke datatyper man vil have i de forskellige klasser og hvad de enkelte klasser hver i sær har ansvar for. Når klassebeskrivelsen er udarbejdet vil man så komme frem til et statisk klassediagram som er endeligt.
+
+\figur{1}{a_uc2}{Sekvensdiagram fra applicationsmodel}{fig:devkit_a_uc2}
+
+I figur \ref{fig:devkit_a_uc2} kan man se et eksempel på et sekvensdiagram udviklet i vores applicationsmodel. Sekvensdiagrammet er lavet ud fra use case 2: Konfig. Den viser alle de involverede klasser og metode kaldene imellem dem.
+
+På figur \ref{fig:devkit_class} kan man se vores conceptuelle klassediagram som er udviklet i applicationsmodellen.
+
+\figur{1}{sw_class_devkit}{klassediagram fra applicationsmodellen}{fig:devkit_class}
+
+Applicationsmodellen er benyttet både til softwaredesign af koden til devkit8000 og PSoC4. Det er dog 2 forskellige frameworks der arbejdes i men dette har ingen indflydelse på vores applicationsmodel da vi beskæftigere os med conceptet i hvordan koden skal fungere. På PSoC4 kunne vi ikke arbejde med C++ og objekt orienteret programmering som vores dokumentation lægger op til. Dette løses ved at fortolke klassebeskrivelsen iht. UML-Light \footnote{T-133 UML-Light af Finn Overgaard Hansen. Benyttet i forbindelse med I1ORPG(Objektorienteret programmering) på 1. semester}
+
+\subsection{Klassebeskrivelser}
+
+Efter applicationsmodellen blev klasserne beskrevet. Hver klasse har et overordnet ansvar. F.eks har controller klassen Config som vi så på figur \ref{fig:devkit_a_uc2} ansvaret for at styre UC2. Hver metode i klassen har således en beskrivelse af hvad metode skal gøre, hvilke parametre den modtager og hvad metoden returnere. I vores tilfælde aftalte vi at alle metoder skulle returnere en integer for at vi kunne lave fejl-tjek på dem. Det vil sige at når metoderne skulle modulere noget data som den fik tilsendt så skulle det være en pointer den modtog.
+
+
 %SPI
 \input{filer/design/sw_spi}
