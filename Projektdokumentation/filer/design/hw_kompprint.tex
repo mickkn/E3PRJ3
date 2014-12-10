@@ -6,7 +6,7 @@ For at frigøre sig fra laboratoriets strømforsyninger udarbejdes egen strømfo
 
 For at regulere fra de 12 V til 5 V benyttes en spændingsregulator. LM7805 er beregnet netop til dette formål. Ud fra figur \ref{lab:LM7805} ses forbindelsen af LM7805'ern. Databladet foreskriver også at regulatoren kan give et output på max 1 A med korrekt køling.  
 \newline
-Uden køling må der max afsættes 1 W i serieregulatoren, da dens arbejdstemperatur ved 1 W ligger på 100$^{\circ}$C.  I formel \ref{eq:effekt_1} er der foretaget en effektberegning på LM7805. Spændingsforskellen imellem $V_{DC}$ og $V_{OUT}$ ganges på det samlede strømforbrug. Strømforbruget er fundet i samtlige datablade for hver komponent. Effektudregningen i \ref{eq:effekt_2} viser at ved fuld belastning er det nødvendigt at køle. Det er der gjort med køleplader. 
+Uden køling må der max afsættes 1 W i serieregulatoren, da dens arbejdstemperatur ved 1 W ligger på 100$^{\circ}$C.  I formel \ref{eq:effekt_1} er der foretaget en effektberegning på LM7805. Spændingsforskellen imellem $V_{DC}$ og $V_{OUT}$ ganges på det samlede strømforbrug. Strømforbruget er fundet i samtlige datablade for hver komponent, de kan findes på CD'en. Effektudregningen i \ref{eq:effekt_2} viser at ved fuld belastning er det nødvendigt at køle. Det er der gjort med køleplader. 
 
 \begin{equation} 
 P = (V_{DC}-V_{out})*I_{samlet} 
@@ -54,7 +54,7 @@ Figur \ref{lab:LM317_calc} viser hvorledes appen beregner en værdi for modstand
 \raggedright
 \end{figure}
 
-Det er muligt at beregne udgangsspændingen ud fra følgende formel \ref{eq:LM314_1} som er oplyst i databladet for LM317 og i Analogteknik\footnote{Analogteknik, s. 259, afsnit 6.8 Serieregulator}. Strømmen $I_Q$ er strømmen der løber fra ben 1, den er mindre end 100 uA og typisk på 50 uA, de 1,25 V er spændingen imellem udgangen og referencen. Det giver følgende resultat i formlen \ref{eq:LM314_2}. 
+Det er muligt at beregne udgangsspændingen ud fra følgende formel \ref{eq:LM314_1} som er oplyst i databladet for LM317 og i Analogteknik\footnote{Analogteknik, Tore Skogberg, 2014, afsnit 6.8 Serieregulator, s. 259}. Strømmen $I_Q$ er strømmen der løber fra ben 1, den er mindre end 100 uA og typisk på 50 uA, de 1,25 V er spændingen imellem udgangen og referencen. Det giver følgende resultat i formlen \ref{eq:LM314_2}. 
 
 \begin{equation} 
 V_{out} = 1,25 V*(1+\frac{R2}{R1})+I_Q*R2
