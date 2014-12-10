@@ -1,0 +1,13 @@
+I SPI-kommunikationen er der taget udgangspunkt i HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI-kommunikation}, der er dog lavet kraftigt om i driveren, så det tilpasses EasyWater8000s behov. Kernemodulet er der ikke lavet de store ændringer i så denne beskrives ikke i projektet.
+
+Driveren opbygges med en skrive- og læsemetode, der begge kan læse eller skrive én 8 bits karakter(char).
+
+\begin{lstlisting}[language=C]
+int write(data){
+Write 1 char to SPI network
+}
+int read(*datapointer){
+Read data
+Move data to datapointer
+}
+\end{lstlisting}
