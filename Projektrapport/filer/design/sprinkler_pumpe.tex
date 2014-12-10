@@ -1,6 +1,6 @@
 % Sprinkler pumpe system
 
-\subsection{Sprinkler-pumpe system ()}
+\subsection{Sprinkler-pumpe system (MK PO SK)}
 
 Sprinkleren skal forsynes med et vandtryk fra en vandpumpe. Grundfos har doneret en Alpha2 pumpe til formålet. Alpha2 pumpen kræver 230 VAC. Det overskrider hvad der dagligt må arbejde med for studerende på AU. Der er derfor efter aftale med Torben Lund Jensen fra værkstedet givet særskilt tilladelse til at designe og implementere et lukket 230 V / 5 V relæ. Figur \ref{lab:Relay_box} viser kredsløbet for det lukkede 230 V / 5 V relæ. Jordforbindelsen løber direkte igennem og er altid forbundet, mens fasen og nul forbindes/afbrydes af relæet.  
 
@@ -29,7 +29,7 @@ Ibase = \frac{3,3V - 1,4V}{18k\Omega} = 0,1mA
 \label{eq:Ibase}
 \end{equation} 
 
-Når PSoC4’s pin til BC517 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emitter på transistoren, herved er der spænding over relæets spole og relæets kontaktsæt klikker herved. Yderlige overvejelser og information kan findes i projektdokumentation afsnit 5.4.3, Relæ-styring.
+Når PSoC4’s pin til BC517 transistoren går høj (3,3V), så skabes der forbindelse mellem collector og emitter på transistoren, herved er der spænding over relæets spole og relæets kontaktsæt klikker. Yderlige overvejelser og information kan findes i projektdokumentation afsnit 5.4.3, Relæ-styring.
 
 
 

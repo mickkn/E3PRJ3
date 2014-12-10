@@ -1,9 +1,9 @@
-\subsection{Strømforsyning og tilslutningsprint}
+\subsection{Strømforsyning og tilslutningsprint (MK PO SK)}
 
 Der er blevet udarbejdet et tilslutningsprint med dertilhørende strømforsyning for at gøre systemet uafhængig af laboratoriet, se figur \ref{fig:PSU_connections}. Strømforsyning er en 230VAC/12VDC switch-mode konverter.
 
 \figur{1}{tilslutningsprint}{Kredsløb over samlet spændingsforsyning (3,3 V og 5 V) og tilslutninger til PSoC4}{fig:PSU_connections}
 
-Tilslutningsprintet forsyner PSoC4en, Sprinkler-relæet, PIR-sensor og FT-sensor. LM7805 og LM317 er spændingsregulatorer som er blevet brugt til henholdsvis at regulere spændingen ned til 5 Vdc og 3,3 Vdc. I projektdokumentation, afsnit 5.5.1 strømforsyningen, kan de diverse beregninger ses for udgangsspænding og afsat effekt i spændingsregulatoren. Effektudregningen viser om det er nødvendigt at køle på spændingsregulatorne, det er vigtigt at tage højde for da komponenten ellers kan tage skade. Effektudregningen viser at det er nødvendigt med køling på LM7805, men der er fortaget køling på begge regulatorer alligevel. Det skyldes at det er altid en god ide at køle på en komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed.
+Tilslutningsprintet forsyner PSoC4en, Sprinkler-relæet, PIR-sensor og FT-sensor. LM7805 og LM317 er spændingsregulatorer som er blevet brugt til henholdsvis at regulere spændingen ned til 5 Vdc og 3,3 Vdc. I projektdokumentation afsnit 5.5.1 strømforsyningen, kan diverse beregninger ses for udgangsspænding og afsat effekt i spændingsregulatoren. Effektudregningen viser om det er nødvendigt at køle på spændingsregulatorne, det er vigtigt at tage højde for da komponenten ellers kan tage skade. Effektudregningen viser at det er nødvendigt med køling på LM7805, men der er fortaget køling på begge regulatorer alligevel. Det skyldes at det er altid en god ide at køle på en komponent hvis der er mulighed for det, det sikre bl.a længere levetid og berøringssikkerhed.
 
    

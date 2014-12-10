@@ -1,2 +1,3 @@
-\subsection{PIR-sensor}
+\subsection{PIR-sensor (SK MK)}
 
+PIR-sensoren er et færdigbygget komponent, implementeringen af den er fortaget ved at lave en PIR API. APIen er lavet i PSoC creator, den forbinder PIR-sensoren med SW. Hvis der registreres bevægelse sættes en input pin på PSoC4en høj og der bliver startet en ISR-routine der kalder en funktion fra kontrolleren, som stopper vandingen på banen i 30 min. Yderlig information om PIR API kan findes i projektdokumentation afsnit 7.7, PIR API. 
