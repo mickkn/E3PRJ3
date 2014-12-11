@@ -1,5 +1,5 @@
 \subsection{Kommunikationsprotokol (MK, PO)}
-Kommunikationsprotokollen for SPI kommunikationen er herunder beskrevet. Tabel \ref{tabel:SWProtokol-kommandoer} viser de mulige kommandoer for SPI kommunikationen. 
+Kommunikationsprotokollen for SPI-kommunikationen er herunder beskrevet. Tabel \ref{tabel:SWProtokol-kommandoer} viser de mulige kommandoer for SPI-kommunikationen. 
 
 Opsætningen er som følger:
 
@@ -10,7 +10,7 @@ Opsætningen er som følger:
 \end{itemize}
 
 PSoC4 kan køre 8 MHz, men der er ikke behov for så høj hastighed. Stabiliteten blev forbedret væsentligt ved at vælge en lavere hastighed. 
-\newline SPI-mode = 0 - er valgt på baggrund af default indstillinger. 
+\newline SPI mode = 0 - er valgt på baggrund af default indstillinger. 
 \newline CPOL = 0 - vil sige at clocken er lav når den er passiv (aktiv-høj). 
 \newline CPHA = 0 - vil sige at data udlæses på rising-edge. 
 \newline Der transmitteres en karakter pr. transmission dvs. 8 bits.
@@ -32,7 +32,7 @@ PSoC4 kan køre 8 MHz, men der er ikke behov for så høj hastighed. Stabilitete
 \hline
 'L' & 0x4c & Forespørg logdata fra Enhed \\ 
 \hline
-'C' & 0x4c & Write buffer og clearing af tx-buffer  \\
+'C' & 0x4c & Write buffer og clearing af TX-buffer  \\
 \hline
 'R' & 0x4c & Læsning af data fra Enhed \\
 \hline
