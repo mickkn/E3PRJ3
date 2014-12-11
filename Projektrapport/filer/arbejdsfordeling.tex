@@ -2,42 +2,52 @@
 
 \begin{tabular}{|l|c|c|c|c|c|c|c|}
 \hline 
-\textbf{Navne} 		& Bjørn 	& Jakob 	& Jesper 	& Lennart 	& Mick 	& Poul 	& Simon \\ 
+\textbf{Navne} 			& Bjørn 		& Jesper 	& Jakob 		& Lennart 	& Mick 		& Poul 		& Simon \\ 
 \hline 
-Kravspecifikation 	& X 		& X 		& X 			& X 			& X 		& X 		& X \\ 
+Kravspecifikation 		&\checkmark 	&\checkmark	&\checkmark	&\checkmark	&\checkmark 	&\checkmark	&\checkmark \\ 
 \hline 
-Forundersøgelse 		& • 		& • 		& • 			& X 			& • 		& • 		& X \\ 
+Forundersøgelse 			& 			&			&			&\checkmark	&	 		&			&\checkmark \\ 
 \hline 
-Systemarkitektur 	& X 		& X 		& X 			& X 			& X 		& X 		& X \\ 
+Systemarkitektur 		&\checkmark 	&\checkmark	&\checkmark	&\checkmark	&\checkmark 	&\checkmark	&\checkmark \\ 
 \hline 
-Hardwarebeskrivelse	& • 		& X 		& • 			& X 			& X 		& X 		& X \\ 
+Hardwarebeskrivelse		&		 	&			&\checkmark	&\checkmark	&\checkmark 	&\checkmark	&\checkmark \\ 
 \hline 
-Softwarebeskrivelse	& X 		& • 		& X 			& • 			& X 		& X 		& • \\ 
+Softwarebeskrivelse		&\checkmark 	&\checkmark	&			&  			&			&			&  \\ 
 \hline 
-FT-sensor			& • 		& X 		& • 			& X 			& • 		& • 		& • \\ 
+- Kommunikationsprotokol	&\checkmark 	&			&			&  			&\checkmark	&\checkmark	&  \\ 
 \hline 
-PIR-sensor			& • 		& • 		& • 			& • 			& X 		& X 		& X \\ 
+FT-sensor				& 			&			&\checkmark	&\checkmark 	&			&			&  \\ 
 \hline 
-Sprinkler og pumpe	& • 		& • 		& • 			& • 			& • 		& X 		& X \\ 
+PIR-sensor				&		 	&			&			&			&\checkmark 	&\checkmark	&\checkmark \\ 
 \hline 
-Forsyningsprint		& • 		& • 		& • 			& • 			& • 		& X		& X \\ 
+Sprinkler og pumpe		&		 	&			&			&			& 			&\checkmark	&\checkmark \\ 
 \hline 
-Hardwareforbindelser	& • 		& X 		& • 			& X 			& X 		& X 		& X \\ 
+Forsyningsprint			&		 	&			&			&			& 			&\checkmark	&\checkmark \\ 
 \hline 
-Dataprotokol			& X 		& • 		& • 			& • 			& • 		& • 		& • \\  
+Hardwareforbindelser		&		 	&			&\checkmark	&\checkmark	&\checkmark	&\checkmark	&\checkmark \\ 
 \hline 
-Applikationsmodeller	& X 		& • 		& X 			& • 			& • 		& • 		& • \\ 
+Dataprotokol				&\checkmark	&			&			&			& 			&			&  \\  
 \hline 
-SPI				& • 		& • 		& • 			& • 			& X 		& X 		& • \\  
+Applikationsmodeller		&\checkmark	&			&			&			& 			&			&  \\
 \hline 
-Mastersoftware			& X 		& • 		& X 			& • 			& • 		& • 		& • \\  
+SPI						&			&			&			&			&\checkmark 	&\checkmark &\checkmark \\  
 \hline 
-Enhedssoftware			& X 		& X 		& X 			& X 			& X 		& X 		& X \\
-\hline 
-•FT-sensor API			& X 		& • 		& X 			& • 			& • 		& • 		& • \\  
-\hline 
-•SPI API			& X 		& • 		& X 			& • 			& • 		& • 		& • \\  
+Mastersoftware			&\checkmark	&\checkmark	&			&			&\checkmark	&\checkmark &  \\ 
 \hline
-•PIR API			& X 		& • 		& X 			& • 			& • 		& • 		& • \\  
+- Main					&\checkmark	&\checkmark	&			&			&			&			&  \\ 
+\hline
+- GUI					&\checkmark	&\checkmark	&			&			&			&			&  \\ 
+\hline
+- SPI API				&			&			&			&			&\checkmark	&\checkmark &  \\  
+\hline
+Enhedssoftware			&\checkmark 	&\checkmark	&\checkmark	&\checkmark	&\checkmark 	&\checkmark	&\checkmark \\ 
+\hline 
+- Main				    	&\checkmark	&\checkmark	&			& 			&			&			&  \\  
+\hline 
+- FT-sensor API			& 			&			&\checkmark	&\checkmark 	&			&			&  \\  
+\hline 
+- PIR API				&			&			&			&			&\checkmark 	&			&\checkmark \\ 
+\hline
+- SPI-handler			&			&			&			&			&\checkmark 	&\checkmark & \\ 
 \hline 
 \end{tabular} 
