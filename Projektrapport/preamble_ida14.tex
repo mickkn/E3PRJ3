@@ -200,6 +200,19 @@
 \newcommand{\dec}{^{\circ}}
 \newcommand{\m}{\cdot}
 
+% ¤¤ Blankpage ¤¤ %
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+    
+    %In the text before the blank page, insert the following code:
+
+	%\afterpage{\blankpage}
 
 %%%% ORDDELING %%%%
 
