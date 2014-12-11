@@ -1,24 +1,24 @@
 %SPI
 \subsection{SPI (MK PO SK)}
 
-Serial Parrallel Interface (SPI) er en måde at lave hurtig seriel dataudveksling på. SPI er udviklet af Motorola og fungerer ved at man, som regel, har en enkelt masterenhed der styrer flere slaveenheder. Ved SPI er der er ingen fejl-check og adressering af flere enheder kan være hardware krævende. I EasyWater8000-projektet er der SPI-kommunikation imellem Master (Devkit8000) og Enhed (PSoC4), det giver muligheden for at overføre flere data på samme tid imellem disse to.
+Serial Parrallel Interface (SPI) er en måde at lave hurtig seriel dataudveksling på. SPI er udviklet af Motorola og fungerer ved at man, som regel, har en enkelt masterenhed der styrer flere slaveenheder. Ved SPI er der er ingen fejl-check og adressering af flere enheder kan være hardware krævende. I EasyWater8000-projektet er der SPI-kommunikation imellem Master (Devkit8000) og Enhed (PSoC4). Det giver muligheden for at overføre flere data på samme tid imellem disse to.
 
 \figur{0.7}{design_spi_master_slave}{SPI-bus}{fig:design_spi_bus}
 
-På figur \ref{fig:design_spi_bus}\footnote{Kilde: Wikipedia om SPI} ses en typisk opkobling imellem Master og Slave, det kræver 4 tråde.
+På figur \ref{fig:design_spi_bus}\footnote{Kilde: Wikipedia om SPI} ses en typisk opkobling imellem master og slave. Det kræver fire ledninger.
 
 \begin{itemize}
- 	\item SS står for "Slave select".
- 	\item MISO står for "Master in slave out".
- 	\item MOSI står for "Master out slave in". 
-	\item SCLK står for "Serial clock" 
+ 	\item SS står for ''Slave select''
+ 	\item MISO står for ''Master in slave out''
+ 	\item MOSI står for ''Master out slave in''
+	\item SCLK står for ''Serial clock''
 \end{itemize}
 
-SPI-kommunikation er baseret på skifteregister princippet, som ses på figur\ref{fig:design_spi_register} \footnote{Kilde: SPI Slide i GFV v/ Michael Alrøe}. Der vælges hvilken slave der ønskes at skrives til ved slave select(SS), derefter shiftes et 8-bit register 1 bit ad gangen. Serial clock er den clock der sørger for at shiftningen af bits sker korrekt, clockfrekvensen må ikke overstige grænsen for hvad enhederne kan håndtere.
+SPI-kommunikation er baseret på skifteregister-princippet, som ses på figur \ref{fig:design_spi_register}\footnote{Kilde: SPI Slide i I3GFV, Michael Alrøe}. Der vælges hvilken slave der ønskes at skrives til med slave select (SS), derefter shiftes et 8-bit register 1 bit af gangen. Serial clock er den clock der sørger for at shiftningen af bits sker korrekt. Clockfrekvensen må ikke overstige grænsen for hvad enhederne kan håndtere.
 
 \figur{0.8}{design_spi_register}{SPI-register}{fig:design_spi_register}
 
 En ofte anvendt kommunikation imellem master og slave foregår ved at master sætter SS til 0. Den fortæller nu til slaven at den er klar til 
-dataoverførsel. Nu sender masteren en bit over til slaven og påbegynder en half-duplex data transmission, samtidigt sender slaven en bit over til masteren. Denne process fortsætter indtil masteren har sendt alle sine bits, derefter stopper masteren med at toggle på clocken og slave enheder bliver frigivet.
+dataoverførsel. Nu sender masteren en bit over til slaven og påbegynder en half-duplex data transmission, samtidigt sender slaven en bit over til masteren. Denne process fortsætter indtil masteren har sendt alle sine bits. Derefter stopper masteren med at toggle på clocken og slave enheden bliver frigivet.
 
-SPI kan køre både full- og halfduplex, dvs. at der kan være 2-vejs kommunikation ved full-duplex (flere masterenheder) eller to-vejs kommunikation ved half-duplex, hvor en masterenhed styrer/skriver til en eller flere slaveenheder. I EasyWater8000 er der behov for at der kommunikeres to veje, men da Enheden fungerer som slave, kan den ikke selvstændigt sende til Masteren, men behøver et kald, om at nu skal den sende information. Derfor er der valgt half-duplex.
+SPI kan køre både full- og halfduplex, dvs. at der kan være to-vejs kommunikation ved full-duplex (flere masterenheder) eller to-vejs kommunikation ved half-duplex, hvor en masterenhed styrer/skriver til en eller flere slaveenheder. I EasyWater8000 er der behov for at der kommunikeres to veje, men da Enheden fungerer som slave, kan den ikke selvstændigt sende til Masteren, men behøver et kald, om at nu skal den sende information. Derfor er der valgt half-duplex.
