@@ -1,7 +1,7 @@
-\section{HW erfaringer}
+\section{Hardwareerfaringer}
 
-HW har opnået erfaringer indenfor arbejde med SPI, PSoC Creator og kendskab til diverse sensor. En vigtig erfaring angående SPI er at kablet imellem Master og Enhed ikke må være for langt, det medførte at signalet blev fejlfyldt. Kabel blev kortet ned til ca. 7 cm, det medførte at alle fejl forsvandt.
+Hardwaregruppe har opnået erfaringer indenfor arbejde med SPI, PSoC Creator og kendskab til diverse sensorer. En vigtig erfaring angående SPI er at afstanden imellem Master og Enhed ikke må være for lang, det medførte at signalet blev meget fejlfyldt. Kablet blev kortet ned til ca. 7 cm, som medførte at fejlraten blev minimeret til under 1\%.
 
-I forbindelse med FT-sensor kan det erfares at det er nemmere at lave API til en analog sensor end en digital sensor. Signalet fra den analoge sensor kan tages direkte, hvor signalet fra en digital sensor kræver ekstra kodning. 
+I forbindelse med FT-sensoren, erfares det, at det er nemmere at lave API til en analog sensor end til en digital sensor. Signalet fra en analog sensor kan tages direkte, hvor signalet fra en digital sensor kræver ekstra kodning. I vores tilfælde skulle der laves en analog spænding fra en PWM-spænding, som gav yderligere erfaringer inden for opbygning af filtre. 
 
-Ved tilslutningsprintet var det meget vigtigt at tage hensyn til effektforbruget som skaber varme i spændingsregulatoren. Hvis der ikke blev fortaget korrekt køling kunne komponenten blive beskadiget.  
+Da tilslutningsprintet skulle udvikles, var det meget vigtigt at tage hensyn til effektforbruget som skaber varme i spændingsregulatoren. Hvis der ikke blev foretaget korrekt køling kunne komponenten blive beskadiget.  

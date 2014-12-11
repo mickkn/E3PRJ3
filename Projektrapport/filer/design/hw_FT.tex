@@ -1,14 +1,11 @@
 \subsection{Temperatur- og fugtsensor (JS LB)}
 
+\figur{0.8}{SHT_pcb}{Diagram og printudlæg af SHT21p kredsløb}{fig:SHT21p-kredsloeb}
 
-\begin{figure}[H]
-\centering
-{\includegraphics[width=\textwidth]{billeder/SHT_pcb}}
-\caption{Schematic og layout af SHT21p kredsl\o{}b}
-\label{lab:SHT21p-kredsloeb}
-\end{figure}
+Systemet indeholder en fugt- og temperatursensor. Sensorens opgave er at måle temperaturen og fugtigheden.
 
-Systemet indeholder  en fugt- og temperatur sensor. Sensorens opgave er at måle temperaturen og fugtigheden.
-Sensoren udsender et PWM-signal, på ca. 120 Hz, hvor pulsbredden beskriver temperaturen og fugtigheden,  alt efter hvilken der er valgt. Det vælges med et høj eller lavt signal om der måles temperatur eller fugtighed, mere information om dette kan læses i dokumentation afsnit 5.2 Temperatur- og fugtsensor.
-Da PSoC4s ADC-converter ikke kan læse et PWM-signal, skulle der findes en anden løsning. Løsningen blev at midle PWM-signalet så det bliver en DC-spænding som ADCen kan aflæse. Dette gøres med et 2. ordens lavpass-filter med en knækfrekvens på 12 Hz. Mere information om dette filter kan læses i afsnit 5.2.1 Midlingsfilter i dokumentationen. 
-Der er også foretaget præcisions- og støjbehandling. Da nogen af komponenterne, som var til rådighed under projektet, havde en tolerance på $\pm$ 5\% har denne ikke været meget nødvendig. For yderligere information om præcisions- og støjbehandling, se dokumentationen afsnit 5.2.2 Præcisions- og støjhåndtering. 
+Sensoren udsender en PWM-spænding, på ca. 120 Hz, hvor puls-bredden beskriver temperaturen og fugtigheden, alt efter hvilken tilstand der er valgt. Tilstanden vælges med en høj eller lav TTL-spænding, mere information om dette kan læses i Projektdokumentationen afsnit 5.2 Temperatur- og fugtsensor.
+
+Da ADCen i PSoC4 ikke kan læse en PWM-spænding, skal der findes en anden løsning. Løsningen er at midle PWM-spændingen så det bliver lavet om til en varierende DC-spænding som ADCen kan aflæse. Dette gøres med et 2. ordens lavpasfilter med en knækfrekvens på 12 Hz. Mere information om dette filter kan ses i Projektdokumentationen afsnit 5.2.1 Midlingsfilter.
+ 
+Der er også foretaget præcisions- og støjbehandling. Da nogen af komponenterne, som var til rådighed under projektet havde en tolerance på $\pm$5\%, har denne ikke været meget nødvendig. For yderligere information om præcisions- og støjbehandling, se Projektdokumentationen afsnit 5.2.2 Præcisions- og støjhåndtering. 
