@@ -4,8 +4,8 @@
 
 Systemet indeholder en fugt- og temperatursensor. Sensorens opgave er at måle temperaturen og fugtigheden.
 
-Sensoren udsender en PWM-spænding, på ca. 120 Hz, hvor puls-bredden beskriver temperaturen og fugtigheden, alt efter hvilken tilstand der er valgt. Tilstanden vælges med en høj eller lav TTL-spænding, mere information om dette kan læses i Projektdokumentationen afsnit 5.2 Temperatur- og fugtsensor.
+Sensoren udsender en PWM-spænding, på ca. 120 Hz, hvor puls-bredden beskriver temperaturen og fugtigheden, alt efter hvilken tilstand der er valgt. Tilstanden vælges med en høj eller lav TTL-spænding, mere information om dette kan læses i dokumentationen afsnit 5.2, Temperatur- og fugtsensor.
 
-Da ADCen i PSoC4 ikke kan læse en PWM-spænding, skal der findes en anden løsning. Løsningen er at midle PWM-spændingen så det bliver lavet om til en varierende DC-spænding som ADCen kan aflæse. Dette gøres med et 2. ordens lavpasfilter med en knækfrekvens på 12 Hz. Mere information om dette filter kan ses i Projektdokumentationen afsnit 5.2.1 Midlingsfilter.
+Da ADCen i PSoC4 ikke kan læse en PWM-spænding, skal der findes en anden løsning. Løsningen er at midle PWM-spændingen så det bliver lavet om til en varierende DC-spænding som ADCen kan aflæse. Dette gøres med et 2. ordens lavpasfilter med en knækfrekvens på 12 Hz. Mere information om dette filter kan ses i dokumentationen afsnit 5.2.1, Midlingsfilter.
  
-Der er også foretaget præcisions- og støjbehandling. Da nogen af komponenterne, som var til rådighed under projektet havde en tolerance på $\pm$5\%, har denne ikke været meget nødvendig. For yderligere information om præcisions- og støjbehandling, se Projektdokumentationen afsnit 5.2.2 Præcisions- og støjhåndtering. 
+Der er også foretaget præcisions- og støjbehandling. Da nogle af komponenterne, som var til rådighed under projektet havde en tolerance på $\pm$5\%, har denne ikke været meget nødvendig. For yderligere information om præcisions- og støjbehandling, se dokumentationen afsnit 5.2.2, Præcisions- og støjhåndtering. 
