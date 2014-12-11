@@ -1,16 +1,16 @@
 \subsection{SPI (MK PO)}
 
-Der udarbejdes et Kernemodul, en driver og en API for SPI kommunikationen for Master og en SPI Handler til Enheden. Disse er beskrevet i dette afsnit. For yderligere information se Projektdokumentation afsnit 7.6 SPI.
+Der udarbejdes et kernemodul, en driver og en API for SPI-kommunikationen for Master og en SPI-handler til Enheden. Disse er beskrevet i dette afsnit. For yderligere information se Projektdokumentation afsnit 7.6, SPI.
 
 \subsubsection*{Kernemodul og driver}
 
-Kernemodulet til SPI kommunikationen skal sørge for at oprette en fil i filsystemet på Master. Det skal oprette en systemfil/systemnode der kan skrive og læses fra. Dette er praktisk da man kan skrive metoder der lige netop kan læse og skrive til en fil i filsystemet i Linux operativsystemet. Kernemodulet kan genbruges fra HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI-kommunikation} og driveren kan videreudvikles ud fra driveren i samme øvelse, så denne kommunikere med en \verb+CHAR+ per transmission.
+Kernemodulet til SPI-kommunikationen skal sørge for at oprette en fil i filsystemet på Master. Det skal oprette en systemfil/systemnode der kan skrive og læses fra. Dette er praktisk da der kan skrives metoder der lige netop kan læse og skrive til en fil i filsystemet i Linuxs operativsystemet. Kernemodulet kan genbruges fra HAL Exercise 7\footnote{Hardware abstraktioner. Exercise 7: LDD with SPI. Øvelse med SPI-kommunikation} og driveren kan videreudvikles ud fra driveren i samme øvelse, så denne kommunikerer med én \verb+CHAR+ per transmission.
 
 \subsubsection*{API}
 
-SPI APIen skal være en klasse skrevet i \verb+C+++ der skal indeholde metoder til at kommunikere via SPI med Driveren og det dertilhørende kernemodul. Det skal bestå af en række metoder beskrevet i Projektdokumentationen afsnit 7.6.2 SPI API og afsnit 6.2.3 Klassebeskrivelser. 
+SPI-APIen skal være en klasse skrevet i \verb+C+++ der skal indeholde metoder til at kommunikere via SPI med driveren og det dertilhørende kernemodul. Det skal bestå af en række metoder beskrevet i projektdokumentationen afsnit 7.6.2 SPI-API og afsnit 6.2.3 Klassebeskrivelser. 
 
-Alle metoderne skal bruge en filnode \verb+/dev/spi_dev+, som den skriver og læser fra. Alle metoderne udarbejdes sammen med en SPI Handler på Enhed (PSoC4) der kan håndtere de forskellige kommandoer fra tabel \ref{tabel:SWProtokol-kommandoer}.
+Alle metoderne skal bruge en filnode \verb+/dev/spi_dev+, som den skriver og læser fra. Alle metoderne udarbejdes sammen med en SPI-handler på Enheden (PSoC4) der kan håndtere de forskellige kommandoer fra tabel \ref{tabel:SWProtokol-kommandoer}.
 
 \subsubsection*{Handler}
 
