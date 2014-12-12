@@ -3,11 +3,11 @@
 \begin{figure}[htb]
 \centering
 {\includegraphics[width=0.25\textwidth]{filer/design/Billeder/sht21p_fysisk}}
-\caption{Fysisk afbildning af SHT21P}
+\caption{Fysisk afbildning af sensoren SHT21p}
 \label{lab:sht_filter}
 \end{figure}
 
-Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombinerede temperatur- og fugtsensor SHT21P. Denne er valgt ud fra at der således ikke behøves en sensor for hver af de to målinger, dermed sparres der en komponent. SHT21P sender en PWM ud som midles til en DC-spænding med et 2. ordens lavpasfilter. Denne spænding sendes ind i en A/D-converter i PSoCen hvor denne behandles i en funktion, for så at returnere en temperatur eller fugt. Et select ben på SHT21P angiver hvorvidt denne måler temperatur eller fugt. SCL HIGH(1) giver fugt output, SCL LOW(0) giver temperatur output.
+Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombinerede temperatur- og fugtsensor SHT21p. Denne er valgt ud fra at der således ikke behøves en sensor for hver af de to målinger, dermed sparres der en komponent. SHT21p sender en PWM ud som midles til en DC-spænding med et 2. ordens lavpasfilter. Denne spænding sendes ind i en A/D-converter i PSoCen hvor denne behandles i en funktion, for så at returnere en temperatur eller fugt. Et select ben på SHT21p angiver hvorvidt denne måler temperatur eller fugt. SCL HIGH(1) giver fugt output, SCL LOW(0) giver temperatur output.
 
 \subsection{Midlingsfilter}
 
@@ -21,14 +21,14 @@ Til indsamling af temperatur- og fugtdata for golfhuller anvendes den kombinered
 
 2. ordens filteret er sammensat af to lavpasfiltre. Det første filter, bestående af R1 og C1 bestemmer knækfrekvensen. Det efterfølgende filter, R2 og C2, er valgt som en faktor 10 af R1 og C1 hvilket vil resultere i et 2. ordens filter, men samtidig vil de to ikke påvirke hinanden og kan derfor forbindes direkte uden en buffer. 
 
-Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under 120 Hz, vil der opnås en stor dæmpning, således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 V. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ligningerne for udregning af fugt og temperatur, er opgivet som en funktion af PWMen, er begge lineære og der kan derfor regnes med et step i volt på °C. Funktionerne herfor er opgivet i databladet for SHT21P. 
+Filterets knækfrekvens ($f_c$) er designet ud fra frekvensen på PWM signalet. Denne er opgivet til 120 Hz i databladet. Ved at designe filteret med en $f_c$ der ligger væsentligt under 120 Hz, vil der opnås en stor dæmpning, således at signalet tilnærmer sig en fast DC-spænding svarende til middelværdien af PWM. PWMen oscillerer i området VSS-VDD. Sensoren er forsynet med 3,3 VDC og VSS er forbundet til GND, hvilket giver en PWM i området 0-3,3 V. DC-spændingen efter filteret er testet ved 10 \% dutycycle og 90 \% dutycycle hvilket gav henholdsvis 211 mV og 2610 mV efter filteret. Ligningerne for udregning af fugt og temperatur, er opgivet som en funktion af PWMen, er begge lineære og der kan derfor regnes med et step i volt på °C. Funktionerne herfor er opgivet i databladet for SHT21p. 
 På figur \ref{lab:sht_plot_mable} kan det ses at kurven for fugtighed går fra -6 \% til 120 \%, denne er dog kun defineret ved 0 til 100 \%. 
 
 % PLOT FRA MAPLE HER!
 \begin{figure}[H]
 \centering
 {\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht_plot_maple}}
-\caption{Plot af fugt(rød kurve) og temperatur(blå kurve) som funktion af pwm}
+\caption{Plot af fugt- (rød kurve) og temperaturmålinger (blå kurve) som funktion af PWM}
 \label{lab:sht_plot_mable}
 \end{figure}
 
@@ -77,7 +77,7 @@ En anden støjfaktor der er værd at tage hensyn til er filterets belastning af 
 \begin{figure}[htb]
 \centering
 {\includegraphics[width=0.75\textwidth]{filer/design/Billeder/sht_opamp}}
-\caption{OpAmp til udbedring af evt. støj forårsaget af lavpasfilter}
+\caption{Op-amp til udbedring af evt. støj forårsaget af spændingstab på forsyningsledninger til sensorerne}
 \label{lab:sht_opamp}
 \end{figure}
 
