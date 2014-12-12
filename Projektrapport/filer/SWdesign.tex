@@ -1,7 +1,7 @@
 \section{Softwaredesign (BS JC)}
 
-\subsection{Applicationsmodel}
-I softwaredesign-fasen laves applikationsmodeller for de forskellige use cases, for at få et overblik over hvilke metoder og funktioner der skal bruges. Applikationsmodellen består af, at man først laver sekvensdiagrammer for hver use case. Hvis det finders nødvendigt for at få et overblik kan der også laves state machine-diagrammer over hver use case. Dette er ikke vurderet nødvendigt hvorfor det er udeladt.
+\subsection{Applikationsmodel}
+I softwaredesign-fasen laves applikationsmodeller for de forskellige use cases, for at få et overblik over hvilke metoder og funktioner der skal bruges. Applikationsmodellen består af, at man først laver sekvensdiagrammer for hver use case. Hvis det findes nødvendigt for at få et overblik kan der også laves state machine-diagrammer over hver use case. Dette er ikke vurderet nødvendigt hvorfor det er udeladt.
 
 Næste step i applikationsmodellen er at få alle metode-kald i sekvensdiagrammerne, over i et klassediagram. Dette klassediagram er ment som et overblik, som kan benyttes når der arbejdes med den endelige klassebeskrivelse.
 
@@ -21,7 +21,7 @@ Applikationsmodellen er benyttet både til softwaredesign af koden til Devkit800
 
 Efter applikationsmodellen blev klasserne beskrevet. Hver klasse har et overordnet ansvar. F.eks har controller-klassen, \verb+Config+ som blev beskrevet på figur \ref{fig:devkit_a_uc2}, ansvaret for at styre UC2. Hver metode i klassen har således en beskrivelse af hvad metoden skal gøre, hvilke parametre den modtager og hvad metoden returnerer. Over hele projektet er det aftalt, at alle metoder skal returnere en integer for at der kunne laves fejl-tjek på dem. Det vil sige at når metoderne skal modulere noget data som denne fik tilsendt, så skal det være en pointer den modtager.
 
-Efter klassebeskrivelserne er det konceptuelle klassediagram, med alle de nye medlemsdata, parametre og datatyper der benyttes i de pågældende klasser, blevet opdateret. Det nye, opdateret, klassediagram kan ses på figur \ref{fig:sw_class_static} i softwareimplementeringen, afsnit \ref{head:sw_impl}. Se alle klassebeskrivelser i dokumentationen afsnit 6.2.3 Klassebeskrivelser.
+Efter klassebeskrivelserne er det konceptuelle klassediagram, med alle de nye medlemsdata, parametre og datatyper der benyttes i de pågældende klasser, blevet opdateret. Det nye, opdaterede, klassediagram kan ses på figur \ref{fig:sw_class_static} i softwareimplementeringen, afsnit \ref{head:sw_impl}. Se alle klassebeskrivelser i dokumentationen afsnit 6.2.3 Klassebeskrivelser.
 
 %SPI
 \input{filer/design/sw_spi}
