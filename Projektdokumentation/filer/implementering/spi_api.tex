@@ -6,7 +6,7 @@ Alle metoderne er stort set opbygget ens.
 
 \subsubsection*{Open}
 
-De har alle en \verb+open()+ metode der sørger for at åbne system filen der enten skal skrives eller læses fra. Hvis der sker en fejl i open, returnere den så en passende negativ fejl, i dette tilfælde fejlen LOG\_ERR.
+De har alle en \verb+open()+ metode der sørger for at åbne system filen der enten skal skrives til eller læses fra. Hvis der sker en fejl i open, returnere den så en passende negativ fejl, i dette tilfælde fejlen LOG\_ERR.
 
 \begin{lstlisting}[language=C]
 /* Open file */
@@ -31,7 +31,7 @@ close(fp);
 
 \subsubsection*{Write \& Read}
 
-Ind i mellem disse er så en \verb+write()+ eller/og en \verb+read()+ metode, der sørger for at der bliver læst eller skrevet til Enheden via SPI. Her er nogle eksempler på metoderne.
+Ind i mellem disse er så en \verb+write()+ eller/og en \verb+read()+ metode, der sørger for at der bliver læst fra eller skrevet til Enheden via SPI. Her er nogle eksempler på metoderne.
 
 \verb+Write()+ metoden bruges i starten af alle metoder til at vælge hvad der skal ske på Enheden ved at skrive en char kommando til den. Den bruges også, som her, til at skrive parametrene temp og humi til Enheden. Her modtages parametrene som floats, konverteres til chars og skrives enkeltvis til Enheden med en for-løkke.
 
