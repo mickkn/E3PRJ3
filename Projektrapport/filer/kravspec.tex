@@ -1,4 +1,7 @@
-\chapter{Kravspecifikation}
+\chapter{Krav}
+EasyWater8000-systemet skal automatisk tænde for sprinklerne på golfbanen når den bliver for tør eller temperaturen bliver for høj. Systemet måler både fugt og temperatur og alt data samles i en log som kan printes på Masteren (hovedcomputeren).  Desuden observerer systemet om en person eller spiller går ind på banen og deaktiverer vandingssystemet i en periode for systemet ikke vander hullet mens spilleren er derpå. 
+
+Greenkeeperen kan fra Master sætte en række værdier for hvor tørt og varmt der skal være før der vandes.
 
 Der er blevet lavet en kravspecifikation, som tager udgangspunkt i use case-diagrammet på figur \ref{lab:usecasediagram}. Use case-diagrammet viser hvilke use cases som Bruger og Golfbane har kontakt til. Den komplette use case-beskrivelse kan ses i projektdokumentationen, kapitel 2, Kravspecifikation. 
 
@@ -6,12 +9,12 @@ Der er blevet lavet en kravspecifikation, som tager udgangspunkt i use case-diag
 \begin{figure}[H] \centering
 \vspace*{\fill}
 \includegraphics[width=\textwidth]{Billeder/Usecase_Diagram}
-\caption{Use case diagram}
+\caption{Use case-diagramet for EasyWater8000 beskriver operationerne systemet kan udføre}
 \label{lab:usecasediagram}
 \vspace*{\fill}
 \end{figure}
 
-Herunder ses en beskrivelse af aktørerne i EasyWater8000.
+I tabel \ref{tabel:aktor} ses en beskrivelse af aktørerne i EasyWater8000.
 
 \begin{table}[!htbp] \centering
 	\begin{tabular}{|p{2.5cm}|p{11.5cm}|}
@@ -21,9 +24,11 @@ Herunder ses en beskrivelse af aktørerne i EasyWater8000.
 
 		Golfbane & De almene omgivelser på golfbanen, som har indflydelse på systemets sensorer. Det indebærer temperatur, fugtighed og bevægelse i området omkring systemet. (Sekundær) \\\hline
 	\end{tabular}
+	\caption{Aktørbeskrivelser til Use case-diagrammet \ref{lab:usecasediagram}}
+	\label{tabel:aktor}
 \end{table}
 
-\subsection{Ikke-funktionelle krav}
+\section*{Ikke-funktionelle krav}
 Herunder ses en beskrivelse af de ikke-funktionelle krav i EasyWater8000.
 % Ikke-funktionelle krav
 \begin{enumerate}
