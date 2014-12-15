@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -17,34 +17,35 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.bss
-  18              		.align	2
-  19              	parametersPtr_:
-  20 0000 00000000 		.space	4
-  21              		.align	2
-  22              	bufferPtr_:
-  23 0004 00000000 		.space	4
-  24              	movement_:
-  25 0008 00       		.space	1
-  26              	dataIndex_:
-  27 0009 00       		.space	1
-  28 000a 0000     		.align	2
-  29              	logDataTimeoutCounter_:
-  30 000c 00000000 		.space	4
-  31              		.align	2
-  32              	waterTimeoutCounter_:
-  33 0010 00000000 		.space	4
-  34              		.global	__aeabi_ui2d
-  35              		.global	__aeabi_dcmpge
-  36              		.section	.text.logDataISR,"ax",%progbits
-  37              		.align	2
-  38              		.global	logDataISR
-  39              		.code	16
-  40              		.thumb_func
-  41              		.type	logDataISR, %function
-  42              	logDataISR:
-  43              	.LFB33:
-  44              		.file 1 ".\\loadData.c"
+  17              		.comm	nextState,1,1
+  18              		.bss
+  19              		.align	2
+  20              	parametersPtr_:
+  21 0000 00000000 		.space	4
+  22              		.align	2
+  23              	bufferPtr_:
+  24 0004 00000000 		.space	4
+  25              	movement_:
+  26 0008 00       		.space	1
+  27              	dataIndex_:
+  28 0009 00       		.space	1
+  29 000a 0000     		.align	2
+  30              	logDataTimeoutCounter_:
+  31 000c 00000000 		.space	4
+  32              		.align	2
+  33              	waterTimeoutCounter_:
+  34 0010 00000000 		.space	4
+  35              		.global	__aeabi_ui2d
+  36              		.global	__aeabi_dcmpge
+  37              		.section	.text.logDataISR,"ax",%progbits
+  38              		.align	2
+  39              		.global	logDataISR
+  40              		.code	16
+  41              		.thumb_func
+  42              		.type	logDataISR, %function
+  43              	logDataISR:
+  44              	.LFB33:
+  45              		.file 1 ".\\loadData.c"
    1:.\loadData.c  **** /*
    2:.\loadData.c  **** * File: loadData.c 
    3:.\loadData.c  **** * Description: Implementation of controller class loadData
@@ -57,10 +58,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 1
   10:.\loadData.c  **** 
   11:.\loadData.c  **** // Private data
   12:.\loadData.c  **** static parameters * parametersPtr_;
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 2
+
+
   13:.\loadData.c  **** static buffer * bufferPtr_;
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 2
-
-
   14:.\loadData.c  **** static unsigned char movement_;
   15:.\loadData.c  **** static unsigned char dataIndex_;
   16:.\loadData.c  **** // sensorPackage is implicit known, as it contains only methods
@@ -70,2113 +71,2164 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 1
   20:.\loadData.c  **** // Public methods
   21:.\loadData.c  **** CY_ISR(logDataISR)
   22:.\loadData.c  **** {
-  45              		.loc 1 22 0
-  46              		.cfi_startproc
-  47 0000 98B5     		push	{r3, r4, r7, lr}
-  48              	.LCFI0:
-  49              		.cfi_def_cfa_offset 16
-  50              		.cfi_offset 3, -16
-  51              		.cfi_offset 4, -12
-  52              		.cfi_offset 7, -8
-  53              		.cfi_offset 14, -4
-  54 0002 00AF     		add	r7, sp, #0
-  55              	.LCFI1:
-  56              		.cfi_def_cfa_register 7
+  46              		.loc 1 22 0
+  47              		.cfi_startproc
+  48 0000 98B5     		push	{r3, r4, r7, lr}
+  49              	.LCFI0:
+  50              		.cfi_def_cfa_offset 16
+  51              		.cfi_offset 3, -16
+  52              		.cfi_offset 4, -12
+  53              		.cfi_offset 7, -8
+  54              		.cfi_offset 14, -4
+  55 0002 00AF     		add	r7, sp, #0
+  56              	.LCFI1:
+  57              		.cfi_def_cfa_register 7
   23:.\loadData.c  ****     if(logDataTimeoutCounter_ >= LOGDATATIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
-  57              		.loc 1 23 0
-  58 0004 104B     		ldr	r3, .L7+8
-  59 0006 1B68     		ldr	r3, [r3]
-  60 0008 181C     		mov	r0, r3
-  61 000a FFF7FEFF 		bl	__aeabi_ui2d
-  62 000e 031C     		mov	r3, r0
-  63 0010 0C1C     		mov	r4, r1
-  64 0012 181C     		mov	r0, r3
-  65 0014 211C     		mov	r1, r4
-  66 0016 0B4B     		ldr	r3, .L7+4
-  67 0018 094A     		ldr	r2, .L7
-  68 001a FFF7FEFF 		bl	__aeabi_dcmpge
-  69 001e 031C     		mov	r3, r0
-  70 0020 002B     		cmp	r3, #0
-  71 0022 05D0     		beq	.L6
-  72              	.L5:
+  58              		.loc 1 23 0
+  59 0004 104B     		ldr	r3, .L7+8
+  60 0006 1B68     		ldr	r3, [r3]
+  61 0008 181C     		mov	r0, r3
+  62 000a FFF7FEFF 		bl	__aeabi_ui2d
+  63 000e 031C     		mov	r3, r0
+  64 0010 0C1C     		mov	r4, r1
+  65 0012 181C     		mov	r0, r3
+  66 0014 211C     		mov	r1, r4
+  67 0016 0B4B     		ldr	r3, .L7+4
+  68 0018 094A     		ldr	r2, .L7
+  69 001a FFF7FEFF 		bl	__aeabi_dcmpge
+  70 001e 031C     		mov	r3, r0
+  71 0020 002B     		cmp	r3, #0
+  72 0022 05D0     		beq	.L6
+  73              	.L5:
   24:.\loadData.c  ****     {
   25:.\loadData.c  ****         loadData_logDataTimeout();
-  73              		.loc 1 25 0
-  74 0024 FFF7FEFF 		bl	loadData_logDataTimeout
+  74              		.loc 1 25 0
+  75 0024 FFF7FEFF 		bl	loadData_logDataTimeout
   26:.\loadData.c  ****         logDataTimeoutCounter_ = 0;
-  75              		.loc 1 26 0
-  76 0028 074B     		ldr	r3, .L7+8
-  77 002a 0022     		mov	r2, #0
-  78 002c 1A60     		str	r2, [r3]
-  79 002e 04E0     		b	.L1
-  80              	.L6:
+  76              		.loc 1 26 0
+  77 0028 074B     		ldr	r3, .L7+8
+  78 002a 0022     		mov	r2, #0
+  79 002c 1A60     		str	r2, [r3]
+  80 002e 04E0     		b	.L1
+  81              	.L6:
   27:.\loadData.c  ****     }
   28:.\loadData.c  ****     else
   29:.\loadData.c  ****         logDataTimeoutCounter_++;
-  81              		.loc 1 29 0
-  82 0030 054B     		ldr	r3, .L7+8
-  83 0032 1B68     		ldr	r3, [r3]
-  84 0034 5A1C     		add	r2, r3, #1
-  85 0036 044B     		ldr	r3, .L7+8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 3
+  82              		.loc 1 29 0
+  83 0030 054B     		ldr	r3, .L7+8
+  84 0032 1B68     		ldr	r3, [r3]
+  85 0034 5A1C     		add	r2, r3, #1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 3
 
 
-  86 0038 1A60     		str	r2, [r3]
-  87              	.L1:
+  86 0036 044B     		ldr	r3, .L7+8
+  87 0038 1A60     		str	r2, [r3]
+  88              	.L1:
   30:.\loadData.c  **** }
-  88              		.loc 1 30 0
-  89 003a BD46     		mov	sp, r7
-  90              		@ sp needed for prologue
-  91 003c 98BD     		pop	{r3, r4, r7, pc}
-  92              	.L8:
-  93 003e C046     		.align	3
-  94              	.L7:
-  95 0040 C98C9B39 		.word	966495433
-  96 0044 32E38640 		.word	1082581810
-  97 0048 0C000000 		.word	logDataTimeoutCounter_
-  98              		.cfi_endproc
-  99              	.LFE33:
- 100              		.size	logDataISR, .-logDataISR
- 101 004c C046C046 		.section	.text.waterISR,"ax",%progbits
- 102              		.align	2
- 103              		.global	waterISR
- 104              		.code	16
- 105              		.thumb_func
- 106              		.type	waterISR, %function
- 107              	waterISR:
- 108              	.LFB34:
+  89              		.loc 1 30 0
+  90 003a BD46     		mov	sp, r7
+  91              		@ sp needed for prologue
+  92 003c 98BD     		pop	{r3, r4, r7, pc}
+  93              	.L8:
+  94 003e C046     		.align	3
+  95              	.L7:
+  96 0040 C98C9B39 		.word	966495433
+  97 0044 32E38640 		.word	1082581810
+  98 0048 0C000000 		.word	logDataTimeoutCounter_
+  99              		.cfi_endproc
+ 100              	.LFE33:
+ 101              		.size	logDataISR, .-logDataISR
+ 102 004c C046C046 		.section	.text.waterISR,"ax",%progbits
+ 103              		.align	2
+ 104              		.global	waterISR
+ 105              		.code	16
+ 106              		.thumb_func
+ 107              		.type	waterISR, %function
+ 108              	waterISR:
+ 109              	.LFB34:
   31:.\loadData.c  **** 
   32:.\loadData.c  **** CY_ISR(waterISR)
   33:.\loadData.c  **** {
- 109              		.loc 1 33 0
- 110              		.cfi_startproc
- 111 0000 98B5     		push	{r3, r4, r7, lr}
- 112              	.LCFI2:
- 113              		.cfi_def_cfa_offset 16
- 114              		.cfi_offset 3, -16
- 115              		.cfi_offset 4, -12
- 116              		.cfi_offset 7, -8
- 117              		.cfi_offset 14, -4
- 118 0002 00AF     		add	r7, sp, #0
- 119              	.LCFI3:
- 120              		.cfi_def_cfa_register 7
+ 110              		.loc 1 33 0
+ 111              		.cfi_startproc
+ 112 0000 98B5     		push	{r3, r4, r7, lr}
+ 113              	.LCFI2:
+ 114              		.cfi_def_cfa_offset 16
+ 115              		.cfi_offset 3, -16
+ 116              		.cfi_offset 4, -12
+ 117              		.cfi_offset 7, -8
+ 118              		.cfi_offset 14, -4
+ 119 0002 00AF     		add	r7, sp, #0
+ 120              	.LCFI3:
+ 121              		.cfi_def_cfa_register 7
   34:.\loadData.c  ****     if(waterTimeoutCounter_ >= WATERTIMEOUT*1000/10.923)   // Timer max: 10.923 ms. 
- 121              		.loc 1 34 0
- 122 0004 104B     		ldr	r3, .L15+8
- 123 0006 1B68     		ldr	r3, [r3]
- 124 0008 181C     		mov	r0, r3
- 125 000a FFF7FEFF 		bl	__aeabi_ui2d
- 126 000e 031C     		mov	r3, r0
- 127 0010 0C1C     		mov	r4, r1
- 128 0012 181C     		mov	r0, r3
- 129 0014 211C     		mov	r1, r4
- 130 0016 0B4B     		ldr	r3, .L15+4
- 131 0018 094A     		ldr	r2, .L15
- 132 001a FFF7FEFF 		bl	__aeabi_dcmpge
- 133 001e 031C     		mov	r3, r0
- 134 0020 002B     		cmp	r3, #0
- 135 0022 05D0     		beq	.L14
- 136              	.L13:
+ 122              		.loc 1 34 0
+ 123 0004 104B     		ldr	r3, .L15+8
+ 124 0006 1B68     		ldr	r3, [r3]
+ 125 0008 181C     		mov	r0, r3
+ 126 000a FFF7FEFF 		bl	__aeabi_ui2d
+ 127 000e 031C     		mov	r3, r0
+ 128 0010 0C1C     		mov	r4, r1
+ 129 0012 181C     		mov	r0, r3
+ 130 0014 211C     		mov	r1, r4
+ 131 0016 0B4B     		ldr	r3, .L15+4
+ 132 0018 094A     		ldr	r2, .L15
+ 133 001a FFF7FEFF 		bl	__aeabi_dcmpge
+ 134 001e 031C     		mov	r3, r0
+ 135 0020 002B     		cmp	r3, #0
+ 136 0022 05D0     		beq	.L14
+ 137              	.L13:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 4
+
+
   35:.\loadData.c  ****     {
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 4
-
-
   36:.\loadData.c  ****         loadData_waterTimeout();
- 137              		.loc 1 36 0
- 138 0024 FFF7FEFF 		bl	loadData_waterTimeout
+ 138              		.loc 1 36 0
+ 139 0024 FFF7FEFF 		bl	loadData_waterTimeout
   37:.\loadData.c  ****         waterTimeoutCounter_ = 0;
- 139              		.loc 1 37 0
- 140 0028 074B     		ldr	r3, .L15+8
- 141 002a 0022     		mov	r2, #0
- 142 002c 1A60     		str	r2, [r3]
- 143 002e 04E0     		b	.L9
- 144              	.L14:
+ 140              		.loc 1 37 0
+ 141 0028 074B     		ldr	r3, .L15+8
+ 142 002a 0022     		mov	r2, #0
+ 143 002c 1A60     		str	r2, [r3]
+ 144 002e 04E0     		b	.L9
+ 145              	.L14:
   38:.\loadData.c  ****     }
   39:.\loadData.c  ****     else
   40:.\loadData.c  ****         waterTimeoutCounter_++;
- 145              		.loc 1 40 0
- 146 0030 054B     		ldr	r3, .L15+8
- 147 0032 1B68     		ldr	r3, [r3]
- 148 0034 5A1C     		add	r2, r3, #1
- 149 0036 044B     		ldr	r3, .L15+8
- 150 0038 1A60     		str	r2, [r3]
- 151              	.L9:
+ 146              		.loc 1 40 0
+ 147 0030 054B     		ldr	r3, .L15+8
+ 148 0032 1B68     		ldr	r3, [r3]
+ 149 0034 5A1C     		add	r2, r3, #1
+ 150 0036 044B     		ldr	r3, .L15+8
+ 151 0038 1A60     		str	r2, [r3]
+ 152              	.L9:
   41:.\loadData.c  **** }
- 152              		.loc 1 41 0
- 153 003a BD46     		mov	sp, r7
- 154              		@ sp needed for prologue
- 155 003c 98BD     		pop	{r3, r4, r7, pc}
- 156              	.L16:
- 157 003e C046     		.align	3
- 158              	.L15:
- 159 0040 FB6F02C8 		.word	-939364357
- 160 0044 FE9B9C40 		.word	1084005374
- 161 0048 10000000 		.word	waterTimeoutCounter_
- 162              		.cfi_endproc
- 163              	.LFE34:
- 164              		.size	waterISR, .-waterISR
- 165 004c C046C046 		.section	.text.loadData_init,"ax",%progbits
- 166              		.align	2
- 167              		.global	loadData_init
- 168              		.code	16
- 169              		.thumb_func
- 170              		.type	loadData_init, %function
- 171              	loadData_init:
- 172              	.LFB35:
+ 153              		.loc 1 41 0
+ 154 003a BD46     		mov	sp, r7
+ 155              		@ sp needed for prologue
+ 156 003c 98BD     		pop	{r3, r4, r7, pc}
+ 157              	.L16:
+ 158 003e C046     		.align	3
+ 159              	.L15:
+ 160 0040 FB6F02C8 		.word	-939364357
+ 161 0044 FE9B9C40 		.word	1084005374
+ 162 0048 10000000 		.word	waterTimeoutCounter_
+ 163              		.cfi_endproc
+ 164              	.LFE34:
+ 165              		.size	waterISR, .-waterISR
+ 166 004c C046C046 		.section	.text.loadData_init,"ax",%progbits
+ 167              		.align	2
+ 168              		.global	loadData_init
+ 169              		.code	16
+ 170              		.thumb_func
+ 171              		.type	loadData_init, %function
+ 172              	loadData_init:
+ 173              	.LFB35:
   42:.\loadData.c  **** 
   43:.\loadData.c  **** 
   44:.\loadData.c  **** extern void loadData_init(parameters *par, buffer *buf) 
   45:.\loadData.c  **** {
- 173              		.loc 1 45 0
- 174              		.cfi_startproc
- 175 0000 80B5     		push	{r7, lr}
- 176              	.LCFI4:
- 177              		.cfi_def_cfa_offset 8
- 178              		.cfi_offset 7, -8
- 179              		.cfi_offset 14, -4
- 180 0002 82B0     		sub	sp, sp, #8
- 181              	.LCFI5:
- 182              		.cfi_def_cfa_offset 16
- 183 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 5
+ 174              		.loc 1 45 0
+ 175              		.cfi_startproc
+ 176 0000 80B5     		push	{r7, lr}
+ 177              	.LCFI4:
+ 178              		.cfi_def_cfa_offset 8
+ 179              		.cfi_offset 7, -8
+ 180              		.cfi_offset 14, -4
+ 181 0002 82B0     		sub	sp, sp, #8
+ 182              	.LCFI5:
+ 183              		.cfi_def_cfa_offset 16
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 5
 
 
- 184              	.LCFI6:
- 185              		.cfi_def_cfa_register 7
- 186 0006 7860     		str	r0, [r7, #4]
- 187 0008 3960     		str	r1, [r7]
+ 184 0004 00AF     		add	r7, sp, #0
+ 185              	.LCFI6:
+ 186              		.cfi_def_cfa_register 7
+ 187 0006 7860     		str	r0, [r7, #4]
+ 188 0008 3960     		str	r1, [r7]
   46:.\loadData.c  ****     // Set pointers accordingly
   47:.\loadData.c  ****     parametersPtr_ = par;
- 188              		.loc 1 47 0
- 189 000a 134B     		ldr	r3, .L18
- 190 000c 7A68     		ldr	r2, [r7, #4]
- 191 000e 1A60     		str	r2, [r3]
+ 189              		.loc 1 47 0
+ 190 000a 154B     		ldr	r3, .L18
+ 191 000c 7A68     		ldr	r2, [r7, #4]
+ 192 000e 1A60     		str	r2, [r3]
   48:.\loadData.c  ****     bufferPtr_ = buf;
- 192              		.loc 1 48 0
- 193 0010 124B     		ldr	r3, .L18+4
- 194 0012 3A68     		ldr	r2, [r7]
- 195 0014 1A60     		str	r2, [r3]
+ 193              		.loc 1 48 0
+ 194 0010 144B     		ldr	r3, .L18+4
+ 195 0012 3A68     		ldr	r2, [r7]
+ 196 0014 1A60     		str	r2, [r3]
   49:.\loadData.c  ****     // sensorPackage is implicit known, as it contains only methods
   50:.\loadData.c  ****     dataIndex_ = 0;
- 196              		.loc 1 50 0
- 197 0016 124B     		ldr	r3, .L18+8
- 198 0018 0022     		mov	r2, #0
- 199 001a 1A70     		strb	r2, [r3]
-  51:.\loadData.c  ****     
-  52:.\loadData.c  ****     // Start logData timer
-  53:.\loadData.c  ****     logDataTimeoutCounter_ = 0;
- 200              		.loc 1 53 0
- 201 001c 114B     		ldr	r3, .L18+12
- 202 001e 0022     		mov	r2, #0
- 203 0020 1A60     		str	r2, [r3]
-  54:.\loadData.c  ****     logDataTimer_Start();
- 204              		.loc 1 54 0
- 205 0022 FFF7FEFF 		bl	logDataTimer_Start
-  55:.\loadData.c  ****     logDataInterrupt_StartEx(logDataISR);
- 206              		.loc 1 55 0
- 207 0026 104B     		ldr	r3, .L18+16
- 208 0028 181C     		mov	r0, r3
- 209 002a FFF7FEFF 		bl	logDataInterrupt_StartEx
-  56:.\loadData.c  ****     
-  57:.\loadData.c  ****     // Initialize water timer
-  58:.\loadData.c  ****     waterTimeoutCounter_ = 0;
- 210              		.loc 1 58 0
- 211 002e 0F4B     		ldr	r3, .L18+20
- 212 0030 0022     		mov	r2, #0
- 213 0032 1A60     		str	r2, [r3]
-  59:.\loadData.c  ****     waterInterrupt_StartEx(waterISR);
- 214              		.loc 1 59 0
- 215 0034 0E4B     		ldr	r3, .L18+24
- 216 0036 181C     		mov	r0, r3
- 217 0038 FFF7FEFF 		bl	waterInterrupt_StartEx
-  60:.\loadData.c  ****     
-  61:.\loadData.c  ****     // Set LED green
-  62:.\loadData.c  ****     RED_LED_Write(1);
- 218              		.loc 1 62 0
- 219 003c 0120     		mov	r0, #1
- 220 003e FFF7FEFF 		bl	RED_LED_Write
-  63:.\loadData.c  ****     GREEN_LED_Write(0);
- 221              		.loc 1 63 0
- 222 0042 0020     		mov	r0, #0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 6
+ 197              		.loc 1 50 0
+ 198 0016 144B     		ldr	r3, .L18+8
+ 199 0018 0022     		mov	r2, #0
+ 200 001a 1A70     		strb	r2, [r3]
+  51:.\loadData.c  ****     nextState = 0;
+ 201              		.loc 1 51 0
+ 202 001c 134B     		ldr	r3, .L18+12
+ 203 001e 0022     		mov	r2, #0
+ 204 0020 1A70     		strb	r2, [r3]
+  52:.\loadData.c  ****     
+  53:.\loadData.c  ****     // Start logData timer
+  54:.\loadData.c  ****     logDataTimeoutCounter_ = 0;
+ 205              		.loc 1 54 0
+ 206 0022 134B     		ldr	r3, .L18+16
+ 207 0024 0022     		mov	r2, #0
+ 208 0026 1A60     		str	r2, [r3]
+  55:.\loadData.c  ****     logDataTimer_Start();
+ 209              		.loc 1 55 0
+ 210 0028 FFF7FEFF 		bl	logDataTimer_Start
+  56:.\loadData.c  ****     logDataInterrupt_StartEx(logDataISR);
+ 211              		.loc 1 56 0
+ 212 002c 114B     		ldr	r3, .L18+20
+ 213 002e 181C     		mov	r0, r3
+ 214 0030 FFF7FEFF 		bl	logDataInterrupt_StartEx
+  57:.\loadData.c  ****     
+  58:.\loadData.c  ****     // Initialize water timer
+  59:.\loadData.c  ****     waterTimeoutCounter_ = 0;
+ 215              		.loc 1 59 0
+ 216 0034 104B     		ldr	r3, .L18+24
+ 217 0036 0022     		mov	r2, #0
+ 218 0038 1A60     		str	r2, [r3]
+  60:.\loadData.c  ****     waterInterrupt_StartEx(waterISR);
+ 219              		.loc 1 60 0
+ 220 003a 104B     		ldr	r3, .L18+28
+ 221 003c 181C     		mov	r0, r3
+ 222 003e FFF7FEFF 		bl	waterInterrupt_StartEx
+  61:.\loadData.c  ****     
+  62:.\loadData.c  ****     // Set LED green
+  63:.\loadData.c  ****     RED_LED_Write(1);
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 6
 
 
- 223 0044 FFF7FEFF 		bl	GREEN_LED_Write
-  64:.\loadData.c  ****     BLUE_LED_Write(1);
- 224              		.loc 1 64 0
- 225 0048 0120     		mov	r0, #1
- 226 004a FFF7FEFF 		bl	BLUE_LED_Write
-  65:.\loadData.c  ****     
-  66:.\loadData.c  ****     // Get first sensor reading
-  67:.\loadData.c  ****     loadData_logDataTimeout();
- 227              		.loc 1 67 0
- 228 004e FFF7FEFF 		bl	loadData_logDataTimeout
-  68:.\loadData.c  ****     
+ 223              		.loc 1 63 0
+ 224 0042 0120     		mov	r0, #1
+ 225 0044 FFF7FEFF 		bl	RED_LED_Write
+  64:.\loadData.c  ****     GREEN_LED_Write(0);
+ 226              		.loc 1 64 0
+ 227 0048 0020     		mov	r0, #0
+ 228 004a FFF7FEFF 		bl	GREEN_LED_Write
+  65:.\loadData.c  ****     BLUE_LED_Write(1);
+ 229              		.loc 1 65 0
+ 230 004e 0120     		mov	r0, #1
+ 231 0050 FFF7FEFF 		bl	BLUE_LED_Write
+  66:.\loadData.c  ****     
+  67:.\loadData.c  ****     // Get first sensor reading
+  68:.\loadData.c  ****     loadData_logDataTimeout();
+ 232              		.loc 1 68 0
+ 233 0054 FFF7FEFF 		bl	loadData_logDataTimeout
   69:.\loadData.c  ****     
-  70:.\loadData.c  **** }
- 229              		.loc 1 70 0
- 230 0052 BD46     		mov	sp, r7
- 231 0054 02B0     		add	sp, sp, #8
- 232              		@ sp needed for prologue
- 233 0056 80BD     		pop	{r7, pc}
- 234              	.L19:
- 235              		.align	2
- 236              	.L18:
- 237 0058 00000000 		.word	parametersPtr_
- 238 005c 04000000 		.word	bufferPtr_
- 239 0060 09000000 		.word	dataIndex_
- 240 0064 0C000000 		.word	logDataTimeoutCounter_
- 241 0068 00000000 		.word	logDataISR
- 242 006c 10000000 		.word	waterTimeoutCounter_
- 243 0070 00000000 		.word	waterISR
- 244              		.cfi_endproc
- 245              	.LFE35:
- 246              		.size	loadData_init, .-loadData_init
- 247              		.section	.text.loadData_getBuffer,"ax",%progbits
- 248              		.align	2
- 249              		.global	loadData_getBuffer
- 250              		.code	16
- 251              		.thumb_func
- 252              		.type	loadData_getBuffer, %function
- 253              	loadData_getBuffer:
- 254              	.LFB36:
-  71:.\loadData.c  **** 
-  72:.\loadData.c  **** int loadData_getBuffer( char ** buf, unsigned int * len)
-  73:.\loadData.c  **** {
- 255              		.loc 1 73 0
- 256              		.cfi_startproc
- 257 0000 80B5     		push	{r7, lr}
- 258              	.LCFI7:
- 259              		.cfi_def_cfa_offset 8
- 260              		.cfi_offset 7, -8
- 261              		.cfi_offset 14, -4
- 262 0002 82B0     		sub	sp, sp, #8
- 263              	.LCFI8:
- 264              		.cfi_def_cfa_offset 16
- 265 0004 00AF     		add	r7, sp, #0
- 266              	.LCFI9:
- 267              		.cfi_def_cfa_register 7
- 268 0006 7860     		str	r0, [r7, #4]
- 269 0008 3960     		str	r1, [r7]
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 7
+  70:.\loadData.c  ****     
+  71:.\loadData.c  **** }
+ 234              		.loc 1 71 0
+ 235 0058 BD46     		mov	sp, r7
+ 236 005a 02B0     		add	sp, sp, #8
+ 237              		@ sp needed for prologue
+ 238 005c 80BD     		pop	{r7, pc}
+ 239              	.L19:
+ 240 005e C046     		.align	2
+ 241              	.L18:
+ 242 0060 00000000 		.word	parametersPtr_
+ 243 0064 04000000 		.word	bufferPtr_
+ 244 0068 09000000 		.word	dataIndex_
+ 245 006c 00000000 		.word	nextState
+ 246 0070 0C000000 		.word	logDataTimeoutCounter_
+ 247 0074 00000000 		.word	logDataISR
+ 248 0078 10000000 		.word	waterTimeoutCounter_
+ 249 007c 00000000 		.word	waterISR
+ 250              		.cfi_endproc
+ 251              	.LFE35:
+ 252              		.size	loadData_init, .-loadData_init
+ 253              		.section	.text.loadData_getBuffer,"ax",%progbits
+ 254              		.align	2
+ 255              		.global	loadData_getBuffer
+ 256              		.code	16
+ 257              		.thumb_func
+ 258              		.type	loadData_getBuffer, %function
+ 259              	loadData_getBuffer:
+ 260              	.LFB36:
+  72:.\loadData.c  **** 
+  73:.\loadData.c  **** int loadData_getBuffer( char ** buf, unsigned int * len)
+  74:.\loadData.c  **** {
+ 261              		.loc 1 74 0
+ 262              		.cfi_startproc
+ 263 0000 80B5     		push	{r7, lr}
+ 264              	.LCFI7:
+ 265              		.cfi_def_cfa_offset 8
+ 266              		.cfi_offset 7, -8
+ 267              		.cfi_offset 14, -4
+ 268 0002 82B0     		sub	sp, sp, #8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 7
 
 
-  74:.\loadData.c  ****     
-  75:.\loadData.c  ****     buffer_getData(bufferPtr_, buf, len);
- 270              		.loc 1 75 0
- 271 000a 084B     		ldr	r3, .L22
- 272 000c 1968     		ldr	r1, [r3]
- 273 000e 7A68     		ldr	r2, [r7, #4]
- 274 0010 3B68     		ldr	r3, [r7]
- 275 0012 081C     		mov	r0, r1
- 276 0014 111C     		mov	r1, r2
- 277 0016 1A1C     		mov	r2, r3
- 278 0018 FFF7FEFF 		bl	buffer_getData
-  76:.\loadData.c  ****             
-  77:.\loadData.c  ****     // Clear movement flag
-  78:.\loadData.c  ****     movement_ = 0;
- 279              		.loc 1 78 0
- 280 001c 044B     		ldr	r3, .L22+4
- 281 001e 0022     		mov	r2, #0
- 282 0020 1A70     		strb	r2, [r3]
-  79:.\loadData.c  ****     
-  80:.\loadData.c  ****     return 0;
- 283              		.loc 1 80 0
- 284 0022 0023     		mov	r3, #0
-  81:.\loadData.c  **** }
- 285              		.loc 1 81 0
- 286 0024 181C     		mov	r0, r3
- 287 0026 BD46     		mov	sp, r7
- 288 0028 02B0     		add	sp, sp, #8
- 289              		@ sp needed for prologue
- 290 002a 80BD     		pop	{r7, pc}
- 291              	.L23:
- 292              		.align	2
- 293              	.L22:
- 294 002c 04000000 		.word	bufferPtr_
- 295 0030 08000000 		.word	movement_
- 296              		.cfi_endproc
- 297              	.LFE36:
- 298              		.size	loadData_getBuffer, .-loadData_getBuffer
- 299              		.global	__aeabi_f2iz
- 300              		.section	.rodata
- 301              		.align	2
- 302              	.LC12:
- 303 0000 25303369 		.ascii	"%03i\000"
- 303      00
- 304 0005 000000   		.align	2
- 305              	.LC15:
- 306 0008 45303232 		.ascii	"E022\000"
- 306      00
- 307 000d 000000   		.align	2
- 308              	.LC17:
- 309 0010 45303233 		.ascii	"E023\000"
+ 269              	.LCFI8:
+ 270              		.cfi_def_cfa_offset 16
+ 271 0004 00AF     		add	r7, sp, #0
+ 272              	.LCFI9:
+ 273              		.cfi_def_cfa_register 7
+ 274 0006 7860     		str	r0, [r7, #4]
+ 275 0008 3960     		str	r1, [r7]
+  75:.\loadData.c  ****     
+  76:.\loadData.c  ****     buffer_getData(bufferPtr_, buf, len);
+ 276              		.loc 1 76 0
+ 277 000a 084B     		ldr	r3, .L22
+ 278 000c 1968     		ldr	r1, [r3]
+ 279 000e 7A68     		ldr	r2, [r7, #4]
+ 280 0010 3B68     		ldr	r3, [r7]
+ 281 0012 081C     		mov	r0, r1
+ 282 0014 111C     		mov	r1, r2
+ 283 0016 1A1C     		mov	r2, r3
+ 284 0018 FFF7FEFF 		bl	buffer_getData
+  77:.\loadData.c  ****             
+  78:.\loadData.c  ****     // Clear movement flag
+  79:.\loadData.c  ****     movement_ = 0;
+ 285              		.loc 1 79 0
+ 286 001c 044B     		ldr	r3, .L22+4
+ 287 001e 0022     		mov	r2, #0
+ 288 0020 1A70     		strb	r2, [r3]
+  80:.\loadData.c  ****     
+  81:.\loadData.c  ****     return 0;
+ 289              		.loc 1 81 0
+ 290 0022 0023     		mov	r3, #0
+  82:.\loadData.c  **** }
+ 291              		.loc 1 82 0
+ 292 0024 181C     		mov	r0, r3
+ 293 0026 BD46     		mov	sp, r7
+ 294 0028 02B0     		add	sp, sp, #8
+ 295              		@ sp needed for prologue
+ 296 002a 80BD     		pop	{r7, pc}
+ 297              	.L23:
+ 298              		.align	2
+ 299              	.L22:
+ 300 002c 04000000 		.word	bufferPtr_
+ 301 0030 08000000 		.word	movement_
+ 302              		.cfi_endproc
+ 303              	.LFE36:
+ 304              		.size	loadData_getBuffer, .-loadData_getBuffer
+ 305              		.global	__aeabi_f2iz
+ 306              		.section	.rodata
+ 307              		.align	2
+ 308              	.LC13:
+ 309 0000 25303369 		.ascii	"%03i\000"
  309      00
- 310              		.global	__aeabi_fcmpgt
- 311              		.global	__aeabi_fcmplt
- 312 0015 000000   		.section	.text.loadData_logDataTimeout,"ax",%progbits
- 313              		.align	2
- 314              		.global	loadData_logDataTimeout
- 315              		.code	16
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 8
+ 310 0005 000000   		.align	2
+ 311              	.LC16:
+ 312 0008 45303232 		.ascii	"E022\000"
+ 312      00
+ 313 000d 000000   		.align	2
+ 314              	.LC18:
+ 315 0010 45303233 		.ascii	"E023\000"
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 8
 
 
- 316              		.thumb_func
- 317              		.type	loadData_logDataTimeout, %function
- 318              	loadData_logDataTimeout:
- 319              	.LFB37:
-  82:.\loadData.c  **** 
-  83:.\loadData.c  **** int loadData_logDataTimeout()
-  84:.\loadData.c  **** {
- 320              		.loc 1 84 0
- 321              		.cfi_startproc
- 322 0000 90B5     		push	{r4, r7, lr}
- 323              	.LCFI10:
- 324              		.cfi_def_cfa_offset 12
- 325              		.cfi_offset 4, -12
- 326              		.cfi_offset 7, -8
- 327              		.cfi_offset 14, -4
- 328 0002 8BB0     		sub	sp, sp, #44
- 329              	.LCFI11:
- 330              		.cfi_def_cfa_offset 56
- 331 0004 00AF     		add	r7, sp, #0
- 332              	.LCFI12:
- 333              		.cfi_def_cfa_register 7
-  85:.\loadData.c  ****     // Get LED color and change. Set back at the end.
-  86:.\loadData.c  ****     uint8 blue, red, green;
-  87:.\loadData.c  ****     blue = BLUE_LED_Read();
- 334              		.loc 1 87 0
- 335 0006 3C1C     		mov	r4, r7
- 336 0008 2634     		add	r4, r4, #38
- 337 000a FFF7FEFF 		bl	BLUE_LED_Read
- 338 000e 031C     		mov	r3, r0
- 339 0010 2370     		strb	r3, [r4]
-  88:.\loadData.c  ****     red = RED_LED_Read();
+ 315      00
+ 316              		.global	__aeabi_fcmpgt
+ 317              		.global	__aeabi_fcmplt
+ 318 0015 000000   		.section	.text.loadData_logDataTimeout,"ax",%progbits
+ 319              		.align	2
+ 320              		.global	loadData_logDataTimeout
+ 321              		.code	16
+ 322              		.thumb_func
+ 323              		.type	loadData_logDataTimeout, %function
+ 324              	loadData_logDataTimeout:
+ 325              	.LFB37:
+  83:.\loadData.c  **** 
+  84:.\loadData.c  **** int loadData_logDataTimeout()
+  85:.\loadData.c  **** {
+ 326              		.loc 1 85 0
+ 327              		.cfi_startproc
+ 328 0000 90B5     		push	{r4, r7, lr}
+ 329              	.LCFI10:
+ 330              		.cfi_def_cfa_offset 12
+ 331              		.cfi_offset 4, -12
+ 332              		.cfi_offset 7, -8
+ 333              		.cfi_offset 14, -4
+ 334 0002 8BB0     		sub	sp, sp, #44
+ 335              	.LCFI11:
+ 336              		.cfi_def_cfa_offset 56
+ 337 0004 00AF     		add	r7, sp, #0
+ 338              	.LCFI12:
+ 339              		.cfi_def_cfa_register 7
+  86:.\loadData.c  ****     // Get LED color and change. Set back at the end.
+  87:.\loadData.c  ****     uint8 blue, red, green;
+  88:.\loadData.c  ****     blue = BLUE_LED_Read();
  340              		.loc 1 88 0
- 341 0012 3C1C     		mov	r4, r7
- 342 0014 2534     		add	r4, r4, #37
- 343 0016 FFF7FEFF 		bl	RED_LED_Read
- 344 001a 031C     		mov	r3, r0
- 345 001c 2370     		strb	r3, [r4]
-  89:.\loadData.c  ****     green = GREEN_LED_Read();
+ 341 0006 3C1C     		mov	r4, r7
+ 342 0008 2634     		add	r4, r4, #38
+ 343 000a FFF7FEFF 		bl	BLUE_LED_Read
+ 344 000e 031C     		mov	r3, r0
+ 345 0010 2370     		strb	r3, [r4]
+  89:.\loadData.c  ****     red = RED_LED_Read();
  346              		.loc 1 89 0
- 347 001e 3C1C     		mov	r4, r7
- 348 0020 2434     		add	r4, r4, #36
- 349 0022 FFF7FEFF 		bl	GREEN_LED_Read
- 350 0026 031C     		mov	r3, r0
- 351 0028 2370     		strb	r3, [r4]
-  90:.\loadData.c  ****     
-  91:.\loadData.c  ****     RED_LED_Write(0);   // Yellow for loging data
- 352              		.loc 1 91 0
- 353 002a 0020     		mov	r0, #0
- 354 002c FFF7FEFF 		bl	RED_LED_Write
-  92:.\loadData.c  ****     GREEN_LED_Write(0);
- 355              		.loc 1 92 0
- 356 0030 0020     		mov	r0, #0
- 357 0032 FFF7FEFF 		bl	GREEN_LED_Write
-  93:.\loadData.c  ****     BLUE_LED_Write(1);
- 358              		.loc 1 93 0
- 359 0036 0120     		mov	r0, #1
- 360 0038 FFF7FEFF 		bl	BLUE_LED_Write
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 9
+ 347 0012 3C1C     		mov	r4, r7
+ 348 0014 2534     		add	r4, r4, #37
+ 349 0016 FFF7FEFF 		bl	RED_LED_Read
+ 350 001a 031C     		mov	r3, r0
+ 351 001c 2370     		strb	r3, [r4]
+  90:.\loadData.c  ****     green = GREEN_LED_Read();
+ 352              		.loc 1 90 0
+ 353 001e 3C1C     		mov	r4, r7
+ 354 0020 2434     		add	r4, r4, #36
+ 355 0022 FFF7FEFF 		bl	GREEN_LED_Read
+ 356 0026 031C     		mov	r3, r0
+ 357 0028 2370     		strb	r3, [r4]
+  91:.\loadData.c  ****     
+  92:.\loadData.c  ****     RED_LED_Write(0);   // Yellow for loging data
+ 358              		.loc 1 92 0
+ 359 002a 0020     		mov	r0, #0
+ 360 002c FFF7FEFF 		bl	RED_LED_Write
+  93:.\loadData.c  ****     GREEN_LED_Write(0);
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 9
 
 
-  94:.\loadData.c  ****     
-  95:.\loadData.c  ****     int ret;    // Error flag
-  96:.\loadData.c  ****     
-  97:.\loadData.c  ****     // Collect data limits from parameters
-  98:.\loadData.c  ****     unsigned char active;
-  99:.\loadData.c  ****     float tempLimit, humiLimit;
- 100:.\loadData.c  ****     parameters_getActive(parametersPtr_, &active);
- 361              		.loc 1 100 0
- 362 003c 5F4B     		ldr	r3, .L35
- 363 003e 1A68     		ldr	r2, [r3]
- 364 0040 3B1C     		mov	r3, r7
- 365 0042 1F33     		add	r3, r3, #31
- 366 0044 101C     		mov	r0, r2
- 367 0046 191C     		mov	r1, r3
- 368 0048 FFF7FEFF 		bl	parameters_getActive
- 101:.\loadData.c  ****     parameters_getTemp(parametersPtr_, &tempLimit);
- 369              		.loc 1 101 0
- 370 004c 5B4B     		ldr	r3, .L35
- 371 004e 1A68     		ldr	r2, [r3]
- 372 0050 3B1C     		mov	r3, r7
- 373 0052 1833     		add	r3, r3, #24
- 374 0054 101C     		mov	r0, r2
- 375 0056 191C     		mov	r1, r3
- 376 0058 FFF7FEFF 		bl	parameters_getTemp
- 102:.\loadData.c  ****     parameters_getHumi(parametersPtr_, &humiLimit);
- 377              		.loc 1 102 0
- 378 005c 574B     		ldr	r3, .L35
- 379 005e 1A68     		ldr	r2, [r3]
- 380 0060 3B1C     		mov	r3, r7
- 381 0062 1433     		add	r3, r3, #20
- 382 0064 101C     		mov	r0, r2
- 383 0066 191C     		mov	r1, r3
- 384 0068 FFF7FEFF 		bl	parameters_getHumi
- 103:.\loadData.c  ****     
- 104:.\loadData.c  ****     // Collect data from sensorpackage
- 105:.\loadData.c  ****     float temp, humi;
- 106:.\loadData.c  ****     sensorPackage_getData(&temp, &humi);
- 385              		.loc 1 106 0
- 386 006c 3A1C     		mov	r2, r7
- 387 006e 1032     		add	r2, r2, #16
- 388 0070 3B1C     		mov	r3, r7
- 389 0072 0C33     		add	r3, r3, #12
- 390 0074 101C     		mov	r0, r2
- 391 0076 191C     		mov	r1, r3
- 392 0078 FFF7FEFF 		bl	sensorPackage_getData
- 107:.\loadData.c  ****     
- 108:.\loadData.c  ****     // Create water flag and initialize
- 109:.\loadData.c  ****     unsigned char water;
- 110:.\loadData.c  ****     water = '0';
- 393              		.loc 1 110 0
- 394 007c 3B1C     		mov	r3, r7
- 395 007e 2733     		add	r3, r3, #39
- 396 0080 3022     		mov	r2, #48
- 397 0082 1A70     		strb	r2, [r3]
- 111:.\loadData.c  ****     
- 112:.\loadData.c  ****     // Save data as string i buffer, with movement set accordingly
- 113:.\loadData.c  ****     char data[11];
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 10
+ 361              		.loc 1 93 0
+ 362 0030 0020     		mov	r0, #0
+ 363 0032 FFF7FEFF 		bl	GREEN_LED_Write
+  94:.\loadData.c  ****     BLUE_LED_Write(1);
+ 364              		.loc 1 94 0
+ 365 0036 0120     		mov	r0, #1
+ 366 0038 FFF7FEFF 		bl	BLUE_LED_Write
+  95:.\loadData.c  ****     
+  96:.\loadData.c  ****     int ret;    // Error flag
+  97:.\loadData.c  ****     
+  98:.\loadData.c  ****     // Collect data limits from parameters
+  99:.\loadData.c  ****     unsigned char active;
+ 100:.\loadData.c  ****     float tempLimit, humiLimit;
+ 101:.\loadData.c  ****     parameters_getActive(parametersPtr_, &active);
+ 367              		.loc 1 101 0
+ 368 003c 5F4B     		ldr	r3, .L35
+ 369 003e 1A68     		ldr	r2, [r3]
+ 370 0040 3B1C     		mov	r3, r7
+ 371 0042 1F33     		add	r3, r3, #31
+ 372 0044 101C     		mov	r0, r2
+ 373 0046 191C     		mov	r1, r3
+ 374 0048 FFF7FEFF 		bl	parameters_getActive
+ 102:.\loadData.c  ****     parameters_getTemp(parametersPtr_, &tempLimit);
+ 375              		.loc 1 102 0
+ 376 004c 5B4B     		ldr	r3, .L35
+ 377 004e 1A68     		ldr	r2, [r3]
+ 378 0050 3B1C     		mov	r3, r7
+ 379 0052 1833     		add	r3, r3, #24
+ 380 0054 101C     		mov	r0, r2
+ 381 0056 191C     		mov	r1, r3
+ 382 0058 FFF7FEFF 		bl	parameters_getTemp
+ 103:.\loadData.c  ****     parameters_getHumi(parametersPtr_, &humiLimit);
+ 383              		.loc 1 103 0
+ 384 005c 574B     		ldr	r3, .L35
+ 385 005e 1A68     		ldr	r2, [r3]
+ 386 0060 3B1C     		mov	r3, r7
+ 387 0062 1433     		add	r3, r3, #20
+ 388 0064 101C     		mov	r0, r2
+ 389 0066 191C     		mov	r1, r3
+ 390 0068 FFF7FEFF 		bl	parameters_getHumi
+ 104:.\loadData.c  ****     
+ 105:.\loadData.c  ****     // Collect data from sensorpackage
+ 106:.\loadData.c  ****     float temp, humi;
+ 107:.\loadData.c  ****     sensorPackage_getData(&temp, &humi);
+ 391              		.loc 1 107 0
+ 392 006c 3A1C     		mov	r2, r7
+ 393 006e 1032     		add	r2, r2, #16
+ 394 0070 3B1C     		mov	r3, r7
+ 395 0072 0C33     		add	r3, r3, #12
+ 396 0074 101C     		mov	r0, r2
+ 397 0076 191C     		mov	r1, r3
+ 398 0078 FFF7FEFF 		bl	sensorPackage_getData
+ 108:.\loadData.c  ****     
+ 109:.\loadData.c  ****     // Create water flag and initialize
+ 110:.\loadData.c  ****     unsigned char water;
+ 111:.\loadData.c  ****     water = '0';
+ 399              		.loc 1 111 0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 10
 
 
- 114:.\loadData.c  ****     data[0] = 'D';
- 398              		.loc 1 114 0
- 399 0084 3B1C     		mov	r3, r7
- 400 0086 4422     		mov	r2, #68
- 401 0088 1A70     		strb	r2, [r3]
- 115:.\loadData.c  **** 
- 116:.\loadData.c  ****     ret = snprintf(data + 1, 4, "%03i", (int)temp);   // Convert temp int to 3 character, 0 left-pa
- 402              		.loc 1 116 0
- 403 008a 3B69     		ldr	r3, [r7, #16]
- 404 008c 181C     		add	r0, r3, #0
- 405 008e FFF7FEFF 		bl	__aeabi_f2iz
- 406 0092 031C     		mov	r3, r0
- 407 0094 3A1C     		mov	r2, r7
- 408 0096 511C     		add	r1, r2, #1
- 409 0098 494A     		ldr	r2, .L35+4
- 410 009a 081C     		mov	r0, r1
- 411 009c 0421     		mov	r1, #4
- 412 009e FFF7FEFF 		bl	snprintf
- 413 00a2 031C     		mov	r3, r0
- 414 00a4 3B62     		str	r3, [r7, #32]
- 117:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
- 415              		.loc 1 117 0
- 416 00a6 3B6A     		ldr	r3, [r7, #32]
- 417 00a8 032B     		cmp	r3, #3
- 418 00aa 0AD0     		beq	.L25
- 118:.\loadData.c  ****     {
- 119:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E022", 4);
- 419              		.loc 1 119 0
- 420 00ac 454B     		ldr	r3, .L35+8
- 421 00ae 1A68     		ldr	r2, [r3]
- 422 00b0 454B     		ldr	r3, .L35+12
- 423 00b2 101C     		mov	r0, r2
- 424 00b4 191C     		mov	r1, r3
- 425 00b6 0422     		mov	r2, #4
- 426 00b8 FFF7FEFF 		bl	buffer_saveData
- 120:.\loadData.c  ****         return -22;
- 427              		.loc 1 120 0
- 428 00bc 1623     		mov	r3, #22
- 429 00be 5B42     		neg	r3, r3
- 430 00c0 77E0     		b	.L34
- 431              	.L25:
- 121:.\loadData.c  ****     }
- 122:.\loadData.c  ****     // Add fake decimals
- 123:.\loadData.c  ****     data[4] = '.';
- 432              		.loc 1 123 0
- 433 00c2 3B1C     		mov	r3, r7
- 434 00c4 2E22     		mov	r2, #46
- 435 00c6 1A71     		strb	r2, [r3, #4]
- 124:.\loadData.c  ****     data[5] = '0';
- 436              		.loc 1 124 0
- 437 00c8 3B1C     		mov	r3, r7
- 438 00ca 3022     		mov	r2, #48
- 439 00cc 5A71     		strb	r2, [r3, #5]
- 125:.\loadData.c  ****     
- 126:.\loadData.c  ****     ret = snprintf(data + 6, 4, "%03i", (int)humi);  // Convert humi int to 3 character, 0 left-pad
- 440              		.loc 1 126 0
- 441 00ce FB68     		ldr	r3, [r7, #12]
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 11
+ 400 007c 3B1C     		mov	r3, r7
+ 401 007e 2733     		add	r3, r3, #39
+ 402 0080 3022     		mov	r2, #48
+ 403 0082 1A70     		strb	r2, [r3]
+ 112:.\loadData.c  ****     
+ 113:.\loadData.c  ****     // Save data as string i buffer, with movement set accordingly
+ 114:.\loadData.c  ****     char data[11];
+ 115:.\loadData.c  ****     data[0] = 'D';
+ 404              		.loc 1 115 0
+ 405 0084 3B1C     		mov	r3, r7
+ 406 0086 4422     		mov	r2, #68
+ 407 0088 1A70     		strb	r2, [r3]
+ 116:.\loadData.c  **** 
+ 117:.\loadData.c  ****     ret = snprintf(data + 1, 4, "%03i", (int)temp);   // Convert temp int to 3 character, 0 left-pa
+ 408              		.loc 1 117 0
+ 409 008a 3B69     		ldr	r3, [r7, #16]
+ 410 008c 181C     		add	r0, r3, #0
+ 411 008e FFF7FEFF 		bl	__aeabi_f2iz
+ 412 0092 031C     		mov	r3, r0
+ 413 0094 3A1C     		mov	r2, r7
+ 414 0096 511C     		add	r1, r2, #1
+ 415 0098 494A     		ldr	r2, .L35+4
+ 416 009a 081C     		mov	r0, r1
+ 417 009c 0421     		mov	r1, #4
+ 418 009e FFF7FEFF 		bl	snprintf
+ 419 00a2 031C     		mov	r3, r0
+ 420 00a4 3B62     		str	r3, [r7, #32]
+ 118:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
+ 421              		.loc 1 118 0
+ 422 00a6 3B6A     		ldr	r3, [r7, #32]
+ 423 00a8 032B     		cmp	r3, #3
+ 424 00aa 0AD0     		beq	.L25
+ 119:.\loadData.c  ****     {
+ 120:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E022", 4);
+ 425              		.loc 1 120 0
+ 426 00ac 454B     		ldr	r3, .L35+8
+ 427 00ae 1A68     		ldr	r2, [r3]
+ 428 00b0 454B     		ldr	r3, .L35+12
+ 429 00b2 101C     		mov	r0, r2
+ 430 00b4 191C     		mov	r1, r3
+ 431 00b6 0422     		mov	r2, #4
+ 432 00b8 FFF7FEFF 		bl	buffer_saveData
+ 121:.\loadData.c  ****         return -22;
+ 433              		.loc 1 121 0
+ 434 00bc 1623     		mov	r3, #22
+ 435 00be 5B42     		neg	r3, r3
+ 436 00c0 77E0     		b	.L34
+ 437              	.L25:
+ 122:.\loadData.c  ****     }
+ 123:.\loadData.c  ****     // Add fake decimals
+ 124:.\loadData.c  ****     data[4] = '.';
+ 438              		.loc 1 124 0
+ 439 00c2 3B1C     		mov	r3, r7
+ 440 00c4 2E22     		mov	r2, #46
+ 441 00c6 1A71     		strb	r2, [r3, #4]
+ 125:.\loadData.c  ****     data[5] = '0';
+ 442              		.loc 1 125 0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 11
 
 
- 442 00d0 181C     		add	r0, r3, #0
- 443 00d2 FFF7FEFF 		bl	__aeabi_f2iz
- 444 00d6 031C     		mov	r3, r0
- 445 00d8 3A1C     		mov	r2, r7
- 446 00da 911D     		add	r1, r2, #6
- 447 00dc 384A     		ldr	r2, .L35+4
- 448 00de 081C     		mov	r0, r1
- 449 00e0 0421     		mov	r1, #4
- 450 00e2 FFF7FEFF 		bl	snprintf
- 451 00e6 031C     		mov	r3, r0
- 452 00e8 3B62     		str	r3, [r7, #32]
- 127:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
- 453              		.loc 1 127 0
- 454 00ea 3B6A     		ldr	r3, [r7, #32]
- 455 00ec 032B     		cmp	r3, #3
- 456 00ee 0AD0     		beq	.L27
- 128:.\loadData.c  ****     {
- 129:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E023", 4);
- 457              		.loc 1 129 0
- 458 00f0 344B     		ldr	r3, .L35+8
- 459 00f2 1A68     		ldr	r2, [r3]
- 460 00f4 354B     		ldr	r3, .L35+16
- 461 00f6 101C     		mov	r0, r2
- 462 00f8 191C     		mov	r1, r3
- 463 00fa 0422     		mov	r2, #4
- 464 00fc FFF7FEFF 		bl	buffer_saveData
- 130:.\loadData.c  ****         return -23;
- 465              		.loc 1 130 0
- 466 0100 1723     		mov	r3, #23
- 467 0102 5B42     		neg	r3, r3
- 468 0104 55E0     		b	.L34
- 469              	.L27:
- 131:.\loadData.c  ****     }
- 132:.\loadData.c  ****     
- 133:.\loadData.c  ****     // If sensor values are out of parameter limits and system is active, activate water
- 134:.\loadData.c  ****     if(active == 1 && (temp > tempLimit || humi < humiLimit))
- 470              		.loc 1 134 0
- 471 0106 3B1C     		mov	r3, r7
- 472 0108 1F33     		add	r3, r3, #31
- 473 010a 1B78     		ldrb	r3, [r3]
- 474 010c 012B     		cmp	r3, #1
- 475 010e 22D1     		bne	.L28
- 476              		.loc 1 134 0 is_stmt 0 discriminator 1
- 477 0110 3A69     		ldr	r2, [r7, #16]
- 478 0112 BB69     		ldr	r3, [r7, #24]
- 479 0114 101C     		add	r0, r2, #0
- 480 0116 191C     		add	r1, r3, #0
- 481 0118 FFF7FEFF 		bl	__aeabi_fcmpgt
- 482 011c 031C     		mov	r3, r0
- 483 011e 002B     		cmp	r3, #0
- 484 0120 08D1     		bne	.L29
- 485 0122 FA68     		ldr	r2, [r7, #12]
- 486 0124 7B69     		ldr	r3, [r7, #20]
- 487 0126 101C     		add	r0, r2, #0
- 488 0128 191C     		add	r1, r3, #0
- 489 012a FFF7FEFF 		bl	__aeabi_fcmplt
- 490 012e 031C     		mov	r3, r0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 12
+ 443 00c8 3B1C     		mov	r3, r7
+ 444 00ca 3022     		mov	r2, #48
+ 445 00cc 5A71     		strb	r2, [r3, #5]
+ 126:.\loadData.c  ****     
+ 127:.\loadData.c  ****     ret = snprintf(data + 6, 4, "%03i", (int)humi);  // Convert humi int to 3 character, 0 left-pad
+ 446              		.loc 1 127 0
+ 447 00ce FB68     		ldr	r3, [r7, #12]
+ 448 00d0 181C     		add	r0, r3, #0
+ 449 00d2 FFF7FEFF 		bl	__aeabi_f2iz
+ 450 00d6 031C     		mov	r3, r0
+ 451 00d8 3A1C     		mov	r2, r7
+ 452 00da 911D     		add	r1, r2, #6
+ 453 00dc 384A     		ldr	r2, .L35+4
+ 454 00de 081C     		mov	r0, r1
+ 455 00e0 0421     		mov	r1, #4
+ 456 00e2 FFF7FEFF 		bl	snprintf
+ 457 00e6 031C     		mov	r3, r0
+ 458 00e8 3B62     		str	r3, [r7, #32]
+ 128:.\loadData.c  ****     if(ret != 3) // In case of failure, write error to buffer
+ 459              		.loc 1 128 0
+ 460 00ea 3B6A     		ldr	r3, [r7, #32]
+ 461 00ec 032B     		cmp	r3, #3
+ 462 00ee 0AD0     		beq	.L27
+ 129:.\loadData.c  ****     {
+ 130:.\loadData.c  ****         buffer_saveData(bufferPtr_, "E023", 4);
+ 463              		.loc 1 130 0
+ 464 00f0 344B     		ldr	r3, .L35+8
+ 465 00f2 1A68     		ldr	r2, [r3]
+ 466 00f4 354B     		ldr	r3, .L35+16
+ 467 00f6 101C     		mov	r0, r2
+ 468 00f8 191C     		mov	r1, r3
+ 469 00fa 0422     		mov	r2, #4
+ 470 00fc FFF7FEFF 		bl	buffer_saveData
+ 131:.\loadData.c  ****         return -23;
+ 471              		.loc 1 131 0
+ 472 0100 1723     		mov	r3, #23
+ 473 0102 5B42     		neg	r3, r3
+ 474 0104 55E0     		b	.L34
+ 475              	.L27:
+ 132:.\loadData.c  ****     }
+ 133:.\loadData.c  ****     
+ 134:.\loadData.c  ****     // If sensor values are out of parameter limits and system is active, activate water
+ 135:.\loadData.c  ****     if(active == 1 && (temp > tempLimit || humi < humiLimit))
+ 476              		.loc 1 135 0
+ 477 0106 3B1C     		mov	r3, r7
+ 478 0108 1F33     		add	r3, r3, #31
+ 479 010a 1B78     		ldrb	r3, [r3]
+ 480 010c 012B     		cmp	r3, #1
+ 481 010e 22D1     		bne	.L28
+ 482              		.loc 1 135 0 is_stmt 0 discriminator 1
+ 483 0110 3A69     		ldr	r2, [r7, #16]
+ 484 0112 BB69     		ldr	r3, [r7, #24]
+ 485 0114 101C     		add	r0, r2, #0
+ 486 0116 191C     		add	r1, r3, #0
+ 487 0118 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 488 011c 031C     		mov	r3, r0
+ 489 011e 002B     		cmp	r3, #0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 12
 
 
- 491 0130 002B     		cmp	r3, #0
- 492 0132 10D0     		beq	.L28
- 493              	.L29:
- 135:.\loadData.c  ****     {
- 136:.\loadData.c  ****         // Start water timer
- 137:.\loadData.c  ****         sensorPackage_water(1);
- 494              		.loc 1 137 0 is_stmt 1
- 495 0134 0120     		mov	r0, #1
- 496 0136 FFF7FEFF 		bl	sensorPackage_water
- 138:.\loadData.c  ****         
- 139:.\loadData.c  ****         RED_LED_Write(1);   // Yellow for loging data
- 497              		.loc 1 139 0
- 498 013a 0120     		mov	r0, #1
- 499 013c FFF7FEFF 		bl	RED_LED_Write
- 140:.\loadData.c  ****         GREEN_LED_Write(1);
- 500              		.loc 1 140 0
- 501 0140 0120     		mov	r0, #1
- 502 0142 FFF7FEFF 		bl	GREEN_LED_Write
- 141:.\loadData.c  ****         BLUE_LED_Write(1);
- 503              		.loc 1 141 0
- 504 0146 0120     		mov	r0, #1
- 505 0148 FFF7FEFF 		bl	BLUE_LED_Write
- 142:.\loadData.c  **** 
- 143:.\loadData.c  ****         water = '1';
- 506              		.loc 1 143 0
- 507 014c 3B1C     		mov	r3, r7
- 508 014e 2733     		add	r3, r3, #39
- 509 0150 3122     		mov	r2, #49
- 510 0152 1A70     		strb	r2, [r3]
- 511 0154 02E0     		b	.L31
- 512              	.L28:
- 144:.\loadData.c  ****     }
- 145:.\loadData.c  ****     else
- 146:.\loadData.c  ****     {
- 147:.\loadData.c  ****         sensorPackage_water(0);
- 513              		.loc 1 147 0
- 514 0156 0020     		mov	r0, #0
- 515 0158 FFF7FEFF 		bl	sensorPackage_water
- 516              	.L31:
- 148:.\loadData.c  ****     }
- 149:.\loadData.c  ****     
- 150:.\loadData.c  ****     data[9] = water;
- 517              		.loc 1 150 0
- 518 015c 3B1C     		mov	r3, r7
- 519 015e 3A1C     		mov	r2, r7
- 520 0160 2732     		add	r2, r2, #39
- 521 0162 1278     		ldrb	r2, [r2]
- 522 0164 5A72     		strb	r2, [r3, #9]
- 151:.\loadData.c  ****     if(movement_ == 0)
+ 490 0120 08D1     		bne	.L29
+ 491 0122 FA68     		ldr	r2, [r7, #12]
+ 492 0124 7B69     		ldr	r3, [r7, #20]
+ 493 0126 101C     		add	r0, r2, #0
+ 494 0128 191C     		add	r1, r3, #0
+ 495 012a FFF7FEFF 		bl	__aeabi_fcmplt
+ 496 012e 031C     		mov	r3, r0
+ 497 0130 002B     		cmp	r3, #0
+ 498 0132 10D0     		beq	.L28
+ 499              	.L29:
+ 136:.\loadData.c  ****     {
+ 137:.\loadData.c  ****         // Start water timer
+ 138:.\loadData.c  ****         sensorPackage_water(1);
+ 500              		.loc 1 138 0 is_stmt 1
+ 501 0134 0120     		mov	r0, #1
+ 502 0136 FFF7FEFF 		bl	sensorPackage_water
+ 139:.\loadData.c  ****         
+ 140:.\loadData.c  ****         RED_LED_Write(1);   // Yellow for loging data
+ 503              		.loc 1 140 0
+ 504 013a 0120     		mov	r0, #1
+ 505 013c FFF7FEFF 		bl	RED_LED_Write
+ 141:.\loadData.c  ****         GREEN_LED_Write(1);
+ 506              		.loc 1 141 0
+ 507 0140 0120     		mov	r0, #1
+ 508 0142 FFF7FEFF 		bl	GREEN_LED_Write
+ 142:.\loadData.c  ****         BLUE_LED_Write(1);
+ 509              		.loc 1 142 0
+ 510 0146 0120     		mov	r0, #1
+ 511 0148 FFF7FEFF 		bl	BLUE_LED_Write
+ 143:.\loadData.c  **** 
+ 144:.\loadData.c  ****         water = '1';
+ 512              		.loc 1 144 0
+ 513 014c 3B1C     		mov	r3, r7
+ 514 014e 2733     		add	r3, r3, #39
+ 515 0150 3122     		mov	r2, #49
+ 516 0152 1A70     		strb	r2, [r3]
+ 517 0154 02E0     		b	.L31
+ 518              	.L28:
+ 145:.\loadData.c  ****     }
+ 146:.\loadData.c  ****     else
+ 147:.\loadData.c  ****     {
+ 148:.\loadData.c  ****         sensorPackage_water(0);
+ 519              		.loc 1 148 0
+ 520 0156 0020     		mov	r0, #0
+ 521 0158 FFF7FEFF 		bl	sensorPackage_water
+ 522              	.L31:
+ 149:.\loadData.c  ****     }
+ 150:.\loadData.c  ****     
+ 151:.\loadData.c  ****     data[9] = water;
  523              		.loc 1 151 0
- 524 0166 1A4B     		ldr	r3, .L35+20
- 525 0168 1B78     		ldrb	r3, [r3]
- 526 016a 002B     		cmp	r3, #0
- 527 016c 03D1     		bne	.L32
- 152:.\loadData.c  ****         data[10] = '0';
- 528              		.loc 1 152 0
- 529 016e 3B1C     		mov	r3, r7
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 13
+ 524 015c 3B1C     		mov	r3, r7
+ 525 015e 3A1C     		mov	r2, r7
+ 526 0160 2732     		add	r2, r2, #39
+ 527 0162 1278     		ldrb	r2, [r2]
+ 528 0164 5A72     		strb	r2, [r3, #9]
+ 152:.\loadData.c  ****     if(movement_ == 0)
+ 529              		.loc 1 152 0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 13
 
 
- 530 0170 3022     		mov	r2, #48
- 531 0172 9A72     		strb	r2, [r3, #10]
- 532 0174 02E0     		b	.L33
- 533              	.L32:
- 153:.\loadData.c  ****     else
- 154:.\loadData.c  ****         data[10] = '1';
- 534              		.loc 1 154 0
- 535 0176 3B1C     		mov	r3, r7
- 536 0178 3122     		mov	r2, #49
- 537 017a 9A72     		strb	r2, [r3, #10]
- 538              	.L33:
- 155:.\loadData.c  ****      
- 156:.\loadData.c  ****     // Save data in buffer object for later use
- 157:.\loadData.c  ****     buffer_saveData(bufferPtr_, data, 11);
- 539              		.loc 1 157 0
- 540 017c 114B     		ldr	r3, .L35+8
- 541 017e 1A68     		ldr	r2, [r3]
- 542 0180 3B1C     		mov	r3, r7
- 543 0182 101C     		mov	r0, r2
- 544 0184 191C     		mov	r1, r3
- 545 0186 0B22     		mov	r2, #11
- 546 0188 FFF7FEFF 		bl	buffer_saveData
- 158:.\loadData.c  **** 
- 159:.\loadData.c  ****     RED_LED_Write(red);
- 547              		.loc 1 159 0
- 548 018c 3B1C     		mov	r3, r7
- 549 018e 2533     		add	r3, r3, #37
- 550 0190 1B78     		ldrb	r3, [r3]
- 551 0192 181C     		mov	r0, r3
- 552 0194 FFF7FEFF 		bl	RED_LED_Write
- 160:.\loadData.c  ****     GREEN_LED_Write(green);
+ 530 0166 1A4B     		ldr	r3, .L35+20
+ 531 0168 1B78     		ldrb	r3, [r3]
+ 532 016a 002B     		cmp	r3, #0
+ 533 016c 03D1     		bne	.L32
+ 153:.\loadData.c  ****         data[10] = '0';
+ 534              		.loc 1 153 0
+ 535 016e 3B1C     		mov	r3, r7
+ 536 0170 3022     		mov	r2, #48
+ 537 0172 9A72     		strb	r2, [r3, #10]
+ 538 0174 02E0     		b	.L33
+ 539              	.L32:
+ 154:.\loadData.c  ****     else
+ 155:.\loadData.c  ****         data[10] = '1';
+ 540              		.loc 1 155 0
+ 541 0176 3B1C     		mov	r3, r7
+ 542 0178 3122     		mov	r2, #49
+ 543 017a 9A72     		strb	r2, [r3, #10]
+ 544              	.L33:
+ 156:.\loadData.c  ****      
+ 157:.\loadData.c  ****     // Save data in buffer object for later use
+ 158:.\loadData.c  ****     buffer_saveData(bufferPtr_, data, 11);
+ 545              		.loc 1 158 0
+ 546 017c 114B     		ldr	r3, .L35+8
+ 547 017e 1A68     		ldr	r2, [r3]
+ 548 0180 3B1C     		mov	r3, r7
+ 549 0182 101C     		mov	r0, r2
+ 550 0184 191C     		mov	r1, r3
+ 551 0186 0B22     		mov	r2, #11
+ 552 0188 FFF7FEFF 		bl	buffer_saveData
+ 159:.\loadData.c  **** 
+ 160:.\loadData.c  ****     RED_LED_Write(red);
  553              		.loc 1 160 0
- 554 0198 3B1C     		mov	r3, r7
- 555 019a 2433     		add	r3, r3, #36
- 556 019c 1B78     		ldrb	r3, [r3]
- 557 019e 181C     		mov	r0, r3
- 558 01a0 FFF7FEFF 		bl	GREEN_LED_Write
- 161:.\loadData.c  ****     BLUE_LED_Write(blue);
+ 554 018c 3B1C     		mov	r3, r7
+ 555 018e 2533     		add	r3, r3, #37
+ 556 0190 1B78     		ldrb	r3, [r3]
+ 557 0192 181C     		mov	r0, r3
+ 558 0194 FFF7FEFF 		bl	RED_LED_Write
+ 161:.\loadData.c  ****     GREEN_LED_Write(green);
  559              		.loc 1 161 0
- 560 01a4 3B1C     		mov	r3, r7
- 561 01a6 2633     		add	r3, r3, #38
- 562 01a8 1B78     		ldrb	r3, [r3]
- 563 01aa 181C     		mov	r0, r3
- 564 01ac FFF7FEFF 		bl	BLUE_LED_Write
- 162:.\loadData.c  ****     
- 163:.\loadData.c  ****     return 0;
- 565              		.loc 1 163 0
- 566 01b0 0023     		mov	r3, #0
- 567              	.L34:
- 164:.\loadData.c  **** }
- 568              		.loc 1 164 0
- 569 01b2 181C     		mov	r0, r3
- 570 01b4 BD46     		mov	sp, r7
- 571 01b6 0BB0     		add	sp, sp, #44
- 572              		@ sp needed for prologue
- 573 01b8 90BD     		pop	{r4, r7, pc}
- 574              	.L36:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 14
+ 560 0198 3B1C     		mov	r3, r7
+ 561 019a 2433     		add	r3, r3, #36
+ 562 019c 1B78     		ldrb	r3, [r3]
+ 563 019e 181C     		mov	r0, r3
+ 564 01a0 FFF7FEFF 		bl	GREEN_LED_Write
+ 162:.\loadData.c  ****     BLUE_LED_Write(blue);
+ 565              		.loc 1 162 0
+ 566 01a4 3B1C     		mov	r3, r7
+ 567 01a6 2633     		add	r3, r3, #38
+ 568 01a8 1B78     		ldrb	r3, [r3]
+ 569 01aa 181C     		mov	r0, r3
+ 570 01ac FFF7FEFF 		bl	BLUE_LED_Write
+ 163:.\loadData.c  ****     
+ 164:.\loadData.c  ****     return 0;
+ 571              		.loc 1 164 0
+ 572 01b0 0023     		mov	r3, #0
+ 573              	.L34:
+ 165:.\loadData.c  **** }
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 14
 
 
- 575 01ba C046     		.align	2
- 576              	.L35:
- 577 01bc 00000000 		.word	parametersPtr_
- 578 01c0 00000000 		.word	.LC12
- 579 01c4 04000000 		.word	bufferPtr_
- 580 01c8 08000000 		.word	.LC15
- 581 01cc 10000000 		.word	.LC17
- 582 01d0 08000000 		.word	movement_
- 583              		.cfi_endproc
- 584              	.LFE37:
- 585              		.size	loadData_logDataTimeout, .-loadData_logDataTimeout
- 586              		.section	.text.loadData_movementDetect,"ax",%progbits
- 587              		.align	2
- 588              		.global	loadData_movementDetect
- 589              		.code	16
- 590              		.thumb_func
- 591              		.type	loadData_movementDetect, %function
- 592              	loadData_movementDetect:
- 593              	.LFB38:
- 165:.\loadData.c  **** 
- 166:.\loadData.c  **** int loadData_movementDetect()
- 167:.\loadData.c  **** {
- 594              		.loc 1 167 0
- 595              		.cfi_startproc
- 596 0000 80B5     		push	{r7, lr}
- 597              	.LCFI13:
- 598              		.cfi_def_cfa_offset 8
- 599              		.cfi_offset 7, -8
- 600              		.cfi_offset 14, -4
- 601 0002 82B0     		sub	sp, sp, #8
- 602              	.LCFI14:
- 603              		.cfi_def_cfa_offset 16
- 604 0004 00AF     		add	r7, sp, #0
- 605              	.LCFI15:
- 606              		.cfi_def_cfa_register 7
- 168:.\loadData.c  ****     unsigned char val;
- 169:.\loadData.c  ****     parameters_getActive(parametersPtr_, &val);
- 607              		.loc 1 169 0
- 608 0006 134B     		ldr	r3, .L40
- 609 0008 1A68     		ldr	r2, [r3]
- 610 000a FB1D     		add	r3, r7, #7
- 611 000c 101C     		mov	r0, r2
- 612 000e 191C     		mov	r1, r3
- 613 0010 FFF7FEFF 		bl	parameters_getActive
- 170:.\loadData.c  ****     if(val == 1)
- 614              		.loc 1 170 0
- 615 0014 FB1D     		add	r3, r7, #7
- 616 0016 1B78     		ldrb	r3, [r3]
- 617 0018 012B     		cmp	r3, #1
- 618 001a 13D1     		bne	.L38
- 171:.\loadData.c  ****      {
- 172:.\loadData.c  ****         // Clear active flag in parameters
- 173:.\loadData.c  ****         parameters_setActive(parametersPtr_, 0);
- 619              		.loc 1 173 0
- 620 001c 0D4B     		ldr	r3, .L40
- 621 001e 1B68     		ldr	r3, [r3]
- 622 0020 181C     		mov	r0, r3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 15
+ 574              		.loc 1 165 0
+ 575 01b2 181C     		mov	r0, r3
+ 576 01b4 BD46     		mov	sp, r7
+ 577 01b6 0BB0     		add	sp, sp, #44
+ 578              		@ sp needed for prologue
+ 579 01b8 90BD     		pop	{r4, r7, pc}
+ 580              	.L36:
+ 581 01ba C046     		.align	2
+ 582              	.L35:
+ 583 01bc 00000000 		.word	parametersPtr_
+ 584 01c0 00000000 		.word	.LC13
+ 585 01c4 04000000 		.word	bufferPtr_
+ 586 01c8 08000000 		.word	.LC16
+ 587 01cc 10000000 		.word	.LC18
+ 588 01d0 08000000 		.word	movement_
+ 589              		.cfi_endproc
+ 590              	.LFE37:
+ 591              		.size	loadData_logDataTimeout, .-loadData_logDataTimeout
+ 592              		.section	.text.loadData_movementDetect,"ax",%progbits
+ 593              		.align	2
+ 594              		.global	loadData_movementDetect
+ 595              		.code	16
+ 596              		.thumb_func
+ 597              		.type	loadData_movementDetect, %function
+ 598              	loadData_movementDetect:
+ 599              	.LFB38:
+ 166:.\loadData.c  **** 
+ 167:.\loadData.c  **** int loadData_movementDetect()
+ 168:.\loadData.c  **** {
+ 600              		.loc 1 168 0
+ 601              		.cfi_startproc
+ 602 0000 80B5     		push	{r7, lr}
+ 603              	.LCFI13:
+ 604              		.cfi_def_cfa_offset 8
+ 605              		.cfi_offset 7, -8
+ 606              		.cfi_offset 14, -4
+ 607 0002 82B0     		sub	sp, sp, #8
+ 608              	.LCFI14:
+ 609              		.cfi_def_cfa_offset 16
+ 610 0004 00AF     		add	r7, sp, #0
+ 611              	.LCFI15:
+ 612              		.cfi_def_cfa_register 7
+ 169:.\loadData.c  ****     unsigned char val;
+ 170:.\loadData.c  ****     parameters_getActive(parametersPtr_, &val);
+ 613              		.loc 1 170 0
+ 614 0006 154B     		ldr	r3, .L40
+ 615 0008 1A68     		ldr	r2, [r3]
+ 616 000a FB1D     		add	r3, r7, #7
+ 617 000c 101C     		mov	r0, r2
+ 618 000e 191C     		mov	r1, r3
+ 619 0010 FFF7FEFF 		bl	parameters_getActive
+ 171:.\loadData.c  ****     nextState = val;
+ 620              		.loc 1 171 0
+ 621 0014 FB1D     		add	r3, r7, #7
+ 622 0016 1A78     		ldrb	r2, [r3]
+ 623 0018 114B     		ldr	r3, .L40+4
+ 624 001a 1A70     		strb	r2, [r3]
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 15
 
 
- 623 0022 0021     		mov	r1, #0
- 624 0024 FFF7FEFF 		bl	parameters_setActive
- 174:.\loadData.c  ****         
- 175:.\loadData.c  ****         GREEN_LED_Write(1);
- 625              		.loc 1 175 0
- 626 0028 0120     		mov	r0, #1
- 627 002a FFF7FEFF 		bl	GREEN_LED_Write
- 176:.\loadData.c  ****         RED_LED_Write(0);
- 628              		.loc 1 176 0
- 629 002e 0020     		mov	r0, #0
- 630 0030 FFF7FEFF 		bl	RED_LED_Write
- 177:.\loadData.c  ****         BLUE_LED_Write(1);
- 631              		.loc 1 177 0
- 632 0034 0120     		mov	r0, #1
- 633 0036 FFF7FEFF 		bl	BLUE_LED_Write
- 178:.\loadData.c  ****         
- 179:.\loadData.c  ****         sensorPackage_water(0);
- 634              		.loc 1 179 0
- 635 003a 0020     		mov	r0, #0
- 636 003c FFF7FEFF 		bl	sensorPackage_water
- 180:.\loadData.c  ****         
- 181:.\loadData.c  ****         // Start 30 minute timer
- 182:.\loadData.c  ****         waterTimer_Start();
- 637              		.loc 1 182 0
- 638 0040 FFF7FEFF 		bl	waterTimer_Start
- 639              	.L38:
- 183:.\loadData.c  **** 
- 184:.\loadData.c  ****     }
- 185:.\loadData.c  ****         
- 186:.\loadData.c  ****     // Set movement flag
- 187:.\loadData.c  ****     movement_ = 1;
- 640              		.loc 1 187 0
- 641 0044 044B     		ldr	r3, .L40+4
- 642 0046 0122     		mov	r2, #1
- 643 0048 1A70     		strb	r2, [r3]
- 188:.\loadData.c  ****     
- 189:.\loadData.c  ****     return 0;
- 644              		.loc 1 189 0
- 645 004a 0023     		mov	r3, #0
- 190:.\loadData.c  **** }
- 646              		.loc 1 190 0
- 647 004c 181C     		mov	r0, r3
- 648 004e BD46     		mov	sp, r7
- 649 0050 02B0     		add	sp, sp, #8
- 650              		@ sp needed for prologue
- 651 0052 80BD     		pop	{r7, pc}
- 652              	.L41:
- 653              		.align	2
- 654              	.L40:
- 655 0054 00000000 		.word	parametersPtr_
- 656 0058 08000000 		.word	movement_
- 657              		.cfi_endproc
- 658              	.LFE38:
- 659              		.size	loadData_movementDetect, .-loadData_movementDetect
- 660              		.section	.text.loadData_waterTimeout,"ax",%progbits
- 661              		.align	2
- 662              		.global	loadData_waterTimeout
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 16
+ 172:.\loadData.c  ****     
+ 173:.\loadData.c  ****     if(val == 1)
+ 625              		.loc 1 173 0
+ 626 001c FB1D     		add	r3, r7, #7
+ 627 001e 1B78     		ldrb	r3, [r3]
+ 628 0020 012B     		cmp	r3, #1
+ 629 0022 13D1     		bne	.L38
+ 174:.\loadData.c  ****      {
+ 175:.\loadData.c  ****         // Clear active flag in parameters
+ 176:.\loadData.c  ****         parameters_setActive(parametersPtr_, 0);
+ 630              		.loc 1 176 0
+ 631 0024 0D4B     		ldr	r3, .L40
+ 632 0026 1B68     		ldr	r3, [r3]
+ 633 0028 181C     		mov	r0, r3
+ 634 002a 0021     		mov	r1, #0
+ 635 002c FFF7FEFF 		bl	parameters_setActive
+ 177:.\loadData.c  ****         
+ 178:.\loadData.c  ****         GREEN_LED_Write(1);
+ 636              		.loc 1 178 0
+ 637 0030 0120     		mov	r0, #1
+ 638 0032 FFF7FEFF 		bl	GREEN_LED_Write
+ 179:.\loadData.c  ****         RED_LED_Write(0);
+ 639              		.loc 1 179 0
+ 640 0036 0020     		mov	r0, #0
+ 641 0038 FFF7FEFF 		bl	RED_LED_Write
+ 180:.\loadData.c  ****         BLUE_LED_Write(1);
+ 642              		.loc 1 180 0
+ 643 003c 0120     		mov	r0, #1
+ 644 003e FFF7FEFF 		bl	BLUE_LED_Write
+ 181:.\loadData.c  ****         
+ 182:.\loadData.c  ****         sensorPackage_water(0);
+ 645              		.loc 1 182 0
+ 646 0042 0020     		mov	r0, #0
+ 647 0044 FFF7FEFF 		bl	sensorPackage_water
+ 183:.\loadData.c  ****         
+ 184:.\loadData.c  ****         // Start 30 minute timer
+ 185:.\loadData.c  ****         waterTimer_Start();
+ 648              		.loc 1 185 0
+ 649 0048 FFF7FEFF 		bl	waterTimer_Start
+ 650              	.L38:
+ 186:.\loadData.c  **** 
+ 187:.\loadData.c  ****     }
+ 188:.\loadData.c  ****         
+ 189:.\loadData.c  ****     // Set movement flag
+ 190:.\loadData.c  ****     movement_ = 1;
+ 651              		.loc 1 190 0
+ 652 004c 054B     		ldr	r3, .L40+8
+ 653 004e 0122     		mov	r2, #1
+ 654 0050 1A70     		strb	r2, [r3]
+ 191:.\loadData.c  ****     
+ 192:.\loadData.c  ****     return 0;
+ 655              		.loc 1 192 0
+ 656 0052 0023     		mov	r3, #0
+ 193:.\loadData.c  **** }
+ 657              		.loc 1 193 0
+ 658 0054 181C     		mov	r0, r3
+ 659 0056 BD46     		mov	sp, r7
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 16
 
 
- 663              		.code	16
- 664              		.thumb_func
- 665              		.type	loadData_waterTimeout, %function
- 666              	loadData_waterTimeout:
- 667              	.LFB39:
- 191:.\loadData.c  **** 
- 192:.\loadData.c  **** int  loadData_waterTimeout()
- 193:.\loadData.c  **** {
- 668              		.loc 1 193 0
- 669              		.cfi_startproc
- 670 0000 80B5     		push	{r7, lr}
- 671              	.LCFI16:
- 672              		.cfi_def_cfa_offset 8
- 673              		.cfi_offset 7, -8
- 674              		.cfi_offset 14, -4
- 675 0002 00AF     		add	r7, sp, #0
- 676              	.LCFI17:
- 677              		.cfi_def_cfa_register 7
- 194:.\loadData.c  ****     // Set active_ flag in parameters
- 195:.\loadData.c  ****     parameters_setActive(parametersPtr_, 1);
- 678              		.loc 1 195 0
- 679 0004 0A4B     		ldr	r3, .L44
- 680 0006 1B68     		ldr	r3, [r3]
- 681 0008 181C     		mov	r0, r3
- 682 000a 0121     		mov	r1, #1
- 683 000c FFF7FEFF 		bl	parameters_setActive
- 196:.\loadData.c  ****     
- 197:.\loadData.c  ****     RED_LED_Write(1);
- 684              		.loc 1 197 0
- 685 0010 0120     		mov	r0, #1
- 686 0012 FFF7FEFF 		bl	RED_LED_Write
- 198:.\loadData.c  ****     GREEN_LED_Write(0);
- 687              		.loc 1 198 0
- 688 0016 0020     		mov	r0, #0
- 689 0018 FFF7FEFF 		bl	GREEN_LED_Write
- 199:.\loadData.c  ****     BLUE_LED_Write(1);
- 690              		.loc 1 199 0
- 691 001c 0120     		mov	r0, #1
- 692 001e FFF7FEFF 		bl	BLUE_LED_Write
- 200:.\loadData.c  ****     
- 201:.\loadData.c  ****     waterTimer_Stop();
- 693              		.loc 1 201 0
- 694 0022 FFF7FEFF 		bl	waterTimer_Stop
- 202:.\loadData.c  ****     
- 203:.\loadData.c  ****     return 0;
- 695              		.loc 1 203 0
- 696 0026 0023     		mov	r3, #0
- 204:.\loadData.c  **** }
- 697              		.loc 1 204 0
- 698 0028 181C     		mov	r0, r3
- 699 002a BD46     		mov	sp, r7
- 700              		@ sp needed for prologue
- 701 002c 80BD     		pop	{r7, pc}
- 702              	.L45:
- 703 002e C046     		.align	2
- 704              	.L44:
- 705 0030 00000000 		.word	parametersPtr_
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 17
+ 660 0058 02B0     		add	sp, sp, #8
+ 661              		@ sp needed for prologue
+ 662 005a 80BD     		pop	{r7, pc}
+ 663              	.L41:
+ 664              		.align	2
+ 665              	.L40:
+ 666 005c 00000000 		.word	parametersPtr_
+ 667 0060 00000000 		.word	nextState
+ 668 0064 08000000 		.word	movement_
+ 669              		.cfi_endproc
+ 670              	.LFE38:
+ 671              		.size	loadData_movementDetect, .-loadData_movementDetect
+ 672              		.section	.text.loadData_waterTimeout,"ax",%progbits
+ 673              		.align	2
+ 674              		.global	loadData_waterTimeout
+ 675              		.code	16
+ 676              		.thumb_func
+ 677              		.type	loadData_waterTimeout, %function
+ 678              	loadData_waterTimeout:
+ 679              	.LFB39:
+ 194:.\loadData.c  **** 
+ 195:.\loadData.c  **** int  loadData_waterTimeout()
+ 196:.\loadData.c  **** {
+ 680              		.loc 1 196 0
+ 681              		.cfi_startproc
+ 682 0000 80B5     		push	{r7, lr}
+ 683              	.LCFI16:
+ 684              		.cfi_def_cfa_offset 8
+ 685              		.cfi_offset 7, -8
+ 686              		.cfi_offset 14, -4
+ 687 0002 00AF     		add	r7, sp, #0
+ 688              	.LCFI17:
+ 689              		.cfi_def_cfa_register 7
+ 197:.\loadData.c  ****     // Set active_ flag in parameters
+ 198:.\loadData.c  ****     parameters_setActive(parametersPtr_, nextState);
+ 690              		.loc 1 198 0
+ 691 0004 0B4B     		ldr	r3, .L44
+ 692 0006 1A68     		ldr	r2, [r3]
+ 693 0008 0B4B     		ldr	r3, .L44+4
+ 694 000a 1B78     		ldrb	r3, [r3]
+ 695 000c 101C     		mov	r0, r2
+ 696 000e 191C     		mov	r1, r3
+ 697 0010 FFF7FEFF 		bl	parameters_setActive
+ 199:.\loadData.c  ****     
+ 200:.\loadData.c  ****     RED_LED_Write(1);
+ 698              		.loc 1 200 0
+ 699 0014 0120     		mov	r0, #1
+ 700 0016 FFF7FEFF 		bl	RED_LED_Write
+ 201:.\loadData.c  ****     GREEN_LED_Write(0);
+ 701              		.loc 1 201 0
+ 702 001a 0020     		mov	r0, #0
+ 703 001c FFF7FEFF 		bl	GREEN_LED_Write
+ 202:.\loadData.c  ****     BLUE_LED_Write(1);
+ 704              		.loc 1 202 0
+ 705 0020 0120     		mov	r0, #1
+ 706 0022 FFF7FEFF 		bl	BLUE_LED_Write
+ 203:.\loadData.c  ****     
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 17
 
 
- 706              		.cfi_endproc
- 707              	.LFE39:
- 708              		.size	loadData_waterTimeout, .-loadData_waterTimeout
- 709              		.text
- 710              	.Letext0:
- 711              		.file 2 ".\\buffer.h"
- 712              		.file 3 ".\\parameters.h"
- 713              		.file 4 "./Generated_Source/PSoC4/cytypes.h"
- 714              		.section	.debug_info,"",%progbits
- 715              	.Ldebug_info0:
- 716 0000 72030000 		.4byte	0x372
- 717 0004 0200     		.2byte	0x2
- 718 0006 00000000 		.4byte	.Ldebug_abbrev0
- 719 000a 04       		.byte	0x4
- 720 000b 01       		.uleb128 0x1
- 721 000c 1D020000 		.4byte	.LASF46
- 722 0010 01       		.byte	0x1
- 723 0011 4B010000 		.4byte	.LASF47
- 724 0015 E0010000 		.4byte	.LASF48
- 725 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 726 001d 00000000 		.4byte	0
- 727 0021 00000000 		.4byte	0
- 728 0025 00000000 		.4byte	.Ldebug_line0
- 729 0029 02       		.uleb128 0x2
- 730 002a BF000000 		.4byte	.LASF9
- 731 002e 44       		.byte	0x44
- 732 002f 02       		.byte	0x2
- 733 0030 0F       		.byte	0xf
- 734 0031 7C000000 		.4byte	0x7c
- 735 0035 03       		.uleb128 0x3
- 736 0036 5A000000 		.4byte	.LASF0
- 737 003a 02       		.byte	0x2
- 738 003b 11       		.byte	0x11
- 739 003c 7C000000 		.4byte	0x7c
- 740 0040 02       		.byte	0x2
- 741 0041 23       		.byte	0x23
- 742 0042 00       		.uleb128 0
- 743 0043 03       		.uleb128 0x3
- 744 0044 4E000000 		.4byte	.LASF1
- 745 0048 02       		.byte	0x2
- 746 0049 12       		.byte	0x12
- 747 004a 9A000000 		.4byte	0x9a
- 748 004e 02       		.byte	0x2
- 749 004f 23       		.byte	0x23
- 750 0050 34       		.uleb128 0x34
- 751 0051 03       		.uleb128 0x3
- 752 0052 15010000 		.4byte	.LASF2
- 753 0056 02       		.byte	0x2
- 754 0057 13       		.byte	0x13
- 755 0058 9A000000 		.4byte	0x9a
- 756 005c 02       		.byte	0x2
- 757 005d 23       		.byte	0x23
- 758 005e 38       		.uleb128 0x38
- 759 005f 03       		.uleb128 0x3
- 760 0060 29000000 		.4byte	.LASF3
- 761 0064 02       		.byte	0x2
- 762 0065 14       		.byte	0x14
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 18
+ 204:.\loadData.c  ****     waterTimer_Stop();
+ 707              		.loc 1 204 0
+ 708 0026 FFF7FEFF 		bl	waterTimer_Stop
+ 205:.\loadData.c  ****     
+ 206:.\loadData.c  ****     return 0;
+ 709              		.loc 1 206 0
+ 710 002a 0023     		mov	r3, #0
+ 207:.\loadData.c  **** }
+ 711              		.loc 1 207 0
+ 712 002c 181C     		mov	r0, r3
+ 713 002e BD46     		mov	sp, r7
+ 714              		@ sp needed for prologue
+ 715 0030 80BD     		pop	{r7, pc}
+ 716              	.L45:
+ 717 0032 C046     		.align	2
+ 718              	.L44:
+ 719 0034 00000000 		.word	parametersPtr_
+ 720 0038 00000000 		.word	nextState
+ 721              		.cfi_endproc
+ 722              	.LFE39:
+ 723              		.size	loadData_waterTimeout, .-loadData_waterTimeout
+ 724              		.text
+ 725              	.Letext0:
+ 726              		.file 2 ".\\buffer.h"
+ 727              		.file 3 ".\\parameters.h"
+ 728              		.file 4 "./Generated_Source/PSoC4/cytypes.h"
+ 729              		.file 5 ".\\loadData.h"
+ 730              		.section	.debug_info,"",%progbits
+ 731              	.Ldebug_info0:
+ 732 0000 84030000 		.4byte	0x384
+ 733 0004 0200     		.2byte	0x2
+ 734 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 735 000a 04       		.byte	0x4
+ 736 000b 01       		.uleb128 0x1
+ 737 000c 27020000 		.4byte	.LASF46
+ 738 0010 01       		.byte	0x1
+ 739 0011 55010000 		.4byte	.LASF47
+ 740 0015 EA010000 		.4byte	.LASF48
+ 741 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 742 001d 00000000 		.4byte	0
+ 743 0021 00000000 		.4byte	0
+ 744 0025 00000000 		.4byte	.Ldebug_line0
+ 745 0029 02       		.uleb128 0x2
+ 746 002a C9000000 		.4byte	.LASF9
+ 747 002e 44       		.byte	0x44
+ 748 002f 02       		.byte	0x2
+ 749 0030 0F       		.byte	0xf
+ 750 0031 7C000000 		.4byte	0x7c
+ 751 0035 03       		.uleb128 0x3
+ 752 0036 64000000 		.4byte	.LASF0
+ 753 003a 02       		.byte	0x2
+ 754 003b 11       		.byte	0x11
+ 755 003c 7C000000 		.4byte	0x7c
+ 756 0040 02       		.byte	0x2
+ 757 0041 23       		.byte	0x23
+ 758 0042 00       		.uleb128 0
+ 759 0043 03       		.uleb128 0x3
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 18
 
 
- 763 0066 9A000000 		.4byte	0x9a
- 764 006a 02       		.byte	0x2
- 765 006b 23       		.byte	0x23
- 766 006c 3C       		.uleb128 0x3c
- 767 006d 03       		.uleb128 0x3
- 768 006e A1010000 		.4byte	.LASF4
- 769 0072 02       		.byte	0x2
- 770 0073 15       		.byte	0x15
- 771 0074 A1000000 		.4byte	0xa1
- 772 0078 02       		.byte	0x2
- 773 0079 23       		.byte	0x23
- 774 007a 40       		.uleb128 0x40
- 775 007b 00       		.byte	0
- 776 007c 04       		.uleb128 0x4
- 777 007d 93000000 		.4byte	0x93
- 778 0081 8C000000 		.4byte	0x8c
- 779 0085 05       		.uleb128 0x5
- 780 0086 8C000000 		.4byte	0x8c
- 781 008a 32       		.byte	0x32
- 782 008b 00       		.byte	0
- 783 008c 06       		.uleb128 0x6
- 784 008d 04       		.byte	0x4
- 785 008e 07       		.byte	0x7
- 786 008f C4010000 		.4byte	.LASF5
- 787 0093 06       		.uleb128 0x6
- 788 0094 01       		.byte	0x1
- 789 0095 08       		.byte	0x8
- 790 0096 DB010000 		.4byte	.LASF6
- 791 009a 06       		.uleb128 0x6
- 792 009b 04       		.byte	0x4
- 793 009c 07       		.byte	0x7
- 794 009d 75010000 		.4byte	.LASF7
- 795 00a1 06       		.uleb128 0x6
- 796 00a2 01       		.byte	0x1
- 797 00a3 08       		.byte	0x8
- 798 00a4 A6000000 		.4byte	.LASF8
- 799 00a8 07       		.uleb128 0x7
- 800 00a9 10020000 		.4byte	.LASF15
- 801 00ad 02       		.byte	0x2
- 802 00ae 16       		.byte	0x16
- 803 00af 29000000 		.4byte	0x29
- 804 00b3 02       		.uleb128 0x2
- 805 00b4 3E000000 		.4byte	.LASF10
- 806 00b8 0C       		.byte	0xc
- 807 00b9 03       		.byte	0x3
- 808 00ba 0E       		.byte	0xe
- 809 00bb EA000000 		.4byte	0xea
- 810 00bf 03       		.uleb128 0x3
- 811 00c0 15000000 		.4byte	.LASF11
- 812 00c4 03       		.byte	0x3
- 813 00c5 10       		.byte	0x10
- 814 00c6 EA000000 		.4byte	0xea
- 815 00ca 02       		.byte	0x2
- 816 00cb 23       		.byte	0x23
- 817 00cc 00       		.uleb128 0
- 818 00cd 03       		.uleb128 0x3
- 819 00ce 67000000 		.4byte	.LASF12
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 19
+ 760 0044 58000000 		.4byte	.LASF1
+ 761 0048 02       		.byte	0x2
+ 762 0049 12       		.byte	0x12
+ 763 004a 9A000000 		.4byte	0x9a
+ 764 004e 02       		.byte	0x2
+ 765 004f 23       		.byte	0x23
+ 766 0050 34       		.uleb128 0x34
+ 767 0051 03       		.uleb128 0x3
+ 768 0052 1F010000 		.4byte	.LASF2
+ 769 0056 02       		.byte	0x2
+ 770 0057 13       		.byte	0x13
+ 771 0058 9A000000 		.4byte	0x9a
+ 772 005c 02       		.byte	0x2
+ 773 005d 23       		.byte	0x23
+ 774 005e 38       		.uleb128 0x38
+ 775 005f 03       		.uleb128 0x3
+ 776 0060 33000000 		.4byte	.LASF3
+ 777 0064 02       		.byte	0x2
+ 778 0065 14       		.byte	0x14
+ 779 0066 9A000000 		.4byte	0x9a
+ 780 006a 02       		.byte	0x2
+ 781 006b 23       		.byte	0x23
+ 782 006c 3C       		.uleb128 0x3c
+ 783 006d 03       		.uleb128 0x3
+ 784 006e AB010000 		.4byte	.LASF4
+ 785 0072 02       		.byte	0x2
+ 786 0073 15       		.byte	0x15
+ 787 0074 A1000000 		.4byte	0xa1
+ 788 0078 02       		.byte	0x2
+ 789 0079 23       		.byte	0x23
+ 790 007a 40       		.uleb128 0x40
+ 791 007b 00       		.byte	0
+ 792 007c 04       		.uleb128 0x4
+ 793 007d 93000000 		.4byte	0x93
+ 794 0081 8C000000 		.4byte	0x8c
+ 795 0085 05       		.uleb128 0x5
+ 796 0086 8C000000 		.4byte	0x8c
+ 797 008a 32       		.byte	0x32
+ 798 008b 00       		.byte	0
+ 799 008c 06       		.uleb128 0x6
+ 800 008d 04       		.byte	0x4
+ 801 008e 07       		.byte	0x7
+ 802 008f CE010000 		.4byte	.LASF5
+ 803 0093 06       		.uleb128 0x6
+ 804 0094 01       		.byte	0x1
+ 805 0095 08       		.byte	0x8
+ 806 0096 E5010000 		.4byte	.LASF6
+ 807 009a 06       		.uleb128 0x6
+ 808 009b 04       		.byte	0x4
+ 809 009c 07       		.byte	0x7
+ 810 009d 7F010000 		.4byte	.LASF7
+ 811 00a1 06       		.uleb128 0x6
+ 812 00a2 01       		.byte	0x1
+ 813 00a3 08       		.byte	0x8
+ 814 00a4 B0000000 		.4byte	.LASF8
+ 815 00a8 07       		.uleb128 0x7
+ 816 00a9 1A020000 		.4byte	.LASF15
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 19
 
 
- 820 00d2 03       		.byte	0x3
- 821 00d3 11       		.byte	0x11
- 822 00d4 EA000000 		.4byte	0xea
- 823 00d8 02       		.byte	0x2
- 824 00d9 23       		.byte	0x23
- 825 00da 04       		.uleb128 0x4
- 826 00db 03       		.uleb128 0x3
- 827 00dc 82010000 		.4byte	.LASF13
- 828 00e0 03       		.byte	0x3
- 829 00e1 12       		.byte	0x12
- 830 00e2 A1000000 		.4byte	0xa1
- 831 00e6 02       		.byte	0x2
- 832 00e7 23       		.byte	0x23
- 833 00e8 08       		.uleb128 0x8
- 834 00e9 00       		.byte	0
- 835 00ea 06       		.uleb128 0x6
- 836 00eb 04       		.byte	0x4
- 837 00ec 04       		.byte	0x4
- 838 00ed 84000000 		.4byte	.LASF14
- 839 00f1 07       		.uleb128 0x7
- 840 00f2 CB000000 		.4byte	.LASF16
- 841 00f6 03       		.byte	0x3
- 842 00f7 13       		.byte	0x13
- 843 00f8 B3000000 		.4byte	0xb3
- 844 00fc 06       		.uleb128 0x6
- 845 00fd 01       		.byte	0x1
- 846 00fe 06       		.byte	0x6
- 847 00ff AE010000 		.4byte	.LASF17
- 848 0103 06       		.uleb128 0x6
- 849 0104 02       		.byte	0x2
- 850 0105 05       		.byte	0x5
- 851 0106 06020000 		.4byte	.LASF18
- 852 010a 06       		.uleb128 0x6
- 853 010b 02       		.byte	0x2
- 854 010c 07       		.byte	0x7
- 855 010d ED000000 		.4byte	.LASF19
- 856 0111 06       		.uleb128 0x6
- 857 0112 04       		.byte	0x4
- 858 0113 05       		.byte	0x5
- 859 0114 6F020000 		.4byte	.LASF20
- 860 0118 06       		.uleb128 0x6
- 861 0119 04       		.byte	0x4
- 862 011a 07       		.byte	0x7
- 863 011b D6000000 		.4byte	.LASF21
- 864 011f 06       		.uleb128 0x6
- 865 0120 08       		.byte	0x8
- 866 0121 05       		.byte	0x5
- 867 0122 CD010000 		.4byte	.LASF22
- 868 0126 06       		.uleb128 0x6
- 869 0127 08       		.byte	0x8
- 870 0128 07       		.byte	0x7
- 871 0129 8A010000 		.4byte	.LASF23
- 872 012d 08       		.uleb128 0x8
- 873 012e 04       		.byte	0x4
- 874 012f 05       		.byte	0x5
- 875 0130 696E7400 		.ascii	"int\000"
- 876 0134 07       		.uleb128 0x7
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 20
+ 817 00ad 02       		.byte	0x2
+ 818 00ae 16       		.byte	0x16
+ 819 00af 29000000 		.4byte	0x29
+ 820 00b3 02       		.uleb128 0x2
+ 821 00b4 48000000 		.4byte	.LASF10
+ 822 00b8 0C       		.byte	0xc
+ 823 00b9 03       		.byte	0x3
+ 824 00ba 0E       		.byte	0xe
+ 825 00bb EA000000 		.4byte	0xea
+ 826 00bf 03       		.uleb128 0x3
+ 827 00c0 15000000 		.4byte	.LASF11
+ 828 00c4 03       		.byte	0x3
+ 829 00c5 10       		.byte	0x10
+ 830 00c6 EA000000 		.4byte	0xea
+ 831 00ca 02       		.byte	0x2
+ 832 00cb 23       		.byte	0x23
+ 833 00cc 00       		.uleb128 0
+ 834 00cd 03       		.uleb128 0x3
+ 835 00ce 71000000 		.4byte	.LASF12
+ 836 00d2 03       		.byte	0x3
+ 837 00d3 11       		.byte	0x11
+ 838 00d4 EA000000 		.4byte	0xea
+ 839 00d8 02       		.byte	0x2
+ 840 00d9 23       		.byte	0x23
+ 841 00da 04       		.uleb128 0x4
+ 842 00db 03       		.uleb128 0x3
+ 843 00dc 8C010000 		.4byte	.LASF13
+ 844 00e0 03       		.byte	0x3
+ 845 00e1 12       		.byte	0x12
+ 846 00e2 A1000000 		.4byte	0xa1
+ 847 00e6 02       		.byte	0x2
+ 848 00e7 23       		.byte	0x23
+ 849 00e8 08       		.uleb128 0x8
+ 850 00e9 00       		.byte	0
+ 851 00ea 06       		.uleb128 0x6
+ 852 00eb 04       		.byte	0x4
+ 853 00ec 04       		.byte	0x4
+ 854 00ed 8E000000 		.4byte	.LASF14
+ 855 00f1 07       		.uleb128 0x7
+ 856 00f2 D5000000 		.4byte	.LASF16
+ 857 00f6 03       		.byte	0x3
+ 858 00f7 13       		.byte	0x13
+ 859 00f8 B3000000 		.4byte	0xb3
+ 860 00fc 06       		.uleb128 0x6
+ 861 00fd 01       		.byte	0x1
+ 862 00fe 06       		.byte	0x6
+ 863 00ff B8010000 		.4byte	.LASF17
+ 864 0103 06       		.uleb128 0x6
+ 865 0104 02       		.byte	0x2
+ 866 0105 05       		.byte	0x5
+ 867 0106 10020000 		.4byte	.LASF18
+ 868 010a 06       		.uleb128 0x6
+ 869 010b 02       		.byte	0x2
+ 870 010c 07       		.byte	0x7
+ 871 010d F7000000 		.4byte	.LASF19
+ 872 0111 06       		.uleb128 0x6
+ 873 0112 04       		.byte	0x4
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 20
 
 
- 877 0135 17020000 		.4byte	.LASF24
- 878 0139 04       		.byte	0x4
- 879 013a 5B       		.byte	0x5b
- 880 013b A1000000 		.4byte	0xa1
- 881 013f 06       		.uleb128 0x6
- 882 0140 08       		.byte	0x8
- 883 0141 04       		.byte	0x4
- 884 0142 53000000 		.4byte	.LASF25
- 885 0146 09       		.uleb128 0x9
- 886 0147 04       		.byte	0x4
- 887 0148 93000000 		.4byte	0x93
- 888 014c 0A       		.uleb128 0xa
- 889 014d 01       		.byte	0x1
- 890 014e B4000000 		.4byte	.LASF26
- 891 0152 01       		.byte	0x1
- 892 0153 15       		.byte	0x15
- 893 0154 01       		.byte	0x1
- 894 0155 00000000 		.4byte	.LFB33
- 895 0159 4C000000 		.4byte	.LFE33
- 896 015d 00000000 		.4byte	.LLST0
- 897 0161 01       		.byte	0x1
- 898 0162 0A       		.uleb128 0xa
- 899 0163 01       		.byte	0x1
- 900 0164 66020000 		.4byte	.LASF27
- 901 0168 01       		.byte	0x1
- 902 0169 20       		.byte	0x20
- 903 016a 01       		.byte	0x1
- 904 016b 00000000 		.4byte	.LFB34
- 905 016f 4C000000 		.4byte	.LFE34
- 906 0173 2C000000 		.4byte	.LLST1
- 907 0177 01       		.byte	0x1
- 908 0178 0B       		.uleb128 0xb
- 909 0179 01       		.byte	0x1
- 910 017a 58010000 		.4byte	.LASF28
- 911 017e 01       		.byte	0x1
- 912 017f 2C       		.byte	0x2c
- 913 0180 01       		.byte	0x1
- 914 0181 00000000 		.4byte	.LFB35
- 915 0185 74000000 		.4byte	.LFE35
- 916 0189 58000000 		.4byte	.LLST2
- 917 018d 01       		.byte	0x1
- 918 018e AF010000 		.4byte	0x1af
- 919 0192 0C       		.uleb128 0xc
- 920 0193 70617200 		.ascii	"par\000"
- 921 0197 01       		.byte	0x1
- 922 0198 2C       		.byte	0x2c
- 923 0199 AF010000 		.4byte	0x1af
- 924 019d 02       		.byte	0x2
- 925 019e 91       		.byte	0x91
- 926 019f 74       		.sleb128 -12
- 927 01a0 0C       		.uleb128 0xc
- 928 01a1 62756600 		.ascii	"buf\000"
- 929 01a5 01       		.byte	0x1
- 930 01a6 2C       		.byte	0x2c
- 931 01a7 B5010000 		.4byte	0x1b5
- 932 01ab 02       		.byte	0x2
- 933 01ac 91       		.byte	0x91
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 21
+ 874 0113 05       		.byte	0x5
+ 875 0114 79020000 		.4byte	.LASF20
+ 876 0118 06       		.uleb128 0x6
+ 877 0119 04       		.byte	0x4
+ 878 011a 07       		.byte	0x7
+ 879 011b E0000000 		.4byte	.LASF21
+ 880 011f 06       		.uleb128 0x6
+ 881 0120 08       		.byte	0x8
+ 882 0121 05       		.byte	0x5
+ 883 0122 D7010000 		.4byte	.LASF22
+ 884 0126 06       		.uleb128 0x6
+ 885 0127 08       		.byte	0x8
+ 886 0128 07       		.byte	0x7
+ 887 0129 94010000 		.4byte	.LASF23
+ 888 012d 08       		.uleb128 0x8
+ 889 012e 04       		.byte	0x4
+ 890 012f 05       		.byte	0x5
+ 891 0130 696E7400 		.ascii	"int\000"
+ 892 0134 07       		.uleb128 0x7
+ 893 0135 21020000 		.4byte	.LASF24
+ 894 0139 04       		.byte	0x4
+ 895 013a 5B       		.byte	0x5b
+ 896 013b A1000000 		.4byte	0xa1
+ 897 013f 06       		.uleb128 0x6
+ 898 0140 08       		.byte	0x8
+ 899 0141 04       		.byte	0x4
+ 900 0142 5D000000 		.4byte	.LASF25
+ 901 0146 09       		.uleb128 0x9
+ 902 0147 04       		.byte	0x4
+ 903 0148 93000000 		.4byte	0x93
+ 904 014c 0A       		.uleb128 0xa
+ 905 014d 01       		.byte	0x1
+ 906 014e BE000000 		.4byte	.LASF26
+ 907 0152 01       		.byte	0x1
+ 908 0153 15       		.byte	0x15
+ 909 0154 01       		.byte	0x1
+ 910 0155 00000000 		.4byte	.LFB33
+ 911 0159 4C000000 		.4byte	.LFE33
+ 912 015d 00000000 		.4byte	.LLST0
+ 913 0161 01       		.byte	0x1
+ 914 0162 0A       		.uleb128 0xa
+ 915 0163 01       		.byte	0x1
+ 916 0164 70020000 		.4byte	.LASF27
+ 917 0168 01       		.byte	0x1
+ 918 0169 20       		.byte	0x20
+ 919 016a 01       		.byte	0x1
+ 920 016b 00000000 		.4byte	.LFB34
+ 921 016f 4C000000 		.4byte	.LFE34
+ 922 0173 2C000000 		.4byte	.LLST1
+ 923 0177 01       		.byte	0x1
+ 924 0178 0B       		.uleb128 0xb
+ 925 0179 01       		.byte	0x1
+ 926 017a 62010000 		.4byte	.LASF28
+ 927 017e 01       		.byte	0x1
+ 928 017f 2C       		.byte	0x2c
+ 929 0180 01       		.byte	0x1
+ 930 0181 00000000 		.4byte	.LFB35
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 21
 
 
- 934 01ad 70       		.sleb128 -16
- 935 01ae 00       		.byte	0
- 936 01af 09       		.uleb128 0x9
- 937 01b0 04       		.byte	0x4
- 938 01b1 F1000000 		.4byte	0xf1
- 939 01b5 09       		.uleb128 0x9
- 940 01b6 04       		.byte	0x4
- 941 01b7 A8000000 		.4byte	0xa8
- 942 01bb 0D       		.uleb128 0xd
- 943 01bc 01       		.byte	0x1
- 944 01bd 71000000 		.4byte	.LASF49
- 945 01c1 01       		.byte	0x1
- 946 01c2 48       		.byte	0x48
- 947 01c3 01       		.byte	0x1
- 948 01c4 2D010000 		.4byte	0x12d
- 949 01c8 00000000 		.4byte	.LFB36
- 950 01cc 34000000 		.4byte	.LFE36
- 951 01d0 90000000 		.4byte	.LLST3
- 952 01d4 01       		.byte	0x1
- 953 01d5 F6010000 		.4byte	0x1f6
- 954 01d9 0C       		.uleb128 0xc
- 955 01da 62756600 		.ascii	"buf\000"
- 956 01de 01       		.byte	0x1
- 957 01df 48       		.byte	0x48
- 958 01e0 F6010000 		.4byte	0x1f6
- 959 01e4 02       		.byte	0x2
- 960 01e5 91       		.byte	0x91
- 961 01e6 74       		.sleb128 -12
- 962 01e7 0C       		.uleb128 0xc
- 963 01e8 6C656E00 		.ascii	"len\000"
- 964 01ec 01       		.byte	0x1
- 965 01ed 48       		.byte	0x48
- 966 01ee FC010000 		.4byte	0x1fc
- 967 01f2 02       		.byte	0x2
- 968 01f3 91       		.byte	0x91
- 969 01f4 70       		.sleb128 -16
- 970 01f5 00       		.byte	0
- 971 01f6 09       		.uleb128 0x9
- 972 01f7 04       		.byte	0x4
- 973 01f8 46010000 		.4byte	0x146
- 974 01fc 09       		.uleb128 0x9
- 975 01fd 04       		.byte	0x4
- 976 01fe 9A000000 		.4byte	0x9a
- 977 0202 0E       		.uleb128 0xe
- 978 0203 01       		.byte	0x1
- 979 0204 78020000 		.4byte	.LASF29
- 980 0208 01       		.byte	0x1
- 981 0209 53       		.byte	0x53
- 982 020a 2D010000 		.4byte	0x12d
- 983 020e 00000000 		.4byte	.LFB37
- 984 0212 D4010000 		.4byte	.LFE37
- 985 0216 C8000000 		.4byte	.LLST4
- 986 021a 01       		.byte	0x1
- 987 021b BA020000 		.4byte	0x2ba
- 988 021f 0F       		.uleb128 0xf
- 989 0220 62000000 		.4byte	.LASF30
- 990 0224 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 22
+ 931 0185 80000000 		.4byte	.LFE35
+ 932 0189 58000000 		.4byte	.LLST2
+ 933 018d 01       		.byte	0x1
+ 934 018e AF010000 		.4byte	0x1af
+ 935 0192 0C       		.uleb128 0xc
+ 936 0193 70617200 		.ascii	"par\000"
+ 937 0197 01       		.byte	0x1
+ 938 0198 2C       		.byte	0x2c
+ 939 0199 AF010000 		.4byte	0x1af
+ 940 019d 02       		.byte	0x2
+ 941 019e 91       		.byte	0x91
+ 942 019f 74       		.sleb128 -12
+ 943 01a0 0C       		.uleb128 0xc
+ 944 01a1 62756600 		.ascii	"buf\000"
+ 945 01a5 01       		.byte	0x1
+ 946 01a6 2C       		.byte	0x2c
+ 947 01a7 B5010000 		.4byte	0x1b5
+ 948 01ab 02       		.byte	0x2
+ 949 01ac 91       		.byte	0x91
+ 950 01ad 70       		.sleb128 -16
+ 951 01ae 00       		.byte	0
+ 952 01af 09       		.uleb128 0x9
+ 953 01b0 04       		.byte	0x4
+ 954 01b1 F1000000 		.4byte	0xf1
+ 955 01b5 09       		.uleb128 0x9
+ 956 01b6 04       		.byte	0x4
+ 957 01b7 A8000000 		.4byte	0xa8
+ 958 01bb 0D       		.uleb128 0xd
+ 959 01bc 01       		.byte	0x1
+ 960 01bd 7B000000 		.4byte	.LASF49
+ 961 01c1 01       		.byte	0x1
+ 962 01c2 49       		.byte	0x49
+ 963 01c3 01       		.byte	0x1
+ 964 01c4 2D010000 		.4byte	0x12d
+ 965 01c8 00000000 		.4byte	.LFB36
+ 966 01cc 34000000 		.4byte	.LFE36
+ 967 01d0 90000000 		.4byte	.LLST3
+ 968 01d4 01       		.byte	0x1
+ 969 01d5 F6010000 		.4byte	0x1f6
+ 970 01d9 0C       		.uleb128 0xc
+ 971 01da 62756600 		.ascii	"buf\000"
+ 972 01de 01       		.byte	0x1
+ 973 01df 49       		.byte	0x49
+ 974 01e0 F6010000 		.4byte	0x1f6
+ 975 01e4 02       		.byte	0x2
+ 976 01e5 91       		.byte	0x91
+ 977 01e6 74       		.sleb128 -12
+ 978 01e7 0C       		.uleb128 0xc
+ 979 01e8 6C656E00 		.ascii	"len\000"
+ 980 01ec 01       		.byte	0x1
+ 981 01ed 49       		.byte	0x49
+ 982 01ee FC010000 		.4byte	0x1fc
+ 983 01f2 02       		.byte	0x2
+ 984 01f3 91       		.byte	0x91
+ 985 01f4 70       		.sleb128 -16
+ 986 01f5 00       		.byte	0
+ 987 01f6 09       		.uleb128 0x9
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 22
 
 
- 991 0225 56       		.byte	0x56
- 992 0226 34010000 		.4byte	0x134
- 993 022a 02       		.byte	0x2
- 994 022b 91       		.byte	0x91
- 995 022c 6E       		.sleb128 -18
- 996 022d 10       		.uleb128 0x10
- 997 022e 72656400 		.ascii	"red\000"
- 998 0232 01       		.byte	0x1
- 999 0233 56       		.byte	0x56
- 1000 0234 34010000 		.4byte	0x134
- 1001 0238 02       		.byte	0x2
- 1002 0239 91       		.byte	0x91
- 1003 023a 6D       		.sleb128 -19
- 1004 023b 0F       		.uleb128 0xf
- 1005 023c 00010000 		.4byte	.LASF31
- 1006 0240 01       		.byte	0x1
- 1007 0241 56       		.byte	0x56
- 1008 0242 34010000 		.4byte	0x134
- 1009 0246 02       		.byte	0x2
- 1010 0247 91       		.byte	0x91
- 1011 0248 6C       		.sleb128 -20
- 1012 0249 10       		.uleb128 0x10
- 1013 024a 72657400 		.ascii	"ret\000"
- 1014 024e 01       		.byte	0x1
- 1015 024f 5F       		.byte	0x5f
- 1016 0250 2D010000 		.4byte	0x12d
- 1017 0254 02       		.byte	0x2
- 1018 0255 91       		.byte	0x91
- 1019 0256 68       		.sleb128 -24
- 1020 0257 0F       		.uleb128 0xf
- 1021 0258 22000000 		.4byte	.LASF32
- 1022 025c 01       		.byte	0x1
- 1023 025d 62       		.byte	0x62
- 1024 025e A1000000 		.4byte	0xa1
- 1025 0262 02       		.byte	0x2
- 1026 0263 91       		.byte	0x91
- 1027 0264 67       		.sleb128 -25
- 1028 0265 0F       		.uleb128 0xf
- 1029 0266 34000000 		.4byte	.LASF33
- 1030 026a 01       		.byte	0x1
- 1031 026b 63       		.byte	0x63
- 1032 026c EA000000 		.4byte	0xea
- 1033 0270 02       		.byte	0x2
- 1034 0271 91       		.byte	0x91
- 1035 0272 60       		.sleb128 -32
- 1036 0273 0F       		.uleb128 0xf
- 1037 0274 BA010000 		.4byte	.LASF34
- 1038 0278 01       		.byte	0x1
- 1039 0279 63       		.byte	0x63
- 1040 027a EA000000 		.4byte	0xea
- 1041 027e 02       		.byte	0x2
- 1042 027f 91       		.byte	0x91
- 1043 0280 5C       		.sleb128 -36
- 1044 0281 0F       		.uleb128 0xf
- 1045 0282 E8000000 		.4byte	.LASF35
- 1046 0286 01       		.byte	0x1
- 1047 0287 69       		.byte	0x69
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 23
+ 988 01f7 04       		.byte	0x4
+ 989 01f8 46010000 		.4byte	0x146
+ 990 01fc 09       		.uleb128 0x9
+ 991 01fd 04       		.byte	0x4
+ 992 01fe 9A000000 		.4byte	0x9a
+ 993 0202 0E       		.uleb128 0xe
+ 994 0203 01       		.byte	0x1
+ 995 0204 82020000 		.4byte	.LASF29
+ 996 0208 01       		.byte	0x1
+ 997 0209 54       		.byte	0x54
+ 998 020a 2D010000 		.4byte	0x12d
+ 999 020e 00000000 		.4byte	.LFB37
+ 1000 0212 D4010000 		.4byte	.LFE37
+ 1001 0216 C8000000 		.4byte	.LLST4
+ 1002 021a 01       		.byte	0x1
+ 1003 021b BA020000 		.4byte	0x2ba
+ 1004 021f 0F       		.uleb128 0xf
+ 1005 0220 6C000000 		.4byte	.LASF30
+ 1006 0224 01       		.byte	0x1
+ 1007 0225 57       		.byte	0x57
+ 1008 0226 34010000 		.4byte	0x134
+ 1009 022a 02       		.byte	0x2
+ 1010 022b 91       		.byte	0x91
+ 1011 022c 6E       		.sleb128 -18
+ 1012 022d 10       		.uleb128 0x10
+ 1013 022e 72656400 		.ascii	"red\000"
+ 1014 0232 01       		.byte	0x1
+ 1015 0233 57       		.byte	0x57
+ 1016 0234 34010000 		.4byte	0x134
+ 1017 0238 02       		.byte	0x2
+ 1018 0239 91       		.byte	0x91
+ 1019 023a 6D       		.sleb128 -19
+ 1020 023b 0F       		.uleb128 0xf
+ 1021 023c 0A010000 		.4byte	.LASF31
+ 1022 0240 01       		.byte	0x1
+ 1023 0241 57       		.byte	0x57
+ 1024 0242 34010000 		.4byte	0x134
+ 1025 0246 02       		.byte	0x2
+ 1026 0247 91       		.byte	0x91
+ 1027 0248 6C       		.sleb128 -20
+ 1028 0249 10       		.uleb128 0x10
+ 1029 024a 72657400 		.ascii	"ret\000"
+ 1030 024e 01       		.byte	0x1
+ 1031 024f 60       		.byte	0x60
+ 1032 0250 2D010000 		.4byte	0x12d
+ 1033 0254 02       		.byte	0x2
+ 1034 0255 91       		.byte	0x91
+ 1035 0256 68       		.sleb128 -24
+ 1036 0257 0F       		.uleb128 0xf
+ 1037 0258 2C000000 		.4byte	.LASF32
+ 1038 025c 01       		.byte	0x1
+ 1039 025d 63       		.byte	0x63
+ 1040 025e A1000000 		.4byte	0xa1
+ 1041 0262 02       		.byte	0x2
+ 1042 0263 91       		.byte	0x91
+ 1043 0264 67       		.sleb128 -25
+ 1044 0265 0F       		.uleb128 0xf
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 23
 
 
- 1048 0288 EA000000 		.4byte	0xea
- 1049 028c 02       		.byte	0x2
- 1050 028d 91       		.byte	0x91
- 1051 028e 58       		.sleb128 -40
- 1052 028f 0F       		.uleb128 0xf
- 1053 0290 10010000 		.4byte	.LASF36
- 1054 0294 01       		.byte	0x1
- 1055 0295 69       		.byte	0x69
- 1056 0296 EA000000 		.4byte	0xea
- 1057 029a 02       		.byte	0x2
- 1058 029b 91       		.byte	0x91
- 1059 029c 54       		.sleb128 -44
- 1060 029d 0F       		.uleb128 0xf
- 1061 029e F5010000 		.4byte	.LASF37
- 1062 02a2 01       		.byte	0x1
- 1063 02a3 6D       		.byte	0x6d
- 1064 02a4 A1000000 		.4byte	0xa1
- 1065 02a8 02       		.byte	0x2
- 1066 02a9 91       		.byte	0x91
- 1067 02aa 6F       		.sleb128 -17
- 1068 02ab 0F       		.uleb128 0xf
- 1069 02ac 8A000000 		.4byte	.LASF38
- 1070 02b0 01       		.byte	0x1
- 1071 02b1 71       		.byte	0x71
- 1072 02b2 BA020000 		.4byte	0x2ba
- 1073 02b6 02       		.byte	0x2
- 1074 02b7 91       		.byte	0x91
- 1075 02b8 48       		.sleb128 -56
- 1076 02b9 00       		.byte	0
- 1077 02ba 04       		.uleb128 0x4
- 1078 02bb 93000000 		.4byte	0x93
- 1079 02bf CA020000 		.4byte	0x2ca
- 1080 02c3 05       		.uleb128 0x5
- 1081 02c4 8C000000 		.4byte	0x8c
- 1082 02c8 0A       		.byte	0xa
- 1083 02c9 00       		.byte	0
- 1084 02ca 0E       		.uleb128 0xe
- 1085 02cb 01       		.byte	0x1
- 1086 02cc 33010000 		.4byte	.LASF39
- 1087 02d0 01       		.byte	0x1
- 1088 02d1 A6       		.byte	0xa6
- 1089 02d2 2D010000 		.4byte	0x12d
- 1090 02d6 00000000 		.4byte	.LFB38
- 1091 02da 5C000000 		.4byte	.LFE38
- 1092 02de 00010000 		.4byte	.LLST5
- 1093 02e2 01       		.byte	0x1
- 1094 02e3 F6020000 		.4byte	0x2f6
- 1095 02e7 10       		.uleb128 0x10
- 1096 02e8 76616C00 		.ascii	"val\000"
- 1097 02ec 01       		.byte	0x1
- 1098 02ed A8       		.byte	0xa8
- 1099 02ee A1000000 		.4byte	0xa1
- 1100 02f2 02       		.byte	0x2
- 1101 02f3 91       		.byte	0x91
- 1102 02f4 77       		.sleb128 -9
- 1103 02f5 00       		.byte	0
- 1104 02f6 11       		.uleb128 0x11
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 24
+ 1045 0266 3E000000 		.4byte	.LASF33
+ 1046 026a 01       		.byte	0x1
+ 1047 026b 64       		.byte	0x64
+ 1048 026c EA000000 		.4byte	0xea
+ 1049 0270 02       		.byte	0x2
+ 1050 0271 91       		.byte	0x91
+ 1051 0272 60       		.sleb128 -32
+ 1052 0273 0F       		.uleb128 0xf
+ 1053 0274 C4010000 		.4byte	.LASF34
+ 1054 0278 01       		.byte	0x1
+ 1055 0279 64       		.byte	0x64
+ 1056 027a EA000000 		.4byte	0xea
+ 1057 027e 02       		.byte	0x2
+ 1058 027f 91       		.byte	0x91
+ 1059 0280 5C       		.sleb128 -36
+ 1060 0281 0F       		.uleb128 0xf
+ 1061 0282 F2000000 		.4byte	.LASF35
+ 1062 0286 01       		.byte	0x1
+ 1063 0287 6A       		.byte	0x6a
+ 1064 0288 EA000000 		.4byte	0xea
+ 1065 028c 02       		.byte	0x2
+ 1066 028d 91       		.byte	0x91
+ 1067 028e 58       		.sleb128 -40
+ 1068 028f 0F       		.uleb128 0xf
+ 1069 0290 1A010000 		.4byte	.LASF36
+ 1070 0294 01       		.byte	0x1
+ 1071 0295 6A       		.byte	0x6a
+ 1072 0296 EA000000 		.4byte	0xea
+ 1073 029a 02       		.byte	0x2
+ 1074 029b 91       		.byte	0x91
+ 1075 029c 54       		.sleb128 -44
+ 1076 029d 0F       		.uleb128 0xf
+ 1077 029e FF010000 		.4byte	.LASF37
+ 1078 02a2 01       		.byte	0x1
+ 1079 02a3 6E       		.byte	0x6e
+ 1080 02a4 A1000000 		.4byte	0xa1
+ 1081 02a8 02       		.byte	0x2
+ 1082 02a9 91       		.byte	0x91
+ 1083 02aa 6F       		.sleb128 -17
+ 1084 02ab 0F       		.uleb128 0xf
+ 1085 02ac 94000000 		.4byte	.LASF38
+ 1086 02b0 01       		.byte	0x1
+ 1087 02b1 72       		.byte	0x72
+ 1088 02b2 BA020000 		.4byte	0x2ba
+ 1089 02b6 02       		.byte	0x2
+ 1090 02b7 91       		.byte	0x91
+ 1091 02b8 48       		.sleb128 -56
+ 1092 02b9 00       		.byte	0
+ 1093 02ba 04       		.uleb128 0x4
+ 1094 02bb 93000000 		.4byte	0x93
+ 1095 02bf CA020000 		.4byte	0x2ca
+ 1096 02c3 05       		.uleb128 0x5
+ 1097 02c4 8C000000 		.4byte	0x8c
+ 1098 02c8 0A       		.byte	0xa
+ 1099 02c9 00       		.byte	0
+ 1100 02ca 0E       		.uleb128 0xe
+ 1101 02cb 01       		.byte	0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 24
 
 
- 1105 02f7 01       		.byte	0x1
- 1106 02f8 1D010000 		.4byte	.LASF40
- 1107 02fc 01       		.byte	0x1
- 1108 02fd C0       		.byte	0xc0
- 1109 02fe 2D010000 		.4byte	0x12d
- 1110 0302 00000000 		.4byte	.LFB39
- 1111 0306 34000000 		.4byte	.LFE39
- 1112 030a 38010000 		.4byte	.LLST6
- 1113 030e 01       		.byte	0x1
- 1114 030f 0F       		.uleb128 0xf
- 1115 0310 66010000 		.4byte	.LASF41
- 1116 0314 01       		.byte	0x1
- 1117 0315 0C       		.byte	0xc
- 1118 0316 AF010000 		.4byte	0x1af
- 1119 031a 05       		.byte	0x5
- 1120 031b 03       		.byte	0x3
- 1121 031c 00000000 		.4byte	parametersPtr_
- 1122 0320 0F       		.uleb128 0xf
- 1123 0321 FB010000 		.4byte	.LASF42
- 1124 0325 01       		.byte	0x1
- 1125 0326 0D       		.byte	0xd
- 1126 0327 B5010000 		.4byte	0x1b5
- 1127 032b 05       		.byte	0x5
- 1128 032c 03       		.byte	0x3
- 1129 032d 04000000 		.4byte	bufferPtr_
- 1130 0331 0F       		.uleb128 0xf
- 1131 0332 06010000 		.4byte	.LASF43
- 1132 0336 01       		.byte	0x1
- 1133 0337 0E       		.byte	0xe
- 1134 0338 A1000000 		.4byte	0xa1
- 1135 033c 05       		.byte	0x5
- 1136 033d 03       		.byte	0x3
- 1137 033e 08000000 		.4byte	movement_
- 1138 0342 0F       		.uleb128 0xf
- 1139 0343 29000000 		.4byte	.LASF3
- 1140 0347 01       		.byte	0x1
- 1141 0348 0F       		.byte	0xf
- 1142 0349 A1000000 		.4byte	0xa1
- 1143 034d 05       		.byte	0x5
- 1144 034e 03       		.byte	0x3
- 1145 034f 09000000 		.4byte	dataIndex_
- 1146 0353 0F       		.uleb128 0xf
- 1147 0354 8F000000 		.4byte	.LASF44
- 1148 0358 01       		.byte	0x1
- 1149 0359 11       		.byte	0x11
- 1150 035a 9A000000 		.4byte	0x9a
- 1151 035e 05       		.byte	0x5
- 1152 035f 03       		.byte	0x3
- 1153 0360 0C000000 		.4byte	logDataTimeoutCounter_
- 1154 0364 0F       		.uleb128 0xf
- 1155 0365 00000000 		.4byte	.LASF45
- 1156 0369 01       		.byte	0x1
- 1157 036a 12       		.byte	0x12
- 1158 036b 9A000000 		.4byte	0x9a
- 1159 036f 05       		.byte	0x5
- 1160 0370 03       		.byte	0x3
- 1161 0371 10000000 		.4byte	waterTimeoutCounter_
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 25
+ 1102 02cc 3D010000 		.4byte	.LASF39
+ 1103 02d0 01       		.byte	0x1
+ 1104 02d1 A7       		.byte	0xa7
+ 1105 02d2 2D010000 		.4byte	0x12d
+ 1106 02d6 00000000 		.4byte	.LFB38
+ 1107 02da 68000000 		.4byte	.LFE38
+ 1108 02de 00010000 		.4byte	.LLST5
+ 1109 02e2 01       		.byte	0x1
+ 1110 02e3 F6020000 		.4byte	0x2f6
+ 1111 02e7 10       		.uleb128 0x10
+ 1112 02e8 76616C00 		.ascii	"val\000"
+ 1113 02ec 01       		.byte	0x1
+ 1114 02ed A9       		.byte	0xa9
+ 1115 02ee A1000000 		.4byte	0xa1
+ 1116 02f2 02       		.byte	0x2
+ 1117 02f3 91       		.byte	0x91
+ 1118 02f4 77       		.sleb128 -9
+ 1119 02f5 00       		.byte	0
+ 1120 02f6 11       		.uleb128 0x11
+ 1121 02f7 01       		.byte	0x1
+ 1122 02f8 27010000 		.4byte	.LASF40
+ 1123 02fc 01       		.byte	0x1
+ 1124 02fd C3       		.byte	0xc3
+ 1125 02fe 2D010000 		.4byte	0x12d
+ 1126 0302 00000000 		.4byte	.LFB39
+ 1127 0306 3C000000 		.4byte	.LFE39
+ 1128 030a 38010000 		.4byte	.LLST6
+ 1129 030e 01       		.byte	0x1
+ 1130 030f 0F       		.uleb128 0xf
+ 1131 0310 70010000 		.4byte	.LASF41
+ 1132 0314 01       		.byte	0x1
+ 1133 0315 0C       		.byte	0xc
+ 1134 0316 AF010000 		.4byte	0x1af
+ 1135 031a 05       		.byte	0x5
+ 1136 031b 03       		.byte	0x3
+ 1137 031c 00000000 		.4byte	parametersPtr_
+ 1138 0320 0F       		.uleb128 0xf
+ 1139 0321 05020000 		.4byte	.LASF42
+ 1140 0325 01       		.byte	0x1
+ 1141 0326 0D       		.byte	0xd
+ 1142 0327 B5010000 		.4byte	0x1b5
+ 1143 032b 05       		.byte	0x5
+ 1144 032c 03       		.byte	0x3
+ 1145 032d 04000000 		.4byte	bufferPtr_
+ 1146 0331 0F       		.uleb128 0xf
+ 1147 0332 10010000 		.4byte	.LASF43
+ 1148 0336 01       		.byte	0x1
+ 1149 0337 0E       		.byte	0xe
+ 1150 0338 A1000000 		.4byte	0xa1
+ 1151 033c 05       		.byte	0x5
+ 1152 033d 03       		.byte	0x3
+ 1153 033e 08000000 		.4byte	movement_
+ 1154 0342 0F       		.uleb128 0xf
+ 1155 0343 33000000 		.4byte	.LASF3
+ 1156 0347 01       		.byte	0x1
+ 1157 0348 0F       		.byte	0xf
+ 1158 0349 A1000000 		.4byte	0xa1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 25
 
 
- 1162 0375 00       		.byte	0
- 1163              		.section	.debug_abbrev,"",%progbits
- 1164              	.Ldebug_abbrev0:
- 1165 0000 01       		.uleb128 0x1
- 1166 0001 11       		.uleb128 0x11
- 1167 0002 01       		.byte	0x1
- 1168 0003 25       		.uleb128 0x25
- 1169 0004 0E       		.uleb128 0xe
- 1170 0005 13       		.uleb128 0x13
- 1171 0006 0B       		.uleb128 0xb
- 1172 0007 03       		.uleb128 0x3
- 1173 0008 0E       		.uleb128 0xe
- 1174 0009 1B       		.uleb128 0x1b
- 1175 000a 0E       		.uleb128 0xe
- 1176 000b 55       		.uleb128 0x55
- 1177 000c 06       		.uleb128 0x6
- 1178 000d 11       		.uleb128 0x11
- 1179 000e 01       		.uleb128 0x1
- 1180 000f 52       		.uleb128 0x52
- 1181 0010 01       		.uleb128 0x1
- 1182 0011 10       		.uleb128 0x10
- 1183 0012 06       		.uleb128 0x6
- 1184 0013 00       		.byte	0
- 1185 0014 00       		.byte	0
- 1186 0015 02       		.uleb128 0x2
- 1187 0016 13       		.uleb128 0x13
- 1188 0017 01       		.byte	0x1
- 1189 0018 03       		.uleb128 0x3
- 1190 0019 0E       		.uleb128 0xe
- 1191 001a 0B       		.uleb128 0xb
- 1192 001b 0B       		.uleb128 0xb
- 1193 001c 3A       		.uleb128 0x3a
- 1194 001d 0B       		.uleb128 0xb
- 1195 001e 3B       		.uleb128 0x3b
- 1196 001f 0B       		.uleb128 0xb
- 1197 0020 01       		.uleb128 0x1
- 1198 0021 13       		.uleb128 0x13
- 1199 0022 00       		.byte	0
- 1200 0023 00       		.byte	0
- 1201 0024 03       		.uleb128 0x3
- 1202 0025 0D       		.uleb128 0xd
- 1203 0026 00       		.byte	0
- 1204 0027 03       		.uleb128 0x3
- 1205 0028 0E       		.uleb128 0xe
- 1206 0029 3A       		.uleb128 0x3a
- 1207 002a 0B       		.uleb128 0xb
- 1208 002b 3B       		.uleb128 0x3b
- 1209 002c 0B       		.uleb128 0xb
- 1210 002d 49       		.uleb128 0x49
- 1211 002e 13       		.uleb128 0x13
- 1212 002f 38       		.uleb128 0x38
- 1213 0030 0A       		.uleb128 0xa
- 1214 0031 00       		.byte	0
- 1215 0032 00       		.byte	0
- 1216 0033 04       		.uleb128 0x4
- 1217 0034 01       		.uleb128 0x1
- 1218 0035 01       		.byte	0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 26
+ 1159 034d 05       		.byte	0x5
+ 1160 034e 03       		.byte	0x3
+ 1161 034f 09000000 		.4byte	dataIndex_
+ 1162 0353 0F       		.uleb128 0xf
+ 1163 0354 99000000 		.4byte	.LASF44
+ 1164 0358 01       		.byte	0x1
+ 1165 0359 11       		.byte	0x11
+ 1166 035a 9A000000 		.4byte	0x9a
+ 1167 035e 05       		.byte	0x5
+ 1168 035f 03       		.byte	0x3
+ 1169 0360 0C000000 		.4byte	logDataTimeoutCounter_
+ 1170 0364 0F       		.uleb128 0xf
+ 1171 0365 00000000 		.4byte	.LASF45
+ 1172 0369 01       		.byte	0x1
+ 1173 036a 12       		.byte	0x12
+ 1174 036b 9A000000 		.4byte	0x9a
+ 1175 036f 05       		.byte	0x5
+ 1176 0370 03       		.byte	0x3
+ 1177 0371 10000000 		.4byte	waterTimeoutCounter_
+ 1178 0375 12       		.uleb128 0x12
+ 1179 0376 22000000 		.4byte	.LASF50
+ 1180 037a 05       		.byte	0x5
+ 1181 037b 15       		.byte	0x15
+ 1182 037c A1000000 		.4byte	0xa1
+ 1183 0380 01       		.byte	0x1
+ 1184 0381 05       		.byte	0x5
+ 1185 0382 03       		.byte	0x3
+ 1186 0383 00000000 		.4byte	nextState
+ 1187 0387 00       		.byte	0
+ 1188              		.section	.debug_abbrev,"",%progbits
+ 1189              	.Ldebug_abbrev0:
+ 1190 0000 01       		.uleb128 0x1
+ 1191 0001 11       		.uleb128 0x11
+ 1192 0002 01       		.byte	0x1
+ 1193 0003 25       		.uleb128 0x25
+ 1194 0004 0E       		.uleb128 0xe
+ 1195 0005 13       		.uleb128 0x13
+ 1196 0006 0B       		.uleb128 0xb
+ 1197 0007 03       		.uleb128 0x3
+ 1198 0008 0E       		.uleb128 0xe
+ 1199 0009 1B       		.uleb128 0x1b
+ 1200 000a 0E       		.uleb128 0xe
+ 1201 000b 55       		.uleb128 0x55
+ 1202 000c 06       		.uleb128 0x6
+ 1203 000d 11       		.uleb128 0x11
+ 1204 000e 01       		.uleb128 0x1
+ 1205 000f 52       		.uleb128 0x52
+ 1206 0010 01       		.uleb128 0x1
+ 1207 0011 10       		.uleb128 0x10
+ 1208 0012 06       		.uleb128 0x6
+ 1209 0013 00       		.byte	0
+ 1210 0014 00       		.byte	0
+ 1211 0015 02       		.uleb128 0x2
+ 1212 0016 13       		.uleb128 0x13
+ 1213 0017 01       		.byte	0x1
+ 1214 0018 03       		.uleb128 0x3
+ 1215 0019 0E       		.uleb128 0xe
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 26
 
 
- 1219 0036 49       		.uleb128 0x49
- 1220 0037 13       		.uleb128 0x13
- 1221 0038 01       		.uleb128 0x1
- 1222 0039 13       		.uleb128 0x13
- 1223 003a 00       		.byte	0
- 1224 003b 00       		.byte	0
- 1225 003c 05       		.uleb128 0x5
- 1226 003d 21       		.uleb128 0x21
- 1227 003e 00       		.byte	0
- 1228 003f 49       		.uleb128 0x49
- 1229 0040 13       		.uleb128 0x13
- 1230 0041 2F       		.uleb128 0x2f
- 1231 0042 0B       		.uleb128 0xb
- 1232 0043 00       		.byte	0
- 1233 0044 00       		.byte	0
- 1234 0045 06       		.uleb128 0x6
- 1235 0046 24       		.uleb128 0x24
- 1236 0047 00       		.byte	0
- 1237 0048 0B       		.uleb128 0xb
- 1238 0049 0B       		.uleb128 0xb
- 1239 004a 3E       		.uleb128 0x3e
- 1240 004b 0B       		.uleb128 0xb
- 1241 004c 03       		.uleb128 0x3
- 1242 004d 0E       		.uleb128 0xe
- 1243 004e 00       		.byte	0
- 1244 004f 00       		.byte	0
- 1245 0050 07       		.uleb128 0x7
- 1246 0051 16       		.uleb128 0x16
- 1247 0052 00       		.byte	0
- 1248 0053 03       		.uleb128 0x3
- 1249 0054 0E       		.uleb128 0xe
- 1250 0055 3A       		.uleb128 0x3a
- 1251 0056 0B       		.uleb128 0xb
- 1252 0057 3B       		.uleb128 0x3b
- 1253 0058 0B       		.uleb128 0xb
- 1254 0059 49       		.uleb128 0x49
- 1255 005a 13       		.uleb128 0x13
- 1256 005b 00       		.byte	0
- 1257 005c 00       		.byte	0
- 1258 005d 08       		.uleb128 0x8
- 1259 005e 24       		.uleb128 0x24
- 1260 005f 00       		.byte	0
- 1261 0060 0B       		.uleb128 0xb
- 1262 0061 0B       		.uleb128 0xb
- 1263 0062 3E       		.uleb128 0x3e
- 1264 0063 0B       		.uleb128 0xb
- 1265 0064 03       		.uleb128 0x3
- 1266 0065 08       		.uleb128 0x8
- 1267 0066 00       		.byte	0
- 1268 0067 00       		.byte	0
- 1269 0068 09       		.uleb128 0x9
- 1270 0069 0F       		.uleb128 0xf
- 1271 006a 00       		.byte	0
- 1272 006b 0B       		.uleb128 0xb
- 1273 006c 0B       		.uleb128 0xb
- 1274 006d 49       		.uleb128 0x49
- 1275 006e 13       		.uleb128 0x13
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 27
+ 1216 001a 0B       		.uleb128 0xb
+ 1217 001b 0B       		.uleb128 0xb
+ 1218 001c 3A       		.uleb128 0x3a
+ 1219 001d 0B       		.uleb128 0xb
+ 1220 001e 3B       		.uleb128 0x3b
+ 1221 001f 0B       		.uleb128 0xb
+ 1222 0020 01       		.uleb128 0x1
+ 1223 0021 13       		.uleb128 0x13
+ 1224 0022 00       		.byte	0
+ 1225 0023 00       		.byte	0
+ 1226 0024 03       		.uleb128 0x3
+ 1227 0025 0D       		.uleb128 0xd
+ 1228 0026 00       		.byte	0
+ 1229 0027 03       		.uleb128 0x3
+ 1230 0028 0E       		.uleb128 0xe
+ 1231 0029 3A       		.uleb128 0x3a
+ 1232 002a 0B       		.uleb128 0xb
+ 1233 002b 3B       		.uleb128 0x3b
+ 1234 002c 0B       		.uleb128 0xb
+ 1235 002d 49       		.uleb128 0x49
+ 1236 002e 13       		.uleb128 0x13
+ 1237 002f 38       		.uleb128 0x38
+ 1238 0030 0A       		.uleb128 0xa
+ 1239 0031 00       		.byte	0
+ 1240 0032 00       		.byte	0
+ 1241 0033 04       		.uleb128 0x4
+ 1242 0034 01       		.uleb128 0x1
+ 1243 0035 01       		.byte	0x1
+ 1244 0036 49       		.uleb128 0x49
+ 1245 0037 13       		.uleb128 0x13
+ 1246 0038 01       		.uleb128 0x1
+ 1247 0039 13       		.uleb128 0x13
+ 1248 003a 00       		.byte	0
+ 1249 003b 00       		.byte	0
+ 1250 003c 05       		.uleb128 0x5
+ 1251 003d 21       		.uleb128 0x21
+ 1252 003e 00       		.byte	0
+ 1253 003f 49       		.uleb128 0x49
+ 1254 0040 13       		.uleb128 0x13
+ 1255 0041 2F       		.uleb128 0x2f
+ 1256 0042 0B       		.uleb128 0xb
+ 1257 0043 00       		.byte	0
+ 1258 0044 00       		.byte	0
+ 1259 0045 06       		.uleb128 0x6
+ 1260 0046 24       		.uleb128 0x24
+ 1261 0047 00       		.byte	0
+ 1262 0048 0B       		.uleb128 0xb
+ 1263 0049 0B       		.uleb128 0xb
+ 1264 004a 3E       		.uleb128 0x3e
+ 1265 004b 0B       		.uleb128 0xb
+ 1266 004c 03       		.uleb128 0x3
+ 1267 004d 0E       		.uleb128 0xe
+ 1268 004e 00       		.byte	0
+ 1269 004f 00       		.byte	0
+ 1270 0050 07       		.uleb128 0x7
+ 1271 0051 16       		.uleb128 0x16
+ 1272 0052 00       		.byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 27
 
 
- 1276 006f 00       		.byte	0
- 1277 0070 00       		.byte	0
- 1278 0071 0A       		.uleb128 0xa
- 1279 0072 2E       		.uleb128 0x2e
- 1280 0073 00       		.byte	0
- 1281 0074 3F       		.uleb128 0x3f
- 1282 0075 0C       		.uleb128 0xc
- 1283 0076 03       		.uleb128 0x3
- 1284 0077 0E       		.uleb128 0xe
- 1285 0078 3A       		.uleb128 0x3a
- 1286 0079 0B       		.uleb128 0xb
- 1287 007a 3B       		.uleb128 0x3b
- 1288 007b 0B       		.uleb128 0xb
- 1289 007c 27       		.uleb128 0x27
- 1290 007d 0C       		.uleb128 0xc
- 1291 007e 11       		.uleb128 0x11
- 1292 007f 01       		.uleb128 0x1
- 1293 0080 12       		.uleb128 0x12
- 1294 0081 01       		.uleb128 0x1
- 1295 0082 40       		.uleb128 0x40
- 1296 0083 06       		.uleb128 0x6
- 1297 0084 9642     		.uleb128 0x2116
- 1298 0086 0C       		.uleb128 0xc
- 1299 0087 00       		.byte	0
- 1300 0088 00       		.byte	0
- 1301 0089 0B       		.uleb128 0xb
- 1302 008a 2E       		.uleb128 0x2e
- 1303 008b 01       		.byte	0x1
- 1304 008c 3F       		.uleb128 0x3f
- 1305 008d 0C       		.uleb128 0xc
- 1306 008e 03       		.uleb128 0x3
- 1307 008f 0E       		.uleb128 0xe
- 1308 0090 3A       		.uleb128 0x3a
- 1309 0091 0B       		.uleb128 0xb
- 1310 0092 3B       		.uleb128 0x3b
- 1311 0093 0B       		.uleb128 0xb
- 1312 0094 27       		.uleb128 0x27
- 1313 0095 0C       		.uleb128 0xc
- 1314 0096 11       		.uleb128 0x11
- 1315 0097 01       		.uleb128 0x1
- 1316 0098 12       		.uleb128 0x12
- 1317 0099 01       		.uleb128 0x1
- 1318 009a 40       		.uleb128 0x40
- 1319 009b 06       		.uleb128 0x6
- 1320 009c 9642     		.uleb128 0x2116
- 1321 009e 0C       		.uleb128 0xc
- 1322 009f 01       		.uleb128 0x1
- 1323 00a0 13       		.uleb128 0x13
- 1324 00a1 00       		.byte	0
- 1325 00a2 00       		.byte	0
- 1326 00a3 0C       		.uleb128 0xc
- 1327 00a4 05       		.uleb128 0x5
- 1328 00a5 00       		.byte	0
- 1329 00a6 03       		.uleb128 0x3
- 1330 00a7 08       		.uleb128 0x8
- 1331 00a8 3A       		.uleb128 0x3a
- 1332 00a9 0B       		.uleb128 0xb
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 28
+ 1273 0053 03       		.uleb128 0x3
+ 1274 0054 0E       		.uleb128 0xe
+ 1275 0055 3A       		.uleb128 0x3a
+ 1276 0056 0B       		.uleb128 0xb
+ 1277 0057 3B       		.uleb128 0x3b
+ 1278 0058 0B       		.uleb128 0xb
+ 1279 0059 49       		.uleb128 0x49
+ 1280 005a 13       		.uleb128 0x13
+ 1281 005b 00       		.byte	0
+ 1282 005c 00       		.byte	0
+ 1283 005d 08       		.uleb128 0x8
+ 1284 005e 24       		.uleb128 0x24
+ 1285 005f 00       		.byte	0
+ 1286 0060 0B       		.uleb128 0xb
+ 1287 0061 0B       		.uleb128 0xb
+ 1288 0062 3E       		.uleb128 0x3e
+ 1289 0063 0B       		.uleb128 0xb
+ 1290 0064 03       		.uleb128 0x3
+ 1291 0065 08       		.uleb128 0x8
+ 1292 0066 00       		.byte	0
+ 1293 0067 00       		.byte	0
+ 1294 0068 09       		.uleb128 0x9
+ 1295 0069 0F       		.uleb128 0xf
+ 1296 006a 00       		.byte	0
+ 1297 006b 0B       		.uleb128 0xb
+ 1298 006c 0B       		.uleb128 0xb
+ 1299 006d 49       		.uleb128 0x49
+ 1300 006e 13       		.uleb128 0x13
+ 1301 006f 00       		.byte	0
+ 1302 0070 00       		.byte	0
+ 1303 0071 0A       		.uleb128 0xa
+ 1304 0072 2E       		.uleb128 0x2e
+ 1305 0073 00       		.byte	0
+ 1306 0074 3F       		.uleb128 0x3f
+ 1307 0075 0C       		.uleb128 0xc
+ 1308 0076 03       		.uleb128 0x3
+ 1309 0077 0E       		.uleb128 0xe
+ 1310 0078 3A       		.uleb128 0x3a
+ 1311 0079 0B       		.uleb128 0xb
+ 1312 007a 3B       		.uleb128 0x3b
+ 1313 007b 0B       		.uleb128 0xb
+ 1314 007c 27       		.uleb128 0x27
+ 1315 007d 0C       		.uleb128 0xc
+ 1316 007e 11       		.uleb128 0x11
+ 1317 007f 01       		.uleb128 0x1
+ 1318 0080 12       		.uleb128 0x12
+ 1319 0081 01       		.uleb128 0x1
+ 1320 0082 40       		.uleb128 0x40
+ 1321 0083 06       		.uleb128 0x6
+ 1322 0084 9642     		.uleb128 0x2116
+ 1323 0086 0C       		.uleb128 0xc
+ 1324 0087 00       		.byte	0
+ 1325 0088 00       		.byte	0
+ 1326 0089 0B       		.uleb128 0xb
+ 1327 008a 2E       		.uleb128 0x2e
+ 1328 008b 01       		.byte	0x1
+ 1329 008c 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 28
 
 
- 1333 00aa 3B       		.uleb128 0x3b
- 1334 00ab 0B       		.uleb128 0xb
- 1335 00ac 49       		.uleb128 0x49
- 1336 00ad 13       		.uleb128 0x13
- 1337 00ae 02       		.uleb128 0x2
- 1338 00af 0A       		.uleb128 0xa
- 1339 00b0 00       		.byte	0
- 1340 00b1 00       		.byte	0
- 1341 00b2 0D       		.uleb128 0xd
- 1342 00b3 2E       		.uleb128 0x2e
- 1343 00b4 01       		.byte	0x1
- 1344 00b5 3F       		.uleb128 0x3f
- 1345 00b6 0C       		.uleb128 0xc
- 1346 00b7 03       		.uleb128 0x3
- 1347 00b8 0E       		.uleb128 0xe
- 1348 00b9 3A       		.uleb128 0x3a
- 1349 00ba 0B       		.uleb128 0xb
- 1350 00bb 3B       		.uleb128 0x3b
- 1351 00bc 0B       		.uleb128 0xb
- 1352 00bd 27       		.uleb128 0x27
- 1353 00be 0C       		.uleb128 0xc
- 1354 00bf 49       		.uleb128 0x49
- 1355 00c0 13       		.uleb128 0x13
- 1356 00c1 11       		.uleb128 0x11
- 1357 00c2 01       		.uleb128 0x1
- 1358 00c3 12       		.uleb128 0x12
- 1359 00c4 01       		.uleb128 0x1
- 1360 00c5 40       		.uleb128 0x40
- 1361 00c6 06       		.uleb128 0x6
- 1362 00c7 9642     		.uleb128 0x2116
- 1363 00c9 0C       		.uleb128 0xc
- 1364 00ca 01       		.uleb128 0x1
- 1365 00cb 13       		.uleb128 0x13
- 1366 00cc 00       		.byte	0
- 1367 00cd 00       		.byte	0
- 1368 00ce 0E       		.uleb128 0xe
- 1369 00cf 2E       		.uleb128 0x2e
- 1370 00d0 01       		.byte	0x1
- 1371 00d1 3F       		.uleb128 0x3f
- 1372 00d2 0C       		.uleb128 0xc
- 1373 00d3 03       		.uleb128 0x3
- 1374 00d4 0E       		.uleb128 0xe
- 1375 00d5 3A       		.uleb128 0x3a
- 1376 00d6 0B       		.uleb128 0xb
- 1377 00d7 3B       		.uleb128 0x3b
- 1378 00d8 0B       		.uleb128 0xb
- 1379 00d9 49       		.uleb128 0x49
- 1380 00da 13       		.uleb128 0x13
- 1381 00db 11       		.uleb128 0x11
- 1382 00dc 01       		.uleb128 0x1
- 1383 00dd 12       		.uleb128 0x12
- 1384 00de 01       		.uleb128 0x1
- 1385 00df 40       		.uleb128 0x40
- 1386 00e0 06       		.uleb128 0x6
- 1387 00e1 9642     		.uleb128 0x2116
- 1388 00e3 0C       		.uleb128 0xc
- 1389 00e4 01       		.uleb128 0x1
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 29
+ 1330 008d 0C       		.uleb128 0xc
+ 1331 008e 03       		.uleb128 0x3
+ 1332 008f 0E       		.uleb128 0xe
+ 1333 0090 3A       		.uleb128 0x3a
+ 1334 0091 0B       		.uleb128 0xb
+ 1335 0092 3B       		.uleb128 0x3b
+ 1336 0093 0B       		.uleb128 0xb
+ 1337 0094 27       		.uleb128 0x27
+ 1338 0095 0C       		.uleb128 0xc
+ 1339 0096 11       		.uleb128 0x11
+ 1340 0097 01       		.uleb128 0x1
+ 1341 0098 12       		.uleb128 0x12
+ 1342 0099 01       		.uleb128 0x1
+ 1343 009a 40       		.uleb128 0x40
+ 1344 009b 06       		.uleb128 0x6
+ 1345 009c 9642     		.uleb128 0x2116
+ 1346 009e 0C       		.uleb128 0xc
+ 1347 009f 01       		.uleb128 0x1
+ 1348 00a0 13       		.uleb128 0x13
+ 1349 00a1 00       		.byte	0
+ 1350 00a2 00       		.byte	0
+ 1351 00a3 0C       		.uleb128 0xc
+ 1352 00a4 05       		.uleb128 0x5
+ 1353 00a5 00       		.byte	0
+ 1354 00a6 03       		.uleb128 0x3
+ 1355 00a7 08       		.uleb128 0x8
+ 1356 00a8 3A       		.uleb128 0x3a
+ 1357 00a9 0B       		.uleb128 0xb
+ 1358 00aa 3B       		.uleb128 0x3b
+ 1359 00ab 0B       		.uleb128 0xb
+ 1360 00ac 49       		.uleb128 0x49
+ 1361 00ad 13       		.uleb128 0x13
+ 1362 00ae 02       		.uleb128 0x2
+ 1363 00af 0A       		.uleb128 0xa
+ 1364 00b0 00       		.byte	0
+ 1365 00b1 00       		.byte	0
+ 1366 00b2 0D       		.uleb128 0xd
+ 1367 00b3 2E       		.uleb128 0x2e
+ 1368 00b4 01       		.byte	0x1
+ 1369 00b5 3F       		.uleb128 0x3f
+ 1370 00b6 0C       		.uleb128 0xc
+ 1371 00b7 03       		.uleb128 0x3
+ 1372 00b8 0E       		.uleb128 0xe
+ 1373 00b9 3A       		.uleb128 0x3a
+ 1374 00ba 0B       		.uleb128 0xb
+ 1375 00bb 3B       		.uleb128 0x3b
+ 1376 00bc 0B       		.uleb128 0xb
+ 1377 00bd 27       		.uleb128 0x27
+ 1378 00be 0C       		.uleb128 0xc
+ 1379 00bf 49       		.uleb128 0x49
+ 1380 00c0 13       		.uleb128 0x13
+ 1381 00c1 11       		.uleb128 0x11
+ 1382 00c2 01       		.uleb128 0x1
+ 1383 00c3 12       		.uleb128 0x12
+ 1384 00c4 01       		.uleb128 0x1
+ 1385 00c5 40       		.uleb128 0x40
+ 1386 00c6 06       		.uleb128 0x6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 29
 
 
- 1390 00e5 13       		.uleb128 0x13
- 1391 00e6 00       		.byte	0
- 1392 00e7 00       		.byte	0
- 1393 00e8 0F       		.uleb128 0xf
- 1394 00e9 34       		.uleb128 0x34
- 1395 00ea 00       		.byte	0
- 1396 00eb 03       		.uleb128 0x3
- 1397 00ec 0E       		.uleb128 0xe
- 1398 00ed 3A       		.uleb128 0x3a
- 1399 00ee 0B       		.uleb128 0xb
- 1400 00ef 3B       		.uleb128 0x3b
- 1401 00f0 0B       		.uleb128 0xb
- 1402 00f1 49       		.uleb128 0x49
- 1403 00f2 13       		.uleb128 0x13
- 1404 00f3 02       		.uleb128 0x2
- 1405 00f4 0A       		.uleb128 0xa
- 1406 00f5 00       		.byte	0
- 1407 00f6 00       		.byte	0
- 1408 00f7 10       		.uleb128 0x10
- 1409 00f8 34       		.uleb128 0x34
- 1410 00f9 00       		.byte	0
- 1411 00fa 03       		.uleb128 0x3
- 1412 00fb 08       		.uleb128 0x8
- 1413 00fc 3A       		.uleb128 0x3a
- 1414 00fd 0B       		.uleb128 0xb
- 1415 00fe 3B       		.uleb128 0x3b
- 1416 00ff 0B       		.uleb128 0xb
- 1417 0100 49       		.uleb128 0x49
- 1418 0101 13       		.uleb128 0x13
- 1419 0102 02       		.uleb128 0x2
- 1420 0103 0A       		.uleb128 0xa
- 1421 0104 00       		.byte	0
- 1422 0105 00       		.byte	0
- 1423 0106 11       		.uleb128 0x11
- 1424 0107 2E       		.uleb128 0x2e
- 1425 0108 00       		.byte	0
- 1426 0109 3F       		.uleb128 0x3f
- 1427 010a 0C       		.uleb128 0xc
- 1428 010b 03       		.uleb128 0x3
- 1429 010c 0E       		.uleb128 0xe
- 1430 010d 3A       		.uleb128 0x3a
- 1431 010e 0B       		.uleb128 0xb
- 1432 010f 3B       		.uleb128 0x3b
- 1433 0110 0B       		.uleb128 0xb
- 1434 0111 49       		.uleb128 0x49
- 1435 0112 13       		.uleb128 0x13
- 1436 0113 11       		.uleb128 0x11
- 1437 0114 01       		.uleb128 0x1
- 1438 0115 12       		.uleb128 0x12
- 1439 0116 01       		.uleb128 0x1
- 1440 0117 40       		.uleb128 0x40
- 1441 0118 06       		.uleb128 0x6
- 1442 0119 9642     		.uleb128 0x2116
- 1443 011b 0C       		.uleb128 0xc
- 1444 011c 00       		.byte	0
- 1445 011d 00       		.byte	0
- 1446 011e 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 30
+ 1387 00c7 9642     		.uleb128 0x2116
+ 1388 00c9 0C       		.uleb128 0xc
+ 1389 00ca 01       		.uleb128 0x1
+ 1390 00cb 13       		.uleb128 0x13
+ 1391 00cc 00       		.byte	0
+ 1392 00cd 00       		.byte	0
+ 1393 00ce 0E       		.uleb128 0xe
+ 1394 00cf 2E       		.uleb128 0x2e
+ 1395 00d0 01       		.byte	0x1
+ 1396 00d1 3F       		.uleb128 0x3f
+ 1397 00d2 0C       		.uleb128 0xc
+ 1398 00d3 03       		.uleb128 0x3
+ 1399 00d4 0E       		.uleb128 0xe
+ 1400 00d5 3A       		.uleb128 0x3a
+ 1401 00d6 0B       		.uleb128 0xb
+ 1402 00d7 3B       		.uleb128 0x3b
+ 1403 00d8 0B       		.uleb128 0xb
+ 1404 00d9 49       		.uleb128 0x49
+ 1405 00da 13       		.uleb128 0x13
+ 1406 00db 11       		.uleb128 0x11
+ 1407 00dc 01       		.uleb128 0x1
+ 1408 00dd 12       		.uleb128 0x12
+ 1409 00de 01       		.uleb128 0x1
+ 1410 00df 40       		.uleb128 0x40
+ 1411 00e0 06       		.uleb128 0x6
+ 1412 00e1 9642     		.uleb128 0x2116
+ 1413 00e3 0C       		.uleb128 0xc
+ 1414 00e4 01       		.uleb128 0x1
+ 1415 00e5 13       		.uleb128 0x13
+ 1416 00e6 00       		.byte	0
+ 1417 00e7 00       		.byte	0
+ 1418 00e8 0F       		.uleb128 0xf
+ 1419 00e9 34       		.uleb128 0x34
+ 1420 00ea 00       		.byte	0
+ 1421 00eb 03       		.uleb128 0x3
+ 1422 00ec 0E       		.uleb128 0xe
+ 1423 00ed 3A       		.uleb128 0x3a
+ 1424 00ee 0B       		.uleb128 0xb
+ 1425 00ef 3B       		.uleb128 0x3b
+ 1426 00f0 0B       		.uleb128 0xb
+ 1427 00f1 49       		.uleb128 0x49
+ 1428 00f2 13       		.uleb128 0x13
+ 1429 00f3 02       		.uleb128 0x2
+ 1430 00f4 0A       		.uleb128 0xa
+ 1431 00f5 00       		.byte	0
+ 1432 00f6 00       		.byte	0
+ 1433 00f7 10       		.uleb128 0x10
+ 1434 00f8 34       		.uleb128 0x34
+ 1435 00f9 00       		.byte	0
+ 1436 00fa 03       		.uleb128 0x3
+ 1437 00fb 08       		.uleb128 0x8
+ 1438 00fc 3A       		.uleb128 0x3a
+ 1439 00fd 0B       		.uleb128 0xb
+ 1440 00fe 3B       		.uleb128 0x3b
+ 1441 00ff 0B       		.uleb128 0xb
+ 1442 0100 49       		.uleb128 0x49
+ 1443 0101 13       		.uleb128 0x13
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 30
 
 
- 1447              		.section	.debug_loc,"",%progbits
- 1448              	.Ldebug_loc0:
- 1449              	.LLST0:
- 1450 0000 00000000 		.4byte	.LFB33
- 1451 0004 02000000 		.4byte	.LCFI0
- 1452 0008 0200     		.2byte	0x2
- 1453 000a 7D       		.byte	0x7d
- 1454 000b 00       		.sleb128 0
- 1455 000c 02000000 		.4byte	.LCFI0
- 1456 0010 04000000 		.4byte	.LCFI1
- 1457 0014 0200     		.2byte	0x2
- 1458 0016 7D       		.byte	0x7d
- 1459 0017 10       		.sleb128 16
- 1460 0018 04000000 		.4byte	.LCFI1
- 1461 001c 4C000000 		.4byte	.LFE33
- 1462 0020 0200     		.2byte	0x2
- 1463 0022 77       		.byte	0x77
- 1464 0023 10       		.sleb128 16
- 1465 0024 00000000 		.4byte	0
- 1466 0028 00000000 		.4byte	0
- 1467              	.LLST1:
- 1468 002c 00000000 		.4byte	.LFB34
- 1469 0030 02000000 		.4byte	.LCFI2
- 1470 0034 0200     		.2byte	0x2
- 1471 0036 7D       		.byte	0x7d
- 1472 0037 00       		.sleb128 0
- 1473 0038 02000000 		.4byte	.LCFI2
- 1474 003c 04000000 		.4byte	.LCFI3
- 1475 0040 0200     		.2byte	0x2
- 1476 0042 7D       		.byte	0x7d
- 1477 0043 10       		.sleb128 16
- 1478 0044 04000000 		.4byte	.LCFI3
- 1479 0048 4C000000 		.4byte	.LFE34
- 1480 004c 0200     		.2byte	0x2
- 1481 004e 77       		.byte	0x77
- 1482 004f 10       		.sleb128 16
- 1483 0050 00000000 		.4byte	0
- 1484 0054 00000000 		.4byte	0
- 1485              	.LLST2:
- 1486 0058 00000000 		.4byte	.LFB35
- 1487 005c 02000000 		.4byte	.LCFI4
- 1488 0060 0200     		.2byte	0x2
- 1489 0062 7D       		.byte	0x7d
- 1490 0063 00       		.sleb128 0
- 1491 0064 02000000 		.4byte	.LCFI4
- 1492 0068 04000000 		.4byte	.LCFI5
- 1493 006c 0200     		.2byte	0x2
- 1494 006e 7D       		.byte	0x7d
- 1495 006f 08       		.sleb128 8
- 1496 0070 04000000 		.4byte	.LCFI5
- 1497 0074 06000000 		.4byte	.LCFI6
- 1498 0078 0200     		.2byte	0x2
- 1499 007a 7D       		.byte	0x7d
- 1500 007b 10       		.sleb128 16
- 1501 007c 06000000 		.4byte	.LCFI6
- 1502 0080 74000000 		.4byte	.LFE35
- 1503 0084 0200     		.2byte	0x2
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 31
+ 1444 0102 02       		.uleb128 0x2
+ 1445 0103 0A       		.uleb128 0xa
+ 1446 0104 00       		.byte	0
+ 1447 0105 00       		.byte	0
+ 1448 0106 11       		.uleb128 0x11
+ 1449 0107 2E       		.uleb128 0x2e
+ 1450 0108 00       		.byte	0
+ 1451 0109 3F       		.uleb128 0x3f
+ 1452 010a 0C       		.uleb128 0xc
+ 1453 010b 03       		.uleb128 0x3
+ 1454 010c 0E       		.uleb128 0xe
+ 1455 010d 3A       		.uleb128 0x3a
+ 1456 010e 0B       		.uleb128 0xb
+ 1457 010f 3B       		.uleb128 0x3b
+ 1458 0110 0B       		.uleb128 0xb
+ 1459 0111 49       		.uleb128 0x49
+ 1460 0112 13       		.uleb128 0x13
+ 1461 0113 11       		.uleb128 0x11
+ 1462 0114 01       		.uleb128 0x1
+ 1463 0115 12       		.uleb128 0x12
+ 1464 0116 01       		.uleb128 0x1
+ 1465 0117 40       		.uleb128 0x40
+ 1466 0118 06       		.uleb128 0x6
+ 1467 0119 9642     		.uleb128 0x2116
+ 1468 011b 0C       		.uleb128 0xc
+ 1469 011c 00       		.byte	0
+ 1470 011d 00       		.byte	0
+ 1471 011e 12       		.uleb128 0x12
+ 1472 011f 34       		.uleb128 0x34
+ 1473 0120 00       		.byte	0
+ 1474 0121 03       		.uleb128 0x3
+ 1475 0122 0E       		.uleb128 0xe
+ 1476 0123 3A       		.uleb128 0x3a
+ 1477 0124 0B       		.uleb128 0xb
+ 1478 0125 3B       		.uleb128 0x3b
+ 1479 0126 0B       		.uleb128 0xb
+ 1480 0127 49       		.uleb128 0x49
+ 1481 0128 13       		.uleb128 0x13
+ 1482 0129 3F       		.uleb128 0x3f
+ 1483 012a 0C       		.uleb128 0xc
+ 1484 012b 02       		.uleb128 0x2
+ 1485 012c 0A       		.uleb128 0xa
+ 1486 012d 00       		.byte	0
+ 1487 012e 00       		.byte	0
+ 1488 012f 00       		.byte	0
+ 1489              		.section	.debug_loc,"",%progbits
+ 1490              	.Ldebug_loc0:
+ 1491              	.LLST0:
+ 1492 0000 00000000 		.4byte	.LFB33
+ 1493 0004 02000000 		.4byte	.LCFI0
+ 1494 0008 0200     		.2byte	0x2
+ 1495 000a 7D       		.byte	0x7d
+ 1496 000b 00       		.sleb128 0
+ 1497 000c 02000000 		.4byte	.LCFI0
+ 1498 0010 04000000 		.4byte	.LCFI1
+ 1499 0014 0200     		.2byte	0x2
+ 1500 0016 7D       		.byte	0x7d
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 31
 
 
- 1504 0086 77       		.byte	0x77
- 1505 0087 10       		.sleb128 16
- 1506 0088 00000000 		.4byte	0
- 1507 008c 00000000 		.4byte	0
- 1508              	.LLST3:
- 1509 0090 00000000 		.4byte	.LFB36
- 1510 0094 02000000 		.4byte	.LCFI7
- 1511 0098 0200     		.2byte	0x2
- 1512 009a 7D       		.byte	0x7d
- 1513 009b 00       		.sleb128 0
- 1514 009c 02000000 		.4byte	.LCFI7
- 1515 00a0 04000000 		.4byte	.LCFI8
- 1516 00a4 0200     		.2byte	0x2
- 1517 00a6 7D       		.byte	0x7d
- 1518 00a7 08       		.sleb128 8
- 1519 00a8 04000000 		.4byte	.LCFI8
- 1520 00ac 06000000 		.4byte	.LCFI9
- 1521 00b0 0200     		.2byte	0x2
- 1522 00b2 7D       		.byte	0x7d
- 1523 00b3 10       		.sleb128 16
- 1524 00b4 06000000 		.4byte	.LCFI9
- 1525 00b8 34000000 		.4byte	.LFE36
- 1526 00bc 0200     		.2byte	0x2
- 1527 00be 77       		.byte	0x77
- 1528 00bf 10       		.sleb128 16
- 1529 00c0 00000000 		.4byte	0
- 1530 00c4 00000000 		.4byte	0
- 1531              	.LLST4:
- 1532 00c8 00000000 		.4byte	.LFB37
- 1533 00cc 02000000 		.4byte	.LCFI10
- 1534 00d0 0200     		.2byte	0x2
- 1535 00d2 7D       		.byte	0x7d
- 1536 00d3 00       		.sleb128 0
- 1537 00d4 02000000 		.4byte	.LCFI10
- 1538 00d8 04000000 		.4byte	.LCFI11
- 1539 00dc 0200     		.2byte	0x2
- 1540 00de 7D       		.byte	0x7d
- 1541 00df 0C       		.sleb128 12
- 1542 00e0 04000000 		.4byte	.LCFI11
- 1543 00e4 06000000 		.4byte	.LCFI12
- 1544 00e8 0200     		.2byte	0x2
- 1545 00ea 7D       		.byte	0x7d
- 1546 00eb 38       		.sleb128 56
- 1547 00ec 06000000 		.4byte	.LCFI12
- 1548 00f0 D4010000 		.4byte	.LFE37
- 1549 00f4 0200     		.2byte	0x2
- 1550 00f6 77       		.byte	0x77
- 1551 00f7 38       		.sleb128 56
- 1552 00f8 00000000 		.4byte	0
- 1553 00fc 00000000 		.4byte	0
- 1554              	.LLST5:
- 1555 0100 00000000 		.4byte	.LFB38
- 1556 0104 02000000 		.4byte	.LCFI13
- 1557 0108 0200     		.2byte	0x2
- 1558 010a 7D       		.byte	0x7d
- 1559 010b 00       		.sleb128 0
- 1560 010c 02000000 		.4byte	.LCFI13
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 32
+ 1501 0017 10       		.sleb128 16
+ 1502 0018 04000000 		.4byte	.LCFI1
+ 1503 001c 4C000000 		.4byte	.LFE33
+ 1504 0020 0200     		.2byte	0x2
+ 1505 0022 77       		.byte	0x77
+ 1506 0023 10       		.sleb128 16
+ 1507 0024 00000000 		.4byte	0
+ 1508 0028 00000000 		.4byte	0
+ 1509              	.LLST1:
+ 1510 002c 00000000 		.4byte	.LFB34
+ 1511 0030 02000000 		.4byte	.LCFI2
+ 1512 0034 0200     		.2byte	0x2
+ 1513 0036 7D       		.byte	0x7d
+ 1514 0037 00       		.sleb128 0
+ 1515 0038 02000000 		.4byte	.LCFI2
+ 1516 003c 04000000 		.4byte	.LCFI3
+ 1517 0040 0200     		.2byte	0x2
+ 1518 0042 7D       		.byte	0x7d
+ 1519 0043 10       		.sleb128 16
+ 1520 0044 04000000 		.4byte	.LCFI3
+ 1521 0048 4C000000 		.4byte	.LFE34
+ 1522 004c 0200     		.2byte	0x2
+ 1523 004e 77       		.byte	0x77
+ 1524 004f 10       		.sleb128 16
+ 1525 0050 00000000 		.4byte	0
+ 1526 0054 00000000 		.4byte	0
+ 1527              	.LLST2:
+ 1528 0058 00000000 		.4byte	.LFB35
+ 1529 005c 02000000 		.4byte	.LCFI4
+ 1530 0060 0200     		.2byte	0x2
+ 1531 0062 7D       		.byte	0x7d
+ 1532 0063 00       		.sleb128 0
+ 1533 0064 02000000 		.4byte	.LCFI4
+ 1534 0068 04000000 		.4byte	.LCFI5
+ 1535 006c 0200     		.2byte	0x2
+ 1536 006e 7D       		.byte	0x7d
+ 1537 006f 08       		.sleb128 8
+ 1538 0070 04000000 		.4byte	.LCFI5
+ 1539 0074 06000000 		.4byte	.LCFI6
+ 1540 0078 0200     		.2byte	0x2
+ 1541 007a 7D       		.byte	0x7d
+ 1542 007b 10       		.sleb128 16
+ 1543 007c 06000000 		.4byte	.LCFI6
+ 1544 0080 80000000 		.4byte	.LFE35
+ 1545 0084 0200     		.2byte	0x2
+ 1546 0086 77       		.byte	0x77
+ 1547 0087 10       		.sleb128 16
+ 1548 0088 00000000 		.4byte	0
+ 1549 008c 00000000 		.4byte	0
+ 1550              	.LLST3:
+ 1551 0090 00000000 		.4byte	.LFB36
+ 1552 0094 02000000 		.4byte	.LCFI7
+ 1553 0098 0200     		.2byte	0x2
+ 1554 009a 7D       		.byte	0x7d
+ 1555 009b 00       		.sleb128 0
+ 1556 009c 02000000 		.4byte	.LCFI7
+ 1557 00a0 04000000 		.4byte	.LCFI8
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 32
 
 
- 1561 0110 04000000 		.4byte	.LCFI14
- 1562 0114 0200     		.2byte	0x2
- 1563 0116 7D       		.byte	0x7d
- 1564 0117 08       		.sleb128 8
- 1565 0118 04000000 		.4byte	.LCFI14
- 1566 011c 06000000 		.4byte	.LCFI15
- 1567 0120 0200     		.2byte	0x2
- 1568 0122 7D       		.byte	0x7d
- 1569 0123 10       		.sleb128 16
- 1570 0124 06000000 		.4byte	.LCFI15
- 1571 0128 5C000000 		.4byte	.LFE38
- 1572 012c 0200     		.2byte	0x2
- 1573 012e 77       		.byte	0x77
- 1574 012f 10       		.sleb128 16
- 1575 0130 00000000 		.4byte	0
- 1576 0134 00000000 		.4byte	0
- 1577              	.LLST6:
- 1578 0138 00000000 		.4byte	.LFB39
- 1579 013c 02000000 		.4byte	.LCFI16
- 1580 0140 0200     		.2byte	0x2
- 1581 0142 7D       		.byte	0x7d
- 1582 0143 00       		.sleb128 0
- 1583 0144 02000000 		.4byte	.LCFI16
- 1584 0148 04000000 		.4byte	.LCFI17
- 1585 014c 0200     		.2byte	0x2
- 1586 014e 7D       		.byte	0x7d
- 1587 014f 08       		.sleb128 8
- 1588 0150 04000000 		.4byte	.LCFI17
- 1589 0154 34000000 		.4byte	.LFE39
- 1590 0158 0200     		.2byte	0x2
- 1591 015a 77       		.byte	0x77
- 1592 015b 08       		.sleb128 8
- 1593 015c 00000000 		.4byte	0
- 1594 0160 00000000 		.4byte	0
- 1595              		.section	.debug_aranges,"",%progbits
- 1596 0000 4C000000 		.4byte	0x4c
- 1597 0004 0200     		.2byte	0x2
- 1598 0006 00000000 		.4byte	.Ldebug_info0
- 1599 000a 04       		.byte	0x4
- 1600 000b 00       		.byte	0
- 1601 000c 0000     		.2byte	0
- 1602 000e 0000     		.2byte	0
- 1603 0010 00000000 		.4byte	.LFB33
- 1604 0014 4C000000 		.4byte	.LFE33-.LFB33
- 1605 0018 00000000 		.4byte	.LFB34
- 1606 001c 4C000000 		.4byte	.LFE34-.LFB34
- 1607 0020 00000000 		.4byte	.LFB35
- 1608 0024 74000000 		.4byte	.LFE35-.LFB35
- 1609 0028 00000000 		.4byte	.LFB36
- 1610 002c 34000000 		.4byte	.LFE36-.LFB36
- 1611 0030 00000000 		.4byte	.LFB37
- 1612 0034 D4010000 		.4byte	.LFE37-.LFB37
- 1613 0038 00000000 		.4byte	.LFB38
- 1614 003c 5C000000 		.4byte	.LFE38-.LFB38
- 1615 0040 00000000 		.4byte	.LFB39
- 1616 0044 34000000 		.4byte	.LFE39-.LFB39
- 1617 0048 00000000 		.4byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 33
+ 1558 00a4 0200     		.2byte	0x2
+ 1559 00a6 7D       		.byte	0x7d
+ 1560 00a7 08       		.sleb128 8
+ 1561 00a8 04000000 		.4byte	.LCFI8
+ 1562 00ac 06000000 		.4byte	.LCFI9
+ 1563 00b0 0200     		.2byte	0x2
+ 1564 00b2 7D       		.byte	0x7d
+ 1565 00b3 10       		.sleb128 16
+ 1566 00b4 06000000 		.4byte	.LCFI9
+ 1567 00b8 34000000 		.4byte	.LFE36
+ 1568 00bc 0200     		.2byte	0x2
+ 1569 00be 77       		.byte	0x77
+ 1570 00bf 10       		.sleb128 16
+ 1571 00c0 00000000 		.4byte	0
+ 1572 00c4 00000000 		.4byte	0
+ 1573              	.LLST4:
+ 1574 00c8 00000000 		.4byte	.LFB37
+ 1575 00cc 02000000 		.4byte	.LCFI10
+ 1576 00d0 0200     		.2byte	0x2
+ 1577 00d2 7D       		.byte	0x7d
+ 1578 00d3 00       		.sleb128 0
+ 1579 00d4 02000000 		.4byte	.LCFI10
+ 1580 00d8 04000000 		.4byte	.LCFI11
+ 1581 00dc 0200     		.2byte	0x2
+ 1582 00de 7D       		.byte	0x7d
+ 1583 00df 0C       		.sleb128 12
+ 1584 00e0 04000000 		.4byte	.LCFI11
+ 1585 00e4 06000000 		.4byte	.LCFI12
+ 1586 00e8 0200     		.2byte	0x2
+ 1587 00ea 7D       		.byte	0x7d
+ 1588 00eb 38       		.sleb128 56
+ 1589 00ec 06000000 		.4byte	.LCFI12
+ 1590 00f0 D4010000 		.4byte	.LFE37
+ 1591 00f4 0200     		.2byte	0x2
+ 1592 00f6 77       		.byte	0x77
+ 1593 00f7 38       		.sleb128 56
+ 1594 00f8 00000000 		.4byte	0
+ 1595 00fc 00000000 		.4byte	0
+ 1596              	.LLST5:
+ 1597 0100 00000000 		.4byte	.LFB38
+ 1598 0104 02000000 		.4byte	.LCFI13
+ 1599 0108 0200     		.2byte	0x2
+ 1600 010a 7D       		.byte	0x7d
+ 1601 010b 00       		.sleb128 0
+ 1602 010c 02000000 		.4byte	.LCFI13
+ 1603 0110 04000000 		.4byte	.LCFI14
+ 1604 0114 0200     		.2byte	0x2
+ 1605 0116 7D       		.byte	0x7d
+ 1606 0117 08       		.sleb128 8
+ 1607 0118 04000000 		.4byte	.LCFI14
+ 1608 011c 06000000 		.4byte	.LCFI15
+ 1609 0120 0200     		.2byte	0x2
+ 1610 0122 7D       		.byte	0x7d
+ 1611 0123 10       		.sleb128 16
+ 1612 0124 06000000 		.4byte	.LCFI15
+ 1613 0128 68000000 		.4byte	.LFE38
+ 1614 012c 0200     		.2byte	0x2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 33
 
 
- 1618 004c 00000000 		.4byte	0
- 1619              		.section	.debug_ranges,"",%progbits
- 1620              	.Ldebug_ranges0:
- 1621 0000 00000000 		.4byte	.LFB33
- 1622 0004 4C000000 		.4byte	.LFE33
- 1623 0008 00000000 		.4byte	.LFB34
- 1624 000c 4C000000 		.4byte	.LFE34
- 1625 0010 00000000 		.4byte	.LFB35
- 1626 0014 74000000 		.4byte	.LFE35
- 1627 0018 00000000 		.4byte	.LFB36
- 1628 001c 34000000 		.4byte	.LFE36
- 1629 0020 00000000 		.4byte	.LFB37
- 1630 0024 D4010000 		.4byte	.LFE37
- 1631 0028 00000000 		.4byte	.LFB38
- 1632 002c 5C000000 		.4byte	.LFE38
- 1633 0030 00000000 		.4byte	.LFB39
- 1634 0034 34000000 		.4byte	.LFE39
- 1635 0038 00000000 		.4byte	0
- 1636 003c 00000000 		.4byte	0
- 1637              		.section	.debug_line,"",%progbits
- 1638              	.Ldebug_line0:
- 1639 0000 36010000 		.section	.debug_str,"MS",%progbits,1
- 1639      02006900 
- 1639      00000201 
- 1639      FB0E0D00 
- 1639      01010101 
- 1640              	.LASF45:
- 1641 0000 77617465 		.ascii	"waterTimeoutCounter_\000"
- 1641      7254696D 
- 1641      656F7574 
- 1641      436F756E 
- 1641      7465725F 
- 1642              	.LASF11:
- 1643 0015 74656D70 		.ascii	"temperature_\000"
- 1643      65726174 
- 1643      7572655F 
- 1643      00
- 1644              	.LASF32:
- 1645 0022 61637469 		.ascii	"active\000"
- 1645      766500
- 1646              	.LASF3:
- 1647 0029 64617461 		.ascii	"dataIndex_\000"
- 1647      496E6465 
- 1647      785F00
- 1648              	.LASF33:
- 1649 0034 74656D70 		.ascii	"tempLimit\000"
- 1649      4C696D69 
- 1649      7400
- 1650              	.LASF10:
- 1651 003e 70617261 		.ascii	"parameters_type\000"
- 1651      6D657465 
- 1651      72735F74 
- 1651      79706500 
- 1652              	.LASF1:
- 1653 004e 6C656E5F 		.ascii	"len_\000"
- 1653      00
- 1654              	.LASF25:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 34
+ 1615 012e 77       		.byte	0x77
+ 1616 012f 10       		.sleb128 16
+ 1617 0130 00000000 		.4byte	0
+ 1618 0134 00000000 		.4byte	0
+ 1619              	.LLST6:
+ 1620 0138 00000000 		.4byte	.LFB39
+ 1621 013c 02000000 		.4byte	.LCFI16
+ 1622 0140 0200     		.2byte	0x2
+ 1623 0142 7D       		.byte	0x7d
+ 1624 0143 00       		.sleb128 0
+ 1625 0144 02000000 		.4byte	.LCFI16
+ 1626 0148 04000000 		.4byte	.LCFI17
+ 1627 014c 0200     		.2byte	0x2
+ 1628 014e 7D       		.byte	0x7d
+ 1629 014f 08       		.sleb128 8
+ 1630 0150 04000000 		.4byte	.LCFI17
+ 1631 0154 3C000000 		.4byte	.LFE39
+ 1632 0158 0200     		.2byte	0x2
+ 1633 015a 77       		.byte	0x77
+ 1634 015b 08       		.sleb128 8
+ 1635 015c 00000000 		.4byte	0
+ 1636 0160 00000000 		.4byte	0
+ 1637              		.section	.debug_aranges,"",%progbits
+ 1638 0000 4C000000 		.4byte	0x4c
+ 1639 0004 0200     		.2byte	0x2
+ 1640 0006 00000000 		.4byte	.Ldebug_info0
+ 1641 000a 04       		.byte	0x4
+ 1642 000b 00       		.byte	0
+ 1643 000c 0000     		.2byte	0
+ 1644 000e 0000     		.2byte	0
+ 1645 0010 00000000 		.4byte	.LFB33
+ 1646 0014 4C000000 		.4byte	.LFE33-.LFB33
+ 1647 0018 00000000 		.4byte	.LFB34
+ 1648 001c 4C000000 		.4byte	.LFE34-.LFB34
+ 1649 0020 00000000 		.4byte	.LFB35
+ 1650 0024 80000000 		.4byte	.LFE35-.LFB35
+ 1651 0028 00000000 		.4byte	.LFB36
+ 1652 002c 34000000 		.4byte	.LFE36-.LFB36
+ 1653 0030 00000000 		.4byte	.LFB37
+ 1654 0034 D4010000 		.4byte	.LFE37-.LFB37
+ 1655 0038 00000000 		.4byte	.LFB38
+ 1656 003c 68000000 		.4byte	.LFE38-.LFB38
+ 1657 0040 00000000 		.4byte	.LFB39
+ 1658 0044 3C000000 		.4byte	.LFE39-.LFB39
+ 1659 0048 00000000 		.4byte	0
+ 1660 004c 00000000 		.4byte	0
+ 1661              		.section	.debug_ranges,"",%progbits
+ 1662              	.Ldebug_ranges0:
+ 1663 0000 00000000 		.4byte	.LFB33
+ 1664 0004 4C000000 		.4byte	.LFE33
+ 1665 0008 00000000 		.4byte	.LFB34
+ 1666 000c 4C000000 		.4byte	.LFE34
+ 1667 0010 00000000 		.4byte	.LFB35
+ 1668 0014 80000000 		.4byte	.LFE35
+ 1669 0018 00000000 		.4byte	.LFB36
+ 1670 001c 34000000 		.4byte	.LFE36
+ 1671 0020 00000000 		.4byte	.LFB37
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 34
 
 
- 1655 0053 646F7562 		.ascii	"double\000"
- 1655      6C6500
- 1656              	.LASF0:
- 1657 005a 62756666 		.ascii	"buffer_\000"
- 1657      65725F00 
- 1658              	.LASF30:
- 1659 0062 626C7565 		.ascii	"blue\000"
- 1659      00
- 1660              	.LASF12:
- 1661 0067 68756D69 		.ascii	"humidity_\000"
- 1661      64697479 
- 1661      5F00
- 1662              	.LASF49:
- 1663 0071 6C6F6164 		.ascii	"loadData_getBuffer\000"
- 1663      44617461 
- 1663      5F676574 
- 1663      42756666 
- 1663      657200
- 1664              	.LASF14:
- 1665 0084 666C6F61 		.ascii	"float\000"
- 1665      7400
- 1666              	.LASF38:
- 1667 008a 64617461 		.ascii	"data\000"
- 1667      00
- 1668              	.LASF44:
- 1669 008f 6C6F6744 		.ascii	"logDataTimeoutCounter_\000"
- 1669      61746154 
- 1669      696D656F 
- 1669      7574436F 
- 1669      756E7465 
- 1670              	.LASF8:
- 1671 00a6 756E7369 		.ascii	"unsigned char\000"
- 1671      676E6564 
- 1671      20636861 
- 1671      7200
- 1672              	.LASF26:
- 1673 00b4 6C6F6744 		.ascii	"logDataISR\000"
- 1673      61746149 
- 1673      535200
- 1674              	.LASF9:
- 1675 00bf 62756666 		.ascii	"buffer_type\000"
- 1675      65725F74 
- 1675      79706500 
- 1676              	.LASF16:
- 1677 00cb 70617261 		.ascii	"parameters\000"
- 1677      6D657465 
- 1677      727300
- 1678              	.LASF21:
- 1679 00d6 6C6F6E67 		.ascii	"long unsigned int\000"
- 1679      20756E73 
- 1679      69676E65 
- 1679      6420696E 
- 1679      7400
- 1680              	.LASF35:
- 1681 00e8 74656D70 		.ascii	"temp\000"
- 1681      00
- 1682              	.LASF19:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 35
-
-
- 1683 00ed 73686F72 		.ascii	"short unsigned int\000"
- 1683      7420756E 
- 1683      7369676E 
- 1683      65642069 
- 1683      6E7400
- 1684              	.LASF31:
- 1685 0100 67726565 		.ascii	"green\000"
- 1685      6E00
- 1686              	.LASF43:
- 1687 0106 6D6F7665 		.ascii	"movement_\000"
- 1687      6D656E74 
- 1687      5F00
- 1688              	.LASF36:
- 1689 0110 68756D69 		.ascii	"humi\000"
- 1689      00
- 1690              	.LASF2:
- 1691 0115 63757273 		.ascii	"cursor_\000"
- 1691      6F725F00 
- 1692              	.LASF40:
- 1693 011d 6C6F6164 		.ascii	"loadData_waterTimeout\000"
- 1693      44617461 
- 1693      5F776174 
- 1693      65725469 
- 1693      6D656F75 
- 1694              	.LASF39:
- 1695 0133 6C6F6164 		.ascii	"loadData_movementDetect\000"
- 1695      44617461 
- 1695      5F6D6F76 
- 1695      656D656E 
- 1695      74446574 
- 1696              	.LASF47:
- 1697 014b 2E5C6C6F 		.ascii	".\\loadData.c\000"
- 1697      61644461 
- 1697      74612E63 
+ 1672 0024 D4010000 		.4byte	.LFE37
+ 1673 0028 00000000 		.4byte	.LFB38
+ 1674 002c 68000000 		.4byte	.LFE38
+ 1675 0030 00000000 		.4byte	.LFB39
+ 1676 0034 3C000000 		.4byte	.LFE39
+ 1677 0038 00000000 		.4byte	0
+ 1678 003c 00000000 		.4byte	0
+ 1679              		.section	.debug_line,"",%progbits
+ 1680              	.Ldebug_line0:
+ 1681 0000 49010000 		.section	.debug_str,"MS",%progbits,1
+ 1681      02007900 
+ 1681      00000201 
+ 1681      FB0E0D00 
+ 1681      01010101 
+ 1682              	.LASF45:
+ 1683 0000 77617465 		.ascii	"waterTimeoutCounter_\000"
+ 1683      7254696D 
+ 1683      656F7574 
+ 1683      436F756E 
+ 1683      7465725F 
+ 1684              	.LASF11:
+ 1685 0015 74656D70 		.ascii	"temperature_\000"
+ 1685      65726174 
+ 1685      7572655F 
+ 1685      00
+ 1686              	.LASF50:
+ 1687 0022 6E657874 		.ascii	"nextState\000"
+ 1687      53746174 
+ 1687      6500
+ 1688              	.LASF32:
+ 1689 002c 61637469 		.ascii	"active\000"
+ 1689      766500
+ 1690              	.LASF3:
+ 1691 0033 64617461 		.ascii	"dataIndex_\000"
+ 1691      496E6465 
+ 1691      785F00
+ 1692              	.LASF33:
+ 1693 003e 74656D70 		.ascii	"tempLimit\000"
+ 1693      4C696D69 
+ 1693      7400
+ 1694              	.LASF10:
+ 1695 0048 70617261 		.ascii	"parameters_type\000"
+ 1695      6D657465 
+ 1695      72735F74 
+ 1695      79706500 
+ 1696              	.LASF1:
+ 1697 0058 6C656E5F 		.ascii	"len_\000"
  1697      00
- 1698              	.LASF28:
- 1699 0158 6C6F6164 		.ascii	"loadData_init\000"
- 1699      44617461 
- 1699      5F696E69 
- 1699      7400
- 1700              	.LASF41:
- 1701 0166 70617261 		.ascii	"parametersPtr_\000"
- 1701      6D657465 
- 1701      72735074 
- 1701      725F00
- 1702              	.LASF7:
- 1703 0175 756E7369 		.ascii	"unsigned int\000"
- 1703      676E6564 
- 1703      20696E74 
+ 1698              	.LASF25:
+ 1699 005d 646F7562 		.ascii	"double\000"
+ 1699      6C6500
+ 1700              	.LASF0:
+ 1701 0064 62756666 		.ascii	"buffer_\000"
+ 1701      65725F00 
+ 1702              	.LASF30:
+ 1703 006c 626C7565 		.ascii	"blue\000"
  1703      00
- 1704              	.LASF13:
- 1705 0182 61637469 		.ascii	"active_\000"
- 1705      76655F00 
- 1706              	.LASF23:
- 1707 018a 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1707      206C6F6E 
- 1707      6720756E 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 36
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 35
 
 
- 1707      7369676E 
- 1707      65642069 
- 1708              	.LASF4:
- 1709 01a1 64617461 		.ascii	"dataWritten_\000"
- 1709      57726974 
- 1709      74656E5F 
- 1709      00
- 1710              	.LASF17:
- 1711 01ae 7369676E 		.ascii	"signed char\000"
- 1711      65642063 
- 1711      68617200 
- 1712              	.LASF34:
- 1713 01ba 68756D69 		.ascii	"humiLimit\000"
- 1713      4C696D69 
- 1713      7400
- 1714              	.LASF5:
- 1715 01c4 73697A65 		.ascii	"sizetype\000"
- 1715      74797065 
- 1715      00
- 1716              	.LASF22:
- 1717 01cd 6C6F6E67 		.ascii	"long long int\000"
- 1717      206C6F6E 
- 1717      6720696E 
- 1717      7400
- 1718              	.LASF6:
- 1719 01db 63686172 		.ascii	"char\000"
- 1719      00
- 1720              	.LASF48:
- 1721 01e0 433A5C45 		.ascii	"C:\\Enhed\\Enhed.cydsn\000"
- 1721      6E686564 
- 1721      5C456E68 
- 1721      65642E63 
- 1721      7964736E 
- 1722              	.LASF37:
- 1723 01f5 77617465 		.ascii	"water\000"
- 1723      7200
- 1724              	.LASF42:
- 1725 01fb 62756666 		.ascii	"bufferPtr_\000"
- 1725      65725074 
- 1725      725F00
- 1726              	.LASF18:
- 1727 0206 73686F72 		.ascii	"short int\000"
- 1727      7420696E 
- 1727      7400
- 1728              	.LASF15:
- 1729 0210 62756666 		.ascii	"buffer\000"
- 1729      657200
- 1730              	.LASF24:
- 1731 0217 75696E74 		.ascii	"uint8\000"
- 1731      3800
- 1732              	.LASF46:
- 1733 021d 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1733      4320342E 
- 1733      372E3320 
- 1733      32303133 
- 1733      30333132 
- 1734 0250 616E6368 		.ascii	"anch revision 196615]\000"
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cc1aiHr4.s 			page 37
+ 1704              	.LASF12:
+ 1705 0071 68756D69 		.ascii	"humidity_\000"
+ 1705      64697479 
+ 1705      5F00
+ 1706              	.LASF49:
+ 1707 007b 6C6F6164 		.ascii	"loadData_getBuffer\000"
+ 1707      44617461 
+ 1707      5F676574 
+ 1707      42756666 
+ 1707      657200
+ 1708              	.LASF14:
+ 1709 008e 666C6F61 		.ascii	"float\000"
+ 1709      7400
+ 1710              	.LASF38:
+ 1711 0094 64617461 		.ascii	"data\000"
+ 1711      00
+ 1712              	.LASF44:
+ 1713 0099 6C6F6744 		.ascii	"logDataTimeoutCounter_\000"
+ 1713      61746154 
+ 1713      696D656F 
+ 1713      7574436F 
+ 1713      756E7465 
+ 1714              	.LASF8:
+ 1715 00b0 756E7369 		.ascii	"unsigned char\000"
+ 1715      676E6564 
+ 1715      20636861 
+ 1715      7200
+ 1716              	.LASF26:
+ 1717 00be 6C6F6744 		.ascii	"logDataISR\000"
+ 1717      61746149 
+ 1717      535200
+ 1718              	.LASF9:
+ 1719 00c9 62756666 		.ascii	"buffer_type\000"
+ 1719      65725F74 
+ 1719      79706500 
+ 1720              	.LASF16:
+ 1721 00d5 70617261 		.ascii	"parameters\000"
+ 1721      6D657465 
+ 1721      727300
+ 1722              	.LASF21:
+ 1723 00e0 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1723      20756E73 
+ 1723      69676E65 
+ 1723      6420696E 
+ 1723      7400
+ 1724              	.LASF35:
+ 1725 00f2 74656D70 		.ascii	"temp\000"
+ 1725      00
+ 1726              	.LASF19:
+ 1727 00f7 73686F72 		.ascii	"short unsigned int\000"
+ 1727      7420756E 
+ 1727      7369676E 
+ 1727      65642069 
+ 1727      6E7400
+ 1728              	.LASF31:
+ 1729 010a 67726565 		.ascii	"green\000"
+ 1729      6E00
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 36
 
 
- 1734      20726576 
- 1734      6973696F 
- 1734      6E203139 
- 1734      36363135 
- 1735              	.LASF27:
- 1736 0266 77617465 		.ascii	"waterISR\000"
- 1736      72495352 
- 1736      00
- 1737              	.LASF20:
- 1738 026f 6C6F6E67 		.ascii	"long int\000"
- 1738      20696E74 
- 1738      00
- 1739              	.LASF29:
- 1740 0278 6C6F6164 		.ascii	"loadData_logDataTimeout\000"
- 1740      44617461 
- 1740      5F6C6F67 
- 1740      44617461 
- 1740      54696D65 
- 1741              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1730              	.LASF43:
+ 1731 0110 6D6F7665 		.ascii	"movement_\000"
+ 1731      6D656E74 
+ 1731      5F00
+ 1732              	.LASF36:
+ 1733 011a 68756D69 		.ascii	"humi\000"
+ 1733      00
+ 1734              	.LASF2:
+ 1735 011f 63757273 		.ascii	"cursor_\000"
+ 1735      6F725F00 
+ 1736              	.LASF40:
+ 1737 0127 6C6F6164 		.ascii	"loadData_waterTimeout\000"
+ 1737      44617461 
+ 1737      5F776174 
+ 1737      65725469 
+ 1737      6D656F75 
+ 1738              	.LASF39:
+ 1739 013d 6C6F6164 		.ascii	"loadData_movementDetect\000"
+ 1739      44617461 
+ 1739      5F6D6F76 
+ 1739      656D656E 
+ 1739      74446574 
+ 1740              	.LASF47:
+ 1741 0155 2E5C6C6F 		.ascii	".\\loadData.c\000"
+ 1741      61644461 
+ 1741      74612E63 
+ 1741      00
+ 1742              	.LASF28:
+ 1743 0162 6C6F6164 		.ascii	"loadData_init\000"
+ 1743      44617461 
+ 1743      5F696E69 
+ 1743      7400
+ 1744              	.LASF41:
+ 1745 0170 70617261 		.ascii	"parametersPtr_\000"
+ 1745      6D657465 
+ 1745      72735074 
+ 1745      725F00
+ 1746              	.LASF7:
+ 1747 017f 756E7369 		.ascii	"unsigned int\000"
+ 1747      676E6564 
+ 1747      20696E74 
+ 1747      00
+ 1748              	.LASF13:
+ 1749 018c 61637469 		.ascii	"active_\000"
+ 1749      76655F00 
+ 1750              	.LASF23:
+ 1751 0194 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1751      206C6F6E 
+ 1751      6720756E 
+ 1751      7369676E 
+ 1751      65642069 
+ 1752              	.LASF4:
+ 1753 01ab 64617461 		.ascii	"dataWritten_\000"
+ 1753      57726974 
+ 1753      74656E5F 
+ 1753      00
+ 1754              	.LASF17:
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 37
+
+
+ 1755 01b8 7369676E 		.ascii	"signed char\000"
+ 1755      65642063 
+ 1755      68617200 
+ 1756              	.LASF34:
+ 1757 01c4 68756D69 		.ascii	"humiLimit\000"
+ 1757      4C696D69 
+ 1757      7400
+ 1758              	.LASF5:
+ 1759 01ce 73697A65 		.ascii	"sizetype\000"
+ 1759      74797065 
+ 1759      00
+ 1760              	.LASF22:
+ 1761 01d7 6C6F6E67 		.ascii	"long long int\000"
+ 1761      206C6F6E 
+ 1761      6720696E 
+ 1761      7400
+ 1762              	.LASF6:
+ 1763 01e5 63686172 		.ascii	"char\000"
+ 1763      00
+ 1764              	.LASF48:
+ 1765 01ea 433A5C45 		.ascii	"C:\\Enhed\\Enhed.cydsn\000"
+ 1765      6E686564 
+ 1765      5C456E68 
+ 1765      65642E63 
+ 1765      7964736E 
+ 1766              	.LASF37:
+ 1767 01ff 77617465 		.ascii	"water\000"
+ 1767      7200
+ 1768              	.LASF42:
+ 1769 0205 62756666 		.ascii	"bufferPtr_\000"
+ 1769      65725074 
+ 1769      725F00
+ 1770              	.LASF18:
+ 1771 0210 73686F72 		.ascii	"short int\000"
+ 1771      7420696E 
+ 1771      7400
+ 1772              	.LASF15:
+ 1773 021a 62756666 		.ascii	"buffer\000"
+ 1773      657200
+ 1774              	.LASF24:
+ 1775 0221 75696E74 		.ascii	"uint8\000"
+ 1775      3800
+ 1776              	.LASF46:
+ 1777 0227 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1777      4320342E 
+ 1777      372E3320 
+ 1777      32303133 
+ 1777      30333132 
+ 1778 025a 616E6368 		.ascii	"anch revision 196615]\000"
+ 1778      20726576 
+ 1778      6973696F 
+ 1778      6E203139 
+ 1778      36363135 
+ 1779              	.LASF27:
+ 1780 0270 77617465 		.ascii	"waterISR\000"
+ 1780      72495352 
+ 1780      00
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccgCjwtd.s 			page 38
+
+
+ 1781              	.LASF20:
+ 1782 0279 6C6F6E67 		.ascii	"long int\000"
+ 1782      20696E74 
+ 1782      00
+ 1783              	.LASF29:
+ 1784 0282 6C6F6164 		.ascii	"loadData_logDataTimeout\000"
+ 1784      44617461 
+ 1784      5F6C6F67 
+ 1784      44617461 
+ 1784      54696D65 
+ 1785              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

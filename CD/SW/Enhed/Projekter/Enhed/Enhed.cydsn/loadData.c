@@ -48,6 +48,7 @@ extern void loadData_init(parameters *par, buffer *buf)
     bufferPtr_ = buf;
     // sensorPackage is implicit known, as it contains only methods
     dataIndex_ = 0;
+    nextState = 0;
     
     // Start logData timer
     logDataTimeoutCounter_ = 0;
@@ -167,6 +168,8 @@ int loadData_movementDetect()
 {
     unsigned char val;
     parameters_getActive(parametersPtr_, &val);
+    nextState = val;
+    
     if(val == 1)
      {
         // Clear active flag in parameters
@@ -192,7 +195,7 @@ int loadData_movementDetect()
 int  loadData_waterTimeout()
 {
     // Set active_ flag in parameters
-    parameters_setActive(parametersPtr_, 1);
+    parameters_setActive(parametersPtr_, nextState);
     
     RED_LED_Write(1);
     GREEN_LED_Write(0);

@@ -17,7 +17,8 @@
 #define LOGDATATIMEOUT 8   // in sec
 #define WATERTIMEOUT 20     // in sec
     
-// Private methods
+// Public attributes
+unsigned char nextState;            // Global state for handling PIR and onOff activity
 
 // Public methods
 extern void loadData_init(parameters *, buffer *);

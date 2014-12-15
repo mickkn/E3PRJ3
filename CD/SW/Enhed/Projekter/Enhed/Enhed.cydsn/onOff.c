@@ -7,6 +7,7 @@
 */
 
 #include "onOff.h"
+#include "loadData.h"
 
 // Private data
 static parameters * parametersPtr_;
@@ -27,8 +28,12 @@ int onOff_turnOnOff(const unsigned char state)
         return -23;
     }
     
+    nextState = state;
+    
     parameters_setActive(parametersPtr_, state);    // Save state to parameters
-    sensorPackage_water(state);
+    
+    if(state == 0)
+        sensorPackage_water(state);
     
     return 0;
 }

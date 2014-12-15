@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -17,39 +17,40 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.comm	spiBuffer,64,4
-  18              		.comm	spiTxBuffer,64,4
-  19              		.global	unitNo
-  20              		.data
-  21              		.type	unitNo, %object
-  22              		.size	unitNo, 1
-  23              	unitNo:
-  24 0000 31       		.byte	49
-  25              		.global	spiCounter
-  26              		.bss
-  27              		.align	2
-  28              		.type	spiCounter, %object
-  29              		.size	spiCounter, 4
-  30              	spiCounter:
-  31 0000 00000000 		.space	4
-  32              		.global	spiReadCounter
-  33              		.align	2
-  34              		.type	spiReadCounter, %object
-  35              		.size	spiReadCounter, 4
-  36              	spiReadCounter:
-  37 0004 00000000 		.space	4
-  38              		.comm	len,4,4
-  39              		.comm	tempBuffer,6,4
-  40              		.comm	humiBuffer,4,4
-  41              		.section	.text.spi_init,"ax",%progbits
-  42              		.align	2
-  43              		.global	spi_init
-  44              		.code	16
-  45              		.thumb_func
-  46              		.type	spi_init, %function
-  47              	spi_init:
-  48              	.LFB33:
-  49              		.file 1 ".\\spi_handler.c"
+  17              		.comm	nextState,1,1
+  18              		.comm	spiBuffer,64,4
+  19              		.comm	spiTxBuffer,64,4
+  20              		.global	unitNo
+  21              		.data
+  22              		.type	unitNo, %object
+  23              		.size	unitNo, 1
+  24              	unitNo:
+  25 0000 31       		.byte	49
+  26              		.global	spiCounter
+  27              		.bss
+  28              		.align	2
+  29              		.type	spiCounter, %object
+  30              		.size	spiCounter, 4
+  31              	spiCounter:
+  32 0000 00000000 		.space	4
+  33              		.global	spiReadCounter
+  34              		.align	2
+  35              		.type	spiReadCounter, %object
+  36              		.size	spiReadCounter, 4
+  37              	spiReadCounter:
+  38 0004 00000000 		.space	4
+  39              		.comm	len,4,4
+  40              		.comm	tempBuffer,6,4
+  41              		.comm	humiBuffer,4,4
+  42              		.section	.text.spi_init,"ax",%progbits
+  43              		.align	2
+  44              		.global	spi_init
+  45              		.code	16
+  46              		.thumb_func
+  47              		.type	spi_init, %function
+  48              	spi_init:
+  49              	.LFB33:
+  50              		.file 1 ".\\spi_handler.c"
    1:.\spi_handler.c **** /*
    2:.\spi_handler.c **** * File: spi_handler.c
    3:.\spi_handler.c **** * Description: Implementation for EasyWater8000 spi handler
@@ -57,10 +58,10 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 1
    5:.\spi_handler.c **** * 
    6:.\spi_handler.c **** * Author: Mick Kirkegaard & Poul Overgaard
    7:.\spi_handler.c **** */
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 2
+
+
    8:.\spi_handler.c **** 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 2
-
-
    9:.\spi_handler.c **** #include "SPI_handler.h"
   10:.\spi_handler.c **** 
   11:.\spi_handler.c **** char spiBuffer[64];
@@ -74,113 +75,113 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 1
   19:.\spi_handler.c **** 
   20:.\spi_handler.c **** void spi_init()
   21:.\spi_handler.c **** {
-  50              		.loc 1 21 0
-  51              		.cfi_startproc
-  52 0000 80B5     		push	{r7, lr}
-  53              	.LCFI0:
-  54              		.cfi_def_cfa_offset 8
-  55              		.cfi_offset 7, -8
-  56              		.cfi_offset 14, -4
-  57 0002 00AF     		add	r7, sp, #0
-  58              	.LCFI1:
-  59              		.cfi_def_cfa_register 7
+  51              		.loc 1 21 0
+  52              		.cfi_startproc
+  53 0000 80B5     		push	{r7, lr}
+  54              	.LCFI0:
+  55              		.cfi_def_cfa_offset 8
+  56              		.cfi_offset 7, -8
+  57              		.cfi_offset 14, -4
+  58 0002 00AF     		add	r7, sp, #0
+  59              	.LCFI1:
+  60              		.cfi_def_cfa_register 7
   22:.\spi_handler.c ****     SPIS_1_Start();
-  60              		.loc 1 22 0
-  61 0004 FFF7FEFF 		bl	SPIS_1_Start
+  61              		.loc 1 22 0
+  62 0004 FFF7FEFF 		bl	SPIS_1_Start
   23:.\spi_handler.c **** 	SPIS_1_SetCustomInterruptHandler(isr_spi_rx);
-  62              		.loc 1 23 0
-  63 0008 034B     		ldr	r3, .L2
-  64 000a 181C     		mov	r0, r3
-  65 000c FFF7FEFF 		bl	SPIS_1_SetCustomInterruptHandler
+  63              		.loc 1 23 0
+  64 0008 034B     		ldr	r3, .L2
+  65 000a 181C     		mov	r0, r3
+  66 000c FFF7FEFF 		bl	SPIS_1_SetCustomInterruptHandler
   24:.\spi_handler.c **** 	SPIS_1_SpiUartClearTxBuffer();
-  66              		.loc 1 24 0
-  67 0010 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+  67              		.loc 1 24 0
+  68 0010 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
   25:.\spi_handler.c **** }
-  68              		.loc 1 25 0
-  69 0014 BD46     		mov	sp, r7
-  70              		@ sp needed for prologue
-  71 0016 80BD     		pop	{r7, pc}
-  72              	.L3:
-  73              		.align	2
-  74              	.L2:
-  75 0018 00000000 		.word	isr_spi_rx
-  76              		.cfi_endproc
-  77              	.LFE33:
-  78              		.size	spi_init, .-spi_init
-  79              		.global	__aeabi_d2f
-  80              		.section	.text.isr_spi_rx,"ax",%progbits
-  81              		.align	2
-  82              		.global	isr_spi_rx
-  83              		.code	16
-  84              		.thumb_func
-  85              		.type	isr_spi_rx, %function
-  86              	isr_spi_rx:
-  87              	.LFB34:
+  69              		.loc 1 25 0
+  70 0014 BD46     		mov	sp, r7
+  71              		@ sp needed for prologue
+  72 0016 80BD     		pop	{r7, pc}
+  73              	.L3:
+  74              		.align	2
+  75              	.L2:
+  76 0018 00000000 		.word	isr_spi_rx
+  77              		.cfi_endproc
+  78              	.LFE33:
+  79              		.size	spi_init, .-spi_init
+  80              		.global	__aeabi_d2f
+  81              		.section	.text.isr_spi_rx,"ax",%progbits
+  82              		.align	2
+  83              		.global	isr_spi_rx
+  84              		.code	16
+  85              		.thumb_func
+  86              		.type	isr_spi_rx, %function
+  87              	isr_spi_rx:
+  88              	.LFB34:
   26:.\spi_handler.c **** 
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 3
+
+
   27:.\spi_handler.c **** /*
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 3
-
-
   28:.\spi_handler.c ****  * SPI RX ISR
   29:.\spi_handler.c ****  * Dekoder SPI RX data og udfører kommando iht. protokol
   30:.\spi_handler.c ****  */
   31:.\spi_handler.c **** CY_ISR(isr_spi_rx) {
-  88              		.loc 1 31 0
-  89              		.cfi_startproc
-  90 0000 90B5     		push	{r4, r7, lr}
-  91              	.LCFI2:
-  92              		.cfi_def_cfa_offset 12
-  93              		.cfi_offset 4, -12
-  94              		.cfi_offset 7, -8
-  95              		.cfi_offset 14, -4
-  96 0002 87B0     		sub	sp, sp, #28
-  97              	.LCFI3:
-  98              		.cfi_def_cfa_offset 40
-  99 0004 00AF     		add	r7, sp, #0
- 100              	.LCFI4:
- 101              		.cfi_def_cfa_register 7
+  89              		.loc 1 31 0
+  90              		.cfi_startproc
+  91 0000 90B5     		push	{r4, r7, lr}
+  92              	.LCFI2:
+  93              		.cfi_def_cfa_offset 12
+  94              		.cfi_offset 4, -12
+  95              		.cfi_offset 7, -8
+  96              		.cfi_offset 14, -4
+  97 0002 87B0     		sub	sp, sp, #28
+  98              	.LCFI3:
+  99              		.cfi_def_cfa_offset 40
+ 100 0004 00AF     		add	r7, sp, #0
+ 101              	.LCFI4:
+ 102              		.cfi_def_cfa_register 7
   32:.\spi_handler.c **** 
   33:.\spi_handler.c **** 	char cmd = '0';
- 102              		.loc 1 33 0
- 103 0006 3B1C     		mov	r3, r7
- 104 0008 0F33     		add	r3, r3, #15
- 105 000a 3022     		mov	r2, #48
- 106 000c 1A70     		strb	r2, [r3]
+ 103              		.loc 1 33 0
+ 104 0006 3B1C     		mov	r3, r7
+ 105 0008 0F33     		add	r3, r3, #15
+ 106 000a 3022     		mov	r2, #48
+ 107 000c 1A70     		strb	r2, [r3]
   34:.\spi_handler.c ****     int i;
   35:.\spi_handler.c ****     unsigned int c;
   36:.\spi_handler.c ****     
   37:.\spi_handler.c **** 	//TP_1_Write(1); // Til måling af ISR gennemløbstid
   38:.\spi_handler.c ****  
   39:.\spi_handler.c **** 	cmd = SPIS_1_SpiUartReadRxData(); 
- 107              		.loc 1 39 0
- 108 000e FFF7FEFF 		bl	SPIS_1_SpiUartReadRxData
- 109 0012 021C     		mov	r2, r0
- 110 0014 3B1C     		mov	r3, r7
- 111 0016 0F33     		add	r3, r3, #15
- 112 0018 1A70     		strb	r2, [r3]
+ 108              		.loc 1 39 0
+ 109 000e FFF7FEFF 		bl	SPIS_1_SpiUartReadRxData
+ 110 0012 021C     		mov	r2, r0
+ 111 0014 3B1C     		mov	r3, r7
+ 112 0016 0F33     		add	r3, r3, #15
+ 113 0018 1A70     		strb	r2, [r3]
   40:.\spi_handler.c ****     
   41:.\spi_handler.c ****     spiBuffer[spiCounter] = cmd;
- 113              		.loc 1 41 0
- 114 001a 974B     		ldr	r3, .L22
- 115 001c 1B68     		ldr	r3, [r3]
- 116 001e 974A     		ldr	r2, .L22+4
- 117 0020 391C     		mov	r1, r7
- 118 0022 0F31     		add	r1, r1, #15
- 119 0024 0978     		ldrb	r1, [r1]
- 120 0026 D154     		strb	r1, [r2, r3]
+ 114              		.loc 1 41 0
+ 115 001a 974B     		ldr	r3, .L22
+ 116 001c 1B68     		ldr	r3, [r3]
+ 117 001e 974A     		ldr	r2, .L22+4
+ 118 0020 391C     		mov	r1, r7
+ 119 0022 0F31     		add	r1, r1, #15
+ 120 0024 0978     		ldrb	r1, [r1]
+ 121 0026 D154     		strb	r1, [r2, r3]
   42:.\spi_handler.c ****     spiCounter++;
- 121              		.loc 1 42 0
- 122 0028 934B     		ldr	r3, .L22
- 123 002a 1B68     		ldr	r3, [r3]
- 124 002c 5A1C     		add	r2, r3, #1
- 125 002e 924B     		ldr	r3, .L22
- 126 0030 1A60     		str	r2, [r3]
+ 122              		.loc 1 42 0
+ 123 0028 934B     		ldr	r3, .L22
+ 124 002a 1B68     		ldr	r3, [r3]
+ 125 002c 5A1C     		add	r2, r3, #1
+ 126 002e 924B     		ldr	r3, .L22
+ 127 0030 1A60     		str	r2, [r3]
   43:.\spi_handler.c ****     
   44:.\spi_handler.c ****     /*
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 4
+
+
   45:.\spi_handler.c **** 	 * Her switches på cmd iht. dataprotokollen
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 4
-
-
   46:.\spi_handler.c ****      *
   47:.\spi_handler.c ****      *  ’A’   0x41     Aktiver Enhed
   48:.\spi_handler.c ****      *  ’D’   0x44     Deaktiver Enhed
@@ -193,1289 +194,1303 @@ ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 1
   55:.\spi_handler.c **** 	 */
   56:.\spi_handler.c ****                      uint8 blue, red, green;   
   57:.\spi_handler.c ****     if ((cmd == 'R') || (cmd == 'C') || (cmd == 'L') || (cmd == 'V')){
- 127              		.loc 1 57 0
- 128 0032 3B1C     		mov	r3, r7
- 129 0034 0F33     		add	r3, r3, #15
- 130 0036 1B78     		ldrb	r3, [r3]
- 131 0038 522B     		cmp	r3, #82
- 132 003a 0FD0     		beq	.L5
- 133              		.loc 1 57 0 is_stmt 0 discriminator 1
- 134 003c 3B1C     		mov	r3, r7
- 135 003e 0F33     		add	r3, r3, #15
- 136 0040 1B78     		ldrb	r3, [r3]
- 137 0042 432B     		cmp	r3, #67
- 138 0044 0AD0     		beq	.L5
- 139 0046 3B1C     		mov	r3, r7
- 140 0048 0F33     		add	r3, r3, #15
- 141 004a 1B78     		ldrb	r3, [r3]
- 142 004c 4C2B     		cmp	r3, #76
- 143 004e 05D0     		beq	.L5
- 144 0050 3B1C     		mov	r3, r7
- 145 0052 0F33     		add	r3, r3, #15
- 146 0054 1B78     		ldrb	r3, [r3]
- 147 0056 562B     		cmp	r3, #86
- 148 0058 00D0     		beq	.LCB86
- 149 005a 06E1     		b	.L6	@long jump
- 150              	.LCB86:
- 151              	.L5:
+ 128              		.loc 1 57 0
+ 129 0032 3B1C     		mov	r3, r7
+ 130 0034 0F33     		add	r3, r3, #15
+ 131 0036 1B78     		ldrb	r3, [r3]
+ 132 0038 522B     		cmp	r3, #82
+ 133 003a 0FD0     		beq	.L5
+ 134              		.loc 1 57 0 is_stmt 0 discriminator 1
+ 135 003c 3B1C     		mov	r3, r7
+ 136 003e 0F33     		add	r3, r3, #15
+ 137 0040 1B78     		ldrb	r3, [r3]
+ 138 0042 432B     		cmp	r3, #67
+ 139 0044 0AD0     		beq	.L5
+ 140 0046 3B1C     		mov	r3, r7
+ 141 0048 0F33     		add	r3, r3, #15
+ 142 004a 1B78     		ldrb	r3, [r3]
+ 143 004c 4C2B     		cmp	r3, #76
+ 144 004e 05D0     		beq	.L5
+ 145 0050 3B1C     		mov	r3, r7
+ 146 0052 0F33     		add	r3, r3, #15
+ 147 0054 1B78     		ldrb	r3, [r3]
+ 148 0056 562B     		cmp	r3, #86
+ 149 0058 00D0     		beq	.LCB86
+ 150 005a 06E1     		b	.L6	@long jump
+ 151              	.LCB86:
+ 152              	.L5:
   58:.\spi_handler.c ****     	switch (spiBuffer[0]) {
- 152              		.loc 1 58 0 is_stmt 1
- 153 005c 874B     		ldr	r3, .L22+4
- 154 005e 1B78     		ldrb	r3, [r3]
- 155 0060 413B     		sub	r3, r3, #65
- 156 0062 152B     		cmp	r3, #21
- 157 0064 00D9     		bls	.LCB92
- 158 0066 00E1     		b	.L6	@long jump
- 159              	.LCB92:
- 160 0068 9A00     		lsl	r2, r3, #2
- 161 006a 854B     		ldr	r3, .L22+8
- 162 006c D318     		add	r3, r2, r3
- 163 006e 1B68     		ldr	r3, [r3]
- 164 0070 9F46     		mov	pc, r3
- 165              		.section	.rodata
- 166              		.align	2
- 167              	.L15:
- 168 0000 72000000 		.word	.L8
- 169 0004 6A020000 		.word	.L6
- 170 0008 60020000 		.word	.L9
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 5
+ 153              		.loc 1 58 0 is_stmt 1
+ 154 005c 874B     		ldr	r3, .L22+4
+ 155 005e 1B78     		ldrb	r3, [r3]
+ 156 0060 413B     		sub	r3, r3, #65
+ 157 0062 152B     		cmp	r3, #21
+ 158 0064 00D9     		bls	.LCB92
+ 159 0066 00E1     		b	.L6	@long jump
+ 160              	.LCB92:
+ 161 0068 9A00     		lsl	r2, r3, #2
+ 162 006a 854B     		ldr	r3, .L22+8
+ 163 006c D318     		add	r3, r2, r3
+ 164 006e 1B68     		ldr	r3, [r3]
+ 165 0070 9F46     		mov	pc, r3
+ 166              		.section	.rodata
+ 167              		.align	2
+ 168              	.L15:
+ 169 0000 72000000 		.word	.L8
+ 170 0004 6A020000 		.word	.L6
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 5
 
 
- 171 000c 96000000 		.word	.L10
- 172 0010 6A020000 		.word	.L6
- 173 0014 6A020000 		.word	.L6
- 174 0018 6A020000 		.word	.L6
- 175 001c 6A020000 		.word	.L6
- 176 0020 6A020000 		.word	.L6
- 177 0024 6A020000 		.word	.L6
- 178 0028 6A020000 		.word	.L6
- 179 002c 92010000 		.word	.L11
- 180 0030 6A020000 		.word	.L6
- 181 0034 6A020000 		.word	.L6
- 182 0038 6A020000 		.word	.L6
- 183 003c BA000000 		.word	.L12
- 184 0040 6A020000 		.word	.L6
- 185 0044 3C020000 		.word	.L13
- 186 0048 6A020000 		.word	.L6
- 187 004c 6A020000 		.word	.L6
- 188 0050 6A020000 		.word	.L6
- 189 0054 66010000 		.word	.L14
- 190              		.section	.text.isr_spi_rx
- 191              	.L8:
- 192              	.LBB2:
+ 171 0008 60020000 		.word	.L9
+ 172 000c 96000000 		.word	.L10
+ 173 0010 6A020000 		.word	.L6
+ 174 0014 6A020000 		.word	.L6
+ 175 0018 6A020000 		.word	.L6
+ 176 001c 6A020000 		.word	.L6
+ 177 0020 6A020000 		.word	.L6
+ 178 0024 6A020000 		.word	.L6
+ 179 0028 6A020000 		.word	.L6
+ 180 002c 92010000 		.word	.L11
+ 181 0030 6A020000 		.word	.L6
+ 182 0034 6A020000 		.word	.L6
+ 183 0038 6A020000 		.word	.L6
+ 184 003c BA000000 		.word	.L12
+ 185 0040 6A020000 		.word	.L6
+ 186 0044 3C020000 		.word	.L13
+ 187 0048 6A020000 		.word	.L6
+ 188 004c 6A020000 		.word	.L6
+ 189 0050 6A020000 		.word	.L6
+ 190 0054 66010000 		.word	.L14
+ 191              		.section	.text.isr_spi_rx
+ 192              	.L8:
+ 193              	.LBB2:
   59:.\spi_handler.c ****             case 'A':
   60:.\spi_handler.c ****                     RED_LED_Write(1);
- 193              		.loc 1 60 0
- 194 0072 0120     		mov	r0, #1
- 195 0074 FFF7FEFF 		bl	RED_LED_Write
+ 194              		.loc 1 60 0
+ 195 0072 0120     		mov	r0, #1
+ 196 0074 FFF7FEFF 		bl	RED_LED_Write
   61:.\spi_handler.c ****                     GREEN_LED_Write(0);
- 196              		.loc 1 61 0
- 197 0078 0020     		mov	r0, #0
- 198 007a FFF7FEFF 		bl	GREEN_LED_Write
+ 197              		.loc 1 61 0
+ 198 0078 0020     		mov	r0, #0
+ 199 007a FFF7FEFF 		bl	GREEN_LED_Write
   62:.\spi_handler.c ****                     BLUE_LED_Write(1);
- 199              		.loc 1 62 0
- 200 007e 0120     		mov	r0, #1
- 201 0080 FFF7FEFF 		bl	BLUE_LED_Write
+ 200              		.loc 1 62 0
+ 201 007e 0120     		mov	r0, #1
+ 202 0080 FFF7FEFF 		bl	BLUE_LED_Write
   63:.\spi_handler.c ****                     
   64:.\spi_handler.c ****                     /* Clear Buffer and Counter */
   65:.\spi_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 202              		.loc 1 65 0
- 203 0084 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+ 203              		.loc 1 65 0
+ 204 0084 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
   66:.\spi_handler.c ****                     spiCounter = 0;
- 204              		.loc 1 66 0
- 205 0088 7B4B     		ldr	r3, .L22
- 206 008a 0022     		mov	r2, #0
- 207 008c 1A60     		str	r2, [r3]
+ 205              		.loc 1 66 0
+ 206 0088 7B4B     		ldr	r3, .L22
+ 207 008a 0022     		mov	r2, #0
+ 208 008c 1A60     		str	r2, [r3]
   67:.\spi_handler.c ****                     
   68:.\spi_handler.c ****                     /*Call method*/
   69:.\spi_handler.c ****                     onOff_turnOnOff(1);
- 208              		.loc 1 69 0
- 209 008e 0120     		mov	r0, #1
- 210 0090 FFF7FEFF 		bl	onOff_turnOnOff
- 211 0094 E9E0     		b	.L6
- 212              	.L10:
+ 209              		.loc 1 69 0
+ 210 008e 0120     		mov	r0, #1
+ 211 0090 FFF7FEFF 		bl	onOff_turnOnOff
+ 212 0094 E9E0     		b	.L6
+ 213              	.L10:
   70:.\spi_handler.c ****                     
   71:.\spi_handler.c ****                 break;
   72:.\spi_handler.c ****             case 'D':
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 6
+
+
   73:.\spi_handler.c ****                     GREEN_LED_Write(1);
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 6
-
-
- 213              		.loc 1 73 0
- 214 0096 0120     		mov	r0, #1
- 215 0098 FFF7FEFF 		bl	GREEN_LED_Write
+ 214              		.loc 1 73 0
+ 215 0096 0120     		mov	r0, #1
+ 216 0098 FFF7FEFF 		bl	GREEN_LED_Write
   74:.\spi_handler.c ****                     RED_LED_Write(0);
- 216              		.loc 1 74 0
- 217 009c 0020     		mov	r0, #0
- 218 009e FFF7FEFF 		bl	RED_LED_Write
+ 217              		.loc 1 74 0
+ 218 009c 0020     		mov	r0, #0
+ 219 009e FFF7FEFF 		bl	RED_LED_Write
   75:.\spi_handler.c ****                     BLUE_LED_Write(1);
- 219              		.loc 1 75 0
- 220 00a2 0120     		mov	r0, #1
- 221 00a4 FFF7FEFF 		bl	BLUE_LED_Write
+ 220              		.loc 1 75 0
+ 221 00a2 0120     		mov	r0, #1
+ 222 00a4 FFF7FEFF 		bl	BLUE_LED_Write
   76:.\spi_handler.c ****                     
   77:.\spi_handler.c ****                     /* Clear Buffer and Counter */
   78:.\spi_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 222              		.loc 1 78 0
- 223 00a8 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+ 223              		.loc 1 78 0
+ 224 00a8 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
   79:.\spi_handler.c ****                     spiCounter = 0;
- 224              		.loc 1 79 0
- 225 00ac 724B     		ldr	r3, .L22
- 226 00ae 0022     		mov	r2, #0
- 227 00b0 1A60     		str	r2, [r3]
+ 225              		.loc 1 79 0
+ 226 00ac 724B     		ldr	r3, .L22
+ 227 00ae 0022     		mov	r2, #0
+ 228 00b0 1A60     		str	r2, [r3]
   80:.\spi_handler.c ****                     
   81:.\spi_handler.c ****                     /*Call method*/
   82:.\spi_handler.c ****                     onOff_turnOnOff(0);
- 228              		.loc 1 82 0
- 229 00b2 0020     		mov	r0, #0
- 230 00b4 FFF7FEFF 		bl	onOff_turnOnOff
- 231 00b8 D7E0     		b	.L6
- 232              	.L12:
+ 229              		.loc 1 82 0
+ 230 00b2 0020     		mov	r0, #0
+ 231 00b4 FFF7FEFF 		bl	onOff_turnOnOff
+ 232 00b8 D7E0     		b	.L6
+ 233              	.L12:
   83:.\spi_handler.c ****                     
   84:.\spi_handler.c ****                 break;
   85:.\spi_handler.c ****             case 'P':
   86:.\spi_handler.c ****                     /* Disable interrupt */
   87:.\spi_handler.c ****                     CyGlobalIntDisable;
- 233              		.loc 1 87 0
- 234              	@ 87 ".\spi_handler.c" 1
- 235 00ba 72B6     		CPSID   i
- 236              	@ 0 "" 2
+ 234              		.loc 1 87 0
+ 235              	@ 87 ".\spi_handler.c" 1
+ 236 00ba 72B6     		CPSID   i
+ 237              	@ 0 "" 2
   88:.\spi_handler.c ****                  
   89:.\spi_handler.c ****                     GREEN_LED_Write(0);
- 237              		.loc 1 89 0
- 238              		.code	16
- 239 00bc 0020     		mov	r0, #0
- 240 00be FFF7FEFF 		bl	GREEN_LED_Write
+ 238              		.loc 1 89 0
+ 239              		.code	16
+ 240 00bc 0020     		mov	r0, #0
+ 241 00be FFF7FEFF 		bl	GREEN_LED_Write
   90:.\spi_handler.c ****                     RED_LED_Write(0);
- 241              		.loc 1 90 0
- 242 00c2 0020     		mov	r0, #0
- 243 00c4 FFF7FEFF 		bl	RED_LED_Write
+ 242              		.loc 1 90 0
+ 243 00c2 0020     		mov	r0, #0
+ 244 00c4 FFF7FEFF 		bl	RED_LED_Write
   91:.\spi_handler.c ****                     BLUE_LED_Write(0);
- 244              		.loc 1 91 0
- 245 00c8 0020     		mov	r0, #0
- 246 00ca FFF7FEFF 		bl	BLUE_LED_Write
+ 245              		.loc 1 91 0
+ 246 00c8 0020     		mov	r0, #0
+ 247 00ca FFF7FEFF 		bl	BLUE_LED_Write
   92:.\spi_handler.c ****                     
   93:.\spi_handler.c ****                     
   94:.\spi_handler.c ****                     
   95:.\spi_handler.c ****                     /* Read temp */
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 7
+
+
   96:.\spi_handler.c ****                     for(i = 0 ; i < 5 ; i++){
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 7
-
-
- 247              		.loc 1 96 0
- 248 00ce 0023     		mov	r3, #0
- 249 00d0 7B61     		str	r3, [r7, #20]
- 250 00d2 0AE0     		b	.L16
- 251              	.L17:
+ 248              		.loc 1 96 0
+ 249 00ce 0023     		mov	r3, #0
+ 250 00d0 7B61     		str	r3, [r7, #20]
+ 251 00d2 0AE0     		b	.L16
+ 252              	.L17:
   97:.\spi_handler.c ****                         tempBuffer[i] = spiBuffer[i+1];
- 252              		.loc 1 97 0 discriminator 2
- 253 00d4 7B69     		ldr	r3, [r7, #20]
- 254 00d6 0133     		add	r3, r3, #1
- 255 00d8 684A     		ldr	r2, .L22+4
- 256 00da D25C     		ldrb	r2, [r2, r3]
- 257 00dc 6949     		ldr	r1, .L22+12
- 258 00de 7B69     		ldr	r3, [r7, #20]
- 259 00e0 CB18     		add	r3, r1, r3
- 260 00e2 1A70     		strb	r2, [r3]
+ 253              		.loc 1 97 0 discriminator 2
+ 254 00d4 7B69     		ldr	r3, [r7, #20]
+ 255 00d6 0133     		add	r3, r3, #1
+ 256 00d8 684A     		ldr	r2, .L22+4
+ 257 00da D25C     		ldrb	r2, [r2, r3]
+ 258 00dc 6949     		ldr	r1, .L22+12
+ 259 00de 7B69     		ldr	r3, [r7, #20]
+ 260 00e0 CB18     		add	r3, r1, r3
+ 261 00e2 1A70     		strb	r2, [r3]
   96:.\spi_handler.c ****                     for(i = 0 ; i < 5 ; i++){
- 261              		.loc 1 96 0 discriminator 2
- 262 00e4 7B69     		ldr	r3, [r7, #20]
- 263 00e6 0133     		add	r3, r3, #1
- 264 00e8 7B61     		str	r3, [r7, #20]
- 265              	.L16:
+ 262              		.loc 1 96 0 discriminator 2
+ 263 00e4 7B69     		ldr	r3, [r7, #20]
+ 264 00e6 0133     		add	r3, r3, #1
+ 265 00e8 7B61     		str	r3, [r7, #20]
+ 266              	.L16:
   96:.\spi_handler.c ****                     for(i = 0 ; i < 5 ; i++){
- 266              		.loc 1 96 0 is_stmt 0 discriminator 1
- 267 00ea 7B69     		ldr	r3, [r7, #20]
- 268 00ec 042B     		cmp	r3, #4
- 269 00ee F1DD     		ble	.L17
+ 267              		.loc 1 96 0 is_stmt 0 discriminator 1
+ 268 00ea 7B69     		ldr	r3, [r7, #20]
+ 269 00ec 042B     		cmp	r3, #4
+ 270 00ee F1DD     		ble	.L17
   98:.\spi_handler.c ****                         //
   99:.\spi_handler.c ****                     }
  100:.\spi_handler.c ****                     for(i = 0 ; i < 3 ; i++){
- 270              		.loc 1 100 0 is_stmt 1
- 271 00f0 0023     		mov	r3, #0
- 272 00f2 7B61     		str	r3, [r7, #20]
- 273 00f4 0AE0     		b	.L18
- 274              	.L19:
+ 271              		.loc 1 100 0 is_stmt 1
+ 272 00f0 0023     		mov	r3, #0
+ 273 00f2 7B61     		str	r3, [r7, #20]
+ 274 00f4 0AE0     		b	.L18
+ 275              	.L19:
  101:.\spi_handler.c ****                         humiBuffer[i] = spiBuffer[i+6];
- 275              		.loc 1 101 0 discriminator 2
- 276 00f6 7B69     		ldr	r3, [r7, #20]
- 277 00f8 0633     		add	r3, r3, #6
- 278 00fa 604A     		ldr	r2, .L22+4
- 279 00fc D25C     		ldrb	r2, [r2, r3]
- 280 00fe 6249     		ldr	r1, .L22+16
- 281 0100 7B69     		ldr	r3, [r7, #20]
- 282 0102 CB18     		add	r3, r1, r3
- 283 0104 1A70     		strb	r2, [r3]
+ 276              		.loc 1 101 0 discriminator 2
+ 277 00f6 7B69     		ldr	r3, [r7, #20]
+ 278 00f8 0633     		add	r3, r3, #6
+ 279 00fa 604A     		ldr	r2, .L22+4
+ 280 00fc D25C     		ldrb	r2, [r2, r3]
+ 281 00fe 6249     		ldr	r1, .L22+16
+ 282 0100 7B69     		ldr	r3, [r7, #20]
+ 283 0102 CB18     		add	r3, r1, r3
+ 284 0104 1A70     		strb	r2, [r3]
  100:.\spi_handler.c ****                     for(i = 0 ; i < 3 ; i++){
- 284              		.loc 1 100 0 discriminator 2
- 285 0106 7B69     		ldr	r3, [r7, #20]
- 286 0108 0133     		add	r3, r3, #1
- 287 010a 7B61     		str	r3, [r7, #20]
- 288              	.L18:
+ 285              		.loc 1 100 0 discriminator 2
+ 286 0106 7B69     		ldr	r3, [r7, #20]
+ 287 0108 0133     		add	r3, r3, #1
+ 288 010a 7B61     		str	r3, [r7, #20]
+ 289              	.L18:
  100:.\spi_handler.c ****                     for(i = 0 ; i < 3 ; i++){
- 289              		.loc 1 100 0 is_stmt 0 discriminator 1
- 290 010c 7B69     		ldr	r3, [r7, #20]
- 291 010e 022B     		cmp	r3, #2
- 292 0110 F1DD     		ble	.L19
+ 290              		.loc 1 100 0 is_stmt 0 discriminator 1
+ 291 010c 7B69     		ldr	r3, [r7, #20]
+ 292 010e 022B     		cmp	r3, #2
+ 293 0110 F1DD     		ble	.L19
  102:.\spi_handler.c ****                     }
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 8
+
+
  103:.\spi_handler.c ****                     
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 8
-
-
  104:.\spi_handler.c ****                     float tempValue = 0;
- 293              		.loc 1 104 0 is_stmt 1
- 294 0112 0023     		mov	r3, #0
- 295 0114 BB60     		str	r3, [r7, #8]
+ 294              		.loc 1 104 0 is_stmt 1
+ 295 0112 0023     		mov	r3, #0
+ 296 0114 BB60     		str	r3, [r7, #8]
  105:.\spi_handler.c ****                     float humiValue = 0;
- 296              		.loc 1 105 0
- 297 0116 0023     		mov	r3, #0
- 298 0118 7B60     		str	r3, [r7, #4]
+ 297              		.loc 1 105 0
+ 298 0116 0023     		mov	r3, #0
+ 299 0118 7B60     		str	r3, [r7, #4]
  106:.\spi_handler.c ****                     
  107:.\spi_handler.c ****                     /* Parse charArray's to float's */
  108:.\spi_handler.c ****                     tempValue = (float)atof(tempBuffer);
- 299              		.loc 1 108 0
- 300 011a 5A4B     		ldr	r3, .L22+12
- 301 011c 181C     		mov	r0, r3
- 302 011e FFF7FEFF 		bl	atof
- 303 0122 031C     		mov	r3, r0
- 304 0124 0C1C     		mov	r4, r1
- 305 0126 181C     		mov	r0, r3
- 306 0128 211C     		mov	r1, r4
- 307 012a FFF7FEFF 		bl	__aeabi_d2f
- 308 012e 031C     		add	r3, r0, #0
- 309 0130 BB60     		str	r3, [r7, #8]
+ 300              		.loc 1 108 0
+ 301 011a 5A4B     		ldr	r3, .L22+12
+ 302 011c 181C     		mov	r0, r3
+ 303 011e FFF7FEFF 		bl	atof
+ 304 0122 031C     		mov	r3, r0
+ 305 0124 0C1C     		mov	r4, r1
+ 306 0126 181C     		mov	r0, r3
+ 307 0128 211C     		mov	r1, r4
+ 308 012a FFF7FEFF 		bl	__aeabi_d2f
+ 309 012e 031C     		add	r3, r0, #0
+ 310 0130 BB60     		str	r3, [r7, #8]
  109:.\spi_handler.c ****                     humiValue = (float)atof(humiBuffer);
- 310              		.loc 1 109 0
- 311 0132 554B     		ldr	r3, .L22+16
- 312 0134 181C     		mov	r0, r3
- 313 0136 FFF7FEFF 		bl	atof
- 314 013a 031C     		mov	r3, r0
- 315 013c 0C1C     		mov	r4, r1
- 316 013e 181C     		mov	r0, r3
- 317 0140 211C     		mov	r1, r4
- 318 0142 FFF7FEFF 		bl	__aeabi_d2f
- 319 0146 031C     		add	r3, r0, #0
- 320 0148 7B60     		str	r3, [r7, #4]
+ 311              		.loc 1 109 0
+ 312 0132 554B     		ldr	r3, .L22+16
+ 313 0134 181C     		mov	r0, r3
+ 314 0136 FFF7FEFF 		bl	atof
+ 315 013a 031C     		mov	r3, r0
+ 316 013c 0C1C     		mov	r4, r1
+ 317 013e 181C     		mov	r0, r3
+ 318 0140 211C     		mov	r1, r4
+ 319 0142 FFF7FEFF 		bl	__aeabi_d2f
+ 320 0146 031C     		add	r3, r0, #0
+ 321 0148 7B60     		str	r3, [r7, #4]
  110:.\spi_handler.c ****                     
  111:.\spi_handler.c ****                     /* Call method */
  112:.\spi_handler.c ****                     config_config(&tempValue, &humiValue);
- 321              		.loc 1 112 0
- 322 014a 3A1C     		mov	r2, r7
- 323 014c 0832     		add	r2, r2, #8
- 324 014e 3B1D     		add	r3, r7, #4
- 325 0150 101C     		mov	r0, r2
- 326 0152 191C     		mov	r1, r3
- 327 0154 FFF7FEFF 		bl	config_config
+ 322              		.loc 1 112 0
+ 323 014a 3A1C     		mov	r2, r7
+ 324 014c 0832     		add	r2, r2, #8
+ 325 014e 3B1D     		add	r3, r7, #4
+ 326 0150 101C     		mov	r0, r2
+ 327 0152 191C     		mov	r1, r3
+ 328 0154 FFF7FEFF 		bl	config_config
  113:.\spi_handler.c ****                     
  114:.\spi_handler.c ****                     /* Clear Buffer and Counter */
  115:.\spi_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 328              		.loc 1 115 0
- 329 0158 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+ 329              		.loc 1 115 0
+ 330 0158 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
  116:.\spi_handler.c ****                     spiCounter = 0;
- 330              		.loc 1 116 0
- 331 015c 464B     		ldr	r3, .L22
- 332 015e 0022     		mov	r2, #0
- 333 0160 1A60     		str	r2, [r3]
+ 331              		.loc 1 116 0
+ 332 015c 464B     		ldr	r3, .L22
+ 333 015e 0022     		mov	r2, #0
+ 334 0160 1A60     		str	r2, [r3]
  117:.\spi_handler.c ****                     
  118:.\spi_handler.c ****                     /* Re-enable interrupt */
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 9
+
+
  119:.\spi_handler.c ****                     CyGlobalIntEnable;
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 9
-
-
- 334              		.loc 1 119 0
- 335              	@ 119 ".\spi_handler.c" 1
- 336 0162 62B6     		CPSIE   i
- 337              	@ 0 "" 2
- 338              		.code	16
- 339 0164 81E0     		b	.L6
- 340              	.L14:
+ 335              		.loc 1 119 0
+ 336              	@ 119 ".\spi_handler.c" 1
+ 337 0162 62B6     		CPSIE   i
+ 338              	@ 0 "" 2
+ 339              		.code	16
+ 340 0164 81E0     		b	.L6
+ 341              	.L14:
  120:.\spi_handler.c ****                 break;
  121:.\spi_handler.c ****     		case 'V':
  122:.\spi_handler.c ****                     GREEN_LED_Write(1);
- 341              		.loc 1 122 0
- 342 0166 0120     		mov	r0, #1
- 343 0168 FFF7FEFF 		bl	GREEN_LED_Write
+ 342              		.loc 1 122 0
+ 343 0166 0120     		mov	r0, #1
+ 344 0168 FFF7FEFF 		bl	GREEN_LED_Write
  123:.\spi_handler.c ****                     RED_LED_Write(1);
- 344              		.loc 1 123 0
- 345 016c 0120     		mov	r0, #1
- 346 016e FFF7FEFF 		bl	RED_LED_Write
+ 345              		.loc 1 123 0
+ 346 016c 0120     		mov	r0, #1
+ 347 016e FFF7FEFF 		bl	RED_LED_Write
  124:.\spi_handler.c ****                     BLUE_LED_Write(0);
- 347              		.loc 1 124 0
- 348 0172 0020     		mov	r0, #0
- 349 0174 FFF7FEFF 		bl	BLUE_LED_Write
+ 348              		.loc 1 124 0
+ 349 0172 0020     		mov	r0, #0
+ 350 0174 FFF7FEFF 		bl	BLUE_LED_Write
  125:.\spi_handler.c **** 
  126:.\spi_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 350              		.loc 1 126 0
- 351 0178 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+ 351              		.loc 1 126 0
+ 352 0178 FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
  127:.\spi_handler.c ****                     SPIS_1_SpiUartWriteTxData(unitNo);
- 352              		.loc 1 127 0
- 353 017c 434B     		ldr	r3, .L22+20
- 354 017e 1B78     		ldrb	r3, [r3]
- 355 0180 181C     		mov	r0, r3
- 356 0182 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
+ 353              		.loc 1 127 0
+ 354 017c 434B     		ldr	r3, .L22+20
+ 355 017e 1B78     		ldrb	r3, [r3]
+ 356 0180 181C     		mov	r0, r3
+ 357 0182 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
  128:.\spi_handler.c ****                     spiCounter = 0;
- 357              		.loc 1 128 0
- 358 0186 3C4B     		ldr	r3, .L22
- 359 0188 0022     		mov	r2, #0
- 360 018a 1A60     		str	r2, [r3]
+ 358              		.loc 1 128 0
+ 359 0186 3C4B     		ldr	r3, .L22
+ 360 0188 0022     		mov	r2, #0
+ 361 018a 1A60     		str	r2, [r3]
  129:.\spi_handler.c ****                     
  130:.\spi_handler.c ****                     /* Call method */
  131:.\spi_handler.c ****                     addRemove_verify();
- 361              		.loc 1 131 0
- 362 018c FFF7FEFF 		bl	addRemove_verify
- 363 0190 6BE0     		b	.L6
- 364              	.L11:
+ 362              		.loc 1 131 0
+ 363 018c FFF7FEFF 		bl	addRemove_verify
+ 364 0190 6BE0     		b	.L6
+ 365              	.L11:
  132:.\spi_handler.c ****                     
  133:.\spi_handler.c ****     			break;
  134:.\spi_handler.c ****             case 'L':
  135:.\spi_handler.c **** 
  136:.\spi_handler.c ****                     blue = BLUE_LED_Read();
- 365              		.loc 1 136 0
- 366 0192 3C1C     		mov	r4, r7
- 367 0194 0E34     		add	r4, r4, #14
- 368 0196 FFF7FEFF 		bl	BLUE_LED_Read
- 369 019a 031C     		mov	r3, r0
- 370 019c 2370     		strb	r3, [r4]
+ 366              		.loc 1 136 0
+ 367 0192 3C1C     		mov	r4, r7
+ 368 0194 0E34     		add	r4, r4, #14
+ 369 0196 FFF7FEFF 		bl	BLUE_LED_Read
+ 370 019a 031C     		mov	r3, r0
+ 371 019c 2370     		strb	r3, [r4]
  137:.\spi_handler.c ****                     red = RED_LED_Read();
- 371              		.loc 1 137 0
- 372 019e 3C1C     		mov	r4, r7
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 10
+ 372              		.loc 1 137 0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 10
 
 
- 373 01a0 0D34     		add	r4, r4, #13
- 374 01a2 FFF7FEFF 		bl	RED_LED_Read
- 375 01a6 031C     		mov	r3, r0
- 376 01a8 2370     		strb	r3, [r4]
+ 373 019e 3C1C     		mov	r4, r7
+ 374 01a0 0D34     		add	r4, r4, #13
+ 375 01a2 FFF7FEFF 		bl	RED_LED_Read
+ 376 01a6 031C     		mov	r3, r0
+ 377 01a8 2370     		strb	r3, [r4]
  138:.\spi_handler.c ****                     green = GREEN_LED_Read();
- 377              		.loc 1 138 0
- 378 01aa 3C1C     		mov	r4, r7
- 379 01ac 0C34     		add	r4, r4, #12
- 380 01ae FFF7FEFF 		bl	GREEN_LED_Read
- 381 01b2 031C     		mov	r3, r0
- 382 01b4 2370     		strb	r3, [r4]
+ 378              		.loc 1 138 0
+ 379 01aa 3C1C     		mov	r4, r7
+ 380 01ac 0C34     		add	r4, r4, #12
+ 381 01ae FFF7FEFF 		bl	GREEN_LED_Read
+ 382 01b2 031C     		mov	r3, r0
+ 383 01b4 2370     		strb	r3, [r4]
  139:.\spi_handler.c ****                     
  140:.\spi_handler.c ****                     GREEN_LED_Write(1);
- 383              		.loc 1 140 0
- 384 01b6 0120     		mov	r0, #1
- 385 01b8 FFF7FEFF 		bl	GREEN_LED_Write
+ 384              		.loc 1 140 0
+ 385 01b6 0120     		mov	r0, #1
+ 386 01b8 FFF7FEFF 		bl	GREEN_LED_Write
  141:.\spi_handler.c ****                     RED_LED_Write(0);
- 386              		.loc 1 141 0
- 387 01bc 0020     		mov	r0, #0
- 388 01be FFF7FEFF 		bl	RED_LED_Write
+ 387              		.loc 1 141 0
+ 388 01bc 0020     		mov	r0, #0
+ 389 01be FFF7FEFF 		bl	RED_LED_Write
  142:.\spi_handler.c ****                     BLUE_LED_Write(0);
- 389              		.loc 1 142 0
- 390 01c2 0020     		mov	r0, #0
- 391 01c4 FFF7FEFF 		bl	BLUE_LED_Write
+ 390              		.loc 1 142 0
+ 391 01c2 0020     		mov	r0, #0
+ 392 01c4 FFF7FEFF 		bl	BLUE_LED_Write
  143:.\spi_handler.c ****                     
  144:.\spi_handler.c ****                     char * buf;
  145:.\spi_handler.c ****                     /* Call method */
  146:.\spi_handler.c ****                     loadData_getBuffer(&buf, &len);
- 392              		.loc 1 146 0
- 393 01c8 3A1C     		mov	r2, r7
- 394 01ca 314B     		ldr	r3, .L22+24
- 395 01cc 101C     		mov	r0, r2
- 396 01ce 191C     		mov	r1, r3
- 397 01d0 FFF7FEFF 		bl	loadData_getBuffer
+ 393              		.loc 1 146 0
+ 394 01c8 3A1C     		mov	r2, r7
+ 395 01ca 314B     		ldr	r3, .L22+24
+ 396 01cc 101C     		mov	r0, r2
+ 397 01ce 191C     		mov	r1, r3
+ 398 01d0 FFF7FEFF 		bl	loadData_getBuffer
  147:.\spi_handler.c ****                     
  148:.\spi_handler.c ****                     for(c = 0 ; c < len ; c++)
- 398              		.loc 1 148 0
- 399 01d4 0023     		mov	r3, #0
- 400 01d6 3B61     		str	r3, [r7, #16]
- 401 01d8 0AE0     		b	.L20
- 402              	.L21:
+ 399              		.loc 1 148 0
+ 400 01d4 0023     		mov	r3, #0
+ 401 01d6 3B61     		str	r3, [r7, #16]
+ 402 01d8 0AE0     		b	.L20
+ 403              	.L21:
  149:.\spi_handler.c ****                     {
  150:.\spi_handler.c ****                         spiTxBuffer[c] = buf[c];
- 403              		.loc 1 150 0 discriminator 2
- 404 01da 3A68     		ldr	r2, [r7]
- 405 01dc 3B69     		ldr	r3, [r7, #16]
- 406 01de D318     		add	r3, r2, r3
- 407 01e0 1A78     		ldrb	r2, [r3]
- 408 01e2 2C49     		ldr	r1, .L22+28
- 409 01e4 3B69     		ldr	r3, [r7, #16]
- 410 01e6 CB18     		add	r3, r1, r3
- 411 01e8 1A70     		strb	r2, [r3]
+ 404              		.loc 1 150 0 discriminator 2
+ 405 01da 3A68     		ldr	r2, [r7]
+ 406 01dc 3B69     		ldr	r3, [r7, #16]
+ 407 01de D318     		add	r3, r2, r3
+ 408 01e0 1A78     		ldrb	r2, [r3]
+ 409 01e2 2C49     		ldr	r1, .L22+28
+ 410 01e4 3B69     		ldr	r3, [r7, #16]
+ 411 01e6 CB18     		add	r3, r1, r3
+ 412 01e8 1A70     		strb	r2, [r3]
  148:.\spi_handler.c ****                     for(c = 0 ; c < len ; c++)
- 412              		.loc 1 148 0 discriminator 2
- 413 01ea 3B69     		ldr	r3, [r7, #16]
- 414 01ec 0133     		add	r3, r3, #1
- 415 01ee 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 11
+ 413              		.loc 1 148 0 discriminator 2
+ 414 01ea 3B69     		ldr	r3, [r7, #16]
+ 415 01ec 0133     		add	r3, r3, #1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 11
 
 
- 416              	.L20:
+ 416 01ee 3B61     		str	r3, [r7, #16]
+ 417              	.L20:
  148:.\spi_handler.c ****                     for(c = 0 ; c < len ; c++)
- 417              		.loc 1 148 0 is_stmt 0 discriminator 1
- 418 01f0 274B     		ldr	r3, .L22+24
- 419 01f2 1B68     		ldr	r3, [r3]
- 420 01f4 3A69     		ldr	r2, [r7, #16]
- 421 01f6 9A42     		cmp	r2, r3
- 422 01f8 EFD3     		bcc	.L21
+ 418              		.loc 1 148 0 is_stmt 0 discriminator 1
+ 419 01f0 274B     		ldr	r3, .L22+24
+ 420 01f2 1B68     		ldr	r3, [r3]
+ 421 01f4 3A69     		ldr	r2, [r7, #16]
+ 422 01f6 9A42     		cmp	r2, r3
+ 423 01f8 EFD3     		bcc	.L21
  151:.\spi_handler.c ****                     }
  152:.\spi_handler.c **** 
  153:.\spi_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
- 423              		.loc 1 153 0 is_stmt 1
- 424 01fa FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+ 424              		.loc 1 153 0 is_stmt 1
+ 425 01fa FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
  154:.\spi_handler.c ****                     SPIS_1_SpiUartWriteTxData((char)len);
- 425              		.loc 1 154 0
- 426 01fe 244B     		ldr	r3, .L22+24
- 427 0200 1B68     		ldr	r3, [r3]
- 428 0202 DBB2     		uxtb	r3, r3
- 429 0204 181C     		mov	r0, r3
- 430 0206 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
+ 426              		.loc 1 154 0
+ 427 01fe 244B     		ldr	r3, .L22+24
+ 428 0200 1B68     		ldr	r3, [r3]
+ 429 0202 DBB2     		uxtb	r3, r3
+ 430 0204 181C     		mov	r0, r3
+ 431 0206 FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
  155:.\spi_handler.c ****                     spiCounter = 0;
- 431              		.loc 1 155 0
- 432 020a 1B4B     		ldr	r3, .L22
- 433 020c 0022     		mov	r2, #0
- 434 020e 1A60     		str	r2, [r3]
+ 432              		.loc 1 155 0
+ 433 020a 1B4B     		ldr	r3, .L22
+ 434 020c 0022     		mov	r2, #0
+ 435 020e 1A60     		str	r2, [r3]
  156:.\spi_handler.c ****                     spiReadCounter = 0;
- 435              		.loc 1 156 0
- 436 0210 214B     		ldr	r3, .L22+32
- 437 0212 0022     		mov	r2, #0
- 438 0214 1A60     		str	r2, [r3]
+ 436              		.loc 1 156 0
+ 437 0210 214B     		ldr	r3, .L22+32
+ 438 0212 0022     		mov	r2, #0
+ 439 0214 1A60     		str	r2, [r3]
  157:.\spi_handler.c ****                     
  158:.\spi_handler.c ****                     RED_LED_Write(red);
- 439              		.loc 1 158 0
- 440 0216 3B1C     		mov	r3, r7
- 441 0218 0D33     		add	r3, r3, #13
- 442 021a 1B78     		ldrb	r3, [r3]
- 443 021c 181C     		mov	r0, r3
- 444 021e FFF7FEFF 		bl	RED_LED_Write
+ 440              		.loc 1 158 0
+ 441 0216 3B1C     		mov	r3, r7
+ 442 0218 0D33     		add	r3, r3, #13
+ 443 021a 1B78     		ldrb	r3, [r3]
+ 444 021c 181C     		mov	r0, r3
+ 445 021e FFF7FEFF 		bl	RED_LED_Write
  159:.\spi_handler.c ****                     GREEN_LED_Write(green);
- 445              		.loc 1 159 0
- 446 0222 3B1C     		mov	r3, r7
- 447 0224 0C33     		add	r3, r3, #12
- 448 0226 1B78     		ldrb	r3, [r3]
- 449 0228 181C     		mov	r0, r3
- 450 022a FFF7FEFF 		bl	GREEN_LED_Write
+ 446              		.loc 1 159 0
+ 447 0222 3B1C     		mov	r3, r7
+ 448 0224 0C33     		add	r3, r3, #12
+ 449 0226 1B78     		ldrb	r3, [r3]
+ 450 0228 181C     		mov	r0, r3
+ 451 022a FFF7FEFF 		bl	GREEN_LED_Write
  160:.\spi_handler.c ****                     BLUE_LED_Write(blue);
- 451              		.loc 1 160 0
- 452 022e 3B1C     		mov	r3, r7
- 453 0230 0E33     		add	r3, r3, #14
- 454 0232 1B78     		ldrb	r3, [r3]
- 455 0234 181C     		mov	r0, r3
- 456 0236 FFF7FEFF 		bl	BLUE_LED_Write
- 457 023a 16E0     		b	.L6
- 458              	.L13:
+ 452              		.loc 1 160 0
+ 453 022e 3B1C     		mov	r3, r7
+ 454 0230 0E33     		add	r3, r3, #14
+ 455 0232 1B78     		ldrb	r3, [r3]
+ 456 0234 181C     		mov	r0, r3
+ 457 0236 FFF7FEFF 		bl	BLUE_LED_Write
+ 458 023a 16E0     		b	.L6
+ 459              	.L13:
  161:.\spi_handler.c ****                 break;
  162:.\spi_handler.c ****             case 'R':
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 12
+
+
  163:.\spi_handler.c ****                     SPIS_1_SpiUartClearTxBuffer();
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 12
-
-
- 459              		.loc 1 163 0
- 460 023c FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
+ 460              		.loc 1 163 0
+ 461 023c FFF7FEFF 		bl	SPIS_1_SpiUartClearTxBuffer
  164:.\spi_handler.c ****                     SPIS_1_SpiUartWriteTxData(spiTxBuffer[spiReadCounter]);
- 461              		.loc 1 164 0
- 462 0240 154B     		ldr	r3, .L22+32
- 463 0242 1B68     		ldr	r3, [r3]
- 464 0244 134A     		ldr	r2, .L22+28
- 465 0246 D35C     		ldrb	r3, [r2, r3]
- 466 0248 181C     		mov	r0, r3
- 467 024a FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
+ 462              		.loc 1 164 0
+ 463 0240 154B     		ldr	r3, .L22+32
+ 464 0242 1B68     		ldr	r3, [r3]
+ 465 0244 134A     		ldr	r2, .L22+28
+ 466 0246 D35C     		ldrb	r3, [r2, r3]
+ 467 0248 181C     		mov	r0, r3
+ 468 024a FFF7FEFF 		bl	SPIS_1_SpiUartWriteTxData
  165:.\spi_handler.c ****                     spiCounter = 0;
- 468              		.loc 1 165 0
- 469 024e 0A4B     		ldr	r3, .L22
- 470 0250 0022     		mov	r2, #0
- 471 0252 1A60     		str	r2, [r3]
+ 469              		.loc 1 165 0
+ 470 024e 0A4B     		ldr	r3, .L22
+ 471 0250 0022     		mov	r2, #0
+ 472 0252 1A60     		str	r2, [r3]
  166:.\spi_handler.c ****                     spiReadCounter++;
- 472              		.loc 1 166 0
- 473 0254 104B     		ldr	r3, .L22+32
- 474 0256 1B68     		ldr	r3, [r3]
- 475 0258 5A1C     		add	r2, r3, #1
- 476 025a 0F4B     		ldr	r3, .L22+32
- 477 025c 1A60     		str	r2, [r3]
- 478 025e 04E0     		b	.L6
- 479              	.L9:
+ 473              		.loc 1 166 0
+ 474 0254 104B     		ldr	r3, .L22+32
+ 475 0256 1B68     		ldr	r3, [r3]
+ 476 0258 5A1C     		add	r2, r3, #1
+ 477 025a 0F4B     		ldr	r3, .L22+32
+ 478 025c 1A60     		str	r2, [r3]
+ 479 025e 04E0     		b	.L6
+ 480              	.L9:
  167:.\spi_handler.c ****                 break;
  168:.\spi_handler.c ****             case 'C':
  169:.\spi_handler.c ****                     SPIS_1_SpiUartClearRxBuffer();
- 480              		.loc 1 169 0
- 481 0260 FFF7FEFF 		bl	SPIS_1_SpiUartClearRxBuffer
+ 481              		.loc 1 169 0
+ 482 0260 FFF7FEFF 		bl	SPIS_1_SpiUartClearRxBuffer
  170:.\spi_handler.c ****                     spiCounter = 0;
- 482              		.loc 1 170 0
- 483 0264 044B     		ldr	r3, .L22
- 484 0266 0022     		mov	r2, #0
- 485 0268 1A60     		str	r2, [r3]
- 486              	.L6:
- 487              	.LBE2:
+ 483              		.loc 1 170 0
+ 484 0264 044B     		ldr	r3, .L22
+ 485 0266 0022     		mov	r2, #0
+ 486 0268 1A60     		str	r2, [r3]
+ 487              	.L6:
+ 488              	.LBE2:
  171:.\spi_handler.c ****     		default:
  172:.\spi_handler.c ****     			break;
  173:.\spi_handler.c ****     	}
  174:.\spi_handler.c ****     }
  175:.\spi_handler.c **** 	
  176:.\spi_handler.c **** 	SPIS_1_ClearRxInterruptSource(SPIS_1_GetRxInterruptSource());
- 488              		.loc 1 176 0
- 489 026a 0C4B     		ldr	r3, .L22+36
- 490 026c 0B4A     		ldr	r2, .L22+36
- 491 026e 1268     		ldr	r2, [r2]
- 492 0270 1A60     		str	r2, [r3]
+ 489              		.loc 1 176 0
+ 490 026a 0C4B     		ldr	r3, .L22+36
+ 491 026c 0B4A     		ldr	r2, .L22+36
+ 492 026e 1268     		ldr	r2, [r2]
+ 493 0270 1A60     		str	r2, [r3]
  177:.\spi_handler.c **** 	//TP_1_Write(0); // Til måling af ISR gennemløbstid
  178:.\spi_handler.c **** }...
- 493              		.loc 1 178 0
- 494 0272 BD46     		mov	sp, r7
- 495 0274 07B0     		add	sp, sp, #28
- 496              		@ sp needed for prologue
- 497 0276 90BD     		pop	{r4, r7, pc}
- 498              	.L23:
- 499              		.align	2
- 500              	.L22:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 13
+ 494              		.loc 1 178 0
+ 495 0272 BD46     		mov	sp, r7
+ 496 0274 07B0     		add	sp, sp, #28
+ 497              		@ sp needed for prologue
+ 498 0276 90BD     		pop	{r4, r7, pc}
+ 499              	.L23:
+ 500              		.align	2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 13
 
 
- 501 0278 00000000 		.word	spiCounter
- 502 027c 00000000 		.word	spiBuffer
- 503 0280 00000000 		.word	.L15
- 504 0284 00000000 		.word	tempBuffer
- 505 0288 00000000 		.word	humiBuffer
- 506 028c 00000000 		.word	unitNo
- 507 0290 00000000 		.word	len
- 508 0294 00000000 		.word	spiTxBuffer
- 509 0298 00000000 		.word	spiReadCounter
- 510 029c C00F0740 		.word	1074204608
- 511              		.cfi_endproc
- 512              	.LFE34:
- 513              		.size	isr_spi_rx, .-isr_spi_rx
- 514              		.text
- 515              	.Letext0:
- 516              		.file 2 "./Generated_Source/PSoC4/cytypes.h"
- 517              		.section	.debug_info,"",%progbits
- 518              	.Ldebug_info0:
- 519 0000 28020000 		.4byte	0x228
- 520 0004 0200     		.2byte	0x2
- 521 0006 00000000 		.4byte	.Ldebug_abbrev0
- 522 000a 04       		.byte	0x4
- 523 000b 01       		.uleb128 0x1
- 524 000c 38010000 		.4byte	.LASF27
- 525 0010 01       		.byte	0x1
- 526 0011 FB000000 		.4byte	.LASF28
- 527 0015 10000000 		.4byte	.LASF29
- 528 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 529 001d 00000000 		.4byte	0
- 530 0021 00000000 		.4byte	0
- 531 0025 00000000 		.4byte	.Ldebug_line0
- 532 0029 02       		.uleb128 0x2
- 533 002a 01       		.byte	0x1
- 534 002b 06       		.byte	0x6
- 535 002c 8A010000 		.4byte	.LASF0
- 536 0030 02       		.uleb128 0x2
- 537 0031 01       		.byte	0x1
- 538 0032 08       		.byte	0x8
- 539 0033 58000000 		.4byte	.LASF1
- 540 0037 02       		.uleb128 0x2
- 541 0038 02       		.byte	0x2
- 542 0039 05       		.byte	0x5
- 543 003a 25010000 		.4byte	.LASF2
- 544 003e 02       		.uleb128 0x2
- 545 003f 02       		.byte	0x2
- 546 0040 07       		.byte	0x7
- 547 0041 25000000 		.4byte	.LASF3
- 548 0045 02       		.uleb128 0x2
- 549 0046 04       		.byte	0x4
- 550 0047 05       		.byte	0x5
- 551 0048 81010000 		.4byte	.LASF4
- 552 004c 02       		.uleb128 0x2
- 553 004d 04       		.byte	0x4
- 554 004e 07       		.byte	0x7
- 555 004f 72000000 		.4byte	.LASF5
- 556 0053 02       		.uleb128 0x2
- 557 0054 08       		.byte	0x8
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 14
+ 501              	.L22:
+ 502 0278 00000000 		.word	spiCounter
+ 503 027c 00000000 		.word	spiBuffer
+ 504 0280 00000000 		.word	.L15
+ 505 0284 00000000 		.word	tempBuffer
+ 506 0288 00000000 		.word	humiBuffer
+ 507 028c 00000000 		.word	unitNo
+ 508 0290 00000000 		.word	len
+ 509 0294 00000000 		.word	spiTxBuffer
+ 510 0298 00000000 		.word	spiReadCounter
+ 511 029c C00F0740 		.word	1074204608
+ 512              		.cfi_endproc
+ 513              	.LFE34:
+ 514              		.size	isr_spi_rx, .-isr_spi_rx
+ 515              		.text
+ 516              	.Letext0:
+ 517              		.file 2 "./Generated_Source/PSoC4/cytypes.h"
+ 518              		.file 3 ".\\loadData.h"
+ 519              		.section	.debug_info,"",%progbits
+ 520              	.Ldebug_info0:
+ 521 0000 3A020000 		.4byte	0x23a
+ 522 0004 0200     		.2byte	0x2
+ 523 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 524 000a 04       		.byte	0x4
+ 525 000b 01       		.uleb128 0x1
+ 526 000c 42010000 		.4byte	.LASF28
+ 527 0010 01       		.byte	0x1
+ 528 0011 05010000 		.4byte	.LASF29
+ 529 0015 1A000000 		.4byte	.LASF30
+ 530 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 531 001d 00000000 		.4byte	0
+ 532 0021 00000000 		.4byte	0
+ 533 0025 00000000 		.4byte	.Ldebug_line0
+ 534 0029 02       		.uleb128 0x2
+ 535 002a 01       		.byte	0x1
+ 536 002b 06       		.byte	0x6
+ 537 002c 94010000 		.4byte	.LASF0
+ 538 0030 02       		.uleb128 0x2
+ 539 0031 01       		.byte	0x1
+ 540 0032 08       		.byte	0x8
+ 541 0033 62000000 		.4byte	.LASF1
+ 542 0037 02       		.uleb128 0x2
+ 543 0038 02       		.byte	0x2
+ 544 0039 05       		.byte	0x5
+ 545 003a 2F010000 		.4byte	.LASF2
+ 546 003e 02       		.uleb128 0x2
+ 547 003f 02       		.byte	0x2
+ 548 0040 07       		.byte	0x7
+ 549 0041 2F000000 		.4byte	.LASF3
+ 550 0045 02       		.uleb128 0x2
+ 551 0046 04       		.byte	0x4
+ 552 0047 05       		.byte	0x5
+ 553 0048 8B010000 		.4byte	.LASF4
+ 554 004c 02       		.uleb128 0x2
+ 555 004d 04       		.byte	0x4
+ 556 004e 07       		.byte	0x7
+ 557 004f 7C000000 		.4byte	.LASF5
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 14
 
 
- 558 0055 05       		.byte	0x5
- 559 0056 ED000000 		.4byte	.LASF6
- 560 005a 02       		.uleb128 0x2
- 561 005b 08       		.byte	0x8
- 562 005c 07       		.byte	0x7
- 563 005d CD000000 		.4byte	.LASF7
- 564 0061 03       		.uleb128 0x3
- 565 0062 04       		.byte	0x4
- 566 0063 05       		.byte	0x5
- 567 0064 696E7400 		.ascii	"int\000"
- 568 0068 02       		.uleb128 0x2
- 569 0069 04       		.byte	0x4
- 570 006a 07       		.byte	0x7
- 571 006b C0000000 		.4byte	.LASF8
- 572 006f 04       		.uleb128 0x4
- 573 0070 84000000 		.4byte	.LASF9
- 574 0074 02       		.byte	0x2
- 575 0075 5B       		.byte	0x5b
- 576 0076 30000000 		.4byte	0x30
- 577 007a 04       		.uleb128 0x4
- 578 007b AE000000 		.4byte	.LASF10
- 579 007f 02       		.byte	0x2
- 580 0080 5D       		.byte	0x5d
- 581 0081 4C000000 		.4byte	0x4c
- 582 0085 02       		.uleb128 0x2
- 583 0086 04       		.byte	0x4
- 584 0087 04       		.byte	0x4
- 585 0088 52000000 		.4byte	.LASF11
- 586 008c 02       		.uleb128 0x2
- 587 008d 08       		.byte	0x8
- 588 008e 04       		.byte	0x4
- 589 008f 9C000000 		.4byte	.LASF12
- 590 0093 02       		.uleb128 0x2
- 591 0094 01       		.byte	0x1
- 592 0095 08       		.byte	0x8
- 593 0096 0B010000 		.4byte	.LASF13
- 594 009a 04       		.uleb128 0x4
- 595 009b 00000000 		.4byte	.LASF14
- 596 009f 02       		.byte	0x2
- 597 00a0 F2       		.byte	0xf2
- 598 00a1 A5000000 		.4byte	0xa5
- 599 00a5 05       		.uleb128 0x5
- 600 00a6 7A000000 		.4byte	0x7a
- 601 00aa 02       		.uleb128 0x2
- 602 00ab 04       		.byte	0x4
- 603 00ac 07       		.byte	0x7
- 604 00ad E4000000 		.4byte	.LASF15
- 605 00b1 06       		.uleb128 0x6
- 606 00b2 04       		.byte	0x4
- 607 00b3 93000000 		.4byte	0x93
- 608 00b7 07       		.uleb128 0x7
- 609 00b8 01       		.byte	0x1
- 610 00b9 2F010000 		.4byte	.LASF30
- 611 00bd 01       		.byte	0x1
- 612 00be 14       		.byte	0x14
- 613 00bf 00000000 		.4byte	.LFB33
- 614 00c3 1C000000 		.4byte	.LFE33
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 15
+ 558 0053 02       		.uleb128 0x2
+ 559 0054 08       		.byte	0x8
+ 560 0055 05       		.byte	0x5
+ 561 0056 F7000000 		.4byte	.LASF6
+ 562 005a 02       		.uleb128 0x2
+ 563 005b 08       		.byte	0x8
+ 564 005c 07       		.byte	0x7
+ 565 005d D7000000 		.4byte	.LASF7
+ 566 0061 03       		.uleb128 0x3
+ 567 0062 04       		.byte	0x4
+ 568 0063 05       		.byte	0x5
+ 569 0064 696E7400 		.ascii	"int\000"
+ 570 0068 02       		.uleb128 0x2
+ 571 0069 04       		.byte	0x4
+ 572 006a 07       		.byte	0x7
+ 573 006b CA000000 		.4byte	.LASF8
+ 574 006f 04       		.uleb128 0x4
+ 575 0070 8E000000 		.4byte	.LASF9
+ 576 0074 02       		.byte	0x2
+ 577 0075 5B       		.byte	0x5b
+ 578 0076 30000000 		.4byte	0x30
+ 579 007a 04       		.uleb128 0x4
+ 580 007b B8000000 		.4byte	.LASF10
+ 581 007f 02       		.byte	0x2
+ 582 0080 5D       		.byte	0x5d
+ 583 0081 4C000000 		.4byte	0x4c
+ 584 0085 02       		.uleb128 0x2
+ 585 0086 04       		.byte	0x4
+ 586 0087 04       		.byte	0x4
+ 587 0088 5C000000 		.4byte	.LASF11
+ 588 008c 02       		.uleb128 0x2
+ 589 008d 08       		.byte	0x8
+ 590 008e 04       		.byte	0x4
+ 591 008f A6000000 		.4byte	.LASF12
+ 592 0093 02       		.uleb128 0x2
+ 593 0094 01       		.byte	0x1
+ 594 0095 08       		.byte	0x8
+ 595 0096 15010000 		.4byte	.LASF13
+ 596 009a 04       		.uleb128 0x4
+ 597 009b 00000000 		.4byte	.LASF14
+ 598 009f 02       		.byte	0x2
+ 599 00a0 F2       		.byte	0xf2
+ 600 00a1 A5000000 		.4byte	0xa5
+ 601 00a5 05       		.uleb128 0x5
+ 602 00a6 7A000000 		.4byte	0x7a
+ 603 00aa 02       		.uleb128 0x2
+ 604 00ab 04       		.byte	0x4
+ 605 00ac 07       		.byte	0x7
+ 606 00ad EE000000 		.4byte	.LASF15
+ 607 00b1 06       		.uleb128 0x6
+ 608 00b2 04       		.byte	0x4
+ 609 00b3 93000000 		.4byte	0x93
+ 610 00b7 07       		.uleb128 0x7
+ 611 00b8 01       		.byte	0x1
+ 612 00b9 39010000 		.4byte	.LASF31
+ 613 00bd 01       		.byte	0x1
+ 614 00be 14       		.byte	0x14
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 15
 
 
- 615 00c7 00000000 		.4byte	.LLST0
- 616 00cb 01       		.byte	0x1
- 617 00cc 08       		.uleb128 0x8
- 618 00cd 01       		.byte	0x1
- 619 00ce 42000000 		.4byte	.LASF31
- 620 00d2 01       		.byte	0x1
- 621 00d3 1F       		.byte	0x1f
- 622 00d4 01       		.byte	0x1
- 623 00d5 00000000 		.4byte	.LFB34
- 624 00d9 A0020000 		.4byte	.LFE34
- 625 00dd 2C000000 		.4byte	.LLST1
- 626 00e1 01       		.byte	0x1
- 627 00e2 6B010000 		.4byte	0x16b
- 628 00e6 09       		.uleb128 0x9
- 629 00e7 636D6400 		.ascii	"cmd\000"
- 630 00eb 01       		.byte	0x1
- 631 00ec 21       		.byte	0x21
- 632 00ed 93000000 		.4byte	0x93
- 633 00f1 02       		.byte	0x2
- 634 00f2 91       		.byte	0x91
- 635 00f3 67       		.sleb128 -25
- 636 00f4 09       		.uleb128 0x9
- 637 00f5 6900     		.ascii	"i\000"
- 638 00f7 01       		.byte	0x1
- 639 00f8 22       		.byte	0x22
- 640 00f9 61000000 		.4byte	0x61
- 641 00fd 02       		.byte	0x2
- 642 00fe 91       		.byte	0x91
- 643 00ff 6C       		.sleb128 -20
- 644 0100 09       		.uleb128 0x9
- 645 0101 6300     		.ascii	"c\000"
- 646 0103 01       		.byte	0x1
- 647 0104 23       		.byte	0x23
- 648 0105 68000000 		.4byte	0x68
- 649 0109 02       		.byte	0x2
- 650 010a 91       		.byte	0x91
- 651 010b 68       		.sleb128 -24
- 652 010c 0A       		.uleb128 0xa
- 653 010d 4D000000 		.4byte	.LASF16
- 654 0111 01       		.byte	0x1
- 655 0112 38       		.byte	0x38
- 656 0113 6F000000 		.4byte	0x6f
- 657 0117 02       		.byte	0x2
- 658 0118 91       		.byte	0x91
- 659 0119 66       		.sleb128 -26
- 660 011a 09       		.uleb128 0x9
- 661 011b 72656400 		.ascii	"red\000"
- 662 011f 01       		.byte	0x1
- 663 0120 38       		.byte	0x38
- 664 0121 6F000000 		.4byte	0x6f
- 665 0125 02       		.byte	0x2
- 666 0126 91       		.byte	0x91
- 667 0127 65       		.sleb128 -27
- 668 0128 0A       		.uleb128 0xa
- 669 0129 1F010000 		.4byte	.LASF17
- 670 012d 01       		.byte	0x1
- 671 012e 38       		.byte	0x38
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 16
+ 615 00bf 00000000 		.4byte	.LFB33
+ 616 00c3 1C000000 		.4byte	.LFE33
+ 617 00c7 00000000 		.4byte	.LLST0
+ 618 00cb 01       		.byte	0x1
+ 619 00cc 08       		.uleb128 0x8
+ 620 00cd 01       		.byte	0x1
+ 621 00ce 4C000000 		.4byte	.LASF32
+ 622 00d2 01       		.byte	0x1
+ 623 00d3 1F       		.byte	0x1f
+ 624 00d4 01       		.byte	0x1
+ 625 00d5 00000000 		.4byte	.LFB34
+ 626 00d9 A0020000 		.4byte	.LFE34
+ 627 00dd 2C000000 		.4byte	.LLST1
+ 628 00e1 01       		.byte	0x1
+ 629 00e2 6B010000 		.4byte	0x16b
+ 630 00e6 09       		.uleb128 0x9
+ 631 00e7 636D6400 		.ascii	"cmd\000"
+ 632 00eb 01       		.byte	0x1
+ 633 00ec 21       		.byte	0x21
+ 634 00ed 93000000 		.4byte	0x93
+ 635 00f1 02       		.byte	0x2
+ 636 00f2 91       		.byte	0x91
+ 637 00f3 67       		.sleb128 -25
+ 638 00f4 09       		.uleb128 0x9
+ 639 00f5 6900     		.ascii	"i\000"
+ 640 00f7 01       		.byte	0x1
+ 641 00f8 22       		.byte	0x22
+ 642 00f9 61000000 		.4byte	0x61
+ 643 00fd 02       		.byte	0x2
+ 644 00fe 91       		.byte	0x91
+ 645 00ff 6C       		.sleb128 -20
+ 646 0100 09       		.uleb128 0x9
+ 647 0101 6300     		.ascii	"c\000"
+ 648 0103 01       		.byte	0x1
+ 649 0104 23       		.byte	0x23
+ 650 0105 68000000 		.4byte	0x68
+ 651 0109 02       		.byte	0x2
+ 652 010a 91       		.byte	0x91
+ 653 010b 68       		.sleb128 -24
+ 654 010c 0A       		.uleb128 0xa
+ 655 010d 57000000 		.4byte	.LASF16
+ 656 0111 01       		.byte	0x1
+ 657 0112 38       		.byte	0x38
+ 658 0113 6F000000 		.4byte	0x6f
+ 659 0117 02       		.byte	0x2
+ 660 0118 91       		.byte	0x91
+ 661 0119 66       		.sleb128 -26
+ 662 011a 09       		.uleb128 0x9
+ 663 011b 72656400 		.ascii	"red\000"
+ 664 011f 01       		.byte	0x1
+ 665 0120 38       		.byte	0x38
+ 666 0121 6F000000 		.4byte	0x6f
+ 667 0125 02       		.byte	0x2
+ 668 0126 91       		.byte	0x91
+ 669 0127 65       		.sleb128 -27
+ 670 0128 0A       		.uleb128 0xa
+ 671 0129 29010000 		.4byte	.LASF17
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 16
 
 
- 672 012f 6F000000 		.4byte	0x6f
- 673 0133 02       		.byte	0x2
- 674 0134 91       		.byte	0x91
- 675 0135 64       		.sleb128 -28
- 676 0136 0B       		.uleb128 0xb
- 677 0137 72000000 		.4byte	.LBB2
- 678 013b 6A020000 		.4byte	.LBE2
- 679 013f 0A       		.uleb128 0xa
- 680 0140 38000000 		.4byte	.LASF18
- 681 0144 01       		.byte	0x1
- 682 0145 68       		.byte	0x68
- 683 0146 85000000 		.4byte	0x85
- 684 014a 02       		.byte	0x2
- 685 014b 91       		.byte	0x91
- 686 014c 60       		.sleb128 -32
- 687 014d 0A       		.uleb128 0xa
- 688 014e 96010000 		.4byte	.LASF19
- 689 0152 01       		.byte	0x1
- 690 0153 69       		.byte	0x69
- 691 0154 85000000 		.4byte	0x85
- 692 0158 02       		.byte	0x2
- 693 0159 91       		.byte	0x91
- 694 015a 5C       		.sleb128 -36
- 695 015b 09       		.uleb128 0x9
- 696 015c 62756600 		.ascii	"buf\000"
- 697 0160 01       		.byte	0x1
- 698 0161 90       		.byte	0x90
- 699 0162 B1000000 		.4byte	0xb1
- 700 0166 02       		.byte	0x2
- 701 0167 91       		.byte	0x91
- 702 0168 58       		.sleb128 -40
- 703 0169 00       		.byte	0
- 704 016a 00       		.byte	0
- 705 016b 0C       		.uleb128 0xc
- 706 016c 93000000 		.4byte	0x93
- 707 0170 7B010000 		.4byte	0x17b
- 708 0174 0D       		.uleb128 0xd
- 709 0175 AA000000 		.4byte	0xaa
- 710 0179 3F       		.byte	0x3f
- 711 017a 00       		.byte	0
- 712 017b 0E       		.uleb128 0xe
- 713 017c 06000000 		.4byte	.LASF20
- 714 0180 01       		.byte	0x1
- 715 0181 0B       		.byte	0xb
- 716 0182 6B010000 		.4byte	0x16b
- 717 0186 01       		.byte	0x1
- 718 0187 05       		.byte	0x5
- 719 0188 03       		.byte	0x3
- 720 0189 00000000 		.4byte	spiBuffer
- 721 018d 0E       		.uleb128 0xe
- 722 018e 66000000 		.4byte	.LASF21
- 723 0192 01       		.byte	0x1
- 724 0193 0C       		.byte	0xc
- 725 0194 6B010000 		.4byte	0x16b
- 726 0198 01       		.byte	0x1
- 727 0199 05       		.byte	0x5
- 728 019a 03       		.byte	0x3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 17
+ 672 012d 01       		.byte	0x1
+ 673 012e 38       		.byte	0x38
+ 674 012f 6F000000 		.4byte	0x6f
+ 675 0133 02       		.byte	0x2
+ 676 0134 91       		.byte	0x91
+ 677 0135 64       		.sleb128 -28
+ 678 0136 0B       		.uleb128 0xb
+ 679 0137 72000000 		.4byte	.LBB2
+ 680 013b 6A020000 		.4byte	.LBE2
+ 681 013f 0A       		.uleb128 0xa
+ 682 0140 42000000 		.4byte	.LASF18
+ 683 0144 01       		.byte	0x1
+ 684 0145 68       		.byte	0x68
+ 685 0146 85000000 		.4byte	0x85
+ 686 014a 02       		.byte	0x2
+ 687 014b 91       		.byte	0x91
+ 688 014c 60       		.sleb128 -32
+ 689 014d 0A       		.uleb128 0xa
+ 690 014e A0010000 		.4byte	.LASF19
+ 691 0152 01       		.byte	0x1
+ 692 0153 69       		.byte	0x69
+ 693 0154 85000000 		.4byte	0x85
+ 694 0158 02       		.byte	0x2
+ 695 0159 91       		.byte	0x91
+ 696 015a 5C       		.sleb128 -36
+ 697 015b 09       		.uleb128 0x9
+ 698 015c 62756600 		.ascii	"buf\000"
+ 699 0160 01       		.byte	0x1
+ 700 0161 90       		.byte	0x90
+ 701 0162 B1000000 		.4byte	0xb1
+ 702 0166 02       		.byte	0x2
+ 703 0167 91       		.byte	0x91
+ 704 0168 58       		.sleb128 -40
+ 705 0169 00       		.byte	0
+ 706 016a 00       		.byte	0
+ 707 016b 0C       		.uleb128 0xc
+ 708 016c 06000000 		.4byte	.LASF20
+ 709 0170 03       		.byte	0x3
+ 710 0171 15       		.byte	0x15
+ 711 0172 30000000 		.4byte	0x30
+ 712 0176 01       		.byte	0x1
+ 713 0177 05       		.byte	0x5
+ 714 0178 03       		.byte	0x3
+ 715 0179 00000000 		.4byte	nextState
+ 716 017d 0D       		.uleb128 0xd
+ 717 017e 93000000 		.4byte	0x93
+ 718 0182 8D010000 		.4byte	0x18d
+ 719 0186 0E       		.uleb128 0xe
+ 720 0187 AA000000 		.4byte	0xaa
+ 721 018b 3F       		.byte	0x3f
+ 722 018c 00       		.byte	0
+ 723 018d 0C       		.uleb128 0xc
+ 724 018e 10000000 		.4byte	.LASF21
+ 725 0192 01       		.byte	0x1
+ 726 0193 0B       		.byte	0xb
+ 727 0194 7D010000 		.4byte	0x17d
+ 728 0198 01       		.byte	0x1
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 17
 
 
- 729 019b 00000000 		.4byte	spiTxBuffer
- 730 019f 0E       		.uleb128 0xe
- 731 01a0 95000000 		.4byte	.LASF22
- 732 01a4 01       		.byte	0x1
- 733 01a5 0D       		.byte	0xd
- 734 01a6 93000000 		.4byte	0x93
- 735 01aa 01       		.byte	0x1
- 736 01ab 05       		.byte	0x5
- 737 01ac 03       		.byte	0x3
- 738 01ad 00000000 		.4byte	unitNo
- 739 01b1 0E       		.uleb128 0xe
- 740 01b2 A3000000 		.4byte	.LASF23
- 741 01b6 01       		.byte	0x1
- 742 01b7 0E       		.byte	0xe
- 743 01b8 61000000 		.4byte	0x61
- 744 01bc 01       		.byte	0x1
- 745 01bd 05       		.byte	0x5
- 746 01be 03       		.byte	0x3
- 747 01bf 00000000 		.4byte	spiCounter
- 748 01c3 0E       		.uleb128 0xe
- 749 01c4 10010000 		.4byte	.LASF24
- 750 01c8 01       		.byte	0x1
- 751 01c9 0F       		.byte	0xf
- 752 01ca 61000000 		.4byte	0x61
- 753 01ce 01       		.byte	0x1
- 754 01cf 05       		.byte	0x5
- 755 01d0 03       		.byte	0x3
- 756 01d1 00000000 		.4byte	spiReadCounter
- 757 01d5 0F       		.uleb128 0xf
- 758 01d6 6C656E00 		.ascii	"len\000"
- 759 01da 01       		.byte	0x1
- 760 01db 10       		.byte	0x10
- 761 01dc 68000000 		.4byte	0x68
- 762 01e0 01       		.byte	0x1
- 763 01e1 05       		.byte	0x5
- 764 01e2 03       		.byte	0x3
- 765 01e3 00000000 		.4byte	len
- 766 01e7 0C       		.uleb128 0xc
- 767 01e8 93000000 		.4byte	0x93
- 768 01ec F7010000 		.4byte	0x1f7
- 769 01f0 0D       		.uleb128 0xd
- 770 01f1 AA000000 		.4byte	0xaa
- 771 01f5 05       		.byte	0x5
- 772 01f6 00       		.byte	0
- 773 01f7 0E       		.uleb128 0xe
- 774 01f8 8A000000 		.4byte	.LASF25
- 775 01fc 01       		.byte	0x1
- 776 01fd 11       		.byte	0x11
- 777 01fe E7010000 		.4byte	0x1e7
- 778 0202 01       		.byte	0x1
- 779 0203 05       		.byte	0x5
- 780 0204 03       		.byte	0x3
- 781 0205 00000000 		.4byte	tempBuffer
- 782 0209 0C       		.uleb128 0xc
- 783 020a 93000000 		.4byte	0x93
- 784 020e 19020000 		.4byte	0x219
- 785 0212 0D       		.uleb128 0xd
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 18
+ 729 0199 05       		.byte	0x5
+ 730 019a 03       		.byte	0x3
+ 731 019b 00000000 		.4byte	spiBuffer
+ 732 019f 0C       		.uleb128 0xc
+ 733 01a0 70000000 		.4byte	.LASF22
+ 734 01a4 01       		.byte	0x1
+ 735 01a5 0C       		.byte	0xc
+ 736 01a6 7D010000 		.4byte	0x17d
+ 737 01aa 01       		.byte	0x1
+ 738 01ab 05       		.byte	0x5
+ 739 01ac 03       		.byte	0x3
+ 740 01ad 00000000 		.4byte	spiTxBuffer
+ 741 01b1 0C       		.uleb128 0xc
+ 742 01b2 9F000000 		.4byte	.LASF23
+ 743 01b6 01       		.byte	0x1
+ 744 01b7 0D       		.byte	0xd
+ 745 01b8 93000000 		.4byte	0x93
+ 746 01bc 01       		.byte	0x1
+ 747 01bd 05       		.byte	0x5
+ 748 01be 03       		.byte	0x3
+ 749 01bf 00000000 		.4byte	unitNo
+ 750 01c3 0C       		.uleb128 0xc
+ 751 01c4 AD000000 		.4byte	.LASF24
+ 752 01c8 01       		.byte	0x1
+ 753 01c9 0E       		.byte	0xe
+ 754 01ca 61000000 		.4byte	0x61
+ 755 01ce 01       		.byte	0x1
+ 756 01cf 05       		.byte	0x5
+ 757 01d0 03       		.byte	0x3
+ 758 01d1 00000000 		.4byte	spiCounter
+ 759 01d5 0C       		.uleb128 0xc
+ 760 01d6 1A010000 		.4byte	.LASF25
+ 761 01da 01       		.byte	0x1
+ 762 01db 0F       		.byte	0xf
+ 763 01dc 61000000 		.4byte	0x61
+ 764 01e0 01       		.byte	0x1
+ 765 01e1 05       		.byte	0x5
+ 766 01e2 03       		.byte	0x3
+ 767 01e3 00000000 		.4byte	spiReadCounter
+ 768 01e7 0F       		.uleb128 0xf
+ 769 01e8 6C656E00 		.ascii	"len\000"
+ 770 01ec 01       		.byte	0x1
+ 771 01ed 10       		.byte	0x10
+ 772 01ee 68000000 		.4byte	0x68
+ 773 01f2 01       		.byte	0x1
+ 774 01f3 05       		.byte	0x5
+ 775 01f4 03       		.byte	0x3
+ 776 01f5 00000000 		.4byte	len
+ 777 01f9 0D       		.uleb128 0xd
+ 778 01fa 93000000 		.4byte	0x93
+ 779 01fe 09020000 		.4byte	0x209
+ 780 0202 0E       		.uleb128 0xe
+ 781 0203 AA000000 		.4byte	0xaa
+ 782 0207 05       		.byte	0x5
+ 783 0208 00       		.byte	0
+ 784 0209 0C       		.uleb128 0xc
+ 785 020a 94000000 		.4byte	.LASF26
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 18
 
 
- 786 0213 AA000000 		.4byte	0xaa
- 787 0217 03       		.byte	0x3
- 788 0218 00       		.byte	0
- 789 0219 0E       		.uleb128 0xe
- 790 021a B5000000 		.4byte	.LASF26
- 791 021e 01       		.byte	0x1
- 792 021f 12       		.byte	0x12
- 793 0220 09020000 		.4byte	0x209
- 794 0224 01       		.byte	0x1
- 795 0225 05       		.byte	0x5
- 796 0226 03       		.byte	0x3
- 797 0227 00000000 		.4byte	humiBuffer
- 798 022b 00       		.byte	0
- 799              		.section	.debug_abbrev,"",%progbits
- 800              	.Ldebug_abbrev0:
- 801 0000 01       		.uleb128 0x1
- 802 0001 11       		.uleb128 0x11
- 803 0002 01       		.byte	0x1
- 804 0003 25       		.uleb128 0x25
- 805 0004 0E       		.uleb128 0xe
- 806 0005 13       		.uleb128 0x13
- 807 0006 0B       		.uleb128 0xb
- 808 0007 03       		.uleb128 0x3
- 809 0008 0E       		.uleb128 0xe
- 810 0009 1B       		.uleb128 0x1b
- 811 000a 0E       		.uleb128 0xe
- 812 000b 55       		.uleb128 0x55
- 813 000c 06       		.uleb128 0x6
- 814 000d 11       		.uleb128 0x11
- 815 000e 01       		.uleb128 0x1
- 816 000f 52       		.uleb128 0x52
- 817 0010 01       		.uleb128 0x1
- 818 0011 10       		.uleb128 0x10
- 819 0012 06       		.uleb128 0x6
- 820 0013 00       		.byte	0
- 821 0014 00       		.byte	0
- 822 0015 02       		.uleb128 0x2
- 823 0016 24       		.uleb128 0x24
- 824 0017 00       		.byte	0
- 825 0018 0B       		.uleb128 0xb
- 826 0019 0B       		.uleb128 0xb
- 827 001a 3E       		.uleb128 0x3e
- 828 001b 0B       		.uleb128 0xb
- 829 001c 03       		.uleb128 0x3
- 830 001d 0E       		.uleb128 0xe
- 831 001e 00       		.byte	0
- 832 001f 00       		.byte	0
- 833 0020 03       		.uleb128 0x3
- 834 0021 24       		.uleb128 0x24
- 835 0022 00       		.byte	0
- 836 0023 0B       		.uleb128 0xb
- 837 0024 0B       		.uleb128 0xb
- 838 0025 3E       		.uleb128 0x3e
- 839 0026 0B       		.uleb128 0xb
- 840 0027 03       		.uleb128 0x3
- 841 0028 08       		.uleb128 0x8
- 842 0029 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 19
+ 786 020e 01       		.byte	0x1
+ 787 020f 11       		.byte	0x11
+ 788 0210 F9010000 		.4byte	0x1f9
+ 789 0214 01       		.byte	0x1
+ 790 0215 05       		.byte	0x5
+ 791 0216 03       		.byte	0x3
+ 792 0217 00000000 		.4byte	tempBuffer
+ 793 021b 0D       		.uleb128 0xd
+ 794 021c 93000000 		.4byte	0x93
+ 795 0220 2B020000 		.4byte	0x22b
+ 796 0224 0E       		.uleb128 0xe
+ 797 0225 AA000000 		.4byte	0xaa
+ 798 0229 03       		.byte	0x3
+ 799 022a 00       		.byte	0
+ 800 022b 0C       		.uleb128 0xc
+ 801 022c BF000000 		.4byte	.LASF27
+ 802 0230 01       		.byte	0x1
+ 803 0231 12       		.byte	0x12
+ 804 0232 1B020000 		.4byte	0x21b
+ 805 0236 01       		.byte	0x1
+ 806 0237 05       		.byte	0x5
+ 807 0238 03       		.byte	0x3
+ 808 0239 00000000 		.4byte	humiBuffer
+ 809 023d 00       		.byte	0
+ 810              		.section	.debug_abbrev,"",%progbits
+ 811              	.Ldebug_abbrev0:
+ 812 0000 01       		.uleb128 0x1
+ 813 0001 11       		.uleb128 0x11
+ 814 0002 01       		.byte	0x1
+ 815 0003 25       		.uleb128 0x25
+ 816 0004 0E       		.uleb128 0xe
+ 817 0005 13       		.uleb128 0x13
+ 818 0006 0B       		.uleb128 0xb
+ 819 0007 03       		.uleb128 0x3
+ 820 0008 0E       		.uleb128 0xe
+ 821 0009 1B       		.uleb128 0x1b
+ 822 000a 0E       		.uleb128 0xe
+ 823 000b 55       		.uleb128 0x55
+ 824 000c 06       		.uleb128 0x6
+ 825 000d 11       		.uleb128 0x11
+ 826 000e 01       		.uleb128 0x1
+ 827 000f 52       		.uleb128 0x52
+ 828 0010 01       		.uleb128 0x1
+ 829 0011 10       		.uleb128 0x10
+ 830 0012 06       		.uleb128 0x6
+ 831 0013 00       		.byte	0
+ 832 0014 00       		.byte	0
+ 833 0015 02       		.uleb128 0x2
+ 834 0016 24       		.uleb128 0x24
+ 835 0017 00       		.byte	0
+ 836 0018 0B       		.uleb128 0xb
+ 837 0019 0B       		.uleb128 0xb
+ 838 001a 3E       		.uleb128 0x3e
+ 839 001b 0B       		.uleb128 0xb
+ 840 001c 03       		.uleb128 0x3
+ 841 001d 0E       		.uleb128 0xe
+ 842 001e 00       		.byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 19
 
 
- 843 002a 00       		.byte	0
- 844 002b 04       		.uleb128 0x4
- 845 002c 16       		.uleb128 0x16
- 846 002d 00       		.byte	0
- 847 002e 03       		.uleb128 0x3
- 848 002f 0E       		.uleb128 0xe
- 849 0030 3A       		.uleb128 0x3a
- 850 0031 0B       		.uleb128 0xb
- 851 0032 3B       		.uleb128 0x3b
- 852 0033 0B       		.uleb128 0xb
- 853 0034 49       		.uleb128 0x49
- 854 0035 13       		.uleb128 0x13
- 855 0036 00       		.byte	0
- 856 0037 00       		.byte	0
- 857 0038 05       		.uleb128 0x5
- 858 0039 35       		.uleb128 0x35
- 859 003a 00       		.byte	0
- 860 003b 49       		.uleb128 0x49
- 861 003c 13       		.uleb128 0x13
- 862 003d 00       		.byte	0
- 863 003e 00       		.byte	0
- 864 003f 06       		.uleb128 0x6
- 865 0040 0F       		.uleb128 0xf
- 866 0041 00       		.byte	0
- 867 0042 0B       		.uleb128 0xb
- 868 0043 0B       		.uleb128 0xb
- 869 0044 49       		.uleb128 0x49
- 870 0045 13       		.uleb128 0x13
- 871 0046 00       		.byte	0
- 872 0047 00       		.byte	0
- 873 0048 07       		.uleb128 0x7
- 874 0049 2E       		.uleb128 0x2e
- 875 004a 00       		.byte	0
- 876 004b 3F       		.uleb128 0x3f
- 877 004c 0C       		.uleb128 0xc
- 878 004d 03       		.uleb128 0x3
- 879 004e 0E       		.uleb128 0xe
- 880 004f 3A       		.uleb128 0x3a
- 881 0050 0B       		.uleb128 0xb
- 882 0051 3B       		.uleb128 0x3b
- 883 0052 0B       		.uleb128 0xb
- 884 0053 11       		.uleb128 0x11
- 885 0054 01       		.uleb128 0x1
- 886 0055 12       		.uleb128 0x12
- 887 0056 01       		.uleb128 0x1
- 888 0057 40       		.uleb128 0x40
- 889 0058 06       		.uleb128 0x6
- 890 0059 9642     		.uleb128 0x2116
- 891 005b 0C       		.uleb128 0xc
- 892 005c 00       		.byte	0
- 893 005d 00       		.byte	0
- 894 005e 08       		.uleb128 0x8
- 895 005f 2E       		.uleb128 0x2e
- 896 0060 01       		.byte	0x1
- 897 0061 3F       		.uleb128 0x3f
- 898 0062 0C       		.uleb128 0xc
- 899 0063 03       		.uleb128 0x3
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 20
+ 843 001f 00       		.byte	0
+ 844 0020 03       		.uleb128 0x3
+ 845 0021 24       		.uleb128 0x24
+ 846 0022 00       		.byte	0
+ 847 0023 0B       		.uleb128 0xb
+ 848 0024 0B       		.uleb128 0xb
+ 849 0025 3E       		.uleb128 0x3e
+ 850 0026 0B       		.uleb128 0xb
+ 851 0027 03       		.uleb128 0x3
+ 852 0028 08       		.uleb128 0x8
+ 853 0029 00       		.byte	0
+ 854 002a 00       		.byte	0
+ 855 002b 04       		.uleb128 0x4
+ 856 002c 16       		.uleb128 0x16
+ 857 002d 00       		.byte	0
+ 858 002e 03       		.uleb128 0x3
+ 859 002f 0E       		.uleb128 0xe
+ 860 0030 3A       		.uleb128 0x3a
+ 861 0031 0B       		.uleb128 0xb
+ 862 0032 3B       		.uleb128 0x3b
+ 863 0033 0B       		.uleb128 0xb
+ 864 0034 49       		.uleb128 0x49
+ 865 0035 13       		.uleb128 0x13
+ 866 0036 00       		.byte	0
+ 867 0037 00       		.byte	0
+ 868 0038 05       		.uleb128 0x5
+ 869 0039 35       		.uleb128 0x35
+ 870 003a 00       		.byte	0
+ 871 003b 49       		.uleb128 0x49
+ 872 003c 13       		.uleb128 0x13
+ 873 003d 00       		.byte	0
+ 874 003e 00       		.byte	0
+ 875 003f 06       		.uleb128 0x6
+ 876 0040 0F       		.uleb128 0xf
+ 877 0041 00       		.byte	0
+ 878 0042 0B       		.uleb128 0xb
+ 879 0043 0B       		.uleb128 0xb
+ 880 0044 49       		.uleb128 0x49
+ 881 0045 13       		.uleb128 0x13
+ 882 0046 00       		.byte	0
+ 883 0047 00       		.byte	0
+ 884 0048 07       		.uleb128 0x7
+ 885 0049 2E       		.uleb128 0x2e
+ 886 004a 00       		.byte	0
+ 887 004b 3F       		.uleb128 0x3f
+ 888 004c 0C       		.uleb128 0xc
+ 889 004d 03       		.uleb128 0x3
+ 890 004e 0E       		.uleb128 0xe
+ 891 004f 3A       		.uleb128 0x3a
+ 892 0050 0B       		.uleb128 0xb
+ 893 0051 3B       		.uleb128 0x3b
+ 894 0052 0B       		.uleb128 0xb
+ 895 0053 11       		.uleb128 0x11
+ 896 0054 01       		.uleb128 0x1
+ 897 0055 12       		.uleb128 0x12
+ 898 0056 01       		.uleb128 0x1
+ 899 0057 40       		.uleb128 0x40
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 20
 
 
- 900 0064 0E       		.uleb128 0xe
- 901 0065 3A       		.uleb128 0x3a
- 902 0066 0B       		.uleb128 0xb
- 903 0067 3B       		.uleb128 0x3b
- 904 0068 0B       		.uleb128 0xb
- 905 0069 27       		.uleb128 0x27
- 906 006a 0C       		.uleb128 0xc
- 907 006b 11       		.uleb128 0x11
- 908 006c 01       		.uleb128 0x1
- 909 006d 12       		.uleb128 0x12
- 910 006e 01       		.uleb128 0x1
- 911 006f 40       		.uleb128 0x40
- 912 0070 06       		.uleb128 0x6
- 913 0071 9642     		.uleb128 0x2116
- 914 0073 0C       		.uleb128 0xc
- 915 0074 01       		.uleb128 0x1
- 916 0075 13       		.uleb128 0x13
- 917 0076 00       		.byte	0
- 918 0077 00       		.byte	0
- 919 0078 09       		.uleb128 0x9
- 920 0079 34       		.uleb128 0x34
- 921 007a 00       		.byte	0
- 922 007b 03       		.uleb128 0x3
- 923 007c 08       		.uleb128 0x8
- 924 007d 3A       		.uleb128 0x3a
- 925 007e 0B       		.uleb128 0xb
- 926 007f 3B       		.uleb128 0x3b
- 927 0080 0B       		.uleb128 0xb
- 928 0081 49       		.uleb128 0x49
- 929 0082 13       		.uleb128 0x13
- 930 0083 02       		.uleb128 0x2
- 931 0084 0A       		.uleb128 0xa
- 932 0085 00       		.byte	0
- 933 0086 00       		.byte	0
- 934 0087 0A       		.uleb128 0xa
- 935 0088 34       		.uleb128 0x34
- 936 0089 00       		.byte	0
- 937 008a 03       		.uleb128 0x3
- 938 008b 0E       		.uleb128 0xe
- 939 008c 3A       		.uleb128 0x3a
- 940 008d 0B       		.uleb128 0xb
- 941 008e 3B       		.uleb128 0x3b
- 942 008f 0B       		.uleb128 0xb
- 943 0090 49       		.uleb128 0x49
- 944 0091 13       		.uleb128 0x13
- 945 0092 02       		.uleb128 0x2
- 946 0093 0A       		.uleb128 0xa
- 947 0094 00       		.byte	0
- 948 0095 00       		.byte	0
- 949 0096 0B       		.uleb128 0xb
- 950 0097 0B       		.uleb128 0xb
- 951 0098 01       		.byte	0x1
- 952 0099 11       		.uleb128 0x11
- 953 009a 01       		.uleb128 0x1
- 954 009b 12       		.uleb128 0x12
- 955 009c 01       		.uleb128 0x1
- 956 009d 00       		.byte	0
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 21
+ 900 0058 06       		.uleb128 0x6
+ 901 0059 9642     		.uleb128 0x2116
+ 902 005b 0C       		.uleb128 0xc
+ 903 005c 00       		.byte	0
+ 904 005d 00       		.byte	0
+ 905 005e 08       		.uleb128 0x8
+ 906 005f 2E       		.uleb128 0x2e
+ 907 0060 01       		.byte	0x1
+ 908 0061 3F       		.uleb128 0x3f
+ 909 0062 0C       		.uleb128 0xc
+ 910 0063 03       		.uleb128 0x3
+ 911 0064 0E       		.uleb128 0xe
+ 912 0065 3A       		.uleb128 0x3a
+ 913 0066 0B       		.uleb128 0xb
+ 914 0067 3B       		.uleb128 0x3b
+ 915 0068 0B       		.uleb128 0xb
+ 916 0069 27       		.uleb128 0x27
+ 917 006a 0C       		.uleb128 0xc
+ 918 006b 11       		.uleb128 0x11
+ 919 006c 01       		.uleb128 0x1
+ 920 006d 12       		.uleb128 0x12
+ 921 006e 01       		.uleb128 0x1
+ 922 006f 40       		.uleb128 0x40
+ 923 0070 06       		.uleb128 0x6
+ 924 0071 9642     		.uleb128 0x2116
+ 925 0073 0C       		.uleb128 0xc
+ 926 0074 01       		.uleb128 0x1
+ 927 0075 13       		.uleb128 0x13
+ 928 0076 00       		.byte	0
+ 929 0077 00       		.byte	0
+ 930 0078 09       		.uleb128 0x9
+ 931 0079 34       		.uleb128 0x34
+ 932 007a 00       		.byte	0
+ 933 007b 03       		.uleb128 0x3
+ 934 007c 08       		.uleb128 0x8
+ 935 007d 3A       		.uleb128 0x3a
+ 936 007e 0B       		.uleb128 0xb
+ 937 007f 3B       		.uleb128 0x3b
+ 938 0080 0B       		.uleb128 0xb
+ 939 0081 49       		.uleb128 0x49
+ 940 0082 13       		.uleb128 0x13
+ 941 0083 02       		.uleb128 0x2
+ 942 0084 0A       		.uleb128 0xa
+ 943 0085 00       		.byte	0
+ 944 0086 00       		.byte	0
+ 945 0087 0A       		.uleb128 0xa
+ 946 0088 34       		.uleb128 0x34
+ 947 0089 00       		.byte	0
+ 948 008a 03       		.uleb128 0x3
+ 949 008b 0E       		.uleb128 0xe
+ 950 008c 3A       		.uleb128 0x3a
+ 951 008d 0B       		.uleb128 0xb
+ 952 008e 3B       		.uleb128 0x3b
+ 953 008f 0B       		.uleb128 0xb
+ 954 0090 49       		.uleb128 0x49
+ 955 0091 13       		.uleb128 0x13
+ 956 0092 02       		.uleb128 0x2
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 21
 
 
- 957 009e 00       		.byte	0
- 958 009f 0C       		.uleb128 0xc
- 959 00a0 01       		.uleb128 0x1
- 960 00a1 01       		.byte	0x1
- 961 00a2 49       		.uleb128 0x49
- 962 00a3 13       		.uleb128 0x13
- 963 00a4 01       		.uleb128 0x1
- 964 00a5 13       		.uleb128 0x13
- 965 00a6 00       		.byte	0
- 966 00a7 00       		.byte	0
- 967 00a8 0D       		.uleb128 0xd
- 968 00a9 21       		.uleb128 0x21
- 969 00aa 00       		.byte	0
- 970 00ab 49       		.uleb128 0x49
- 971 00ac 13       		.uleb128 0x13
- 972 00ad 2F       		.uleb128 0x2f
- 973 00ae 0B       		.uleb128 0xb
- 974 00af 00       		.byte	0
- 975 00b0 00       		.byte	0
- 976 00b1 0E       		.uleb128 0xe
- 977 00b2 34       		.uleb128 0x34
- 978 00b3 00       		.byte	0
- 979 00b4 03       		.uleb128 0x3
- 980 00b5 0E       		.uleb128 0xe
- 981 00b6 3A       		.uleb128 0x3a
- 982 00b7 0B       		.uleb128 0xb
- 983 00b8 3B       		.uleb128 0x3b
- 984 00b9 0B       		.uleb128 0xb
- 985 00ba 49       		.uleb128 0x49
- 986 00bb 13       		.uleb128 0x13
- 987 00bc 3F       		.uleb128 0x3f
- 988 00bd 0C       		.uleb128 0xc
- 989 00be 02       		.uleb128 0x2
- 990 00bf 0A       		.uleb128 0xa
- 991 00c0 00       		.byte	0
- 992 00c1 00       		.byte	0
- 993 00c2 0F       		.uleb128 0xf
- 994 00c3 34       		.uleb128 0x34
- 995 00c4 00       		.byte	0
- 996 00c5 03       		.uleb128 0x3
- 997 00c6 08       		.uleb128 0x8
- 998 00c7 3A       		.uleb128 0x3a
- 999 00c8 0B       		.uleb128 0xb
- 1000 00c9 3B       		.uleb128 0x3b
- 1001 00ca 0B       		.uleb128 0xb
- 1002 00cb 49       		.uleb128 0x49
- 1003 00cc 13       		.uleb128 0x13
- 1004 00cd 3F       		.uleb128 0x3f
- 1005 00ce 0C       		.uleb128 0xc
- 1006 00cf 02       		.uleb128 0x2
- 1007 00d0 0A       		.uleb128 0xa
- 1008 00d1 00       		.byte	0
- 1009 00d2 00       		.byte	0
- 1010 00d3 00       		.byte	0
- 1011              		.section	.debug_loc,"",%progbits
- 1012              	.Ldebug_loc0:
- 1013              	.LLST0:
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 22
+ 957 0093 0A       		.uleb128 0xa
+ 958 0094 00       		.byte	0
+ 959 0095 00       		.byte	0
+ 960 0096 0B       		.uleb128 0xb
+ 961 0097 0B       		.uleb128 0xb
+ 962 0098 01       		.byte	0x1
+ 963 0099 11       		.uleb128 0x11
+ 964 009a 01       		.uleb128 0x1
+ 965 009b 12       		.uleb128 0x12
+ 966 009c 01       		.uleb128 0x1
+ 967 009d 00       		.byte	0
+ 968 009e 00       		.byte	0
+ 969 009f 0C       		.uleb128 0xc
+ 970 00a0 34       		.uleb128 0x34
+ 971 00a1 00       		.byte	0
+ 972 00a2 03       		.uleb128 0x3
+ 973 00a3 0E       		.uleb128 0xe
+ 974 00a4 3A       		.uleb128 0x3a
+ 975 00a5 0B       		.uleb128 0xb
+ 976 00a6 3B       		.uleb128 0x3b
+ 977 00a7 0B       		.uleb128 0xb
+ 978 00a8 49       		.uleb128 0x49
+ 979 00a9 13       		.uleb128 0x13
+ 980 00aa 3F       		.uleb128 0x3f
+ 981 00ab 0C       		.uleb128 0xc
+ 982 00ac 02       		.uleb128 0x2
+ 983 00ad 0A       		.uleb128 0xa
+ 984 00ae 00       		.byte	0
+ 985 00af 00       		.byte	0
+ 986 00b0 0D       		.uleb128 0xd
+ 987 00b1 01       		.uleb128 0x1
+ 988 00b2 01       		.byte	0x1
+ 989 00b3 49       		.uleb128 0x49
+ 990 00b4 13       		.uleb128 0x13
+ 991 00b5 01       		.uleb128 0x1
+ 992 00b6 13       		.uleb128 0x13
+ 993 00b7 00       		.byte	0
+ 994 00b8 00       		.byte	0
+ 995 00b9 0E       		.uleb128 0xe
+ 996 00ba 21       		.uleb128 0x21
+ 997 00bb 00       		.byte	0
+ 998 00bc 49       		.uleb128 0x49
+ 999 00bd 13       		.uleb128 0x13
+ 1000 00be 2F       		.uleb128 0x2f
+ 1001 00bf 0B       		.uleb128 0xb
+ 1002 00c0 00       		.byte	0
+ 1003 00c1 00       		.byte	0
+ 1004 00c2 0F       		.uleb128 0xf
+ 1005 00c3 34       		.uleb128 0x34
+ 1006 00c4 00       		.byte	0
+ 1007 00c5 03       		.uleb128 0x3
+ 1008 00c6 08       		.uleb128 0x8
+ 1009 00c7 3A       		.uleb128 0x3a
+ 1010 00c8 0B       		.uleb128 0xb
+ 1011 00c9 3B       		.uleb128 0x3b
+ 1012 00ca 0B       		.uleb128 0xb
+ 1013 00cb 49       		.uleb128 0x49
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 22
 
 
- 1014 0000 00000000 		.4byte	.LFB33
- 1015 0004 02000000 		.4byte	.LCFI0
- 1016 0008 0200     		.2byte	0x2
- 1017 000a 7D       		.byte	0x7d
- 1018 000b 00       		.sleb128 0
- 1019 000c 02000000 		.4byte	.LCFI0
- 1020 0010 04000000 		.4byte	.LCFI1
- 1021 0014 0200     		.2byte	0x2
- 1022 0016 7D       		.byte	0x7d
- 1023 0017 08       		.sleb128 8
- 1024 0018 04000000 		.4byte	.LCFI1
- 1025 001c 1C000000 		.4byte	.LFE33
- 1026 0020 0200     		.2byte	0x2
- 1027 0022 77       		.byte	0x77
- 1028 0023 08       		.sleb128 8
- 1029 0024 00000000 		.4byte	0
- 1030 0028 00000000 		.4byte	0
- 1031              	.LLST1:
- 1032 002c 00000000 		.4byte	.LFB34
- 1033 0030 02000000 		.4byte	.LCFI2
- 1034 0034 0200     		.2byte	0x2
- 1035 0036 7D       		.byte	0x7d
- 1036 0037 00       		.sleb128 0
- 1037 0038 02000000 		.4byte	.LCFI2
- 1038 003c 04000000 		.4byte	.LCFI3
- 1039 0040 0200     		.2byte	0x2
- 1040 0042 7D       		.byte	0x7d
- 1041 0043 0C       		.sleb128 12
- 1042 0044 04000000 		.4byte	.LCFI3
- 1043 0048 06000000 		.4byte	.LCFI4
- 1044 004c 0200     		.2byte	0x2
- 1045 004e 7D       		.byte	0x7d
- 1046 004f 28       		.sleb128 40
- 1047 0050 06000000 		.4byte	.LCFI4
- 1048 0054 A0020000 		.4byte	.LFE34
- 1049 0058 0200     		.2byte	0x2
- 1050 005a 77       		.byte	0x77
- 1051 005b 28       		.sleb128 40
- 1052 005c 00000000 		.4byte	0
- 1053 0060 00000000 		.4byte	0
- 1054              		.section	.debug_aranges,"",%progbits
- 1055 0000 24000000 		.4byte	0x24
- 1056 0004 0200     		.2byte	0x2
- 1057 0006 00000000 		.4byte	.Ldebug_info0
- 1058 000a 04       		.byte	0x4
- 1059 000b 00       		.byte	0
- 1060 000c 0000     		.2byte	0
- 1061 000e 0000     		.2byte	0
- 1062 0010 00000000 		.4byte	.LFB33
- 1063 0014 1C000000 		.4byte	.LFE33-.LFB33
- 1064 0018 00000000 		.4byte	.LFB34
- 1065 001c A0020000 		.4byte	.LFE34-.LFB34
- 1066 0020 00000000 		.4byte	0
- 1067 0024 00000000 		.4byte	0
- 1068              		.section	.debug_ranges,"",%progbits
- 1069              	.Ldebug_ranges0:
- 1070 0000 00000000 		.4byte	.LFB33
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 23
+ 1014 00cc 13       		.uleb128 0x13
+ 1015 00cd 3F       		.uleb128 0x3f
+ 1016 00ce 0C       		.uleb128 0xc
+ 1017 00cf 02       		.uleb128 0x2
+ 1018 00d0 0A       		.uleb128 0xa
+ 1019 00d1 00       		.byte	0
+ 1020 00d2 00       		.byte	0
+ 1021 00d3 00       		.byte	0
+ 1022              		.section	.debug_loc,"",%progbits
+ 1023              	.Ldebug_loc0:
+ 1024              	.LLST0:
+ 1025 0000 00000000 		.4byte	.LFB33
+ 1026 0004 02000000 		.4byte	.LCFI0
+ 1027 0008 0200     		.2byte	0x2
+ 1028 000a 7D       		.byte	0x7d
+ 1029 000b 00       		.sleb128 0
+ 1030 000c 02000000 		.4byte	.LCFI0
+ 1031 0010 04000000 		.4byte	.LCFI1
+ 1032 0014 0200     		.2byte	0x2
+ 1033 0016 7D       		.byte	0x7d
+ 1034 0017 08       		.sleb128 8
+ 1035 0018 04000000 		.4byte	.LCFI1
+ 1036 001c 1C000000 		.4byte	.LFE33
+ 1037 0020 0200     		.2byte	0x2
+ 1038 0022 77       		.byte	0x77
+ 1039 0023 08       		.sleb128 8
+ 1040 0024 00000000 		.4byte	0
+ 1041 0028 00000000 		.4byte	0
+ 1042              	.LLST1:
+ 1043 002c 00000000 		.4byte	.LFB34
+ 1044 0030 02000000 		.4byte	.LCFI2
+ 1045 0034 0200     		.2byte	0x2
+ 1046 0036 7D       		.byte	0x7d
+ 1047 0037 00       		.sleb128 0
+ 1048 0038 02000000 		.4byte	.LCFI2
+ 1049 003c 04000000 		.4byte	.LCFI3
+ 1050 0040 0200     		.2byte	0x2
+ 1051 0042 7D       		.byte	0x7d
+ 1052 0043 0C       		.sleb128 12
+ 1053 0044 04000000 		.4byte	.LCFI3
+ 1054 0048 06000000 		.4byte	.LCFI4
+ 1055 004c 0200     		.2byte	0x2
+ 1056 004e 7D       		.byte	0x7d
+ 1057 004f 28       		.sleb128 40
+ 1058 0050 06000000 		.4byte	.LCFI4
+ 1059 0054 A0020000 		.4byte	.LFE34
+ 1060 0058 0200     		.2byte	0x2
+ 1061 005a 77       		.byte	0x77
+ 1062 005b 28       		.sleb128 40
+ 1063 005c 00000000 		.4byte	0
+ 1064 0060 00000000 		.4byte	0
+ 1065              		.section	.debug_aranges,"",%progbits
+ 1066 0000 24000000 		.4byte	0x24
+ 1067 0004 0200     		.2byte	0x2
+ 1068 0006 00000000 		.4byte	.Ldebug_info0
+ 1069 000a 04       		.byte	0x4
+ 1070 000b 00       		.byte	0
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 23
 
 
- 1071 0004 1C000000 		.4byte	.LFE33
- 1072 0008 00000000 		.4byte	.LFB34
- 1073 000c A0020000 		.4byte	.LFE34
- 1074 0010 00000000 		.4byte	0
- 1075 0014 00000000 		.4byte	0
- 1076              		.section	.debug_line,"",%progbits
- 1077              	.Ldebug_line0:
- 1078 0000 EE000000 		.section	.debug_str,"MS",%progbits,1
- 1078      02004C00 
- 1078      00000201 
- 1078      FB0E0D00 
- 1078      01010101 
- 1079              	.LASF14:
- 1080 0000 72656733 		.ascii	"reg32\000"
- 1080      3200
- 1081              	.LASF20:
- 1082 0006 73706942 		.ascii	"spiBuffer\000"
- 1082      75666665 
- 1082      7200
- 1083              	.LASF29:
- 1084 0010 433A5C45 		.ascii	"C:\\Enhed\\Enhed.cydsn\000"
- 1084      6E686564 
- 1084      5C456E68 
- 1084      65642E63 
- 1084      7964736E 
- 1085              	.LASF3:
- 1086 0025 73686F72 		.ascii	"short unsigned int\000"
- 1086      7420756E 
- 1086      7369676E 
- 1086      65642069 
- 1086      6E7400
- 1087              	.LASF18:
- 1088 0038 74656D70 		.ascii	"tempValue\000"
- 1088      56616C75 
- 1088      6500
- 1089              	.LASF31:
- 1090 0042 6973725F 		.ascii	"isr_spi_rx\000"
- 1090      7370695F 
- 1090      727800
- 1091              	.LASF16:
- 1092 004d 626C7565 		.ascii	"blue\000"
- 1092      00
- 1093              	.LASF11:
- 1094 0052 666C6F61 		.ascii	"float\000"
- 1094      7400
- 1095              	.LASF1:
- 1096 0058 756E7369 		.ascii	"unsigned char\000"
- 1096      676E6564 
- 1096      20636861 
- 1096      7200
- 1097              	.LASF21:
- 1098 0066 73706954 		.ascii	"spiTxBuffer\000"
- 1098      78427566 
- 1098      66657200 
- 1099              	.LASF5:
- 1100 0072 6C6F6E67 		.ascii	"long unsigned int\000"
- 1100      20756E73 
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 24
+ 1071 000c 0000     		.2byte	0
+ 1072 000e 0000     		.2byte	0
+ 1073 0010 00000000 		.4byte	.LFB33
+ 1074 0014 1C000000 		.4byte	.LFE33-.LFB33
+ 1075 0018 00000000 		.4byte	.LFB34
+ 1076 001c A0020000 		.4byte	.LFE34-.LFB34
+ 1077 0020 00000000 		.4byte	0
+ 1078 0024 00000000 		.4byte	0
+ 1079              		.section	.debug_ranges,"",%progbits
+ 1080              	.Ldebug_ranges0:
+ 1081 0000 00000000 		.4byte	.LFB33
+ 1082 0004 1C000000 		.4byte	.LFE33
+ 1083 0008 00000000 		.4byte	.LFB34
+ 1084 000c A0020000 		.4byte	.LFE34
+ 1085 0010 00000000 		.4byte	0
+ 1086 0014 00000000 		.4byte	0
+ 1087              		.section	.debug_line,"",%progbits
+ 1088              	.Ldebug_line0:
+ 1089 0000 FE000000 		.section	.debug_str,"MS",%progbits,1
+ 1089      02005C00 
+ 1089      00000201 
+ 1089      FB0E0D00 
+ 1089      01010101 
+ 1090              	.LASF14:
+ 1091 0000 72656733 		.ascii	"reg32\000"
+ 1091      3200
+ 1092              	.LASF20:
+ 1093 0006 6E657874 		.ascii	"nextState\000"
+ 1093      53746174 
+ 1093      6500
+ 1094              	.LASF21:
+ 1095 0010 73706942 		.ascii	"spiBuffer\000"
+ 1095      75666665 
+ 1095      7200
+ 1096              	.LASF30:
+ 1097 001a 433A5C45 		.ascii	"C:\\Enhed\\Enhed.cydsn\000"
+ 1097      6E686564 
+ 1097      5C456E68 
+ 1097      65642E63 
+ 1097      7964736E 
+ 1098              	.LASF3:
+ 1099 002f 73686F72 		.ascii	"short unsigned int\000"
+ 1099      7420756E 
+ 1099      7369676E 
+ 1099      65642069 
+ 1099      6E7400
+ 1100              	.LASF18:
+ 1101 0042 74656D70 		.ascii	"tempValue\000"
+ 1101      56616C75 
+ 1101      6500
+ 1102              	.LASF32:
+ 1103 004c 6973725F 		.ascii	"isr_spi_rx\000"
+ 1103      7370695F 
+ 1103      727800
+ 1104              	.LASF16:
+ 1105 0057 626C7565 		.ascii	"blue\000"
+ 1105      00
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 24
 
 
- 1100      69676E65 
- 1100      6420696E 
- 1100      7400
- 1101              	.LASF9:
- 1102 0084 75696E74 		.ascii	"uint8\000"
- 1102      3800
- 1103              	.LASF25:
- 1104 008a 74656D70 		.ascii	"tempBuffer\000"
- 1104      42756666 
- 1104      657200
- 1105              	.LASF22:
- 1106 0095 756E6974 		.ascii	"unitNo\000"
- 1106      4E6F00
- 1107              	.LASF12:
- 1108 009c 646F7562 		.ascii	"double\000"
- 1108      6C6500
- 1109              	.LASF23:
- 1110 00a3 73706943 		.ascii	"spiCounter\000"
- 1110      6F756E74 
- 1110      657200
- 1111              	.LASF10:
- 1112 00ae 75696E74 		.ascii	"uint32\000"
- 1112      333200
- 1113              	.LASF26:
- 1114 00b5 68756D69 		.ascii	"humiBuffer\000"
- 1114      42756666 
- 1114      657200
- 1115              	.LASF8:
- 1116 00c0 756E7369 		.ascii	"unsigned int\000"
- 1116      676E6564 
- 1116      20696E74 
- 1116      00
- 1117              	.LASF7:
- 1118 00cd 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1118      206C6F6E 
- 1118      6720756E 
- 1118      7369676E 
- 1118      65642069 
- 1119              	.LASF15:
- 1120 00e4 73697A65 		.ascii	"sizetype\000"
- 1120      74797065 
- 1120      00
- 1121              	.LASF6:
- 1122 00ed 6C6F6E67 		.ascii	"long long int\000"
- 1122      206C6F6E 
- 1122      6720696E 
- 1122      7400
- 1123              	.LASF28:
- 1124 00fb 2E5C7370 		.ascii	".\\spi_handler.c\000"
- 1124      695F6861 
- 1124      6E646C65 
- 1124      722E6300 
- 1125              	.LASF13:
- 1126 010b 63686172 		.ascii	"char\000"
- 1126      00
- 1127              	.LASF24:
- 1128 0110 73706952 		.ascii	"spiReadCounter\000"
-ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\cclQEqgC.s 			page 25
+ 1106              	.LASF11:
+ 1107 005c 666C6F61 		.ascii	"float\000"
+ 1107      7400
+ 1108              	.LASF1:
+ 1109 0062 756E7369 		.ascii	"unsigned char\000"
+ 1109      676E6564 
+ 1109      20636861 
+ 1109      7200
+ 1110              	.LASF22:
+ 1111 0070 73706954 		.ascii	"spiTxBuffer\000"
+ 1111      78427566 
+ 1111      66657200 
+ 1112              	.LASF5:
+ 1113 007c 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1113      20756E73 
+ 1113      69676E65 
+ 1113      6420696E 
+ 1113      7400
+ 1114              	.LASF9:
+ 1115 008e 75696E74 		.ascii	"uint8\000"
+ 1115      3800
+ 1116              	.LASF26:
+ 1117 0094 74656D70 		.ascii	"tempBuffer\000"
+ 1117      42756666 
+ 1117      657200
+ 1118              	.LASF23:
+ 1119 009f 756E6974 		.ascii	"unitNo\000"
+ 1119      4E6F00
+ 1120              	.LASF12:
+ 1121 00a6 646F7562 		.ascii	"double\000"
+ 1121      6C6500
+ 1122              	.LASF24:
+ 1123 00ad 73706943 		.ascii	"spiCounter\000"
+ 1123      6F756E74 
+ 1123      657200
+ 1124              	.LASF10:
+ 1125 00b8 75696E74 		.ascii	"uint32\000"
+ 1125      333200
+ 1126              	.LASF27:
+ 1127 00bf 68756D69 		.ascii	"humiBuffer\000"
+ 1127      42756666 
+ 1127      657200
+ 1128              	.LASF8:
+ 1129 00ca 756E7369 		.ascii	"unsigned int\000"
+ 1129      676E6564 
+ 1129      20696E74 
+ 1129      00
+ 1130              	.LASF7:
+ 1131 00d7 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1131      206C6F6E 
+ 1131      6720756E 
+ 1131      7369676E 
+ 1131      65642069 
+ 1132              	.LASF15:
+ 1133 00ee 73697A65 		.ascii	"sizetype\000"
+ 1133      74797065 
+ 1133      00
+ARM GAS  C:\Users\BJRN~1\AppData\Local\Temp\ccs4echL.s 			page 25
 
 
- 1128      65616443 
- 1128      6F756E74 
- 1128      657200
- 1129              	.LASF17:
- 1130 011f 67726565 		.ascii	"green\000"
- 1130      6E00
- 1131              	.LASF2:
- 1132 0125 73686F72 		.ascii	"short int\000"
- 1132      7420696E 
- 1132      7400
- 1133              	.LASF30:
- 1134 012f 7370695F 		.ascii	"spi_init\000"
- 1134      696E6974 
- 1134      00
- 1135              	.LASF27:
- 1136 0138 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
- 1136      4320342E 
- 1136      372E3320 
- 1136      32303133 
- 1136      30333132 
- 1137 016b 616E6368 		.ascii	"anch revision 196615]\000"
- 1137      20726576 
- 1137      6973696F 
- 1137      6E203139 
- 1137      36363135 
- 1138              	.LASF4:
- 1139 0181 6C6F6E67 		.ascii	"long int\000"
- 1139      20696E74 
+ 1134              	.LASF6:
+ 1135 00f7 6C6F6E67 		.ascii	"long long int\000"
+ 1135      206C6F6E 
+ 1135      6720696E 
+ 1135      7400
+ 1136              	.LASF29:
+ 1137 0105 2E5C7370 		.ascii	".\\spi_handler.c\000"
+ 1137      695F6861 
+ 1137      6E646C65 
+ 1137      722E6300 
+ 1138              	.LASF13:
+ 1139 0115 63686172 		.ascii	"char\000"
  1139      00
- 1140              	.LASF0:
- 1141 018a 7369676E 		.ascii	"signed char\000"
- 1141      65642063 
- 1141      68617200 
- 1142              	.LASF19:
- 1143 0196 68756D69 		.ascii	"humiValue\000"
- 1143      56616C75 
- 1143      6500
- 1144              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br
+ 1140              	.LASF25:
+ 1141 011a 73706952 		.ascii	"spiReadCounter\000"
+ 1141      65616443 
+ 1141      6F756E74 
+ 1141      657200
+ 1142              	.LASF17:
+ 1143 0129 67726565 		.ascii	"green\000"
+ 1143      6E00
+ 1144              	.LASF2:
+ 1145 012f 73686F72 		.ascii	"short int\000"
+ 1145      7420696E 
+ 1145      7400
+ 1146              	.LASF31:
+ 1147 0139 7370695F 		.ascii	"spi_init\000"
+ 1147      696E6974 
+ 1147      00
+ 1148              	.LASF28:
+ 1149 0142 474E5520 		.ascii	"GNU C 4.7.3 20130312 (release) [ARM/embedded-4_7-br"
+ 1149      4320342E 
+ 1149      372E3320 
+ 1149      32303133 
+ 1149      30333132 
+ 1150 0175 616E6368 		.ascii	"anch revision 196615]\000"
+ 1150      20726576 
+ 1150      6973696F 
+ 1150      6E203139 
+ 1150      36363135 
+ 1151              	.LASF4:
+ 1152 018b 6C6F6E67 		.ascii	"long int\000"
+ 1152      20696E74 
+ 1152      00
+ 1153              	.LASF0:
+ 1154 0194 7369676E 		.ascii	"signed char\000"
+ 1154      65642063 
+ 1154      68617200 
+ 1155              	.LASF19:
+ 1156 01a0 68756D69 		.ascii	"humiValue\000"
+ 1156      56616C75 
+ 1156      6500
+ 1157              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.7.3 20130312 (release) [ARM/embedded-4_7-br

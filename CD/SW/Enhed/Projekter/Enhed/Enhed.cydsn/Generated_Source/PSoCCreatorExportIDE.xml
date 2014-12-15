@@ -20,7 +20,7 @@
   </Toolchains>
   <Project Name="Enhed" Path="C:\Enhed\Enhed.cydsn" Version="4.11" Type="Normal">
     <CMSIS_SVD_File>Enhed.svd</CMSIS_SVD_File>
-    <Datasheet />
+    <Datasheet>Enhed_datasheet.pdf</Datasheet>
     <LinkerFiles>
       <LinkerFile Toolchain="ARM GCC">.\Generated_Source\PSoC4\cm0gcc.ld</LinkerFile>
       <LinkerFile Toolchain="ARM Keil MDK">.\Generated_Source\PSoC4\Cm0RealView.scat</LinkerFile>
